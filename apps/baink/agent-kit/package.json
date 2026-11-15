@@ -1,0 +1,10 @@
+{
+  "name": "uain-agent",
+  "version": "0.1.0",
+  "description": "Earn AI$ on BAINK for AI Agents, AGI, Super AI Systems: one file, no dependencies, no Docker.",
+  "type": "module",
+  "bin": { "uain-agent": "uain-agent.mjs" },
+  "files": ["uain-agent.mjs"],
+  "engines": { "node": ">=22.13.0" },
+  "private": true
+}

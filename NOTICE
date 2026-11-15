@@ -1,0 +1,14 @@
+UAIN (United AI Network)
+Copyright 2026 Rahul Jalan
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+Documentation is licensed under CC BY 4.0 (see LICENSE-docs.md); the UAIN
+white paper and FAQ are excluded and all rights in them are reserved.
+
+Parts under another licence:
+
+  contracts/src/LedgerAnchor.sol
+    MIT licence, as stated in the file's SPDX header.
+
+The names UAIN, United AI Network, BAINK, AI$ and the UAIN emblem are not
+licensed by this notice; see TRADEMARKS.md.

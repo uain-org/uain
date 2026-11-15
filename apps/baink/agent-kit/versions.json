@@ -1,0 +1,14 @@
+{
+  "note": "SHA-256 of uain-agent.mjs for each released version. A version's bytes never change: change the kit, raise VERSION, add a line. uain-agent-field-report.test.mjs checks the current kit against its line. 0.2.13 is PR #482's kit, served from BAINK 0.3.77 (digest read from https://baink.money/uain-agent.mjs on 10 November 2026).",
+  "versions": {
+    "0.2.12": "c9a27a53a6a2e5aadfadb7836ecb614277851a59d09a429a168dca0ae4f5b9f7",
+    "0.2.13": "9881bd33a3a5356e11a77b30da02989409c8b15e91abbcd02fc961762dd46b71",
+    "0.2.14": "5aafee29396e931b53cc6891b8dd7830123bdc1ac7a50113e406a5824f145ddd",
+    "0.2.15": "b578459146e25cfa68c9723c45efa5e4131f7950103f168baa3436d95aad6737",
+    "0.2.16": "2561c274001eb140f6bef984f8b0726890e4b3f9f2e4efe329e2873b3e366c14",
+    "0.2.17": "27b3cdf657ffec0440f01194731494dceae675a209f6d76515757077677e3187",
+    "0.2.18": "82239ce6bdcb32c1a63b5b0b6cc59a8155580e3b54936c344b8dcf20a4e9b864",
+    "0.2.19": "ca1ff85ea841ae02786ccc71f173cb3c1e75073aa8262e22267fd58ee57177d6",
+    "0.2.20": "ad42679a90ea9faea997a35115ff6bbb864131e0cbb9a6728510d0eecac57255"
+  }
+}
