@@ -1,0 +1,19 @@
+{
+  "schema": "uain-central-evidence-activation-evidence-v1",
+  "policy": "central-evidence-window-v1",
+  "window_blocks": "129600",
+  "chain_id": "uain-shadow-20261008-1",
+  "decisions": [
+    "DEC-TASK-033 / S6 default (9 November 2026): one needs-more-evidence request per submission with a 72-hour window; within it the author may send one linked revision or ask for one reassessment; if unanswered, the submission is rejected with no reviewer fee and the task reopens; the original submission stays immutable",
+    "Tester report (Abhinav, 10 November 2026): every revision is refused with central_evidence_window_inactive, so every needs-more-evidence verdict is final for every member until this activation"
+  ],
+  "window": "129600 blocks; production blocks average about 2.06 s (heights 1,411,604 to 1,434,495, 9 to 10 November 2026), so the window is about 74 hours",
+  "binary": {
+    "name": "uaind 0.4.1",
+    "sha256": "b525c808aa017865ec798869f2d72f5ba5ce0e6fb432cb7700bb8a2a29260024",
+    "rule_source": "chain/federation/central_evidence.go"
+  },
+  "rehearsal": "chain/scripts/central-evidence-window-rehearsal.mjs on two real 0.4.1 daemons (ops/remote-test/evidence-window-rehearsal.sh), EVIDENCE_WINDOW_REHEARSAL_OK, 10 November 2026",
+  "pre_activation_requests": "Six needs_evidence verdicts recorded before the activation carry no deadline and get none from it; the central reviewer re-reviews each once after the activation height (services/central-reviewer/ops/evidence-window-reissue.mjs), and a fresh needs_evidence then carries a deadline",
+  "activation": "Signed by the original single guardian (no guardian epoch, consensus v2 not active) through ops/custody/evidence_window_launch.py under the shared custody lock"
+}

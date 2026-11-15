@@ -1,0 +1,10 @@
+syntax = "proto3";
+package uain.federation.v1;
+option go_package = "github.com/uain-org/uain/chain/types";
+// Authorization is an Ed25519 member envelope verified by the UAIN ante handler.
+// No member private key is sent to the chain or gateway.
+service Msg {
+  rpc Execute(MsgExecute) returns (MsgExecuteResponse);
+}
+message MsgExecute { bytes envelope = 1; }
+message MsgExecuteResponse { string subject = 1; }

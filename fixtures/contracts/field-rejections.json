@@ -1,0 +1,247 @@
+{
+ "schema": "uain-contract-fixture-v1",
+ "contract": "field-rejections",
+ "description": "Exact-field rules. Command JSON text is parsed by each consumer with its own parser. Go decoding and Python custody parsing refuse duplicate keys; a JavaScript object cannot hold duplicate keys, so JSON.parse keeps the last value and the JavaScript signers see one field (they rely on the Go chain and Python custody for duplicate refusal). Generic Go/Python signing preserves an unknown payload field; typed payload validation refuses it. Outcomes give the stable refusal code or message each consumer reports.",
+ "sources": [
+  "apps/baink/server/central-earning-command.mjs",
+  "chain/federation/authorization.go Decode/SigningBytes",
+  "ops/custody/native_migration.py strict_json/signing_bytes",
+  "ops/custody/project_organizations.py _unique_pairs/central_payload"
+ ],
+ "commands": [
+  {
+   "name": "unknown_top_level_field",
+   "json": "{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"0\",\"expires_height\":\"1\",\"operation\":\"project_join\",\"payload\":{\"project\":\"P-OPP-00001\"},\"extra\":1}",
+   "outcomes": {
+    "js-baink": {
+     "refused": "Invalid typed central earning command"
+    },
+    "go-federation-decode": {
+     "refused": "unknown or incorrectly cased JSON field"
+    },
+    "python-native-migration-strict": {
+     "refused": "ValueError"
+    },
+    "python-organizations-strict": "accepted"
+   }
+  },
+  {
+   "name": "miscased_top_level_field",
+   "json": "{\"Version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"0\",\"expires_height\":\"1\",\"operation\":\"project_join\",\"payload\":{\"project\":\"P-OPP-00001\"}}",
+   "outcomes": {
+    "js-baink": {
+     "refused": "Invalid typed central earning command"
+    },
+    "go-federation-decode": {
+     "refused": "unknown or incorrectly cased JSON field"
+    },
+    "python-native-migration-strict": {
+     "refused": "ValueError"
+    },
+    "python-organizations-strict": "accepted"
+   }
+  },
+  {
+   "name": "duplicate_top_level_field",
+   "json": "{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"0\",\"expires_height\":\"1\",\"operation\":\"project_join\",\"payload\":{\"project\":\"P-OPP-00001\"},\"operation\":\"project_join\"}",
+   "outcomes": {
+    "js-baink": {
+     "signing_bytes": "uain:chain-command:v1\n{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"0\",\"expires_height\":\"1\",\"operation\":\"project_join\",\"payload\":{\"project\":\"P-OPP-00001\"}}"
+    },
+    "go-federation-decode": {
+     "refused": "duplicate or invalid JSON key"
+    },
+    "python-native-migration-strict": {
+     "refused": "ValueError"
+    },
+    "python-organizations-strict": {
+     "refused": "duplicate_key"
+    }
+   }
+  },
+  {
+   "name": "duplicate_payload_field",
+   "json": "{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"0\",\"expires_height\":\"1\",\"operation\":\"project_join\",\"payload\":{\"project\":\"P-OPP-00001\",\"project\":\"P-OPP-00001\"}}",
+   "outcomes": {
+    "js-baink": {
+     "signing_bytes": "uain:chain-command:v1\n{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"0\",\"expires_height\":\"1\",\"operation\":\"project_join\",\"payload\":{\"project\":\"P-OPP-00001\"}}"
+    },
+    "go-federation-decode": {
+     "refused": "duplicate or invalid JSON key"
+    },
+    "python-native-migration-strict": {
+     "refused": "ValueError"
+    },
+    "python-organizations-strict": {
+     "refused": "duplicate_key"
+    }
+   }
+  },
+  {
+   "name": "unknown_payload_field_generic_signing",
+   "json": "{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"0\",\"expires_height\":\"1\",\"operation\":\"project_join\",\"payload\":{\"project\":\"P-OPP-00001\",\"note\":\"x\"}}",
+   "outcomes": {
+    "js-baink": {
+     "refused": "Invalid typed central earning command"
+    },
+    "go-federation-decode": {
+     "signing_bytes": "uain:chain-command:v1\n{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"0\",\"expires_height\":\"1\",\"operation\":\"project_join\",\"payload\":{\"note\":\"x\",\"project\":\"P-OPP-00001\"}}"
+    },
+    "python-native-migration-strict": {
+     "signing_bytes": "uain:chain-command:v1\n{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"0\",\"expires_height\":\"1\",\"operation\":\"project_join\",\"payload\":{\"note\":\"x\",\"project\":\"P-OPP-00001\"}}"
+    },
+    "python-organizations-strict": "accepted"
+   }
+  },
+  {
+   "name": "trailing_json",
+   "json": "{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"0\",\"expires_height\":\"1\",\"operation\":\"project_join\",\"payload\":{\"project\":\"P-OPP-00001\"}} {}",
+   "outcomes": {
+    "js-baink": {
+     "refused": "SyntaxError"
+    },
+    "go-federation-decode": {
+     "refused": "trailing JSON"
+    },
+    "python-native-migration-strict": {
+     "refused": "ValueError"
+    },
+    "python-organizations-strict": {
+     "refused": "JSONDecodeError"
+    }
+   }
+  },
+  {
+   "name": "missing_payload",
+   "json": "{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"0\",\"expires_height\":\"1\",\"operation\":\"project_join\"}",
+   "outcomes": {
+    "js-baink": {
+     "refused": "Invalid typed central earning command"
+    },
+    "go-federation-decode": {
+     "refused": "invalid JSON size"
+    },
+    "python-native-migration-strict": {
+     "refused": "ValueError"
+    },
+    "python-organizations-strict": "accepted"
+   }
+  }
+ ],
+ "payloads": [
+  {
+   "name": "task_open_unknown_field",
+   "operation": "central_task_open",
+   "payload": {
+    "id": "T-contract.1",
+    "project": "P-OPP-00001",
+    "title": "Bound <x> & \"y\"",
+    "criteria": "Report <bound> & \"proof\" for n ≤ 10 with é and 😀\nper the attached method.",
+    "acceptance_digest": "0f7ab25909190bde5a3bffa09d17fd8851b5a01dd219d44eb94ef3d60f6a681c",
+    "eligibility": "new",
+    "eligibility_digest": "533cbfe95669c4380a5e671d25fd9ae9699eda36f6c29c3d3be349cb2f3b778e",
+    "solver_amount": "999999999999999",
+    "reviewer_amount": "1",
+    "evidence_digest": "4b19f000c0760ef98754ba5a1eba88a77a6777664ff9d455d36b8fb258122073",
+    "bonus": "1"
+   },
+   "outcomes": {
+    "js-baink": {
+     "refused": "Invalid typed central earning command"
+    },
+    "python-organizations": {
+     "refused": "invalid_payload"
+    }
+   }
+  },
+  {
+   "name": "task_open_missing_field",
+   "operation": "central_task_open",
+   "payload": {
+    "id": "T-contract.1",
+    "project": "P-OPP-00001",
+    "title": "Bound <x> & \"y\"",
+    "criteria": "Report <bound> & \"proof\" for n ≤ 10 with é and 😀\nper the attached method.",
+    "eligibility": "new",
+    "eligibility_digest": "533cbfe95669c4380a5e671d25fd9ae9699eda36f6c29c3d3be349cb2f3b778e",
+    "solver_amount": "999999999999999",
+    "reviewer_amount": "1",
+    "evidence_digest": "4b19f000c0760ef98754ba5a1eba88a77a6777664ff9d455d36b8fb258122073"
+   },
+   "outcomes": {
+    "js-baink": {
+     "refused": "Invalid typed central earning command"
+    },
+    "python-organizations": {
+     "refused": "invalid_payload"
+    }
+   }
+  },
+  {
+   "name": "submit_miscased_field",
+   "operation": "central_submit",
+   "payload": {
+    "Evidence": "Result:\tbound holds for n ≤ 10.\nMethod <see attached> & notes 😀.",
+    "id": "S-contract_1",
+    "task": "T-contract.1",
+    "evidence_digest": "fef6f840e41999a1de48df383503a32c8ce74fecdfa9bbbab7f558d77dd1be68"
+   },
+   "outcomes": {
+    "js-baink": {
+     "refused": "Invalid typed central earning command"
+    },
+    "python-organizations": {
+     "refused": "invalid_payload"
+    }
+   }
+  },
+  {
+   "name": "payload_is_array",
+   "operation": "project_join",
+   "payload": [
+    "P-OPP-00001"
+   ],
+   "outcomes": {
+    "js-baink": {
+     "refused": "Invalid typed central earning command"
+    },
+    "python-organizations": {
+     "refused": "invalid_payload"
+    }
+   }
+  },
+  {
+   "name": "unknown_operation",
+   "operation": "central_task_delete",
+   "payload": {
+    "task": "T-contract.1"
+   },
+   "outcomes": {
+    "js-baink": {
+     "refused": "Invalid typed central earning command"
+    },
+    "python-organizations": {
+     "refused": "operation_not_allowed"
+    }
+   }
+  },
+  {
+   "name": "review_not_custody_signable",
+   "operation": "central_review",
+   "payload": {
+    "submission": "S-contract_1",
+    "verdict": "needs_evidence",
+    "criteria_digest": "0f7ab25909190bde5a3bffa09d17fd8851b5a01dd219d44eb94ef3d60f6a681c",
+    "verification_digest": "4183b7793fd28ba47ea9e79e7697f2915da218567e6657a158b51bd14bce91cd",
+    "execution_id": "exec-1",
+    "evidence_digest": "800d2f575455d0e693631504e7aa67a4049960eac3857e6ace74458da5014278"
+   },
+   "outcomes": {
+    "js-baink": "accepted",
+    "python-organizations": {
+     "refused": "operation_not_allowed"
+    }
+   }
+  }
+ ]
+}

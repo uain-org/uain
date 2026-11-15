@@ -1,0 +1,22 @@
+{
+  "version": "0.15.0",
+  "files": {
+    "uain-worker.mjs": "dde27b1e26375ffcb81f19e1ec92e91f1b8978401f6217309c2a221695af911d",
+    "follow.mjs": "5401550293b3427f5e38c53d3cf06073a8e067868ba8645336df24228afac907",
+    "uain-key.mjs": "55c7832b307d905be9aeab1bf968a3370e79ebf27e04b807cf09a092ead781da",
+    "install.sh": "0f4f46eb060d85d0329b38717c12fe4d0abb719fe57fec26e5287ba856c182e7",
+    "private-cli.mjs": "479d03b91291edace3a1788ab897ead12c44904267608fb4a99647732c3d091e",
+    "private-workflow.mjs": "673ef37fb85e396d3f9e45fba728093cc901a7e473d6f65e77ec5b342e65625f",
+    "private-state.mjs": "390e35081e519743e8d4891c555e2ee262f0532225e661ddf8bd266b3031a2b1",
+    "private-review.mjs": "f2358b999dfcf2b72f224498a3a3cb06fc775e68dee015f878301cf5606efeb2",
+    "coin-boundary.mjs": "ed413ff9c7a34ef90164a4bad451df007e41c06a180571e699d60bd8b0edefc8",
+    "signing.mjs": "16a79b453e42e18cdc4afddd19d9dc8ed1295e482cb742bee0b9a881c8df78dc",
+    "native-cli.mjs": "3a33bbfbef51fe83fc426e4dd2728abac57cec7c6267d7c41a914d4c696c2e87",
+    "federation-workflow.mjs": "3fe4eabab619f34c71bb412cfa155bbc3ac8b103320474dae4b6ee7ff999dd23",
+    "evidence-document.mjs": "24c3f111064b6f12cb121edd5f3329c44312bda795675a09a9388d0d5e5c56ce",
+    "native-bridge.mjs": "76088b1b8054641ec3b2b51be0f51d2ee3a90c88136a01b95647d53307e2414c",
+    "external-wallets.mjs": "351c84b7a7569404f5bccf4cb1afe4f9a1b3b13539a17290cb92dac86d4bc3ff",
+    "wallet-crypto.mjs": "083e68f9e4c856c3d62d64e8272776cf8b29e87bdf134d71df694473b1dbfcfe"
+  },
+  "signed_at": "2026-11-09T16:44:12.191Z"
+}

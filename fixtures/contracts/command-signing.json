@@ -1,0 +1,256 @@
+{
+ "schema": "uain-contract-fixture-v1",
+ "contract": "central-earning-command-signing",
+ "description": "Canonical signing bytes \"uain:chain-command:v1\\n\" + the command with fixed field order (version, chain_id, member, sequence, expires_height, operation, payload) and the payload in the chain canonical JSON form. signing_bytes is the exact UTF-8 text; sha256 is over those bytes. Addresses are fictional (uain1 + sha256(label)[0:40]); no key is involved.",
+ "sources": [
+  "apps/baink/server/central-earning-command.mjs centralEarningSigningBytes",
+  "chain/client/signing.mjs signingBytes",
+  "ops/custody/native_migration.py signing_bytes",
+  "chain/federation/authorization.go SigningBytes"
+ ],
+ "custody_signable_operations": [
+  "project_join",
+  "central_task_open",
+  "central_submit"
+ ],
+ "vectors": [
+  {
+   "name": "project_join_minimal",
+   "command": {
+    "version": 1,
+    "chain_id": "uain-shadow-20261008-1",
+    "member": "uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282",
+    "sequence": "0",
+    "expires_height": "1",
+    "operation": "project_join",
+    "payload": {
+     "project": "P-OPP-00001"
+    }
+   },
+   "signing_bytes": "uain:chain-command:v1\n{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"0\",\"expires_height\":\"1\",\"operation\":\"project_join\",\"payload\":{\"project\":\"P-OPP-00001\"}}",
+   "sha256": "8dae7e115a297e86a8be986c0d2df68abc89dbac4d0e787c7ca04417b215f911"
+  },
+  {
+   "name": "central_task_open_escapes_and_lifetime_sum",
+   "command": {
+    "version": 1,
+    "chain_id": "uain-shadow-20261008-1",
+    "member": "uain1ef82e97996a6a56c5778df0dee8cd0b3d6aa7b89",
+    "sequence": "7",
+    "expires_height": "120",
+    "operation": "central_task_open",
+    "payload": {
+     "id": "T-contract.1",
+     "project": "P-OPP-00001",
+     "title": "Bound <x> & \"y\"",
+     "criteria": "Report <bound> & \"proof\" for n ≤ 10 with é and 😀\nper the attached method.",
+     "acceptance_digest": "0f7ab25909190bde5a3bffa09d17fd8851b5a01dd219d44eb94ef3d60f6a681c",
+     "eligibility": "new",
+     "eligibility_digest": "533cbfe95669c4380a5e671d25fd9ae9699eda36f6c29c3d3be349cb2f3b778e",
+     "solver_amount": "999999999999999",
+     "reviewer_amount": "1",
+     "evidence_digest": "4b19f000c0760ef98754ba5a1eba88a77a6777664ff9d455d36b8fb258122073"
+    }
+   },
+   "signing_bytes": "uain:chain-command:v1\n{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain1ef82e97996a6a56c5778df0dee8cd0b3d6aa7b89\",\"sequence\":\"7\",\"expires_height\":\"120\",\"operation\":\"central_task_open\",\"payload\":{\"acceptance_digest\":\"0f7ab25909190bde5a3bffa09d17fd8851b5a01dd219d44eb94ef3d60f6a681c\",\"criteria\":\"Report \\u003cbound\\u003e \\u0026 \\\"proof\\\" for n ≤ 10\\u2028with é and 😀\\nper the attached method.\",\"eligibility\":\"new\",\"eligibility_digest\":\"533cbfe95669c4380a5e671d25fd9ae9699eda36f6c29c3d3be349cb2f3b778e\",\"evidence_digest\":\"4b19f000c0760ef98754ba5a1eba88a77a6777664ff9d455d36b8fb258122073\",\"id\":\"T-contract.1\",\"project\":\"P-OPP-00001\",\"reviewer_amount\":\"1\",\"solver_amount\":\"999999999999999\",\"title\":\"Bound \\u003cx\\u003e \\u0026 \\\"y\\\"\"}}",
+   "sha256": "024bcc1b10a84391f24f20e5cf7d31800388b8493a0b551e24c3845098e23f01"
+  },
+  {
+   "name": "central_submit_tab_newline_unicode",
+   "command": {
+    "version": 1,
+    "chain_id": "uain-shadow-20261008-1",
+    "member": "uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282",
+    "sequence": "8",
+    "expires_height": "121",
+    "operation": "central_submit",
+    "payload": {
+     "id": "S-contract_1",
+     "task": "T-contract.1",
+     "evidence": "Result:\tbound holds for n ≤ 10.\nMethod <see attached> & notes 😀.",
+     "evidence_digest": "fef6f840e41999a1de48df383503a32c8ce74fecdfa9bbbab7f558d77dd1be68"
+    }
+   },
+   "signing_bytes": "uain:chain-command:v1\n{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"8\",\"expires_height\":\"121\",\"operation\":\"central_submit\",\"payload\":{\"evidence\":\"Result:\\tbound holds for n ≤ 10.\\nMethod \\u003csee attached\\u003e \\u0026 notes 😀.\",\"evidence_digest\":\"fef6f840e41999a1de48df383503a32c8ce74fecdfa9bbbab7f558d77dd1be68\",\"id\":\"S-contract_1\",\"task\":\"T-contract.1\"}}",
+   "sha256": "c32b0b14d34c7ab07dd594a1c8fb2d5f7dca6d4965ad42b6e4b432402967fa30"
+  },
+  {
+   "name": "central_review_needs_evidence",
+   "command": {
+    "version": 1,
+    "chain_id": "uain-shadow-20261008-1",
+    "member": "uain1a8ff479d12b3fc922203876b5575078f9e6105a3",
+    "sequence": "9",
+    "expires_height": "122",
+    "operation": "central_review",
+    "payload": {
+     "submission": "S-contract_1",
+     "verdict": "needs_evidence",
+     "criteria_digest": "0f7ab25909190bde5a3bffa09d17fd8851b5a01dd219d44eb94ef3d60f6a681c",
+     "verification_digest": "4183b7793fd28ba47ea9e79e7697f2915da218567e6657a158b51bd14bce91cd",
+     "execution_id": "exec-1",
+     "evidence_digest": "800d2f575455d0e693631504e7aa67a4049960eac3857e6ace74458da5014278"
+    }
+   },
+   "signing_bytes": "uain:chain-command:v1\n{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain1a8ff479d12b3fc922203876b5575078f9e6105a3\",\"sequence\":\"9\",\"expires_height\":\"122\",\"operation\":\"central_review\",\"payload\":{\"criteria_digest\":\"0f7ab25909190bde5a3bffa09d17fd8851b5a01dd219d44eb94ef3d60f6a681c\",\"evidence_digest\":\"800d2f575455d0e693631504e7aa67a4049960eac3857e6ace74458da5014278\",\"execution_id\":\"exec-1\",\"submission\":\"S-contract_1\",\"verdict\":\"needs_evidence\",\"verification_digest\":\"4183b7793fd28ba47ea9e79e7697f2915da218567e6657a158b51bd14bce91cd\"}}",
+   "sha256": "0227d71deabfc668c370ec2a7ec51a252f2596c56834559e637bd0f8fe05eb1f"
+  },
+  {
+   "name": "central_review_sequence_and_height_maximum",
+   "command": {
+    "version": 1,
+    "chain_id": "uain-shadow-20261008-1",
+    "member": "uain1a8ff479d12b3fc922203876b5575078f9e6105a3",
+    "sequence": "18446744073709551614",
+    "expires_height": "9223372036854775807",
+    "operation": "central_review",
+    "payload": {
+     "submission": "S-contract_1",
+     "verdict": "accept",
+     "criteria_digest": "0f7ab25909190bde5a3bffa09d17fd8851b5a01dd219d44eb94ef3d60f6a681c",
+     "verification_digest": "4183b7793fd28ba47ea9e79e7697f2915da218567e6657a158b51bd14bce91cd",
+     "execution_id": "exec-2",
+     "evidence_digest": "96280455b653c54a4403b2acd1c11e77cce1fa3a1456ec75b55db6a0962f34ee"
+    }
+   },
+   "signing_bytes": "uain:chain-command:v1\n{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain1a8ff479d12b3fc922203876b5575078f9e6105a3\",\"sequence\":\"18446744073709551614\",\"expires_height\":\"9223372036854775807\",\"operation\":\"central_review\",\"payload\":{\"criteria_digest\":\"0f7ab25909190bde5a3bffa09d17fd8851b5a01dd219d44eb94ef3d60f6a681c\",\"evidence_digest\":\"96280455b653c54a4403b2acd1c11e77cce1fa3a1456ec75b55db6a0962f34ee\",\"execution_id\":\"exec-2\",\"submission\":\"S-contract_1\",\"verdict\":\"accept\",\"verification_digest\":\"4183b7793fd28ba47ea9e79e7697f2915da218567e6657a158b51bd14bce91cd\"}}",
+   "sha256": "c02edaf3c31c36888e951d772c273b67a8267d756e32754f377f895aa857c891"
+  }
+ ],
+ "edge_commands": [
+  {
+   "name": "sequence_uint64_maximum",
+   "command": {
+    "version": 1,
+    "chain_id": "uain-shadow-20261008-1",
+    "member": "uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282",
+    "sequence": "18446744073709551615",
+    "expires_height": "1",
+    "operation": "project_join",
+    "payload": {
+     "project": "P-OPP-00001"
+    }
+   },
+   "outcomes": {
+    "js-baink": "refused",
+    "js-chain-client": {
+     "signing_bytes": "uain:chain-command:v1\n{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"18446744073709551615\",\"expires_height\":\"1\",\"operation\":\"project_join\",\"payload\":{\"project\":\"P-OPP-00001\"}}"
+    },
+    "python-native-migration": {
+     "signing_bytes": "uain:chain-command:v1\n{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"18446744073709551615\",\"expires_height\":\"1\",\"operation\":\"project_join\",\"payload\":{\"project\":\"P-OPP-00001\"}}"
+    },
+    "go-federation": {
+     "signing_bytes": "uain:chain-command:v1\n{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"18446744073709551615\",\"expires_height\":\"1\",\"operation\":\"project_join\",\"payload\":{\"project\":\"P-OPP-00001\"}}"
+    }
+   }
+  },
+  {
+   "name": "sequence_leading_zero",
+   "command": {
+    "version": 1,
+    "chain_id": "uain-shadow-20261008-1",
+    "member": "uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282",
+    "sequence": "01",
+    "expires_height": "1",
+    "operation": "project_join",
+    "payload": {
+     "project": "P-OPP-00001"
+    }
+   },
+   "outcomes": {
+    "js-baink": "refused",
+    "js-chain-client": "refused",
+    "python-native-migration": "refused",
+    "go-federation": {
+     "signing_bytes": "uain:chain-command:v1\n{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"1\",\"expires_height\":\"1\",\"operation\":\"project_join\",\"payload\":{\"project\":\"P-OPP-00001\"}}"
+    }
+   }
+  },
+  {
+   "name": "expires_height_zero",
+   "command": {
+    "version": 1,
+    "chain_id": "uain-shadow-20261008-1",
+    "member": "uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282",
+    "sequence": "0",
+    "expires_height": "0",
+    "operation": "project_join",
+    "payload": {
+     "project": "P-OPP-00001"
+    }
+   },
+   "outcomes": {
+    "js-baink": "refused",
+    "js-chain-client": "refused",
+    "python-native-migration": "refused",
+    "go-federation": {
+     "signing_bytes": "uain:chain-command:v1\n{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"0\",\"expires_height\":\"0\",\"operation\":\"project_join\",\"payload\":{\"project\":\"P-OPP-00001\"}}"
+    }
+   }
+  },
+  {
+   "name": "expires_height_above_int64",
+   "command": {
+    "version": 1,
+    "chain_id": "uain-shadow-20261008-1",
+    "member": "uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282",
+    "sequence": "0",
+    "expires_height": "9223372036854775808",
+    "operation": "project_join",
+    "payload": {
+     "project": "P-OPP-00001"
+    }
+   },
+   "outcomes": {
+    "js-baink": "refused",
+    "js-chain-client": "refused",
+    "python-native-migration": "refused",
+    "go-federation": "refused"
+   }
+  },
+  {
+   "name": "sequence_as_number",
+   "command": {
+    "version": 1,
+    "chain_id": "uain-shadow-20261008-1",
+    "member": "uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282",
+    "sequence": 0,
+    "expires_height": "1",
+    "operation": "project_join",
+    "payload": {
+     "project": "P-OPP-00001"
+    }
+   },
+   "outcomes": {
+    "js-baink": "refused",
+    "js-chain-client": {
+     "signing_bytes": "uain:chain-command:v1\n{\"version\":1,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":0,\"expires_height\":\"1\",\"operation\":\"project_join\",\"payload\":{\"project\":\"P-OPP-00001\"}}"
+    },
+    "python-native-migration": "refused",
+    "go-federation": "refused"
+   }
+  },
+  {
+   "name": "version_two",
+   "command": {
+    "version": 2,
+    "chain_id": "uain-shadow-20261008-1",
+    "member": "uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282",
+    "sequence": "0",
+    "expires_height": "1",
+    "operation": "project_join",
+    "payload": {
+     "project": "P-OPP-00001"
+    }
+   },
+   "outcomes": {
+    "js-baink": "refused",
+    "js-chain-client": "refused",
+    "python-native-migration": "refused",
+    "go-federation": {
+     "signing_bytes": "uain:chain-command:v1\n{\"version\":2,\"chain_id\":\"uain-shadow-20261008-1\",\"member\":\"uain18ba20b1ae0b8a88a4aaaf9d19612d728f2539282\",\"sequence\":\"0\",\"expires_height\":\"1\",\"operation\":\"project_join\",\"payload\":{\"project\":\"P-OPP-00001\"}}"
+    }
+   }
+  }
+ ]
+}

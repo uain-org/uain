@@ -1,0 +1,50 @@
+{
+  "schema": "uain-public-bootstrap-readonly-qualification-v1",
+  "checked_at": "2026-10-13T09:51:03Z",
+  "result": "pass",
+  "production_services_or_chain_mutated": false,
+  "broadcasts_disabled_in_test_harness": true,
+  "isolated_test_containers_and_tempfiles_cleaned": true,
+  "qualified_platform": "linux-amd64",
+  "public_profile_origin_asserted": "https://uain.global",
+  "actual_test_origin": "member-owned loopback HTTP origin behind the complete candidate nginx template",
+  "public_https_rollout_acceptance_required": true,
+  "checks": [
+    "GET and HEAD homepage preserve static behavior",
+    "actual bootstrap binary and genesis downloaded through candidate nginx and API",
+    "download bytes and artifact SHA-256 headers match independent qualification pins",
+    "downloaded verifier executable verifies fresh signed native headers and IAVL records through POST-root RPC routing",
+    "administrative RPC refused with HTTP 400"
+  ],
+  "verifier": {
+    "sha256": "136698192e9e38323a552f1e2da2eea5b9b90e3d6e7de11116d72ee28c826860",
+    "bytes": 40172472
+  },
+  "genesis": {
+    "sha256": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+    "bytes": 7155
+  },
+  "proved_checkpoint": {
+    "chain_id": "uain-shadow-20261008-1",
+    "height": "236747",
+    "event_count": "463",
+    "header_time": "2026-10-13T09:51:00.051793016Z",
+    "app_hash": "8c3f6da2ca526c62ce7041a31c1c9ee3abb4bd68eca3c04792b29c356847f610",
+    "record_keys": [
+      "guardians",
+      "legacy_import",
+      "event_count",
+      "legacy",
+      "credit_count",
+      "karma_count"
+    ]
+  },
+  "candidate_file_sha256": {
+    "ops/nginx/docker.conf": "10b1ea5571b03fab73694fe79421189ef47795521bf30c731f505ac34d84dbaa",
+    "services/pilot/src/api/native-rpc-public-routes.ts": "13f0bba5f08a4e56d38737a05b98c5755892ac902f3acd459fa82cc5d5a39cc2",
+    "services/pilot/src/api/native-bootstrap-public-routes.ts": "759731acb471a7909a42c609656b9f9b91df4bbc647c1988e1538ebbba4ac44e",
+    "services/pilot/dist/src/api/native-rpc-public-routes.js": "c7fd0b427995a6c27e32a449b91193b4f620e64fe60bfaef3304169ff507f474",
+    "services/pilot/dist/src/api/native-bootstrap-public-routes.js": "50fd98ff91ed6b0199b5c2390048b9fc8733b22c099c34884896a242158146bd",
+    "services/pilot/dist/src/api/native-routes.js": "1fc6da4cc0c81ac8cfb2226d49b8c281a6cf8a566e28b3b774a0e42efd291c14"
+  }
+}

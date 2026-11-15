@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "current": {
+    "baink": "20261115T011142Z-5e6de023fd",
+    "uain": "dd4fc4be",
+    "central-reviewer": "0c269869891edc4b906130e647cbcdd91561a587dc6fc19c72b6bfa166bdf48a",
+    "organizations": "473ba2fe45914fccc6b06a526e35b2fb7607c32c7dab73ecb74143096c506f96",
+    "house-solver": "cc454aabaa625287b6c82889dfca16a66926cc26ae8fa510fdf9729af9cb9289",
+    "project-planning": "26130bc7eaab33a375b180b8a1e44178a488ece3baa1a3536378bd805c4f97e5",
+    "organization-starter": "1d7064ac6c8dcfe0899dc6679a98bc6c8fa6e5df9ab70748bd806f2099221b46",
+    "private-review-broker": "21eaa9599401cb74f074c83a5f4e8582b677a34a68591fe448cbe286938c8f98",
+    "native-chain": "f408217d07db3c7129d03f439ae857bb1a86e9827ae5fc3ba73131d4bc83b11b",
+    "trade-steward": "6712893e14b6ccccb065a3b63eaa724b3537b4bf6b36ae6962f173abee66065a",
+    "private-payment-service": "1bf80a33b5e0652f2a33d390e4b22a44854d0616c2b0c1ddca07d2fb39620de4"
+  }
+}
