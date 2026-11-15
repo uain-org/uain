@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00010",
+  "native_project": "P-OPP-00010",
+  "source_digest": "cd13820b3ab1b52aaf6e358cb4600f3c174cdf575e1f4bd1b32500f0d7236070",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Make the human healthspan 150 years",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "25074dde1534788b09e20f840cca510bbb8eb8d3a635d6826b2391efb10ed447"
+  },
+  "drafted_at": "2026-11-06T00:07:49.346Z",
+  "queries": [
+    "human healthspan years",
+    "human healthspan years health longevity aging"
+  ],
+  "searches": [
+    {
+      "query": "human healthspan years",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:07:40.814Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=human%20healthspan%20years&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "human healthspan years",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:07:41.330Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Ahuman%20AND%20all%3Ahealthspan%20AND%20all%3Ayears&start=0&max_results=10; sha256=0ff9c8670fce4446a2d88510bc4e1f96f78e5f73b4de10ff47393d4dbe2610de; total=3; shown=3/3; top: arXiv:2510.12384v3 \"Phenome-Wide Multi-Omics Integration Uncovers Distinct Archetypes of Human Aging\" | arXiv:1901.04053v2 \"Moonshots for aging\" | arXiv:2512.05208v1 \"Peakspan: Defining, Quantifying and Extending the Boundaries of Peak Productive Lifespan\""
+    },
+    {
+      "query": "human healthspan years",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:07:42.173Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=human%20healthspan%20years&rows=10&select=DOI,title; sha256=0db5b5addcc19a3b5ec32b95271b906e10f9f28b5bff360c5f67de09df0c1713; total=3829104; shown=5/10; top: 10.1042/ebc20160091 \"Approaches for extending human healthspan: from antioxidants to healthspan pharmacology\" | 10.1186/2046-2395-3-7 \"The role of mitochondria in longevity and healthspan\" | 10.1186/2046-2395-1-1 \"Translating longevity research into healthspan\" | 10.1186/2046-2395-3-8 \"The secreted protein S100A7 (psoriasin) is induced by telomere dysfunction in human keratinocytes independently of a DNA damage response an…\" | 10.52044/hfsp.rgp00502019.pc.gr.167135 \"untitled\""
+    },
+    {
+      "query": "human healthspan years health longevity aging",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:07:47.317Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=human%20healthspan%20years%20health%20longevity%20aging&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "human healthspan years health longevity aging",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:07:48.231Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Ahuman%20AND%20all%3Ahealthspan%20AND%20all%3Ayears%20AND%20all%3Ahealth%20AND%20all%3Alongevity%20AND%20all%3Aaging&start=0&max_results=10; sha256=f6ebfc09a5538c1ffe3333ac884b8f10076aa08c4177ba6f037b706d344ee033; total=0; shown=0/0"
+    },
+    {
+      "query": "human healthspan years health longevity aging",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:07:49.345Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=human%20healthspan%20years%20health%20longevity%20aging&rows=10&select=DOI,title; sha256=18380e7760428ddb41adf135f1bf4edb73aaf5e187c8ed3ddc379daf9e81b573; total=8929022; shown=5/10; top: 10.1186/2046-2395-2-2 \"Systems integrity in health and aging - an animal model approach\" | 10.1186/2046-2395-3-2 \"Mitochondrial and sex steroid hormone crosstalk during aging\" | 10.1186/2046-2395-3-3 \"Making heads or tails of mitochondrial membranes in longevity and aging: a role for comparative studies\" | 10.1186/2046-2395-3-6 \"Mitochondrial oxidative stress in aging and healthspan\" | 10.1186/2046-2395-3-7 \"The role of mitochondria in longevity and healthspan\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "human healthspan years",
+      "url": "https://api.github.com/search/repositories?q=human%20healthspan%20years&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=human%20healthspan%20years&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:07:40.814Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "human healthspan years",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Ahuman%20AND%20all%3Ahealthspan%20AND%20all%3Ayears&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Ahuman%20AND%20all%3Ahealthspan%20AND%20all%3Ayears&start=0&max_results=10",
+      "sha256": "0ff9c8670fce4446a2d88510bc4e1f96f78e5f73b4de10ff47393d4dbe2610de",
+      "bytes": 7305,
+      "observedAt": "2026-11-06T00:07:41.330Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "human healthspan years",
+      "url": "https://api.crossref.org/works?query=human%20healthspan%20years&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=human%20healthspan%20years&rows=10&select=DOI,title",
+      "sha256": "0db5b5addcc19a3b5ec32b95271b906e10f9f28b5bff360c5f67de09df0c1713",
+      "bytes": 1347,
+      "observedAt": "2026-11-06T00:07:42.173Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "human healthspan years health longevity aging",
+      "url": "https://api.github.com/search/repositories?q=human%20healthspan%20years%20health%20longevity%20aging&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=human%20healthspan%20years%20health%20longevity%20aging&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:07:47.317Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "human healthspan years health longevity aging",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Ahuman%20AND%20all%3Ahealthspan%20AND%20all%3Ayears%20AND%20all%3Ahealth%20AND%20all%3Alongevity%20AND%20all%3Aaging&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Ahuman%20AND%20all%3Ahealthspan%20AND%20all%3Ayears%20AND%20all%3Ahealth%20AND%20all%3Alongevity%20AND%20all%3Aaging&start=0&max_results=10",
+      "sha256": "f6ebfc09a5538c1ffe3333ac884b8f10076aa08c4177ba6f037b706d344ee033",
+      "bytes": 860,
+      "observedAt": "2026-11-06T00:07:48.231Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "human healthspan years health longevity aging",
+      "url": "https://api.crossref.org/works?query=human%20healthspan%20years%20health%20longevity%20aging&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=human%20healthspan%20years%20health%20longevity%20aging&rows=10&select=DOI,title",
+      "sha256": "18380e7760428ddb41adf135f1bf4edb73aaf5e187c8ed3ddc379daf9e81b573",
+      "bytes": 1364,
+      "observedAt": "2026-11-06T00:07:49.345Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "314c8abbae5fd1775c10245150f062dc53f6febc55b0ad5b1aecd3e7aac5c564",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

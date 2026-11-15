@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-08881",
+  "native_project": "P-OPP-08881",
+  "source_digest": "22337ea6a5088ee2e6a0e19a84039267df94ae2eb2e175f696c4ee3ea0561f7d",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build bridges that last a thousand years without major repair",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "b0eb3be5e2c90f035838c0934d2116f36580d983ab0609b6aa65b4d9adc02011"
+  },
+  "drafted_at": "2026-11-06T00:29:57.114Z",
+  "queries": [
+    "bridges last thousand years major repair",
+    "bridges last thousand engineering sciences infrastructure"
+  ],
+  "searches": [
+    {
+      "query": "bridges last thousand years major repair",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:29:49.201Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=bridges%20last%20thousand%20years%20major%20repair&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "bridges last thousand years major repair",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:29:49.720Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Abridges%20AND%20all%3Alast%20AND%20all%3Athousand%20AND%20all%3Ayears%20AND%20all%3Amajor%20AND%20all%3Arepair&start=0&max_results=10; sha256=86b651e849e88b2dffec0d9e0d40e1164af461547adc92d7ee43953067661d9e; total=0; shown=0/0"
+    },
+    {
+      "query": "bridges last thousand years major repair",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:29:50.606Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=bridges%20last%20thousand%20years%20major%20repair&rows=10&select=DOI,title; sha256=7ef2d28876d99edfcf7bed94ab2bbb27edd82c710a83ba6683a09c6655f03b3b; total=1594593; shown=5/10; top: 10.2307/j.ctvw1d5c3.17 \"About Last Night\" | 10.2307/2603803 \"History of Palestine During the Last Two Thousand Years\" | 10.1093/acprof:oso/9780199603848.003.0016 \"Ovid’s Last Wor(l)d\" | 10.1017/9781576472682.012 \"Last Years in Texas\" | 10.2307/25587858 \"Art That Will Last a Thousand Years\""
+    },
+    {
+      "query": "bridges last thousand engineering sciences infrastructure",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:29:55.651Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=bridges%20last%20thousand%20engineering%20sciences%20infrastructure&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "bridges last thousand engineering sciences infrastructure",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:29:56.252Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Abridges%20AND%20all%3Alast%20AND%20all%3Athousand%20AND%20all%3Aengineering%20AND%20all%3Asciences%20AND%20all%3Ainfrastructure&start=0&max_results=10; sha256=96e2a9d4bc11789dc05fa30ba6c2498e728436bcd46dc727083f67c8e4805a8e; total=0; shown=0/0"
+    },
+    {
+      "query": "bridges last thousand engineering sciences infrastructure",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:29:57.113Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=bridges%20last%20thousand%20engineering%20sciences%20infrastructure&rows=10&select=DOI,title; sha256=94bd32e9f43cd181750e7cf6e56938dc06edea909a4a40f5403c7ce27628826c; total=11448806; shown=5/10; top: 10.1080/15732479.2023.2202645 \"Shear lag effect of composite cable-stayed bridges under dead and live loads\" | 10.1080/15732479.2017.1373132 \"Selection of spectrum-compatible accelerograms for seismic analysis of bridges\" | 10.1080/15732479.2026.2629583 \"Performance-based framework for rating bridges using visual inspection and fuzzy logic: application to AASHTO girder bridges under corrosio…\" | 10.1111/mice.12407 \"Detection of Structural Components in Point Clouds of Existing RC Bridges\" | 10.1080/15732479.2021.1899249 \"Risk-informed asset management to tackle scouring on bridges across transport networks\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "bridges last thousand years major repair",
+      "url": "https://api.github.com/search/repositories?q=bridges%20last%20thousand%20years%20major%20repair&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=bridges%20last%20thousand%20years%20major%20repair&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:29:49.201Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "bridges last thousand years major repair",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Abridges%20AND%20all%3Alast%20AND%20all%3Athousand%20AND%20all%3Ayears%20AND%20all%3Amajor%20AND%20all%3Arepair&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Abridges%20AND%20all%3Alast%20AND%20all%3Athousand%20AND%20all%3Ayears%20AND%20all%3Amajor%20AND%20all%3Arepair&start=0&max_results=10",
+      "sha256": "86b651e849e88b2dffec0d9e0d40e1164af461547adc92d7ee43953067661d9e",
+      "bytes": 850,
+      "observedAt": "2026-11-06T00:29:49.720Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "bridges last thousand years major repair",
+      "url": "https://api.crossref.org/works?query=bridges%20last%20thousand%20years%20major%20repair&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=bridges%20last%20thousand%20years%20major%20repair&rows=10&select=DOI,title",
+      "sha256": "7ef2d28876d99edfcf7bed94ab2bbb27edd82c710a83ba6683a09c6655f03b3b",
+      "bytes": 1184,
+      "observedAt": "2026-11-06T00:29:50.606Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "bridges last thousand engineering sciences infrastructure",
+      "url": "https://api.github.com/search/repositories?q=bridges%20last%20thousand%20engineering%20sciences%20infrastructure&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=bridges%20last%20thousand%20engineering%20sciences%20infrastructure&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:29:55.651Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "bridges last thousand engineering sciences infrastructure",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Abridges%20AND%20all%3Alast%20AND%20all%3Athousand%20AND%20all%3Aengineering%20AND%20all%3Asciences%20AND%20all%3Ainfrastructure&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Abridges%20AND%20all%3Alast%20AND%20all%3Athousand%20AND%20all%3Aengineering%20AND%20all%3Asciences%20AND%20all%3Ainfrastructure&start=0&max_results=10",
+      "sha256": "96e2a9d4bc11789dc05fa30ba6c2498e728436bcd46dc727083f67c8e4805a8e",
+      "bytes": 884,
+      "observedAt": "2026-11-06T00:29:56.252Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "bridges last thousand engineering sciences infrastructure",
+      "url": "https://api.crossref.org/works?query=bridges%20last%20thousand%20engineering%20sciences%20infrastructure&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=bridges%20last%20thousand%20engineering%20sciences%20infrastructure&rows=10&select=DOI,title",
+      "sha256": "94bd32e9f43cd181750e7cf6e56938dc06edea909a4a40f5403c7ce27628826c",
+      "bytes": 1548,
+      "observedAt": "2026-11-06T00:29:57.113Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "88949ce6631818de0dac302b8574189b294426c4357c8267daf1e099646929a7",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

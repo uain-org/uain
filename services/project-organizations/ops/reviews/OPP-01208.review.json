@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01208",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": true,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held: an open solution already covers this project's deliverable. Apps that match surplus food to people who need it in real time are built, deployed and, in at least one case, open source. Feeding America's MealConnect lets businesses post surplus and an algorithm connects it in real time to local pantries, coordinating more than 5 billion pounds of rescued food by 2023 and reportedly 7 billion since 2014 (https://feedingamerica.org/about-us/press-room/mealconnect-5-billion-pounds-rescued); 412 Food Rescue's Food Rescue Hero matches donations to a nonprofit and a volunteer driver and passed one million rescues in 2026; Sharing Excess publishes its rescue-logistics software as an entirely open-source project (https://dev.to/github/sharing-excess-food-with-oss-and-react-98n); OLIO has over 8.5 million users in 60-plus countries and Too Good To Go tens of millions (https://olioapp.com/business/2025/07/16/looking-back-at-10-years-of-olio-and-120-million-meals-rescued/), and GitHub lists 189 further food-donation app repositories. Honest limit: the 500,000,000-people KPI is unmet, and evidence that rescue apps reduce food insecurity is thin (one difference-in-differences working paper on Flashfood, otherwise self-reported volumes), so measuring and extending real hunger impact is open work; but building the matching app itself is a known, openly available answer and under the 29 September 2026 rule the project is not opened as new work. A reframed project on verified hunger outcomes would need its own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "OLIO Too Good To Go users 2026 surplus food redistribution scale",
+      "source": "https://olioapp.com/business/2025/07/16/looking-back-at-10-years-of-olio-and-120-million-meals-rescued/",
+      "observedAt": "2026-11-06T01:09:00Z",
+      "finding": "OLIO reports over 8.5 million users in 60-plus countries and 120 million meals rescued by July 2025, with 2026 retail partnerships (Lidl GB, OurCoop). Too Good To Go user figures range from about 62 million to over 100 million registered. No official 2026 totals found."
+    },
+    {
+      "query": "Feeding America MealConnect food rescue platform pounds matched open source Food Rescue Hero",
+      "source": "https://feedingamerica.org/about-us/press-room/mealconnect-5-billion-pounds-rescued",
+      "observedAt": "2026-11-06T01:09:00Z",
+      "finding": "MealConnect lets businesses post surplus with an algorithm making real-time connections to local pantries: 3 billion pounds by 2021, more than 5 billion by 2023, reportedly 7 billion since 2014. Food Rescue Hero (412 Food Rescue, proprietary) matches donations to nonprofits and drivers and reached one million rescues in 2026. Sharing Excess publishes its rescue software as open source."
+    },
+    {
+      "query": "food rescue app evidence food insecurity impact study redistribution reaches hungry",
+      "source": "https://giesbusiness.illinois.edu/news/2026/02/11/can-discount-grocery-apps-help-fight-hunger--new-research-shows-promise",
+      "observedAt": "2026-11-06T01:09:00Z",
+      "finding": "No peer-reviewed outcome evaluation of a food rescue app was found. The most rigorous design is a 2026 difference-in-differences working paper on Flashfood (each store cuts county food insecurity by about 0.09 percentage points); other impact claims are self-reported volumes or participant surveys without comparison groups."
+    },
+    {
+      "query": "food waste donation app (GitHub repository search)",
+      "source": "https://api.github.com/search/repositories?q=food%20waste%20donation%20app&sort=stars&per_page=5",
+      "observedAt": "2026-11-06T01:16:27Z",
+      "finding": "GitHub returns 189 repositories for food-waste donation apps (for example FeediFy, Donation Stations) and 58 for food rescue surplus apps, mostly small projects connecting donors, NGOs and volunteers. Matching surplus to recipients is a widely reproduced open pattern."
+    }
+  ]
+}

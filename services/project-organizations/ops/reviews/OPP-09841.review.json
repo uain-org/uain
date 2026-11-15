@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-09841",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Smart collars measuring heart rate exist, but none validly tracks pain and mood, and connected-device penetration is about 3 percent, so the Main KPI of 300,000,000 pets monitored is unmet. Invoxia's Minitailz collar reports heartbeat detection F1 of about 98 percent on 40 dogs in a vendor-linked preprint (https://www.biorxiv.org/content/10.1101/2023.06.09.544347.full.pdf), and PetPace heart rate matched Holter ECG in ten dogs, but its pain score has no published validation (https://phaidra.vetmeduni.ac.at/api/object/o:744/download). Accelerometer work tracks activity in osteoarthritic dogs and cats, while no fully validated system for chronic pain in cats exists and no validated wearable mood detection was found (https://www.lido-dtp.ac.uk/news/evelyn-maniaki-accelerometer-derived-classifiers-early-detection-degenerative-joint-disease). The largest tracker, Tractive with Whistle, had about 1.4 million users in 2025, against about 843 million owned dogs and cats (https://www.kenresearch.com/industry-reports/global-pet-wearables-market). Honest limit: GPS, activity and heart-rate collars are known answers; validated pain and affect measurement and low-cost reach are open."
+  },
+  "additionalSearches": [
+    {
+      "query": "Invoxia Minitailz heart rate collar validation study; PetPace collar vital signs pain score validation",
+      "source": "https://phaidra.vetmeduni.ac.at/api/object/o:744/download",
+      "observedAt": "2026-11-06T00:47:12Z",
+      "finding": "PetPace heart rate matched Holter ECG in 10 dogs (61 vs 62 bpm); no published validation of its pain score; Invoxia preprint F1 98 percent on 40 dogs."
+    },
+    {
+      "query": "pet wearable market number of devices dogs cats tracked 2025 Whistle Fi Tractive subscribers",
+      "source": "https://www.kenresearch.com/industry-reports/global-pet-wearables-market",
+      "observedAt": "2026-11-06T00:47:18Z",
+      "finding": "About 843 million owned dogs and cats in 2025 with about 2.9 percent connected-device penetration; Tractive over 1.4 million users after acquiring Whistle."
+    },
+    {
+      "query": "automated pain assessment dogs cats sensor accelerometer validated veterinary study wearable mood emotion detection",
+      "source": "https://www.lido-dtp.ac.uk/news/evelyn-maniaki-accelerometer-derived-classifiers-early-detection-degenerative-joint-disease",
+      "observedAt": "2026-11-06T00:47:24Z",
+      "finding": "No fully validated system for chronic DJD pain in cats; accelerometers track activity; no validated wearable emotion detection found."
+    },
+    {
+      "query": "number of pet dogs and cats worldwide estimate 2025 million",
+      "source": "https://www.petscare.com/news/post/global-cat-population-2025",
+      "observedAt": "2026-11-06T00:47:30Z",
+      "finding": "Pet cats about 350 to 373 million; pet dogs estimated 500 million to 1 billion depending on source."
+    }
+  ]
+}

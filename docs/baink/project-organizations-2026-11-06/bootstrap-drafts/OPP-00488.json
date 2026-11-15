@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00488",
+  "native_project": "P-OPP-00488",
+  "source_digest": "0000f7f707b49475d3eb6968c962ccccf2152c67fc6ce04f21dcdc2d7aea2025",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Image the living brain in real time with ultra-fine detail",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "71b7c4cd54d18f74bfec2fa9cc0a469eecfbd00811747e553d948d7f9371cac8"
+  },
+  "drafted_at": "2026-11-06T00:11:19.270Z",
+  "queries": [
+    "image living brain real time ultra-fine",
+    "image living brain neuroscience mental health"
+  ],
+  "searches": [
+    {
+      "query": "image living brain real time ultra-fine",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:11:10.817Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=image%20living%20brain%20real%20time%20ultra-fine&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "image living brain real time ultra-fine",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:11:11.297Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aimage%20AND%20all%3Aliving%20AND%20all%3Abrain%20AND%20all%3Areal%20AND%20all%3Atime%20AND%20all%3Aultra-fine&start=0&max_results=10; sha256=df298f86c4542ab205ff78340d66ec6b7b94151939f15960e966291de260d928; total=0; shown=0/0"
+    },
+    {
+      "query": "image living brain real time ultra-fine",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:11:13.297Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=image%20living%20brain%20real%20time%20ultra-fine&rows=10&select=DOI,title; sha256=a081cea143e520a35507fabe4ae48f563fe2403bf7ddf4c72b62d6cb1eb8b2f7; total=5071323; shown=5/10; top: 10.1016/j.procs.2025.04.236 \"Real-Time Ultra-Fine-Grained Image Recognition Using YOLOv5\" | 10.1007/s11554-026-02003-x \"YOLO11n-TOD: a real-time tiny-object detection algorithm with fine-grained information preservation\" | 10.1007/s11554-023-01384-7 \"A GPU optimization workflow for real-time execution of ultra-high frame rate computer vision applications\" | 10.1117/12.2255417.5361903560001 \"untitled\" | 10.1007/s11554-026-01971-4 \"DFG-DETR: a real-time directional-aware and fine-grained detector for industrial defect detection\""
+    },
+    {
+      "query": "image living brain neuroscience mental health",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:11:17.303Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=image%20living%20brain%20neuroscience%20mental%20health&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "image living brain neuroscience mental health",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:11:17.817Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aimage%20AND%20all%3Aliving%20AND%20all%3Abrain%20AND%20all%3Aneuroscience%20AND%20all%3Amental%20AND%20all%3Ahealth&start=0&max_results=10; sha256=bef8fb88a3e55398336243f5e5044a5172d3fefd89ca45ced3859c934f49b52a; total=0; shown=0/0"
+    },
+    {
+      "query": "image living brain neuroscience mental health",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:11:19.269Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=image%20living%20brain%20neuroscience%20mental%20health&rows=10&select=DOI,title; sha256=07f6890df45174792045f3000bc986a9956f426dbdb2d1f399739765b0d46ce7; total=8066830; shown=5/10; top: 10.26419/pia.00037.006 \"Better Mental Well-Being: Practical Tips to Boost Brain Health for Healthier Living: Infographic [Arabic]\" | 10.26419/pia.00037.005 \"Better Mental Well-Being: Practical Tips to Boost Brain Health for Healthier Living: Infographic [Chinese]\" | 10.26419/pia.00037.002 \"Better Mental Well-Being: Practical Tips to Boost Brain Health for Healthier Living: Infographic\" | 10.1101/2023.01.22.525062 \"Mental image reconstruction from human brain activity\" | 10.1016/j.neubiorev.2026.106721 \"The applications of single-cell and spatial transcriptomics in neuroscience and brain disorders\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "image living brain real time ultra-fine",
+      "url": "https://api.github.com/search/repositories?q=image%20living%20brain%20real%20time%20ultra-fine&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=image%20living%20brain%20real%20time%20ultra-fine&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:11:10.817Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "image living brain real time ultra-fine",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aimage%20AND%20all%3Aliving%20AND%20all%3Abrain%20AND%20all%3Areal%20AND%20all%3Atime%20AND%20all%3Aultra-fine&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aimage%20AND%20all%3Aliving%20AND%20all%3Abrain%20AND%20all%3Areal%20AND%20all%3Atime%20AND%20all%3Aultra-fine&start=0&max_results=10",
+      "sha256": "df298f86c4542ab205ff78340d66ec6b7b94151939f15960e966291de260d928",
+      "bytes": 848,
+      "observedAt": "2026-11-06T00:11:11.297Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "image living brain real time ultra-fine",
+      "url": "https://api.crossref.org/works?query=image%20living%20brain%20real%20time%20ultra-fine&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=image%20living%20brain%20real%20time%20ultra-fine&rows=10&select=DOI,title",
+      "sha256": "a081cea143e520a35507fabe4ae48f563fe2403bf7ddf4c72b62d6cb1eb8b2f7",
+      "bytes": 1516,
+      "observedAt": "2026-11-06T00:11:13.297Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "image living brain neuroscience mental health",
+      "url": "https://api.github.com/search/repositories?q=image%20living%20brain%20neuroscience%20mental%20health&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=image%20living%20brain%20neuroscience%20mental%20health&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:11:17.303Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "image living brain neuroscience mental health",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aimage%20AND%20all%3Aliving%20AND%20all%3Abrain%20AND%20all%3Aneuroscience%20AND%20all%3Amental%20AND%20all%3Ahealth&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aimage%20AND%20all%3Aliving%20AND%20all%3Abrain%20AND%20all%3Aneuroscience%20AND%20all%3Amental%20AND%20all%3Ahealth&start=0&max_results=10",
+      "sha256": "bef8fb88a3e55398336243f5e5044a5172d3fefd89ca45ced3859c934f49b52a",
+      "bytes": 860,
+      "observedAt": "2026-11-06T00:11:17.817Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "image living brain neuroscience mental health",
+      "url": "https://api.crossref.org/works?query=image%20living%20brain%20neuroscience%20mental%20health&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=image%20living%20brain%20neuroscience%20mental%20health&rows=10&select=DOI,title",
+      "sha256": "07f6890df45174792045f3000bc986a9956f426dbdb2d1f399739765b0d46ce7",
+      "bytes": 1708,
+      "observedAt": "2026-11-06T00:11:19.269Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "de5f95539c018c9e4bb7eaa9c1ab9ea8db3e754ca6671a3ef7f85179306be0a4",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

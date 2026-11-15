@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-09361",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No trip planner spreads visitors across seasons and places at scale, so the Main KPI of 1,000,000,000 trips planned with crowd-spreading is unmet. Destination measures are fees and booking systems, not planners: Venice charged a EUR 5 to 10 access fee on 54 days in 2025 and still saw about 25,000 paying visitors on peak days (https://www.lonelyplanet.com/news/venice-introduces-new-booking-system-and-entry-fee-for-visitors). Google Maps shows popular times and area busyness but does not recommend alternative destinations to relieve hotspots (https://www.entrepreneur.com/business-news/google-will-tell-you-how-crowded-places-are-in-real-time/285582). Booking.com's AI Trip Planner builds itineraries without documented seasonality steering, though 42 percent of its surveyed travellers plan off-peak (https://www.hospitalitynet.org/news/4117122.html). Research on congestion-aware tourism recommenders relies on simulations, surveys and focus groups, with few field measurements of crowd reduction (https://link.springer.com/chapter/10.1007/978-3-031-58839-6_35). Honest limit: general AI trip planners and crowd displays are known answers; measured redistribution of real visitor flows is open, and it depends on platforms UAIN does not control."
+  },
+  "additionalSearches": [
+    {
+      "query": "overtourism dispersal app recommend less crowded destinations crowd prediction tourism Amsterdam Venice access fee 2025",
+      "source": "https://www.lonelyplanet.com/news/venice-introduces-new-booking-system-and-entry-fee-for-visitors",
+      "observedAt": "2026-11-06T00:46:24Z",
+      "finding": "Venice access fee on 54 peak days in 2025; critics say crowds persisted (about 25,000 payers on busy days)."
+    },
+    {
+      "query": "Google Maps crowdedness popular times tourism alternative destinations recommendation sustainable travel feature",
+      "source": "https://www.entrepreneur.com/business-news/google-will-tell-you-how-crowded-places-are-in-real-time/285582",
+      "observedAt": "2026-11-06T00:46:30Z",
+      "finding": "Google Maps shows live popular times and area busyness; no feature recommending alternative destinations to reduce overtourism found."
+    },
+    {
+      "query": "recommender system tourist flow redistribution evaluation field study reduce congestion hotspots research",
+      "source": "https://link.springer.com/chapter/10.1007/978-3-031-58839-6_35",
+      "observedAt": "2026-11-06T00:46:36Z",
+      "finding": "Congestion-aware tourism recommenders are evaluated mainly by simulation and user surveys (Kyoto 2024); rigorous field evidence of crowd reduction is rare."
+    },
+    {
+      "query": "Booking.com Travel Sustainable off-season destination nudges AI trip planner seasonality spreading visitors",
+      "source": "https://www.hospitalitynet.org/news/4117122.html",
+      "observedAt": "2026-11-06T00:46:42Z",
+      "finding": "Booking.com AI Trip Planner (2023 beta) builds itineraries; no documented off-season steering; 42 percent of travellers plan off-peak."
+    }
+  ]
+}

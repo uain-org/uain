@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261112T100112Z-6558e0ecf6",
+  "version": "0.3.95",
+  "source_commit": "ac107cd1e1341d35f5b7183d5301bc7797126f63",
+  "deployed_at": "2026-11-12T10:03:00Z",
+  "prior": "20261112T063101Z-3c4798b782",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#admin-opened-without-bots-release-20261112"
+  ],
+  "note": "PR #538: /go/ views split into reads (people, agents) and bots (link previews, crawlers, HEAD). verify and promote --expected-prior passed from the merge commit (archive 521e62d4...facfb). Stored counts corrected once from the access log (ops/campaign-reads-correct.mjs). At 10:04 UTC public routes 200; 3 bot and 4 reader test views counted apart."
+}

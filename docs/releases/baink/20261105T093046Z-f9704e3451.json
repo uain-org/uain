@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261105T093046Z-f9704e3451",
+  "version": "0.3.28",
+  "source_commit": null,
+  "deployed_at": "2026-11-05T10:14:00Z",
+  "prior": null,
+  "status": "publicly-verified",
+  "evidence": ["apps/baink/CHANGELOG.md", "CHANGELOG.md"],
+  "note": "Setup copy and version differ from 0.3.27, whose release id is not recorded."
+}

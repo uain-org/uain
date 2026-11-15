@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-06722",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No building has been grown and self-assembled from living materials, so the Main KPI of 1,000,000 such buildings is unmet. The largest mycelium structure found is the temporary 2014 Hy-Fi tower of 10,000 grown bricks, assembled by hand and composted after one summer (https://www.dezeen.com/2014/02/06/hy-fi-by-the-living-at-moma-ps1/). Self-growing fungal-bacterial bricks remain at lab scale (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9845837/); the EU Fungateria project aims next to grow buildings in a controlled way (https://projects.research-and-innovation.ec.europa.eu/en/print/pdf/node/13832); DARPA's Engineered Living Materials programme closed after laboratory research only (https://www.darpa.mil/research/programs/engineered-living-materials). The nearest commercial product, bacterial self-healing concrete from Basilisk, repairs cracks but does not grow structure (https://rics.org/news-insights/building-a-sustainable-future-the-incredible-potential-of-self-healing-concrete). Honest limit: biosafety of engineered strains is unresolved, and tasks reproducing mycelium bricks or self-healing concrete are known work needing their own basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "engineered living materials building mycelium self-growing structure largest built 2025",
+      "source": "https://projects.research-and-innovation.ec.europa.eu/en/print/pdf/node/13832",
+      "observedAt": "2026-11-06T00:40:48Z",
+      "finding": "EU Fungateria (2025) makes panels and leather-like materials and now aims to grow buildings in a controlled way; no grown building yet."
+    },
+    {
+      "query": "self-healing bacterial concrete Basilisk commercial deployment buildings",
+      "source": "https://rics.org/news-insights/building-a-sustainable-future-the-incredible-potential-of-self-healing-concrete",
+      "observedAt": "2026-11-06T00:40:54Z",
+      "finding": "Basilisk bacterial concrete is used in some commercial projects at about twice normal cost; it heals cracks, it does not grow structure."
+    },
+    {
+      "query": "Hy-Fi mycelium tower Ecovative biofabricated building first habitable living building",
+      "source": "https://www.dezeen.com/2014/02/06/hy-fi-by-the-living-at-moma-ps1/",
+      "observedAt": "2026-11-06T00:41:00Z",
+      "finding": "Hy-Fi (2014) was a temporary 10,000-brick mycelium tower at MoMA PS1, hand-assembled, not habitable, composted afterwards."
+    },
+    {
+      "query": "DARPA ELM engineered living materials program grow structures in place results",
+      "source": "https://www.darpa.mil/research/programs/engineered-living-materials",
+      "observedAt": "2026-11-06T00:41:06Z",
+      "finding": "DARPA ELM (2016) aimed to grow materials on site; the programme is complete with laboratory research only and no field structures."
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+/*
+ * The pages the connection server renders inside the site's frame
+ * (10 November 2026): the task list, each task, and the member and project
+ * records. Loaded only by app/network/record-frame, whose style links the
+ * server's pages take (scripts/record-frame.mjs). Nothing new is designed
+ * here: the band, the page head, the cards, chips, labels, inputs and links
+ * are the network portal's (network-portal.css, network.css), and this file
+ * only lays them out for server-rendered markup that has no React components.
+ */
+
+.record-page {
+  min-height: 50vh;
+  background: var(--np-band);
+  padding: clamp(1.5rem, 3vw, 2.5rem) 0 clamp(3rem, 6vw, 4.5rem);
+  color: var(--ink);
+}
+
+.record-page p,
+.record-page li,
+.record-page dd {
+  overflow-wrap: anywhere;
+}
+
+.record-page a:not(.np-chip):not(.net-page-button):not(.button) {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 114, 188, 0.35);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.record-page a:not(.np-chip):not(.net-page-button):not(.button):hover {
+  text-decoration-color: var(--blue);
+}
+
+.record-page .np-pagehead {
+  align-items: flex-start;
+}
+
+.record-page .np-pagehead > div {
+  min-width: 0;
+  max-width: 78ch;
+}
+
+.record-page .np-pagehead h1 {
+  overflow-wrap: anywhere;
+}
+
+.record-lead {
+  max-width: 70ch;
+  margin: 0.35rem 0 0;
+  color: var(--np-muted);
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+.record-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.record-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.7rem;
+  border: 1px solid var(--np-line);
+  border-radius: var(--np-radius);
+  background: var(--np-surface);
+  box-shadow: var(--np-shadow);
+  padding: 1.35rem 1.5rem 1.45rem;
+  color: var(--ink);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.record-card > * {
+  margin: 0;
+}
+
+.record-card h2 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 1.22rem;
+  font-weight: 720;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.record-card h2 a:not(.np-chip) {
+  color: var(--navy);
+  text-decoration-color: rgba(0, 59, 92, 0.25);
+}
+
+.record-card h3 {
+  margin: 0.4rem 0 0;
+  color: var(--navy);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.record-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.record-meta {
+  margin: 0;
+  color: var(--np-faint);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.record-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.record-chips .np-chip {
+  display: inline-flex;
+  align-items: center;
+}
+
+.record-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 0.9rem 1.5rem;
+  margin: 0;
+}
+
+.record-facts div {
+  min-width: 0;
+}
+
+.record-facts dt {
+  color: var(--np-muted);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.record-facts dd {
+  margin: 0.15rem 0 0;
+  color: var(--ink);
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+
+.record-list,
+.record-card ul.record-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.record-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.2rem 1rem;
+  border-top: 1px solid var(--np-line-soft);
+  padding: 0.65rem 0;
+}
+
+.record-list li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.record-search {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.6rem;
+  margin: 0 0 1rem;
+}
+
+.record-search .net-field {
+  display: flex;
+  min-width: min(100%, 18rem);
+  flex: 1;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.record-search button,
+.record-check {
+  min-height: 42px;
+  border: 0;
+  border-radius: var(--np-radius-sm);
+  background: var(--blue);
+  color: white;
+  padding: 0 1.2rem;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.record-check:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.record-search button:hover,
+.record-check:hover:not(:disabled) {
+  background: var(--blue-deep);
+}
+
+.record-count {
+  margin: 0 0 0.75rem;
+  color: var(--np-muted);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.record-pager {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.25rem 0 0;
+}
+
+.record-pager .net-page-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 1rem;
+  color: var(--navy);
+  font-size: 0.84rem;
+  font-weight: 650;
+}
+
+.record-notice {
+  max-width: 44rem;
+}
+
+@media (max-width: 640px) {
+  .record-card {
+    padding: 1.1rem 1.05rem 1.2rem;
+  }
+
+  .record-facts {
+    grid-template-columns: 1fr 1fr;
+  }
+}

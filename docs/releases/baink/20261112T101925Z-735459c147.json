@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261112T101925Z-735459c147",
+  "version": "0.3.96",
+  "source_commit": "3beb7af62ccffd24394e77c6ee008b436f94ed62",
+  "deployed_at": "2026-11-12T10:20:01Z",
+  "prior": "20261112T100112Z-6558e0ecf6",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#admin-opened-google-fetchers-release-20261112"
+  ],
+  "note": "PR #540: GoogleOther, Google-Extended, FeedFetcher-Google and Google-Read-Aloud count as bot views. verify and promote --expected-prior passed from the merge commit (archive 238de9c9...24f7); live 0.3.95 matched its build before. At 10:20 UTC public routes 200; GoogleOther and Google-Extended added 2 bot views, Firefox and ChatGPT-User 2 opens."
+}

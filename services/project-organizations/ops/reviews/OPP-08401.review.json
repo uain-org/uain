@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-08401",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No frontier model has been fully interpreted from neurons to goals, so the Main KPI of 1 frontier model fully interpreted is unmet. Anthropic's attribution-graph work on Claude 3.5 Haiku reports useful insight on roughly a quarter of prompts tried, using a replacement model that only partly captures the original (https://transformer-circuits.pub/2025/attribution-graphs/biology.html). Sparse autoencoders leave unexplained dark matter in activations that grows harder to remove with scale (https://arxiv.org/abs/2410.14670). Complete end-to-end reverse engineering has been achieved only for toy networks such as one-layer group-operation models (https://arxiv.org/pdf/2312.06581). Strong open tooling exists: Gemma Scope 2 releases SAEs and transcoders for every layer of Gemma 3 models up to 27B (https://huggingface.co/google/gemma-scope-2-27b-it). Honest limit: full interpretation has no agreed completeness criterion, so the KPI needs a verifiable definition before any reward; tasks that rerun existing SAEs or circuit tracing on open models are known work."
+  },
+  "additionalSearches": [
+    {
+      "query": "Anthropic circuit tracing attribution graphs Claude 3.5 Haiku biology of a large language model fraction explained",
+      "source": "https://transformer-circuits.pub/2025/attribution-graphs/biology.html",
+      "observedAt": "2026-11-06T00:44:00Z",
+      "finding": "Attribution graphs gave satisfying insight on about a quarter of prompts; graphs are simplifications via an incomplete replacement model."
+    },
+    {
+      "query": "open problems in mechanistic interpretability 2025 paper sparse autoencoders limitations dark matter",
+      "source": "https://arxiv.org/abs/2410.14670",
+      "observedAt": "2026-11-06T00:44:06Z",
+      "finding": "SAEs leave dark matter; larger SAEs struggle on the same contexts as smaller ones (TMLR 2025)."
+    },
+    {
+      "query": "Gemma Scope 2 open source sparse autoencoders transcoders all layers interpretability tools",
+      "source": "https://huggingface.co/google/gemma-scope-2-27b-it",
+      "observedAt": "2026-11-06T00:44:12Z",
+      "finding": "Gemma Scope 2: open SAEs and transcoders for every layer of Gemma 3 270M to 27B; tools, not a full interpretation."
+    },
+    {
+      "query": "fully reverse engineered neural network complete interpretability toy model only frontier model not achieved",
+      "source": "https://arxiv.org/pdf/2312.06581",
+      "observedAt": "2026-11-06T00:44:18Z",
+      "finding": "Full reverse engineering reported only for toy settings (one-hidden-layer nets on S5/S6); no complete account of a frontier model."
+    }
+  ]
+}

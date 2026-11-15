@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "organizations",
+  "release_id": "8794a8eebc730244025b37e80e96cd8ebc119f6374d7c9028edcfbca3b3118c2",
+  "version": null,
+  "source_commit": "dd5f165a",
+  "deployed_at": "2026-11-10T10:46:52Z",
+  "prior": "f361f7469b65c2117e2c2079990b1d16b8bd8756870a7b175f1392cc529f1687",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#fund-rounds-install-20261110"
+  ],
+  "note": "Fund rounds under the single guardian (K-49). Overlay of f361f746 with main dd5f165a's manager-stage and Fund Manager decider closure (9 files: manager-stage, native, fund-rounds, fund-snapshot, fund-decision-runtime, 4 house-agent modules); custody manager_stage.py c5fdcd2b and its pin installed; uain-manager-stage.timer resumed. First runs: nothing fell due."
+}

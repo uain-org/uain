@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "central-reviewer",
+  "release_id": "aa68793b3975bdb99fb89048ec4d0253791b133b00ee49a1cfa927d86c1c68bf",
+  "version": null,
+  "source_commit": "53ace6ec52151c65612b459ba34d959cd7b03499",
+  "deployed_at": "2026-11-09T00:01:07Z",
+  "prior": "c4a972a0439748b543ae06b0b885d7669e869e541128de5a6716f798f4a63db5",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#feedback-protected-runtime-activation-20261109",
+    "docs/verification/baink-feedback-cli-qualification-2026-11-09.md"
+  ],
+  "note": "Mixed c4 plus exact Root feedback and worker overlays. Verified loaded PIDs, profile and full source closures; initial post-start hold retained, separate timer-only reconciliation completed. P14 remains needs_evidence without a new basis or award; manager remains held. Actual protected feedback read verified; app acceptance separate."
+}

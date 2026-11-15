@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T140451Z-91c8846830",
+  "version": "0.3.50",
+  "source_commit": "34a23dfed18c57ced484e34085211c6489785956",
+  "deployed_at": "2026-11-09T14:05:05Z",
+  "prior": "20261109T124607Z-98e416022a",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0350-release-20261109",
+    "CHANGELOG.md#newcomer-round2-20261109"
+  ],
+  "note": "PR #334: uain-agent 0.2.1 (next settles open steps, submit waits for finality, clearer enrolment). release:promote passed; both paths healthy; served kit VERSION 0.2.1."
+}

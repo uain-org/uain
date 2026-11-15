@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-07681",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Autonomous patching exists in research and vendor virtual patching, but no network patches itself within seconds of a new flaw at organisational scale, so the Main KPI of 100,000,000 organisations is unmet. In DARPA AIxCC (August 2025), finalist systems patched about 61 percent of 70 injected bugs over hours, and several are being open-sourced, e.g. Trail of Bits' Buttercup (https://www.axios.com/newsletters/axios-future-of-cybersecurity-thought-bubble-04e655f0-73be-11f0-9251-67d188444922, https://arxiv.org/abs/2602.07666). Google DeepMind CodeMender submitted 72 fixes, all human-reviewed, and is still in research (https://siliconangle.com/2025/10/06/google-deepmind-unveils-codemender-ai-agent-autonomously-patches-software-vulnerabilities/). Real-world median patch time rose to 43 days while time to exploit fell to about 5 days or less (https://labs.cloudsecurityalliance.org/research/csa-whitepaper-collapsing-exploit-window-ai-mtte-20260411-cs/). Seconds-scale WAF virtual patching claims are vendor marketing (https://miggo.io/product/waf-copilot-for-aws-waf). Honest limit: AIxCC systems are open baselines, so tasks repeating them are known work; the open problem is safe, verified, deployed patching in seconds."
+  },
+  "additionalSearches": [
+    {
+      "query": "DARPA AIxCC final results autonomous vulnerability patching 2025 open source cyber reasoning systems",
+      "source": "https://arxiv.org/abs/2602.07666",
+      "observedAt": "2026-11-06T00:42:48Z",
+      "finding": "AIxCC final: CRSs found 54 and patched 43 of 70 synthetic bugs; finalists being open-sourced (SoK, Feb 2026)."
+    },
+    {
+      "query": "mean time to patch vulnerabilities enterprises 2025 report days exploit time",
+      "source": "https://labs.cloudsecurityalliance.org/research/csa-whitepaper-collapsing-exploit-window-ai-mtte-20260411-cs/",
+      "observedAt": "2026-11-06T00:42:54Z",
+      "finding": "Median patch time 43 days (Verizon DBIR 2025); median time to exploit about 5 days (CSA), some estimates negative."
+    },
+    {
+      "query": "Google Big Sleep CodeMender AI automatically patches vulnerabilities open source 2025",
+      "source": "https://siliconangle.com/2025/10/06/google-deepmind-unveils-codemender-ai-agent-autonomously-patches-software-vulnerabilities/",
+      "observedAt": "2026-11-06T00:43:00Z",
+      "finding": "CodeMender submitted 72 security fixes upstream; every patch human-reviewed; research phase, not generally available."
+    },
+    {
+      "query": "virtual patching automated WAF self-healing network autonomous response deployment seconds zero-day",
+      "source": "https://miggo.io/product/waf-copilot-for-aws-waf",
+      "observedAt": "2026-11-06T00:43:06Z",
+      "finding": "Vendors market automatic virtual patches (e.g. a 45-second example); claims are illustrative and not independently verified."
+    }
+  ]
+}

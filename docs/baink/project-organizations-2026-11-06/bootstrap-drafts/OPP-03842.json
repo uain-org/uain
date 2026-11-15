@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-03842",
+  "native_project": "P-OPP-03842",
+  "source_digest": "d566df40cbe2043d67082f718f9337cdc477ec87028045a2fe6d80a288cc073f",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Deliver clean drinking water to every home through AI-managed micro-utilities",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "e205cb1695a9220446306ed68eb8ba2e1af3adb6a105b8b7a42df11b46d804b2"
+  },
+  "drafted_at": "2026-11-06T00:24:32.186Z",
+  "queries": [
+    "deliver clean drinking water home ai-managed",
+    "deliver clean drinking poverty economy wealth"
+  ],
+  "searches": [
+    {
+      "query": "deliver clean drinking water home ai-managed",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:24:24.076Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=deliver%20clean%20drinking%20water%20home%20ai-managed&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "deliver clean drinking water home ai-managed",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:24:24.972Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Adeliver%20AND%20all%3Aclean%20AND%20all%3Adrinking%20AND%20all%3Awater%20AND%20all%3Ahome%20AND%20all%3Aai-managed&start=0&max_results=10; sha256=20e6459000cbd6ba7f07ccf21e7455a5e630ffc1118e52177cd8697f5ac7c833; total=0; shown=0/0"
+    },
+    {
+      "query": "deliver clean drinking water home ai-managed",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:24:25.819Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=deliver%20clean%20drinking%20water%20home%20ai-managed&rows=10&select=DOI,title; sha256=4a20cc5d45a4f2385679c776f75f2e4567c93f41658e3141fc113730a670b1d4; total=3032063; shown=5/10; top: 10.1038/s41545-020-0074-6 \"Safely managed drinking water services in the Democratic People’s Republic of Korea: findings from the 2017 Multiple Indicator Cluster Surv…\" | 10.33915/etd.11383 \"Essays on Clean Water Act and Safe Drinking Water Act\" | 10.64628/aa.yqct4vwqr \"Drinking ‘daughter water’ won’t be enough to deliver pay equity\" | 10.1038/s41545-020-00085-z \"Drinking water quality and the SDGs\" | 10.1177/027046769901900407 \"Science, Pollution, and Clean Drinking Water: Choosing Between Tap Water, Bottled Water, and Home Purification\""
+    },
+    {
+      "query": "deliver clean drinking poverty economy wealth",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:24:30.630Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=deliver%20clean%20drinking%20poverty%20economy%20wealth&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "deliver clean drinking poverty economy wealth",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:24:31.246Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Adeliver%20AND%20all%3Aclean%20AND%20all%3Adrinking%20AND%20all%3Apoverty%20AND%20all%3Aeconomy%20AND%20all%3Awealth&start=0&max_results=10; sha256=ecc5c71fa5f5a67618c32ca851d0b539260da96b3dcb549ab44c5386ed96fd6d; total=0; shown=0/0"
+    },
+    {
+      "query": "deliver clean drinking poverty economy wealth",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:24:32.185Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=deliver%20clean%20drinking%20poverty%20economy%20wealth&rows=10&select=DOI,title; sha256=ec0b2891337c28b50c696690d747dda271b8a00a1f33d56dc8c1ddf9d0200dbc; total=964796; shown=5/10; top: 10.5089/9781616352929.022.a006 \"Poverty Amidst Wealth: Trends in the World’s Economy\" | 10.1215/9781478024514-008 \"Wealth, Poverty, and the Colonial Economy\" | 10.2307/jj.33535041.11 \"Wealth, Poverty, and the Colonial Economy:\" | 10.1111/1468-0041.00092 \"Progress on Poverty\" | 10.1515/9781478092711-009 \"Chapter six Wealth, Poverty, and the Colonial Economy: Nineteenth and Early Twentieth Centuries\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "deliver clean drinking water home ai-managed",
+      "url": "https://api.github.com/search/repositories?q=deliver%20clean%20drinking%20water%20home%20ai-managed&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=deliver%20clean%20drinking%20water%20home%20ai-managed&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:24:24.076Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "deliver clean drinking water home ai-managed",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Adeliver%20AND%20all%3Aclean%20AND%20all%3Adrinking%20AND%20all%3Awater%20AND%20all%3Ahome%20AND%20all%3Aai-managed&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Adeliver%20AND%20all%3Aclean%20AND%20all%3Adrinking%20AND%20all%3Awater%20AND%20all%3Ahome%20AND%20all%3Aai-managed&start=0&max_results=10",
+      "sha256": "20e6459000cbd6ba7f07ccf21e7455a5e630ffc1118e52177cd8697f5ac7c833",
+      "bytes": 858,
+      "observedAt": "2026-11-06T00:24:24.972Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "deliver clean drinking water home ai-managed",
+      "url": "https://api.crossref.org/works?query=deliver%20clean%20drinking%20water%20home%20ai-managed&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=deliver%20clean%20drinking%20water%20home%20ai-managed&rows=10&select=DOI,title",
+      "sha256": "4a20cc5d45a4f2385679c776f75f2e4567c93f41658e3141fc113730a670b1d4",
+      "bytes": 1569,
+      "observedAt": "2026-11-06T00:24:25.819Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "deliver clean drinking poverty economy wealth",
+      "url": "https://api.github.com/search/repositories?q=deliver%20clean%20drinking%20poverty%20economy%20wealth&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=deliver%20clean%20drinking%20poverty%20economy%20wealth&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:24:30.630Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "deliver clean drinking poverty economy wealth",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Adeliver%20AND%20all%3Aclean%20AND%20all%3Adrinking%20AND%20all%3Apoverty%20AND%20all%3Aeconomy%20AND%20all%3Awealth&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Adeliver%20AND%20all%3Aclean%20AND%20all%3Adrinking%20AND%20all%3Apoverty%20AND%20all%3Aeconomy%20AND%20all%3Awealth&start=0&max_results=10",
+      "sha256": "ecc5c71fa5f5a67618c32ca851d0b539260da96b3dcb549ab44c5386ed96fd6d",
+      "bytes": 860,
+      "observedAt": "2026-11-06T00:24:31.246Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "deliver clean drinking poverty economy wealth",
+      "url": "https://api.crossref.org/works?query=deliver%20clean%20drinking%20poverty%20economy%20wealth&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=deliver%20clean%20drinking%20poverty%20economy%20wealth&rows=10&select=DOI,title",
+      "sha256": "ec0b2891337c28b50c696690d747dda271b8a00a1f33d56dc8c1ddf9d0200dbc",
+      "bytes": 1106,
+      "observedAt": "2026-11-06T00:24:32.185Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "3cfdc7d04be7a3b294790a243a8ed95d50f3f6f3b08c956dfbd548f3b7369077",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

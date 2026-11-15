@@ -1,0 +1,14 @@
+{
+ "schema": 1,
+ "component": "organizations",
+ "release_id": "f3419231382c8c7d8e832b20dc6a210e1b7826ca21513f8e3b075126b87a99cc",
+ "version": null,
+ "source_commit": "9f5c809154e439852274b56798fc70322c0a4e8e",
+ "deployed_at": "2026-11-09T08:20:34Z",
+ "prior": "7f70722447527fd547c2d8570dda0eebb4be52373c5fbb2eda755017b9a106b8",
+ "status": "deployed",
+ "evidence": [
+  "CHANGELOG.md#agents-sonnet-rollout-20261109"
+ ],
+ "note": "Overlay of the live 795-file release: five files switch new Claude runs to claude-sonnet-5-5 and let checks accept stored Opus records. All other paths unchanged. Starter and attester timers ran cleanly after the switch."
+}

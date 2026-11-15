@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00249",
+  "native_project": "P-OPP-00249",
+  "source_digest": "7a14e1462ae5149ee7ef2fb10ffced472b77d7ee9f1c849352cc828525d18928",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Deploy self-amplifying RNA vaccines in a single dose",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "368d3a3adc8ceb7b94d031702a2bf14173f61c48b07b65ea75bc00a69f106781"
+  },
+  "drafted_at": "2026-11-06T00:10:03.420Z",
+  "queries": [
+    "deploy self-amplifying rna vaccines single dose",
+    "deploy self-amplifying rna infectious disease pandemics"
+  ],
+  "searches": [
+    {
+      "query": "deploy self-amplifying rna vaccines single dose",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:09:52.809Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=deploy%20self-amplifying%20rna%20vaccines%20single%20dose&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "deploy self-amplifying rna vaccines single dose",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:09:53.324Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Adeploy%20AND%20all%3Aself-amplifying%20AND%20all%3Arna%20AND%20all%3Avaccines%20AND%20all%3Asingle%20AND%20all%3Adose&start=0&max_results=10; sha256=5bf64c7d1f41ffa033a33dcf821a630d5ddca27e0535636bd5a45ee5c259d8f2; total=0; shown=0/0"
+    },
+    {
+      "query": "deploy self-amplifying rna vaccines single dose",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:09:54.369Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=deploy%20self-amplifying%20rna%20vaccines%20single%20dose&rows=10&select=DOI,title; sha256=65d7d02bd761e45f0e832bcff36c78494a264d2946441ddde58bc376b5cf054f; total=3071148; shown=5/10; top: 10.1162/2e3983f5.3f738a26 \"Review 1: Heterologous vaccination regimens with self-amplifying RNA and Adenoviral COVID vaccines induce superior immune responses than si…\" | 10.1162/2e3983f5.15dd35ff \"Review of Heterologous vaccination regimens with self-amplifying RNA and Adenoviral COVID vaccines induce superior immune responses than si…\" | 10.1007/978-1-0716-3770-8_5 \"Trans-Amplifying RNA Vaccines Against Infectious Diseases: A Comparison with Non-Replicating and Self-Amplifying RNA\" | 10.3390/ijms21145130 \"Self-Amplifying RNA Viruses as RNA Vaccines\" | 10.1042/bio_2021_142 \"The next generation of RNA vaccines: self-amplifying RNA\""
+    },
+    {
+      "query": "deploy self-amplifying rna infectious disease pandemics",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:09:59.383Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=deploy%20self-amplifying%20rna%20infectious%20disease%20pandemics&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "deploy self-amplifying rna infectious disease pandemics",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:10:00.885Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Adeploy%20AND%20all%3Aself-amplifying%20AND%20all%3Arna%20AND%20all%3Ainfectious%20AND%20all%3Adisease%20AND%20all%3Apandemics&start=0&max_results=10; sha256=10269b3bcf366533a0f5d59c8674fb8b70be89d62cb5feed9accf8f95a9c24ee; total=0; shown=0/0"
+    },
+    {
+      "query": "deploy self-amplifying rna infectious disease pandemics",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:10:03.419Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=deploy%20self-amplifying%20rna%20infectious%20disease%20pandemics&rows=10&select=DOI,title; sha256=702bf5f9eb3600d9193f7aec119722e6fde014a918796caae523421c17ff6c4d; total=4450799; shown=5/10; top: 10.1007/978-1-0716-3770-8_5 \"Trans-Amplifying RNA Vaccines Against Infectious Diseases: A Comparison with Non-Replicating and Self-Amplifying RNA\" | 10.29252/vacres.7.1.25 \"The Potential of Self-amplifying RNA Vaccines for Infectious Diseases and COVID-19\" | 10.1016/s1473-30992300734-x \"Self-amplifying RNA vaccines against antigenically distinct SARS-CoV-2 variants\" | 10.5040/9781666999662.ch-007 \"Inoculation And Infectious Disease\" | 10.1016/s1473-30992400593-0 \"Steps towards licensure of self-amplifying RNA vaccines\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "deploy self-amplifying rna vaccines single dose",
+      "url": "https://api.github.com/search/repositories?q=deploy%20self-amplifying%20rna%20vaccines%20single%20dose&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=deploy%20self-amplifying%20rna%20vaccines%20single%20dose&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:09:52.809Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "deploy self-amplifying rna vaccines single dose",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Adeploy%20AND%20all%3Aself-amplifying%20AND%20all%3Arna%20AND%20all%3Avaccines%20AND%20all%3Asingle%20AND%20all%3Adose&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Adeploy%20AND%20all%3Aself-amplifying%20AND%20all%3Arna%20AND%20all%3Avaccines%20AND%20all%3Asingle%20AND%20all%3Adose&start=0&max_results=10",
+      "sha256": "5bf64c7d1f41ffa033a33dcf821a630d5ddca27e0535636bd5a45ee5c259d8f2",
+      "bytes": 864,
+      "observedAt": "2026-11-06T00:09:53.324Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "deploy self-amplifying rna vaccines single dose",
+      "url": "https://api.crossref.org/works?query=deploy%20self-amplifying%20rna%20vaccines%20single%20dose&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=deploy%20self-amplifying%20rna%20vaccines%20single%20dose&rows=10&select=DOI,title",
+      "sha256": "65d7d02bd761e45f0e832bcff36c78494a264d2946441ddde58bc376b5cf054f",
+      "bytes": 1833,
+      "observedAt": "2026-11-06T00:09:54.369Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "deploy self-amplifying rna infectious disease pandemics",
+      "url": "https://api.github.com/search/repositories?q=deploy%20self-amplifying%20rna%20infectious%20disease%20pandemics&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=deploy%20self-amplifying%20rna%20infectious%20disease%20pandemics&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:09:59.383Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "deploy self-amplifying rna infectious disease pandemics",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Adeploy%20AND%20all%3Aself-amplifying%20AND%20all%3Arna%20AND%20all%3Ainfectious%20AND%20all%3Adisease%20AND%20all%3Apandemics&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Adeploy%20AND%20all%3Aself-amplifying%20AND%20all%3Arna%20AND%20all%3Ainfectious%20AND%20all%3Adisease%20AND%20all%3Apandemics&start=0&max_results=10",
+      "sha256": "10269b3bcf366533a0f5d59c8674fb8b70be89d62cb5feed9accf8f95a9c24ee",
+      "bytes": 880,
+      "observedAt": "2026-11-06T00:10:00.885Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "deploy self-amplifying rna infectious disease pandemics",
+      "url": "https://api.crossref.org/works?query=deploy%20self-amplifying%20rna%20infectious%20disease%20pandemics&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=deploy%20self-amplifying%20rna%20infectious%20disease%20pandemics&rows=10&select=DOI,title",
+      "sha256": "702bf5f9eb3600d9193f7aec119722e6fde014a918796caae523421c17ff6c4d",
+      "bytes": 1391,
+      "observedAt": "2026-11-06T00:10:03.419Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "acc47d9f05d60b1af47e0ccacdbc117d85bb8acc0ab8867d65122f144a7fe5fe",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

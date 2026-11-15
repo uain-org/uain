@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-01686",
+  "native_project": "P-OPP-01686",
+  "source_digest": "5bcdc5707bbae2e1035d5f102a51438f466339ec2016d64398320622be35603c",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Harvest water from air for villages without any source",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "cc60b79e59b96a787a0b336b9115acab5dcbd598b66f70622cc54a9b803fcc2d"
+  },
+  "drafted_at": "2026-11-06T00:18:40.922Z",
+  "queries": [
+    "harvest water air villages source",
+    "harvest water air oceans freshwater access"
+  ],
+  "searches": [
+    {
+      "query": "harvest water air villages source",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:18:32.997Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=harvest%20water%20air%20villages%20source&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "harvest water air villages source",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:18:33.555Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aharvest%20AND%20all%3Awater%20AND%20all%3Aair%20AND%20all%3Avillages%20AND%20all%3Asource&start=0&max_results=10; sha256=eb998b1e6cb1405a5cb055fd39956879f5d4114ddda94b335d2a8b5c2d215124; total=0; shown=0/0"
+    },
+    {
+      "query": "harvest water air villages source",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:18:34.784Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=harvest%20water%20air%20villages%20source&rows=10&select=DOI,title; sha256=96e6fc1294adb578cc477d4a83a439270a1960fbf124719ecd33b6fda742a85e; total=3042978; shown=5/10; top: 10.1111/j.1747-6593.2009.00189.x \"Investigation of humidity harvest as an alternative water source in the Kingdom of Saudi Arabia\" | 10.21203/rs.3.rs-1643173/v1 \"How to Harvest Water from the air? The evidence from Bolivia\" | 10.3403/30403001 \"Water-source heat pumps � Testing and rating for performance\" | 10.3403/30403001u \"Water-source heat pumps � Testing and rating for performance\" | 10.1002/clen.201100030 \"Physico‐Chemical and Bacterial Characteristics of Water Quality in Three Villages West of Lake Nasser, Egypt\""
+    },
+    {
+      "query": "harvest water air oceans freshwater access",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:18:39.461Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=harvest%20water%20air%20oceans%20freshwater%20access&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "harvest water air oceans freshwater access",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:18:40.012Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aharvest%20AND%20all%3Awater%20AND%20all%3Aair%20AND%20all%3Aoceans%20AND%20all%3Afreshwater%20AND%20all%3Aaccess&start=0&max_results=10; sha256=dcf7bee6d37be84558edd660496af844dc436c985f65d2f4402fe487fb462388; total=0; shown=0/0"
+    },
+    {
+      "query": "harvest water air oceans freshwater access",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:18:40.922Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=harvest%20water%20air%20oceans%20freshwater%20access&rows=10&select=DOI,title; sha256=8e385167d85864d7eabe731a25b4c0633d77f648cbc086edf1c7bbf0ea0b44a7; total=3272195; shown=5/10; top: 10.1787/888933750054 \"Figure 4.2. Access to freshwater and water withdrawals by department\" | 10.3390/oceans6020027 \"Eight Categories of Air–Water Gas Transfer\" | 10.21203/rs.3.rs-1643173/v1 \"How to Harvest Water from the air? The evidence from Bolivia\" | 10.1109/oceans.1989.592885 \"Dissolution And Rise Velocity Of Small Air Bubbles In Water And Salt Water\" | 10.1163/ej.9789004169548.i-258.33 \"Chapter 5. Improving A Human Rights-Based Approach To Freshwater Access\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "harvest water air villages source",
+      "url": "https://api.github.com/search/repositories?q=harvest%20water%20air%20villages%20source&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=harvest%20water%20air%20villages%20source&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:18:32.997Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "harvest water air villages source",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aharvest%20AND%20all%3Awater%20AND%20all%3Aair%20AND%20all%3Avillages%20AND%20all%3Asource&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aharvest%20AND%20all%3Awater%20AND%20all%3Aair%20AND%20all%3Avillages%20AND%20all%3Asource&start=0&max_results=10",
+      "sha256": "eb998b1e6cb1405a5cb055fd39956879f5d4114ddda94b335d2a8b5c2d215124",
+      "bytes": 818,
+      "observedAt": "2026-11-06T00:18:33.555Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "harvest water air villages source",
+      "url": "https://api.crossref.org/works?query=harvest%20water%20air%20villages%20source&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=harvest%20water%20air%20villages%20source&rows=10&select=DOI,title",
+      "sha256": "96e6fc1294adb578cc477d4a83a439270a1960fbf124719ecd33b6fda742a85e",
+      "bytes": 1499,
+      "observedAt": "2026-11-06T00:18:34.784Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "harvest water air oceans freshwater access",
+      "url": "https://api.github.com/search/repositories?q=harvest%20water%20air%20oceans%20freshwater%20access&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=harvest%20water%20air%20oceans%20freshwater%20access&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:18:39.461Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "harvest water air oceans freshwater access",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aharvest%20AND%20all%3Awater%20AND%20all%3Aair%20AND%20all%3Aoceans%20AND%20all%3Afreshwater%20AND%20all%3Aaccess&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aharvest%20AND%20all%3Awater%20AND%20all%3Aair%20AND%20all%3Aoceans%20AND%20all%3Afreshwater%20AND%20all%3Aaccess&start=0&max_results=10",
+      "sha256": "dcf7bee6d37be84558edd660496af844dc436c985f65d2f4402fe487fb462388",
+      "bytes": 854,
+      "observedAt": "2026-11-06T00:18:40.012Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "harvest water air oceans freshwater access",
+      "url": "https://api.crossref.org/works?query=harvest%20water%20air%20oceans%20freshwater%20access&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=harvest%20water%20air%20oceans%20freshwater%20access&rows=10&select=DOI,title",
+      "sha256": "8e385167d85864d7eabe731a25b4c0633d77f648cbc086edf1c7bbf0ea0b44a7",
+      "bytes": 1411,
+      "observedAt": "2026-11-06T00:18:40.922Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "4389c8b8a3860eb2260d27011d287bf9bf41adfaae8eaede18851a673cf07cb5",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

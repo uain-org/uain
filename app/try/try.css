@@ -1,0 +1,17 @@
+.try-body { max-width: 860px; margin-inline: auto; }
+.try-code { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 28rem; overflow: auto; padding: 1rem; border: 1px solid #ccc; border-radius: .5rem; background: #f6f7f8; color: #17212b; font-size: .85rem; line-height: 1.6; }
+.try-task { border: 1px solid #ccc; border-radius: .75rem; padding: clamp(1rem, 3vw, 2rem); margin-top: 2rem; }
+.try-lines { white-space: pre-wrap; overflow-wrap: anywhere; }
+.try-body button:disabled { opacity: .6; cursor: wait; }
+.try-body summary { cursor: pointer; padding-block: .75rem; }
+
+.try-body h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; line-height: 1.25; margin: 2rem 0 1rem; }
+.try-body h3 { font-size: 1.3rem; font-weight: 700; line-height: 1.35; margin-bottom: 1rem; }
+.try-body h4 { font-size: 1.1rem; font-weight: 650; margin: 1.5rem 0 .5rem; }
+.try-body p, .try-body li { line-height: 1.65; overflow-wrap: anywhere; }
+.try-body p { margin-bottom: 1rem; }
+.try-body a { text-decoration: underline; text-decoration-thickness: .1em; text-underline-offset: .2em; }
+.try-body a:hover { text-decoration-thickness: .18em; }
+.try-body :is(a, button, summary):focus-visible { outline: 2px solid currentColor; outline-offset: 4px; border-radius: 2px; }
+.try-body summary { font-weight: 650; }
+.try-body ul { list-style: disc outside; padding-left: 1.5rem; }

@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-01926",
+  "native_project": "P-OPP-01926",
+  "source_digest": "1057b99f7bce38eba7e38d3fa37a14b00cd4f6599f695aaf61bdfb055fbc4cbc",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Create self-cleaning dust-proof solar panels for deserts",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "a593886e40be45f90bfce4a6ed04b48e378685bf622e70c0f495d00f470173b7"
+  },
+  "drafted_at": "2026-11-06T00:20:11.821Z",
+  "queries": [
+    "self-cleaning dust-proof solar panels deserts",
+    "self-cleaning dust-proof solar clean energy power"
+  ],
+  "searches": [
+    {
+      "query": "self-cleaning dust-proof solar panels deserts",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:20:04.079Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=self-cleaning%20dust-proof%20solar%20panels%20deserts&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "self-cleaning dust-proof solar panels deserts",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:20:04.592Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aself-cleaning%20AND%20all%3Adust-proof%20AND%20all%3Asolar%20AND%20all%3Apanels%20AND%20all%3Adeserts&start=0&max_results=10; sha256=89fa9eef8f46e45f7bafd7208b8ff39a900406b94db51d963d39e0568c16ce0e; total=0; shown=0/0"
+    },
+    {
+      "query": "self-cleaning dust-proof solar panels deserts",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:20:05.456Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=self-cleaning%20dust-proof%20solar%20panels%20deserts&rows=10&select=DOI,title; sha256=437f4c322960151c90e514dd504e6c30b271fe66d7a9c5275a2bc42502cba281; total=2106553; shown=5/10; top: 10.1201/9789047403289-42 \"Dust removal from solar panels and spacecraft on Mars\" | 10.14711/thesis-991012552467003412 \"Nanostructured self-cleaning anti-reflection films for high performance solar panels\" | 10.20944/preprints202004.0350.v1 \"Cymatics Inspired Self-Cleaning Mechanism for Solar Panels\" | 10.3390/su13169454 \"The Study of Dust Removal Using Electrostatic Cleaning System for Solar Panels\" | 10.1016/j.egypro.2012.02.051 \"The Effect of Dust on Transmission and Self-cleaning Property of Solar Panels\""
+    },
+    {
+      "query": "self-cleaning dust-proof solar clean energy power",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:20:10.490Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=self-cleaning%20dust-proof%20solar%20clean%20energy%20power&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "self-cleaning dust-proof solar clean energy power",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:20:10.953Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aself-cleaning%20AND%20all%3Adust-proof%20AND%20all%3Asolar%20AND%20all%3Aclean%20AND%20all%3Aenergy%20AND%20all%3Apower&start=0&max_results=10; sha256=5d1fc9d82c82f116c297c2f469139597a11adb5b9bf8fdcd722d67715b7b8744; total=0; shown=0/0"
+    },
+    {
+      "query": "self-cleaning dust-proof solar clean energy power",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:20:11.821Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=self-cleaning%20dust-proof%20solar%20clean%20energy%20power&rows=10&select=DOI,title; sha256=83d8631d6d7070dcbf7126d49f740702ee5c4066adf695b9e684302b0e54e156; total=6497557; shown=5/10; top: 10.2172/1053307 \"Self-Cleaning CSP Collectors, Concentrating Solar Power (Fact Sheet)\" | 10.1016/b978-0-443-33698-0.00015-7 \"Evaluating the influence of dust accumulation on photovoltaic performance and implementing self-cleaning strategies\" | 10.1109/icsgce.2018.8556806 \"A Low-Cost and Energy-Efficient Smart Dust Cleaning Technique for Solar Panel System\" | 10.1016/j.solener.2024.112643 \"Development of smart dust detector for optimal generation of SPV power plant by cleaning initiation\" | 10.1016/j.solener.2019.04.005 \"Effect of dust cleaning on the enhancement of the power generation of a coastal PV-power plant at Zahrani Lebanon\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "self-cleaning dust-proof solar panels deserts",
+      "url": "https://api.github.com/search/repositories?q=self-cleaning%20dust-proof%20solar%20panels%20deserts&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=self-cleaning%20dust-proof%20solar%20panels%20deserts&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:20:04.079Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "self-cleaning dust-proof solar panels deserts",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aself-cleaning%20AND%20all%3Adust-proof%20AND%20all%3Asolar%20AND%20all%3Apanels%20AND%20all%3Adeserts&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aself-cleaning%20AND%20all%3Adust-proof%20AND%20all%3Asolar%20AND%20all%3Apanels%20AND%20all%3Adeserts&start=0&max_results=10",
+      "sha256": "89fa9eef8f46e45f7bafd7208b8ff39a900406b94db51d963d39e0568c16ce0e",
+      "bytes": 842,
+      "observedAt": "2026-11-06T00:20:04.592Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "self-cleaning dust-proof solar panels deserts",
+      "url": "https://api.crossref.org/works?query=self-cleaning%20dust-proof%20solar%20panels%20deserts&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=self-cleaning%20dust-proof%20solar%20panels%20deserts&rows=10&select=DOI,title",
+      "sha256": "437f4c322960151c90e514dd504e6c30b271fe66d7a9c5275a2bc42502cba281",
+      "bytes": 1617,
+      "observedAt": "2026-11-06T00:20:05.456Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "self-cleaning dust-proof solar clean energy power",
+      "url": "https://api.github.com/search/repositories?q=self-cleaning%20dust-proof%20solar%20clean%20energy%20power&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=self-cleaning%20dust-proof%20solar%20clean%20energy%20power&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:20:10.490Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "self-cleaning dust-proof solar clean energy power",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aself-cleaning%20AND%20all%3Adust-proof%20AND%20all%3Asolar%20AND%20all%3Aclean%20AND%20all%3Aenergy%20AND%20all%3Apower&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aself-cleaning%20AND%20all%3Adust-proof%20AND%20all%3Asolar%20AND%20all%3Aclean%20AND%20all%3Aenergy%20AND%20all%3Apower&start=0&max_results=10",
+      "sha256": "5d1fc9d82c82f116c297c2f469139597a11adb5b9bf8fdcd722d67715b7b8744",
+      "bytes": 868,
+      "observedAt": "2026-11-06T00:20:10.953Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "self-cleaning dust-proof solar clean energy power",
+      "url": "https://api.crossref.org/works?query=self-cleaning%20dust-proof%20solar%20clean%20energy%20power&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=self-cleaning%20dust-proof%20solar%20clean%20energy%20power&rows=10&select=DOI,title",
+      "sha256": "83d8631d6d7070dcbf7126d49f740702ee5c4066adf695b9e684302b0e54e156",
+      "bytes": 1741,
+      "observedAt": "2026-11-06T00:20:11.821Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "07063a9cc358ebadd583b5cde9ac0a84fc6551b8cbfe48f8c5d8919cde10ed00",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

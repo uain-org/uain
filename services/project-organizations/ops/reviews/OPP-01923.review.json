@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01923",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable transparent solar skin covers roads or rooftops at scale, so the Main KPI of 200,000,000 buildings with solar skins is unmet. Transparent photovoltaics are bounded at about 21 percent single-junction efficiency for UV and near-infrared harvesting at full visible transparency (Lunt, Appl Phys Lett 2012; 20.6 percent in a 2023 Energy and Environmental Science analysis, https://pubs.rsc.org/en/content/articlepdf/2023/ee/d2ee04137e), and achieved devices sit far below that. Ubiquitous Energy's coating, with AGC and NSG development agreements, reached up to about two-thirds of conventional output at about 20 percent extra window cost, but the visible deployment is about 100 square feet at its own headquarters and pilot projects (https://www.nsenergybusiness.com/news/agc-ubiquitous-energy-partner-for-transparent-solar-glass/). Solar roads have failed in practice: the 2,800-panel Wattway road in Normandy produced about half its expected 150,000 kWh, with up to a tenth too damaged to repair, and Colas called it not mature for inter-urban traffic (https://brusselstimes.com/61291/after-nearly-three-years-first-solar-road-fails-to-meet-expectations). Building-integrated PV is a US$23 to 31 billion market but about two-thirds roofing products, not transparent skins (https://www.globenewswire.com/news-release/2025/04/17/3063092/28124/en/Building-Integrated-Photovoltaics-Market-Forecast-2025-2030-with-TrinaSolar-Onyx-Solar-AGC-Solarday-Mitrex-Polysolar-Kyocera-MetSolar-SunTegra-Solar-SolarScape-Jinko-Solar-and-more.html). Honest limit: opaque BIPV and semi-transparent PV glass are known products, so tasks that reproduce them are known answers; the open work is durable, highly transparent, affordable skins near the theoretical limit, and each task needs its own basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "transparent solar window Ubiquitous Energy efficiency commercial installations 2026 ClearView Power",
+      "source": "https://www.nsenergybusiness.com/news/agc-ubiquitous-energy-partner-for-transparent-solar-glass/",
+      "observedAt": "2026-11-06T01:33:00Z",
+      "finding": "Ubiquitous Energy coatings pass visible light and absorb UV and infrared (up to 90 percent visible transmission, over 10 percent achievable); a 2020 report put output at up to two-thirds of standard panels at about 20 percent more window cost; about 100 square feet installed at its Redwood City headquarters; AGC and NSG development agreements; pilots only. No 2026 commercial installation data found."
+    },
+    {
+      "query": "solar road Wattway Solar Roadways failure output results lessons 2024 2025",
+      "source": "https://brusselstimes.com/61291/after-nearly-three-years-first-solar-road-fails-to-meet-expectations",
+      "observedAt": "2026-11-06T01:33:00Z",
+      "finding": "The 2,800-panel Wattway road in Normandy generated about 80,000 kWh against an expected 150,000 in its first year, with up to one-tenth too damaged to repair and a speed cut to 70 km/h for noise; Colas says it is not mature for inter-urban traffic; the Sandpoint Solar Roadways section also underperformed."
+    },
+    {
+      "query": "transparent photovoltaics theoretical efficiency limit visible transparency 20 percent review 2025 2026",
+      "source": "https://pubs.rsc.org/en/content/articlepdf/2023/ee/d2ee04137e",
+      "observedAt": "2026-11-06T01:33:00Z",
+      "finding": "Lunt (Appl Phys Lett 2012): about 21 percent theoretical single-junction efficiency for transparent UV/NIR-harvesting cells versus 33 percent opaque; Energy and Environmental Science 2023: 20.6 percent at 100 percent visible transmittance, with a large gap between achieved efficiencies and the limit; a 2025 Nano-Micro Letters review uses light-utilisation efficiency as the figure of merit."
+    },
+    {
+      "query": "building-integrated photovoltaic market buildings installed 2025 solar facade skin BIPV share global buildings",
+      "source": "https://www.globenewswire.com/news-release/2025/04/17/3063092/28124/en/Building-Integrated-Photovoltaics-Market-Forecast-2025-2030-with-TrinaSolar-Onyx-Solar-AGC-Solarday-Mitrex-Polysolar-Kyocera-MetSolar-SunTegra-Solar-SolarScape-Jinko-Solar-and-more.html",
+      "observedAt": "2026-11-06T01:33:00Z",
+      "finding": "Market reports value BIPV at about US$23 to 31 billion in 2025, roughly 38 to 44 percent in Europe, with roofing over 68 percent of applications; no figure exists for buildings with transparent solar skins or BIPV share of building stock."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-02402",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "neutral",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No woolly mammoth or mammoth-like elephant exists, so the Main KPI of 1,000 mammoths living in the wild is unmet. Colossal Biosciences reports elephant induced pluripotent stem cells (2024), gene-edited woolly mice with mammoth-inspired hair (March 2025) and a target of a mammoth calf by 2028; its own programme page ends at embryo implantation in surrogate elephants and a 22-month gestation and says the mammoth is not yet on the tundra (https://colossal.com/mammoth/, https://en.wikipedia.org/wiki/Colossal_Biosciences). Its 2025 dire wolf claim was rejected by the IUCN SSC Canid Specialist Group as neither dire wolves nor proxies, and its chief scientist called them grey wolves with 20 edits. The 2025 to 2026 literature raises ecological and animal-welfare objections (https://doi.org/10.1093/jiplp/jpaf077) and reviews de-extinction as unproven (https://doi.org/10.1093/jhered/esaf069). Class neutral, not benevolent: the conservation benefit is contested, and a wild breeding herd carries animal-welfare risk for surrogate elephants and calves and ecological risk on release. Honest limit: the editing and iPSC steps are partly published, so tasks that only re-derive Colossal's edits are known answers; the unsolved pieces are elephant-scale multiplex editing with verified phenotype, surrogacy or ex-utero gestation for elephants, and a release case that independent checkers accept."
+  },
+  "additionalSearches": [
+    {
+      "query": "Colossal woolly mammoth de-extinction elephant cell editing (2024 onward)",
+      "source": "https://api.openalex.org/works?search=Colossal%20woolly%20mammoth%20de-extinction%20elephant%20cell%20editing&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:16:04Z",
+      "finding": "22 works, mostly commentary and critique (patent and animal-welfare objections 2025, Colossal Disinformation 2026, governance of de-extinction 2026). None reports a living mammoth or mammoth-trait elephant."
+    },
+    {
+      "query": "woolly mouse Colossal mammoth genes edited mice",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=woolly%20mouse%20Colossal%20mammoth%20genes%20edited%20mice&format=json&pageSize=8&sort=CITED%20desc",
+      "observedAt": "2026-11-06T01:16:06Z",
+      "finding": "7 records: mammoth 3D genome architecture from a 52,000-year-old sample (2024), wild-animal genome editing and non-model iPSC reviews (2026). No peer-reviewed report of a mammoth-edited elephant."
+    },
+    {
+      "query": "Asian elephant induced pluripotent stem cells mammoth (2024 onward)",
+      "source": "https://api.openalex.org/works?search=Asian%20elephant%20induced%20pluripotent%20stem%20cells%20mammoth&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:16:07Z",
+      "finding": "13 works; reviews of iPSCs in non-model species and of de-extinction technology (doi 10.1093/jhered/esaf069) describe elephant iPSCs as an early step; no gestation or birth reported."
+    },
+    {
+      "query": "de-extinction ecological risk proxy species mammoth tundra (2024 onward)",
+      "source": "https://api.openalex.org/works?search=de-extinction%20ecological%20risk%20proxy%20species%20mammoth%20tundra&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:16:10Z",
+      "finding": "44 works; ecological and welfare objections and a 2024 bottom-up mammoth population model predicting moderate densities and high vulnerability to hunting. No evidence base for a released herd."
+    },
+    {
+      "query": "Colossal mammoth programme status",
+      "source": "https://colossal.com/mammoth/",
+      "observedAt": "2026-11-06T01:19:33Z",
+      "finding": "Colossal's page gives no target year or milestones, describes the goal as a cold-resistant elephant with mammoth traits, ends its process at surrogate implantation and a 22-month gestation, and says the mammoth is not currently on the tundra."
+    },
+    {
+      "query": "Colossal Biosciences achievements and criticism",
+      "source": "https://en.wikipedia.org/wiki/Colossal_Biosciences",
+      "observedAt": "2026-11-06T01:22:50Z",
+      "finding": "Elephant iPSCs 2024, woolly mouse March 2025, mammoth calf target 2028; dire wolf pups April 2025 judged by the IUCN SSC Canid Specialist Group to be neither dire wolves nor proxies and not a conservation contribution."
+    }
+  ]
+}

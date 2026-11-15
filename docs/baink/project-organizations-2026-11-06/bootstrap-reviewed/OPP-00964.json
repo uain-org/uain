@@ -1,0 +1,17 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "project": "OPP-00964",
+  "source_digest": "3dc0a31d59ee029ae5b87bfc9f32444840450489504d9818b6c95f3470d2a82f",
+  "class": "benevolent",
+  "prior_art": {
+    "basis": "Independent review by claude-independent-prior-art-reviewer-20261106: No open or discoverable solution gives 8,000,000,000 people a free health check every year; the WHO-World Bank UHC Global Monitoring Report 2025 finds 4.6 billion people still lack essential health services (https://www.news-medical.net/news/20251206/Billions-still-lack-essential-health-services-despite-worldwide-gains-in-coverage.aspx). The largest national free check programmes are partial: Indonesia's Cek Kesehatan Gratis (launched February 2025) reached about a quarter of its population in its first year (https://en.antaranews.com/news/403778/free-health-check-program-covers-25-pct-population-in-its-first-year), Vietnam about 30% by July 2026 (https://dtinews.dantri.com.vn/print/20260724161740947.htm), China's free check covers only residents aged 65 and over, and England's NHS Health Check (ages 40-74) had 35% uptake of invitations in 2025/26 (https://www.covermagazine.co.uk/news/4532410/uptake-nhs-health-checks-hits-lowest-level-decade). Honest limit: national free-check models are proven and published; the unsolved part is low-cost, high-uptake delivery at global scale, and a task that only restates a national programme design is not new work. (open solution found: no; known answer: no; 6 project-level searches of api.github.com/search/repositories, export.arxiv.org/api/query, api.crossref.org/works; draft 7859f287689a057bb33fe46c57be95390f86c4bdc8a197b24124824c596d801c, source 3dc0a31d59ee029ae5b87bfc9f32444840450489504d9818b6c95f3470d2a82f)",
+    "searches": [
+      "api.github.com/search/repositories \"offer free annual health worldwide\" url=https://api.github.com/search/repositories?q=offer%20free%20annual%20health%20worldwide&per_page=10 sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "export.arxiv.org/api/query \"offer free annual health worldwide\" url=https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Afree%20AND%20all%3Aannual%20AND%20all%3Ahealth%20AND%20all%3Aworldwide&start=0&max_results=10 sha256=8cb0b736048c7160c60588751a64db10c13c8a9327817bfc7801dcf1eb78bb95",
+      "api.crossref.org/works \"offer free annual health worldwide\" url=https://api.crossref.org/works?query=offer%20free%20annual%20health%20worldwide&rows=10&select=DOI,title sha256=b85fb573bbd8c6cccfd55482c1719d765f432371e9374e97e54b8ff882b1befd",
+      "api.github.com/search/repositories \"offer free annual healthcare systems medicine\" url=https://api.github.com/search/repositories?q=offer%20free%20annual%20healthcare%20systems%20medicine&per_page=10 sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "export.arxiv.org/api/query \"offer free annual healthcare systems medicine\" url=https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Afree%20AND%20all%3Aannual%20AND%20all%3Ahealthcare%20AND%20all%3Asystems%20AND%20all%3Amedicine&start=0&max_results=10 sha256=e0fe1e616a5268613732791f1b52f1f717fbbb7480acad21b26daf95fcc0cdf7",
+      "api.crossref.org/works \"offer free annual healthcare systems medicine\" url=https://api.crossref.org/works?query=offer%20free%20annual%20healthcare%20systems%20medicine&rows=10&select=DOI,title sha256=e50149f2d03d37ff74b4dc03a12f59a509fe2599435b9372044f728bfa767a07"
+    ]
+  }
+}

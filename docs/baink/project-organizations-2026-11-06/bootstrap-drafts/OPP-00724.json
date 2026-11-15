@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00724",
+  "native_project": "P-OPP-00724",
+  "source_digest": "e963ffeb837e5f1131f23ee20eadc971429b16c14c774a4fb047ab330834e4f7",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Regrow damaged corneas from stem cells",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "1d699c7cedd1e4355d537b3f7b9f6533c3a04459c1a3504602d9ce9a14eee301"
+  },
+  "drafted_at": "2026-11-06T00:12:10.926Z",
+  "queries": [
+    "regrow damaged corneas stem cells",
+    "regrow damaged corneas disability accessibility vision"
+  ],
+  "searches": [
+    {
+      "query": "regrow damaged corneas stem cells",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:12:02.817Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=regrow%20damaged%20corneas%20stem%20cells&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "regrow damaged corneas stem cells",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:12:03.322Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aregrow%20AND%20all%3Adamaged%20AND%20all%3Acorneas%20AND%20all%3Astem%20AND%20all%3Acells&start=0&max_results=10; sha256=587d7341fbbc4e33e21a0be060c203274c8c11458414a1b7a3e7dc6805f02dff; total=0; shown=0/0"
+    },
+    {
+      "query": "regrow damaged corneas stem cells",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:12:04.606Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=regrow%20damaged%20corneas%20stem%20cells&rows=10&select=DOI,title; sha256=613047b1faf23569064a0b4496000b08790746f9d7795086f2db552db4d502f9; total=2224645; shown=5/10; top: 10.31988/scitrends.33536 \"Scientists Regrow Damaged Heart Tissue Using Stem Cells\" | 10.1038/d41586-019-00860-0 \"Japan poised to allow ‘reprogrammed’ stem-cell therapy for damaged corneas\" | 10.1038/news041108-1 \"Mice regrow damaged spinal cord\" | 10.1002/scin.5591840115 \"Genes &amp cells: Nail stem cells regrow fingertips: Lost digits can come back if regenerating tissue remains\" | 10.4252/wjsc.v7.i1.182 \"How do resident stem cells repair the damaged myocardium?\""
+    },
+    {
+      "query": "regrow damaged corneas disability accessibility vision",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:12:09.316Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=regrow%20damaged%20corneas%20disability%20accessibility%20vision&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "regrow damaged corneas disability accessibility vision",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:12:09.868Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aregrow%20AND%20all%3Adamaged%20AND%20all%3Acorneas%20AND%20all%3Adisability%20AND%20all%3Aaccessibility%20AND%20all%3Avision&start=0&max_results=10; sha256=2b4cf4346c5b1229f4cc75c48f026fdec10959559d5454d0d81b1e5c7f30aba8; total=0; shown=0/0"
+    },
+    {
+      "query": "regrow damaged corneas disability accessibility vision",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:12:10.926Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=regrow%20damaged%20corneas%20disability%20accessibility%20vision&rows=10&select=DOI,title; sha256=4e42fa9802f4ef04c301b4817d61e432116e9e7a53956bb56623c7df59eb746b; total=748926; shown=5/10; top: 10.31988/scitrends.33536 \"Scientists Regrow Damaged Heart Tissue Using Stem Cells\" | 10.1038/news041108-1 \"Mice regrow damaged spinal cord\" | 10.1242/jeb.246176 \"Damaged insect ciliated neurons regrow axons as effectively as other neurons\" | 10.1016/s0262-40791062130-6 \"Collagen corneas restore damaged sight\" | 10.19103/as.2025.0155.09 \"The denitrification-decomposition (DNDC) model\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "regrow damaged corneas stem cells",
+      "url": "https://api.github.com/search/repositories?q=regrow%20damaged%20corneas%20stem%20cells&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=regrow%20damaged%20corneas%20stem%20cells&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:12:02.817Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "regrow damaged corneas stem cells",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aregrow%20AND%20all%3Adamaged%20AND%20all%3Acorneas%20AND%20all%3Astem%20AND%20all%3Acells&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aregrow%20AND%20all%3Adamaged%20AND%20all%3Acorneas%20AND%20all%3Astem%20AND%20all%3Acells&start=0&max_results=10",
+      "sha256": "587d7341fbbc4e33e21a0be060c203274c8c11458414a1b7a3e7dc6805f02dff",
+      "bytes": 818,
+      "observedAt": "2026-11-06T00:12:03.322Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "regrow damaged corneas stem cells",
+      "url": "https://api.crossref.org/works?query=regrow%20damaged%20corneas%20stem%20cells&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=regrow%20damaged%20corneas%20stem%20cells&rows=10&select=DOI,title",
+      "sha256": "613047b1faf23569064a0b4496000b08790746f9d7795086f2db552db4d502f9",
+      "bytes": 1423,
+      "observedAt": "2026-11-06T00:12:04.606Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "regrow damaged corneas disability accessibility vision",
+      "url": "https://api.github.com/search/repositories?q=regrow%20damaged%20corneas%20disability%20accessibility%20vision&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=regrow%20damaged%20corneas%20disability%20accessibility%20vision&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:12:09.316Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "regrow damaged corneas disability accessibility vision",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aregrow%20AND%20all%3Adamaged%20AND%20all%3Acorneas%20AND%20all%3Adisability%20AND%20all%3Aaccessibility%20AND%20all%3Avision&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aregrow%20AND%20all%3Adamaged%20AND%20all%3Acorneas%20AND%20all%3Adisability%20AND%20all%3Aaccessibility%20AND%20all%3Avision&start=0&max_results=10",
+      "sha256": "2b4cf4346c5b1229f4cc75c48f026fdec10959559d5454d0d81b1e5c7f30aba8",
+      "bytes": 878,
+      "observedAt": "2026-11-06T00:12:09.868Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "regrow damaged corneas disability accessibility vision",
+      "url": "https://api.crossref.org/works?query=regrow%20damaged%20corneas%20disability%20accessibility%20vision&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=regrow%20damaged%20corneas%20disability%20accessibility%20vision&rows=10&select=DOI,title",
+      "sha256": "4e42fa9802f4ef04c301b4817d61e432116e9e7a53956bb56623c7df59eb746b",
+      "bytes": 1367,
+      "observedAt": "2026-11-06T00:12:10.926Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "bc9e1aafb7499920f08c8afb58c68789c76252ecfaa1c205dc96c2d54860fd79",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

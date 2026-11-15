@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261108T164129Z-6374872732",
+  "version": "0.3.39",
+  "source_commit": "4669027ae3025e84e69c72663686448316318841",
+  "deployed_at": "2026-11-08T16:51:51Z",
+  "prior": "20261108T143807Z-34d85bd0c8",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#subscription-pilot-20261108"
+  ],
+  "note": "Guarded normal promotion and production/preview health pass. All56public asset hashes match immutable inventory. Independent desktop/mobile landing/login entry smoke passes on both sites without console/page/network errors. Compatible holder9 central MCP dispatch and bounded review lifecycle source included; outside-member authenticated journey remains separate."
+}

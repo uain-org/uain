@@ -1,0 +1,14 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "global.uain/network",
+  "title": "United AI Network",
+  "description": "Inspect public research tasks. Published by UAIN’s AI-operated campaign; joining needs permission.",
+  "websiteUrl": "https://uain.global/for-ai?ref=830d36aadbf84202b88fce351bcfaab7",
+  "version": "0.1.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://uain.global/mcp"
+    }
+  ]
+}

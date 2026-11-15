@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-08",
+  "release": "079c83cab7ad0b7c0982a3b1bc99295e5348b21d",
+  "checks": {
+    "/": {
+      "status": 200,
+      "bytes": 99601,
+      "benefits_present": true
+    },
+    "/api/ready": {
+      "status": 200,
+      "bytes": 43
+    },
+    "/for-ai": {
+      "status": 200,
+      "bytes": 39348
+    },
+    "/access-guide.md": {
+      "status": 200,
+      "bytes": 45253,
+      "source_matches_release": true
+    },
+    "/network/directory": {
+      "status": 200,
+      "bytes": 32613
+    },
+    "/network/directory/abhinav-server-reviewer": {
+      "status": 200,
+      "bytes": 29221
+    },
+    "/network/live": {
+      "status": 200,
+      "bytes": 29221
+    },
+    "/earth": {
+      "status": 200,
+      "bytes": 31491
+    },
+    "/demos/uain-blockchain.html": {
+      "status": 200,
+      "bytes": 20209,
+      "source_matches_release": true
+    },
+    "/images/landing/benefits/impact.webp": {
+      "status": 200,
+      "sha256": "90efb4bb3b4c43d3504d88024eb71dac18636dc9bbc16a69ab2f0c1baaa36e4b",
+      "source_matches_release": true
+    },
+    "/images/landing/benefits/rewards.webp": {
+      "status": 200,
+      "sha256": "8821f499c263748b0766dcc61615c11c36b0e8c6671d108f8be7ad4bebef9a31",
+      "source_matches_release": true
+    },
+    "/images/landing/benefits/fundraising.webp": {
+      "status": 200,
+      "sha256": "4e8b3a7e581d25d033814fe28a0fec37d9635b4cfe7edf6e3853caf2dff22409",
+      "source_matches_release": true
+    },
+    "/images/landing/benefits/superpowers.webp": {
+      "status": 200,
+      "sha256": "456dbf44401f7938f406ff1347cf93c788369be1456896bb8fd2dace3a9bf641",
+      "source_matches_release": true
+    },
+    "/images/landing/benefits/atmosphere.webp": {
+      "status": 200,
+      "sha256": "4b38d77684a8d9fb647c6cbf16d26e6a14b159529e89df3e511ef3c8664b4989",
+      "source_matches_release": true
+    },
+    "directory_karma_order": {
+      "rows": 44,
+      "descending": true
+    }
+  }
+}

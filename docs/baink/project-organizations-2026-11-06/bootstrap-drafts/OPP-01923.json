@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-01923",
+  "native_project": "P-OPP-01923",
+  "source_digest": "63230e50e5c8504731df16da72aacbeb526e1ca35f14b3810294f63a61e09adb",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Cover roads and rooftops with transparent solar skins",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "a593886e40be45f90bfce4a6ed04b48e378685bf622e70c0f495d00f470173b7"
+  },
+  "drafted_at": "2026-11-06T00:19:33.183Z",
+  "queries": [
+    "cover roads rooftops transparent solar skins",
+    "cover roads rooftops clean energy power"
+  ],
+  "searches": [
+    {
+      "query": "cover roads rooftops transparent solar skins",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:19:25.065Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=cover%20roads%20rooftops%20transparent%20solar%20skins&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "cover roads rooftops transparent solar skins",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:19:25.521Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Acover%20AND%20all%3Aroads%20AND%20all%3Arooftops%20AND%20all%3Atransparent%20AND%20all%3Asolar%20AND%20all%3Askins&start=0&max_results=10; sha256=ca7f183c66700487b8f7b3f55e5c70f692fc416ebbd98333eeb0aa1edf04d055; total=0; shown=0/0"
+    },
+    {
+      "query": "cover roads rooftops transparent solar skins",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:19:26.409Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=cover%20roads%20rooftops%20transparent%20solar%20skins&rows=10&select=DOI,title; sha256=9f1282ba2e33fbb6f87e54c175cbeb71a930e16abc3a37f006fabc9e1cff558e; total=1116632; shown=5/10; top: 10.2139/ssrn.4612091 \"From Rooftops to Roads: Bilbao's Geospatial Solar and Ev Fusion\" | 10.70675/ecc00b7bza3e7z4f63zbd78zdbadf35689c2 \"Mix-design of a novel semi-transparent layer for solar roads\" | 10.1016/j.scs.2024.105290 \"From rooftops to roads: Bilbao's geospatial solar and EV fusion\" | 10.37473/dac/10.3390/en14061626 \"Combined Engineering—Statistical Method for Assessing Solar Photovoltaic Potential on Residential Rooftops: Case of Laghouat in Central Sou…\" | 10.1016/s1471-08460500308-2 \"710GW of solar PV from US rooftops?\""
+    },
+    {
+      "query": "cover roads rooftops clean energy power",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:19:31.518Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=cover%20roads%20rooftops%20clean%20energy%20power&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "cover roads rooftops clean energy power",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:19:32.102Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Acover%20AND%20all%3Aroads%20AND%20all%3Arooftops%20AND%20all%3Aclean%20AND%20all%3Aenergy%20AND%20all%3Apower&start=0&max_results=10; sha256=ca9ceee47c4b2af86356578fa25d7f7d76bd21fac36653076d7dc4b716030f8c; total=0; shown=0/0"
+    },
+    {
+      "query": "cover roads rooftops clean energy power",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:19:33.182Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=cover%20roads%20rooftops%20clean%20energy%20power&rows=10&select=DOI,title; sha256=7de87dcfc1f6eeb70b8c155d9740c4c83db0b15b83848fb0e63eddad17583129; total=5132772; shown=5/10; top: 10.14217/oefl3722 \"Roads to Clean Energy\" | 10.1109/icepe50861.2021.9404495 \"[Front cover]\" | 10.1109/cepgt64143.2024.11064840 \"Cover\" | 10.1109/iccepe62686.2024.10931651 \"Front Cover\" | 10.1109/iccepe66357.2025.11193367 \"ICCEPE 2025 Cover Page\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "cover roads rooftops transparent solar skins",
+      "url": "https://api.github.com/search/repositories?q=cover%20roads%20rooftops%20transparent%20solar%20skins&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=cover%20roads%20rooftops%20transparent%20solar%20skins&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:19:25.065Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "cover roads rooftops transparent solar skins",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Acover%20AND%20all%3Aroads%20AND%20all%3Arooftops%20AND%20all%3Atransparent%20AND%20all%3Asolar%20AND%20all%3Askins&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Acover%20AND%20all%3Aroads%20AND%20all%3Arooftops%20AND%20all%3Atransparent%20AND%20all%3Asolar%20AND%20all%3Askins&start=0&max_results=10",
+      "sha256": "ca7f183c66700487b8f7b3f55e5c70f692fc416ebbd98333eeb0aa1edf04d055",
+      "bytes": 858,
+      "observedAt": "2026-11-06T00:19:25.521Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "cover roads rooftops transparent solar skins",
+      "url": "https://api.crossref.org/works?query=cover%20roads%20rooftops%20transparent%20solar%20skins&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=cover%20roads%20rooftops%20transparent%20solar%20skins&rows=10&select=DOI,title",
+      "sha256": "9f1282ba2e33fbb6f87e54c175cbeb71a930e16abc3a37f006fabc9e1cff558e",
+      "bytes": 1501,
+      "observedAt": "2026-11-06T00:19:26.409Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "cover roads rooftops clean energy power",
+      "url": "https://api.github.com/search/repositories?q=cover%20roads%20rooftops%20clean%20energy%20power&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=cover%20roads%20rooftops%20clean%20energy%20power&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:19:31.518Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "cover roads rooftops clean energy power",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Acover%20AND%20all%3Aroads%20AND%20all%3Arooftops%20AND%20all%3Aclean%20AND%20all%3Aenergy%20AND%20all%3Apower&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Acover%20AND%20all%3Aroads%20AND%20all%3Arooftops%20AND%20all%3Aclean%20AND%20all%3Aenergy%20AND%20all%3Apower&start=0&max_results=10",
+      "sha256": "ca9ceee47c4b2af86356578fa25d7f7d76bd21fac36653076d7dc4b716030f8c",
+      "bytes": 848,
+      "observedAt": "2026-11-06T00:19:32.102Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "cover roads rooftops clean energy power",
+      "url": "https://api.crossref.org/works?query=cover%20roads%20rooftops%20clean%20energy%20power&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=cover%20roads%20rooftops%20clean%20energy%20power&rows=10&select=DOI,title",
+      "sha256": "7de87dcfc1f6eeb70b8c155d9740c4c83db0b15b83848fb0e63eddad17583129",
+      "bytes": 1064,
+      "observedAt": "2026-11-06T00:19:33.182Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "2c4ecd8a6a15d95c2147dcea973f675caf083c9515d7c6eec5c001138a3c7c38",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

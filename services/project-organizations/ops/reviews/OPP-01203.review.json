@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01203",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:03:30Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No global, AI-managed food reserve exists, so the Main KPI of one such reserve is not met. Proposals for a global emergency grain reserve date from the 2007-2009 price crisis (IFPRI's 300,000-500,000 tonne WFP-managed reserve) and were never built (https://www.sharing.org/information-centre/articles/importance-food-reserves-hungry-world). The real reserves are regional and small: APTERR holds 787,000 tonnes of earmarked rice, about a day and a half of regional consumption (https://thestar.com.my/aseanplus/aseanplus-news/2025/01/11/asean-plus-three-strengthens-rice-reserves-for-potential-climate-crisis, https://rsis.edu.sg/rsis-publication/nts/co15047-its-not-the-size-but-how-its-used-lesson-for-asean-rice-reserves/), and the ECOWAS reserve released about 60,000 tonnes in 20 interventions in 2017-2024 (https://www.ecowas.int/supporting-the-nigerian-government-efforts-to-face-food-and-nutrition-insecurity-ecowas-regional-food-security-reserve-avails-about-7000-metric-tons-of-food-grains-to-the-federal-republic-of-nigeria/). AI is used for famine early warning (IFPRI model, 77.5% of predicted crises materialised, https://www.ifpri.org/news-release/as-famine-data-dries-up-can-ai-step-in-devex), not for reserve stocking and release. Honest limit: the binding constraints are governance and financing among states; a task must target a new, checkable piece such as an open release-rule model, not restate reserve proposals."
+  },
+  "additionalSearches": [
+    {
+      "query": "global food reserve proposal international grain reserve 2025 G20 emergency food stock",
+      "source": "https://www.sharing.org/information-centre/articles/importance-food-reserves-hungry-world",
+      "observedAt": "2026-11-06T00:58:00Z",
+      "finding": "Global reserve proposals (IFPRI physical and virtual reserves, 2008-2009) were never implemented; no current G20 global reserve found."
+    },
+    {
+      "query": "APTERR ASEAN Plus Three Emergency Rice Reserve earmarked stock size tonnes released",
+      "source": "https://thestar.com.my/aseanplus/aseanplus-news/2025/01/11/asean-plus-three-strengthens-rice-reserves-for-potential-climate-crisis",
+      "observedAt": "2026-11-06T00:58:10Z",
+      "finding": "APTERR earmarked stock 787,000 tonnes plus about 7,500 tonnes pre-positioned; about 50,000 tonnes released since 2011. Regional, rule-based, not AI-managed."
+    },
+    {
+      "query": "AI machine learning food stock management reserve release optimisation famine early warning model",
+      "source": "https://www.ifpri.org/news-release/as-famine-data-dries-up-can-ai-step-in-devex",
+      "observedAt": "2026-11-06T00:58:20Z",
+      "finding": "AI is applied to famine forecasting (IFPRI ML model, WFP/DLR consumption forecasts), not to managing or releasing reserve stocks; no AI reserve-management system found."
+    },
+    {
+      "query": "ECOWAS Regional Food Security Reserve size tonnes interventions",
+      "source": "https://www.ecowas.int/supporting-the-nigerian-government-efforts-to-face-food-and-nutrition-insecurity-ecowas-regional-food-security-reserve-avails-about-7000-metric-tons-of-food-grains-to-the-federal-republic-of-nigeria/",
+      "observedAt": "2026-11-06T00:58:30Z",
+      "finding": "ECOWAS reserve targets a 40,000-tonne stockpile; about 59,977 tonnes released in 20 interventions 2017-2024. Regional, small."
+    }
+  ]
+}

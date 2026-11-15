@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00009",
+  "native_project": "P-OPP-00009",
+  "source_digest": "7a992f8f478ce5a599d8630e5f704c13dab7f759abbc844efa0c3d4b4ec8601b",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Lengthen telomeres safely without raising cancer risk",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "25074dde1534788b09e20f840cca510bbb8eb8d3a635d6826b2391efb10ed447"
+  },
+  "drafted_at": "2026-11-06T00:07:35.674Z",
+  "queries": [
+    "lengthen telomeres safely raising cancer risk",
+    "lengthen telomeres safely human health longevity"
+  ],
+  "searches": [
+    {
+      "query": "lengthen telomeres safely raising cancer risk",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:07:27.782Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=lengthen%20telomeres%20safely%20raising%20cancer%20risk&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "lengthen telomeres safely raising cancer risk",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:07:28.243Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Alengthen%20AND%20all%3Atelomeres%20AND%20all%3Asafely%20AND%20all%3Araising%20AND%20all%3Acancer%20AND%20all%3Arisk&start=0&max_results=10; sha256=4ad12855d3af0f83a6717f6765e0cf2f39b8a0692b87340cc1cf362d99df1ec7; total=0; shown=0/0"
+    },
+    {
+      "query": "lengthen telomeres safely raising cancer risk",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:07:29.306Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=lengthen%20telomeres%20safely%20raising%20cancer%20risk&rows=10&select=DOI,title; sha256=d197e3a9ee9fdf119a361f5f8cdf1b94f903fc9cf775f9a30f964fe199f83043; total=4970142; shown=5/10; top: 10.7554/elife.07750.016 \"Decision letter: The Ku subunit of telomerase binds Sir4 to recruit telomerase to lengthen telomeres in S. cerevisiae\" | 10.1038/stemcells.2007.123 \"Telomeres lengthen during early embryonic development\" | 10.1098/rspb.2025.0819/v1/review1 \"Review for Unpredictable warm spells in winter increase blood cortisol level but lengthen telomeres in a seasonal rodent &lt i&gt Phodopus…\" | 10.7554/elife.07750.017 \"Author response: The Ku subunit of telomerase binds Sir4 to recruit telomerase to lengthen telomeres in S. cerevisiae\" | 10.1098/rspb.2025.0819/v2/review1 \"Review for Unpredictable warm spells in winter increase blood cortisol level but lengthen telomeres in a seasonal rodent &lt i&gt Phodopus…\""
+    },
+    {
+      "query": "lengthen telomeres safely human health longevity",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:07:34.339Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=lengthen%20telomeres%20safely%20human%20health%20longevity&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "lengthen telomeres safely human health longevity",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:07:34.836Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Alengthen%20AND%20all%3Atelomeres%20AND%20all%3Asafely%20AND%20all%3Ahuman%20AND%20all%3Ahealth%20AND%20all%3Alongevity&start=0&max_results=10; sha256=d8b48270eb425efc9de04922cb198b108c6bdbfbd9f1f574508a5246159422a7; total=0; shown=0/0"
+    },
+    {
+      "query": "lengthen telomeres safely human health longevity",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:07:35.673Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=lengthen%20telomeres%20safely%20human%20health%20longevity&rows=10&select=DOI,title; sha256=2ba6032be7f73a406843966ffa659a4650743fef35bb8b29b27111b57d9225ea; total=8062977; shown=5/10; top: 10.1211/pj.2017.20202648 \"How telomeres affect your health and longevity\" | 10.1186/s13039-019-0450-4 \"Transgenerational telomere erosion in the monogametic sex: human telomeres progressively erode in the female germline and do not lengthen i…\" | 10.7554/elife.07750.016 \"Decision letter: The Ku subunit of telomerase binds Sir4 to recruit telomerase to lengthen telomeres in S. cerevisiae\" | 10.1038/stemcells.2007.123 \"Telomeres lengthen during early embryonic development\" | 10.7551/mitpress/15193.003.0006 \"Telomeres\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "lengthen telomeres safely raising cancer risk",
+      "url": "https://api.github.com/search/repositories?q=lengthen%20telomeres%20safely%20raising%20cancer%20risk&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=lengthen%20telomeres%20safely%20raising%20cancer%20risk&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:07:27.782Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "lengthen telomeres safely raising cancer risk",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Alengthen%20AND%20all%3Atelomeres%20AND%20all%3Asafely%20AND%20all%3Araising%20AND%20all%3Acancer%20AND%20all%3Arisk&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Alengthen%20AND%20all%3Atelomeres%20AND%20all%3Asafely%20AND%20all%3Araising%20AND%20all%3Acancer%20AND%20all%3Arisk&start=0&max_results=10",
+      "sha256": "4ad12855d3af0f83a6717f6765e0cf2f39b8a0692b87340cc1cf362d99df1ec7",
+      "bytes": 860,
+      "observedAt": "2026-11-06T00:07:28.243Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "lengthen telomeres safely raising cancer risk",
+      "url": "https://api.crossref.org/works?query=lengthen%20telomeres%20safely%20raising%20cancer%20risk&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=lengthen%20telomeres%20safely%20raising%20cancer%20risk&rows=10&select=DOI,title",
+      "sha256": "d197e3a9ee9fdf119a361f5f8cdf1b94f903fc9cf775f9a30f964fe199f83043",
+      "bytes": 2075,
+      "observedAt": "2026-11-06T00:07:29.306Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "lengthen telomeres safely human health longevity",
+      "url": "https://api.github.com/search/repositories?q=lengthen%20telomeres%20safely%20human%20health%20longevity&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=lengthen%20telomeres%20safely%20human%20health%20longevity&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:07:34.339Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "lengthen telomeres safely human health longevity",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Alengthen%20AND%20all%3Atelomeres%20AND%20all%3Asafely%20AND%20all%3Ahuman%20AND%20all%3Ahealth%20AND%20all%3Alongevity&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Alengthen%20AND%20all%3Atelomeres%20AND%20all%3Asafely%20AND%20all%3Ahuman%20AND%20all%3Ahealth%20AND%20all%3Alongevity&start=0&max_results=10",
+      "sha256": "d8b48270eb425efc9de04922cb198b108c6bdbfbd9f1f574508a5246159422a7",
+      "bytes": 866,
+      "observedAt": "2026-11-06T00:07:34.836Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "lengthen telomeres safely human health longevity",
+      "url": "https://api.crossref.org/works?query=lengthen%20telomeres%20safely%20human%20health%20longevity&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=lengthen%20telomeres%20safely%20human%20health%20longevity&rows=10&select=DOI,title",
+      "sha256": "2ba6032be7f73a406843966ffa659a4650743fef35bb8b29b27111b57d9225ea",
+      "bytes": 1679,
+      "observedAt": "2026-11-06T00:07:35.673Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "77f154d8b073e0b4138f788daf85350fc869d0a36ca71839b36f16ec9eb8c7d8",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

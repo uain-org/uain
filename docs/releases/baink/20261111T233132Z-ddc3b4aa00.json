@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261111T233132Z-ddc3b4aa00",
+  "version": "0.3.93",
+  "source_commit": "a2f061e9bb44f0de910c15fc4b169c8a631412ce",
+  "deployed_at": "2026-11-11T23:31:50Z",
+  "prior": "20261111T223621Z-40aa958e76",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#contribution-recognition-release-20261112"
+  ],
+  "note": "PR #532: contribution points (Karma) first on every surface (P0-3), kit 0.2.17, MCP 0.6.9. verify and promote --expected-prior passed from the merge commit (archive fcfba669...ce1a). At 23:32 UTC public routes 200; the no-install test member reads 20 points, 1 accepted answer, 20 AI$ on the public API, the MCP tool and the kit status."
+}

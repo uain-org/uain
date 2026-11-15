@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "controlled-holder",
+  "release_id": "e581212c78d7a32b6f84ca582d36a97bfc191684865bc62860e42dba50c8581c",
+  "version": null,
+  "source_commit": "4669027ae3025e84e69c72663686448316318841",
+  "deployed_at": "2026-11-08T16:35:24Z",
+  "prior": "d95ebf55f1e2fe76c2ca48921ed50e24e4bf4fa6f26ea3e483703379cdedb039",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#subscription-pilot-20261108",
+    "docs/baink/holder9-release-2026-11-08.md"
+  ],
+  "note": "Same-operator controlled holder installed through exact signed9 official release with PID1 reaper; owner, key metadata and existing wallet configuration preserved. Signed public distribution checks passed; installed MCP and recipient-confirmed payment acceptance remain separate."
+}

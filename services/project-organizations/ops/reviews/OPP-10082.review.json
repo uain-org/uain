@@ -1,0 +1,51 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-10082",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable ledger traces donations to verified outcomes, so the Main KPI of 500,000,000 donations traced to outcomes is unmet. The best-known outcome estimates are model-based, not traced: GiveWell builds program-level cost-effectiveness models (top charities roughly 3,500 to 5,500 US dollars per life saved on 2021 figures) with external-validity adjustments and subjective moral weights, notes a past estimate about 100 times off, and does not link a specific donor's dollar to a specific result (https://www.givewell.org/how-we-work/our-criteria/cost-effectiveness). A 2025 evidence gap map of results-based payments shows uneven evidence (https://doi.org/10.1057/s41287-025-00713-9), aid-data governance stays fragmented across regimes such as IATI (https://doi.org/10.17645/pag.10508), and blockchain donation-tracking designs are proposals that trace money, not impact (https://doi.org/10.1002/sd.3260). GitHub holds two small donation-tracking projects. Honest limit: tracing financial flows (IATI publishing, blockchain ledgers, outcome-based contracts) is known and is not new work; the unsolved part is causal attribution of outcomes to marginal dollars with verification, so tasks must target a checkable piece such as a verifiable outcome-attestation protocol tested on real programme data."
+  },
+  "additionalSearches": [
+    {
+      "query": "philanthropy impact measurement donation outcome tracing blockchain transparency (2024 onward)",
+      "source": "https://api.openalex.org/works?search=philanthropy%20impact%20measurement%20donation%20outcome%20tracing%20blockchain%20transparency&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:40Z",
+      "finding": "23 works: Routledge Handbook of AI and Philanthropy (2024), a blockchain framework for crowdfunding SDG projects (2024), zakat management model (2025). Designs, not an operating outcome ledger."
+    },
+    {
+      "query": "cost-effectiveness charity evaluation GiveWell outcome attribution per dollar (2024 onward)",
+      "source": "https://api.openalex.org/works?search=cost-effectiveness%20charity%20evaluation%20GiveWell%20outcome%20attribution%20per%20dollar&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:42Z",
+      "finding": "6 works: the charity capacity curse (2025), bias against horizontal interventions in cost-effectiveness (2025), communicating global income rank. No per-donation outcome tracing."
+    },
+    {
+      "query": "donation tracking impact ledger (GitHub repositories)",
+      "source": "https://api.github.com/search/repositories?q=donation%20tracking%20impact%20ledger&sort=stars&per_page=8",
+      "observedAt": "2026-11-06T01:18:43Z",
+      "finding": "2 repositories, 0 stars: a student animal-adoption donation ledger and an African giving platform. Null result for an open outcome-tracing ledger."
+    },
+    {
+      "query": "IATI aid transparency results data traceability evaluation (2024 onward)",
+      "source": "https://api.openalex.org/works?search=IATI%20aid%20transparency%20results%20data%20traceability%20evaluation&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:46Z",
+      "finding": "37 works: fragmented aid-data governance (2025), transparency and austerity survey experiment (2025). Aid flows are published; outcomes are not traced to funds."
+    },
+    {
+      "query": "outcome-based funding social impact bond results verified payment evaluation (2024 onward)",
+      "source": "https://api.openalex.org/works?search=outcome-based%20funding%20social%20impact%20bond%20results%20verified%20payment%20evaluation&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:22:35Z",
+      "finding": "5,241 works: social impact bond outcome payments (2025), UK and Germany SIB studies, a 2025 evidence gap map on results-based payments. Outcome contracting exists at small scale."
+    },
+    {
+      "query": "GiveWell cost-effectiveness method",
+      "source": "https://www.givewell.org/how-we-work/our-criteria/cost-effectiveness",
+      "observedAt": "2026-11-06T01:23:51Z",
+      "finding": "Program-level models of cost per life or life-year; roughly $3,500-5,500 per life saved (2021); external-validity and subjective adjustments; one past error about 100x; no tracing of individual donations."
+    }
+  ]
+}

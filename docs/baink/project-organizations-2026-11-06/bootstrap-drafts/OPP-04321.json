@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-04321",
+  "native_project": "P-OPP-04321",
+  "source_digest": "b22ce5e568e525b5b7e81ec48173acbbf1ef6fed90326035d8928006daf5a798",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Give every citizen a personal AI that explains each ballot question in their language",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "d32e087f23c8575f00455cdc9d333d0f000e9ac8885c7af440a0332395596305"
+  },
+  "drafted_at": "2026-11-06T00:24:57.950Z",
+  "queries": [
+    "give citizen personal explains ballot question",
+    "give citizen personal governance law justice"
+  ],
+  "searches": [
+    {
+      "query": "give citizen personal explains ballot question",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:24:50.034Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=give%20citizen%20personal%20explains%20ballot%20question&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "give citizen personal explains ballot question",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:24:50.483Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Acitizen%20AND%20all%3Apersonal%20AND%20all%3Aexplains%20AND%20all%3Aballot%20AND%20all%3Aquestion&start=0&max_results=10; sha256=c752fe1def83e4ef14f26d2453e7f4b9e40d71a8eb4d41a0873cbe9bc756bd13; total=0; shown=0/0"
+    },
+    {
+      "query": "give citizen personal explains ballot question",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:24:51.324Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=give%20citizen%20personal%20explains%20ballot%20question&rows=10&select=DOI,title; sha256=0f5ea774d1cf869fa809e3e21873d29a5791f11c2149e6c14055e86a183768c6; total=547108; shown=5/10; top: 10.61162/9781643365138-010 \"Chapter 8. “Recognize the Negro Citizen . . . and Give Him the Right to Vote”\" | 10.3917/kart.barre.2018.01.0026 \"Les lieux de mobilité en question\" | 10.4324/9781315612775-27 \"Give Us the Ballot! Gaining Enfranchisement in Mobile, Alabama: 1944–50\" | 10.4324/9780429461446-3 \"Give Us the Ballot\" | 10.4324/9780203982204-13 \"Some Concluding Thoughts\""
+    },
+    {
+      "query": "give citizen personal governance law justice",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:24:56.544Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=give%20citizen%20personal%20governance%20law%20justice&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "give citizen personal governance law justice",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:24:57.153Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Acitizen%20AND%20all%3Apersonal%20AND%20all%3Agovernance%20AND%20all%3Alaw%20AND%20all%3Ajustice&start=0&max_results=10; sha256=6388fbb4f113165bb7bbee79efebe2c8130595bca03bcd42a1f353ec41d634b0; total=0; shown=0/0"
+    },
+    {
+      "query": "give citizen personal governance law justice",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:24:57.949Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=give%20citizen%20personal%20governance%20law%20justice&rows=10&select=DOI,title; sha256=8f51f0832fdc9958f64febc47e2b1f1aefa13e51f704bc206c2803722d2f4923; total=2722090; shown=5/10; top: 10.63208/21015-321 \"Administrative Justice and Democratic Governance: Strengthening Citizen Protection Through Administrative Law in Indonesia\" | 10.1093/oso/9780195160154.003.0010 \"Criminal Justice Reforms\" | 10.5040/9781474200394.ch-008 \"The Citizen Mental Patient\" | 10.1163/9789004236424_014 \"Law, Justice, and Governance: New Views on Medieval Constitutionalism\" | 10.1017/cbo9780511497902.002 \"Justice to the Dead: Prototypes of the Citizen and Self in Early Greece\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "give citizen personal explains ballot question",
+      "url": "https://api.github.com/search/repositories?q=give%20citizen%20personal%20explains%20ballot%20question&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=give%20citizen%20personal%20explains%20ballot%20question&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:24:50.034Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "give citizen personal explains ballot question",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Acitizen%20AND%20all%3Apersonal%20AND%20all%3Aexplains%20AND%20all%3Aballot%20AND%20all%3Aquestion&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Acitizen%20AND%20all%3Apersonal%20AND%20all%3Aexplains%20AND%20all%3Aballot%20AND%20all%3Aquestion&start=0&max_results=10",
+      "sha256": "c752fe1def83e4ef14f26d2453e7f4b9e40d71a8eb4d41a0873cbe9bc756bd13",
+      "bytes": 862,
+      "observedAt": "2026-11-06T00:24:50.483Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "give citizen personal explains ballot question",
+      "url": "https://api.crossref.org/works?query=give%20citizen%20personal%20explains%20ballot%20question&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=give%20citizen%20personal%20explains%20ballot%20question&rows=10&select=DOI,title",
+      "sha256": "0f5ea774d1cf869fa809e3e21873d29a5791f11c2149e6c14055e86a183768c6",
+      "bytes": 1296,
+      "observedAt": "2026-11-06T00:24:51.324Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "give citizen personal governance law justice",
+      "url": "https://api.github.com/search/repositories?q=give%20citizen%20personal%20governance%20law%20justice&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=give%20citizen%20personal%20governance%20law%20justice&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:24:56.544Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "give citizen personal governance law justice",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Acitizen%20AND%20all%3Apersonal%20AND%20all%3Agovernance%20AND%20all%3Alaw%20AND%20all%3Ajustice&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Acitizen%20AND%20all%3Apersonal%20AND%20all%3Agovernance%20AND%20all%3Alaw%20AND%20all%3Ajustice&start=0&max_results=10",
+      "sha256": "6388fbb4f113165bb7bbee79efebe2c8130595bca03bcd42a1f353ec41d634b0",
+      "bytes": 858,
+      "observedAt": "2026-11-06T00:24:57.153Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "give citizen personal governance law justice",
+      "url": "https://api.crossref.org/works?query=give%20citizen%20personal%20governance%20law%20justice&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=give%20citizen%20personal%20governance%20law%20justice&rows=10&select=DOI,title",
+      "sha256": "8f51f0832fdc9958f64febc47e2b1f1aefa13e51f704bc206c2803722d2f4923",
+      "bytes": 1376,
+      "observedAt": "2026-11-06T00:24:57.949Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "c0a19023ac87de75a7198b1452a816d8e7fc7d6765a1c02e0d00decdd34faac1",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

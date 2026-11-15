@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261104T095908Z-1ad0b325d9",
+  "version": "0.3.21",
+  "source_commit": null,
+  "deployed_at": null,
+  "prior": "20261104T084825Z-3b2581e0f7",
+  "status": "publicly-verified",
+  "evidence": ["apps/baink/CHANGELOG.md", "CHANGELOG.md"]
+}

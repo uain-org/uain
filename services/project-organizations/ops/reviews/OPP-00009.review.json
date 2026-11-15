@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00009",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T02:20:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Safe telomere lengthening is unsolved and nothing approaches the Main KPI of 300,000,000 people with safely lengthened telomeres. The only human telomerase gene therapy programmes are tiny and contested: Libella's AAV-hTERT studies list five participants with adverse events over 12 months as the primary endpoint and were placed in Colombia by the sponsor's own account of the path of least resistance, charging 1,000,000 dollars to enrol, which specialists called unethical, poorly designed and risky including the risk of activating dormant cancer cells (https://clinicaltrials.gov/study/NCT04133649, https://www.technologyreview.com/s/614873/buyer-beware-of-this-1-million-gene-therapy-for-aging/); no results are published. The one credible human lengthening result is pharmacological and disease-specific: danazol 800 mg/day for 24 months in 27 patients with telomere diseases added about 386 base pairs and ended transfusion dependence, with 15 of 27 missing 24-month data, counts falling after withdrawal and androgen side effects the authors said might not be worth the risk in healthy people (https://pmc.ncbi.nlm.nih.gov/articles/PMC4968696). The safety question is unresolved in the direction that matters: Mendelian randomisation keeps linking genetically longer telomeres to higher risk of thyroid, lung, endometrial and melanoma cancers, with telomerase reactivated in roughly 85 percent of human cancers (https://pubmed.ncbi.nlm.nih.gov/26138067/). No open-source or openly published method lengthens human telomeres safely. Honest limit: danazol in telomere-biology disorders is a known answer, so tasks that only repeat androgen dosing need their own basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "telomerase gene therapy AAV TERT human trial safety cancer risk 2026",
+      "source": "https://clinicaltrials.gov/study/NCT04133649",
+      "observedAt": "2026-11-06T02:05:00Z",
+      "finding": "Libella's AAV-hTERT aging study lists an estimated enrolment of 5 with incidence of adverse events over 12 months as the primary endpoint; no results posted and status unclear. The other registered TERT study, MERCURY-DCM (NCT05837143), is a 12-patient dose escalation in dilated cardiomyopathy. Human safety and cancer-risk data are essentially absent; the supporting non-tumorigenicity evidence is a mouse Kras lung-cancer model."
+    },
+    {
+      "query": "Libella Rejuvenation telomerase therapy trial criticism Mexico Colombia",
+      "source": "https://www.technologyreview.com/s/614873/buyer-beware-of-this-1-million-gene-therapy-for-aging/",
+      "observedAt": "2026-11-06T02:07:00Z",
+      "finding": "The only advertised anti-aging telomerase therapy charges participants 1,000,000 dollars, was sited in Colombia for the path of least resistance, and was called unethical, poorly designed and seriously risky by outside experts, including the danger of activating dormant cancerous cells; a Colombian CRO said no patients had been enrolled. Not a usable solution."
+    },
+    {
+      "query": "TA-65 danazol telomere lengthening human trial results aplastic anemia",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4968696",
+      "observedAt": "2026-11-06T02:09:00Z",
+      "finding": "The NIH phase 1-2 danazol study (NEJM 2016) in 27 patients with telomere diseases elongated telomeres by about 386 base pairs over two years and raised haemoglobin from 9 to 11 g/dL, but 15 patients were missing 24-month primary-endpoint data, counts fell when the drug stopped, and the investigators said the benefit-risk in healthy people is unknown. Nothing on TA-65 of comparable quality."
+    },
+    {
+      "query": "longer telomeres cancer risk Mendelian randomization 2024 2025 evidence",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/26138067/",
+      "observedAt": "2026-11-06T02:11:00Z",
+      "finding": "Mendelian randomisation evidence runs against safety: a genetic score for longer telomeres associates with lung adenocarcinoma (2015), a 2025 East Asian multi-cancer study links longer telomere length to higher thyroid and lung cancer risk, and 2025 studies report endometrial (OR 1.29) and melanoma associations, with a null result for oral cancer in Europeans. Pleiotropy caveats remain, so the safety side of the project is genuinely open."
+    }
+  ]
+}

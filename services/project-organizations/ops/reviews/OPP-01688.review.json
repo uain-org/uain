@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01688",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": true,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held: the project's deliverable, a smart handpump that calls for repair when it fails, is a known and deployed answer. Oxford's Waterpoint Data Transmitter fits inside a handpump handle, counts strokes and reports over the mobile network so mechanics know when a pump has failed; in Kwale and Kitui, Kenya, this cut average repair time from about 27 to 30 days to under three, and FundiFix now runs the service for over 80,000 people (https://www.ox.ac.uk/node/1428843; https://results2021.ref.ac.uk/impact/8d417ae5-99a1-4d72-a3bd-2ddf04801922?page=1). charity: water has installed over 7,300 remote flow sensors on water points in Ghana, Malawi, Ethiopia and Nepal with anomaly scoring that alerts repair teams (https://www.charitywater.org/our-work/sensors), and openwashdata publishes the Kwale smart-handpump volume data on GitHub. Honest limit: the 5,000,000-handpump KPI is unmet; about one in four African handpumps is broken at any time, sensors depend on 2G coverage that is weak in remote areas, and a sensor study of 42 Afridev pumps still found about 9 percent down on average because repair lag, not detection, drives downtime (https://pmc.ncbi.nlm.nih.gov/articles/PMC5705089). Those are scale, connectivity and maintenance-finance problems; the self-reporting handpump is a known answer, so under the 29 September 2026 rule the project is not opened as new work. A reframed project on offline or predictive failure detection would need its own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "smart handpump transmitter Oxford University Kenya repair service sensors waterpoint monitoring eWATERpay SweetSense 2025",
+      "source": "https://results2021.ref.ac.uk/impact/8d417ae5-99a1-4d72-a3bd-2ddf04801922/pdf",
+      "observedAt": "2026-11-06T01:32:00Z",
+      "finding": "The Oxford Waterpoint Data Transmitter fits in the pump handle, counts strokes and sends data to a hub so engineers know when repairs are needed; about 300 sensors installed in Kenya; the REF impact case study credits it with drastically accelerating repair through the FundiFix service. Mobile coverage is a dependency."
+    },
+    {
+      "query": "handpump sensor monitoring downtime reduced study FundiFix Rural Water Supply Network non-functional handpumps percentage",
+      "source": "https://www.ox.ac.uk/node/1428843",
+      "observedAt": "2026-11-06T01:32:00Z",
+      "finding": "Oxford Smart Handpumps cut average repair time from about 30 days to under three across two Kenyan counties (WASREB baseline 27 days); FundiFix serves over 80,000 people; about one in four African handpumps is broken at any time; a PMC sensor study of 42 Afridev pumps found about 9 percent broken on average, driven by repair lag."
+    },
+    {
+      "query": "charity: water sensors remote monitoring water points Uptime iot handpump service delivery 2025",
+      "source": "https://www.charitywater.org/our-work/sensors",
+      "observedAt": "2026-11-06T01:32:00Z",
+      "finding": "charity: water has installed over 7,300 remote sensors in Ghana, Malawi, Ethiopia and Nepal (390 India Mark II sensors shipped to Uganda in 2021), with hourly flow monitoring over 2G, anomaly scoring and mechanic teams covering 50 to 100 water points each; some sensors are in areas with no cell service."
+    },
+    {
+      "query": "smart handpump (GitHub repository search)",
+      "source": "https://api.github.com/search/repositories?q=smart%20handpump&sort=stars&per_page=5",
+      "observedAt": "2026-11-06T01:19:55Z",
+      "finding": "GitHub returns 2 repositories: openwashdata/waterpumpkwale (weekly volume pumped by handpumps monitored with Smart Handpump technology, Kwale County, Kenya, updated November 2026) and a student IoT handpump fault monitor. Monitoring data from deployed smart handpumps is openly published."
+    }
+  ]
+}

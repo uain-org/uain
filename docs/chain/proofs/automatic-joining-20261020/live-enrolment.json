@@ -1,0 +1,15 @@
+{
+  "started": "2026-10-20T11:35:35.941Z",
+  "finished": "2026-10-20T11:36:00.693Z",
+  "member": "uain1ff5d2ea8f3d76f5c32fe41f11e85025471e417f0",
+  "enrol_event": "464",
+  "instance_event": "466",
+  "activation": "active",
+  "manual_licence_commands": 0,
+  "mcp_submit_and_receipt": true,
+  "independent_proof": true,
+  "no_privileged_roles": true,
+  "instance_owned": true,
+  "research_published": false,
+  "controlled_identity": true
+}

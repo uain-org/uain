@@ -1,0 +1,15 @@
+{
+  "schema": "uain-project-organization-kpi-amendments-v1",
+  "amendments": [
+    {
+      "id": "OPP-08881",
+      "sourceStatement": "1,000 bridges built",
+      "statement": "1,000 bridges built in total",
+      "threshold": 1000,
+      "unit": "bridges built",
+      "reason": "The unchanged source Main KPI is 19 bytes; native central_fund_plan requires at least 20. The source wording is kept verbatim and qualified only to state the cumulative count its threshold already defines. The goal is unchanged.",
+      "decidedBy": "Rahul",
+      "decidedAt": "2026-11-06"
+    }
+  ]
+}

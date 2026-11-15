@@ -1,0 +1,14 @@
+/** Bounded account queue. Only a caller's authenticated proof can resolve it. */
+export function createNativeAccountBatcher({readBatch,queueTimeoutMs=25000,proofTimeoutMs=8000,coalesceMs=10}={}){
+ const ensure=(v,c)=>{if(!v)throw Error('native_account_batch_'+c);};ensure(typeof readBatch==='function'&&Number.isInteger(queueTimeoutMs)&&queueTimeoutMs>=1&&queueTimeoutMs<=25000&&Number.isInteger(proofTimeoutMs)&&proofTimeoutMs>=1&&proofTimeoutMs<=8000&&Number.isInteger(coalesceMs)&&coalesceMs>=0&&coalesceMs<=10,'configuration');
+ const pending=new Map(),queue=[],working=new Set();let active=0,timer=null,closing=false,closePromise=null;
+ function settle(entry,error,state){if(entry.done)return;entry.done=true;clearTimeout(entry.timer);pending.delete(entry.member);error?entry.reject(error):entry.resolve(state);}
+ function schedule(){if(closing||timer!==null)return;timer=setTimeout(()=>{timer=null;drain();},coalesceMs);}
+ function drain(){
+  while(!closing&&active<2&&queue.length){const entries=[];while(queue.length&&entries.length<25){const e=queue.shift();if(!e.done)entries.push(e);}if(!entries.length)continue;
+   active++;const members=entries.map(e=>e.member),budget=Math.min(proofTimeoutMs,...entries.map(e=>e.deadline-Date.now()));
+   const work=Promise.resolve().then(async()=>{try{ensure(budget>0,'deadline');const result=await readBatch([...members],budget);ensure(Array.isArray(result)&&result.length===members.length&&result.every((r,i)=>r&&r.member===members[i]&&(r.state===null||r.state&&typeof r.state==='object'&&!Array.isArray(r.state))),'binding');for(let i=0;i<entries.length;i++)settle(entries[i],result[i].state===null?Error('native_account_batch_proof_unavailable'):null,result[i].state);}catch(error){for(const e of entries)settle(e,error);}finally{active--;working.delete(work);drain();}});working.add(work);
+  }
+ }
+ return Object.freeze({read(member){if(closing)return Promise.reject(Error('native_account_batch_closed'));if(typeof member!=='string'||!/^uain1[a-f0-9]{40}$/.test(member))return Promise.reject(Error('native_account_batch_member'));const prior=pending.get(member);if(prior)return prior.promise;if(pending.size>=256)return Promise.reject(Error('native_account_batch_capacity'));let resolve,reject;const promise=new Promise((a,b)=>{resolve=a;reject=b;}),entry={member,promise,resolve,reject,deadline:Date.now()+queueTimeoutMs,done:false};entry.timer=setTimeout(()=>settle(entry,Error('native_account_batch_deadline')),queueTimeoutMs);pending.set(member,entry);queue.push(entry);schedule();return promise;},close(){if(closePromise)return closePromise;closing=true;clearTimeout(timer);timer=null;for(const entry of pending.values())settle(entry,Error('native_account_batch_closed'));queue.length=0;closePromise=Promise.allSettled([...working]).then(()=>{});return closePromise;}});
+}

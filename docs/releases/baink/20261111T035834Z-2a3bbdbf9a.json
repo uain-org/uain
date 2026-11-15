@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261111T035834Z-2a3bbdbf9a",
+  "version": "0.3.89",
+  "source_commit": "641905bf026d6936e20e480205728d27b9aeb157",
+  "deployed_at": "2026-11-11T03:59:00Z",
+  "prior": "20261110T150117Z-d05273ba75",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#uain-go-links-20261111"
+  ],
+  "note": "PR #521: /uain/go/<code> (UAIN guide and page, same codes and counts) for uain.global/go; neutral /admin labels. verify and promote --expected-prior passed; live server files matched origin/main before promote."
+}

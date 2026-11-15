@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00965",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:53:30Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable solution puts first-aid and diagnostic kits in 2,000,000,000 households, so the Main KPI is not met. Household kit ownership is low even where surveyed (24.7% in a Sichuan household study, https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-024-19376-y), and the largest household-kit programmes found are single-condition: ColaLife's Kit Yamoyo diarrhoea kit in Zambia (a 452,000-kit public order, https://grandchallenges.ca/grantee-stars/0144-01) and HIV self-test distribution such as ATLAS (about 400,000 kits in three West African countries, https://atlas.solthis.org/en/). A combined multi-disease home test kit for LMIC households is still at trial stage (DASH Phase II, not yet recruiting, https://clinicaltrials.gov/study/NCT06588790). Open hardware covers pieces only, for example a 3D-printed lateral-flow reader (github.com/fpaskali/LFApp). Honest limit: first-aid kits and rapid tests are commodities; the unsolved part is a low-cost, usable combined kit with resupply at household scale, and tasks that only re-specify a standard first-aid kit are not new work."
+  },
+  "additionalSearches": [
+    {
+      "query": "household first aid kit ownership low-income countries survey percentage households",
+      "source": "https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-024-19376-y",
+      "observedAt": "2026-11-06T00:48:00Z",
+      "finding": "No national survey of household kit ownership in low-income countries found; a Sichuan household survey found only 24.7% stocked a first-aid kit."
+    },
+    {
+      "query": "home diagnostic kit distribution programme households malaria HIV self-test millions distributed",
+      "source": "https://clinicaltrials.gov/study/NCT06588790",
+      "observedAt": "2026-11-06T00:48:10Z",
+      "finding": "Combined household rapid tests (malaria, HIV, pregnancy) are only in the planned DASH Phase II trial (2,250 households). HIV self-test programmes like ATLAS distributed about 400,000 kits."
+    },
+    {
+      "query": "open source low-cost home diagnostic device github multi-test kit smartphone",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8947044",
+      "observedAt": "2026-11-06T00:48:20Z",
+      "finding": "Open designs exist for parts (open lateral-flow reader with CAD on GitHub, smartphone oximeter, echOpen probe), not a complete household first-aid and diagnostic kit."
+    },
+    {
+      "query": "Kit Yamoyo ColaLife diarrhoea kit households reached",
+      "source": "https://grandchallenges.ca/grantee-stars/0144-01",
+      "observedAt": "2026-11-06T00:48:30Z",
+      "finding": "Kit Yamoyo (ORS+zinc) raised correct diarrhoea treatment from under 1% to 45% in a Zambian trial; Ministry ordered 452,000 kits. Single-condition, one country."
+    }
+  ]
+}

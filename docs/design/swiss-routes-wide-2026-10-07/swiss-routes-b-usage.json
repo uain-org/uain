@@ -1,0 +1,22 @@
+{
+  "created": 1791367059,
+  "usage": {
+    "prompt_tokens": 280,
+    "completion_tokens": 7024,
+    "total_tokens": 7304,
+    "cost": 0.018,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.018,
+      "upstream_inference_prompt_cost": 0,
+      "upstream_inference_completions_cost": 0.018
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 7024
+    }
+  }
+}

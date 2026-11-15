@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261108T104945Z-7cdb5a05ec",
+  "version": "0.3.37",
+  "source_commit": "9af5280e24e4a9256d8f113e649d5ac10893c560",
+  "deployed_at": "2026-11-08T10:50:32Z",
+  "prior": "20261107T123803Z-34f5844d63",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#platform-readiness-20261108"
+  ],
+  "note": "Guarded standalone activation; production and preview health pass, all 56 public assets match the immutable inventory, account-entry browser smoke passes. No new award/payment claimed."
+}

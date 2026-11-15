@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-05761",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No effort has produced reference genomes for anywhere near 2,000,000 species, so the Main KPI is unmet. The Earth BioGenome Project network had about 3,465 genomes meeting its standard by end of 2024 (https://www.frontiersin.org/journals/science/articles/10.3389/fsci.2025.1514835/pdf); its Phase II plan targets 150,000 species in four years at about US$1.1 billion, needing over 3,000 genomes a month (https://www.sanger.ac.uk/news_item/biological-moonshot-accelerates-efforts-to-genetically-map-life-on-earth/). The Vertebrate Genomes Project completed Phase 1 with about 815 species (https://ourarchive.otago.ac.nz/esploro/outputs/preprint/The-Vertebrate-Genomes-Project-Phase-I/9926886382201891), and NCBI held assemblies for only a few thousand eukaryotic species by 2024 at all quality levels. Honest limit: EBP, DToL and VGP are large, open, funded programmes already doing this work with open data and pipelines; UAIN tasks that merely re-sequence or re-assemble species those programmes cover are known work, and new work must target species, methods or cost gaps they do not cover."
+  },
+  "additionalSearches": [
+    {
+      "query": "Earth BioGenome Project number of reference genomes sequenced 2025 progress",
+      "source": "https://www.frontiersin.org/journals/science/articles/10.3389/fsci.2025.1514835/pdf",
+      "observedAt": "2026-11-06T00:38:48Z",
+      "finding": "By end of 2024 EBP-affiliated projects had 1,667 published plus 1,798 deposited genomes meeting EBP standards, 3,465 in total."
+    },
+    {
+      "query": "Darwin Tree of Life Vertebrate Genomes Project species completed genomes count",
+      "source": "https://ourarchive.otago.ac.nz/esploro/outputs/preprint/The-Vertebrate-Genomes-Project-Phase-I/9926886382201891",
+      "observedAt": "2026-11-06T00:38:54Z",
+      "finding": "VGP Phase 1 completed reference genomes for about 815 species across 97 percent of vertebrate orders, against a 70,000-species target."
+    },
+    {
+      "query": "NCBI eukaryotic genome assemblies number of species 2025",
+      "source": "https://www.frontiersin.org/journals/science/articles/10.3389/fsci.2025.1514835/pdf",
+      "observedAt": "2026-11-06T00:39:00Z",
+      "finding": "A 2024 count reported about 41,000 eukaryotic assemblies across roughly 2,300 species in NCBI; Ensembl 2025 reports over 4,800 eukaryotic genomes."
+    },
+    {
+      "query": "Earth BioGenome Project phase 2 goal 150,000 species timeline cost",
+      "source": "https://www.sanger.ac.uk/news_item/biological-moonshot-accelerates-efforts-to-genetically-map-life-on-earth/",
+      "observedAt": "2026-11-06T00:39:06Z",
+      "finding": "Phase II aims at 150,000 species in four years for about US$1.1 billion; full 1.67 million named species projected by 2035."
+    }
+  ]
+}

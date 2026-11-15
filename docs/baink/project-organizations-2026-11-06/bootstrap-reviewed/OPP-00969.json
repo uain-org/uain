@@ -1,0 +1,17 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "project": "OPP-00969",
+  "source_digest": "880700f70853f0498eb334d3fd638341dacb35376f5836f2c7be2933d63e393b",
+  "class": "benevolent",
+  "prior_art": {
+    "basis": "Independent review by claude-independent-prior-art-reviewer-20261106: No open or discoverable solution provides midwife-led care for all of roughly 130,000,000 births a year, so the Main KPI is not met. An ICM-led study (January 2026) estimates the world is short about 980,000 midwives and projects a shortfall of 690,000 to 830,000 by 2030, over 90% in low- and middle-income countries (https://internationalmidwives.org/pressrelease/world-faces-shortage-of-nearly-one-million-midwives/). Even skilled attendance of any kind reached 86% of births in 2023, with 69% for the poorest fifth (https://data.unicef.org/topic/maternal-health/delivery-care/). Midwife-led systems are proven at national scale only in a few high-income countries: about 80-90% of New Zealand pregnancies register with a midwife lead maternity carer (https://pmc.ncbi.nlm.nih.gov/articles/PMC5038958), and the evidence base for midwife continuity is mature (Cochrane review, https://www.cochrane.org/news/cochrane-making-difference-midwifery). Honest limit: the care model itself is known and evidenced; the unsolved part is workforce, training and financing at global scale, and tasks that re-derive the clinical evidence for midwife-led care are not new work. (open solution found: no; known answer: no; 6 project-level searches of api.github.com/search/repositories, export.arxiv.org/api/query, api.crossref.org/works; draft fcf84723aa338066dd62a7e27daece6ccf847be4b00e78e86318022fc7804301, source 880700f70853f0498eb334d3fd638341dacb35376f5836f2c7be2933d63e393b)",
+    "searches": [
+      "api.github.com/search/repositories \"midwife-led care everywhere\" url=https://api.github.com/search/repositories?q=midwife-led%20care%20everywhere&per_page=10 sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "export.arxiv.org/api/query \"midwife-led care everywhere\" url=https://export.arxiv.org/api/query?search_query=all%3Amidwife-led%20AND%20all%3Acare%20AND%20all%3Aeverywhere&start=0&max_results=10 sha256=216ab439d85dbd50d7b91d054b8f327b5e32daa3c76d3a7b77811b252aa86e60",
+      "api.crossref.org/works \"midwife-led care everywhere\" url=https://api.crossref.org/works?query=midwife-led%20care%20everywhere&rows=10&select=DOI,title sha256=d2d874d4f14fbe769926e1ac5c3500821307a2c9a1bfdd0e9140c00c604ee718",
+      "api.github.com/search/repositories \"midwife-led care everywhere healthcare systems medicine\" url=https://api.github.com/search/repositories?q=midwife-led%20care%20everywhere%20healthcare%20systems%20medicine&per_page=10 sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "export.arxiv.org/api/query \"midwife-led care everywhere healthcare systems medicine\" url=https://export.arxiv.org/api/query?search_query=all%3Amidwife-led%20AND%20all%3Acare%20AND%20all%3Aeverywhere%20AND%20all%3Ahealthcare%20AND%20all%3Asystems%20AND%20all%3Amedicine&start=0&max_results=10 sha256=8ea836aa810da9572adba13a07630eb52279b7e1598019ec2137990f00af7a6e",
+      "api.crossref.org/works \"midwife-led care everywhere healthcare systems medicine\" url=https://api.crossref.org/works?query=midwife-led%20care%20everywhere%20healthcare%20systems%20medicine&rows=10&select=DOI,title sha256=65cafd44661c0569b09912931a02262e548a993c83c5cf122a1c78f2e3e25a6b"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "house-solver",
+  "release_id": "27c54a7d517ee242fd39dfcfe0313cc95854c5ba2fd4581e8ec0cf12caf6df13",
+  "version": null,
+  "source_commit": "40534a74ef2637408e3a0c5c6790b5d8ab8cafe1",
+  "deployed_at": "2026-11-08T14:47:14Z",
+  "prior": "823d3619ae9f3dd3e56f3208a6d4dc9acbcb8b22191beaef701ce4d95e3401c6",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#subscription-pilot-20261108"
+  ],
+  "note": "Root closure activated after idle exact-prior check; owning OAuth subscription model probe passed. Local runtime and scheduler use same closure; scheduler STOP retained during controlled pilot. A later remote refuter transport is uncertain and held without replay."
+}

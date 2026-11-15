@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01449",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No cassava, banana or potato resists all known viruses, so the Main KPI of 100,000,000 hectares planted is unmet. Resistance today is virus-specific and incomplete. Kenya approved environmental release of CBSD-resistant transgenic cassava event 4046 (VIRCA Plus) in 2021 and then national performance trials (https://www.businessdailyafrica.com/economy/genetically-modified-cassava-varieties/3946234-5570434-jsxl6qz/index.html), but it targets one disease; CMD2 resistance maps to MePOLD1, is lost through tissue culture and has been overcome by novel satellite DNAs (Nat Commun 2022, https://www.nature.com/articles/s41467-022-31414-0.pdf), and no effective CBSD resistance exists in germplasm. Banana bunchy top virus has no released resistant variety; IITA is screening 72 varieties and Malawi field data suggest immunity will need a multi-faceted strategy (https://eprints.qut.edu.au/228515). In potato, Ry-sto gives broad resistance to PVY isolates and a January 2026 Plants study reports transgenic Kennebec resistant to PVY and PLRV, but most cultivars lack broad PVY resistance and no resistance to PMTV is known (https://www.mdpi.com/2223-7747/15/3/355). Honest limit: single-virus resistance genes and RNAi constructs are published, so tasks that re-create them are known answers; the open work is durable, stacked or broad-spectrum resistance across each crop's virus complex, and each task needs its own basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "cassava virus resistant CMD CBSD VIRCA field trial approval Kenya Nigeria 2026",
+      "source": "https://www.businessdailyafrica.com/economy/genetically-modified-cassava-varieties/3946234-5570434-jsxl6qz/index.html",
+      "observedAt": "2026-11-06T01:20:00Z",
+      "finding": "Kenya's NBA approved environmental release of CBSD-resistant cassava (event 4046, VIRCA Plus) in June 2021 and later national performance trials before registration; confined trials ran at Mtwapa, Kandara and Alupe. Nigeria has no confirmed field-trial approval; CBSD threatens West Africa."
+    },
+    {
+      "query": "banana bunchy top virus resistant banana and potato virus resistance broad-spectrum all viruses 2026",
+      "source": "https://eprints.qut.edu.au/228515",
+      "observedAt": "2026-11-06T01:20:00Z",
+      "finding": "No BBTV-resistant banana variety is released; IITA is screening 72 varieties; Malawi trials of transgenic RNAi Cavendish and plantain found some resistant lines but conclude immunity will need a multi-faceted strategy. In potato, Rysto confers broad PVY resistance (no infection by 18 isolates) but most cultivars lack it and no resistance to PMTV is known."
+    },
+    {
+      "query": "potato virus Y resistant variety release gene edited potato virus resistance 2026 and cassava mosaic resistance CMD2 breakdown",
+      "source": "https://www.mdpi.com/2223-7747/15/3/355",
+      "observedAt": "2026-11-06T01:25:00Z",
+      "finding": "A January 2026 Plants study reports stable PVY and PLRV resistance in transgenic Kennebec in greenhouse and field; CRISPR eIF4E edits gave PVY resistance in tetraploid lines (2022); a Scottish project stacks Ry-sto and late-blight resistance in Maris Piper. No gene-edited all-virus-resistant potato released."
+    },
+    {
+      "query": "cassava mosaic disease resistance CMD2 loss tissue culture gene editing cassava brown streak resistance 2025 2026 new viruses",
+      "source": "https://www.nature.com/articles/s41467-022-31414-0.pdf",
+      "observedAt": "2026-11-06T01:30:00Z",
+      "finding": "CMD2 resistance is linked to MePOLD1 mutations (Nat Commun 2022); it is lost after regeneration through multiple morphogenic culture systems; two novel DNAs that overcome CMD2 have been reported; effective CBSD resistance is absent from germplasm, so engineered approaches are the main route. Single-gene resistance risks pathogen evolution."
+    }
+  ]
+}

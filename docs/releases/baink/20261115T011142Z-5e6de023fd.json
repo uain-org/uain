@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261115T011142Z-5e6de023fd",
+  "version": "0.3.101",
+  "source_commit": "dd4fc4be20bfaae4b0b12788b0a4f006534050db",
+  "deployed_at": "2026-11-15T01:12:24Z",
+  "prior": "20261113T083108Z-c99941d6c1",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-03101-release-20261115",
+    "CHANGELOG.md#baink-security-leftovers-20261115",
+    "CHANGELOG.md#baink-steward-audit-fixes-20261115"
+  ],
+  "note": "Kit 0.2.20 (deal digest check), disputesLost count, gsap and lenis removed, message rotation (#555), enquiry warnings (#558). 179 runtime/32 preview files; expected-prior promotion passed first attempt. Live: release header, health, kit digest, warning text in the bundle, Trade paused."
+}

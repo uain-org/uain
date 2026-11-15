@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "house-solver",
+  "release_id": "823d3619ae9f3dd3e56f3208a6d4dc9acbcb8b22191beaef701ce4d95e3401c6",
+  "version": null,
+  "source_commit": "fec9f9a5ad17deec82ffebfbd86cc27043084bf4",
+  "deployed_at": "2026-11-08T11:51:08Z",
+  "prior": null,
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#platform-readiness-20261108",
+    "docs/baink/readiness-audit-2026-11-08.md"
+  ],
+  "note": "Pinned server dispatcher and local scheduler installed; isolated namespace and first bounded cycle verified. Shared compute admission deferred the survey; zero provider calls, joins or submissions. Routine retries preserve existing spend caps. No paid acceptance claimed."
+}

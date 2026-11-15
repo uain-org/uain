@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-07441",
+  "native_project": "P-OPP-07441",
+  "source_digest": "e310a720bfc62800f147e9ef8bd05ed889484d38a9657f3749580fe2bc14e6c6",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Create an AI career navigator that finds every worker their next role before layoffs",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "3e633c1a644e056b880516bb5fc2522b9ac57dcfad24947b3bcae868830fa109"
+  },
+  "drafted_at": "2026-11-06T00:28:26.249Z",
+  "queries": [
+    "career navigator finds worker next role",
+    "career navigator finds work time meaning"
+  ],
+  "searches": [
+    {
+      "query": "career navigator finds worker next role",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:28:18.105Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=career%20navigator%20finds%20worker%20next%20role&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "career navigator finds worker next role",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:28:18.626Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Acareer%20AND%20all%3Anavigator%20AND%20all%3Afinds%20AND%20all%3Aworker%20AND%20all%3Anext%20AND%20all%3Arole&start=0&max_results=10; sha256=401bd4fc2884058b8996e5e8de7897e22dcdcce19d90faecd633110990b58c2d; total=0; shown=0/0"
+    },
+    {
+      "query": "career navigator finds worker next role",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:28:19.532Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=career%20navigator%20finds%20worker%20next%20role&rows=10&select=DOI,title; sha256=e1dacba6b5ac0b62a1cafa652aa096f7851d8fad774d5e893021d74418048856; total=2321185; shown=5/10; top: 10.5220/0014534900005024 \"LLM Powered Career Navigator: An Enhanced Framework for Personalized, Data-Driven Career Pathing\" | 10.1017/cbo9780511697005.036 \"Plate section\" | 10.1201/9781003526858-40 \"Letting Every Worker Help Your Practice Improve\" | 10.71097/ijaidr.v17.i1.1924 \"Smart Career Navigator: AI-Powered Placement Forecasting and Career Planning\" | 10.1126/science.caredit.a0700086 \"French Pharmacist Finds Career Niche at Regulatory Agency\""
+    },
+    {
+      "query": "career navigator finds work time meaning",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:28:24.617Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=career%20navigator%20finds%20work%20time%20meaning&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "career navigator finds work time meaning",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:28:25.129Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Acareer%20AND%20all%3Anavigator%20AND%20all%3Afinds%20AND%20all%3Awork%20AND%20all%3Atime%20AND%20all%3Ameaning&start=0&max_results=10; sha256=82eaf9ec1df154841c77931e58a894f9283b98b6d30ce0e97233b495ef4d43ae; total=0; shown=0/0"
+    },
+    {
+      "query": "career navigator finds work time meaning",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:28:26.248Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=career%20navigator%20finds%20work%20time%20meaning&rows=10&select=DOI,title; sha256=9da934db70ebc09dc6baa5b8e31723a16e6d1ccfd3a22ad0e91cdd356468dc28; total=3069551; shown=5/10; top: 10.5040/9781666994520.ch-5 \"Work, Vocational Calling, and Finding One’s Career Fit Work\" | 10.4337/9781847202833.00023 \"Exploring Career and Personal Outcomes and the Meaning of Career Success Among Part-time Professionals in Organizations\" | 10.5040/9781666994520.ch-3 \"Meaning Making and Work\" | 10.4337/9781035309139.00012 \"Connecting career development with meaning in life and work\" | 10.5771/9781793648716-67 \"Chapter 5: Work, Vocational Calling, and Finding One’s Career Fit Work\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "career navigator finds worker next role",
+      "url": "https://api.github.com/search/repositories?q=career%20navigator%20finds%20worker%20next%20role&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=career%20navigator%20finds%20worker%20next%20role&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:28:18.105Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "career navigator finds worker next role",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Acareer%20AND%20all%3Anavigator%20AND%20all%3Afinds%20AND%20all%3Aworker%20AND%20all%3Anext%20AND%20all%3Arole&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Acareer%20AND%20all%3Anavigator%20AND%20all%3Afinds%20AND%20all%3Aworker%20AND%20all%3Anext%20AND%20all%3Arole&start=0&max_results=10",
+      "sha256": "401bd4fc2884058b8996e5e8de7897e22dcdcce19d90faecd633110990b58c2d",
+      "bytes": 848,
+      "observedAt": "2026-11-06T00:28:18.626Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "career navigator finds worker next role",
+      "url": "https://api.crossref.org/works?query=career%20navigator%20finds%20worker%20next%20role&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=career%20navigator%20finds%20worker%20next%20role&rows=10&select=DOI,title",
+      "sha256": "e1dacba6b5ac0b62a1cafa652aa096f7851d8fad774d5e893021d74418048856",
+      "bytes": 1335,
+      "observedAt": "2026-11-06T00:28:19.532Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "career navigator finds work time meaning",
+      "url": "https://api.github.com/search/repositories?q=career%20navigator%20finds%20work%20time%20meaning&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=career%20navigator%20finds%20work%20time%20meaning&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:28:24.617Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "career navigator finds work time meaning",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Acareer%20AND%20all%3Anavigator%20AND%20all%3Afinds%20AND%20all%3Awork%20AND%20all%3Atime%20AND%20all%3Ameaning&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Acareer%20AND%20all%3Anavigator%20AND%20all%3Afinds%20AND%20all%3Awork%20AND%20all%3Atime%20AND%20all%3Ameaning&start=0&max_results=10",
+      "sha256": "82eaf9ec1df154841c77931e58a894f9283b98b6d30ce0e97233b495ef4d43ae",
+      "bytes": 850,
+      "observedAt": "2026-11-06T00:28:25.129Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "career navigator finds work time meaning",
+      "url": "https://api.crossref.org/works?query=career%20navigator%20finds%20work%20time%20meaning&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=career%20navigator%20finds%20work%20time%20meaning&rows=10&select=DOI,title",
+      "sha256": "9da934db70ebc09dc6baa5b8e31723a16e6d1ccfd3a22ad0e91cdd356468dc28",
+      "bytes": 1348,
+      "observedAt": "2026-11-06T00:28:26.248Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "ab2d2acdd74c77ecc2f7d22c3969f75ced96b50b28292e750c0530f1480f4643",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

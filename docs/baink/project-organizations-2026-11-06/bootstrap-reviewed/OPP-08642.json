@@ -1,0 +1,17 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "project": "OPP-08642",
+  "source_digest": "0a54ad321be69a43f455f64435b0e66adb21015a4cb46a83edf057143e770fee",
+  "class": "neutral",
+  "prior_art": {
+    "basis": "Independent review by claude-independent-prior-art-reviewer-20261106: No validated model explains how every human decision is made, so the Main KPI of 1 complete decision model is unmet. The strongest predictive candidate, Centaur (Nature 2025), was fine-tuned on Psych-101, about 10 million choices from 60,000 people in 160 experiments, and predicts held-out behaviour well (https://pubmed.ncbi.nlm.nih.gov/40604288/); critics found it keeps choosing original-dataset answers under altered instructions, consistent with overfitting rather than a model of cognition (https://www.eurekalert.org/news-releases/1116367, https://arxiv.org/pdf/2510.03311). Classic theories replicate only as tendencies: prospect theory patterns held in 19 countries with smaller effects and heterogeneity (https://research.vu.nl/en/publications/replicating-patterns-of-prospect-theory-for-decision-under-risk/). Neural mapping covers one mouse task: the International Brain Laboratory recorded 620,000 neurons across nearly the whole brain (https://pni.princeton.edu/news/2025/first-brain-wide-map-decision-making-charted-mice). Honest limit: complete is not testable as stated, data are mostly from Western samples, and Centaur and Psych-101 are open baselines, so retraining them is known work. (open solution found: no; known answer: no; 6 project-level searches of api.github.com/search/repositories, export.arxiv.org/api/query, api.crossref.org/works; draft abb5be358dc3c21253cb5a8e46dcbdf1b30dab972131145ab20c8ee924a305c2, source 0a54ad321be69a43f455f64435b0e66adb21015a4cb46a83edf057143e770fee)",
+    "searches": [
+      "api.github.com/search/repositories \"validated map human decision\" url=https://api.github.com/search/repositories?q=validated%20map%20human%20decision&per_page=10 sha256=ed5fee706ced92d99f87be528775044e3a21241cbf2d7d3db452a763d51ba74a",
+      "export.arxiv.org/api/query \"validated map human decision\" url=https://export.arxiv.org/api/query?search_query=all%3Avalidated%20AND%20all%3Amap%20AND%20all%3Ahuman%20AND%20all%3Adecision&start=0&max_results=10 sha256=ec85e445c7ead3e23ef395e5e88edea675edb39166e9f6040b0d97384a817ca5",
+      "api.crossref.org/works \"validated map human decision\" url=https://api.crossref.org/works?query=validated%20map%20human%20decision&rows=10&select=DOI,title sha256=d1168687f9f6376c17fceddfebbb6e610f23be504c0d56d3c62adb40390ff55b",
+      "api.github.com/search/repositories \"validated map human social sciences humanities\" url=https://api.github.com/search/repositories?q=validated%20map%20human%20social%20sciences%20humanities&per_page=10 sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "export.arxiv.org/api/query \"validated map human social sciences humanities\" url=https://export.arxiv.org/api/query?search_query=all%3Avalidated%20AND%20all%3Amap%20AND%20all%3Ahuman%20AND%20all%3Asocial%20AND%20all%3Asciences%20AND%20all%3Ahumanities&start=0&max_results=10 sha256=3818108763982d5b946a644c873b1939f059e2d20c26c0741193305b73943beb",
+      "api.crossref.org/works \"validated map human social sciences humanities\" url=https://api.crossref.org/works?query=validated%20map%20human%20social%20sciences%20humanities&rows=10&select=DOI,title sha256=bacf46f41a426cf36c1ca409a47b605c6468f6f0df27d13a66d9adc06ace7885"
+    ]
+  }
+}

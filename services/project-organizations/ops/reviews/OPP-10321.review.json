@@ -1,0 +1,45 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-10321",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No robot lets older people live at home in dignity at scale, so the Main KPI of 300,000,000 older people with robotic care is unmet. The controlled evidence is for social companion robots, mostly in institutions: a meta-analysis of 8 RCTs found large effects of social robots on depression and loneliness among long-term-care residents (https://doi.org/10.1016/j.jamda.2024.02.017), a 2025 integrative review covers care robots for community-dwelling older adults (https://doi.org/10.4258/hir.2025.31.4.347), and staff studies document service-robot experiences in aged care (https://doi.org/10.1038/s41598-025-86255-w). Physical home care is not solved: a 2026 Japanese lottery-based natural experiment studies care-robot adoption in long-term care facilities, not homes (https://doi.org/10.21203/rs.3.rs-9001048/v1), and the leading home humanoid, 1X NEO, relied on remote teleoperators and was not confirmed delivered by August 2026 (https://en.wikipedia.org/wiki/1X_Technologies). GitHub eldercare-robot repositories are student ROS projects. Honest limit: companion robots and fall-detection sensors are known answers and tasks that redeploy them are not new work; the open, checkable work is safe physical assistance at home, such as transfers, toileting support and fall response, validated with older adults."
+  },
+  "additionalSearches": [
+    {
+      "query": "care robots older adults aging in place randomized trial effectiveness (2024 onward)",
+      "source": "https://api.openalex.org/works?search=care%20robots%20older%20adults%20aging%20in%20place%20randomized%20trial%20effectiveness&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:48Z",
+      "finding": "5,721 works: social robots and depression and loneliness in long-term care (JAMDA 2024 meta-analysis), care robots for community-dwelling older adults (2025), PIO robot dementia RCT (2025). Companion effects, mostly institutional."
+    },
+    {
+      "query": "Japan nursing care robots deployment evaluation long-term care facilities (2024 onward)",
+      "source": "https://api.openalex.org/works?search=Japan%20nursing%20care%20robots%20deployment%20evaluation%20long-term%20care%20facilities&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:50Z",
+      "finding": "591 works: nursing staff perspectives on care robots, AI-robot adoption scoping review (2024), Japanese care-robot labour-outcome natural experiment (2026). Facility deployments, not home care."
+    },
+    {
+      "query": "eldercare robot (GitHub repositories)",
+      "source": "https://api.github.com/search/repositories?q=eldercare%20robot&sort=stars&per_page=8",
+      "observedAt": "2026-11-06T01:18:51Z",
+      "finding": "17 repositories, all 3 stars or fewer: ROS2 eldercare robots, SLAM navigation stacks, a social-robot prototype. Null result for an open home-care robot."
+    },
+    {
+      "query": "socially assistive robots older adults systematic review",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=socially%20assistive%20robots%20older%20adults%20systematic%20review&format=json&pageSize=8&sort=CITED%20desc",
+      "observedAt": "2026-11-06T01:18:55Z",
+      "finding": "456 records led by barriers to health-technology adoption among older adults (2024, 2025) and co-designing technology for ageing in place (2021). Adoption barriers are the documented limit."
+    },
+    {
+      "query": "Social robots depression and loneliness meta-analysis (PMID 38614134)",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:38614134&resultType=core&format=json",
+      "observedAt": "2026-11-06T01:23:31Z",
+      "finding": "8 studies; significant large effects on depression and loneliness in long-term-care residents; group activities and longer durations helped more."
+    }
+  ]
+}

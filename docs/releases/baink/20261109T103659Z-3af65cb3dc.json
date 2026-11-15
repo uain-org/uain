@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T103659Z-3af65cb3dc",
+  "version": "0.3.47",
+  "source_commit": "7adc498f7824de9b40dd2eb7c95c34618fc6fd0b",
+  "deployed_at": "2026-11-09T10:37:12Z",
+  "prior": "20261109T095658Z-05f9fceee1",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#no-install-send-recoverable-payments-20261109"
+  ],
+  "note": "PR #300: payment recovery live (reconcile/abandon after proved expiry, stale locks released, 7-day request expiry, legacy grace to 17 Nov). No-install sending shipped off. release:promote passed; both paths serve it; live bundle has the Pay screen; send and reconcile routes answer 401 unsigned; kit serves baink_agent_pay."
+}

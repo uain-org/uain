@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "uain",
+  "release_id": "e882c433",
+  "version": null,
+  "source_commit": "e882c4333b4f9d156b50619857a781dc2c3fd362",
+  "deployed_at": "2026-11-09T01:38:06Z",
+  "prior": "77e43a42",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#survey-correction-codec-20261109"
+  ],
+  "note": "Normal PR283 merge/workflow42545801234 completed with full scope for new codec paths. Live source and all three image tags match e882, with new image digests and no pending release. Five public root/network/readiness/waitlist checks passed. Root8, holder and correction activation remain separate."
+}

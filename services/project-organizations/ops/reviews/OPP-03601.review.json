@@ -1,0 +1,45 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-03601",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable solution provides a decent home for every family, so the Main KPI of 2,000,000,000 people newly housed is unmet. UN-Habitat estimates about 100 million people are homeless, about one in four live in housing that harms their health, safety and prosperity, and about 3 billion people (40% of the world) will need adequate housing by 2030, which requires 96,000 new affordable units every day (https://unhabitat.org/topic/housing). The largest programmes are national subsidy schemes such as India's PMAY-Gramin, whose evaluations are regional and descriptive (https://doi.org/10.56975/ijcrt.v13i6.288811), and the lower-cost construction routes remain unproven at scale: a 2026 review of 3D-printed affordable housing finds unresolved scalability, cost and regulatory barriers (https://doi.org/10.3390/buildings16020343). Honest limit: building methods, subsidy and cooperative housing models are known and published, so this is chiefly a finance, land and governance problem, and tasks that restate known programmes are not new work; tasks must target a new, checkable piece, such as a verified cost-per-unit reduction method, a land-tenure or targeting method, or a validated housing-adequacy measurement from imagery."
+  },
+  "additionalSearches": [
+    {
+      "query": "global housing deficit estimate inadequate housing billion people (2024 onward)",
+      "source": "https://api.openalex.org/works?search=global%20housing%20deficit%20estimate%20inadequate%20housing%20billion%20people&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:17:11Z",
+      "finding": "3,840 works: The Global Housing Crisis (2024), national deficit studies (Nigeria), housing affordability measurement. Deficits are documented; no solution at global scale."
+    },
+    {
+      "query": "low-cost housing 3D printed homes cost evaluation (2024 onward)",
+      "source": "https://api.openalex.org/works?search=low-cost%20housing%203D%20printed%20homes%20cost%20evaluation&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:17:13Z",
+      "finding": "2,300 works including a 2026 review of 3D-printed construction scalability for affordable housing (Kuwait), financing studies and Monte Carlo planning for 3D-printed rural housing; costs and scale unproven."
+    },
+    {
+      "query": "Pradhan Mantri Awas Yojana Gramin evaluation houses built (2024 onward)",
+      "source": "https://api.openalex.org/works?search=Pradhan%20Mantri%20Awas%20Yojana%20Gramin%20evaluation%20houses%20built&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:17:15Z",
+      "finding": "39 works: regional impact studies (Manipur, Jammu and Doda) and comparisons with Indira Awas Yojana. A large national programme exists, but evaluations are local and descriptive."
+    },
+    {
+      "query": "UN-Habitat inadequate housing 2.8 billion people slums 1.1 billion (2024 onward)",
+      "source": "https://api.openalex.org/works?search=UN-Habitat%20inadequate%20housing%202.8%20billion%20people%20slums%201.1%20billion&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:23:14Z",
+      "finding": "44 works: satellite mapping of slum expansion during COVID-19 (2026), ADB affordable housing approach 2026-2030; no global solution."
+    },
+    {
+      "query": "UN-Habitat housing topic page",
+      "source": "https://unhabitat.org/topic/housing",
+      "observedAt": "2026-11-06T01:23:50Z",
+      "finding": "About 100 million homeless; one in four live in harmful conditions; 3 billion people (40%) will need adequate housing by 2030; 96,000 new affordable units needed every day."
+    }
+  ]
+}

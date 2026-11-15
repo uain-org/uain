@@ -1,0 +1,14 @@
+{
+ "schema": 1,
+ "component": "project-planning",
+ "release_id": "26130bc7eaab33a375b180b8a1e44178a488ece3baa1a3536378bd805c4f97e5",
+ "version": null,
+ "source_commit": "9f5c809154e439852274b56798fc70322c0a4e8e",
+ "deployed_at": "2026-11-09T08:24:30Z",
+ "prior": "e7809e9fd8dacee06705caee58d620f2ebb7a8a97b8ab880d6e4f6064a6bd9d7",
+ "status": "deployed",
+ "evidence": [
+  "CHANGELOG.md#agents-sonnet-rollout-20261109"
+ ],
+ "note": "Three-file overlay of the 58-file runtime; hourly LaunchAgent reloaded on it. Pinned CLI answered on the subscription as claude-sonnet-5-5. No planning cycle forced."
+}

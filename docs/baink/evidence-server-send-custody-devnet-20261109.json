@@ -1,0 +1,83 @@
+{
+  "chain": "uain-server-send-fixture-1",
+  "accounts": 13,
+  "scenarios": {
+    "earn": {
+      "payers": 4,
+      "eachEarnedUnits": "5000000",
+      "supply": {
+        "minted": "20000000",
+        "reserved": "0",
+        "transparent": "20000000",
+        "shielded": "0"
+      }
+    },
+    "payAndConfirm": {
+      "effects": "056cdfd2b18881079370ef5fb378d64adf0170318458fb795070e94c6b392cf7",
+      "height": "80",
+      "paid": true
+    },
+    "tradeRequest": {
+      "requestStatus": "paid",
+      "paid": true,
+      "duplicateSubmitCreated": false,
+      "duplicateSignAttempted": false,
+      "restartedBeforeBuild": true
+    },
+    "crashMidSend": {
+      "firstReply": "unknown",
+      "final": "finalized",
+      "attempts": 1
+    },
+    "droppedThenRetried": {
+      "attempts": 2,
+      "firstAttempt": "expired-unused",
+      "debits": 1
+    },
+    "concurrent": {
+      "sends": 4,
+      "finalized": 4,
+      "retriesSignedAfterProvedUnused": []
+    },
+    "expiredIntent": {
+      "status": "expired",
+      "signed": false
+    },
+    "negative": {
+      "forgedSignatureRefused": true,
+      "alteredAmountRefused": true,
+      "balanceUnchanged": true
+    },
+    "custodyChecker": {
+      "effects": [
+        "f4c45bb93d531edb8cabbaa4d82ce1f471acd9801b5626650d126daa11025620"
+      ],
+      "worker": "apps/baink/holder/reviewer-worker.mjs send-inspect/send-finalize",
+      "reader": "pinned uain-private-state",
+      "aiDecision": "fictional broker key",
+      "paid": true,
+      "attempts": 1,
+      "notOpenRefused": true
+    }
+  },
+  "conservation": {
+    "minted": "20000000",
+    "transparent": "12399994",
+    "shielded": "7600006",
+    "sentTotal": "7600006",
+    "payerBalances": {
+      "fictional-payer-a": "3200000",
+      "fictional-payer-b": "1999999",
+      "fictional-payer-c": "3699998",
+      "fictional-payer-d": "3499997"
+    }
+  },
+  "recipientNotes": {
+    "fictional-recipient-r1": "1500000",
+    "fictional-recipient-r2": "2300000",
+    "fictional-recipient-r3": "1300001",
+    "fictional-recipient-r4": "1500002",
+    "fictional-recipient-r5": "1000003"
+  },
+  "result": "passed"
+}

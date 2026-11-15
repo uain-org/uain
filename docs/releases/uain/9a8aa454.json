@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "uain",
+  "release_id": "9a8aa454",
+  "version": null,
+  "source_commit": "9a8aa4548731c37f376919ec799125a97549379f",
+  "deployed_at": "2026-11-08T17:58:45Z",
+  "prior": "13874bc3",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#admin-source-reauthorization-20261108"
+  ],
+  "note": "PR277 passed required CI and normal deployment42506883321. Owning release ConfigMap matches source and all three component tags, with no pending activation; public readiness passes. Upgrade rehearsal preserved the ledger key, old session and contested row, and signed ledger verification passed. No production admin trust, actor grant or portal activation was introduced."
+}

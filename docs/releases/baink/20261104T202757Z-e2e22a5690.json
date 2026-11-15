@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261104T202757Z-e2e22a5690",
+  "version": "0.3.24",
+  "source_commit": null,
+  "deployed_at": null,
+  "prior": null,
+  "status": "deployed",
+  "evidence": ["CHANGELOG.md"],
+  "note": "Prior and activation time not recorded in the change note."
+}

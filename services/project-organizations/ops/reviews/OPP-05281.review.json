@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-05281",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "neutral",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No accepted, experimentally confirmed theory of quantum gravity exists, so the Main KPI of 1 accepted quantum gravity theory is unmet. String theory and loop quantum gravity have no direct experimental confirmation and neither is accepted as the answer (https://strathprints.strath.ac.uk/52429/). The closest testable programmes are proposals: gravitationally induced entanglement experiments are judged technologically out of reach and their interpretation is disputed (https://www.arxiv.org/abs/2508.03052v1, https://arxiv.org/abs/2511.19242v1), and Oppenheim's postquantum classical gravity proposes a mass-fluctuation test not yet run (https://sciencedaily.com/releases/2023/12/231204135156.htm). Observational work only bounds Planck-scale effects, e.g. Fermi-LAT GRB limits E_QG,1 > 7.6 Planck energies (https://arxiv.org/pdf/1308.6403). Honest limit: acceptance is a community judgement no project controls, many candidate theories and published bounds already exist, and a task that re-derives an existing proposal or bound is known work and needs its own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "quantum gravity experimental test 2025 gravitationally induced entanglement status",
+      "source": "https://www.arxiv.org/abs/2508.03052v1",
+      "observedAt": "2026-11-06T00:38:00Z",
+      "finding": "No completed gravitationally induced entanglement experiment; 2025 preprints judge the experiments out of reach and dispute whether a positive result would prove gravity is quantum."
+    },
+    {
+      "query": "string theory loop quantum gravity no experimental confirmation accepted theory of quantum gravity 2026",
+      "source": "https://strathprints.strath.ac.uk/52429/",
+      "observedAt": "2026-11-06T00:38:06Z",
+      "finding": "Loop quantum gravity has received no experimental verification; neither string theory nor LQG is an accepted, confirmed theory."
+    },
+    {
+      "query": "postquantum classical gravity Oppenheim testable prediction experiment",
+      "source": "https://sciencedaily.com/releases/2023/12/231204135156.htm",
+      "observedAt": "2026-11-06T00:38:12Z",
+      "finding": "Oppenheim proposes classical spacetime with a testable weight-fluctuation signature; the test has not been carried out and the theory is contested."
+    },
+    {
+      "query": "Fermi LAT gamma ray burst Lorentz invariance violation quantum gravity constraint",
+      "source": "https://arxiv.org/pdf/1308.6403",
+      "observedAt": "2026-11-06T00:38:18Z",
+      "finding": "Fermi-LAT GRB timing found no dispersion and set E_QG,1 > 7.6 Planck energies: constraints, not a confirmed theory."
+    }
+  ]
+}

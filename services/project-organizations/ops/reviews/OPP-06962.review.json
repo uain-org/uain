@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-06962",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Live-caption glasses are sold, but in the low millions of units per year at most, so the Main KPI of 2,000,000,000 wearers is unmet. Products include XRAI, Captify, Even Realities G2 at about $599 and others with subscriptions of $10 to $50 a month (https://www.pulse.bot/consumer-tech/news/best-live-captioning-smart-glasses-2026-wired-tested-c389a106-c240-44f9-adbc-c70252a88fed/), and the Meta Ray-Ban Display shows captions in the lens at $799 (https://skift.com/2026/03/31/meta-ray-ban-prescriptions-translation-travel/). Whole-category smart-glasses shipments were about 4 million units in H1 2025, with IDC forecasting over 40 million a year by 2029 (https://www-web.itiger.com/news/1160580453). Open-source caption glasses exist only as hobby projects built on Whisper (https://github.com/bowosc/raspeyes). Honest limit: captioning on glasses is a known answer for supported languages; price, battery, lag, accuracy in noise and multilingual coverage are the open problems, and adoption at this scale depends on consumer markets UAIN does not control."
+  },
+  "additionalSearches": [
+    {
+      "query": "live caption subtitle smart glasses XRAI Captify Even Realities sales 2025 deaf",
+      "source": "https://www.pulse.bot/consumer-tech/news/best-live-captioning-smart-glasses-2026-wired-tested-c389a106-c240-44f9-adbc-c70252a88fed/",
+      "observedAt": "2026-11-06T00:41:36Z",
+      "finding": "WIRED 2026: Even Realities G2 ($599) best overall; XRAI, Captify, Leion, AirCaps add weight, short battery or $10-50 monthly fees; no sales figures."
+    },
+    {
+      "query": "Meta Ray-Ban Display live captions translation units sold 2025",
+      "source": "https://skift.com/2026/03/31/meta-ray-ban-prescriptions-translation-travel/",
+      "observedAt": "2026-11-06T00:41:42Z",
+      "finding": "Ray-Ban Meta line sold over 7 million units in 2025; Display model ($799) shows captions and translation in-lens; no Display-only count."
+    },
+    {
+      "query": "smart glasses global shipments 2025 IDC Counterpoint million units",
+      "source": "https://www-web.itiger.com/news/1160580453",
+      "observedAt": "2026-11-06T00:41:48Z",
+      "finding": "IDC: about 4.07 million smart glasses shipped in H1 2025; over 40 million a year forecast by 2029."
+    },
+    {
+      "query": "open source live captioning AR glasses github whisper subtitles head-mounted display",
+      "source": "https://github.com/bowosc/raspeyes",
+      "observedAt": "2026-11-06T00:41:54Z",
+      "finding": "Open-source caption glasses are early hobby projects (raspeyes, CaptionIt) built on Whisper; no mature maintained product."
+    }
+  ]
+}

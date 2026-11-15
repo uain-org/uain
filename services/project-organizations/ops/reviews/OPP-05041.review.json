@@ -1,0 +1,51 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-05041",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "neutral",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No AI system has made a Nobel-worthy discovery without human guidance, so the Main KPI of 1 autonomous Nobel-worthy discovery is unmet. The strongest open systems reach workshop level: Sakana's open-source AI Scientist-v2 submitted three fully autonomous manuscripts to an ICLR workshop and one exceeded the average human acceptance threshold (https://doi.org/10.48550/arxiv.2504.08066). Kosmos runs up to 12 hours on a human-supplied objective and dataset; independent scientists judged 79.4% of its statements accurate, and of seven highlighted findings three reproduced unpublished results and four were new (https://doi.org/10.48550/arxiv.2511.02824). Google's Co-Scientist (Nature 2026, https://doi.org/10.1038/s41586-026-10644-y) works with human scientists. A 2026 critique argues agentic AI scientists are not built for autonomous discovery (https://doi.org/10.48550/arxiv.2605.08956). Open code is plentiful (SakanaAI/AI-Scientist about 14,950 stars, AI-Scientist-v2 about 7,446). Class neutral: large potential benefit, but autonomous discovery systems raise dual-use and verification risks. Honest limit: running the open AI Scientist or Kosmos-style loops is a known baseline and not new work, and Nobel-worthiness cannot be attested quickly by checkers; tasks must be bounded, checkable steps such as an autonomous result independently replicated and judged new by domain experts."
+  },
+  "additionalSearches": [
+    {
+      "query": "AI Scientist fully automated open-ended scientific discovery (2024 onward)",
+      "source": "https://api.openalex.org/works?search=AI%20Scientist%20fully%20automated%20open-ended%20scientific%20discovery&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:24Z",
+      "finding": "13,656 works: The AI Scientist (2024, 430 citations), AI Scientist-v2 workshop-level discovery (2025), Kosmos (2025), Co-Scientist and a multi-agent discovery system in Nature (2026). Workshop-level and human-collaborative results, nothing Nobel-level."
+    },
+    {
+      "query": "AI-Scientist (GitHub repositories)",
+      "source": "https://api.github.com/search/repositories?q=AI-Scientist&sort=stars&per_page=8",
+      "observedAt": "2026-11-06T01:18:25Z",
+      "finding": "3,589 repositories: SakanaAI/AI-Scientist (14,950 stars), AI-Scientist-v2 (7,446), EvoScientist, openscience workbench. Open agents exist; none credited with a major autonomous discovery."
+    },
+    {
+      "query": "autonomous AI discovery novel scientific finding validated without human (2024 onward)",
+      "source": "https://api.openalex.org/works?search=autonomous%20AI%20discovery%20novel%20scientific%20finding%20validated%20without%20human&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:29Z",
+      "finding": "19,407 works: Kosmos, surveys of agentic science, and the 2026 critique 'Agentic AI Scientists Are Not Built For Autonomous Scientific Discovery'. No validated landmark autonomous discovery."
+    },
+    {
+      "query": "robot scientist Adam Eve autonomous hypothesis (2024 onward)",
+      "source": "https://api.openalex.org/works?search=robot%20scientist%20Adam%20Eve%20autonomous%20hypothesis&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:30Z",
+      "finding": "242 works: histories of AI scientists, a survey on the verification gap of autonomous research agents (2026), and how far AI scientists are from changing the world (EMNLP 2026). Verification is the named gap."
+    },
+    {
+      "query": "Kosmos: An AI Scientist for Autonomous Discovery",
+      "source": "https://api.openalex.org/works/doi:10.48550/arxiv.2511.02824",
+      "observedAt": "2026-11-06T01:22:22Z",
+      "finding": "Up to 12-hour runs, about 42,000 lines of code and 1,500 papers per run; 79.4% of statements judged accurate; seven discoveries, three reproducing unpublished results and four new; humans supply objective and dataset."
+    },
+    {
+      "query": "The AI Scientist-v2",
+      "source": "https://api.openalex.org/works/doi:10.48550/arxiv.2504.08066",
+      "observedAt": "2026-11-06T01:23:32Z",
+      "finding": "End-to-end agentic tree search; three fully autonomous manuscripts submitted to an ICLR workshop, one exceeding the average human acceptance threshold."
+    }
+  ]
+}

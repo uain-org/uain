@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-02166",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No zero-emission container ship crosses oceans in commercial service, so the Main KPI of 10,000 zero-emission ships is unmet. Deep-sea newbuilds are methanol dual-fuel, such as OOCL's 24,168 TEU ships launched in 2026, and run largely on fossil fuel until green methanol is available (https://www.bairdmaritime.com/amp/story/shipping/boxships/oocls-newest-methanol-powered-ship-launched-in-china). The first ocean-going ammonia-fuelled ship, EXMAR's gas carrier ANTWERPEN with a WinGD X52DF-A engine, was delivered in June 2026 (https://gcaptain.com/shippings-ammonia-era-begins-as-exmar-receives-landmark-newbuild/); the first ammonia container ship, Yara Eyde, is a 1,200 to 1,300 TEU short-sea vessel for the North Sea due at the end of 2026 (https://gcaptain.com/construction-begins-on-worlds-first-ammonia-powered-containership/). Wind ships keep fossil or biofuel engines as backup: Oceanbird's Orcelle Wind car carrier has slipped to late 2026 or 2027 and claims up to 90 percent savings only on a single transatlantic sailing, and the Neoliner is a 5,300-tonne ro-ro (https://maritime-executive.com/article/neoliner-sail-powered-ro-ro-cargo-ship-starts-construction). The IMO postponed its Net-Zero Framework vote by a year in October 2025 (https://www.dnv.com/news/2025/decision-on-the-imo-net-zero-framework-delayed-for-one-year/). Honest limit: dual-fuel methanol and ammonia engines and wind-assist rigs are commercial, so tasks that re-specify them are known answers; the open work is a deep-sea container ship with verified zero life-cycle emissions at competitive cost, and each task needs its own basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "zero-emission deep-sea container ship in service 2026 ammonia green methanol Maersk ocean crossing first",
+      "source": "https://gcaptain.com/construction-begins-on-worlds-first-ammonia-powered-containership/",
+      "observedAt": "2026-11-06T01:33:00Z",
+      "finding": "No zero-emission deep-sea container ship is in service. Yara Eyde (1,200 TEU ammonia, Oslo-Bremerhaven-Rotterdam) began construction in September 2025 for end-2026 service as a short-sea ship; OOCL 24,168 TEU methanol dual-fuel ships launched in 2026; Wallenius Wilhelmsen took a methanol car carrier in July 2026."
+    },
+    {
+      "query": "IMO Net-Zero Framework 2025 2026 adoption delayed shipping zero emission fuels share fleet",
+      "source": "https://www.dnv.com/news/2025/decision-on-the-imo-net-zero-framework-delayed-for-one-year/",
+      "observedAt": "2026-11-06T01:33:00Z",
+      "finding": "The MEPC voted 57 to 49 on 17 October 2025 to defer adoption of the IMO Net-Zero Framework (global fuel standard and GHG pricing) to October 2026 under US and Saudi opposition; entry into force could slip to 2029 or 2030; EU ETS and FuelEU Maritime continue. No fleet zero-emission fuel share found."
+    },
+    {
+      "query": "ammonia-fuelled container ship engine delivery 2026 first ammonia vessel WinGD MAN",
+      "source": "https://gcaptain.com/shippings-ammonia-era-begins-as-exmar-receives-landmark-newbuild/",
+      "observedAt": "2026-11-06T01:33:00Z",
+      "finding": "EXMAR took delivery in June 2026 of ANTWERPEN, a 46,000 cubic metre LPG/ammonia carrier with a WinGD X52DF-A engine, reported as the first ocean-going ammonia-fuelled ship; WinGD has 40 X-DF-A orders including container ships; the Everllence (MAN) ammonia engine passed FAT in April 2026 for a carrier due October 2026. No ammonia container ship delivered."
+    },
+    {
+      "query": "wind-assisted or battery-electric ocean-going cargo ship zero emission transatlantic 2026 Oceanbird Orcelle Neoliner sailing cargo",
+      "source": "https://maritime-executive.com/article/neoliner-sail-powered-ro-ro-cargo-ship-starts-construction",
+      "observedAt": "2026-11-06T01:34:00Z",
+      "finding": "Oceanbird Orcelle Wind (7,000-car carrier) is targeted for late 2026 or early 2027 after slipping from 2025, claiming 90 percent savings on a single transatlantic sailing; Neoliner (5,300 t ro-ro) has begun loading; both keep fossil or biofuel engines; a 2026 Orcelle Horizon demonstrator targets about 10 percent savings. No battery-electric ocean-going cargo ship found."
+    }
+  ]
+}

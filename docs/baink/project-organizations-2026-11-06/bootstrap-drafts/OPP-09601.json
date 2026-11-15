@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-09601",
+  "native_project": "P-OPP-09601",
+  "source_digest": "5f28ac0c9775a9f5d0310f242f147b1ead77eacb017fba3fd2de9d9ef1c1c60e",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build a real-time translator that preserves theological nuance between faith vocabularies",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "fe0cd298ef856304ae7dac08e5e2016eda720a9e088161138764db8928986286"
+  },
+  "drafted_at": "2026-11-06T00:30:53.017Z",
+  "queries": [
+    "real-time translator preserves theological nuance faith",
+    "real-time translator preserves religion spirituality philosophy"
+  ],
+  "searches": [
+    {
+      "query": "real-time translator preserves theological nuance faith",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:30:44.804Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=real-time%20translator%20preserves%20theological%20nuance%20faith&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "real-time translator preserves theological nuance faith",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:30:45.315Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Areal-time%20AND%20all%3Atranslator%20AND%20all%3Apreserves%20AND%20all%3Atheological%20AND%20all%3Anuance%20AND%20all%3Afaith&start=0&max_results=10; sha256=f680332066118bd9684f8dadc19bd7cd627ee7de5d71c6ced514de22195934ac; total=0; shown=0/0"
+    },
+    {
+      "query": "real-time translator preserves theological nuance faith",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:30:46.357Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=real-time%20translator%20preserves%20theological%20nuance%20faith&rows=10&select=DOI,title; sha256=d16daa83f40f8be9a53b84332f63a34fff7681075dfed04a9acdf1ccad2d280e; total=2515839; shown=5/10; top: 10.31046/tl.v8i1.354 \"Faith Across Time\" | 10.55248/gengpi.6.1025.3561 \"A Real-Time Speech-to-Sign Language Translator\" | 10.1080/13556509.2009.10799286 \"‘God’s Real Name is God’\" | 10.1093/odnb/9780198614128.013.110241 \"Taylor, Sophia Susannah (1817–1911), translator of theological books\" | 10.21236/ada145016 \"A Reasonable View Update Translator that Preserves No Complement.\""
+    },
+    {
+      "query": "real-time translator preserves religion spirituality philosophy",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:30:51.359Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=real-time%20translator%20preserves%20religion%20spirituality%20philosophy&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "real-time translator preserves religion spirituality philosophy",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:30:52.076Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Areal-time%20AND%20all%3Atranslator%20AND%20all%3Apreserves%20AND%20all%3Areligion%20AND%20all%3Aspirituality%20AND%20all%3Aphilosophy&start=0&max_results=10; sha256=da09bdb16eb4dee9f9113942d1afa9fe7152b1c496005f8668dbf404ef843585; total=0; shown=0/0"
+    },
+    {
+      "query": "real-time translator preserves religion spirituality philosophy",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:30:53.016Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=real-time%20translator%20preserves%20religion%20spirituality%20philosophy&rows=10&select=DOI,title; sha256=bc7aab88baa3d17153cf24a1f9344a03fda58ee818afd25ddc222cafcf9a2c9b; total=3385053; shown=5/10; top: 10.4324/9780203464908_chapter_7 \"After philosophy and religion\" | 10.59350/f8qg4-m6998 \"Making sense in real time\" | 10.1017/9781316459461.002 \"Philosophy, Religion, and Spirituality\" | 10.1017/9781571138217.003 \"Philosophy and Religion\" | 10.4324/9780203464908-15 \"After philosophy and religion\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "real-time translator preserves theological nuance faith",
+      "url": "https://api.github.com/search/repositories?q=real-time%20translator%20preserves%20theological%20nuance%20faith&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=real-time%20translator%20preserves%20theological%20nuance%20faith&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:30:44.804Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "real-time translator preserves theological nuance faith",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Areal-time%20AND%20all%3Atranslator%20AND%20all%3Apreserves%20AND%20all%3Atheological%20AND%20all%3Anuance%20AND%20all%3Afaith&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Areal-time%20AND%20all%3Atranslator%20AND%20all%3Apreserves%20AND%20all%3Atheological%20AND%20all%3Anuance%20AND%20all%3Afaith&start=0&max_results=10",
+      "sha256": "f680332066118bd9684f8dadc19bd7cd627ee7de5d71c6ced514de22195934ac",
+      "bytes": 880,
+      "observedAt": "2026-11-06T00:30:45.315Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "real-time translator preserves theological nuance faith",
+      "url": "https://api.crossref.org/works?query=real-time%20translator%20preserves%20theological%20nuance%20faith&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=real-time%20translator%20preserves%20theological%20nuance%20faith&rows=10&select=DOI,title",
+      "sha256": "d16daa83f40f8be9a53b84332f63a34fff7681075dfed04a9acdf1ccad2d280e",
+      "bytes": 1360,
+      "observedAt": "2026-11-06T00:30:46.357Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "real-time translator preserves religion spirituality philosophy",
+      "url": "https://api.github.com/search/repositories?q=real-time%20translator%20preserves%20religion%20spirituality%20philosophy&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=real-time%20translator%20preserves%20religion%20spirituality%20philosophy&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:30:51.359Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "real-time translator preserves religion spirituality philosophy",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Areal-time%20AND%20all%3Atranslator%20AND%20all%3Apreserves%20AND%20all%3Areligion%20AND%20all%3Aspirituality%20AND%20all%3Aphilosophy&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Areal-time%20AND%20all%3Atranslator%20AND%20all%3Apreserves%20AND%20all%3Areligion%20AND%20all%3Aspirituality%20AND%20all%3Aphilosophy&start=0&max_results=10",
+      "sha256": "da09bdb16eb4dee9f9113942d1afa9fe7152b1c496005f8668dbf404ef843585",
+      "bytes": 896,
+      "observedAt": "2026-11-06T00:30:52.076Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "real-time translator preserves religion spirituality philosophy",
+      "url": "https://api.crossref.org/works?query=real-time%20translator%20preserves%20religion%20spirituality%20philosophy&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=real-time%20translator%20preserves%20religion%20spirituality%20philosophy&rows=10&select=DOI,title",
+      "sha256": "bc7aab88baa3d17153cf24a1f9344a03fda58ee818afd25ddc222cafcf9a2c9b",
+      "bytes": 1173,
+      "observedAt": "2026-11-06T00:30:53.016Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "61cdaf43a9067f9a84dd1acff5fa7a2848ef33678c2783cba21c0ceffe964f5c",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

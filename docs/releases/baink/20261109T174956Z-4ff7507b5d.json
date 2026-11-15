@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T174956Z-4ff7507b5d",
+  "version": "0.3.55",
+  "source_commit": "ca9a2d850cf9e36af9159730d8bacffcdbd7e144",
+  "deployed_at": "2026-11-09T17:50:20Z",
+  "prior": "20261109T171920Z-dcdb418f7e",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#send-rules-checker-20261109"
+  ],
+  "note": "PR #359 P1: custody rule checks approve sends, AI only above 10,000 AI$ or flagged. ALLOW_ALL kept. Proofs: rules route 1 AI$ h1406122; refuse list checker-refused; flagged AI route attested h1406190."
+}

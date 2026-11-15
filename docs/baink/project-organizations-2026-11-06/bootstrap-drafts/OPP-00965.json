@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00965",
+  "native_project": "P-OPP-00965",
+  "source_digest": "22a801c06477e313833eb9eb5e85716d4703b50089e4c5e09847339bcb5c010f",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Provide household first-aid and diagnostic kits",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "c0d1e4b2f79894f538274cbbca4f0616d33fa8c35c708e9327b3c4c51323903c"
+  },
+  "drafted_at": "2026-11-06T00:13:54.807Z",
+  "queries": [
+    "household first-aid diagnostic kits",
+    "household first-aid diagnostic healthcare systems medicine"
+  ],
+  "searches": [
+    {
+      "query": "household first-aid diagnostic kits",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:13:46.870Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=household%20first-aid%20diagnostic%20kits&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "household first-aid diagnostic kits",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:13:47.368Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Ahousehold%20AND%20all%3Afirst-aid%20AND%20all%3Adiagnostic%20AND%20all%3Akits&start=0&max_results=10; sha256=f2d8c7f9fe4965f5ce523f96ed5b7709b86383d0c8381468dee48146ad256e19; total=0; shown=0/0"
+    },
+    {
+      "query": "household first-aid diagnostic kits",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:13:48.225Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=household%20first-aid%20diagnostic%20kits&rows=10&select=DOI,title; sha256=e72e4ef08b66c723f179c2d5ebf25bd98fc2d3a0bd5654953db4aa3fad1b5daf; total=1888148; shown=5/10; top: 10.3403/30234646 \"Workplace first aid kits\" | 10.3403/30284623 \"First aid kits\" | 10.3403/30284623u \"First aid kits\" | 10.3403/30234646u \"Tracked Changes. Workplace first aid kits\" | 10.3403/30368062 \"Tracked Changes. Workplace first aid kits\""
+    },
+    {
+      "query": "household first-aid diagnostic healthcare systems medicine",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:13:53.408Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=household%20first-aid%20diagnostic%20healthcare%20systems%20medicine&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "household first-aid diagnostic healthcare systems medicine",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:13:53.951Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Ahousehold%20AND%20all%3Afirst-aid%20AND%20all%3Adiagnostic%20AND%20all%3Ahealthcare%20AND%20all%3Asystems%20AND%20all%3Amedicine&start=0&max_results=10; sha256=8fe8c339d71cf8fd06ea676ca01fc1fde5235f49a75c1afba4a876a8345083c3; total=0; shown=0/0"
+    },
+    {
+      "query": "household first-aid diagnostic healthcare systems medicine",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:13:54.806Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=household%20first-aid%20diagnostic%20healthcare%20systems%20medicine&rows=10&select=DOI,title; sha256=38e4a6888d715d261a4b45930356e10ff38018c872db6f93ac32cd575e7e61bb; total=10954551; shown=5/10; top: 10.1201/9780203719220-2 \"Emergency First Aid Treatment of Poisoning\" | 10.1201/9780203719220-1 \"Household Products\" | 10.1201/9780203719220 \"Household Chemicals and Emergency First Aid\" | 10.5040/9781474295932.0008 \"Introduction: Household Healthcare Matters\" | 10.31525/cmr-14804fe \"FDA permits marketing of first diagnostic test to aid in detecting prosthetic joint infections\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "household first-aid diagnostic kits",
+      "url": "https://api.github.com/search/repositories?q=household%20first-aid%20diagnostic%20kits&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=household%20first-aid%20diagnostic%20kits&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:13:46.870Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "household first-aid diagnostic kits",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Ahousehold%20AND%20all%3Afirst-aid%20AND%20all%3Adiagnostic%20AND%20all%3Akits&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Ahousehold%20AND%20all%3Afirst-aid%20AND%20all%3Adiagnostic%20AND%20all%3Akits&start=0&max_results=10",
+      "sha256": "f2d8c7f9fe4965f5ce523f96ed5b7709b86383d0c8381468dee48146ad256e19",
+      "bytes": 804,
+      "observedAt": "2026-11-06T00:13:47.368Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "household first-aid diagnostic kits",
+      "url": "https://api.crossref.org/works?query=household%20first-aid%20diagnostic%20kits&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=household%20first-aid%20diagnostic%20kits&rows=10&select=DOI,title",
+      "sha256": "e72e4ef08b66c723f179c2d5ebf25bd98fc2d3a0bd5654953db4aa3fad1b5daf",
+      "bytes": 964,
+      "observedAt": "2026-11-06T00:13:48.225Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "household first-aid diagnostic healthcare systems medicine",
+      "url": "https://api.github.com/search/repositories?q=household%20first-aid%20diagnostic%20healthcare%20systems%20medicine&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=household%20first-aid%20diagnostic%20healthcare%20systems%20medicine&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:13:53.408Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "household first-aid diagnostic healthcare systems medicine",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Ahousehold%20AND%20all%3Afirst-aid%20AND%20all%3Adiagnostic%20AND%20all%3Ahealthcare%20AND%20all%3Asystems%20AND%20all%3Amedicine&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Ahousehold%20AND%20all%3Afirst-aid%20AND%20all%3Adiagnostic%20AND%20all%3Ahealthcare%20AND%20all%3Asystems%20AND%20all%3Amedicine&start=0&max_results=10",
+      "sha256": "8fe8c339d71cf8fd06ea676ca01fc1fde5235f49a75c1afba4a876a8345083c3",
+      "bytes": 886,
+      "observedAt": "2026-11-06T00:13:53.951Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "household first-aid diagnostic healthcare systems medicine",
+      "url": "https://api.crossref.org/works?query=household%20first-aid%20diagnostic%20healthcare%20systems%20medicine&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=household%20first-aid%20diagnostic%20healthcare%20systems%20medicine&rows=10&select=DOI,title",
+      "sha256": "38e4a6888d715d261a4b45930356e10ff38018c872db6f93ac32cd575e7e61bb",
+      "bytes": 1414,
+      "observedAt": "2026-11-06T00:13:54.806Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "9e23a00af58a1a00591d2c41e7e6ddce8f4d699b2f006e3ed22be6cd4b9ab9f8",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

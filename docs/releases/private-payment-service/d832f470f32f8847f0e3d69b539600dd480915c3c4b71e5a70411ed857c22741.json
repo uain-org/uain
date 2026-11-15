@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "private-payment-service",
+  "release_id": "d832f470f32f8847f0e3d69b539600dd480915c3c4b71e5a70411ed857c22741",
+  "version": null,
+  "source_commit": null,
+  "deployed_at": "2026-11-09T15:00:31Z",
+  "prior": "b9b1a7b99a87eea5558eb2b5f0645c87a4d6a8f2563ec7da7cbdfb5d1be84e5f",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#send-checker-receiving-key-20261109",
+    "CHANGELOG.md#release-gap-closure-20261110"
+  ],
+  "note": "Backfilled from read-only host evidence (adoption.json, installer backup private-payment-release-20261109T150031Z). Service 41ddb8e9, dispatcher 5bf78f93; health ready at height 1401080. Source commit not recorded."
+}

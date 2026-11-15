@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00243",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T02:52:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "A single shot against all childhood diseases does not exist. The highest valency licensed or trialled childhood combination is hexavalent, six diseases in one injection (diphtheria, tetanus, pertussis, hepatitis B, polio, Hib), seen across registry entries such as LBVD phase 2-3 in 1,186 and 60 infants, DTwP-HepB-IPV-Hib phase 2 in 336 and the V419 programme (https://clinicaltrials.gov/api/v2/studies?query.intr=hexavalent+combination+vaccine&pageSize=15). The 2025-2026 literature is about introducing and valuing hexavalent products, not exceeding them: economics of switching to hexavalent in India, a 2 + 1 schedule in preterm infants, a worldwide survey of combination vaccines in routine programmes and a comparative regulatory study of DTP-containing combinations (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22combination%20vaccine%22%20AND%20%22hexavalent%22%20AND%20children%20AND%20schedule&format=json&pageSize=10&resultType=lite). The WHO routine-immunisation summary tables page gave no count of required vaccines in the fetched text, so the schedule's breadth is stated here only from the combination literature (https://www.who.int/teams/immunization-vaccines-and-biologicals/policies/who-recommendations-for-routine-immunization---summary-tables); it plainly extends past six antigens, including measles, rubella, rotavirus, pneumococcus and HPV, which no single product covers. No open-source candidate or formulation project exists (https://api.github.com/search/repositories?q=vaccine+schedule+combination+antigen+design&per_page=10). Honest limit: hexavalent combination is licensed, widely used and thoroughly published, so a task that only reproduces hexavalent formulation is a known answer; the open work is antigen interference, thermostability and regulatory acceptance beyond six antigens."
+  },
+  "additionalSearches": [
+    {
+      "query": "registered hexavalent and other high-valency childhood combination vaccine trials",
+      "source": "https://clinicaltrials.gov/api/v2/studies?query.intr=hexavalent+combination+vaccine&pageSize=15",
+      "observedAt": "2026-11-06T02:43:00Z",
+      "finding": "The registry shows hexavalent, six diseases in one shot, as the ceiling for childhood combinations: LBVD DTwP-HepB-IPV-Hib phase 2-3 (1,186 and 60 infants), DTwP-HepB-IPV-Hib phase 2 (336), DTPa-HBV-IPV/Hib booster (403), the V419 phase 2-3 programme (708-1,315). No trial of a single product covering all childhood diseases."
+    },
+    {
+      "query": "combination and hexavalent childhood vaccine schedule literature",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22combination%20vaccine%22%20AND%20%22hexavalent%22%20AND%20children%20AND%20schedule&format=json&pageSize=10&resultType=lite",
+      "observedAt": "2026-11-06T02:45:00Z",
+      "finding": "The 2025-2026 record set concerns adopting and valuing hexavalent vaccines (economics of the switch in India, 2 + 1 preterm schedule, worldwide combination-vaccine survey, regulatory landscape for DTP-containing combinations), with no publication describing a higher-valency single-shot childhood vaccine."
+    },
+    {
+      "query": "WHO routine childhood immunization schedule breadth",
+      "source": "https://www.who.int/teams/immunization-vaccines-and-biologicals/policies/who-recommendations-for-routine-immunization---summary-tables",
+      "observedAt": "2026-11-06T02:46:00Z",
+      "finding": "The fetched page points to the childhood summary table as a separate PDF and did not state the number of vaccines or doses, and it mentions no combination product covering all childhood diseases. Honest null result: the schedule's exact count was not confirmed from this source."
+    },
+    {
+      "query": "open-source combined childhood vaccine or antigen-combination projects",
+      "source": "https://api.github.com/search/repositories?q=vaccine+schedule+combination+antigen+design&per_page=10",
+      "observedAt": "2026-11-06T02:47:00Z",
+      "finding": "Zero repositories: no open-source project aims at a single combined childhood vaccine."
+    }
+  ]
+}

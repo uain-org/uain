@@ -1,0 +1,1410 @@
+{
+ "schema": "uain-contract-fixture-registry-audit-v1",
+ "notice": "Real ClinicalTrials.gov API v2 answer for the pinned alagebrium query of draft opp-00006 (read 2026-11-10 UTC), trimmed to 3 of its 13 studies, and the real PubMed esummary record of PMID 24400341. The policy test, artifact and expected verdicts are what verification.mjs passes to verifiers/registry-audit.mjs. Shared by the organizations suite and any custody or kit code that builds registry audit policies or artifacts.",
+ "verifiedAt": "2026-11-10T01:00:00Z",
+ "successTest": {
+  "id": "audit",
+  "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=alagebrium+OR+ALT-711&pageSize=100",
+  "maxAgeDays": 14,
+  "copy": [
+   "overallStatus",
+   "whyStopped",
+   "primaryCompletionDate",
+   "hasResults"
+  ],
+  "publications": true,
+  "registryQuotes": [
+   "quote"
+  ],
+  "summary": {
+   "field": "reporting",
+   "values": [
+    "posted_and_published",
+    "posted_only",
+    "published_only",
+    "unreported"
+   ],
+   "noPublication": null
+  }
+ },
+ "registryPage": {
+  "studies": [
+   {
+    "protocolSection": {
+     "identificationModule": {
+      "nctId": "NCT01417663",
+      "orgStudyIdInfo": {
+       "id": "ALT-711-0529B"
+      },
+      "organization": {
+       "fullName": "Radboud University Medical Center",
+       "class": "OTHER"
+      },
+      "briefTitle": "Effects of Exercise Training and AGE-crosslink Breaker on Cardiovascular Structure and Function",
+      "officialTitle": "Combining Exercise Training With a Drug to Break AGE-crosslinks; Effects on Cardiovascular Structure and Function and Related Mechanisms"
+     },
+     "statusModule": {
+      "statusVerifiedDate": "2013-09",
+      "overallStatus": "COMPLETED",
+      "expandedAccessInfo": {
+       "hasExpandedAccess": false
+      },
+      "startDateStruct": {
+       "date": "2008-11"
+      },
+      "primaryCompletionDateStruct": {
+       "date": "2011-06",
+       "type": "ACTUAL"
+      },
+      "completionDateStruct": {
+       "date": "2011-06",
+       "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2011-06-17",
+      "studyFirstSubmitQcDate": "2011-08-15",
+      "studyFirstPostDateStruct": {
+       "date": "2011-08-16",
+       "type": "ESTIMATED"
+      },
+      "lastUpdateSubmitDate": "2013-09-06",
+      "lastUpdatePostDateStruct": {
+       "date": "2013-09-09",
+       "type": "ESTIMATED"
+      }
+     },
+     "sponsorCollaboratorsModule": {
+      "responsibleParty": {
+       "type": "PRINCIPAL_INVESTIGATOR",
+       "investigatorFullName": "Maria Hopman",
+       "investigatorTitle": "Prof.Dr. M.T.E. Hopman",
+       "investigatorAffiliation": "Radboud University Medical Center"
+      },
+      "leadSponsor": {
+       "name": "Radboud University Medical Center",
+       "class": "OTHER"
+      },
+      "collaborators": [
+       {
+        "name": "Dutch Heart Foundation",
+        "class": "OTHER"
+       },
+       {
+        "name": "Synvista Therapeutics, Inc",
+        "class": "INDUSTRY"
+       }
+      ]
+     },
+     "oversightModule": {
+      "oversightHasDmc": true
+     },
+     "descriptionModule": {
+      "briefSummary": "Healthy but sedentary aging leads to increased morbidity and mortality of cardiovascular disease. This is partly due to the accumulation of Advanced Glycation Endproducts (AGEs) and the stiffening of the myocardium and arteries. New medication has been developed to break these AGE-crosslinks to improve cardiovascular compliance. The positive influence of regular physical activity is well known for cardiovascular disease and aging. Therefore, what is the most effective intervention, physical exercise and/or new medication AGE-crosslink breakers, in improving the cardiovascular and cerebrovascular compliance and improving the endothelial function in healthy sedentary elderly."
+     },
+     "conditionsModule": {
+      "conditions": [
+       "Cardiovascular Disease",
+       "Aging",
+       "Endothelial Dysfunction",
+       "Physical Activity"
+      ],
+      "keywords": [
+       "Aging",
+       "Cardiovascular disease",
+       "Endothelial function",
+       "Physical activity",
+       "Advanced Glycation Endproducts",
+       "AGE crosslink breakers"
+      ]
+     },
+     "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+       "PHASE2",
+       "PHASE3"
+      ],
+      "designInfo": {
+       "allocation": "RANDOMIZED",
+       "interventionModel": "FACTORIAL",
+       "primaryPurpose": "PREVENTION",
+       "maskingInfo": {
+        "masking": "QUADRUPLE",
+        "whoMasked": [
+         "PARTICIPANT",
+         "CARE_PROVIDER",
+         "INVESTIGATOR",
+         "OUTCOMES_ASSESSOR"
+        ]
+       }
+      },
+      "enrollmentInfo": {
+       "count": 48,
+       "type": "ACTUAL"
+      }
+     },
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "label": "Alagebrium",
+        "type": "PLACEBO_COMPARATOR",
+        "description": "In this study there will be four different groups:\n\nOne Alagebrium 100 mg twice daily and exercise training 3x/week Two Placebo twice daily and exercise training 3x/week Three Alagebrium 100 mg twice daily and no exercise training Four Placebo twice daily and no exercise training",
+        "interventionNames": [
+         "Drug: Alt-711",
+         "Behavioral: Physical exercise training"
+        ]
+       },
+       {
+        "label": "Exercise training",
+        "type": "OTHER",
+        "description": "In this study there will be four different groups:\n\nOne Alagebrium 100 mg twice daily and exercise training 3x/week Two Placebo twice daily and exercise training 3x/week Three Alagebrium 100 mg twice daily and no exercise training Four Placebo twice daily and no exercise training",
+        "interventionNames": [
+         "Drug: Alt-711",
+         "Behavioral: Physical exercise training"
+        ]
+       }
+      ],
+      "interventions": [
+       {
+        "type": "DRUG",
+        "name": "Alt-711",
+        "description": "Alt-711, also known as Alagebrium, an AGE-crosslink breaker, will be given twice daily 100mg",
+        "armGroupLabels": [
+         "Alagebrium",
+         "Exercise training"
+        ],
+        "otherNames": [
+         "AGE crosslink breaker",
+         "Alagebrium",
+         "4,5-dimethyl-3-(2-oxo-2-phenylethyl)-thiazolium chloride"
+        ]
+       },
+       {
+        "type": "BEHAVIORAL",
+        "name": "Physical exercise training",
+        "description": "Exercise training will be given three times a week for 45 minutes per training session. The heart rate reserve will be slowly increased from 70% to 85%.",
+        "armGroupLabels": [
+         "Alagebrium",
+         "Exercise training"
+        ],
+        "otherNames": [
+         "Exercise training",
+         "Cardiopulmonary fitness training",
+         "Cycloergometer"
+        ]
+       }
+      ]
+     },
+     "outcomesModule": {
+      "primaryOutcomes": [
+       {
+        "measure": "Examine the combined effects of one year exercise training and the AGE-crosslink breaker Alagebrium on vascular endothelial function.",
+        "description": "At baseline and 12 months the endothelial function will be measured with an invasive vascular function measurement using the leg model. Via an arterial line in the common femoral artery acethylcholine, sodium nitroprusside and LNMMA will be infused at different dosages. Vascular response will be measured using venous occlusion plethysmography. Non-invasive vascular measurements, e.g.flow mediated dilation and pulse wave velocity, using ultrasound techniques will be performed at 0, 6 and 12 months. Also, cardiopulmonary fitness level will be tested at 0, 3, 6 and 12 months with an ergometer.",
+        "timeFrame": "0 and 12 months"
+       }
+      ],
+      "secondaryOutcomes": [
+       {
+        "measure": "Examine the individual effects of one year exercise training and the AGE-crosslink breaker Alagebrium on vascular endothelial function.",
+        "description": "At baseline and 12 months the endothelial function will be measured with an invasive vascular function measurement using the leg model. Via an arterial line in the common femoral artery acethylcholine, sodium nitroprusside and LNMMA will be infused at different dosages. Vascular response will be measured using venous occlusion plethysmography. Non-invasive vascular measurements, e.g.flow mediated dilation and pulse wave velocity, using ultrasound techniques will be performed at 0, 6 and 12 months. Also, cardiopulmonary fitness level will be tested at 0, 3, 6 and 12 months with an ergometer.",
+        "timeFrame": "0 and 12 months"
+       },
+       {
+        "measure": "Examine the combined effects of one year exercise training and the AGE-crosslink breaker Alagebrium on cardiac function.",
+        "description": "An echocardiogram will be performed at baseline, 6 and 12 months. Measures such as strain, strain rate and myocardial velocity, together with the diastolic function parameters (e.g. E/A, S/D, and E/E' ratio) will be specifically evaluated. Also, the common measures such as wall thickness, volumes, etc, will be examined.",
+        "timeFrame": "0, 6 and 12 months"
+       },
+       {
+        "measure": "Examine the individual effects of one year exercise training and the AGE-crosslink breaker Alagebrium on cardiac function.",
+        "description": "An echocardiogram will be performed at baseline, 6 and 12 months. Measures such as strain, strain rate and myocardial velocity, together with the diastolic function parameters (e.g. E/A, S/D, and E/E' ratio) will be specifically evaluated. Also, the common measures such as wall thickness, volumes, etc, will be examined.",
+        "timeFrame": "0, 6 and 12 months"
+       },
+       {
+        "measure": "Examine the combined effects of one year exercise training and the AGE-crosslink breaker Alagebrium on cerebral perfusion and cognitive function.",
+        "description": "A cerebral perfusion measurement will be performed at baseline and after 12 months with transcranial doppler, near infra-red spectroscopy and continuous beat to beat blood pressure monitoring using the Finameter during different posture maneuvers and hypo- and hypercapnia. Dynamic cerebral autoregulation and vasoreactivity will be examined.\n\nCognitive function will be measured at baseline, 6 and 12 months using the CANTAB.",
+        "timeFrame": "0 and 12 months"
+       },
+       {
+        "measure": "Examine the individual effects of one year exercise training and the AGE-crosslink breaker Alagebrium on cerebral perfusion and cognitive function.",
+        "description": "A cerebral perfusion measurement will be performed at baseline and after 12 months with transcranial doppler, near infra-red spectroscopy and continuous beat to beat blood pressure monitoring using the Finameter during different posture maneuvers and hypo- and hypercapnia. Dynamic cerebral autoregulation and vasoreactivity will be examined.\n\nCognitive function will be measured at baseline, 6 and 12 months using the CANTAB.",
+        "timeFrame": "0 and 12 months"
+       }
+      ]
+     },
+     "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Healthy sedentary elderly\n* Age 65 yrs and older\n\nExclusion Criteria:\n\n* Cardiovascular disease\n* Cerebrovascular disease\n* Changes on ECG indicating cardiomyopathy or ischemia\n* No cardiovascular medication\n* Diabetes Mellitus\n* Hypercholesterolemia\n* BMI \\> 33 kg/m2\n* Intensive exercise \\> 1 hour a week",
+      "healthyVolunteers": true,
+      "sex": "ALL",
+      "minimumAge": "65 Years",
+      "stdAges": [
+       "OLDER_ADULT"
+      ]
+     },
+     "contactsLocationsModule": {
+      "overallOfficials": [
+       {
+        "name": "Maria TE Hopman, MD, PhD",
+        "affiliation": "Radboud University Medical Center",
+        "role": "PRINCIPAL_INVESTIGATOR"
+       }
+      ],
+      "locations": [
+       {
+        "facility": "Radboud University Nijmegen Medical Centre",
+        "city": "Nijmegen",
+        "zip": "6525EZ",
+        "country": "Netherlands",
+        "geoPoint": {
+         "lat": 51.8425,
+         "lon": 5.85278
+        }
+       }
+      ]
+     },
+     "referencesModule": {
+      "references": [
+       {
+        "pmid": "24400341",
+        "type": "DERIVED",
+        "citation": "Oudegeest-Sander MH, Olde Rikkert MG, Smits P, Thijssen DH, van Dijk AP, Levine BD, Hopman MT. The effect of an advanced glycation end-product crosslink breaker and exercise training on vascular function in older individuals: a randomized factorial design trial. Exp Gerontol. 2013 Dec;48(12):1509-17. doi: 10.1016/j.exger.2013.10.009."
+       }
+      ]
+     }
+    },
+    "annotationSection": {
+     "annotationModule": {
+      "unpostedAnnotation": {
+       "unpostedResponsibleParty": "Radboud University Medical Center",
+       "unpostedEvents": [
+        {
+         "type": "RELEASE",
+         "date": "2016-01-13"
+        },
+        {
+         "type": "RESET",
+         "date": "2016-02-11"
+        },
+        {
+         "type": "RELEASE",
+         "date": "2017-10-09"
+        },
+        {
+         "type": "RESET",
+         "date": "2017-11-07"
+        }
+       ]
+      }
+     }
+    },
+    "derivedSection": {
+     "miscInfoModule": {
+      "versionHolder": "2026-11-09",
+      "submissionTracking": {
+       "estimatedResultsFirstSubmitDate": "2016-01-13",
+       "submissionInfos": [
+        {
+         "releaseDate": "2016-01-13",
+         "resetDate": "2016-02-11"
+        },
+        {
+         "releaseDate": "2017-10-09",
+         "resetDate": "2017-11-07"
+        }
+       ]
+      }
+     },
+     "conditionBrowseModule": {
+      "meshes": [
+       {
+        "id": "D002318",
+        "term": "Cardiovascular Diseases"
+       },
+       {
+        "id": "D009043",
+        "term": "Motor Activity"
+       }
+      ],
+      "ancestors": [
+       {
+        "id": "D001519",
+        "term": "Behavior"
+       }
+      ]
+     },
+     "interventionBrowseModule": {
+      "meshes": [
+       {
+        "id": "C406794",
+        "term": "alagebrium"
+       },
+       {
+        "id": "D015444",
+        "term": "Exercise"
+       }
+      ],
+      "ancestors": [
+       {
+        "id": "D009043",
+        "term": "Motor Activity"
+       },
+       {
+        "id": "D009068",
+        "term": "Movement"
+       },
+       {
+        "id": "D009142",
+        "term": "Musculoskeletal Physiological Phenomena"
+       },
+       {
+        "id": "D055687",
+        "term": "Musculoskeletal and Neural Physiological Phenomena"
+       }
+      ]
+     }
+    },
+    "hasResults": false
+   },
+   {
+    "protocolSection": {
+     "identificationModule": {
+      "nctId": "NCT01913301",
+      "orgStudyIdInfo": {
+       "id": "ALT-711-0530"
+      },
+      "organization": {
+       "fullName": "Cardiovascular Clinical Sciences Inc",
+       "class": "INDUSTRY"
+      },
+      "briefTitle": "A Randomized Double-Blind, Placebo-Controlled, Multiple-Dose Study to Evaluate the Effects of Alagebrium on Exercise in Subjects With Diastolic Heart Failure",
+      "acronym": "BREAK-DHF-1"
+     },
+     "statusModule": {
+      "statusVerifiedDate": "2013-02",
+      "overallStatus": "TERMINATED",
+      "whyStopped": "Sponsor lost funding",
+      "expandedAccessInfo": {
+       "hasExpandedAccess": false
+      },
+      "startDateStruct": {
+       "date": "2007-12"
+      },
+      "primaryCompletionDateStruct": {
+       "date": "2009-05",
+       "type": "ACTUAL"
+      },
+      "completionDateStruct": {
+       "date": "2009-05",
+       "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2013-02-15",
+      "studyFirstSubmitQcDate": "2013-07-30",
+      "studyFirstPostDateStruct": {
+       "date": "2013-08-01",
+       "type": "ESTIMATED"
+      },
+      "lastUpdateSubmitDate": "2013-07-30",
+      "lastUpdatePostDateStruct": {
+       "date": "2013-08-01",
+       "type": "ESTIMATED"
+      }
+     },
+     "sponsorCollaboratorsModule": {
+      "responsibleParty": {
+       "type": "SPONSOR"
+      },
+      "leadSponsor": {
+       "name": "Cardiovascular Clinical Sciences Inc",
+       "class": "INDUSTRY"
+      }
+     },
+     "oversightModule": {
+      "oversightHasDmc": true
+     },
+     "descriptionModule": {
+      "briefSummary": "The purpose of the study is to gather information regarding the safety and effectiveness of an investigational drug called Alagebrium when used treating Heart Failure in relation to exercise tolerance after 6 months in the trial."
+     },
+     "conditionsModule": {
+      "conditions": [
+       "Diastolic Heart Failure"
+      ]
+     },
+     "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+       "PHASE2"
+      ],
+      "designInfo": {
+       "allocation": "RANDOMIZED",
+       "interventionModel": "SINGLE_GROUP",
+       "primaryPurpose": "TREATMENT",
+       "maskingInfo": {
+        "masking": "DOUBLE",
+        "whoMasked": [
+         "PARTICIPANT",
+         "INVESTIGATOR"
+        ]
+       }
+      },
+      "enrollmentInfo": {
+       "count": 134,
+       "type": "ACTUAL"
+      }
+     },
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "label": "Alagebrium",
+        "type": "EXPERIMENTAL",
+        "interventionNames": [
+         "Drug: Alagebrium"
+        ]
+       }
+      ],
+      "interventions": [
+       {
+        "type": "DRUG",
+        "name": "Alagebrium",
+        "armGroupLabels": [
+         "Alagebrium"
+        ]
+       }
+      ]
+     },
+     "outcomesModule": {
+      "primaryOutcomes": [
+       {
+        "measure": "Exercise Tolerance",
+        "description": "To evaluate the safety and efficacy of alagebrium in subjects diagnosed with diastolic heart failure. The primary variable for assessing efficacy will be assessment of exercise tolerance using the Six-minute walk test.",
+        "timeFrame": "Change from baseline at Week 24"
+       }
+      ]
+     },
+     "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n1. Males and females 50 years of age or older.\n2. Diagnosis of diabetes OR a diagnosis of hypertension requiring therapy.\n3. Echocardiographic ejection fraction ≥ 45% verified within 1 year prior to baseline, assuming no intercurrent cardiac event between the echo and screening.\n4. Echocardiographic evidence of diastolic dysfunction as defined by an E/E' ≥ 12 determined within 1 year prior to baseline; sinus rhythm required at time of echo.\n5. Previous hospitalization due to heart failure OR a current or previous BNP ≥ 100 pg/mL.\n6. New York Heart Association (NYHA) functional class II-IV.\n7. At least 1 month between hospitalization for heart failure and randomization.\n8. Stable doses of heart failure medications (diuretics, ACE inhibitors, ARB's, beta-adrenergic antagonists, aldosterone antagonists) for at least 1 month prior to randomization.\n9. Able to understand content of and willing to provide written informed consent.\n10. Agree to use adequate contraception during the study if premenopausal. -\n\nExclusion Criteria:\n\n1. Ejection fraction \\< 45%.\n2. Screening Six-minute walk test \\> 450 meters or \\< 100 meters\n3. Clinically significant cardiac valvular disease (mitral regurgitation (MR) \\> grade I, aortic insufficiency (AI) \\> grade 1, mitral stenosis (MS), aortic stenosis (AS)).\n4. History of stroke, any sequelae of a transient ischemic attack (TIA), or reversible ischemic neurological defect (RIND) within 6 months prior to screening.\n5. History of acute myocardial infarction within 6 months prior to screening.\n6. Severe COPD as defined by O2 or steroid dependence.\n7. History of systemic inflammatory or collagen vascular disease.\n8. Active and or treated malignancies within 12 months prior to Visit 1 with the exception of basal cell carcinoma.\n9. Any significant systemic illness(es) or medical condition(s) that could lead to difficulty complying with the protocol; or any concurrent condition(s) which, in the investigator's opinion, would prohibit the subject from completing the study, or would not be in the best interest of the subject.\n10. Estimated glomerular filtration rate (GFR) ≤ 30 mL/min/1.73m² as calculated by Modification of Diet in Renal Disease (MDRD) study equation \\[MDRD = 186 X serum creatinine (mg/dl) 1.154 X years -0.203 X (0.742 if female) X (1.210 if African American)\\].\n11. Liver function tests (SGOT and/or SGPT) \\> 2.5 times the upper limit of normal range.\n12. Hb \\< 10 g/dL.\n13. Use of any investigational drug(s) within 30 days prior to screening.\n14. Previous exposure to alagebrium.\n15. Known seropositivity for HIV or hepatitis C, or presence of hepatitis B surface antigen.\n16. Pregnancy or active breast-feeding. Urine pregnancy tests will be performed on all women who are not post-menopausal for at least 1 year.\n\n    \\-",
+      "healthyVolunteers": false,
+      "sex": "ALL",
+      "minimumAge": "50 Years",
+      "stdAges": [
+       "ADULT",
+       "OLDER_ADULT"
+      ]
+     }
+    },
+    "annotationSection": {
+     "annotationModule": {
+      "unpostedAnnotation": {
+       "unpostedResponsibleParty": "Cardiovascular Clinical Sciences Inc",
+       "unpostedEvents": [
+        {
+         "type": "RELEASE",
+         "date": "2017-01-30"
+        },
+        {
+         "type": "RESET",
+         "date": "2017-03-17"
+        }
+       ]
+      }
+     }
+    },
+    "derivedSection": {
+     "miscInfoModule": {
+      "versionHolder": "2026-11-09",
+      "submissionTracking": {
+       "estimatedResultsFirstSubmitDate": "2017-01-30",
+       "submissionInfos": [
+        {
+         "releaseDate": "2017-01-30",
+         "resetDate": "2017-03-17"
+        }
+       ]
+      }
+     },
+     "conditionBrowseModule": {
+      "meshes": [
+       {
+        "id": "D054144",
+        "term": "Heart Failure, Diastolic"
+       }
+      ],
+      "ancestors": [
+       {
+        "id": "D006333",
+        "term": "Heart Failure"
+       },
+       {
+        "id": "D006331",
+        "term": "Heart Diseases"
+       },
+       {
+        "id": "D002318",
+        "term": "Cardiovascular Diseases"
+       }
+      ]
+     },
+     "interventionBrowseModule": {
+      "meshes": [
+       {
+        "id": "C406794",
+        "term": "alagebrium"
+       }
+      ]
+     }
+    },
+    "hasResults": false
+   },
+   {
+    "protocolSection": {
+     "identificationModule": {
+      "nctId": "NCT00662116",
+      "orgStudyIdInfo": {
+       "id": "ALT-711-0530"
+      },
+      "organization": {
+       "fullName": "Synvista Therapeutics, Inc",
+       "class": "INDUSTRY"
+      },
+      "briefTitle": "Beginning a Randomized Evaluation of the AGE Breaker Alagebrium in Diastolic Heart Failure (BREAK-DHF-I)",
+      "officialTitle": "A Randomized, Double-Blind, Placebo-Controlled, Multiple-Dose Study to Evaluate the Effects of Alagebrium on Exercise in Subjects With Diastolic Heart Failure",
+      "acronym": "BREAK-DHF-I"
+     },
+     "statusModule": {
+      "statusVerifiedDate": "2009-01",
+      "overallStatus": "TERMINATED",
+      "whyStopped": "Study has been terminated early due to financial constraints.",
+      "expandedAccessInfo": {
+       "hasExpandedAccess": false
+      },
+      "startDateStruct": {
+       "date": "2008-03"
+      },
+      "primaryCompletionDateStruct": {
+       "date": "2009-10",
+       "type": "ESTIMATED"
+      },
+      "completionDateStruct": {
+       "date": "2009-12",
+       "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2008-04-17",
+      "studyFirstSubmitQcDate": "2008-04-17",
+      "studyFirstPostDateStruct": {
+       "date": "2008-04-21",
+       "type": "ESTIMATED"
+      },
+      "lastUpdateSubmitDate": "2009-01-29",
+      "lastUpdatePostDateStruct": {
+       "date": "2009-01-30",
+       "type": "ESTIMATED"
+      }
+     },
+     "sponsorCollaboratorsModule": {
+      "responsibleParty": {
+       "oldNameTitle": "Carl Mendel, MD/Chief Medical Officer",
+       "oldOrganization": "Synvista"
+      },
+      "leadSponsor": {
+       "name": "Synvista Therapeutics, Inc",
+       "class": "INDUSTRY"
+      }
+     },
+     "oversightModule": {
+      "oversightHasDmc": true
+     },
+     "descriptionModule": {
+      "briefSummary": "This study is being done to evaluate the safety and effectiveness of alagebrium in subjects diagnosed with diastolic heart failure. The primary assessment for effectiveness is the assessment of exercise tolerance."
+     },
+     "conditionsModule": {
+      "conditions": [
+       "Diastolic Heart Failure"
+      ],
+      "keywords": [
+       "diastolic heart failure"
+      ]
+     },
+     "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+       "PHASE2"
+      ],
+      "designInfo": {
+       "allocation": "RANDOMIZED",
+       "interventionModel": "PARALLEL",
+       "primaryPurpose": "TREATMENT",
+       "maskingInfo": {
+        "masking": "DOUBLE",
+        "whoMasked": [
+         "PARTICIPANT",
+         "INVESTIGATOR"
+        ]
+       }
+      },
+      "enrollmentInfo": {
+       "count": 160,
+       "type": "ESTIMATED"
+      }
+     },
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "label": "1",
+        "type": "EXPERIMENTAL",
+        "interventionNames": [
+         "Drug: alagebrium"
+        ]
+       },
+       {
+        "label": "2",
+        "type": "PLACEBO_COMPARATOR",
+        "interventionNames": [
+         "Drug: placebo"
+        ]
+       }
+      ],
+      "interventions": [
+       {
+        "type": "DRUG",
+        "name": "alagebrium",
+        "description": "200 mg (two 100 mg tablets) two times daily for 24 weeks",
+        "armGroupLabels": [
+         "1"
+        ],
+        "otherNames": [
+         "ALT-711"
+        ]
+       },
+       {
+        "type": "DRUG",
+        "name": "placebo",
+        "description": "placebo tablets - two tablets taken twice daily",
+        "armGroupLabels": [
+         "2"
+        ]
+       }
+      ]
+     },
+     "outcomesModule": {
+      "primaryOutcomes": [
+       {
+        "measure": "The primary efficacy measure will be exercise tolerance as assessed utilizing the 6 Minute Walk Test",
+        "timeFrame": "Assessed at baseline, week 12 and week 24"
+       }
+      ],
+      "secondaryOutcomes": [
+       {
+        "measure": "QOL as assessed by the Kansas City Cardiomyopathy Questionnaire",
+        "timeFrame": "baseline, week 12 and week 24"
+       },
+       {
+        "measure": "To assess New York Heart Association Classification",
+        "timeFrame": "Baseline, week 12 and week 24"
+       },
+       {
+        "measure": "To evaluate cardiovascular death or hospitalization for heart failure",
+        "timeFrame": "Will be assessed during the entire 24 wk trial"
+       }
+      ]
+     },
+     "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* diagnosis of diabetes or hypertension requiring therapy\n* EF \\>/= 45% via echo within 1 year and evidence of diastolic heart failure via echo measurement of E/E'\\>/= 12 determined by echo within 1 year\n* previous hospitalization for heart failure or previous BNP \\>100 pg/mL.\n\nExclusion Criteria:\n\n* Clinically significant valvular disease\n* history of stroke/TIA or reversible ischemic neurological defect w/i 6 mths\n* history of acute MI within 6 months\n* severe COPD\n* active or treated malignancies (except basal cell carcinoma)\n* significant systemic illnesses that would prohibit completion of the study or compliance",
+      "healthyVolunteers": false,
+      "sex": "ALL",
+      "minimumAge": "50 Years",
+      "stdAges": [
+       "ADULT",
+       "OLDER_ADULT"
+      ]
+     },
+     "contactsLocationsModule": {
+      "overallOfficials": [
+       {
+        "name": "Bertram Pitt, MD",
+        "affiliation": "University of Michigan",
+        "role": "PRINCIPAL_INVESTIGATOR"
+       }
+      ],
+      "locations": [
+       {
+        "city": "Birmingham",
+        "state": "Alabama",
+        "zip": "35294",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 33.52066,
+         "lon": -86.80249
+        }
+       },
+       {
+        "city": "Huntsville",
+        "state": "Alabama",
+        "zip": "35801",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 34.7304,
+         "lon": -86.58594
+        }
+       },
+       {
+        "city": "Mobile",
+        "state": "Alabama",
+        "zip": "36608",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 30.69436,
+         "lon": -88.04305
+        }
+       },
+       {
+        "city": "Anaheim",
+        "state": "California",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 33.83529,
+         "lon": -117.9145
+        }
+       },
+       {
+        "city": "Bakersfield",
+        "state": "California",
+        "zip": "93308",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 35.37329,
+         "lon": -119.01871
+        }
+       },
+       {
+        "city": "La Jolla",
+        "state": "California",
+        "zip": "92037",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 32.84727,
+         "lon": -117.2742
+        }
+       },
+       {
+        "city": "Roseville",
+        "state": "California",
+        "zip": "95661",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 38.75212,
+         "lon": -121.28801
+        }
+       },
+       {
+        "city": "Jacksonville",
+        "state": "Florida",
+        "zip": "32209",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 30.33218,
+         "lon": -81.65565
+        }
+       },
+       {
+        "city": "Miami",
+        "state": "Florida",
+        "zip": "33136",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 25.77427,
+         "lon": -80.19366
+        }
+       },
+       {
+        "city": "St. Petersburg",
+        "state": "Florida",
+        "zip": "33709",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 27.77086,
+         "lon": -82.67927
+        }
+       },
+       {
+        "city": "Covington",
+        "state": "Georgia",
+        "zip": "30014",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 33.59678,
+         "lon": -83.86018
+        }
+       },
+       {
+        "city": "Indianapolis",
+        "state": "Indiana",
+        "zip": "46260",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 39.76838,
+         "lon": -86.15804
+        }
+       },
+       {
+        "city": "Louisville",
+        "state": "Kentucky",
+        "zip": "40207",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 38.25424,
+         "lon": -85.75941
+        }
+       },
+       {
+        "city": "Auburn",
+        "state": "Maine",
+        "zip": "04210",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 44.09785,
+         "lon": -70.23117
+        }
+       },
+       {
+        "city": "South Portland",
+        "state": "Maine",
+        "zip": "04106",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 43.64147,
+         "lon": -70.24088
+        }
+       },
+       {
+        "city": "Ayer",
+        "state": "Massachusetts",
+        "zip": "01432",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 42.5612,
+         "lon": -71.58979
+        }
+       },
+       {
+        "city": "Lincoln",
+        "state": "Nebraska",
+        "zip": "68506",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 40.8,
+         "lon": -96.66696
+        }
+       },
+       {
+        "city": "Ridgewood",
+        "state": "New Jersey",
+        "zip": "07450",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 40.97926,
+         "lon": -74.11653
+        }
+       },
+       {
+        "city": "Albany",
+        "state": "New York",
+        "zip": "12205",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 42.65258,
+         "lon": -73.75623
+        }
+       },
+       {
+        "city": "Stony Brook",
+        "state": "New York",
+        "zip": "11794",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 40.92565,
+         "lon": -73.14094
+        }
+       },
+       {
+        "city": "Winston-Salem",
+        "state": "North Carolina",
+        "zip": "27157",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 36.09986,
+         "lon": -80.24422
+        }
+       },
+       {
+        "city": "Cincinnati",
+        "state": "Ohio",
+        "zip": "45219",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 39.12711,
+         "lon": -84.51439
+        }
+       },
+       {
+        "city": "Dayton",
+        "state": "Ohio",
+        "zip": "45414",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 39.75895,
+         "lon": -84.19161
+        }
+       },
+       {
+        "city": "Fairfield",
+        "state": "Ohio",
+        "zip": "45014",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 39.34589,
+         "lon": -84.5605
+        }
+       },
+       {
+        "city": "Sandusky",
+        "state": "Ohio",
+        "zip": "44870",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 41.44894,
+         "lon": -82.70796
+        }
+       },
+       {
+        "city": "Oklahoma City",
+        "state": "Oklahoma",
+        "zip": "73112",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 35.46756,
+         "lon": -97.51643
+        }
+       },
+       {
+        "city": "Charleston",
+        "state": "South Carolina",
+        "zip": "29401",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 32.77632,
+         "lon": -79.93275
+        }
+       },
+       {
+        "city": "Germantown",
+        "state": "Tennessee",
+        "zip": "38138",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 35.08676,
+         "lon": -89.81009
+        }
+       },
+       {
+        "city": "Lackland Airforce Base",
+        "state": "Texas",
+        "country": "United States"
+       },
+       {
+        "city": "Milwaukee",
+        "state": "Wisconsin",
+        "zip": "53215",
+        "country": "United States",
+        "geoPoint": {
+         "lat": 43.0389,
+         "lon": -87.90647
+        }
+       }
+      ]
+     }
+    },
+    "derivedSection": {
+     "miscInfoModule": {
+      "versionHolder": "2026-11-09"
+     },
+     "conditionBrowseModule": {
+      "meshes": [
+       {
+        "id": "D054144",
+        "term": "Heart Failure, Diastolic"
+       }
+      ],
+      "ancestors": [
+       {
+        "id": "D006333",
+        "term": "Heart Failure"
+       },
+       {
+        "id": "D006331",
+        "term": "Heart Diseases"
+       },
+       {
+        "id": "D002318",
+        "term": "Cardiovascular Diseases"
+       }
+      ]
+     },
+     "interventionBrowseModule": {
+      "meshes": [
+       {
+        "id": "C406794",
+        "term": "alagebrium"
+       }
+      ]
+     }
+    },
+    "hasResults": false
+   }
+  ]
+ },
+ "pubmedRecords": {
+  "24400341": {
+   "header": {
+    "type": "esummary",
+    "version": "0.3"
+   },
+   "result": {
+    "uids": [
+     "24400341"
+    ],
+    "24400341": {
+     "uid": "24400341",
+     "pubdate": "2013 Dec",
+     "epubdate": "",
+     "source": "Exp Gerontol",
+     "authors": [
+      {
+       "name": "Oudegeest-Sander MH",
+       "authtype": "Author",
+       "clusterid": ""
+      },
+      {
+       "name": "Olde Rikkert MG",
+       "authtype": "Author",
+       "clusterid": ""
+      },
+      {
+       "name": "Smits P",
+       "authtype": "Author",
+       "clusterid": ""
+      },
+      {
+       "name": "Thijssen DH",
+       "authtype": "Author",
+       "clusterid": ""
+      },
+      {
+       "name": "van Dijk AP",
+       "authtype": "Author",
+       "clusterid": ""
+      },
+      {
+       "name": "Levine BD",
+       "authtype": "Author",
+       "clusterid": ""
+      },
+      {
+       "name": "Hopman MT",
+       "authtype": "Author",
+       "clusterid": ""
+      }
+     ],
+     "lastauthor": "Hopman MT",
+     "title": "The effect of an advanced glycation end-product crosslink breaker and exercise training on vascular function in older individuals: a randomized factorial design trial.",
+     "sorttitle": "effect of an advanced glycation end product crosslink breaker and exercise training on vascular function in older individuals a randomized factorial design trial",
+     "volume": "48",
+     "issue": "12",
+     "pages": "1509-17",
+     "lang": [
+      "eng"
+     ],
+     "nlmuniqueid": "0047061",
+     "issn": "0531-5565",
+     "essn": "1873-6815",
+     "pubtype": [
+      "Journal Article",
+      "Randomized Controlled Trial",
+      "Research Support, N.I.H., Extramural",
+      "Research Support, Non-U.S. Gov't"
+     ],
+     "recordstatus": "PubMed - indexed for MEDLINE",
+     "pubstatus": "4",
+     "articleids": [
+      {
+       "idtype": "pubmed",
+       "idtypen": 1,
+       "value": "24400341"
+      },
+      {
+       "idtype": "mid",
+       "idtypen": 8,
+       "value": "NIHMS535391"
+      },
+      {
+       "idtype": "pmc",
+       "idtypen": 8,
+       "value": "PMC3934851"
+      },
+      {
+       "idtype": "pmcid",
+       "idtypen": 5,
+       "value": "pmc-id: PMC3934851;manuscript-id: NIHMS535391;"
+      },
+      {
+       "idtype": "doi",
+       "idtypen": 3,
+       "value": "10.1016/j.exger.2013.10.009"
+      },
+      {
+       "idtype": "pii",
+       "idtypen": 4,
+       "value": "S0531-5565(13)00313-6"
+      }
+     ],
+     "history": [
+      {
+       "pubstatus": "entrez",
+       "date": "2014/01/09 06:00"
+      },
+      {
+       "pubstatus": "pubmed",
+       "date": "2014/01/09 06:00"
+      },
+      {
+       "pubstatus": "medline",
+       "date": "2014/07/31 06:00"
+      },
+      {
+       "pubstatus": "pmc-release",
+       "date": "2014/12/01 00:00"
+      }
+     ],
+     "references": [],
+     "attributes": [
+      "Has Abstract"
+     ],
+     "pmcrefcount": 34,
+     "fulljournalname": "Experimental gerontology",
+     "elocationid": "",
+     "doctype": "citation",
+     "srccontriblist": [],
+     "booktitle": "",
+     "medium": "",
+     "edition": "",
+     "publisherlocation": "",
+     "publishername": "",
+     "srcdate": "",
+     "reportnumber": "",
+     "availablefromurl": "",
+     "locationlabel": "",
+     "doccontriblist": [],
+     "docdate": "",
+     "bookname": "",
+     "chapter": "",
+     "sortpubdate": "2013/12/01 00:00",
+     "sortfirstauthor": "Oudegeest-Sander MH",
+     "vernaculartitle": ""
+    }
+   }
+  }
+ },
+ "cases": [
+  {
+   "name": "complete audit passes",
+   "audit": {
+    "observedAt": "2026-11-10T00:00:00Z",
+    "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=alagebrium+OR+ALT-711&pageSize=100",
+    "rows": [
+     {
+      "nct": "NCT01417663",
+      "overallStatus": "COMPLETED",
+      "whyStopped": null,
+      "primaryCompletionDate": "2011-06",
+      "hasResults": false,
+      "publications": [
+       "24400341"
+      ],
+      "reporting": "published_only",
+      "quote": "Examine the combined effects of one year exercise training and the AGE-crosslink breaker Alagebrium on vascular endothelial function."
+     },
+     {
+      "nct": "NCT01913301",
+      "overallStatus": "TERMINATED",
+      "whyStopped": "Sponsor lost funding",
+      "primaryCompletionDate": "2009-05",
+      "hasResults": false,
+      "publications": [],
+      "reporting": "unreported",
+      "quote": "Sponsor lost funding"
+     },
+     {
+      "nct": "NCT00662116",
+      "overallStatus": "TERMINATED",
+      "whyStopped": "Study has been terminated early due to financial constraints.",
+      "primaryCompletionDate": "2009-10",
+      "hasResults": false,
+      "publications": [],
+      "reporting": "unreported",
+      "quote": "Study has been terminated early due to financial constraints."
+     }
+    ],
+    "summary": {
+     "posted_and_published": 0,
+     "posted_only": 0,
+     "published_only": 1,
+     "unreported": 2
+    }
+   },
+   "status": "pass",
+   "findings": [
+    "audit:pass",
+    "rows:3",
+    "publications:1"
+   ]
+  },
+  {
+   "name": "a study the query returns has no row",
+   "audit": {
+    "observedAt": "2026-11-10T00:00:00Z",
+    "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=alagebrium+OR+ALT-711&pageSize=100",
+    "rows": [
+     {
+      "nct": "NCT01417663",
+      "overallStatus": "COMPLETED",
+      "whyStopped": null,
+      "primaryCompletionDate": "2011-06",
+      "hasResults": false,
+      "publications": [
+       "24400341"
+      ],
+      "reporting": "published_only",
+      "quote": "Examine the combined effects of one year exercise training and the AGE-crosslink breaker Alagebrium on vascular endothelial function."
+     },
+     {
+      "nct": "NCT01913301",
+      "overallStatus": "TERMINATED",
+      "whyStopped": "Sponsor lost funding",
+      "primaryCompletionDate": "2009-05",
+      "hasResults": false,
+      "publications": [],
+      "reporting": "unreported",
+      "quote": "Sponsor lost funding"
+     }
+    ],
+    "summary": {
+     "posted_and_published": 0,
+     "posted_only": 0,
+     "published_only": 1,
+     "unreported": 1
+    }
+   },
+   "status": "fail",
+   "findingCodes": [
+    "row_missing:NCT00662116"
+   ]
+  },
+  {
+   "name": "a registry field is not copied verbatim",
+   "audit": {
+    "observedAt": "2026-11-10T00:00:00Z",
+    "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=alagebrium+OR+ALT-711&pageSize=100",
+    "rows": [
+     {
+      "nct": "NCT01417663",
+      "overallStatus": "COMPLETED",
+      "whyStopped": null,
+      "primaryCompletionDate": "2011-06",
+      "hasResults": false,
+      "publications": [
+       "24400341"
+      ],
+      "reporting": "published_only",
+      "quote": "Examine the combined effects of one year exercise training and the AGE-crosslink breaker Alagebrium on vascular endothelial function."
+     },
+     {
+      "nct": "NCT01913301",
+      "overallStatus": "TERMINATED",
+      "whyStopped": "Funding ended",
+      "primaryCompletionDate": "2009-05",
+      "hasResults": false,
+      "publications": [],
+      "reporting": "unreported",
+      "quote": "Sponsor lost funding"
+     },
+     {
+      "nct": "NCT00662116",
+      "overallStatus": "TERMINATED",
+      "whyStopped": "Study has been terminated early due to financial constraints.",
+      "primaryCompletionDate": "2009-10",
+      "hasResults": false,
+      "publications": [],
+      "reporting": "unreported",
+      "quote": "Study has been terminated early due to financial constraints."
+     }
+    ],
+    "summary": {
+     "posted_and_published": 0,
+     "posted_only": 0,
+     "published_only": 1,
+     "unreported": 2
+    }
+   },
+   "status": "fail",
+   "findingCodes": [
+    "row_field_not_verbatim:NCT01913301.whyStopped"
+   ]
+  },
+  {
+   "name": "the summary does not count the rows",
+   "audit": {
+    "observedAt": "2026-11-10T00:00:00Z",
+    "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=alagebrium+OR+ALT-711&pageSize=100",
+    "rows": [
+     {
+      "nct": "NCT01417663",
+      "overallStatus": "COMPLETED",
+      "whyStopped": null,
+      "primaryCompletionDate": "2011-06",
+      "hasResults": false,
+      "publications": [
+       "24400341"
+      ],
+      "reporting": "published_only",
+      "quote": "Examine the combined effects of one year exercise training and the AGE-crosslink breaker Alagebrium on vascular endothelial function."
+     },
+     {
+      "nct": "NCT01913301",
+      "overallStatus": "TERMINATED",
+      "whyStopped": "Sponsor lost funding",
+      "primaryCompletionDate": "2009-05",
+      "hasResults": false,
+      "publications": [],
+      "reporting": "unreported",
+      "quote": "Sponsor lost funding"
+     },
+     {
+      "nct": "NCT00662116",
+      "overallStatus": "TERMINATED",
+      "whyStopped": "Study has been terminated early due to financial constraints.",
+      "primaryCompletionDate": "2009-10",
+      "hasResults": false,
+      "publications": [],
+      "reporting": "unreported",
+      "quote": "Study has been terminated early due to financial constraints."
+     }
+    ],
+    "summary": {
+     "posted_and_published": 0,
+     "posted_only": 0,
+     "published_only": 1,
+     "unreported": 3
+    }
+   },
+   "status": "fail",
+   "findingCodes": [
+    "summary_count_mismatch:summary.unreported"
+   ]
+  }
+ ]
+}

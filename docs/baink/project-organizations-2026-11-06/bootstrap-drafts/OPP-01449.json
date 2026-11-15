@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-01449",
+  "native_project": "P-OPP-01449",
+  "source_digest": "0bc6ebec9067309bb544804e5396f4e31f6acc6e490b0c417de50a8319fc2c99",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Breed cassava, banana and potato that resist all known viruses",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "ed9c203d58d6e76b908a7e2d5785787f2aaeb23342c34c9a93f84eb9bc4aee4b"
+  },
+  "drafted_at": "2026-11-06T00:17:35.989Z",
+  "queries": [
+    "breed cassava banana potato resist known",
+    "breed cassava banana agriculture land crop"
+  ],
+  "searches": [
+    {
+      "query": "breed cassava banana potato resist known",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:17:28.017Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=breed%20cassava%20banana%20potato%20resist%20known&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "breed cassava banana potato resist known",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:17:28.735Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Abreed%20AND%20all%3Acassava%20AND%20all%3Abanana%20AND%20all%3Apotato%20AND%20all%3Aresist%20AND%20all%3Aknown&start=0&max_results=10; sha256=84afff4a160bcb6510618af9822ee93787460f37fff87f7b3cc06124a154c85d; total=0; shown=0/0"
+    },
+    {
+      "query": "breed cassava banana potato resist known",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:17:29.689Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=breed%20cassava%20banana%20potato%20resist%20known&rows=10&select=DOI,title; sha256=7095a0478ce220aaf5688682bd5bd682cf4693b1a3f70d5d8da794178719f73b; total=237278; shown=5/10; top: 10.1094/aps-ph24-112 \"Pathogen and pest risk across climate gradients in the Great Lakes region of Africa for banana, cassava, potato, and sweetpotato\" | 10.2139/ssrn.5347878 \"Utilising Starchy Tropical Agri-Resources Through Glutenfree Bread-Making: The Case of Cassava, Green Banana and Sweet Potato Flours\" | 10.21955/gatesopenres.1114916.1 \"Comprehensive landscape report on the capacities of tissue culture laboratories to produce high-quality pre-basic and basic planting materi…\" | 10.1063/5.0256618 \"A comparative study of the adhesive effects of cassava peels, banana peels, and potato peels on the durability of briquettes made from coco…\" | 10.1079/9781789243369.0056 \"Cassava: agronomy.\""
+    },
+    {
+      "query": "breed cassava banana agriculture land crop",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:17:34.468Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=breed%20cassava%20banana%20agriculture%20land%20crop&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "breed cassava banana agriculture land crop",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:17:34.982Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Abreed%20AND%20all%3Acassava%20AND%20all%3Abanana%20AND%20all%3Aagriculture%20AND%20all%3Aland%20AND%20all%3Acrop&start=0&max_results=10; sha256=6527f4e4f6f8da1ade3014c1691d3bf271dd257eef736f78d206dd192413d244; total=0; shown=0/0"
+    },
+    {
+      "query": "breed cassava banana agriculture land crop",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:17:35.988Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=breed%20cassava%20banana%20agriculture%20land%20crop&rows=10&select=DOI,title; sha256=b22722d8734c234b78198a9dc9ff4c7f1d85629ddfa725f46955589784cedf92; total=1308759; shown=5/10; top: 10.20900/cbgg20200008 \"Excellence in Cassava Breeding: Perspectives for the Future\" | 10.20900/cbgg20260010 \"Identification of Immune Response Genes of Cassava During Early Phases of Cassava Brown Streak Virus Infection\" | 10.5897/jpbcs2013.0388 \"Combining ability and mode of gene action in cassava for resistance to cassava green mite and cassava mealy bug in Malawi\" | 10.20900/cbgg20260002 \"Genomics-Assisted Cassava Breeding: A Comprehensive Review of Advances, Tools, and Future Prospects\" | 10.20900/cbgg20250014 \"Trait-Based Clustering and Environmental Responsiveness of Pro-Vitamin A Cassava Genotypes via Finlay-Wilkinson Regression\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "breed cassava banana potato resist known",
+      "url": "https://api.github.com/search/repositories?q=breed%20cassava%20banana%20potato%20resist%20known&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=breed%20cassava%20banana%20potato%20resist%20known&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:17:28.017Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "breed cassava banana potato resist known",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Abreed%20AND%20all%3Acassava%20AND%20all%3Abanana%20AND%20all%3Apotato%20AND%20all%3Aresist%20AND%20all%3Aknown&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Abreed%20AND%20all%3Acassava%20AND%20all%3Abanana%20AND%20all%3Apotato%20AND%20all%3Aresist%20AND%20all%3Aknown&start=0&max_results=10",
+      "sha256": "84afff4a160bcb6510618af9822ee93787460f37fff87f7b3cc06124a154c85d",
+      "bytes": 850,
+      "observedAt": "2026-11-06T00:17:28.735Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "breed cassava banana potato resist known",
+      "url": "https://api.crossref.org/works?query=breed%20cassava%20banana%20potato%20resist%20known&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=breed%20cassava%20banana%20potato%20resist%20known&rows=10&select=DOI,title",
+      "sha256": "7095a0478ce220aaf5688682bd5bd682cf4693b1a3f70d5d8da794178719f73b",
+      "bytes": 1513,
+      "observedAt": "2026-11-06T00:17:29.689Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "breed cassava banana agriculture land crop",
+      "url": "https://api.github.com/search/repositories?q=breed%20cassava%20banana%20agriculture%20land%20crop&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=breed%20cassava%20banana%20agriculture%20land%20crop&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:17:34.468Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "breed cassava banana agriculture land crop",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Abreed%20AND%20all%3Acassava%20AND%20all%3Abanana%20AND%20all%3Aagriculture%20AND%20all%3Aland%20AND%20all%3Acrop&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Abreed%20AND%20all%3Acassava%20AND%20all%3Abanana%20AND%20all%3Aagriculture%20AND%20all%3Aland%20AND%20all%3Acrop&start=0&max_results=10",
+      "sha256": "6527f4e4f6f8da1ade3014c1691d3bf271dd257eef736f78d206dd192413d244",
+      "bytes": 854,
+      "observedAt": "2026-11-06T00:17:34.982Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "breed cassava banana agriculture land crop",
+      "url": "https://api.crossref.org/works?query=breed%20cassava%20banana%20agriculture%20land%20crop&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=breed%20cassava%20banana%20agriculture%20land%20crop&rows=10&select=DOI,title",
+      "sha256": "b22722d8734c234b78198a9dc9ff4c7f1d85629ddfa725f46955589784cedf92",
+      "bytes": 1706,
+      "observedAt": "2026-11-06T00:17:35.988Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "687bfcfb1fcc5822a5d4ee1cbd04a6ec67c1e9ea47e4fc955bc5c4934a7fc53f",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

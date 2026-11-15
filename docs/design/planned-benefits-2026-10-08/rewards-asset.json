@@ -1,0 +1,19 @@
+{
+  "toolMode": "built-in image_gen",
+  "intent": "generate from reference",
+  "prompt": "Use case: product-mockup.\nAsset type: raster background for a planned rewards benefit card on the UAIN landing page.\nInput image: reference image for the exact coin group, materials, palette, shallow focus and photographic styling.\nPrimary request: Generate a natural portrait 1024x1280 image matching this reference closely, with three photoreal metallic coins resting on a dark rough granular surface. Largest central silver and blue coin with the reference globe and network symbol, a smaller left coin with the Ethereum diamond and a smaller right coin with the Solana cyan/purple stripes. No lettering on any coin, only the recognizable actual visual motifs. Preserve the tasteful premium cool blue lighting and convincing metallic texture.\nComposition: Central coin center around x50%, y28%. All three complete coins must fit within the upper 52% of the canvas. Keep detailed art concentrated in the upper 58%; smoothly dissolve the rough surface and bokeh into a very clean deep dark blue #08283f lower 42% with a slightly lighter blue lower edge. The lower area will support actual HTML text later and must have no objects or high contrast details. This is illustrative art for planned benefits, not a live financial promise.\nBackground: shallow cool blue bokeh with restrained navy atmosphere. Matching reference camera perspective at low angle, dominant frontal central coin and slightly angled supporting coins.\nConstraints: exactly three coins; no additional coins or motifs. No letters, numbers, typography, title, slogans, buttons, borders, UI, watermark, frame or image collage. No fabricated readable text around coin edges. Generate the image alone.",
+  "reference": "work/benefits-20261008/references/rewards.webp",
+  "source": "~/.codex/generated_images/01a11b38-05b4-7f93-8ae2-ec077da58020/exec-62baac97-2bb1-4c99-8840-26cf198c66e2.png",
+  "sourceDimensions": {
+    "width": 1122,
+    "height": 1402
+  },
+  "final": "public/images/landing/benefits/rewards.webp",
+  "dimensions": {
+    "width": 1024,
+    "height": 1280
+  },
+  "bytes": 82198,
+  "compression": "cwebp quality 84 method 6 resize 1024x1280",
+  "inspectionNotes": "Photoreal three-coin group occupies upper 49 percent, central globe/network coin dominant, Ethereum diamond left and Solana stripes right, blue shallow bokeh and rough surface. No text or UI. Clean deep navy lower area with slightly lighter lower edge. Natural aspect ratio retained to within 0.04 percent during final resizing."
+}

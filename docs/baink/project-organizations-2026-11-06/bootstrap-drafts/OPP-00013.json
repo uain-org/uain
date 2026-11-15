@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00013",
+  "native_project": "P-OPP-00013",
+  "source_digest": "0b204fe65bc97146b80683a90fed03faf029d61354bd2444a53a734974c93fd2",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Reverse age-related fat and muscle loss",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "25074dde1534788b09e20f840cca510bbb8eb8d3a635d6826b2391efb10ed447"
+  },
+  "drafted_at": "2026-11-06T00:08:14.941Z",
+  "queries": [
+    "reverse age-related fat muscle loss",
+    "reverse age-related fat human health longevity"
+  ],
+  "searches": [
+    {
+      "query": "reverse age-related fat muscle loss",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:08:06.818Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=reverse%20age-related%20fat%20muscle%20loss&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "reverse age-related fat muscle loss",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:08:07.293Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Areverse%20AND%20all%3Aage-related%20AND%20all%3Afat%20AND%20all%3Amuscle%20AND%20all%3Aloss&start=0&max_results=10; sha256=3a2b65c6bdc0b23df19c1ba21d7c7e88e4a675a0a8864df71e2133bbdd685ce7; total=0; shown=0/0"
+    },
+    {
+      "query": "reverse age-related fat muscle loss",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:08:08.333Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=reverse%20age-related%20fat%20muscle%20loss&rows=10&select=DOI,title; sha256=51a6e2b52594663b43982625c07e5eef7b5ff791a66d8e7754ac1dd19328919c; total=3137452; shown=5/10; top: 10.1007/978-1-4471-2769-7_6 \"Dietary Fat Composition and Age-Related Muscle Loss\" | 10.7554/elife.12997.018 \"Figure 6—source data 1. JAK inhibition reduces age-related fat loss in mice.\" | 10.1044/leader.nib1.25112020.18 \"Bone-Density Drugs May Help Reverse Age-Related Hearing Loss\" | 10.1007/1-4020-5058-5_5 \"Slowing down age-related muscle loss and sarcopenia\" | 10.1007/978-3-030-25890-0_3 \"Age-Related Changes in Muscle and Bone\""
+    },
+    {
+      "query": "reverse age-related fat human health longevity",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:08:13.325Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=reverse%20age-related%20fat%20human%20health%20longevity&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "reverse age-related fat human health longevity",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:08:13.777Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Areverse%20AND%20all%3Aage-related%20AND%20all%3Afat%20AND%20all%3Ahuman%20AND%20all%3Ahealth%20AND%20all%3Alongevity&start=0&max_results=10; sha256=6d6e450679e6c8ec809264645cb8c94df833864013c8111269b42bd97e28a83e; total=0; shown=0/0"
+    },
+    {
+      "query": "reverse age-related fat human health longevity",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:08:14.940Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=reverse%20age-related%20fat%20human%20health%20longevity&rows=10&select=DOI,title; sha256=58a11849a0a7a2cb2b060ec0e6c4b40fbb19d2362f81e0f041ad00a525ad20dc; total=10081807; shown=5/10; top: 10.1201/9781420026566-8 \"Longevity and Age-Related Disease\" | 10.1101/2024.02.09.579604 \"Age-Related Dynamics of Methanogenic Archaea in the Human Gut Microbiome: Implications for Longevity and Health\" | 10.1007/978-3-030-82859-2_7 \"The Role of Antioxidant on Health and Age-Related Diseases in Aging\" | 10.61838/kman.longevity.1.1.4 \"Nutritional Interventions for Preventing Age-Related Cognitive Decline\" | 10.1016/s2666-75682100309-3 \"Against accepting age-related sight loss\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "reverse age-related fat muscle loss",
+      "url": "https://api.github.com/search/repositories?q=reverse%20age-related%20fat%20muscle%20loss&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=reverse%20age-related%20fat%20muscle%20loss&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:08:06.818Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "reverse age-related fat muscle loss",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Areverse%20AND%20all%3Aage-related%20AND%20all%3Afat%20AND%20all%3Amuscle%20AND%20all%3Aloss&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Areverse%20AND%20all%3Aage-related%20AND%20all%3Afat%20AND%20all%3Amuscle%20AND%20all%3Aloss&start=0&max_results=10",
+      "sha256": "3a2b65c6bdc0b23df19c1ba21d7c7e88e4a675a0a8864df71e2133bbdd685ce7",
+      "bytes": 822,
+      "observedAt": "2026-11-06T00:08:07.293Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "reverse age-related fat muscle loss",
+      "url": "https://api.crossref.org/works?query=reverse%20age-related%20fat%20muscle%20loss&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=reverse%20age-related%20fat%20muscle%20loss&rows=10&select=DOI,title",
+      "sha256": "51a6e2b52594663b43982625c07e5eef7b5ff791a66d8e7754ac1dd19328919c",
+      "bytes": 1510,
+      "observedAt": "2026-11-06T00:08:08.333Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "reverse age-related fat human health longevity",
+      "url": "https://api.github.com/search/repositories?q=reverse%20age-related%20fat%20human%20health%20longevity&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=reverse%20age-related%20fat%20human%20health%20longevity&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:08:13.325Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "reverse age-related fat human health longevity",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Areverse%20AND%20all%3Aage-related%20AND%20all%3Afat%20AND%20all%3Ahuman%20AND%20all%3Ahealth%20AND%20all%3Alongevity&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Areverse%20AND%20all%3Aage-related%20AND%20all%3Afat%20AND%20all%3Ahuman%20AND%20all%3Ahealth%20AND%20all%3Alongevity&start=0&max_results=10",
+      "sha256": "6d6e450679e6c8ec809264645cb8c94df833864013c8111269b42bd97e28a83e",
+      "bytes": 862,
+      "observedAt": "2026-11-06T00:08:13.777Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "reverse age-related fat human health longevity",
+      "url": "https://api.crossref.org/works?query=reverse%20age-related%20fat%20human%20health%20longevity&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=reverse%20age-related%20fat%20human%20health%20longevity&rows=10&select=DOI,title",
+      "sha256": "58a11849a0a7a2cb2b060ec0e6c4b40fbb19d2362f81e0f041ad00a525ad20dc",
+      "bytes": 1382,
+      "observedAt": "2026-11-06T00:08:14.940Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "72540141f9d2bb4393c31c52b0f7d6997db2c05c57c5996acf113216b63bd4af",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

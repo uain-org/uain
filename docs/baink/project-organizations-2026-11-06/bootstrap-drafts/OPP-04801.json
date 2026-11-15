@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-04801",
+  "native_project": "P-OPP-04801",
+  "source_digest": "e436ebbe4d1a5809e9804e835f2c45daa50d6f3f0511525fcc708eb3dc94a66e",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Give every toddler a play-based AI storyteller that grows their vocabulary",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "5bb7ebbe2e916f8626ccc46bce0bd68324ab424c7664911a4815d6ff21ab750b"
+  },
+  "drafted_at": "2026-11-06T00:25:24.506Z",
+  "queries": [
+    "give toddler play-based storyteller grows vocabulary",
+    "give toddler play-based education learning early"
+  ],
+  "searches": [
+    {
+      "query": "give toddler play-based storyteller grows vocabulary",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:25:16.095Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=give%20toddler%20play-based%20storyteller%20grows%20vocabulary&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "give toddler play-based storyteller grows vocabulary",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:25:17.223Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Atoddler%20AND%20all%3Aplay-based%20AND%20all%3Astoryteller%20AND%20all%3Agrows%20AND%20all%3Avocabulary&start=0&max_results=10; sha256=e6f455789d4113f979302eaaf98603a6c890b3176defaeb922c7bdfa33b321f1; total=0; shown=0/0"
+    },
+    {
+      "query": "give toddler play-based storyteller grows vocabulary",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:25:18.554Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=give%20toddler%20play-based%20storyteller%20grows%20vocabulary&rows=10&select=DOI,title; sha256=3c7f125f647480be0343ebbb4862e3bfbd673eb3e139ef64ae428414a1999b39; total=7003843; shown=5/10; top: 10.1126/science.aal0896 \"Toddler play may give clues to sexual orientation\" | 10.5040/9798216436751.ch-4 \"Caregiver-Toddler Play Therapy: An Attachment-Based Approach\" | 10.7466/jkhma.2019.37.1.125 \"Classroom Quality Based on Teacher-Toddler Interactions and Toddler Play and pretend play Levels\" | 10.7577/nbf.440 \"Play for learning and learning for play: Children’s play in a toddler group\" | 10.4135/9781452232393.n2 \"The Emergence of Play in Infancy and the Toddler Years\""
+    },
+    {
+      "query": "give toddler play-based education learning early",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:25:22.637Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=give%20toddler%20play-based%20education%20learning%20early&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "give toddler play-based education learning early",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:25:23.594Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Atoddler%20AND%20all%3Aplay-based%20AND%20all%3Aeducation%20AND%20all%3Alearning%20AND%20all%3Aearly&start=0&max_results=10; sha256=c2b585306baa9bae0a9354b7aceab0013881d04acc0fb175a3faca3408ab351f; total=0; shown=0/0"
+    },
+    {
+      "query": "give toddler play-based education learning early",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:25:24.505Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=give%20toddler%20play-based%20education%20learning%20early&rows=10&select=DOI,title; sha256=3ff668a1c641afa368697d190e8a3bee315a226de4a30086cd4703933ee53542; total=14504083; shown=5/10; top: 10.1108/978-1-62396-417-720251008 \"Towards A Child-Oriented Perspective In Toddler Play\" | 10.1007/bf01882430 \"Functional play: A tool for toddler learning\" | 10.4135/9781473907850.n26 \"Infant and Toddler Play\" | 10.4135/9781473907850.n29 \"Infant and Toddler Play\" | 10.1126/science.aal0896 \"Toddler play may give clues to sexual orientation\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "give toddler play-based storyteller grows vocabulary",
+      "url": "https://api.github.com/search/repositories?q=give%20toddler%20play-based%20storyteller%20grows%20vocabulary&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=give%20toddler%20play-based%20storyteller%20grows%20vocabulary&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:25:16.095Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "give toddler play-based storyteller grows vocabulary",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Atoddler%20AND%20all%3Aplay-based%20AND%20all%3Astoryteller%20AND%20all%3Agrows%20AND%20all%3Avocabulary&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Atoddler%20AND%20all%3Aplay-based%20AND%20all%3Astoryteller%20AND%20all%3Agrows%20AND%20all%3Avocabulary&start=0&max_results=10",
+      "sha256": "e6f455789d4113f979302eaaf98603a6c890b3176defaeb922c7bdfa33b321f1",
+      "bytes": 874,
+      "observedAt": "2026-11-06T00:25:17.223Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "give toddler play-based storyteller grows vocabulary",
+      "url": "https://api.crossref.org/works?query=give%20toddler%20play-based%20storyteller%20grows%20vocabulary&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=give%20toddler%20play-based%20storyteller%20grows%20vocabulary&rows=10&select=DOI,title",
+      "sha256": "3c7f125f647480be0343ebbb4862e3bfbd673eb3e139ef64ae428414a1999b39",
+      "bytes": 1376,
+      "observedAt": "2026-11-06T00:25:18.554Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "give toddler play-based education learning early",
+      "url": "https://api.github.com/search/repositories?q=give%20toddler%20play-based%20education%20learning%20early&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=give%20toddler%20play-based%20education%20learning%20early&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:25:22.637Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "give toddler play-based education learning early",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Atoddler%20AND%20all%3Aplay-based%20AND%20all%3Aeducation%20AND%20all%3Alearning%20AND%20all%3Aearly&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Atoddler%20AND%20all%3Aplay-based%20AND%20all%3Aeducation%20AND%20all%3Alearning%20AND%20all%3Aearly&start=0&max_results=10",
+      "sha256": "c2b585306baa9bae0a9354b7aceab0013881d04acc0fb175a3faca3408ab351f",
+      "bytes": 866,
+      "observedAt": "2026-11-06T00:25:23.594Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "give toddler play-based education learning early",
+      "url": "https://api.crossref.org/works?query=give%20toddler%20play-based%20education%20learning%20early&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=give%20toddler%20play-based%20education%20learning%20early&rows=10&select=DOI,title",
+      "sha256": "3ff668a1c641afa368697d190e8a3bee315a226de4a30086cd4703933ee53542",
+      "bytes": 1226,
+      "observedAt": "2026-11-06T00:25:24.505Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "2200cb603b2617522b4a0daa904f198a92ad442469f27a6d04efb2b6f1ad2d54",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

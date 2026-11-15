@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "controlled-holder",
+  "release_id": "d95ebf55f1e2fe76c2ca48921ed50e24e4bf4fa6f26ea3e483703379cdedb039",
+  "version": null,
+  "source_commit": null,
+  "deployed_at": "2026-11-08T11:47:31Z",
+  "prior": null,
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#platform-readiness-20261108",
+    "docs/baink/readiness-audit-2026-11-08.md"
+  ],
+  "note": "Existing same-operator holder upgraded through official signed8 installer; owner, identity metadata and resource caps preserved. Peer reconnected and height advances; catch-up and payment acceptance remain open. No outside-user acceptance claimed."
+}

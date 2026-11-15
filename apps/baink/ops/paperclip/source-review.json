@@ -1,0 +1,87 @@
+{
+  "schema": "baink-paperclip/source-review/v1",
+  "reviewedOn": "2026-10-31",
+  "repository": "https://github.com/paperclipai/paperclip",
+  "revision": "dce383c733bb1ca31cd34d7dbb82bda597ad7418",
+  "qualification": "static_primary_source_not_live_runtime",
+  "files": [
+    {
+      "path": "Dockerfile",
+      "sha256": "3e4bb4c51e17066f1de4e48dbb03e5a00759a4044d26c5f000ce1857bfbd85cc"
+    },
+    {
+      "path": ".github/workflows/docker.yml",
+      "sha256": "f7024ddc68adde7d642175c761d975222d1acae012ff9ff0c66b0e8780e60813"
+    },
+    {
+      "path": "server/src/routes/access.ts",
+      "sha256": "c7303a7f62244566438df689fa5c37f9fadcec2e30de4892a95b51426ba6bc3b"
+    },
+    {
+      "path": "server/src/routes/authz.ts",
+      "sha256": "85760b89fb1d0beb629d3c815d74bc17d5d254b2c8830f9bf1ce0b792095cc84"
+    },
+    {
+      "path": "server/src/services/board-auth.ts",
+      "sha256": "a9da8b98c3addad6e46f65f839caf38f12d7e7d5e4028b2bcdd79bdca14f89ea"
+    },
+    {
+      "path": "server/src/services/company-member-roles.ts",
+      "sha256": "3fa05d0706410a27da510984c3617bbbfb8ad435d7b8d22cf880813976796b73"
+    },
+    {
+      "path": "server/src/first-admin-claim.ts",
+      "sha256": "40d67849dc292589d8ccc3c5876f9be353abcf6a48862f3fa8fb606efacd671a"
+    },
+    {
+      "path": "server/src/routes/companies.ts",
+      "sha256": "a4e8636382d36bbc062785bac16e8036faaff3e8f00b1698a80e562389897b4e"
+    },
+    {
+      "path": "server/src/routes/projects.ts",
+      "sha256": "bd73b3961413752bc654cb3aab8ad92b022c31e91b388d895227c7e39d0ba479"
+    },
+    {
+      "path": "packages/shared/src/validators/project.ts",
+      "sha256": "0ac8af76b90fe1c4f716e1fcda5daca6f91a0fa087d7a6441b6bffd21570be05"
+    },
+    {
+      "path": "packages/shared/src/validators/access.ts",
+      "sha256": "7fa8a8d442a09b87089ebd2f39bdfab7b12b18e71531edc45735f6444addfd32"
+    },
+    {
+      "path": "server/src/routes/health.ts",
+      "sha256": "5b17ae1ce84e22bc8cfa25bcd8cd420e1d352d7d4e27f156433f7540281407b6"
+    },
+    {
+      "path": "server/src/routes/routines.ts",
+      "sha256": "aba15cbbcb15341af837953adcbbc0127212e7a079559b6e124f2bf28eebda5d"
+    },
+    {
+      "path": "server/src/services/routines.ts",
+      "sha256": "8e79d762e33a3691cd7d46812ccaf93d10fe668a14a609c45b4d9aa51ab176ec"
+    },
+    {
+      "path": "server/src/routes/agents.ts",
+      "sha256": "a9b53ee04ff1b8b7b595699ce6b5d992119c52414d487c95e25231659604df08"
+    },
+    {
+      "path": "cli/src/commands/auth-bootstrap-ceo.ts",
+      "sha256": "e00c8a98aafc9657d5ac531fdb52e5b8aa53113291fcd51c17f5228fa041db40"
+    },
+    {
+      "path": "scripts/standard-image-contract.mjs",
+      "sha256": "cbe0544e1d87e7a2681233d4c00be0eda4cff37d31514b61296235c552d3d2e9"
+    }
+  ],
+  "registryObservation": {
+    "registry": "ghcr.io/paperclipai/paperclip",
+    "checkedTags": [
+      "sha-dce383c",
+      "sha-dce383c733bb1ca31cd34d7dbb82bda597ad7418"
+    ],
+    "httpStatuses": [404, 404],
+    "image": null,
+    "conclusion": "no_qualified_image_for_this_revision_at_inspection_not_a_permanent_registry_claim"
+  }
+}

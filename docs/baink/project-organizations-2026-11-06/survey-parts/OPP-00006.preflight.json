@@ -1,0 +1,55 @@
+{
+ "schema": "uain-survey-preflight-v1",
+ "projectId": "OPP-00006",
+ "checkedAt": "2026-11-09T07:59:56Z",
+ "records": [
+  {
+   "kind": "doi",
+   "id": "10.4103/1673-5374.235026",
+   "status": "resolved",
+   "title": "Neurodegenerative diseases are a function of matrix breakdown: how to rebuild extracellular matrix and intracellular matrix"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1111/j.1525-1594.2007.00417.x",
+   "status": "resolved",
+   "title": "Wound Healing Effect of Acellular Artificial Dermis Containing Extracellular Matrix Secreted by Human Skin Fibroblasts"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1016/b978-0-12-821085-7.00002-6",
+   "status": "resolved",
+   "title": "Tissue repair with natural extracellular matrix (ECM) scaffolds"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1021/acs.jproteome.2c00526.s001",
+   "status": "resolved",
+   "title": "Mass Spectrometry-Based Atlas of Extracellular Matrix Proteins across 25 Mouse Organs"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1201/9781420003871-36",
+   "status": "resolved",
+   "title": "Extracellular Matrix: Structure, Function, and Applications to Tissue Engineering"
+  },
+  {
+   "kind": "doi",
+   "id": "10.65649/amb5zx11",
+   "status": "resolved",
+   "title": "Eliminate, Reprogram, and Rebuild"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1007/978-3-031-94465-9_10",
+   "status": "resolved",
+   "title": "Fibrosis and Extracellular Matrix Degeneration: Examples of Extracellular Matrix Involvement and Treatment"
+  },
+  {
+   "kind": "doi",
+   "id": "10.5772/62253",
+   "status": "resolved",
+   "title": "The Extracellular Matrix Complexome from Skeletal Muscle"
+  }
+ ]
+}

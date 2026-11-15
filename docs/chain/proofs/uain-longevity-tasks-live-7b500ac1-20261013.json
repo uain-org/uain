@@ -1,0 +1,1002 @@
+{
+  "observed_at_utc": "2026-10-13T12:56:39.089780+00:00",
+  "origin": "app-server HTTPS public hostname; TLS verified",
+  "read_only": true,
+  "bounded_sample": {
+    "requests": 32,
+    "concurrency": 8,
+    "p50_seconds": 0.0326,
+    "p95_seconds": 0.3358,
+    "max_seconds": 0.342,
+    "errors": 0,
+    "pods": {
+      "pilot-5fbcbd6ff5-7bmds": 11,
+      "pilot-5fbcbd6ff5-29wlj": 12,
+      "pilot-5fbcbd6ff5-l8xpl": 2,
+      "pilot-5fbcbd6ff5-8sfxn": 7
+    }
+  },
+  "requests": [
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.342,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-7bmds",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:35.760Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 3.675,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.2884,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-29wlj",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.648Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.735,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.305,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-l8xpl",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:36.664Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 2.737,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.3358,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-8sfxn",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.618Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.815,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.3004,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-7bmds",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:35.760Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 3.639,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.3247,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-7bmds",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:35.760Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 3.664,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.3034,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-8sfxn",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.618Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.786,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.3249,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-7bmds",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:35.760Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 3.667,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0238,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-7bmds",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:35.760Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 3.649,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0206,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-8sfxn",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.618Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.803,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0437,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-7bmds",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:35.760Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 3.687,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0335,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-29wlj",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.648Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.792,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0334,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-29wlj",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.648Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.796,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0307,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-7bmds",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:35.760Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 3.693,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0315,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-7bmds",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:35.760Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 3.698,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0225,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-8sfxn",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.618Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.833,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0264,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-29wlj",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.648Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.813,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0273,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-7bmds",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:35.760Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 3.704,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0262,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-29wlj",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.648Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.82,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0376,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-29wlj",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.648Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.837,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.023,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-7bmds",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:35.760Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 3.712,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.036,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-29wlj",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.648Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.841,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0212,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-l8xpl",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:36.664Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 2.812,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0416,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-29wlj",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.648Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.853,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0315,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-8sfxn",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.618Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.878,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0323,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-7bmds",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:35.760Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 3.738,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0344,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-29wlj",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.648Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.856,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0331,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-8sfxn",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.618Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.89,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0326,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-29wlj",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.648Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.862,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0264,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-8sfxn",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.618Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.894,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0245,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-29wlj",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.648Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.867,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0203,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-29wlj",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.648Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.87,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    }
+  ],
+  "exact_longevity": [
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0281,
+      "bytes": 153507,
+      "pod": "pilot-5fbcbd6ff5-29wlj",
+      "revision": null,
+      "count": null,
+      "projects": null,
+      "contribution_count": 6,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.648Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.902,
+      "valid_snapshot": true,
+      "id": "longevity-and-ageing-open-questions-on-open-data",
+      "task_totals": {
+        "open": 0,
+        "needs_comparison": 0,
+        "awaiting_verification": 0,
+        "answered": 3,
+        "closed": 0,
+        "total": 3
+      },
+      "contribution_ids": [
+        "RC-4567",
+        "RC-4569",
+        "RC-4576",
+        "RC-4570",
+        "RC-4572",
+        "RC-4573"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/claims?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.023,
+      "bytes": 11318,
+      "pod": "pilot-5fbcbd6ff5-29wlj",
+      "revision": null,
+      "count": 2,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.648Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.926,
+      "valid_snapshot": true,
+      "id": null,
+      "claim_ids": [
+        "CL-72",
+        "CL-73"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0285,
+      "bytes": 181514,
+      "pod": "pilot-5fbcbd6ff5-8sfxn",
+      "revision": null,
+      "count": 3,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.618Z",
+        "refresh_pending": false,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 4.988,
+      "valid_snapshot": true,
+      "id": null,
+      "task_ids": [
+        "T-43",
+        "T-44",
+        "T-45"
+      ],
+      "valid_identity": true
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/members?site_snapshot=1",
+      "status": 200,
+      "seconds": 0.0229,
+      "bytes": 1111,
+      "pod": "pilot-5fbcbd6ff5-8sfxn",
+      "revision": null,
+      "count": 8,
+      "projects": null,
+      "contribution_count": null,
+      "events": "463",
+      "epoch": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+      "snapshot": {
+        "verified_at": "2026-10-13T12:56:34.618Z",
+        "refresh_pending": true,
+        "authoritative": false
+      },
+      "snapshot_age_seconds": 5.011,
+      "valid_snapshot": true,
+      "id": null,
+      "valid_identity": true
+    }
+  ],
+  "limitation": "Small bounded public-read acceptance sample, not scale or changed-generation load qualification.",
+  "purpose": "Followup longevity tasks origin latency by replica after browser WAN962ms observation; public HTTPS/TLS verified."
+}

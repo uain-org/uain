@@ -1,0 +1,16 @@
+# Signed releases and pinned datasets must retain the exact canonical LF bytes
+# on Windows as well as Linux. This does not re-sign or change their content.
+public/worker/*.mjs text eol=lf
+public/worker/*.json text eol=lf
+public/worker/*.sh text eol=lf
+public/worker/*.sig text eol=lf
+chain/client/*.mjs text eol=lf
+research/reference/wdbc/wdbc.data text eol=lf
+
+# Append-only registers: every PR adds a dated entry near the top, so parallel
+# PRs always conflicted here. "union" keeps both sides' lines on a local merge
+# or rebase instead of stopping. Review the merged order if both added at once.
+CHANGELOG.md merge=union
+apps/baink/CHANGELOG.md merge=union
+docs/baink/context.md merge=union
+remaining_work.md merge=union

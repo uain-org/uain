@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T050212Z-21c692d3f4",
+  "version": "0.3.44",
+  "source_commit": "477144dfc3ab295307cc2bb21f1d09ba25112fc0",
+  "deployed_at": "2026-11-09T05:24:14Z",
+  "prior": "20261109T025554Z-33c9266131",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#central-proof-refusal-diagnostics-source-20261109"
+  ],
+  "note": "Normal exact-prior promotion;189 public checks and80 prior business records preserved. Scoped desktop/mobile entry checks and sealed P9 awards/P10 needs_evidence readback pass. No new award/payment; lost refusal cause, live-v2 payment reload, correction completion and outside-member acceptance remain open."
+}

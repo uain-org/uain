@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00245",
+  "native_project": "P-OPP-00245",
+  "source_digest": "732bd4c2da005b3f8486ad45d17d7c189ec2902456ff4ee0d6f927517edf5db2",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Print vaccines at local pharmacies",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "368d3a3adc8ceb7b94d031702a2bf14173f61c48b07b65ea75bc00a69f106781"
+  },
+  "drafted_at": "2026-11-06T00:09:21.670Z",
+  "queries": [
+    "print vaccines local pharmacies",
+    "print vaccines local infectious disease pandemics"
+  ],
+  "searches": [
+    {
+      "query": "print vaccines local pharmacies",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:09:13.759Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=print%20vaccines%20local%20pharmacies&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "print vaccines local pharmacies",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:09:14.207Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aprint%20AND%20all%3Avaccines%20AND%20all%3Alocal%20AND%20all%3Apharmacies&start=0&max_results=10; sha256=104fb1049f0f007e88ceba36c9fcabbc120e928f8d81f4031c822390f35995bb; total=0; shown=0/0"
+    },
+    {
+      "query": "print vaccines local pharmacies",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:09:15.381Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=print%20vaccines%20local%20pharmacies&rows=10&select=DOI,title; sha256=94ea57bf217e020af5957610794acedbdc9239736945aa876bf1c8f4afb82173; total=887320; shown=5/10; top: 10.1126/science.abg0490 \"‘So many unknowns’: Local doctors—and pharmacies—will still decide who gets COVID-19 vaccines\" | 10.1211/pj.2026.1.427792 \"Pharmacies deliver nearly 250,000 MenB vaccines since July 2026\" | 10.1211/pj.2018.20204647 \"Community pharmacies administer almost 250,000 more flu vaccines\" | 10.1211/pj.2021.1.110236 \"Pharmacies administer record numbers of flu vaccines despite supply issues\" | 10.3390/healthcare9030269 \"Vaccines in the Pharmacies?\""
+    },
+    {
+      "query": "print vaccines local infectious disease pandemics",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:09:20.270Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=print%20vaccines%20local%20infectious%20disease%20pandemics&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "print vaccines local infectious disease pandemics",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:09:20.717Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aprint%20AND%20all%3Avaccines%20AND%20all%3Alocal%20AND%20all%3Ainfectious%20AND%20all%3Adisease%20AND%20all%3Apandemics&start=0&max_results=10; sha256=e38d70c34c8e63bed818ba880f2ebc5f99ec0ce7a0d8bd572ad3fd59c9852f96; total=0; shown=0/0"
+    },
+    {
+      "query": "print vaccines local infectious disease pandemics",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:09:21.670Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=print%20vaccines%20local%20infectious%20disease%20pandemics&rows=10&select=DOI,title; sha256=42e480dea5eb56298f345e1b1fac4ece203dc9a49697546ce2f56de49bae3999; total=3769945; shown=5/10; top: 10.7551/mitpress/13950.003.0003 \"Discovery of Infectious Disease-Causing Microbes and the Dawn of the Modern Era of Vaccines\" | 10.5040/9781666999662.ch-007 \"Inoculation And Infectious Disease\" | 10.3390/vaccines10111811 \"Institutional Factors Associated with Infection Prevention and Control Practices Globally during the Infectious Pandemics in Resource-Limit…\" | 10.5771/9780739180273-155 \"7 Inoculation and Infectious Disease\" | 10.52750/480504 \"The Stories We Tell: Infectious Disease and Film History\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "print vaccines local pharmacies",
+      "url": "https://api.github.com/search/repositories?q=print%20vaccines%20local%20pharmacies&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=print%20vaccines%20local%20pharmacies&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:09:13.759Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "print vaccines local pharmacies",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aprint%20AND%20all%3Avaccines%20AND%20all%3Alocal%20AND%20all%3Apharmacies&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aprint%20AND%20all%3Avaccines%20AND%20all%3Alocal%20AND%20all%3Apharmacies&start=0&max_results=10",
+      "sha256": "104fb1049f0f007e88ceba36c9fcabbc120e928f8d81f4031c822390f35995bb",
+      "bytes": 796,
+      "observedAt": "2026-11-06T00:09:14.207Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "print vaccines local pharmacies",
+      "url": "https://api.crossref.org/works?query=print%20vaccines%20local%20pharmacies&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=print%20vaccines%20local%20pharmacies&rows=10&select=DOI,title",
+      "sha256": "94ea57bf217e020af5957610794acedbdc9239736945aa876bf1c8f4afb82173",
+      "bytes": 1417,
+      "observedAt": "2026-11-06T00:09:15.381Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "print vaccines local infectious disease pandemics",
+      "url": "https://api.github.com/search/repositories?q=print%20vaccines%20local%20infectious%20disease%20pandemics&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=print%20vaccines%20local%20infectious%20disease%20pandemics&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:09:20.270Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "print vaccines local infectious disease pandemics",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aprint%20AND%20all%3Avaccines%20AND%20all%3Alocal%20AND%20all%3Ainfectious%20AND%20all%3Adisease%20AND%20all%3Apandemics&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aprint%20AND%20all%3Avaccines%20AND%20all%3Alocal%20AND%20all%3Ainfectious%20AND%20all%3Adisease%20AND%20all%3Apandemics&start=0&max_results=10",
+      "sha256": "e38d70c34c8e63bed818ba880f2ebc5f99ec0ce7a0d8bd572ad3fd59c9852f96",
+      "bytes": 868,
+      "observedAt": "2026-11-06T00:09:20.717Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "print vaccines local infectious disease pandemics",
+      "url": "https://api.crossref.org/works?query=print%20vaccines%20local%20infectious%20disease%20pandemics&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=print%20vaccines%20local%20infectious%20disease%20pandemics&rows=10&select=DOI,title",
+      "sha256": "42e480dea5eb56298f345e1b1fac4ece203dc9a49697546ce2f56de49bae3999",
+      "bytes": 1397,
+      "observedAt": "2026-11-06T00:09:21.670Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "d3198772eb095707ecf0326c6b0c13dba8d2c15d0785249f1933611c5f331fd3",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

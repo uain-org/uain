@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-06481",
+  "native_project": "P-OPP-06481",
+  "source_digest": "10662c5f4b46007ba2adae10b190cb062f019ec20323f3c78eebcabebdb153c0",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Forecast earthquakes days ahead with location and size",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "1127db1487f1cff2f4d308a81223d1ac1683bebf2effcaf0ce967eee21e46cf7"
+  },
+  "drafted_at": "2026-11-06T00:27:09.057Z",
+  "queries": [
+    "forecast earthquakes days ahead location size",
+    "forecast earthquakes days earth science disaster"
+  ],
+  "searches": [
+    {
+      "query": "forecast earthquakes days ahead location size",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:27:00.136Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=forecast%20earthquakes%20days%20ahead%20location%20size&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "forecast earthquakes days ahead location size",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:27:00.677Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aforecast%20AND%20all%3Aearthquakes%20AND%20all%3Adays%20AND%20all%3Aahead%20AND%20all%3Alocation%20AND%20all%3Asize&start=0&max_results=10; sha256=c15dcdec2f923cfd29954b18676301573e2cc53e84a1d16459ee4ed13820d435; total=0; shown=0/0"
+    },
+    {
+      "query": "forecast earthquakes days ahead location size",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:27:01.705Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=forecast%20earthquakes%20days%20ahead%20location%20size&rows=10&select=DOI,title; sha256=d09b4d407af65370dd5fc867ab96b74f1d8885564c5a162acc8d870d41f45bd7; total=843990; shown=5/10; top: 10.5040/9781350922594 \"Bright Days Ahead\" | 10.1109/isgt-asia.2019.8881305 \"Effect of Forecast Accuracy on Day Ahead Prediction of Coincident Peak Days\" | 10.1021/cen-09613-feature2 \"Pittcon forecast: Sunny days ahead\" | 10.20474/jahss2.1.4 \"Stepping ahead with rolling forecast: Can Bangladesh look beyond? Stepping ahead with rolling forecast: Can Bangladesh look beyond?\" | 10.1109/sest50973.2021.9543173 \"Multi-Horizon Data-Driven Wind Power Forecast: From Nowcast to 2 Days-Ahead\""
+    },
+    {
+      "query": "forecast earthquakes days earth science disaster",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:27:06.587Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=forecast%20earthquakes%20days%20earth%20science%20disaster&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "forecast earthquakes days earth science disaster",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:27:07.614Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aforecast%20AND%20all%3Aearthquakes%20AND%20all%3Adays%20AND%20all%3Aearth%20AND%20all%3Ascience%20AND%20all%3Adisaster&start=0&max_results=10; sha256=a2a98ae8a172478ffea77751e96220319985ec415f0c155fa6a07e9d34b31b29; total=1; shown=1/1; top: arXiv:2105.11544v1 \"Deep Learning-based Damage Mapping with InSAR Coherence Time Series\""
+    },
+    {
+      "query": "forecast earthquakes days earth science disaster",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:27:09.056Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=forecast%20earthquakes%20days%20earth%20science%20disaster&rows=10&select=DOI,title; sha256=abdc514ba1f28e4ae2c9d5495b1bfc28b8ed8081762ac02cba3148852574553e; total=16247175; shown=5/10; top: 10.3923/ajes.2011.103.103 \"Researchers Find Mathematical Patterns to Forecast Earthquakes\" | 10.1186/s40623-025-02254-1 \"Rupture mode preferences of crustal earthquakes in Japan\" | 10.7312/syke18688-011 \"10. Japanese Earthquakes and the Fukushima Nuclear Disaster\" | 10.1186/bf03352205 \"Forecast of the most geomagnetically disturbed days\" | 10.5772/intechopen.78725 \"Automated Model Construction for Seismic Disaster Assessment of Pipeline Network in Wide Urban Area\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "forecast earthquakes days ahead location size",
+      "url": "https://api.github.com/search/repositories?q=forecast%20earthquakes%20days%20ahead%20location%20size&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=forecast%20earthquakes%20days%20ahead%20location%20size&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:27:00.136Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "forecast earthquakes days ahead location size",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aforecast%20AND%20all%3Aearthquakes%20AND%20all%3Adays%20AND%20all%3Aahead%20AND%20all%3Alocation%20AND%20all%3Asize&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aforecast%20AND%20all%3Aearthquakes%20AND%20all%3Adays%20AND%20all%3Aahead%20AND%20all%3Alocation%20AND%20all%3Asize&start=0&max_results=10",
+      "sha256": "c15dcdec2f923cfd29954b18676301573e2cc53e84a1d16459ee4ed13820d435",
+      "bytes": 860,
+      "observedAt": "2026-11-06T00:27:00.677Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "forecast earthquakes days ahead location size",
+      "url": "https://api.crossref.org/works?query=forecast%20earthquakes%20days%20ahead%20location%20size&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=forecast%20earthquakes%20days%20ahead%20location%20size&rows=10&select=DOI,title",
+      "sha256": "d09b4d407af65370dd5fc867ab96b74f1d8885564c5a162acc8d870d41f45bd7",
+      "bytes": 1349,
+      "observedAt": "2026-11-06T00:27:01.705Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "forecast earthquakes days earth science disaster",
+      "url": "https://api.github.com/search/repositories?q=forecast%20earthquakes%20days%20earth%20science%20disaster&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=forecast%20earthquakes%20days%20earth%20science%20disaster&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:27:06.587Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "forecast earthquakes days earth science disaster",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aforecast%20AND%20all%3Aearthquakes%20AND%20all%3Adays%20AND%20all%3Aearth%20AND%20all%3Ascience%20AND%20all%3Adisaster&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aforecast%20AND%20all%3Aearthquakes%20AND%20all%3Adays%20AND%20all%3Aearth%20AND%20all%3Ascience%20AND%20all%3Adisaster&start=0&max_results=10",
+      "sha256": "a2a98ae8a172478ffea77751e96220319985ec415f0c155fa6a07e9d34b31b29",
+      "bytes": 3850,
+      "observedAt": "2026-11-06T00:27:07.614Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "forecast earthquakes days earth science disaster",
+      "url": "https://api.crossref.org/works?query=forecast%20earthquakes%20days%20earth%20science%20disaster&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=forecast%20earthquakes%20days%20earth%20science%20disaster&rows=10&select=DOI,title",
+      "sha256": "abdc514ba1f28e4ae2c9d5495b1bfc28b8ed8081762ac02cba3148852574553e",
+      "bytes": 1525,
+      "observedAt": "2026-11-06T00:27:09.056Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "ed7e0a7e2a068ab92b014858d010994dea5b78209c30969c7aa1683339819162",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

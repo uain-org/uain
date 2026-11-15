@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00729",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T04:20:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": true,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held as a known answer. Refreshable tactile displays that let blind people feel images are shipping products with published user studies. A 2026 ACM Transactions on Accessible Computing study compared the Monarch multi-line refreshable tactile display against a screen-reader interface and an audio-tactile tablet with ten blind participants on bar, pie, line and scatterplot tasks, and completion was fastest on the Monarch (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22refreshable%20tactile%22%20AND%20%28graphics%20OR%20display%29%20AND%20blind&format=json&pageSize=5&resultType=core); named commercial refreshable devices appear across 37 further records, and a community BRLAPI server lets braille clients such as brltty and NVDA drive the Monarch's tactile graphics (https://api.github.com/search/repositories?q=tactile+graphics+braille+display&per_page=10&sort=stars). Honest limits, which are real: the KPI of 43,000,000 users is nowhere near met and the barrier is supply and price rather than feasibility, with teachers reporting a substantial shortage of accessible graphic materials (97 percent calling provision insufficient) and researchers noting accessible alternatives do not scale in complexity or cost to produce; resolutions and pixel counts are not reported in the literature, and new actuator research such as liquid crystal elastomer haptic pixel arrays still only matches swell paper. A reframed project on a low-cost high-resolution tactile pixel array, or on automatic image-to-tactile conversion, would be open work needing its own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "refreshable tactile graphic displays for blind users",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22refreshable%20tactile%22%20AND%20%28graphics%20OR%20display%29%20AND%20blind&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T04:10:00Z",
+      "finding": "19 hits. A 2026 ACM TACCESS study compared the Monarch multi-line refreshable tactile display with a screen-reader interface and an audio-tactile tablet in ten blind participants across bar, pie, line and scatterplot tasks: completion was fastest on the Monarch with no significant accuracy difference. Other records are research prototypes (liquid crystal elastomer haptic pixels, performance comparable to swell paper) or non-refreshable swell-form studies; no resolution figures are given."
+    },
+    {
+      "query": "named commercial refreshable tactile devices in the literature",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%22Dot%20Pad%22%20OR%20%22Monarch%22%20OR%20%22Graphiti%22%29%20AND%20%28tactile%20OR%20braille%29%20AND%20blind&format=json&pageSize=5&resultType=lite",
+      "observedAt": "2026-11-06T04:12:00Z",
+      "finding": "37 hits naming commercial refreshable tactile and braille devices, including the 2026 Monarch comparison, a 2026 IEEE Transactions on Haptics multi-line refreshable braille device using variable-stiffness polymer, a gestural and conversational tactile-map interface (2025) and assistive-technology adoption surveys. The product category exists and is studied rather than hypothetical."
+    },
+    {
+      "query": "tactile graphics cost and availability barriers",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22tactile%20graphics%22%20AND%20%28cost%20OR%20access%20OR%20availability%29%20AND%20%28blind%20OR%20%22visually%20impaired%22%29&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T04:14:00Z",
+      "finding": "The barrier reported is supply and production cost, not feasibility: a 2026 study of visually impaired children's language learning found teachers reporting a substantial shortage of accessible graphic materials, with 97 percent calling provision insufficient and 91.67 percent calling standardisation inadequate; a 2026 data-structures paper states accessible alternatives often do not scale in complexity or cost to produce."
+    },
+    {
+      "query": "open-source tactile graphics display software",
+      "source": "https://api.github.com/search/repositories?q=tactile+graphics+braille+display&per_page=10&sort=stars",
+      "observedAt": "2026-11-06T04:16:00Z",
+      "finding": "One repository, emassey0135/monarch-brlapi-server (1 star), a BRLAPI server letting braille clients such as brltty and NVDA display braille or tactile graphics on the Monarch. The commercial device is open enough to drive from community software, reinforcing that the capability is available rather than missing."
+    }
+  ]
+}

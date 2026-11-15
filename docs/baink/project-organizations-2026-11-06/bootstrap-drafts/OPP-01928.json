@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-01928",
+  "native_project": "P-OPP-01928",
+  "source_digest": "705572e612fa44ae4506bcba0dd97d33bb43f387de4714958f8d18ad44d743ef",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Design wind turbines that adapt blades in real time to every gust",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "a593886e40be45f90bfce4a6ed04b48e378685bf622e70c0f495d00f470173b7"
+  },
+  "drafted_at": "2026-11-06T00:20:25.585Z",
+  "queries": [
+    "design wind turbines adapt blades real",
+    "design wind turbines clean energy power"
+  ],
+  "searches": [
+    {
+      "query": "design wind turbines adapt blades real",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:20:16.990Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=design%20wind%20turbines%20adapt%20blades%20real&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "design wind turbines adapt blades real",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:20:17.615Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Adesign%20AND%20all%3Awind%20AND%20all%3Aturbines%20AND%20all%3Aadapt%20AND%20all%3Ablades%20AND%20all%3Areal&start=0&max_results=10; sha256=24cae5ac47aee69cace3b3ee8582f0557b6779802f9e3b840fd531ad8d6bd57f; total=1; shown=1/1; top: arXiv:2609.28044v1 \"AeRSoM: An Aerial Rigid-Soft Integrated Manipulator for Contact-Rich Manipulation\""
+    },
+    {
+      "query": "design wind turbines adapt blades real",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:20:18.587Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=design%20wind%20turbines%20adapt%20blades%20real&rows=10&select=DOI,title; sha256=bd15601cadad3d3c6f327d7931f24331c15097d4f8909eba2180e1829b8f29c6; total=3724548; shown=5/10; top: 10.5772/63480 \"Active Flow Control of Wind Turbine Blades\" | 10.5772/intechopen.104490 \"On the Design and Manufacture of Wind Turbine Blades\" | 10.5772/63446 \"Composite Blades of Wind Turbine: Design, Stress Analysis, Aeroelasticity, and Fatigue\" | 10.2172/5348424 \"Design, evaluation, and fabrication of low-cost composite blades for intermediate-size wind turbines\" | 10.1115/1.0004663v \"Control Co-Design for Rotor Blades of Floating Offshore Wind Turbines\""
+    },
+    {
+      "query": "design wind turbines clean energy power",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:20:23.750Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=design%20wind%20turbines%20clean%20energy%20power&per_page=10; sha256=109df27fe4f26a88e391f3b5dd523c0cf90d32b0327a2f713bedff6327bf0431; total=4; shown=4/4; top: rajanraj3690/Hybrid-Model-of-Wind-Turbine-and-Solar-Power-System \"This project presents an innovative renewable energy solution designed for highway infrastructure. It combines two clean energy sources—**v…\" | janaa-14/SMALL-SCALE-WIND-ENERGY-DEVICE \"Urban areas suit clean energy, but standard wind turbines are too large for city wind. This project uses a compact turbine with a circular…\" | deven-deshmukh/Wind-Energy-Efficiency \"An end-to-end machine learning project designed to monitor and predict wind turbine efficiency. Leveraging real-world IoT sensor data—inclu…\" | Anuj85809/Adaptable-Disc-Wind-turbine \"The adaptable disc wind turbine project represents a breakthrough in renewable energy. Its unique design enables efficient electricity gene…\""
+    },
+    {
+      "query": "design wind turbines clean energy power",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:20:24.460Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Adesign%20AND%20all%3Awind%20AND%20all%3Aturbines%20AND%20all%3Aclean%20AND%20all%3Aenergy%20AND%20all%3Apower&start=0&max_results=10; sha256=5f27c97973ed5ffcc1d9dc60ecbd198a2870c60be773cecb8753f74114f6ecb8; total=4; shown=4/4; top: arXiv:2304.06285v1 \"NREL Phase VI wind turbine in the dusty environment\" | arXiv:2306.09491v1 \"A Hybrid Feature Selection and Construction Method for Detection of Wind Turbine Generator Heating Faults\" | arXiv:2412.00423v1 \"On autoregressive deep learning models for day-ahead wind power forecasting with irregular shutdowns due to redispatching\" | arXiv:2308.02374v1 \"Optimal Sizing of On-site Renewable Resources for Offshore Microgrids\""
+    },
+    {
+      "query": "design wind turbines clean energy power",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:20:25.584Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=design%20wind%20turbines%20clean%20energy%20power&rows=10&select=DOI,title; sha256=b9832d490568d4aac535e026ff6de40d114b1a2172fc628a0dd43666c71b0da7; total=7302470; shown=5/10; top: 10.1007/s40565-013-0003-5 \"Wind turbines output power smoothing using embedded energy storage systems\" | 10.5772/intechopen.103139 \"Low Specific Power Wind Turbines for Reduced Levelized Cost of Energy\" | 10.48047/intjecse/v14i10.13 \"UNVEILING CLEAN ENERGY POTENTIAL: HARNESSING THE POWER OF WIND AND SOLAR WITH HYBRID RENEWABLE ENERGY TURBINES\" | 10.35833/mpce.2022.000656 \"Electrical System Planning of Large-scale Offshore Wind Farm Based on N+ Design Considering Optimization of Upper Power Limits of Wind Turb…\" | 10.1109/icsgce.2018.8556643 \"Design and Implementation of a Maximum Power Point Tracking Algorithm for Wind Turbines Using PLC-SCADA\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "design wind turbines adapt blades real",
+      "url": "https://api.github.com/search/repositories?q=design%20wind%20turbines%20adapt%20blades%20real&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=design%20wind%20turbines%20adapt%20blades%20real&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:20:16.990Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "design wind turbines adapt blades real",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Adesign%20AND%20all%3Awind%20AND%20all%3Aturbines%20AND%20all%3Aadapt%20AND%20all%3Ablades%20AND%20all%3Areal&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Adesign%20AND%20all%3Awind%20AND%20all%3Aturbines%20AND%20all%3Aadapt%20AND%20all%3Ablades%20AND%20all%3Areal&start=0&max_results=10",
+      "sha256": "24cae5ac47aee69cace3b3ee8582f0557b6779802f9e3b840fd531ad8d6bd57f",
+      "bytes": 3614,
+      "observedAt": "2026-11-06T00:20:17.615Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "design wind turbines adapt blades real",
+      "url": "https://api.crossref.org/works?query=design%20wind%20turbines%20adapt%20blades%20real&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=design%20wind%20turbines%20adapt%20blades%20real&rows=10&select=DOI,title",
+      "sha256": "bd15601cadad3d3c6f327d7931f24331c15097d4f8909eba2180e1829b8f29c6",
+      "bytes": 1324,
+      "observedAt": "2026-11-06T00:20:18.587Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "design wind turbines clean energy power",
+      "url": "https://api.github.com/search/repositories?q=design%20wind%20turbines%20clean%20energy%20power&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=design%20wind%20turbines%20clean%20energy%20power&per_page=10",
+      "sha256": "109df27fe4f26a88e391f3b5dd523c0cf90d32b0327a2f713bedff6327bf0431",
+      "bytes": 26003,
+      "observedAt": "2026-11-06T00:20:23.750Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "design wind turbines clean energy power",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Adesign%20AND%20all%3Awind%20AND%20all%3Aturbines%20AND%20all%3Aclean%20AND%20all%3Aenergy%20AND%20all%3Apower&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Adesign%20AND%20all%3Awind%20AND%20all%3Aturbines%20AND%20all%3Aclean%20AND%20all%3Aenergy%20AND%20all%3Apower&start=0&max_results=10",
+      "sha256": "5f27c97973ed5ffcc1d9dc60ecbd198a2870c60be773cecb8753f74114f6ecb8",
+      "bytes": 10597,
+      "observedAt": "2026-11-06T00:20:24.460Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "design wind turbines clean energy power",
+      "url": "https://api.crossref.org/works?query=design%20wind%20turbines%20clean%20energy%20power&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=design%20wind%20turbines%20clean%20energy%20power&rows=10&select=DOI,title",
+      "sha256": "b9832d490568d4aac535e026ff6de40d114b1a2172fc628a0dd43666c71b0da7",
+      "bytes": 1430,
+      "observedAt": "2026-11-06T00:20:25.584Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "8c2b89a292589ae6e8c2ad5ed46f33ec5fc72cb3d1f6ae30a3e4a4c2c73953cb",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

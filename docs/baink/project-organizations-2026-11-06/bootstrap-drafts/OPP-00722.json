@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00722",
+  "native_project": "P-OPP-00722",
+  "source_digest": "9fa8916804569c6c1bdaa35d0032759e479bb688c297c5a4902c9d1e0f436dfb",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Give blind people a retinal chip that restores sight",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "1d699c7cedd1e4355d537b3f7b9f6533c3a04459c1a3504602d9ce9a14eee301"
+  },
+  "drafted_at": "2026-11-06T00:11:45.093Z",
+  "queries": [
+    "give blind people retinal chip restores",
+    "give blind people disability accessibility vision"
+  ],
+  "searches": [
+    {
+      "query": "give blind people retinal chip restores",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:11:36.776Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=give%20blind%20people%20retinal%20chip%20restores&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "give blind people retinal chip restores",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:11:37.396Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Ablind%20AND%20all%3Apeople%20AND%20all%3Aretinal%20AND%20all%3Achip%20AND%20all%3Arestores&start=0&max_results=10; sha256=f0ee9cbd794154a29e58c1e2c83141fbcdf35fcc56cbaa4123627fcfacdbe303; total=0; shown=0/0"
+    },
+    {
+      "query": "give blind people retinal chip restores",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:11:38.628Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=give%20blind%20people%20retinal%20chip%20restores&rows=10&select=DOI,title; sha256=090ace2ef105dec9462b225ae964c5570255367071fe3f9a46c1283e9bdf7752; total=1101392; shown=5/10; top: 10.1167/9.14.26 \"The ArgusTM II retinal prosthesis restores some sight to the blind\" | 10.1063/pt.5.024800 \"Implanted chip helps blind people detect objects\" | 10.3030/807995 \"untitled\" | 10.1109/transducers.2011.5969883 \"Retinal implants to restore vision in blind people\" | 10.1101/2020.02.03.932905 \"What do blind people “see” with retinal prostheses? Observations and qualitative reports of epiretinal implant users\""
+    },
+    {
+      "query": "give blind people disability accessibility vision",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:11:43.329Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=give%20blind%20people%20disability%20accessibility%20vision&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "give blind people disability accessibility vision",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:11:44.240Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Ablind%20AND%20all%3Apeople%20AND%20all%3Adisability%20AND%20all%3Aaccessibility%20AND%20all%3Avision&start=0&max_results=10; sha256=47d3a52875a51cc8e6992be75e3807104817fb766c4d8205134a656878ba8c93; total=1; shown=1/1; top: arXiv:2404.00043v1 \"Improve accessibility for Low Vision and Blind people using Machine Learning and Computer Vision\""
+    },
+    {
+      "query": "give blind people disability accessibility vision",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:11:45.093Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=give%20blind%20people%20disability%20accessibility%20vision&rows=10&select=DOI,title; sha256=48350848b5e914fb0d73da762c3b0e7291a9e21c36adb0c25cd2ec8a9962a3dd; total=1495746; shown=5/10; top: 10.18061/dsq.v33i3.3739 \"Blind Photographers: Vision, Accessibility, and Empowerment in the Museum\" | 10.1002/dhe.30388 \"Educate blind, low‐vision students about accessibility features of the iPhone, iPad\" | 10.2307/4012635 \"The seeing tongue: In‐the‐mouth electrodes give blind people a feel for vision\" | 10.59350/0x3pp-c4p08 \"Colorblind: Checking figure accessibility for colour blind people\" | 10.59350/nxjjb-vzd27 \"Colorblind: Checking figure accessibility for colour blind people\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "give blind people retinal chip restores",
+      "url": "https://api.github.com/search/repositories?q=give%20blind%20people%20retinal%20chip%20restores&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=give%20blind%20people%20retinal%20chip%20restores&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:11:36.776Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "give blind people retinal chip restores",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Ablind%20AND%20all%3Apeople%20AND%20all%3Aretinal%20AND%20all%3Achip%20AND%20all%3Arestores&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Ablind%20AND%20all%3Apeople%20AND%20all%3Aretinal%20AND%20all%3Achip%20AND%20all%3Arestores&start=0&max_results=10",
+      "sha256": "f0ee9cbd794154a29e58c1e2c83141fbcdf35fcc56cbaa4123627fcfacdbe303",
+      "bytes": 848,
+      "observedAt": "2026-11-06T00:11:37.396Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "give blind people retinal chip restores",
+      "url": "https://api.crossref.org/works?query=give%20blind%20people%20retinal%20chip%20restores&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=give%20blind%20people%20retinal%20chip%20restores&rows=10&select=DOI,title",
+      "sha256": "090ace2ef105dec9462b225ae964c5570255367071fe3f9a46c1283e9bdf7752",
+      "bytes": 1318,
+      "observedAt": "2026-11-06T00:11:38.628Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "give blind people disability accessibility vision",
+      "url": "https://api.github.com/search/repositories?q=give%20blind%20people%20disability%20accessibility%20vision&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=give%20blind%20people%20disability%20accessibility%20vision&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:11:43.329Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "give blind people disability accessibility vision",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Ablind%20AND%20all%3Apeople%20AND%20all%3Adisability%20AND%20all%3Aaccessibility%20AND%20all%3Avision&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Ablind%20AND%20all%3Apeople%20AND%20all%3Adisability%20AND%20all%3Aaccessibility%20AND%20all%3Avision&start=0&max_results=10",
+      "sha256": "47d3a52875a51cc8e6992be75e3807104817fb766c4d8205134a656878ba8c93",
+      "bytes": 2945,
+      "observedAt": "2026-11-06T00:11:44.240Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "give blind people disability accessibility vision",
+      "url": "https://api.crossref.org/works?query=give%20blind%20people%20disability%20accessibility%20vision&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=give%20blind%20people%20disability%20accessibility%20vision&rows=10&select=DOI,title",
+      "sha256": "48350848b5e914fb0d73da762c3b0e7291a9e21c36adb0c25cd2ec8a9962a3dd",
+      "bytes": 1473,
+      "observedAt": "2026-11-06T00:11:45.093Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "223cf5b2110add003710999cc20e8e56f66d98b34e8e60ae9076d73074a38017",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00244",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T02:54:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": true,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held as a known answer. Giving childhood vaccines away at no cost is an existing, discoverable and operating answer, not an unsolved problem: Gavi reports more than 1.3 billion children immunised through routine programmes between 2000 and 2025, over 73 million in 2025 alone, across 78 lower-income countries, funded by donors with country co-financing of 2.2 billion US dollars since 2008 (https://www.gavi.org/programmes-impact/our-impact/facts-and-figures), and national immunisation programmes deliver the routine schedule free at the point of care in most countries. WHO's 2025 coverage figures show the result and the real constraint: DTP3 at about 85 percent (110 million infants), measles first dose 84 percent, hepatitis B 84 percent, but 13.5 million infants with no DTP dose and about 6 million partly vaccinated, with 53 percent of them in ten countries, attributed to lack of access to immunisation and other health services rather than to price (https://www.who.int/news-room/fact-sheets/detail/immunization-coverage). The gaps that remain are financing and delivery questions already owned by existing institutions, as the financing literature shows for HPV in Africa and for non-programme vaccines in China (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22vaccine%20financing%22%20AND%20%22out-of-pocket%22%20AND%20immunization%20AND%20equity&format=json&pageSize=10&resultType=lite), and no open-source delivery or tracking system is needed to make the answer discoverable (https://api.github.com/search/repositories?q=immunization+supply+chain+open+source+vaccine+logistics&per_page=10). Honest limit: the 8,000,000,000-person KPI is not met, HPV first-dose coverage is only 33 percent, and adult vaccines are often not free; a reframed project on reaching zero-dose children or on financing a specific uncovered vaccine would need its own prior-art basis rather than this one."
+  },
+  "additionalSearches": [
+    {
+      "query": "Gavi scale and financing of free childhood vaccines",
+      "source": "https://www.gavi.org/programmes-impact/our-impact/facts-and-figures",
+      "observedAt": "2026-11-06T02:48:00Z",
+      "finding": "Gavi reports more than 1.3 billion children immunised through routine programmes 2000-2025 (over 73 million in 2025) and 2.4 billion campaign vaccinations, across 78 lower-income countries, with country co-financing of 2.2 billion US dollars since 2008. The page describes co-financing rather than stating vaccines are free, so free-at-point-of-care rests on national programmes."
+    },
+    {
+      "query": "global immunization coverage and barriers",
+      "source": "https://www.who.int/news-room/fact-sheets/detail/immunization-coverage",
+      "observedAt": "2026-11-06T02:49:00Z",
+      "finding": "WHO 2025: DTP3 about 85 percent (110 million infants), measles first dose 84 percent, hepatitis B 84 percent, pneumococcal 71 percent, HPV first dose 33 percent. 13.5 million infants received no DTP dose and about 6 million were partly vaccinated, 53 percent of them in ten countries; WHO attributes this to lack of access to immunisation and health services, and does not name cost or user fees as a barrier."
+    },
+    {
+      "query": "vaccine financing, out-of-pocket cost and equity literature",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22vaccine%20financing%22%20AND%20%22out-of-pocket%22%20AND%20immunization%20AND%20equity&format=json&pageSize=10&resultType=lite",
+      "observedAt": "2026-11-06T02:50:00Z",
+      "finding": "The records are financing and equity studies (HPV financing in Africa, financial risk protection from vaccines in 52 Gavi-eligible countries, equity in financing non-programme vaccines in China, willingness to pay for HPV in China). They frame remaining cost exposure as a financing-policy question inside existing programmes, not an unsolved technical problem. Titles only; abstracts not retrieved."
+    },
+    {
+      "query": "open-source immunization supply chain and delivery systems",
+      "source": "https://api.github.com/search/repositories?q=immunization+supply+chain+open+source+vaccine+logistics&per_page=10",
+      "observedAt": "2026-11-06T02:51:00Z",
+      "finding": "Zero repositories under these terms; free-vaccine delivery today runs on institutional programmes (Gavi, UNICEF, national EPIs) rather than on any open-source system, and no new system is required for the answer to be discoverable."
+    }
+  ]
+}

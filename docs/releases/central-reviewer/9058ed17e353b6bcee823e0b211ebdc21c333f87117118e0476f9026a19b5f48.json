@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "central-reviewer",
+  "release_id": "9058ed17e353b6bcee823e0b211ebdc21c333f87117118e0476f9026a19b5f48",
+  "version": null,
+  "source_commit": "ee6abf52c1ca354d71bc5009981e8351e1a9fed9",
+  "deployed_at": "2026-11-10T08:43:29Z",
+  "prior": "0645c43159a0281b51d001433613a59282d57fb9e1bfa8d3760f75ff872eb2ab",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#release-gap-closure-20261110"
+  ],
+  "note": "Worker-only overlay of 0645c431 with main's full 21-file import closure (six BAINK modules replaced, two added) and main's tests. 94/94 tests on staged bytes, store rehearsal on a clone of the live jobs.json, same live proof reads as the prior release. Custody 361dd3cd untouched. After: clean cycles; two reviews decided, accepted on native by 09:04:42Z. Rollback: release:rollback --part worker."
+}

@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-04561",
+  "native_project": "P-OPP-04561",
+  "source_digest": "0c07adf887b24653b6a51b1dd9e95ef10961bb3f5468f4e7adb76b1dd7b5293b",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build an early-warning system that predicts conflicts a year ahead",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "8b2b679bcbd4fc36459f120d296eaae39171862a6a67fc3efe9b6eb6278baa83"
+  },
+  "drafted_at": "2026-11-06T00:25:11.049Z",
+  "queries": [
+    "early-warning system predicts conflicts year ahead",
+    "early-warning system predicts peace security safety"
+  ],
+  "searches": [
+    {
+      "query": "early-warning system predicts conflicts year ahead",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:25:03.048Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=early-warning%20system%20predicts%20conflicts%20year%20ahead&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "early-warning system predicts conflicts year ahead",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:25:04.066Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aearly-warning%20AND%20all%3Asystem%20AND%20all%3Apredicts%20AND%20all%3Aconflicts%20AND%20all%3Ayear%20AND%20all%3Aahead&start=0&max_results=10; sha256=40f43db8830322ecd1d57ce9b9f36d57aa3a9c9ce995670abbe7c12f909ed572; total=0; shown=0/0"
+    },
+    {
+      "query": "early-warning system predicts conflicts year ahead",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:25:05.140Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=early-warning%20system%20predicts%20conflicts%20year%20ahead&rows=10&select=DOI,title; sha256=3b5feb51bcbeefd6b83cc027ba93ecb4d4c263820fb6c3efe29f5e0c6adb767e; total=5923103; shown=5/10; top: 10.1163/9789004322714_cclc_2019-0005-036 \"Water, Peace and Security early warning tool predicts water-related conflict up to year in advance\" | 10.59852/tpe-a480v16i1 \"Philippine Experience on Pest Surveillance and Early Warning System\" | 10.1016/s1474-66701755141-1 \"Fugi - Part of a Global Early Warning System for National and International Conflicts\" | 10.2139/ssrn.7626718 \"Machine Learning-Based Early Warning and Preventive Action Orchestration for Project Resource Conflicts\" | 10.1109/icamse.2016.7840202 \"e-PAZ: Identifying potential conflicts via a robust early warning system\""
+    },
+    {
+      "query": "early-warning system predicts peace security safety",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:25:09.644Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=early-warning%20system%20predicts%20peace%20security%20safety&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "early-warning system predicts peace security safety",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:25:10.159Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aearly-warning%20AND%20all%3Asystem%20AND%20all%3Apredicts%20AND%20all%3Apeace%20AND%20all%3Asecurity%20AND%20all%3Asafety&start=0&max_results=10; sha256=d06c0f28f239247c84fe8e6fd563fcd91bbede0b21aff821010981e454c6f7be; total=0; shown=0/0"
+    },
+    {
+      "query": "early-warning system predicts peace security safety",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:25:11.048Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=early-warning%20system%20predicts%20peace%20security%20safety&rows=10&select=DOI,title; sha256=1f00e0daca23e00e08c08c8a380b63451764d3ce1c9823331faf4133dcc4c57d; total=6976004; shown=5/10; top: 10.1163/9789004322714_cclc_2019-0005-036 \"Water, Peace and Security early warning tool predicts water-related conflict up to year in advance\" | 10.3233/nicsp190046 \"Applicability of EARLY WARNING SYSTEM (EWS) in the Regional Water Management Planning\" | 10.3233/978-1-60750-611-9-55 \"Threat Early Warning through Web Mining\" | 10.4324/9780429039126-17 \"Absence of Early-Warning Intelligence\" | 10.1007/978-3-540-68488-6_96 \"Towards a Human Security-Based Early Warning and Response System\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "early-warning system predicts conflicts year ahead",
+      "url": "https://api.github.com/search/repositories?q=early-warning%20system%20predicts%20conflicts%20year%20ahead&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=early-warning%20system%20predicts%20conflicts%20year%20ahead&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:25:03.048Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "early-warning system predicts conflicts year ahead",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aearly-warning%20AND%20all%3Asystem%20AND%20all%3Apredicts%20AND%20all%3Aconflicts%20AND%20all%3Ayear%20AND%20all%3Aahead&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aearly-warning%20AND%20all%3Asystem%20AND%20all%3Apredicts%20AND%20all%3Aconflicts%20AND%20all%3Ayear%20AND%20all%3Aahead&start=0&max_results=10",
+      "sha256": "40f43db8830322ecd1d57ce9b9f36d57aa3a9c9ce995670abbe7c12f909ed572",
+      "bytes": 870,
+      "observedAt": "2026-11-06T00:25:04.066Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "early-warning system predicts conflicts year ahead",
+      "url": "https://api.crossref.org/works?query=early-warning%20system%20predicts%20conflicts%20year%20ahead&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=early-warning%20system%20predicts%20conflicts%20year%20ahead&rows=10&select=DOI,title",
+      "sha256": "3b5feb51bcbeefd6b83cc027ba93ecb4d4c263820fb6c3efe29f5e0c6adb767e",
+      "bytes": 1543,
+      "observedAt": "2026-11-06T00:25:05.140Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "early-warning system predicts peace security safety",
+      "url": "https://api.github.com/search/repositories?q=early-warning%20system%20predicts%20peace%20security%20safety&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=early-warning%20system%20predicts%20peace%20security%20safety&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:25:09.644Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "early-warning system predicts peace security safety",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aearly-warning%20AND%20all%3Asystem%20AND%20all%3Apredicts%20AND%20all%3Apeace%20AND%20all%3Asecurity%20AND%20all%3Asafety&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aearly-warning%20AND%20all%3Asystem%20AND%20all%3Apredicts%20AND%20all%3Apeace%20AND%20all%3Asecurity%20AND%20all%3Asafety&start=0&max_results=10",
+      "sha256": "d06c0f28f239247c84fe8e6fd563fcd91bbede0b21aff821010981e454c6f7be",
+      "bytes": 872,
+      "observedAt": "2026-11-06T00:25:10.159Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "early-warning system predicts peace security safety",
+      "url": "https://api.crossref.org/works?query=early-warning%20system%20predicts%20peace%20security%20safety&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=early-warning%20system%20predicts%20peace%20security%20safety&rows=10&select=DOI,title",
+      "sha256": "1f00e0daca23e00e08c08c8a380b63451764d3ce1c9823331faf4133dcc4c57d",
+      "bytes": 1545,
+      "observedAt": "2026-11-06T00:25:11.048Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "8b98cc20013f3c16d8a9aceaf3e12c1b1a8d3545c7c41e92ce588d0972afb43e",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

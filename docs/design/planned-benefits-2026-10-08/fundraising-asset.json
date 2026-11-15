@@ -1,0 +1,19 @@
+{
+  "tool_mode": "built-in image_gen",
+  "intent": "generate from visual reference",
+  "prompt": "Use case: ads-marketing\nAsset type: photographic raster background for a fundraising benefit card on UAIN landing page.\nPrimary request: Create one cinematic realistic Earth connectivity photograph closely matching the reference image, reformatted as a natural portrait 1024 by 1280 pixel canvas. Reference image is visual guidance for subject, geography, colors and glowing arcs, not an edit target.\nScene: Earth seen from orbit above Europe at night with detailed recognizable geography, warm city lights, a brilliant luminous blue atmospheric horizon, starry deep navy sky, warm sunlight just above the horizon towards the upper right.\nComposition: Keep the Earth imagery and light arcs entirely in the upper 60 percent of the portrait. A very luminous blue-white central hub over Europe sends thin elegant glowing blue arcs towards other lit cities across Europe and adjacent regions. Central hub is the brightest connection point; arcs rise naturally above the Earth's curvature and land on city lights. Bottom 40 percent smoothly fades to a rich almost uniform deep navy #08283f suitable for long white HTML text, with only a subtle slightly lighter blue at the bottom edge, matching the selected card reference style. No hard boundary where imagery fades into dark lower region.\nStyle: polished cinematic realistic space photography, high quality detailed textures, subtle restrained blue glow, atmospheric depth, natural geography.\nConstraints: No text, typography, letters, logos, watermark, buttons, badges, interface, card border or rounded frame. This is image only; all title and body copy will be HTML overlays. No bright lights or busy details in the lower 40 percent. Deliver one portrait image at exactly 1024x1280; do not squash, stretch or distort the globe.",
+  "reference_path": "work/benefits-20261008/references/fundraising.webp",
+  "generated_source_path": "~/.codex/generated_images/01a11b38-32ad-7cc1-a10a-f6b65c157be4/exec-79db617b-af11-4d55-82a5-cda4a9d62b9c.png",
+  "generated_dimensions": {
+    "width": 1122,
+    "height": 1402
+  },
+  "final_path": "public/images/landing/benefits/fundraising.webp",
+  "final_dimensions": {
+    "width": 1024,
+    "height": 1280
+  },
+  "bytes": 150858,
+  "encoding": "cwebp -q 84 -m 6 -resize 1024 0",
+  "inspection_notes": "Viewed reference and generated asset. Cinematic detailed Earth, blue luminous horizon and bright warm sunrise upper-right. Very bright central European blue hub with curved thin connection arcs and bright city endpoints; starry navy sky. Image fades smoothly into dark lower region, loweredge slightly lighter blue. No text, UI, borders or watermark. Lower forty percent provides generous safe area for HTML copy. Native generated portrait ratio preserved during resize; resulting exact dimensions1024x1280."
+}

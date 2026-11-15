@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T083847Z-ce229e3123",
+  "version": "0.3.74",
+  "source_commit": "cf20a195857f29a0e289db2b5893eafa17bee42d",
+  "deployed_at": "2026-11-10T08:40:23Z",
+  "prior": "20261110T034231Z-bf88b41a8e",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0374-release-20261110",
+    "CHANGELOG.md#chat-only-fallback-20261110"
+  ],
+  "note": "PR #470: llms.txt, guide and MCP instructions point a chat-only assistant to OpenAI dots or Grok Bot, then Claude Code or Codex. release:verify passed; staged by hand with sudo (rainaldi has no root ssh), hashes matched, activate-release.py reported healthy; x-baink-release on primary and preview, llms.txt on both, MCP 0.6.3 and baink_guide answer checked live."
+}

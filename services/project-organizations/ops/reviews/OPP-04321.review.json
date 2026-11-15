@@ -1,0 +1,51 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-04321",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "neutral",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable AI explains each ballot question neutrally in every voter's language, so the Main KPI of 5,000,000,000 eligible voters with a neutral AI explainer is unmet. Evidence shows the core problem is reliability and neutrality, not generation: the 2026 Polistemics benchmark found three 2025 frontier models mediate election information reliably only when evidence is clear and fail when it is absent, vague or contradictory, while flattening political language (https://doi.org/10.48550/arxiv.2607.25953); a 12-model study across the 2024 US election season found behaviour shifting over time and across demographic framings (https://doi.org/10.48550/arxiv.2509.18446); and political bias in LLMs is documented (https://doi.org/10.1007/s42001-025-00376-w). LLM voting-advice chatbots exist only as research prototypes (https://doi.org/10.48550/arxiv.2505.09806), and GitHub holds a few hobby ballot guides with 0 stars, one bilingual for a single US county. Class neutral: real civic benefit, but an AI that explains ballot questions can sway votes, so the project carries manipulation and trust risk that checkers must weigh. Honest limit: producing plain-language ballot summaries with an LLM is a known capability and is not new work; the open, checkable work is verified neutrality and accuracy across languages and ballot types, with audits, under adversarial and ambiguous evidence."
+  },
+  "additionalSearches": [
+    {
+      "query": "large language model voter information ballot measure explanation accuracy election (2024 onward)",
+      "source": "https://api.openalex.org/works?search=large%20language%20model%20voter%20information%20ballot%20measure%20explanation%20accuracy%20election&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:17:53Z",
+      "finding": "508 works: election AI auditing framework (IJCAI 2026), fact-checking information from LLMs can decrease headline discernment (PNAS 2024), longitudinal LLM study of the 2024 US election. No validated ballot explainer."
+    },
+    {
+      "query": "AI chatbots election information accuracy misinformation multilingual voters (2024 onward)",
+      "source": "https://api.openalex.org/works?search=AI%20chatbots%20election%20information%20accuracy%20misinformation%20multilingual%20voters&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:17:54Z",
+      "finding": "126 works on AI and voter confidence, election disinformation (Philippines 2025), and the Polistemics benchmark of LLMs as political information mediators (2026)."
+    },
+    {
+      "query": "ballot measure explainer AI (GitHub repositories)",
+      "source": "https://api.github.com/search/repositories?q=ballot%20measure%20explainer%20AI&sort=stars&per_page=8",
+      "observedAt": "2026-11-06T01:17:56Z",
+      "finding": "0 repositories. Null result for open ballot-measure explainers."
+    },
+    {
+      "query": "LLM political bias neutrality voting advice application (2024 onward)",
+      "source": "https://api.openalex.org/works?search=LLM%20political%20bias%20neutrality%20voting%20advice%20application&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:00Z",
+      "finding": "201 works: RAG-supported LLM voting advice applications (2024), an LLM-based VAA chatbot study (2025), assessing political bias in LLMs (2025, 52 citations), Italian alignment audit (2026). Prototypes with documented bias concerns."
+    },
+    {
+      "query": "voter guide llm (GitHub repositories)",
+      "source": "https://api.github.com/search/repositories?q=voter%20guide%20llm&sort=stars&per_page=8",
+      "observedAt": "2026-11-06T01:22:31Z",
+      "finding": "3 repositories, all 0 stars: a bilingual LA County ballot guide, an election-process assistant, and a values-based AI voter guide skill. Hobby projects without neutrality audits."
+    },
+    {
+      "query": "Polistemics: Evaluating LLMs as Information Mediators in Politics and Elections",
+      "source": "https://api.openalex.org/works/doi:10.48550/arxiv.2607.25953",
+      "observedAt": "2026-11-06T01:22:42Z",
+      "finding": "Three 2025 models tested on German and Dutch elections: high aggregate scores mask systematic failures when evidence is absent, vague or contradictory; models impose party priors and flatten political intensity."
+    }
+  ]
+}

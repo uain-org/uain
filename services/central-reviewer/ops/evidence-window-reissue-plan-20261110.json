@@ -1,0 +1,12 @@
+{
+ "reason": "S6 activation 10 November 2026: these six needs_evidence verdicts were recorded before central_evidence_activation and carry no native deadline, so the authors can neither revise nor ask for a reassessment. Re-review each once after the activation height so a fresh request carries the 72-hour window (CHANGELOG #evidence-window-prepare-20261110).",
+ "activation": {"height": "ACTIVATION_HEIGHT", "evidenceDigest": "ACTIVATION_EVIDENCE_DIGEST"},
+ "jobs": [
+  {"submission": "HS-controlled-buyer-d396cc80a87cb9bb3f95", "expectExecutionId": "d0a5c5a5-06eb-4e43-a8ce-f88807be1083", "evidence": {"jobs_json_before": "STORE_DIGEST"}},
+  {"submission": "HS-controlled-buyer-ea7044f5e9205891b0ef", "expectExecutionId": "7bf5a051-a811-4a6c-ba0f-be96d39db955", "evidence": {"jobs_json_before": "STORE_DIGEST"}},
+  {"submission": "CS-0617e43d-f4d7-416f-8743-a019223f18d2", "expectExecutionId": "db8887fd-ecd0-429f-aa1e-6c8d5b32c0be", "evidence": {"jobs_json_before": "STORE_DIGEST"}},
+  {"submission": "CS-1cd404c3-8d5e-47dc-ac0c-2b8edbaa87bd", "expectExecutionId": "42033f28-c707-4be6-84de-2c7b38124975", "evidence": {"jobs_json_before": "STORE_DIGEST"}},
+  {"submission": "CS-08114956-2223-480a-8f75-2ab0d436f2d8", "expectExecutionId": "6b583038-48ed-42cb-bb74-9c06943f6bb6", "evidence": {"jobs_json_before": "STORE_DIGEST"}},
+  {"submission": "CS-9bd0682b-f0fb-4d56-8b4f-3428075a4d42", "expectExecutionId": "52ec4293-ab84-436a-8952-ed55671d5224", "evidence": {"jobs_json_before": "STORE_DIGEST"}}
+ ]
+}

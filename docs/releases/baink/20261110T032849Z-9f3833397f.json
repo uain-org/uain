@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T032849Z-9f3833397f",
+  "version": "0.3.72",
+  "source_commit": "b0db08fa382c44acdaae63f98cb79444c2ae58c0",
+  "deployed_at": "2026-11-10T03:29:06Z",
+  "prior": "20261110T032444Z-3d0bff759b",
+  "status": "publicly-verified",
+  "evidence": ["CHANGELOG.md#baink-0372-release-20261110"],
+  "note": "From main b0db08fa: includes #449 (guide routes submission questions and CS- ids to the review topic with history as next step; earn answer gives amounts; MCP 0.6.2). release:promote passed; production and preview health ok; served kit 0.2.11; BAINK_SERVER_SEND_ALLOW_ALL=1 and BAINK_MIN_KIT_VERSION=0.2.10 kept."
+}

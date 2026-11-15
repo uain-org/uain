@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-01442",
+  "native_project": "P-OPP-01442",
+  "source_digest": "1e56f62923643fef2503732df4457408a16bc4b130728b7558600a7fad80431b",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Install a more efficient photosynthesis pathway in staple crops",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "ed9c203d58d6e76b908a7e2d5785787f2aaeb23342c34c9a93f84eb9bc4aee4b"
+  },
+  "drafted_at": "2026-11-06T00:16:17.886Z",
+  "queries": [
+    "install efficient photosynthesis pathway staple crops",
+    "install efficient photosynthesis agriculture land crop"
+  ],
+  "searches": [
+    {
+      "query": "install efficient photosynthesis pathway staple crops",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:16:09.884Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=install%20efficient%20photosynthesis%20pathway%20staple%20crops&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "install efficient photosynthesis pathway staple crops",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:16:10.401Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Ainstall%20AND%20all%3Aefficient%20AND%20all%3Aphotosynthesis%20AND%20all%3Apathway%20AND%20all%3Astaple%20AND%20all%3Acrops&start=0&max_results=10; sha256=0a068a4db717cadbb17442878b4433378c3b9e525fe6a567cac0b6d612b7c909; total=0; shown=0/0"
+    },
+    {
+      "query": "install efficient photosynthesis pathway staple crops",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:16:11.235Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=install%20efficient%20photosynthesis%20pathway%20staple%20crops&rows=10&select=DOI,title; sha256=b5303a06e56034db326a2ab91e4cbab58f68ff55436225208613c0d405f3055d; total=1280504; shown=5/10; top: 10.5962/bhl.title.41941 \"Insect injurious to staple crops\" | 10.5962/bhl.title.118070 \"Insects injurious to staple crops /\" | 10.1007/978-981-16-3280-8_19 \"Agronomic Approaches for Biofortification of Staple Food Crops\" | 10.1787/ccfa8a95-en \"Export restrictions on staple crops since 2007\" | 10.1007/978-981-16-3280-8_1 \"Biofortification of Staple Crops: Present Status and Future Strategies\""
+    },
+    {
+      "query": "install efficient photosynthesis agriculture land crop",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:16:16.487Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=install%20efficient%20photosynthesis%20agriculture%20land%20crop&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "install efficient photosynthesis agriculture land crop",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:16:17.072Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Ainstall%20AND%20all%3Aefficient%20AND%20all%3Aphotosynthesis%20AND%20all%3Aagriculture%20AND%20all%3Aland%20AND%20all%3Acrop&start=0&max_results=10; sha256=d247b323c1968b12b19d055ffd89e927480cad31fc05d8aa6e8d534eacf591b6; total=0; shown=0/0"
+    },
+    {
+      "query": "install efficient photosynthesis agriculture land crop",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:16:17.885Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=install%20efficient%20photosynthesis%20agriculture%20land%20crop&rows=10&select=DOI,title; sha256=f88d4d1ea0c3c37391573a526da9919348f541a2da11976eb91baea3550f5c25; total=2039737; shown=5/10; top: 10.2139/ssrn.998600 \"Female Land Rights, Crop Specialization, and Productivity in Paraguayan Agriculture\" | 10.5962/bhl.title.51081 \"Efficient use of nitrogen on crop land in the Northeast /\" | 10.1186/s43170-022-00117-3 \"Optimization of photosynthesis for sustainable crop production\" | 10.1016/b978-0-444-89608-7.50001-0 \"Topics in Photosynthesis\" | 10.31830/2454-1761.2021.027 \"Impact of land use change on agriculture sector of Tamil Nadu, India\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "install efficient photosynthesis pathway staple crops",
+      "url": "https://api.github.com/search/repositories?q=install%20efficient%20photosynthesis%20pathway%20staple%20crops&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=install%20efficient%20photosynthesis%20pathway%20staple%20crops&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:16:09.884Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "install efficient photosynthesis pathway staple crops",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Ainstall%20AND%20all%3Aefficient%20AND%20all%3Aphotosynthesis%20AND%20all%3Apathway%20AND%20all%3Astaple%20AND%20all%3Acrops&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Ainstall%20AND%20all%3Aefficient%20AND%20all%3Aphotosynthesis%20AND%20all%3Apathway%20AND%20all%3Astaple%20AND%20all%3Acrops&start=0&max_results=10",
+      "sha256": "0a068a4db717cadbb17442878b4433378c3b9e525fe6a567cac0b6d612b7c909",
+      "bytes": 876,
+      "observedAt": "2026-11-06T00:16:10.401Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "install efficient photosynthesis pathway staple crops",
+      "url": "https://api.crossref.org/works?query=install%20efficient%20photosynthesis%20pathway%20staple%20crops&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=install%20efficient%20photosynthesis%20pathway%20staple%20crops&rows=10&select=DOI,title",
+      "sha256": "b5303a06e56034db326a2ab91e4cbab58f68ff55436225208613c0d405f3055d",
+      "bytes": 1311,
+      "observedAt": "2026-11-06T00:16:11.235Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "install efficient photosynthesis agriculture land crop",
+      "url": "https://api.github.com/search/repositories?q=install%20efficient%20photosynthesis%20agriculture%20land%20crop&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=install%20efficient%20photosynthesis%20agriculture%20land%20crop&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:16:16.487Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "install efficient photosynthesis agriculture land crop",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Ainstall%20AND%20all%3Aefficient%20AND%20all%3Aphotosynthesis%20AND%20all%3Aagriculture%20AND%20all%3Aland%20AND%20all%3Acrop&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Ainstall%20AND%20all%3Aefficient%20AND%20all%3Aphotosynthesis%20AND%20all%3Aagriculture%20AND%20all%3Aland%20AND%20all%3Acrop&start=0&max_results=10",
+      "sha256": "d247b323c1968b12b19d055ffd89e927480cad31fc05d8aa6e8d534eacf591b6",
+      "bytes": 878,
+      "observedAt": "2026-11-06T00:16:17.072Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "install efficient photosynthesis agriculture land crop",
+      "url": "https://api.crossref.org/works?query=install%20efficient%20photosynthesis%20agriculture%20land%20crop&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=install%20efficient%20photosynthesis%20agriculture%20land%20crop&rows=10&select=DOI,title",
+      "sha256": "f88d4d1ea0c3c37391573a526da9919348f541a2da11976eb91baea3550f5c25",
+      "bytes": 1321,
+      "observedAt": "2026-11-06T00:16:17.885Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "bd7dbb25eae07342a0d478d34e0443f0bd9559aaf0bc8a7464b13812eacbfb97",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

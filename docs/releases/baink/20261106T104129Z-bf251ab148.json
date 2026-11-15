@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261106T104129Z-bf251ab148",
+  "version": "0.3.33",
+  "source_commit": "20b80f3e",
+  "deployed_at": "2026-11-06T10:41:29Z",
+  "prior": "20261106T095448Z-3bfb533803",
+  "status": "publicly-verified",
+  "evidence": ["CHANGELOG.md"],
+  "note": "Merged main (survey drafting, paid task list, stale-tab recovery from PR #230). Live health and X-BAINK-Release header checked from baink.money."
+}

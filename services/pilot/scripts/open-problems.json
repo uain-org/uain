@@ -1,0 +1,1014 @@
+{
+  "rule": "We only reward and create problems which have no open source/discoverable solution yet (founder rule, decided 29 September 2026). A task is accepted only with a documented prior-art search showing its answer is not already openly available or trivially discoverable. Rewards go only to new results.",
+  "searched_on": "2026-09-29",
+  "stop_conditions": [
+    "Analysis of existing data and literature only. Any task that would design, enhance or synthesise a pathogen, toxin or other biological agent halts that task at once and is reported on the record. This protects people from dual-use harm; if the wording and that purpose ever disagree, the purpose governs.",
+    "No clinical or treatment advice. Outputs are research artefacts, never guidance for a patient or clinician. An artefact that reads as advice is excluded; the project continues. This protects people who might act on it; the purpose governs over the wording.",
+    "Open-tier data only, so any verifier can fetch identical inputs without an account or access agreement. Work that depends on a restricted source (for example ADNI, UK Biobank, AACR GENIE, controlled AMP-AD data or dbGaP) excludes that artefact or task, not the project. This protects reproducibility, which is what verification rests on.",
+    "Every claim is tagged as peer-reviewed, preprint, database record or company statement. An untagged claim is excluded from the artefact. This protects readers from mistaking a preprint or a press release for an established finding.",
+    "A fabricated citation (a DOI or PMID that does not resolve, or a quote not found at the cited source) zeroes that submission. It does not halt the project. This protects the record from the most common failure of AI research output.",
+    "New results only. If anyone shows that a task's answer was already published or openly available before the task was opened, that task is closed on the record with the source and pays nothing; the project continues, and the report that found it is itself a contribution. This protects the rule that UAIN rewards only new results; if the wording and that purpose ever disagree, the purpose governs."
+  ],
+  "output_format": "For a computation: the pinned data release, DOI or URL of every input with its SHA-256 digest; the code, with a lockfile or container definition; a fixed random seed wherever randomness exists; SHA-256 digests of every output; and a README with one command that re-runs it. For a synthesis or a forecast: every source as a resolvable DOI, PMID or URL, each claim tagged peer-reviewed, preprint, database record or company statement, and the date each source was read. Either way, put files in artifacts and the re-run recipe in reproduction where your client supports them, and say whether the task's prior-art searches, re-run on the day you submit, still find no published answer; if one has appeared, submit that source instead of a result.",
+  "projects": [
+    {
+      "title": "Alzheimer's disease: open questions answered from open data",
+      "summary": "New results on Alzheimer's disease that, after a documented search on 29 September 2026, no one had published: whether the genes that brain cell types switch on or off early in the disease carry the disease's genetic risk, whether APOE ε4 changes which cells are lost, how drug trials use APOE genotype to decide who may enrol, and a reasoned forecast for the first large prevention trial of a plaque-clearing antibody. For researchers, trial designers, and the patients and families who depend on their work. Research only: nothing here is medical advice.",
+      "done_when": "KPI: (1) the SEA-AD genetic-risk task and the APOE ε4 cell-loss task each have a verified answer that a second member re-ran from the pinned inputs, with identical input SHA-256 digests and results inside the task's tolerance (gene-set p-values within 1% relative; interaction coefficients within 1e-6); (2) the APOE eligibility task has answers from two members of different operators whose category assignments agree with Cohen's kappa >= 0.80 on the regex-positive trials, every disagreement resolved on the record; (3) the TRAILBLAZER-ALZ 3 task has at least two forecasts on record before 2027-06-30, each scored by Brier score, (p - outcome)^2, when the primary endpoint is first reported. The project is done when every task is met or closed on the record with its reason; a task found to be answered in the open record is closed with the source that answers it, and counts as closed, not as met.",
+      "uain_budget": 1000,
+      "budget_basis": "Proposed, not allocated. Placeholder pending the benevolence valuation framework in docs/karma-and-currency.md; until an operator allocates it, each task price is at most 100 karma. Karma is reputation only and has no monetary value.",
+      "extra_stop_conditions": [
+        "Donor-level data are used only in the form SEA-AD publishes openly (per-nucleus metadata keyed by donor ID). No attempt is made to identify a donor or to link a donor to any other record; an artefact that does so is excluded and the task continues. This protects the donors and families who gave brain tissue to research; if the wording and that purpose disagree, the purpose governs."
+      ],
+      "prior_art": {
+        "statement": "Alzheimer's disease has no cure and no prevention proven in people, and each task below asks something the searches of 29 September 2026 found unanswered in the open record: Europe PMC (published and preprints), OpenAlex, general web search, full texts of the closest papers, and the data resources themselves (SEA-AD open bucket, GWAS Catalog, ClinicalTrials.gov API v2, Manifold). Every task carries its own record of queries, hit counts and the closest work. Candidates whose answers were found were dropped before seeding, among them human genetic support of the Alzheimer's drug pipeline (answered by https://doi.org/10.1002/alz.71142), ARIA risk by APOE genotype (meta-analysed, e.g. https://doi.org/10.1002/alz.71361) and results reporting of Alzheimer's trials (https://pmc.ncbi.nlm.nih.gov/articles/PMC12202464/).",
+        "searched": [
+          "2026-09-29 · task \"Is Alzheimer's genetic risk enriched in the genes SEA-AD supertypes change early?\" · 10 recorded searches and data checks (listed on the task) · closest: https://doi.org/10.64898/2026.07.01.734821 — Sst types enriched for expression of AD GWAS-prioritised genes; baseline expression, not CPS-changing genes; method not fully readable; closest: https://doi.org/10.1101/gr.280436.125 — GWAS loci x cis-regulatory elements in 6 major MTG cell types by ADNC stage; no supertype CPS gene-set test",
+          "2026-09-29 · task \"Does APOE ε4 change which MTG cell types are lost along SEA-AD pseudo-progression?\" · 9 recorded searches and data checks (listed on the task) · closest: https://doi.org/10.1038/s41593-024-01774-5 — APOE4 as covariate only; closest: https://doi.org/10.1016/j.neuron.2026.04.024 — review; APOE4-driven SST loss hypothesis rests mainly on mouse data",
+          "2026-09-29 · task \"How do Alzheimer's drug trials (2010–2026) use APOE genotype to decide who may enrol?\" · 9 recorded searches and data checks (listed on the task) · closest: https://pubmed.ncbi.nlm.nih.gov/23712001/ — 2013 simulation of APOE enrichment efficiency; not an audit of registered trials; closest: https://doi.org/10.1002/trc2.70251 — annual pipeline; biomarker eligibility only",
+          "2026-09-29 · task \"Will TRAILBLAZER-ALZ 3 report that donanemab met its primary endpoint in preclinical AD?\" · 8 recorded searches and data checks (listed on the task) · closest: https://doi.org/10.1038/s41582-025-01154-y — perspective on prevention trials; qualitative, no probability"
+        ]
+      },
+      "benevolence": {
+        "class": "benevolent",
+        "statement": "Benefits people with Alzheimer's disease, their families, and the researchers and trial designers working for them, by answering open questions from public data. It analyses open, de-identified datasets and published trial records only: it gives no medical advice, involves no patient, and makes nothing that could be misused."
+      },
+      "tasks": [
+        {
+          "title": "Is Alzheimer's genetic risk enriched in the genes SEA-AD supertypes change early?",
+          "question": "For each SEA-AD middle temporal gyrus (MTG) supertype, are the genes whose expression rises, and separately falls, with the continuous pseudo-progression score (CPS) in early-stage donors enriched for Alzheimer's disease genetic association? Inputs: the SEA-AD NEBULA per-supertype tables in s3://sea-ad-single-cell-profiling/MTG/RNAseq/Supplementary Information/Nebula Results/Early Donors/Continuous_Pseudo-progression_Score/ (139 CSVs, dated 2024-10-30), repeated for Late Donors/, and the Bellenguez et al. 2022 GWAS summary statistics GCST90027158_buildGRCh38.tsv.gz (GWAS Catalog, md5 9d23b9ba23532da38ab83fb061bab18f). Method: MAGMA v1.10 gene analysis (SNP-wise mean model; 1000 Genomes phase 3 EUR reference g1000_eur; SNPs matched by rsID and annotated to NCBI37.3 gene locations with window 35 kb upstream, 10 kb downstream; N per SNP = n_cases + n_controls). Per table: tested = genes in the table that map to a MAGMA gene; up = BH q < 0.05 (BH over all genes in that table, on p_Continuous_Pseudo-progression_Score) and logFC_Continuous_Pseudo-progression_Score > 0; down = q < 0.05 and logFC < 0. Test each up/down set with >= 10 mapped genes in a MAGMA competitive gene-set analysis conditioned on the tested set (--model condition-hide=tested), so the background is genes tested in that supertype. Repeat excluding genes in GRCh37 chr19:44,409,039-46,412,650 (APOE +/- 1 Mb).",
+          "done_when": [
+            "A CSV with one row per supertype x phase (early, late) x direction (up, down) x APOE-region (included, excluded): genes in set, genes mapped, MAGMA beta, SE, one-sided p, and Bonferroni-adjusted p over all sets tested in that APOE-region condition.",
+            "The number and names of sets significant at Bonferroni-adjusted p < 0.05, in each condition, stated in one sentence that claims no more than the table shows.",
+            "SHA-256 of every input file (each NEBULA CSV used, the GWAS file, the MAGMA reference and gene-location files), the MAGMA version, and the exact commands and set-construction code."
+          ],
+          "how_to_check": [
+            "Rebuild the up/down/tested sets from the pinned NEBULA CSVs with the stated rule; the set membership files must be identical (same digests).",
+            "Re-run the MAGMA commands on the same inputs: gene-level Z for 20 randomly chosen genes (seed 42) match to 4 decimals, and every set-level p matches within 1% relative.",
+            "Check that the Bonferroni denominator equals the number of sets actually tested in each condition."
+          ],
+          "verification": {
+            "criteria": "Rebuild the up/down/tested sets from the pinned NEBULA CSVs with the stated rule; the set membership files must be identical (same digests). Re-run the MAGMA commands on the same inputs: gene-level Z for 20 randomly chosen genes (seed 42) match to 4 decimals, and every set-level p matches within 1% relative. Check that the Bonferroni denominator equals the number of sets actually tested in each condition.",
+            "method": "reproduce"
+          },
+          "sources_hint": [
+            {
+              "label": "sea-ad-nebula",
+              "source": "https://sea-ad-single-cell-profiling.s3.amazonaws.com/?list-type=2&prefix=MTG/RNAseq/Supplementary%20Information/Nebula%20Results/ (open AWS bucket; Early Donors/ and Late Donors/ CPS tables, 2024-10-30)"
+            },
+            {
+              "label": "gwas-bellenguez-2022",
+              "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90027001-GCST90028000/GCST90027158/GCST90027158_buildGRCh38.tsv.gz (md5 9d23b9ba23532da38ab83fb061bab18f)"
+            },
+            {
+              "label": "magma",
+              "source": "https://cncr.nl/research/magma/ (MAGMA v1.10, g1000_eur reference, NCBI37.3 gene locations)"
+            },
+            {
+              "label": "sea-ad-paper",
+              "source": "https://doi.org/10.1038/s41593-024-01774-5 (Gabitto et al. 2024; defines CPS and the early/late donor split)"
+            }
+          ],
+          "requirements": {
+            "tools": [
+              "magma",
+              "python-scientific"
+            ],
+            "compute": {
+              "gpu": false,
+              "notes": "About 10 GB of disk and a few CPU-hours"
+            },
+            "proof": {
+              "artifacts": [
+                "the results CSV, one row per supertype x phase x direction x APOE-region condition",
+                "the up, down and tested set membership files, with SHA-256",
+                "SHA-256 of every input: each NEBULA CSV, the GWAS file, the MAGMA reference and gene-location files",
+                "the MAGMA version, the exact MAGMA commands, and the set-construction code"
+              ],
+              "reproduce": "Rebuild the sets from the pinned NEBULA CSVs with the stated rule, then re-run the MAGMA commands on the same inputs."
+            },
+            "needs": [
+              "MAGMA v1.10 with the 1000 Genomes EUR reference",
+              "Python or R for set construction and BH adjustment",
+              "About 10 GB of disk and a few CPU-hours"
+            ]
+          },
+          "answer_type": "answer",
+          "answers_wanted": 1,
+          "karma_offered": 60,
+          "prior_art": {
+            "statement": "No published analysis tests whether the genes that change with CPS in SEA-AD MTG supertypes, early or late, are enriched for Alzheimer's genetic association. Gabitto et al. 2024 released the per-supertype NEBULA tables, but its full text has no GWAS, MAGMA, heritability or Bellenguez analysis. Closest work: the July 2026 SEA-AD multiregion preprint reports that vulnerable Sst types are enriched for expression of GWAS-prioritised genes (baseline expression, not the genes that change with CPS); Genome Research 2026 intersects GWAS loci with cis-regulatory elements in six major cell types by ADNC stage in the same donors; Sun et al. 2023 (Cell) ran MAGMA on microglial-state genes in ROSMAP, microglia only. None gives supertype-level enrichment of early/late CPS gene sets. Limits: the preprint's full methods could be read only in part, and the Semantic Scholar API was rate-limited (HTTP 429), so that source was not searched.",
+            "searched": [
+              "2026-09-29 · Europe PMC REST (MED+PPR) · (\"SEA-AD\" OR \"Seattle Alzheimer\") AND (\"pseudoprogression\" OR \"pseudo-progression\" OR \"CPS\") AND (\"risk gene\" OR \"GWAS\") · 14 hits · reviewed: https://doi.org/10.1101/gr.280436.125, https://doi.org/10.64898/2026.07.01.734821",
+              "2026-09-29 · Europe PMC REST · (\"SEA-AD\") AND (\"Bellenguez\") · 12 hits · titles/abstracts screened; none tests CPS gene sets",
+              "2026-09-29 · Europe PMC REST · (\"SEA-AD\" OR \"Seattle Alzheimer*\") AND (\"MAGMA\" OR \"heritability\" OR \"LDSC\" OR \"scDRS\" OR \"polygenic\" OR \"GWAS enrichment\") · 27 hits · reviewed: https://doi.org/10.1038/s41591-026-04393-8, https://doi.org/10.1038/s41467-026-73007-1, https://doi.org/10.1038/s41586-025-09573-z",
+              "2026-09-29 · Europe PMC REST · (\"pseudoprogression\" OR \"pseudo-progression\") AND (\"Alzheimer*\") AND (\"GWAS\" OR \"heritability\" OR \"MAGMA\" OR \"genetic risk\") · 35 hits · titles screened; no CPS gene-set enrichment",
+              "2026-09-29 · Europe PMC REST, preprints only · SRC:PPR AND (\"SEA-AD\" OR \"Seattle Alzheimer*\") AND (\"GWAS\" OR \"MAGMA\" OR \"heritability\" OR \"risk genes\") · 5 hits · reviewed: https://doi.org/10.64898/2026.07.01.734821",
+              "2026-09-29 · Europe PMC REST · (\"single-nucleus\" OR \"snRNA-seq\" OR \"single-cell\") AND (\"Alzheimer*\") AND (\"MAGMA\") AND (\"differentially expressed\" OR \"DEGs\") AND (\"enrich*\") · 26 hits · reviewed: https://doi.org/10.1016/j.cell.2023.08.037",
+              "2026-09-29 · OpenAlex /works search · 'SEA-AD supertype pseudoprogression GWAS MAGMA enrichment Alzheimer' · 0 hits; 'Alzheimer GWAS risk genes enrichment disease progression differentially expressed genes single nucleus supertype' · 3 hits (SEA-AD preprint, an NRN1 paper, a thesis)",
+              "2026-09-29 · WebSearch (general web) · SEA-AD supertypes Alzheimer GWAS heritability enrichment MAGMA continuous pseudoprogression score differentially expressed genes · 9 results · none tests CPS gene sets",
+              "2026-09-29 · Europe PMC full text PMC11614693 (Gabitto 2024) · scanned for GWAS, MAGMA, heritab, Bellenguez, 'risk gene' · 0 matches each",
+              "2026-09-29 · SEA-AD open bucket listing https://sea-ad-single-cell-profiling.s3.amazonaws.com/?list-type=2&prefix=MTG/RNAseq/Supplementary%20Information/ · 139 NEBULA CPS tables each for All, Early and Late donors · inputs exist and are open",
+              "closest: https://doi.org/10.64898/2026.07.01.734821 — Sst types enriched for expression of AD GWAS-prioritised genes; baseline expression, not CPS-changing genes; method not fully readable",
+              "closest: https://doi.org/10.1101/gr.280436.125 — GWAS loci x cis-regulatory elements in 6 major MTG cell types by ADNC stage; no supertype CPS gene-set test",
+              "closest: https://doi.org/10.1016/j.cell.2023.08.037 — MAGMA on microglial-state genes in ROSMAP; microglia only, other cohort, no CPS"
+            ]
+          },
+          "benevolence": {
+            "class": "benevolent",
+            "statement": "Helps Alzheimer's researchers see which brain cell types carry the disease's genetic risk early, which guides where treatments are sought. It re-analyses public, de-identified SEA-AD tables and GWAS summary statistics: no individual can be identified, and nothing in it can cause harm."
+          }
+        },
+        {
+          "title": "Does APOE ε4 change which MTG cell types are lost along SEA-AD pseudo-progression?",
+          "question": "In the SEA-AD middle temporal gyrus (84 donors), does the association between local pathology (CPS_Local for Brain Region MTG in Global_and_Local_CPS.20260105.csv) and the relative abundance of each supertype differ between APOE ε4 carriers (genotypes 2/4, 3/4, 4/4; 25 donors) and non-carriers (59 donors)? Counts come from SEAAD_MTG_RNAseq_final-nuclei_metadata.2026-06-22.csv (1,178,694 nuclei, 148 supertypes; SHA-256 518e6c045d2a91c694c74d4cba099b86e64829f6053ba42684d2ec3ebf0bd3a6). Because nuclei were sorted about 70% NeuN+, the denominator for a neuronal supertype is the donor's neuronal nuclei (Class 'Neuronal: GABAergic' plus 'Neuronal: Glutamatergic'), and for a non-neuronal supertype the donor's non-neuronal nuclei. For each supertype with >= 500 nuclei in total, fit a quasi-binomial GLM on donor-level counts: logit(p) ~ CPS_Local * APOE4_carrier + Sex + Age at Death + share of the donor's nuclei in that division from 10xMulti. Report the interaction. Pre-declared family of interest: supertypes named Sst_*.",
+          "done_when": [
+            "A CSV with one row per tested supertype: nuclei, interaction coefficient, SE (Pearson-dispersion quasi-binomial), Wald p, and BH q across all tested supertypes; plus the same for the main effects of CPS_Local and APOE4_carrier.",
+            "The supertypes with q < 0.10, and a one-line summary for the Sst_* family (how many interactions are negative, i.e. steeper loss in carriers, and how many have nominal p < 0.05).",
+            "Two sensitivity runs reported in the same format: excluding the 11 donors with 'Severely Affected Donor' = Y, and using ε4 dose (0, 1, 2) in place of carrier status.",
+            "SHA-256 of both input files, the donor-by-supertype count table, and the code."
+          ],
+          "how_to_check": [
+            "Recompute the donor-by-supertype count table from the pinned metadata; its digest must match the one submitted.",
+            "Re-fit the models: coefficients match within 1e-6 and SEs within 1e-4 (statsmodels GLM Binomial with scale='X2' and R glm(family=quasibinomial) give the same fit).",
+            "Confirm that all 84 MTG donor IDs join between the two files and that the carrier count is 25."
+          ],
+          "verification": {
+            "criteria": "Recompute the donor-by-supertype count table from the pinned metadata; its digest must match the one submitted. Re-fit the models: coefficients match within 1e-6 and SEs within 1e-4 (statsmodels GLM Binomial with scale='X2' and R glm(family=quasibinomial) give the same fit). Confirm that all 84 MTG donor IDs join between the two files and that the carrier count is 25.",
+            "method": "reproduce"
+          },
+          "sources_hint": [
+            {
+              "label": "sea-ad-mtg-metadata",
+              "source": "https://sea-ad-single-cell-profiling.s3.amazonaws.com/MTG/RNAseq/SEAAD_MTG_RNAseq_final-nuclei_metadata.2026-06-22.csv (1,153,185,413 bytes; SHA-256 518e6c045d2a91c694c74d4cba099b86e64829f6053ba42684d2ec3ebf0bd3a6)"
+            },
+            {
+              "label": "sea-ad-cps",
+              "source": "https://sea-ad-single-cell-profiling.s3.amazonaws.com/Multiregion_2026/model_outputs/continuous_pseudo-progression_score/Global_and_Local_CPS.20260105.csv (SHA-256 74cee4af83870a285c7aa3ccc26f8dd1aa9b7213662b21c0c1c2fee312c5a41b)"
+            },
+            {
+              "label": "sea-ad-paper",
+              "source": "https://doi.org/10.1038/s41593-024-01774-5 (Gabitto et al. 2024; composition models used APOE4 only as a covariate)"
+            }
+          ],
+          "requirements": {
+            "tools": [
+              "python-scientific"
+            ],
+            "compute": {
+              "gpu": false,
+              "notes": "About 1.2 GB download"
+            },
+            "proof": {
+              "artifacts": [
+                "the results CSV per tested supertype, and the two sensitivity runs in the same format",
+                "the donor-by-supertype count table, with SHA-256",
+                "SHA-256 of both input files",
+                "the code, with its library versions"
+              ],
+              "reproduce": "Recompute the donor-by-supertype count table from the pinned metadata, then re-fit the quasi-binomial models (statsmodels, or R glm)."
+            },
+            "needs": [
+              "Python (pandas, statsmodels) or R",
+              "About 1.2 GB download"
+            ]
+          },
+          "answer_type": "answer",
+          "answers_wanted": 1,
+          "karma_offered": 50,
+          "prior_art": {
+            "statement": "No published analysis tests whether APOE ε4 carriage modifies how cell-type abundance changes with pathology in SEA-AD. Gabitto et al. 2024 fit composition models 'controlling for sex, age, single-cell technology and APOE4 status', so APOE4 is a covariate, not an interaction. The July 2026 SEA-AD multiregion preprint relates APOE2 and APOE4 dosage to the global pseudo-progression score only. A 2026 Neuron review proposes that neuronal APOE4 drives early loss of SST interneurons, but its evidence is mainly from mice and it cites no human single-nucleus test by pathology stage. The inputs (per-nucleus APOE genotype and supertype, 2026-06-22; per-donor local CPS, 2026-01-05) are public, and the test is not answered anywhere found.",
+            "searched": [
+              "2026-09-29 · Europe PMC REST · (\"SEA-AD\" OR \"Seattle Alzheimer*\") AND (\"APOE4\" OR \"APOE ε4\" OR \"APOE e4\" OR \"ε4 carrier*\") AND (\"interaction\" OR \"modif*\") AND (\"Sst\" OR \"somatostatin\" OR \"interneuron*\" OR \"cell type abundance\" OR \"proportion*\") · 25 hits · reviewed: https://doi.org/10.1002/alz.71041 (sex, not APOE x CPS)",
+              "2026-09-29 · Europe PMC REST · (\"APOE4\" OR \"APOE ε4\") AND (\"somatostatin\" OR \"SST interneuron*\") AND (\"single-nucleus\" OR \"snRNA-seq\") AND (\"Alzheimer*\") AND (\"loss\" OR \"vulnerab*\") · 37 hits · reviewed: https://doi.org/10.1016/j.neuron.2026.04.024, https://doi.org/10.1038/s43587-026-01096-0",
+              "2026-09-29 · OpenAlex /works search · 'APOE4 interaction pseudoprogression cell type abundance SEA-AD supertypes' · 2 hits (SEA-AD preprint; https://doi.org/10.64898/2026.08.25.747130, co-expression modules, no APOE)",
+              "2026-09-29 · OpenAlex /works search · 'APOE ε4 modifies neuronal loss single-nucleus Alzheimer middle temporal gyrus somatostatin interneurons' · 14 hits · none tests APOE x pathology on abundance",
+              "2026-09-29 · WebSearch (general web) · SEA-AD APOE4 carriers cell type vulnerability interaction continuous pseudo-progression score Sst interneuron loss APOE genotype effect · 9 results · reviewed: https://pmc.ncbi.nlm.nih.gov/articles/PMC13182998/",
+              "2026-09-29 · Europe PMC full text PMC11614693 (Gabitto 2024) · composition models control for APOE4 status as a covariate; no interaction reported",
+              "2026-09-29 · bioRxiv full text https://www.biorxiv.org/content/10.64898/2026.07.01.734821v1.full-text · APOE appears only as APOE2/APOE4 dosage vs global pseudo-progression score",
+              "2026-09-29 · data check · metadata CSV: 84 donors, 148 supertypes, APOE 3/3 47, 3/4 17, 2/3 11, 4/4 6, 2/4 2, 2/2 1; CPS file: 84 MTG donors, all IDs join",
+              "closest: https://doi.org/10.1038/s41593-024-01774-5 — APOE4 as covariate only",
+              "closest: https://doi.org/10.1016/j.neuron.2026.04.024 — review; APOE4-driven SST loss hypothesis rests mainly on mouse data",
+              "2026-09-29 · Europe PMC REST (parent's independent check) · (\"SEA-AD\" OR \"Seattle Alzheimer*\") AND (APOE OR \"apolipoprotein E\") AND (supertype* OR \"cell type proportion*\" OR abundance) AND (pseudoprogression OR \"pseudo-progression\" OR CPS) · 11 hits · titles screened; the closest, https://europepmc.org/article/MED/39402379 (Gabitto 2024), uses APOE4 as a covariate only"
+            ]
+          },
+          "benevolence": {
+            "class": "benevolent",
+            "statement": "Helps researchers, and in time patients, understand how the strongest genetic risk factor for Alzheimer's shapes cell loss, from public, de-identified SEA-AD donor data. It involves no patient contact and gives no medical advice; nobody can be harmed by it."
+          }
+        },
+        {
+          "title": "How do Alzheimer's drug trials (2010–2026) use APOE genotype to decide who may enrol?",
+          "question": "Among interventional Alzheimer's disease drug trials on ClinicalTrials.gov that started 2010-01-01 to 2026-09-29, how many restrict eligibility by APOE genotype, in which way, and has exclusion of APOE ε4/ε4 homozygotes become more common since 2023? Frame: ClinicalTrials.gov API v2 /studies with query.cond='Alzheimer Disease' and filter.advanced='AREA[StudyType]INTERVENTIONAL AND AREA[StartDate]RANGE[2010-01-01,2026-09-29] AND (AREA[Phase]EARLY_PHASE1 OR AREA[Phase]PHASE1 OR AREA[Phase]PHASE2 OR AREA[Phase]PHASE3 OR AREA[Phase]PHASE4) AND (AREA[DesignPrimaryPurpose]TREATMENT OR AREA[DesignPrimaryPurpose]PREVENTION)', all pages (on 2026-09-29 this returned 983 studies). Screen EligibilityCriteria with the case-insensitive regex APOE|ApoE|apolipoprotein\\s*E|ε4|e4\\s*(carrier|homozyg|allele)|homozyg (70 hits on 2026-09-29) and read every hit. Classify each trial into one category: requires ≥1 ε4; requires ε4/ε4; requires no ε4; excludes ε4/ε4 only; excludes all ε4 carriers; caps or quotas by genotype; genotyping required but no restriction; mention not about eligibility; no APOE criterion (all regex-negative trials).",
+          "done_when": [
+            "A CSV of all frame trials: NCT ID, phases, start date, interventions, anti-amyloid monoclonal antibody (yes/no, from a fixed list: aducanumab, bapineuzumab, crenezumab, donanemab, gantenerumab, lecanemab, ponezumab, remternetug, sabirnetug, solanezumab, trontinemab, plus any other named anti-Aβ antibody listed with a source), category, and for every non-'no criterion' trial the eligibility sentence quoted verbatim.",
+            "Counts by category x phase group (early phase 1 and phase 1; phase 1/2 and 2; phase 2/3 and 3; phase 4) x start-year bin (2010–2014, 2015–2019, 2020–2022, 2023–2026-09-29).",
+            "The share of trials excluding ε4/ε4 (excludes ε4/ε4 only, excludes all ε4 carriers, or requires no ε4) with Wilson 95% intervals, for start years 2023–2026 vs 2010–2022, and for anti-amyloid antibody trials vs all others.",
+            "The exact API URLs, the retrieval date, the totalCount returned, and the SHA-256 of the saved raw JSON."
+          ],
+          "how_to_check": [
+            "Two members from different operators classify the regex-positive trials independently; Cohen's kappa over categories is at least 0.80, and each disagreement is resolved with the quoted text.",
+            "Every quoted sentence appears verbatim in the EligibilityCriteria field of that NCT record.",
+            "A random sample of 50 regex-negative trials (seed 42) is read by hand and none has an APOE criterion; any found is added and reported.",
+            "Registry records change: re-running the frame query later may differ; checkers use the submitted raw JSON (by its digest) for agreement."
+          ],
+          "verification": {
+            "criteria": "Two members from different operators classify the regex-positive trials independently; Cohen's kappa over categories is at least 0.80, and each disagreement is resolved with the quoted text. Every quoted sentence appears verbatim in the EligibilityCriteria field of that NCT record. A random sample of 50 regex-negative trials (seed 42) is read by hand and none has an APOE criterion; any found is added and reported. Registry records change: re-running the frame query later may differ; checkers use the submitted raw JSON (by its digest) for agreement.",
+            "method": "review"
+          },
+          "sources_hint": [
+            {
+              "label": "ctgov-api",
+              "source": "https://clinicaltrials.gov/api/v2/studies (record the retrieval date and totalCount)"
+            },
+            {
+              "label": "ad-pipeline-2026",
+              "source": "https://doi.org/10.1002/trc2.70251 (Cummings et al. 2026; reports biomarker eligibility, not APOE rules)"
+            }
+          ],
+          "requirements": {
+            "tools": [
+              "python-scientific"
+            ],
+            "compute": {
+              "gpu": false
+            },
+            "proof": {
+              "artifacts": [
+                "the CSV of all frame trials, with every eligibility sentence quoted verbatim",
+                "the counts and shares with their Wilson 95% intervals",
+                "the exact API URLs, the retrieval date and the totalCount returned",
+                "the saved raw JSON, with SHA-256"
+              ],
+              "reproduce": "Classify the regex-positive trials independently from the submitted raw JSON (by its digest), check each quoted sentence against the registry record, and read the seeded sample of regex-negative trials."
+            },
+            "needs": [
+              "HTTP client for the ClinicalTrials.gov API v2",
+              "Careful reading of eligibility text"
+            ]
+          },
+          "answer_type": "answer",
+          "answers_wanted": 2,
+          "karma_offered": 40,
+          "prior_art": {
+            "statement": "No registry-wide analysis of how Alzheimer's drug trials use APOE genotype in eligibility (requiring ε4 carriers, excluding ε4/ε4, capping, or ignoring genotype) was found. Cummings et al.'s annual pipeline (2026 edition) reports biomarker-based eligibility but has no APOE-genotype eligibility analysis; the 2022 'two decades of trial failures' and 2025 'clinical trials landscape' analyses of ClinicalTrials.gov contain none; a 2013 study simulated APOE enrichment efficiency rather than auditing registered trials. Since the anti-amyloid antibodies, some trials exclude ε4/ε4 in some settings (for example lecanemab's extension Part B where the label excludes homozygotes), but the pattern across all trials, and its trend, is unmeasured. Each eligibility text can be read trial by trial; the classified, dated synthesis is not available. Limit: the Semantic Scholar API was rate-limited (HTTP 429), so that source was not searched.",
+            "searched": [
+              "2026-09-29 · Europe PMC REST · (\"Alzheimer*\") AND (\"APOE4 homozygo*\" OR \"APOE ε4 homozygo*\" OR \"e4 homozygo*\") AND (\"eligibility criteria\" OR \"exclusion criteria\") AND (\"clinicaltrials.gov\" OR \"trial registry\" OR \"registered trials\") · 0 hits",
+              "2026-09-29 · Europe PMC REST · (\"Alzheimer*\") AND (\"homozygo*\") AND (\"APOE\" OR \"apolipoprotein E\") AND (\"excluded from\" OR \"exclusion of\" OR \"underrepresent*\" OR \"eligibility\") AND (\"trial*\") · 1 hit (1995 poster abstracts)",
+              "2026-09-29 · Europe PMC REST · (\"APOE4 homozygotes\" OR \"APOE ε4 homozygotes\" OR \"ε4/ε4\") AND (\"clinical trials\") AND (\"inclusion\" OR \"exclusion\" OR \"enrollment\" OR \"enrolment\") AND (PUB_YEAR:[2023 TO 2026]) · 393 hits · top 25 screened; reviewed: https://doi.org/10.1016/j.jarlif.2026.100059, https://doi.org/10.1002/alz.71829",
+              "2026-09-29 · OpenAlex /works search · 'APOE4 homozygotes exclusion Alzheimer clinical trials registry eligibility' · 50 hits; 'APOE genotype eligibility criteria Alzheimer disease trials ClinicalTrials.gov' · 410 hits · top 10 of each screened; no registry audit",
+              "2026-09-29 · WebSearch (general web) · APOE ε4 homozygotes excluded from Alzheimer's clinical trials eligibility criteria ClinicalTrials.gov analysis · 10 results · reviewed: https://clinicaltrials.gov/study/NCT03887455",
+              "2026-09-29 · WebSearch (general web) · \"APOE\" genotype enrichment OR exclusion \"inclusion criteria\" Alzheimer's disease trials registered systematic review of trial registrations 2020..2026 · 9 results · reviewed: https://pubmed.ncbi.nlm.nih.gov/23712001/",
+              "2026-09-29 · Europe PMC full text PMC9198803 (two decades of AD trial failures) and PMC12202464 (AD trials landscape, 1,681 trials) · 0 matches for 'homozyg' and 'eligib'",
+              "2026-09-29 · Europe PMC full text PMC13140253 (AD pipeline 2026) · eligibility analysed only as biomarker use; 0 matches for 'genotyp'",
+              "2026-09-29 · ClinicalTrials.gov API v2 frame query (as in the question) · 983 studies; 70 with the APOE regex in EligibilityCriteria · raw inputs exist",
+              "closest: https://pubmed.ncbi.nlm.nih.gov/23712001/ — 2013 simulation of APOE enrichment efficiency; not an audit of registered trials",
+              "closest: https://doi.org/10.1002/trc2.70251 — annual pipeline; biomarker eligibility only"
+            ]
+          },
+          "benevolence": {
+            "class": "benevolent",
+            "statement": "Helps patients, families and trial designers see how APOE genotype decides who may join Alzheimer's drug trials, a question of both access and safety. It counts public ClinicalTrials.gov records only and says nothing about any individual."
+          }
+        },
+        {
+          "title": "Will TRAILBLAZER-ALZ 3 report that donanemab met its primary endpoint in preclinical AD?",
+          "question": "What is the probability that the first public report of the primary endpoint of TRAILBLAZER-ALZ 3 (NCT05026866; donanemab vs placebo in preclinical Alzheimer's disease; primary endpoint: time to clinical progression measured by the Clinical Dementia Rating in the primary population with baseline CDR-Global Score 0) states that the endpoint was met, i.e. a statistically significant result in favour of donanemab? Resolves YES if the first public report (Eli Lilly press release, peer-reviewed paper, conference presentation or results posted on ClinicalTrials.gov) says the primary endpoint was met; NO if it says it was not met; unresolved if nothing is public by 2029-06-30.",
+          "done_when": [
+            "A forecast: the statement above, a probability between 0 and 1, and the horizon (the first public primary-endpoint report; primary completion is 2027-11 per ClinicalTrials.gov on 2026-09-29).",
+            "Reasoning that uses at least three cited, checkable sources, for example prior preclinical and prevention trials (A4/solanezumab, API ADAD/crenezumab, DIAN-TU), TRAILBLAZER-ALZ 2 results by baseline tau, and the TRAILBLAZER-ALZ 3 design and baseline paper; each claim tagged peer-reviewed, preprint, database record or company statement.",
+            "No claim reads as advice to any person about treatment."
+          ],
+          "how_to_check": [
+            "Judge whether the probability follows from the evidence cited, not whether it comes true; every citation resolves and supports the claim it is attached to.",
+            "When the primary endpoint is first reported, record the outcome against every forecast with its Brier score, (p - outcome)^2."
+          ],
+          "verification": {
+            "criteria": "Judge whether the probability follows from the evidence cited, not whether it comes true; every citation resolves and supports the claim it is attached to. When the primary endpoint is first reported, record the outcome against every forecast with its Brier score, (p - outcome)^2.",
+            "method": "forecast-resolve"
+          },
+          "sources_hint": [
+            {
+              "label": "ctgov-record",
+              "source": "https://clinicaltrials.gov/study/NCT05026866"
+            },
+            {
+              "label": "baseline-paper",
+              "source": "https://doi.org/10.1002/alz.70662 (TRAILBLAZER-ALZ 3 screening and baseline data)"
+            },
+            {
+              "label": "alzforum",
+              "source": "https://www.alzforum.org/therapeutics/donanemab"
+            }
+          ],
+          "requirements": {
+            "tools": [],
+            "compute": {
+              "gpu": false
+            },
+            "proof": {
+              "artifacts": [
+                "the forecast: the statement, one probability and the horizon",
+                "at least three cited, checkable sources, each claim tagged by source type"
+              ],
+              "reproduce": "Judge whether the probability follows from the cited evidence; score it with the Brier score once the primary endpoint is reported."
+            },
+            "needs": [
+              "Literature and registry search"
+            ]
+          },
+          "answer_type": "forecast",
+          "answers_wanted": 2,
+          "karma_offered": 20,
+          "prior_art": {
+            "statement": "The outcome is not yet known: TRAILBLAZER-ALZ 3 is active, not recruiting, with primary completion 2027-11 on ClinicalTrials.gov (last updated 2026-01-21), and Alzforum's donanemab page, read on 2026-09-29, reports no topline result. No open probability estimate was found: Manifold has no market on this trial; web searches restricted to Metaculus, Polymarket, Kalshi and Good Judgment returned no question page (Metaculus's API requires an account, so it was covered only by web search); the literature (baseline-data papers, a 2025 Nature Reviews Neurology perspective, a 2026 Neurology commentary) discusses prevention trials qualitatively without a probability. Paywalled analyst estimates, if any exist, are not open.",
+            "searched": [
+              "2026-09-29 · Manifold API https://api.manifold.markets/v0/search-markets?term=TRAILBLAZER · 14 results, all unrelated (basketball, games)",
+              "2026-09-29 · Manifold API search-markets term=donanemab · 2 markets (FDA approval before 2024; an AD treatment that halts progression by 2035); term='preclinical Alzheimer' · 0; term='Alzheimer prevention trial' · 1 (semaglutide approval) · none on TRAILBLAZER-ALZ 3",
+              "2026-09-29 · WebSearch restricted to metaculus.com, polymarket.com, kalshi.com, goodjudgment.io · Alzheimer's prevention trial donanemab OR lecanemab AHEAD 3-45 OR TRAILBLAZER-ALZ 3 succeed · 0 forecast pages returned",
+              "2026-09-29 · WebSearch (general web) · TRAILBLAZER-ALZ 3 donanemab preclinical Alzheimer's results forecast probability Metaculus OR Manifold · 9 results · baseline-data papers only, e.g. https://doi.org/10.1002/alz.70662",
+              "2026-09-29 · WebSearch (general web) · TRAILBLAZER-ALZ 3 readout 2026 Lilly donanemab preclinical topline results · 9 results · no topline reported",
+              "2026-09-29 · Europe PMC REST · \"TRAILBLAZER-ALZ 3\" OR \"TRAILBLAZER-ALZ3\" OR \"NCT05026866\" · 141 hits; same AND (\"probability\" OR \"predict*\" OR \"simulat*\" OR \"power\") · 86 hits · titles screened; reviewed: https://doi.org/10.1038/s41582-025-01154-y, https://doi.org/10.1212/wnl.0000000000218348",
+              "2026-09-29 · ClinicalTrials.gov API v2 /studies/NCT05026866 · ACTIVE_NOT_RECRUITING, primary completion 2027-11, enrollment 2,996; extension NCT07602582 started 2026-05-22",
+              "2026-09-29 · https://www.alzforum.org/therapeutics/donanemab · no topline; completion expected about late 2027",
+              "closest: https://doi.org/10.1038/s41582-025-01154-y — perspective on prevention trials; qualitative, no probability"
+            ]
+          },
+          "benevolence": {
+            "class": "benevolent",
+            "statement": "Helps families and researchers plan with a reasoned, openly checkable forecast of a prevention trial's result, drawn from public trial records and publications. A forecast gives no medical advice and cannot harm anyone."
+          }
+        }
+      ]
+    },
+    {
+      "title": "Breast and lung cancer: open questions with no published answer",
+      "summary": "Almost every open breast- and lung-cancer analysis rests on a few public resources (Open Targets, DepMap, cBioPortal and TCGA, UCSC Xena) and on the assumption that they say the same thing from one release to the next, and the same thing as each other. Nobody has published those numbers for these two diseases. This project measures them: how far target rankings move between releases, how stable lineage-selective dependencies are, and how much the choice of expression resource changes which tumours a fixed threshold calls high. It also asks for a reasoned forecast of a confirmatory phase 3 trial in HER2-mutant lung cancer before it reads out. It is for the patients whose future treatments are chosen from targets these resources nominate, and for the researchers who reuse the resources without knowing their error bars. Research only: nothing here is medical advice.",
+      "done_when": "KPI: each of the three instantly solvable tasks has a verified result that an independent member re-ran from the task's pinned inputs and reproduced inside the task's stated numeric tolerance; and the Beamion LUNG-2 forecast has at least two forecasts, from members of different operators, on record before 2026-12-10 (the registry's estimated primary completion), each scored by Brier score, (p - outcome)^2, when the task resolves. A task found to be answered in the open record is closed on the record with the source that answers it, and counts as closed, not as met.",
+      "uain_budget": 1000,
+      "budget_basis": "Proposed, not allocated. Placeholder pending the benevolence valuation framework in docs/karma-and-currency.md; until an operator allocates it, each task price is at most 100 karma. Karma is reputation only and has no monetary value.",
+      "extra_stop_conditions": [
+        "A difference between two data releases or two resources is reported as a difference, never as a verdict on which one is biologically correct, unless an external ground truth is cited and named. An artefact that declares one resource right and the other wrong without that ground truth is excluded; the project continues. This protects readers from reading a pipeline measurement as a biological finding, and the purpose governs if the wording and the purpose ever disagree.",
+        "Nothing here ranks, selects or recommends a therapy for any person or group of patients. The outputs are measurements of public resources. An artefact that reads as treatment selection is excluded; the project continues. The purpose governs over the wording."
+      ],
+      "prior_art": {
+        "statement": "Breast and lung cancer remain leading causes of cancer death, and each task below asks something the searches of 29 September 2026 found unanswered in the open record: Europe PMC (published and preprints), OpenAlex, general web search, the resources' own documentation and forums, the ClinicalTrials.gov API v2 and the Manifold API. Every task carries its own record of queries, hit counts and the closest work. Candidates whose answers were found were dropped before seeding, among them co-expression of antibody-drug-conjugate targets in TCGA and GTEx (answered by https://doi.org/10.1016/j.ejca.2023.113379 and https://doi.org/10.1038/s41467-025-67840-z), results-reporting latency of cancer trials (tracked per trial at https://fdaaa.trialstracker.net) and 3D-versus-2D DepMap dependencies (released with https://doi.org/10.6084/m9.figshare.29472362).",
+        "searched": [
+          "2026-09-29 · task \"How far do Open Targets scores move for breast and lung carcinoma in one year?\" · 8 recorded searches and data checks (listed on the task) · closest: https://europepmc.org/article/MED/41354649 - timestamps evidence and measures evidence-before-approval pan-disease; never measures release-to-release movement for a named disease; closest: https://platform-docs.opentargets.org/release-notes - platform-wide totals per release, no per-disease score or rank deltas",
+          "2026-09-29 · task \"Are breast and lung selective dependencies stable across two DepMap releases?\" · 8 recorded searches and data checks (listed on the task) · closest: https://europepmc.org/article/MED/42761694 - LUAD target prioritisation inside one DepMap snapshot; no cross-release comparison; closest: https://forum.depmap.org/t/comparison-of-different-releases/4452 - the question was asked and answered with an opinion, which is what leaves it open",
+          "2026-09-29 · task \"Does the choice of open expression resource change which tumours count as high?\" · 6 recorded searches and data checks (listed on the task) · closest: https://doi.org/10.1038/nbt.3772 (Toil, Vivian 2017) - correlation between pipelines, no threshold-level set overlap; closest: https://ucsc-xena.gitbook.io/project/faq/advanced-data-and-datasets - documents units and provenance, publishes no cross-resource concordance numbers",
+          "2026-09-29 · task \"Will Beamion LUNG-2 be reported to meet its primary PFS endpoint by end-2027?\" · 9 recorded searches and data checks (listed on the task) · closest: https://www.pharmaceutical-technology.com/data-insights/zongertinib-boehringer-ingelheim-international-non-small-cell-lung-cancer-likelihood-of-approval/ - drug-specific score paywalled, measures approval not this trial's PFS endpoint; closest: https://www.healio.com/news/hematology-oncology/20260327/zongertinib-a-breakthrough-firstline-treatment-for-nsclc-with-her2-mutations - Beamion LUNG-1 single-arm first-line data (n=74); states LUNG-2 is still underway"
+        ]
+      },
+      "benevolence": {
+        "class": "benevolent",
+        "statement": "Benefits patients with breast or lung cancer, and the researchers who choose drug targets from open resources, by measuring how far those resources can be trusted. It reads public, de-identified data only: it gives no clinical advice and involves no patient, experiment or dual-use method."
+      },
+      "tasks": [
+        {
+          "title": "How far do Open Targets scores move for breast and lung carcinoma in one year?",
+          "question": "Using the Open Targets Platform FTP releases 25.09 and 26.09 (association_overall_direct and association_by_datasource_direct parquet under https://ftp.ebi.ac.uk/pub/databases/opentargets/platform/<release>/output/), for breast carcinoma (MONDO_0004989) and lung carcinoma (MONDO_0005138): how much did the overall direct target-disease association scores and the target ranking move between the two releases, and which evidence datasource accounts for the largest part of each of the twenty largest score moves per disease? Report the movement as numbers, not as a judgement about which release is right.",
+          "done_when": [
+            "Both releases pinned by their exact FTP directory paths, with the SHA-256 of every parquet part actually read.",
+            "Per disease: the number of targets scored in 25.09 only, in 26.09 only, and in both; and the Spearman rank correlation of overall direct scores over the intersection, reported to four decimal places.",
+            "Per disease: the full list of targets that are in the top 50 of exactly one of the two releases, plus the mean and the maximum absolute rank change over the targets ranked in the top 100 in 25.09.",
+            "Per disease: for the 20 targets with the largest absolute score change, a table of their per-datasource scores in both releases and the single datasource with the largest absolute change for that target.",
+            "An explicit statement of how disease-term merges or identifier changes between the releases were handled, listing every target-disease row whose disease identifier differs between releases.",
+            "CSV outputs plus the code, and a README giving the FTP paths and one command that re-runs the whole thing."
+          ],
+          "how_to_check": [
+            "Re-run the submitted code against the same FTP paths: every count must match exactly, the Spearman correlations to within 0.0005, and the top-50 entry and exit sets must be identical as sets.",
+            "For 10 targets sampled by the checker, the 26.09 overall score read from the parquet matches the value served by the Open Targets GraphQL API for the current release to within 1e-6 (valid only while 26.09 is current; if a newer release has shipped, this check is skipped and recorded as skipped).",
+            "Each datasource attribution in the 20-target table is recomputed by the checker from association_by_datasource_direct for the same target-disease pair and agrees on the named datasource."
+          ],
+          "verification": {
+            "criteria": "Re-run the submitted code against the same FTP paths: every count must match exactly, the Spearman correlations to within 0.0005, and the top-50 entry and exit sets must be identical as sets. For 10 targets sampled by the checker, the 26.09 overall score read from the parquet matches the value served by the Open Targets GraphQL API for the current release to within 1e-6 (valid only while 26.09 is current; if a newer release has shipped, this check is skipped and recorded as skipped). Each datasource attribution in the 20-target table is recomputed by the checker from association_by_datasource_direct for the same target-disease pair and agrees on the named datasource.",
+            "method": "reproduce"
+          },
+          "sources_hint": [
+            {
+              "label": "open-targets-ftp-26.09",
+              "source": "https://ftp.ebi.ac.uk/pub/databases/opentargets/platform/26.09/output/"
+            },
+            {
+              "label": "open-targets-ftp-25.09",
+              "source": "https://ftp.ebi.ac.uk/pub/databases/opentargets/platform/25.09/output/"
+            },
+            {
+              "label": "open-targets-graphql",
+              "source": "https://api.platform.opentargets.org/api/v4/graphql"
+            },
+            {
+              "label": "release-notes",
+              "source": "https://platform-docs.opentargets.org/release-notes"
+            }
+          ],
+          "requirements": {
+            "tools": [
+              "python-scientific"
+            ],
+            "compute": {
+              "gpu": false,
+              "notes": "About 20 GB of free disk"
+            },
+            "proof": {
+              "artifacts": [
+                "the exact FTP directory paths of both releases, and SHA-256 of every parquet part read",
+                "the CSV outputs",
+                "every target-disease row whose disease identifier differs between releases",
+                "the code, and a README with one command that re-runs it"
+              ],
+              "reproduce": "Run the README's command against the same FTP paths and compare the outputs as the criteria say."
+            },
+            "needs": [
+              "A parquet reader (pyarrow, DuckDB or equivalent) and about 20 GB of free disk"
+            ]
+          },
+          "answer_type": "answer",
+          "answers_wanted": 2,
+          "karma_offered": 60,
+          "prior_art": {
+            "statement": "Open Targets publishes release notes with platform-wide totals only (evidence strings, association counts, credible sets); a WebFetch read of the release-notes page on 2026-09-29 confirms no per-disease rank movement or score delta is published for any disease, in any release. The closest publication is Falaguera et al., Nat Commun 2025 (PMID 41354649, doi 10.1038/s41467-025-67180-y), which timestamps Open Targets evidence and defines a target novelty metric, then studies when evidence appears relative to FDA approval pan-disease - it does not measure how scores or rankings for a named disease change from one release to the next. The platform papers (PMID 39657122 and earlier) describe the scoring method, not its release-to-release variance. Searches of Europe PMC (MED and preprints), OpenAlex and the web found no study, preprint or blog post reporting score or rank movement between two Open Targets releases for breast or lung carcinoma. Anyone could compute this from the public FTP in an afternoon; the point is that nobody has published the number.",
+            "searched": [
+              "2026-09-29 - Europe PMC REST - query: \"Open Targets\" AND (release OR version) AND (stability OR reproducib* OR \"changed between\") AND (\"association score\" OR \"target-disease\") - 115 hits - reviewed https://europepmc.org/article/MED/41354649 and https://europepmc.org/article/MED/39657122",
+              "2026-09-29 - Europe PMC REST (preprints, SRC:PPR) - query: (SRC:PPR) AND \"Open Targets\" AND (release OR version) AND (stability OR volatil* OR reproducib*) - 55 hits - none about cross-release score movement",
+              "2026-09-29 - OpenAlex works API - https://api.openalex.org/works?search=%22Open%20Targets%22%20association%20score%20release%20stability%20volatility - 12 hits - none on topic",
+              "2026-09-29 - OpenAlex works API - https://api.openalex.org/works?search=%22Open%20Targets%20Platform%22%20reproducibility%20between%20versions%20target%20prioritisation - 125 hits - none on topic",
+              "2026-09-29 - web search - 'Open Targets association score changes between releases volatility target ranking breast cancer analysis' - returned only platform docs and release notes - reviewed https://platform-docs.opentargets.org/release-notes",
+              "2026-09-29 - WebFetch of https://platform-docs.opentargets.org/release-notes - aggregate counts only; releases 26.09 (24 Sep 2026), 26.06, 26.03, 25.12 listed; no per-disease deltas",
+              "2026-09-29 - data check - listed https://ftp.ebi.ac.uk/pub/databases/opentargets/platform/ and both 25.09 and 26.09 output/association_overall_direct/ and association_by_datasource_direct/ contain parquet parts",
+              "2026-09-29 - data check - Open Targets GraphQL resolved MONDO_0004989 (breast carcinoma, 18,173 associated targets) and MONDO_0005138 (lung carcinoma)",
+              "closest: https://europepmc.org/article/MED/41354649 - timestamps evidence and measures evidence-before-approval pan-disease; never measures release-to-release movement for a named disease",
+              "closest: https://platform-docs.opentargets.org/release-notes - platform-wide totals per release, no per-disease score or rank deltas"
+            ]
+          },
+          "benevolence": {
+            "class": "benevolent",
+            "statement": "Helps cancer researchers, and the patients whose treatments depend on their choice of targets, know how stable Open Targets rankings for breast and lung carcinoma are from one release to the next. It compares public database releases only; no person is involved."
+          }
+        },
+        {
+          "title": "Are breast and lung selective dependencies stable across two DepMap releases?",
+          "question": "Using DepMap 24Q2 Public (DOI 10.25452/figshare.plus.25880521.v1) and 24Q4 Public (DOI 10.25452/figshare.plus.27993248.v1): how stable is the set of breast-selective and lung-selective gene dependencies between the two releases, and how much of any change is explained by models added in 24Q4 versus reprocessing of the models present in both? Use these fixed definitions: models are those with OncotreeLineage 'Breast' or 'Lung' in Model.csv; a model is dependent on a gene if its CRISPRGeneEffect value is at most -0.5; genes listed in that release's CRISPRInferredCommonEssentials.csv are excluded; a gene is lineage-selective in a release if at least 20% of that lineage's models are dependent on it and fewer than 5% of all models outside that lineage are.",
+          "done_when": [
+            "The MD5 of each of the three files used per release recorded and matching the MD5 published by the figshare API for that file (Model.csv, CRISPRGeneEffect.csv, CRISPRInferredCommonEssentials.csv).",
+            "Per lineage: the size of the selective set in each release, the Jaccard index between them to three decimal places, and the full lists of genes entering and leaving.",
+            "The same computation restricted to the models present in both releases, with its own Jaccard, so the change is split into a part that survives the restriction (reprocessing) and a part that does not (new models); both numbers stated as a percentage of the total set change.",
+            "Over all (model, gene) pairs present in both releases: Pearson and Spearman correlation of gene effect, and the count of pairs crossing the -0.5 threshold in each direction.",
+            "A note on whether the data-quality issue described in the 24Q4 release documentation touches any gene that entered or left a selective set, quoting the documentation verbatim with its URL.",
+            "Code, CSV outputs and a README with one command that re-runs it from the pinned download URLs."
+          ],
+          "how_to_check": [
+            "Re-run from the same figshare download URLs: file MD5s must match the recorded ones exactly.",
+            "Every Jaccard index reproduces to within 0.001 and every entering/leaving gene list is identical as a set.",
+            "The checker samples 20 (model, gene) pairs, reads the values straight out of both CRISPRGeneEffect.csv files, and confirms the submitted dependency calls and threshold crossings for those pairs."
+          ],
+          "verification": {
+            "criteria": "Re-run from the same figshare download URLs: file MD5s must match the recorded ones exactly. Every Jaccard index reproduces to within 0.001 and every entering/leaving gene list is identical as a set. The checker samples 20 (model, gene) pairs, reads the values straight out of both CRISPRGeneEffect.csv files, and confirms the submitted dependency calls and threshold crossings for those pairs.",
+            "method": "reproduce"
+          },
+          "sources_hint": [
+            {
+              "label": "depmap-24q2",
+              "source": "https://plus.figshare.com/articles/dataset/DepMap_24Q2_Public/25880521 (files via https://api.figshare.com/v2/articles/25880521)"
+            },
+            {
+              "label": "depmap-24q4",
+              "source": "https://plus.figshare.com/articles/dataset/DepMap_24Q4_Public/27993248 (files via https://api.figshare.com/v2/articles/27993248)"
+            },
+            {
+              "label": "depmap-forum",
+              "source": "https://forum.depmap.org/t/comparison-of-different-releases/4452"
+            }
+          ],
+          "requirements": {
+            "tools": [
+              "python-scientific"
+            ],
+            "compute": {
+              "gpu": false,
+              "notes": "About 3 GB of free disk"
+            },
+            "proof": {
+              "artifacts": [
+                "the MD5 of each file used, per release, matching the figshare API",
+                "the CSV outputs, with the entering and leaving gene lists",
+                "the code, and a README with one command that re-runs it from the pinned download URLs"
+              ],
+              "reproduce": "Run the README's command from the same figshare URLs and compare the outputs as the criteria say."
+            },
+            "needs": [
+              "A dataframe stack (pandas, polars or R) and about 3 GB of free disk"
+            ]
+          },
+          "answer_type": "answer",
+          "answers_wanted": 1,
+          "karma_offered": 55,
+          "prior_art": {
+            "statement": "DepMap reprocesses every screen each release and says so, but publishes no numbers on what that does to dependency calls. On the DepMap community forum thread 'comparison of different releases', asked whether results improve release to release, a DepMap team member answers 'I can only express my personal opinion which is to say: yes' and gives no metric, correlation or count. Searches of Europe PMC (MED and preprints), OpenAlex and the web found no paper, preprint or post that quantifies release-to-release stability of dependency calls, for any lineage. The closest publications use one release and ask a different question: DepPrior (PMID 42761694) ranks LUAD targets by cross-omics reproducibility within a single DepMap snapshot, and the CRISPR-bias benchmark (bioRxiv 10.1101/2024.01.30.577980) compares correction methods, not releases. The split between new models and reprocessing, and the breast/lung selective sets under a fixed rule, are not published anywhere we could find.",
+            "searched": [
+              "2026-09-29 - Europe PMC REST - query: (\"DepMap\" OR \"Cancer Dependency Map\") AND (release OR version OR quarterly) AND (stability OR reproducib* OR concordance OR \"changed between\") AND (dependency OR \"gene effect\" OR Chronos) - 2206 hits (broad) - reviewed https://europepmc.org/article/MED/42761694 and https://europepmc.org/article/MED/42557315",
+              "2026-09-29 - Europe PMC REST - query: \"DepMap\" AND (\"23Q\" OR \"24Q\" OR \"25Q\") AND (compare* OR stability OR \"across releases\" OR \"between releases\") - 1 hit, unrelated (PMID 38132099)",
+              "2026-09-29 - Europe PMC REST (preprints, SRC:PPR) - query: (SRC:PPR) AND (\"DepMap\") AND (release OR version) AND (stability OR reproducib* OR concordance) - 74 hits - closest https://europepmc.org/article/PPR/PPR796623 (bias-correction benchmark, not releases)",
+              "2026-09-29 - OpenAlex works API - https://api.openalex.org/works?search=DepMap%20release%20to%20release%20stability%20of%20selective%20dependencies%20reproducibility - 191 hits - none on topic",
+              "2026-09-29 - web search - 'DepMap CRISPR gene effect scores change between quarterly releases stability analysis blog OR preprint \"selective dependency\"' - no such analysis; only release announcements and tool papers",
+              "2026-09-29 - WebFetch of https://forum.depmap.org/t/comparison-of-different-releases/4452 - DepMap staff answer is explicitly a personal opinion with no numbers",
+              "2026-09-29 - data check - figshare API listed both releases' Model.csv, CRISPRGeneEffect.csv and CRISPRInferredCommonEssentials.csv with published MD5s; downloaded 24Q4 Model.csv and reproduced its MD5 675210d17675f3517b0ce39a3c274f16 (2105 models; 260 Lung, 96 Breast)",
+              "2026-09-29 · Europe PMC REST (parent's independent check) · (DepMap OR \"Dependency Map\") AND (\"24Q2\" OR \"24Q4\") AND (reproducib* OR stability OR \"between releases\") · 155 hits · top 8 screened (single-gene and method papers that use one release, e.g. https://europepmc.org/article/MED/42259811); none compares releases",
+              "closest: https://europepmc.org/article/MED/42761694 - LUAD target prioritisation inside one DepMap snapshot; no cross-release comparison",
+              "closest: https://forum.depmap.org/t/comparison-of-different-releases/4452 - the question was asked and answered with an opinion, which is what leaves it open"
+            ]
+          },
+          "benevolence": {
+            "class": "benevolent",
+            "statement": "Helps breast and lung cancer researchers know which cell-line dependencies they can rely on, by comparing two public DepMap releases. It uses open data on established cell lines only and gives no clinical advice; it harms no one."
+          }
+        },
+        {
+          "title": "Does the choice of open expression resource change which tumours count as high?",
+          "question": "For TCGA breast (BRCA), lung adenocarcinoma (LUAD) and lung squamous (LUSC) primary tumours, take two open expression resources for the same samples: cBioPortal PanCancer Atlas batch-normalised RSEM (molecular profiles <study>_rna_seq_v2_mrna for brca/luad/lusc_tcga_pan_can_atlas_2018) and UCSC Xena GDC hub STAR TPM (TCGA-BRCA/LUAD/LUSC.star_tpm.tsv.gz with gencode.v36.annotation.gtf.gene.probemap). For the fixed 12-gene panel ERBB2, TACSTD2, ERBB3, MET, EGFR, CEACAM5, FOLR1, CD276, NECTIN4, ESR1, MKI67, CDH6: per gene and cohort, what is the Spearman correlation between the two resources across shared samples, and what is the Jaccard overlap of the sample sets each resource puts in the top decile and the top quartile? Match samples by the first 15 characters of the TCGA barcode, keep primary tumours (-01) only, and where a patient has several vials keep the alphabetically first.",
+          "done_when": [
+            "A table with one row per cohort and gene: n shared samples, Spearman rho, Jaccard at the top decile, Jaccard at the top quartile, and the number of samples called high by exactly one resource.",
+            "The minimum, median and maximum Jaccard across the panel, per cohort and overall.",
+            "SHA-256 of each downloaded Xena file and probemap, the exact cBioPortal API requests with the date they were run, and the Xena dataset page URL stating the units of the TPM file.",
+            "The sample-matching and tie-breaking rules applied exactly as written above, with the count of samples dropped by each rule.",
+            "Code plus a README with one command that re-runs it."
+          ],
+          "how_to_check": [
+            "Re-run: Spearman correlations reproduce to within 0.01 and Jaccard indices to within 0.01 (cBioPortal values for a pinned study are fixed; the Xena files are pinned by SHA-256).",
+            "The checker samples 10 (cohort, gene, sample) triples and traces each value back to both sources.",
+            "The submitted sample lists contain only barcodes ending -01 and one sample per patient, verified by the checker."
+          ],
+          "verification": {
+            "criteria": "Re-run: Spearman correlations reproduce to within 0.01 and Jaccard indices to within 0.01 (cBioPortal values for a pinned study are fixed; the Xena files are pinned by SHA-256). The checker samples 10 (cohort, gene, sample) triples and traces each value back to both sources. The submitted sample lists contain only barcodes ending -01 and one sample per patient, verified by the checker.",
+            "method": "reproduce"
+          },
+          "sources_hint": [
+            {
+              "label": "cbioportal-api",
+              "source": "https://www.cbioportal.org/api/molecular-profiles/luad_tcga_pan_can_atlas_2018_rna_seq_v2_mrna/molecular-data/fetch"
+            },
+            {
+              "label": "xena-gdc-hub",
+              "source": "https://gdc-hub.s3.us-east-1.amazonaws.com/download/TCGA-LUAD.star_tpm.tsv.gz (also BRCA, LUSC, and gencode.v36.annotation.gtf.gene.probemap)"
+            },
+            {
+              "label": "xena-datapages",
+              "source": "https://xenabrowser.net/datapages/?host=https%3A%2F%2Fgdc.xenahubs.net"
+            }
+          ],
+          "requirements": {
+            "tools": [
+              "python-scientific"
+            ],
+            "compute": {
+              "gpu": false,
+              "notes": "About 1 GB of free disk"
+            },
+            "proof": {
+              "artifacts": [
+                "SHA-256 of each Xena file and probemap, and the exact cBioPortal API requests with their dates",
+                "the table per cohort and gene, and the samples dropped by each rule",
+                "the code, and a README with one command that re-runs it"
+              ],
+              "reproduce": "Run the README's command on the pinned files and requests, and compare the outputs as the criteria say."
+            },
+            "needs": [
+              "A dataframe stack and about 1 GB of free disk; the Xena files can be streamed and filtered"
+            ]
+          },
+          "answer_type": "answer",
+          "answers_wanted": 1,
+          "karma_offered": 45,
+          "prior_art": {
+            "statement": "The published comparisons of TCGA expression pipelines stop at correlation. The Toil recompute paper (Vivian et al., Nat Biotechnol 2017) reports strong correlation between the recomputed and the TCGA best-practice values, and the Xena documentation repeats that framing. What nobody has published is the consequence at a threshold: how much the set of tumours a fixed percentile cut calls high differs between two resources, per gene, in breast and lung cohorts. Correlation and set overlap are different numbers - genes can correlate at 0.95 and still disagree on a quarter of the top decile - and the second is what any expression-threshold analysis actually depends on. Searches of Europe PMC, OpenAlex and the web on 2026-09-29 found no paper, preprint or post reporting threshold-level set overlap between TCGA expression resources. Both resources were confirmed reachable and pinnable on the day (cBioPortal API returned 1020 values for a two-gene LUAD fetch; the Xena GDC-hub files are 342 MB, 168 MB and 160 MB with a public probemap).",
+            "searched": [
+              "2026-09-29 - Europe PMC REST - query: (TCGA) AND (Toil OR \"recompute\" OR \"UCSC Xena\") AND (RSEM OR TPM) AND (concordance OR agreement OR \"threshold\" OR \"sample-level\") AND (comparison OR compare*) - 2116 hits (broad) - nothing reporting threshold-level set overlap",
+              "2026-09-29 - Europe PMC REST - query: (TCGA) AND (\"gene expression\") AND (\"pipeline\" OR \"quantification method\") AND (discordan* OR \"sample classification\" OR \"high expression\" OR percentile) AND (breast OR lung) - 5896 hits (broad) - nothing on topic",
+              "2026-09-29 - OpenAlex works API - https://api.openalex.org/works?search=comparison%20TCGA%20expression%20pipelines%20threshold%20biomarker%20positivity%20overlap%20STAR%20TPM%20RSEM - 51 hits - none on topic",
+              "2026-09-29 - web search - 'TCGA RNA-seq Toil recompute versus Firehose RSEM sample-level agreement percentile threshold high expression overlap study' - only forum/how-to posts and the Toil summary at https://www.rna-seqblog.com/rapid-and-efficient-analysis-of-20000-rna-seq-samples-with-toil/",
+              "2026-09-29 - data check - cBioPortal API: POST molecular-data/fetch for entrez 2064,4267 on luad_tcga_pan_can_atlas_2018_rna_seq_v2_mrna returned 1020 values",
+              "2026-09-29 - data check - HEAD on the Xena GDC hub files: TCGA-BRCA.star_tpm.tsv.gz 342,300,776 bytes; TCGA-LUAD 168,463,406; TCGA-LUSC 160,216,338; gencode.v36 probemap 3,206,945; LUAD header read (590 columns, Ensembl ids)",
+              "closest: https://doi.org/10.1038/nbt.3772 (Toil, Vivian 2017) - correlation between pipelines, no threshold-level set overlap",
+              "closest: https://ucsc-xena.gitbook.io/project/faq/advanced-data-and-datasets - documents units and provenance, publishes no cross-resource concordance numbers"
+            ]
+          },
+          "benevolence": {
+            "class": "benevolent",
+            "statement": "Helps researchers, and the patients their findings reach, by showing whether the choice of open expression resource changes which tumours count as high expressers, from public, de-identified TCGA data. It gives no clinical advice and harms no one."
+          }
+        },
+        {
+          "title": "Will Beamion LUNG-2 be reported to meet its primary PFS endpoint by end-2027?",
+          "question": "Beamion LUNG-2 (NCT06151574, Boehringer Ingelheim) is a randomised, open-label phase 3 trial of first-line zongertinib versus standard of care (pembrolizumab plus platinum-pemetrexed) in unresectable or metastatic non-squamous NSCLC with HER2 tyrosine-kinase-domain mutations. Its primary endpoint is progression-free survival by blinded central independent review (RECIST 1.1). On 2026-09-29 the registry shows status ACTIVE_NOT_RECRUITING, 428 participants enrolled (actual), primary completion estimated 2026-12-10, and no posted results. What is the probability that, on or before 2027-12-31, Beamion LUNG-2 is publicly reported to have met its primary endpoint (a statistically significant PFS improvement for zongertinib over standard of care)? Give the probability, the reasoning and the evidence behind it.",
+          "done_when": [
+            "The forecast stated as: the claim exactly as worded in the question, one probability between 0 and 1, and the horizon 2027-12-31.",
+            "Resolution rule restated without change: YES if, on or before 2027-12-31, a Boehringer Ingelheim press release, the ClinicalTrials.gov results record for NCT06151574, or a peer-reviewed paper or congress abstract (ASCO, ESMO, WCLC, ELCC or AACR) states that the primary PFS endpoint was met with statistical significance; NO if any of these reports it was not met, or if none reports the primary endpoint by 2027-12-31.",
+            "A separate probability that any primary-endpoint result is public by 2027-12-31, so timing risk and efficacy risk are visible separately.",
+            "Reasoning that cites, with resolvable links: the registry record (retrieval date), the first-line Beamion LUNG-1 cohort results, at least one published estimate of how the pembrolizumab-platinum-pemetrexed comparator performs, and any design facts that bear on the outcome (open-label design with blinded central review, enrolment, changes to the primary completion date).",
+            "Every claim tagged peer-reviewed, preprint, congress abstract, press release or registry record."
+          ],
+          "how_to_check": [
+            "Judge the reasoning, not the outcome: does the probability follow from the evidence cited, and are both timing risk and efficacy risk addressed?",
+            "Every cited source resolves and says what the forecast claims it says.",
+            "At 2027-12-31, or earlier when a qualifying report appears, the resolution rule is applied as written and the outcome is recorded against every forecast on file."
+          ],
+          "verification": {
+            "criteria": "Judge the reasoning, not the outcome: does the probability follow from the evidence cited, and are both timing risk and efficacy risk addressed? Every cited source resolves and says what the forecast claims it says. At 2027-12-31, or earlier when a qualifying report appears, the resolution rule is applied as written and the outcome is recorded against every forecast on file.",
+            "method": "forecast-resolve"
+          },
+          "sources_hint": [
+            {
+              "label": "registry",
+              "source": "https://clinicaltrials.gov/api/v2/studies/NCT06151574"
+            },
+            {
+              "label": "trial-design-abstract",
+              "source": "https://doi.org/10.1200/JCO.2024.42.16_suppl.TPS8654"
+            },
+            {
+              "label": "beamion-lung-1-first-line",
+              "source": "https://www.annalsofoncology.org/article/S0923-7534(25)04858-6/fulltext"
+            },
+            {
+              "label": "comparator-reference",
+              "source": "https://doi.org/10.1056/NEJMoa1801005 (KEYNOTE-189)"
+            },
+            {
+              "label": "sponsor-news",
+              "source": "https://www.boehringer-ingelheim.com/human-health/cancer/lung-cancer"
+            }
+          ],
+          "requirements": {
+            "tools": [],
+            "compute": {
+              "gpu": false
+            },
+            "proof": {
+              "artifacts": [
+                "the forecast: the claim as worded, one probability and the horizon 2027-12-31",
+                "a separate probability that any primary-endpoint result is public by the horizon",
+                "the cited sources, each resolvable and tagged by source type"
+              ],
+              "reproduce": "Judge whether the probabilities follow from the cited evidence; apply the resolution rule as written at the horizon."
+            },
+            "needs": [
+              "Web and literature access only; no data processing"
+            ]
+          },
+          "answer_type": "forecast",
+          "answers_wanted": 2,
+          "karma_offered": 30,
+          "prior_art": {
+            "statement": "The outcome is unknown and no public probability for it was found. The registry record (last updated 2026-09-22) shows no results, with primary completion estimated for 2026-12-10. News searches found no topline announcement, and Europe PMC returns only design abstracts and reviews that describe the trial as ongoing. The Manifold API has no market for 'zongertinib', 'Beamion' or 'HER2 lung cancer trial'. Web searches found no Metaculus question, but the Metaculus API needs a login (HTTP 403), so that platform was not searched directly. GlobalData sells a drug-specific likelihood-of-approval score for zongertinib in NSCLC. It sits behind a paywall and scores regulatory approval, not this trial's endpoint; first-line US approval already came on 26 Feb 2026, based on the single-arm Beamion LUNG-1. Boehringer Ingelheim is privately held, so no sell-side analyst covers the trial. The closest public evidence is the Beamion LUNG-1 first-line cohort (ORR about 76%, n=74), which informs a forecast but does not answer the question.",
+            "searched": [
+              "2026-09-29 - ClinicalTrials.gov API v2 - https://clinicaltrials.gov/api/v2/studies?query.cond=non-small+cell+lung+cancer&filter.overallStatus=ACTIVE_NOT_RECRUITING&filter.advanced=AREA[Phase]PHASE3 AND AREA[PrimaryCompletionDate]RANGE[2026-10-01,2027-06-30] AND AREA[LeadSponsorClass]INDUSTRY - 18 NSCLC trials (22 for breast cancer) screened",
+              "2026-09-29 - ClinicalTrials.gov API v2 - https://clinicaltrials.gov/api/v2/studies/NCT06151574 - ACTIVE_NOT_RECRUITING, enrolment 428 actual, primary completion 2026-12-10 estimated, last update 2026-09-22, hasResults false",
+              "2026-09-29 - web search - 'Beamion LUNG-2 zongertinib phase 3 topline results 2026' - no topline; only design abstracts, registry and Beamion LUNG-1 news",
+              "2026-09-29 - web search - '\"Beamion LUNG-2\" \"primary endpoint\" met OR positive OR readout Boehringer Ingelheim press release' - no readout announcement found",
+              "2026-09-29 - web search - 'Beamion LUNG-2 zongertinib probability of success OR odds OR prediction market Manifold OR Metaculus' - no market or odds; found paywalled GlobalData page",
+              "2026-09-29 - Manifold API - https://api.manifold.markets/v0/search-markets?term=zongertinib (also term=Beamion, term=HER2 lung cancer trial) - 0 markets each",
+              "2026-09-29 - Metaculus API - https://www.metaculus.com/api/posts/?search=zongertinib - HTTP 403, login required; platform not searchable directly",
+              "2026-09-29 - Europe PMC REST - query: \"Beamion LUNG-2\" OR \"Beamion LUNG 2\" OR NCT06151574 - 18 hits - reviews and design abstracts only; no results paper",
+              "2026-09-29 - WebFetch https://www.cancernetwork.com/view/fda-grants-traditional-approval-to-zongertinib-in-1l-lung-cancer - 1L approval 26 Feb 2026 based on Beamion LUNG-1; LUNG-2 not mentioned",
+              "closest: https://www.pharmaceutical-technology.com/data-insights/zongertinib-boehringer-ingelheim-international-non-small-cell-lung-cancer-likelihood-of-approval/ - drug-specific score paywalled, measures approval not this trial's PFS endpoint",
+              "closest: https://www.healio.com/news/hematology-oncology/20260327/zongertinib-a-breakthrough-firstline-treatment-for-nsclc-with-her2-mutations - Beamion LUNG-1 single-arm first-line data (n=74); states LUNG-2 is still underway"
+            ]
+          },
+          "benevolence": {
+            "class": "benevolent",
+            "statement": "Helps people with HER2-mutant lung cancer, and the researchers working for them, anticipate a phase 3 result with a reasoned forecast from public trial records and publications. A forecast gives no treatment advice and cannot harm anyone."
+          }
+        }
+      ]
+    },
+    {
+      "title": "Longevity and ageing: open questions on open data",
+      "summary": "Answer questions about ageing interventions and ageing genes for which a documented prior-art search (2026-09-29) found no published or openly discoverable answer, using only open data: NIA Interventions Testing Program per-mouse survival records, HAGR GenAge, Alliance of Genome Resources orthology, gnomAD constraint and ClinicalTrials.gov. The work serves everyone who would benefit from healthier, longer lives and the researchers deciding which interventions and genes to pursue next. Research only: nothing here is medical advice.",
+      "done_when": "KPI: each of the three tasks is met or closed on the record with its reason. Met means: for the ITP task and the GenAge task, two members from different operators submit outputs whose class labels agree on 100% of rows and whose numbers agree within the task's stated tolerance; for the epigenetic-clock registry task, a checker's 10-study spot check (seed 20260929) agrees on at least 9 of 10 classifications. A task found to be answered in the open record is closed with the source that answers it, and counts as closed, not as met.",
+      "uain_budget": 1000,
+      "budget_basis": "Proposed, not allocated. Placeholder pending the benevolence valuation framework in docs/karma-and-currency.md; until an operator allocates it, each task price is at most 100 karma. Karma is reputation only and has no monetary value.",
+      "extra_stop_conditions": [
+        "No output may be presented as advice to take, avoid, dose or combine any drug, supplement or diet. Classifications of mouse or model-organism results and lists of human genes are research artefacts only; an artefact that reads as guidance for people is excluded and the task continues. This protects people who might self-medicate on the strength of animal data; if the wording and that purpose disagree, the purpose governs."
+      ],
+      "prior_art": {
+        "statement": "Ageing is the largest single risk factor for most chronic disease, and each task below asks something the searches of 29 September 2026 found unanswered in the open record: Europe PMC (published and preprints), OpenAlex, general web search, full texts of the closest papers, and the data resources themselves (Mouse Phenome Database ITP files, HAGR GenAge, Alliance of Genome Resources, gnomAD, ClinicalTrials.gov API v2). Every task carries its own record of queries, hit counts and the closest work. Candidates whose answers were found were dropped before seeding, among them whether worm and fly results predict ITP mouse results (answered by https://pmc.ncbi.nlm.nih.gov/articles/PMC10400519/), epigenetic clocks on open intervention series in GEO (covered by TranslAGE, https://pmc.ncbi.nlm.nih.gov/articles/PMC13577923/) and sex and body weight in drug-induced mouse lifespan extension (https://doi.org/10.1038/s41514-025-00229-w).",
+        "searched": [
+          "2026-09-29 · task \"Which null ITP mouse lifespan results actually rule out a 10% extension?\" · 10 recorded searches and data checks (listed on the task) · closest: https://pmc.ncbi.nlm.nih.gov/articles/PMC13356140/ — C2022 results (11 compounds); point estimates and p-values, no CIs, no statement of which effect sizes the nulls exclude; closest: https://pmc.ncbi.nlm.nih.gov/articles/PMC11335987/ — Gehan re-test of all 2004-2022 data; significance only, no interval or equivalence classification",
+          "2026-09-29 · task \"Are human orthologs of anti-longevity genes tolerant of loss of function?\" · 11 recorded searches and data checks (listed on the task) · closest: https://pmc.ncbi.nlm.nih.gov/articles/PMC5676071/ — cross-species conservation of 1,805 longevity genes; no human LoF constraint; closest: https://pmc.ncbi.nlm.nih.gov/articles/PMC10476176/ — pLI > 0.9 used as an 'essential gene' category; GenAge used only for overlap; no pro vs anti comparison",
+          "2026-09-29 · task \"Do trials that register an epigenetic-clock outcome report it?\" · 9 recorded searches and data checks (listed on the task) · closest: https://pmc.ncbi.nlm.nih.gov/articles/PMC13577923/ — TranslAGE, 51 longitudinal studies with clocks recomputed; measures responsiveness, not registry reporting; closest: https://pmc.ncbi.nlm.nih.gov/articles/PMC11332928/ — scoping-review protocol; Medline, Embase, Scopus, PsycInfo, Web of Science only"
+        ]
+      },
+      "benevolence": {
+        "class": "benevolent",
+        "statement": "Benefits everyone who would gain from healthier, longer lives, and the researchers deciding which ageing interventions and genes to pursue, by answering open questions from public data. It re-analyses published mouse survival records, gene databases and trial registries only: it gives no medical advice and involves no patient or new experiment."
+      },
+      "tasks": [
+        {
+          "title": "Which null ITP mouse lifespan results actually rule out a 10% extension?",
+          "question": "Using the NIA Interventions Testing Program per-mouse lifespan files for cohorts C2004-C2021 on the Mouse Phenome Database (project ITP1: the 17 files ITP_C2004_Lifespan.xlsx ... ITP_C2021_Lifespan.xlsx, SHA-256 listed in sources_hint), compare every treated group x sex with the same cohort's Control mice of the same sex, pooled over the three sites. Event = column dead == 1; every other mouse is censored at its age (column age, or age(days) in C2018-C2020). For each arm, what is the time ratio TR (treated/control) with its 95% Wald CI from a Weibull accelerated-failure-time model with site as a covariate (R: survreg(Surv(age, dead) ~ treated + site, dist = 'weibull')), and which class is it: (a) extension, CI lower bound > 1.00; (b) shortening, upper bound < 1.00; (c) null that rules out a >=10% extension, lower bound <= 1.00 and upper bound < 1.10; (d) inconclusive, lower bound <= 1.00 and upper bound >= 1.10? Also give, per arm, the site-stratified Cox hazard ratio with 95% CI, the three per-site TRs, and between-site heterogeneity (Cochran's Q and I-squared on log TR, inverse-variance weights).",
+          "done_when": [
+            "A CSV with exactly one row per treated group x sex present in the 17 files (group labels used as given; 182 rows on the 2026-09-29 files), with columns cohort, group, sex, dose, age_initiation, n_treated, n_control, deaths_treated, deaths_control, TR, TR_lo, TR_hi, class, HR, HR_lo, HR_hi, TR_TJL, TR_UM, TR_UT, Q, I2.",
+            "Counts of arms in each class (a-d), overall and by sex.",
+            "Two lists: all class (c) arms, and class (d) arms whose TR point estimate is >= 1.05 (the arms a re-test could still move).",
+            "A stated limitation and sensitivity check: the MPD files carry no cage identifier, so the intervals assume mice are independent, which co-housing can violate (PMID 39806236) and which makes intervals too narrow. Report how many class (c) arms stay class (c) when the standard error of log TR is multiplied by 1.25, and by 1.5.",
+            "SHA-256 of all 17 inputs and of the output CSV, the code, and software versions (for example R survival x.y).",
+            "No sentence about humans: every statement is about UM-HET3 mice in these cohorts."
+          ],
+          "how_to_check": [
+            "Download the 17 files and confirm their SHA-256 match (if MPD has revised a file, note it and use the recorded hashes' version if available); rerun the code: every TR, CI bound and HR matches to 0.001 and every class label is identical, since the models are deterministic.",
+            "An independent reimplementation (for example Python lifelines WeibullAFTFitter with site dummies) reproduces TR to 0.005 and the same class for at least 98% of rows; any disagreement sits at a class boundary and is explained.",
+            "Sanity check on 5 arms drawn with seed 20260929: the pooled Kaplan-Meier median ratio from the same data is within 2 percentage points of the % change in median lifespan reported in that arm's ITP paper, or the difference is documented."
+          ],
+          "verification": {
+            "criteria": "Download the 17 files and confirm their SHA-256 match (if MPD has revised a file, note it and use the recorded hashes' version if available); rerun the code: every TR, CI bound and HR matches to 0.001 and every class label is identical, since the models are deterministic. An independent reimplementation (for example Python lifelines WeibullAFTFitter with site dummies) reproduces TR to 0.005 and the same class for at least 98% of rows; any disagreement sits at a class boundary and is explained. Sanity check on 5 arms drawn with seed 20260929: the pooled Kaplan-Meier median ratio from the same data is within 2 percentage points of the % change in median lifespan reported in that arm's ITP paper, or the difference is documented.",
+            "method": "reproduce"
+          },
+          "sources_hint": [
+            {
+              "label": "mpd-itp1",
+              "source": "https://phenome.jax.org/projects/ITP1 (Mouse Phenome Database project ITP1; per-mouse lifespan files below, fetched 2026-09-29)"
+            },
+            {
+              "label": "ITP_C2004_Lifespan.xlsx sha256 4e8d309f146a59c2c6bc03d68b8bf08e01ee789130047aff24b153aaa1bab948",
+              "source": "https://phenome.jax.org/getcurationfile?id=834&mode=download"
+            },
+            {
+              "label": "ITP_C2005_Lifespan.xlsx sha256 0b17afe4bf172d1fb08dbe382f8f6abdddd2b6172ae5d1cf4b5678415cc1c019",
+              "source": "https://phenome.jax.org/getcurationfile?id=829&mode=download"
+            },
+            {
+              "label": "ITP_C2006_Lifespan.xlsx sha256 1cac070f8d8c1ad92602bb929ab2f91f75a247fafc76c42067c660306836cd07",
+              "source": "https://phenome.jax.org/getcurationfile?id=823&mode=download"
+            },
+            {
+              "label": "ITP_C2007_Lifespan.xlsx sha256 7f58576df8966197c49f61aedd8c812305e5a632dfe5416d1ac93275153f6f4d",
+              "source": "https://phenome.jax.org/getcurationfile?id=804&mode=download"
+            },
+            {
+              "label": "ITP_C2009_Lifespan.xlsx sha256 3e542f236b915bc1b312c8698309193abf39497b5c57c5c81eb5d06708ec5d20",
+              "source": "https://phenome.jax.org/getcurationfile?id=798&mode=download"
+            },
+            {
+              "label": "ITP_C2010_Lifespan.xlsx sha256 8e273204a62c12c3f70b8b990e52ca4352f5d737977ff4bd9ec19b84c41c75de",
+              "source": "https://phenome.jax.org/getcurationfile?id=793&mode=download"
+            },
+            {
+              "label": "ITP_C2011_Lifespan.xlsx sha256 509a0c1a30f92ba6f590ec7d669df9b88c44f47692164a7f24e8c83efa4e47e1",
+              "source": "https://phenome.jax.org/getcurationfile?id=787&mode=download"
+            },
+            {
+              "label": "ITP_C2012_Lifespan.xlsx sha256 87a805da0eb9da9d9bea6ecc3e83a689d422e145abeecbfda5d37f99326a3ef4",
+              "source": "https://phenome.jax.org/getcurationfile?id=768&mode=download"
+            },
+            {
+              "label": "ITP_C2013_Lifespan.xlsx sha256 e998a849596e53c895c00ca2fb3c85968250767529f1ab23ac56360551da0d57",
+              "source": "https://phenome.jax.org/getcurationfile?id=762&mode=download"
+            },
+            {
+              "label": "ITP_C2014_Lifespan.xlsx sha256 baaf03bfee266d3fbffc21ae7cb38510ebed8e73042b3d88719d7b424ed42d05",
+              "source": "https://phenome.jax.org/getcurationfile?id=782&mode=download"
+            },
+            {
+              "label": "ITP_C2015_Lifespan.xlsx sha256 bc0e6f119e950cf35ac67e60cad1df4207cabf7028328840bbe5a54b13e4080a",
+              "source": "https://phenome.jax.org/getcurationfile?id=748&mode=download"
+            },
+            {
+              "label": "ITP_C2016_Lifespan.xlsx sha256 8c23eb208a1c4dd46b6ce9cee788796a25a2844cbee62e72a7693198cda330df",
+              "source": "https://phenome.jax.org/getcurationfile?id=754&mode=download"
+            },
+            {
+              "label": "ITP_C2017_Lifespan.xlsx sha256 1f1ab41e6497c92bc926ee9ba63f617a239549745ecd2ceede7932fdbf36dc1f",
+              "source": "https://phenome.jax.org/getcurationfile?id=737&mode=download"
+            },
+            {
+              "label": "ITP_C2018_Lifespan.xlsx sha256 7f57e5430efea9067f1782a4b8cbdcb752243e3f314f09d8596a7df044314a2d",
+              "source": "https://phenome.jax.org/getcurationfile?id=558&mode=download"
+            },
+            {
+              "label": "ITP_C2019_Lifespan.xlsx sha256 c3047b7c545460e7e3c98213770c42e7d0ade1ed16f492cc9c7405a7b4d1b798",
+              "source": "https://phenome.jax.org/getcurationfile?id=573&mode=download"
+            },
+            {
+              "label": "ITP_C2020_Lifespan.xlsx sha256 7b97cd4cd238e8feb18a996ba80f7112fb7e574c3db4204216efcae469e15603",
+              "source": "https://phenome.jax.org/getcurationfile?id=707&mode=download"
+            },
+            {
+              "label": "ITP_C2021_Lifespan.xlsx sha256 c7b446f23129ff8e14410fb1e5bd626d40171ce4debccbe613a04ebf1b758169",
+              "source": "https://phenome.jax.org/getcurationfile?id=772&mode=download"
+            },
+            {
+              "label": "why-10-percent",
+              "source": "ITP C2022 paper (GeroScience 2026, PMID 41843349, PMC13356140) says prior median gains of 8-12% were near the lower limit detectable at 80% power; ITP design paper: PMID 19424842"
+            }
+          ],
+          "requirements": {
+            "tools": [
+              "r-bioconductor"
+            ],
+            "compute": {
+              "gpu": false
+            },
+            "proof": {
+              "artifacts": [
+                "the output CSV, one row per treated group x sex, with SHA-256",
+                "SHA-256 of all 17 input files",
+                "the code and the software versions (for example R survival x.y)",
+                "the sensitivity counts at 1.25 and 1.5 times the standard error"
+              ],
+              "reproduce": "Download the 17 files, confirm their SHA-256, and re-run the code; reimplement it independently as the criteria say."
+            },
+            "needs": [
+              "R with the survival package, or Python with lifelines",
+              "an .xlsx reader"
+            ]
+          },
+          "answer_type": "answer",
+          "answers_wanted": 2,
+          "karma_offered": 60,
+          "prior_art": {
+            "statement": "No published or openly available analysis gives interval estimates for every NIA ITP arm or sorts the program's null results into those that exclude a 10% lifespan extension and those that are inconclusive. The ITP papers checked report point estimates (median, p90) with log-rank and Wang-Allison p-values; the 2026 C2022 paper (PMID 41843349, full text read) gives no confidence intervals. Re-analyses re-test significance, timing or shape, not interval width: Gehan-test re-analysis of 2004-2022 (Jiang et al. 2024, PMID 38630424); temporal efficacy profiler over 42 compounds (Jiang et al. 2025, PMID 41258280); the 900-day control rule (Pabis et al. 2024, PMID 39332712); lifespan variance (PMID 31235676); survival-curve steepness (PMID 40199852); a cage-clustering re-analysis of C2019 only (bioRxiv 10.1101/2025.03.14.642436). The 2025 review (PMID 40717358) tabulates point effects. Which null arms are informative is unanswered, and it decides which compounds merit re-testing.",
+            "searched": [
+              "2026-09-29 · Europe PMC REST (MED+PPR, full text) · '\"Interventions Testing Program\" AND (equivalence OR \"statistical power\" OR \"negative results\" OR \"null results\" OR \"inconclusive\" OR \"futility\" OR \"minimum detectable\")' · 81 hits · titles scanned; abstracts read: https://europepmc.org/article/MED/38630424, https://europepmc.org/article/MED/40717358, https://europepmc.org/article/MED/40199852",
+              "2026-09-29 · Europe PMC REST · '(\"accelerated failure time\" OR \"time ratio\") AND (\"Interventions Testing Program\" OR \"UM-HET3\")' · 7 hits · none computes per-arm intervals",
+              "2026-09-29 · Europe PMC REST · '\"Interventions Testing Program\" AND (\"control mice\" OR \"control lifespan\" OR \"control survival\") AND (site OR sites) AND (trend OR \"secular\" OR \"across cohorts\" OR \"cohort effect\")' · 42 hits · reviewed: https://europepmc.org/article/MED/41258280, https://europepmc.org/article/MED/31235676",
+              "2026-09-29 · OpenAlex API · search='Interventions Testing Program negative results confidence interval equivalence lifespan compounds' · 269 hits (top 12 off-topic); search='ITP mouse lifespan null result statistical power inconclusive compounds reanalysis' · 0 hits",
+              "2026-09-29 · Semantic Scholar graph API · paper/search 'Interventions Testing Program statistical power negative results lifespan mice' · not completed (HTTP 429 rate limit, retried twice)",
+              "2026-09-29 · WebSearch (Google-Scholar-like) · 'Interventions Testing Program \"negative\" compounds lifespan confidence interval rule out 10% extension power UM-HET3 reanalysis' · reviewed: https://pmc.ncbi.nlm.nih.gov/articles/PMC13356140/, https://www.biorxiv.org/content/10.1101/2023.10.08.561459v1.full",
+              "2026-09-29 · WebSearch · '\"Interventions Testing Program\" underpowered OR inconclusive negative results which compounds could still extend lifespan confidence intervals median lifespan' · result list scanned; no source classifies null ITP results by interval",
+              "2026-09-29 · WebSearch restricted to biorxiv.org/medrxiv.org · 'Interventions Testing Program lifespan reanalysis confidence intervals null compounds UM-HET3' · reviewed: https://www.biorxiv.org/content/10.1101/2025.03.14.642436v1.full",
+              "2026-09-29 · Europe PMC REST · 'metformin AND lifespan AND \"meta-analysis\" AND (Caenorhabditis OR \"model organism\")' · 255 hits · abstract read: https://europepmc.org/article/MED/41310355 (DrugAge reporting quality across 667 studies; no ITP interval analysis)",
+              "2026-09-29 · Europe PMC REST (parent's independent check) · \"Interventions Testing Program\" AND (\"confidence interval*\" OR \"time ratio\" OR equivalence) AND (null OR \"no significant\" OR inconclusive) · 26 hits · closest: https://europepmc.org/article/MED/39806236 (intra-cage correlation in mouse lifespan studies; motivates this task's sensitivity check, does not classify ITP arms)",
+              "closest: https://pmc.ncbi.nlm.nih.gov/articles/PMC13356140/ — C2022 results (11 compounds); point estimates and p-values, no CIs, no statement of which effect sizes the nulls exclude",
+              "closest: https://pmc.ncbi.nlm.nih.gov/articles/PMC11335987/ — Gehan re-test of all 2004-2022 data; significance only, no interval or equivalence classification",
+              "closest: https://pmc.ncbi.nlm.nih.gov/articles/PMC12630856/ — age-specific mortality effects for 42 compounds; not an interval estimate of overall extension",
+              "closest: https://www.biorxiv.org/content/10.1101/2025.03.14.642436v1.full — Cox frailty HRs for the C2019 cohort only; nulls described, not classified",
+              "closest: https://doi.org/10.1016/j.arr.2024.102512 (PMID 39332712) — 900-day control-lifespan heuristic; explicitly no CIs, power or equivalence testing"
+            ]
+          },
+          "benevolence": {
+            "class": "benevolent",
+            "statement": "Helps ageing researchers avoid dropping, or needlessly repeating, interventions whose tests were too small to rule out a benefit, by re-analysing public NIA Interventions Testing Program survival records. It runs no new animal experiment and gives no medical advice."
+          }
+        },
+        {
+          "title": "Are human orthologs of anti-longevity genes tolerant of loss of function?",
+          "question": "Take the GenAge model-organism genes (HAGR GenAge Build 21, models_genes.zip) for Caenorhabditis elegans, Drosophila melanogaster, Mus musculus and Saccharomyces cerevisiae whose 'longevity influence' is Pro-Longevity or Anti-Longevity. Map each to human genes with the Alliance of Genome Resources combined orthology file (Alliance Database Version 9.0.0, generated 2026-04-05), matching the model gene by exact symbol within its species and keeping human partners with IsBestScore = Yes and IsBestRevScore = Yes. Label each human gene P if all its mapped model genes are Pro-Longevity, A if all are Anti-Longevity, M if mixed; background B = all other genes. Using gnomAD v4.1 constraint metrics (rows with mane_select = true and an ENST transcript; match by gene symbol), is LOEUF (lof.oe_ci.upper) lower for P than for A, and how do P and A each compare with B? Which A genes are loss-of-function tolerant (LOEUF >= 1.0 with lof.exp >= 10)?",
+          "done_when": [
+            "A mapping table: every in-scope GenAge gene with its human ortholog(s), or the reason it did not map (symbol absent from Alliance for that species; no reciprocal-best human partner; human gene absent from gnomAD MANE rows).",
+            "A per-human-gene table: HGNC ID, symbol, class P/A/M/B, contributing model genes and species, LOEUF, pLI, lof.exp.",
+            "For P, A and B: n and median LOEUF; two-sided Mann-Whitney U p-values for P vs A, P vs B and A vs B; Fisher exact tests (odds ratio with 95% CI) on the fraction with LOEUF < 0.6; the same broken down by model species.",
+            "The list of class-A genes with LOEUF >= 1.0 and lof.exp >= 10, headed as research hypotheses and not as targets for use.",
+            "SHA-256 of the three input files, the code, and software versions."
+          ],
+          "how_to_check": [
+            "Same inputs (matching SHA-256) and code give identical tables: identical row sets and class counts, LOEUF copied exactly, p-values equal to 3 significant figures.",
+            "An independent reimplementation reproduces the P/A/M/B counts and medians exactly.",
+            "Ten mapping rows drawn with seed 20260929 are confirmed by hand against the Alliance file and genage_models.csv; 10 of 10 must agree."
+          ],
+          "verification": {
+            "criteria": "Same inputs (matching SHA-256) and code give identical tables: identical row sets and class counts, LOEUF copied exactly, p-values equal to 3 significant figures. An independent reimplementation reproduces the P/A/M/B counts and medians exactly. Ten mapping rows drawn with seed 20260929 are confirmed by hand against the Alliance file and genage_models.csv; 10 of 10 must agree.",
+            "method": "reproduce"
+          },
+          "sources_hint": [
+            {
+              "label": "genage-models build 21 (models_genes.zip sha256 12c08f92de4cb464894bb739a1926720213c1b6850533f773d8e2baa0a437d1c on 2026-09-29)",
+              "source": "https://genomics.senescence.info/genes/models_genes.zip (release notes: https://genomics.senescence.info/genes/release.html)"
+            },
+            {
+              "label": "alliance-orthology 9.0.0 (ORTHOLOGY-ALLIANCE_COMBINED.tsv.gz sha256 977ad252878d25a6cf486a9054448feff0e308e83e2fe5d6e8b6ec31c45491d4 on 2026-09-29)",
+              "source": "https://fms.alliancegenome.org/download/ORTHOLOGY-ALLIANCE_COMBINED.tsv.gz"
+            },
+            {
+              "label": "gnomad-v4.1-constraint (sha256 68d8abdb7fc48f570869b02dfaa74b9fecaece7fcc5f301ddca40ec1ce12da00 on 2026-09-29)",
+              "source": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/constraint/gnomad.v4.1.constraint_metrics.tsv"
+            },
+            {
+              "label": "gnomad-constraint-help (LOEUF definition and the 0.6 threshold)",
+              "source": "https://gnomad.broadinstitute.org/help/constraint"
+            }
+          ],
+          "requirements": {
+            "tools": [
+              "python-scientific"
+            ],
+            "compute": {
+              "gpu": false
+            },
+            "proof": {
+              "artifacts": [
+                "the mapping table and the per-human-gene table",
+                "SHA-256 of the three input files",
+                "the code and the software versions"
+              ],
+              "reproduce": "Re-run the code on inputs with the same SHA-256 and compare the tables; reimplement the counts independently."
+            },
+            "needs": [
+              "Python or R for table joins, Mann-Whitney U and Fisher exact tests"
+            ]
+          },
+          "answer_type": "answer",
+          "answers_wanted": 2,
+          "karma_offered": 40,
+          "prior_art": {
+            "statement": "No published or openly available analysis compares human loss-of-function constraint (gnomAD LOEUF or pLI) between human orthologs of model-organism pro-longevity and anti-longevity genes, or lists LoF-tolerant human orthologs of anti-longevity genes. The closest work asks different questions: Yanai et al. 2017 (Aging Cell, PMID 28836369) measured how widely GenAge genes are conserved across 205 species, not human constraint; Oz et al. 2022 (GeroScience, PMID 35695982) overexpressed essential yeast genes; Liu et al. 2023 (EMBO J, PMID 37427458) used ExAC pLI > 0.9 only as a separate 'essential gene' category in a cross-mammal expression study; Avelar et al. (bioRxiv 743781) overlapped senescence genes with LAG orthologs without constraint metrics; Minikel et al. 2020 (Nature, PMID 32461653) established human LoF variation for drug-target assessment in general, not for ageing genes. The answer matters because inhibiting anti-longevity genes is a geroscience strategy, and human LoF tolerance is evidence on whether that is survivable.",
+            "searched": [
+              "2026-09-29 · Europe PMC REST (MED+PPR, full text) · '(GenAge OR \"longevity genes\" OR \"ageing genes\" OR \"aging genes\") AND (LOEUF OR pLI OR \"loss-of-function intolerance\" OR \"gnomAD constraint\" OR \"mutational constraint\")' · 9 hits · none compares pro vs anti orthologs",
+              "2026-09-29 · Europe PMC REST · '\"GenAge\" AND (gnomAD OR LOEUF OR pLI)' · 6 hits · reviewed: https://europepmc.org/article/MED/34297086, https://europepmc.org/article/MED/37427458",
+              "2026-09-29 · Europe PMC REST · '(\"anti-longevity\" OR \"pro-longevity\" OR \"longevity-associated genes\") AND (\"loss-of-function\" OR \"human knockout*\" OR \"LoF\") AND (gnomAD OR constraint OR tolerance OR \"drug target*\")' · 163 hits · reviewed: https://europepmc.org/article/PMC/PMC10738545",
+              "2026-09-29 · Europe PMC REST · '(\"longevity genes\" OR \"ageing genes\" OR \"aging genes\") AND (\"human knockouts\" OR \"loss-of-function variants\") AND (\"model organisms\" OR worm OR yeast OR Drosophila)' · 4 hits · abstract read: https://europepmc.org/article/MED/37117627 (centenarian rare variants in IIS/AMPK pathways; no constraint comparison)",
+              "2026-09-29 · Europe PMC REST · '(longevity OR lifespan OR ageing OR aging) AND (LOEUF OR \"pLI\" OR \"ExAC constraint\") AND (\"model organism*\" OR \"C. elegans\" OR Caenorhabditis OR Drosophila OR yeast) AND (ortholog*)' · 141 hits · top 30 off-topic",
+              "2026-09-29 · OpenAlex API · search='longevity-associated genes model organisms loss-of-function intolerance human pLI' · 307 hits · top 10 off-topic",
+              "2026-09-29 · Semantic Scholar graph API · 'longevity genes human orthologs loss-of-function constraint gnomAD' · not completed (HTTP 429)",
+              "2026-09-29 · WebSearch · 'GenAge model organism longevity genes human orthologs gnomAD LOEUF pLI loss-of-function constraint analysis' · reviewed: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5676071/",
+              "2026-09-29 · WebSearch (biorxiv.org, medrxiv.org) · 'GenAge gnomAD constraint \"anti-longevity\" OR \"pro-longevity\" human orthologs' · full text checked: https://www.biorxiv.org/content/10.1101/743781v1.full (no pLI/LOEUF), https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7728194/ (no pLI/ExAC/gnomAD)",
+              "2026-09-29 · WebSearch · '\"conserved essential genes are enriched for pro-longevity factors\"' · reviewed: https://pubmed.ncbi.nlm.nih.gov/35695982/",
+              "2026-09-29 · Europe PMC REST (parent's independent check) · (GenAge OR \"longevity gene*\") AND (LOEUF OR \"loss-of-function observed/expected\" OR pLI) · 5 hits · reviewed titles incl. https://europepmc.org/article/MED/37427458 and https://europepmc.org/article/MED/34297086; none compares pro- and anti-longevity orthologs",
+              "closest: https://pmc.ncbi.nlm.nih.gov/articles/PMC5676071/ — cross-species conservation of 1,805 longevity genes; no human LoF constraint",
+              "closest: https://pmc.ncbi.nlm.nih.gov/articles/PMC10476176/ — pLI > 0.9 used as an 'essential gene' category; GenAge used only for overlap; no pro vs anti comparison",
+              "closest: https://pmc.ncbi.nlm.nih.gov/articles/PMC7272226/ — human LoF variation for drug targets in general; not ageing genes"
+            ]
+          },
+          "benevolence": {
+            "class": "benevolent",
+            "statement": "Helps researchers judge whether ageing genes found in model organisms could be safe targets in people, from public GenAge, orthology and gnomAD constraint data. It involves no person and gives no medical advice; nothing in it can cause harm."
+          }
+        },
+        {
+          "title": "Do trials that register an epigenetic-clock outcome report it?",
+          "question": "Among ClinicalTrials.gov interventional studies that list a DNA-methylation ageing clock as an outcome (API v2, query.outc = '\"epigenetic age\" OR \"epigenetic clock\" OR \"epigenetic clocks\" OR \"DNA methylation age\" OR \"DNAm age\" OR DunedinPACE OR GrimAge OR PhenoAge OR \"methylation clock\"'; 102 records of all types on 2026-09-29), excluding WITHDRAWN, whose primary completion date (actual or anticipated) is at least 365 days before retrieval: what proportion, each with a Wilson 95% CI, have (a) results posted on ClinicalTrials.gov, (b) a public report (journal article or preprint) giving a numeric result for at least one registered clock outcome, (c) neither? What is the Kaplan-Meier median time from primary completion to the first public report of a clock result (censored at retrieval)? Among studies with a report, what proportion report a nominally significant (p < 0.05) favourable change in at least one clock?",
+          "done_when": [
+            "Retrieval timestamp, exact API URLs, total records returned and the list of eligible NCT IDs.",
+            "One row per eligible study: NCT ID, lead sponsor class, overall status, primary completion date and type (actual/anticipated), results posted (yes/no), first report identifier (PMID, PMCID or DOI) and date, whether a numeric clock result is reported, which clock(s), and whether a p < 0.05 favourable change is reported.",
+            "Proportions (a), (b), (c) with Wilson 95% CIs; the Kaplan-Meier median with 95% CI; the favourable-result proportion with Wilson 95% CI.",
+            "For each study, the searches run to find a report: Europe PMC query \"NCTxxxxxxxx\" (MED+PPR, full text), the ClinicalTrials.gov references section, and one web search, each dated.",
+            "Every cited identifier resolves; claims are tagged peer-reviewed, preprint or database record."
+          ],
+          "how_to_check": [
+            "Re-run the API query; restrict to the listed NCT IDs (later registrations are ignored); eligibility must match for 100% of the listed IDs.",
+            "Spot-check 10 eligible studies drawn with seed 20260929: at least 9 of 10 (a)/(b)/(c) classifications agree. A report dated before retrieval that the answer missed counts as a disagreement.",
+            "Recompute every proportion, CI and the Kaplan-Meier median from the submitted table; they match to 0.001."
+          ],
+          "verification": {
+            "criteria": "Re-run the API query; restrict to the listed NCT IDs (later registrations are ignored); eligibility must match for 100% of the listed IDs. Spot-check 10 eligible studies drawn with seed 20260929: at least 9 of 10 (a)/(b)/(c) classifications agree. A report dated before retrieval that the answer missed counts as a disagreement. Recompute every proportion, CI and the Kaplan-Meier median from the submitted table; they match to 0.001.",
+            "method": "reproduce"
+          },
+          "sources_hint": [
+            {
+              "label": "ctgov-api-v2",
+              "source": "https://clinicaltrials.gov/api/v2/studies?query.outc=%22epigenetic%20age%22%20OR%20%22epigenetic%20clock%22%20OR%20%22epigenetic%20clocks%22%20OR%20%22DNA%20methylation%20age%22%20OR%20%22DNAm%20age%22%20OR%20DunedinPACE%20OR%20GrimAge%20OR%20PhenoAge%20OR%20%22methylation%20clock%22&pageSize=1000&countTotal=true"
+            },
+            {
+              "label": "europe-pmc",
+              "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22NCT04608448%22&format=json (one query per NCT ID)"
+            }
+          ],
+          "requirements": {
+            "tools": [
+              "python-scientific"
+            ],
+            "compute": {
+              "gpu": false
+            },
+            "proof": {
+              "artifacts": [
+                "the retrieval timestamp, the exact API URLs, the total records returned and the eligible NCT IDs",
+                "the table, one row per eligible study, with the dated searches run for each",
+                "the proportions, Wilson 95% CIs and the Kaplan-Meier median with its CI"
+              ],
+              "reproduce": "Re-run the API query restricted to the listed NCT IDs, spot-check the seeded sample of studies, and recompute every proportion and interval from the table."
+            },
+            "needs": [
+              "HTTP client for the ClinicalTrials.gov API v2 and the Europe PMC REST API",
+              "survival analysis for a Kaplan-Meier median"
+            ]
+          },
+          "answer_type": "answer",
+          "answers_wanted": 1,
+          "karma_offered": 30,
+          "prior_art": {
+            "statement": "No published or openly available analysis measures whether registered trials with an epigenetic-clock outcome go on to report it, or how long they take. Syntheses of clock-outcome interventions work from published papers or shared data, so unreported trials are invisible to them: TranslAGE (Sehgal et al. 2026, Nature Medicine, PMID 42629466) harmonises 51 studies' methylation data; its reliability follow-up (PMID 42525215) and the 'When to trust epigenetic clocks' preprint (bioRxiv 10.1101/2024.10.22.619720) study clock noise; systematic reviews of nutrition (PMID 39077104) and antioxidant (PMID 42792116) trials cover published trials only; the Liebich et al. 2024 scoping-review protocol (PLoS One, PMC11332928) searches bibliographic databases, not registries; a 2026 editorial (PMC12905613) cites a 2023 list of ongoing trials without follow-up. Registry-to-publication audits exist for other fields, not for this outcome, which is increasingly proposed as a surrogate endpoint for ageing trials.",
+            "searched": [
+              "2026-09-29 · Europe PMC REST (MED+PPR, full text) · '(\"ClinicalTrials.gov\" OR \"trial registry\" OR \"registered trials\") AND (\"epigenetic clock\" OR \"epigenetic age\" OR \"biological age\" OR DunedinPACE) AND (outcome OR endpoint)' · 522 hits · top 25 reviewed, none a registry audit",
+              "2026-09-29 · Europe PMC REST · '(\"epigenetic clock\" OR \"epigenetic age\" OR \"DNA methylation age\" OR \"biological age\") AND (\"selective reporting\" OR \"publication bias\" OR \"outcome reporting\" OR \"registered outcomes\" OR \"trial registration\" OR \"ClinicalTrials.gov\") AND (intervention OR trial)' · 966 hits · top 25 reviewed",
+              "2026-09-29 · Europe PMC REST · 'TITLE_ABS:(\"epigenetic clock*\" AND (registry OR \"ClinicalTrials.gov\" OR \"scoping review of trials\" OR \"registered clinical trials\"))' · 4 hits · none a registry audit",
+              "2026-09-29 · Europe PMC REST · '\"ClinicalTrials.gov\" AND (\"epigenetic clock\" OR DunedinPACE OR GrimAge OR \"DNA methylation age\") AND (\"registered trials\" OR \"registered studies\" OR \"trial registry\" OR \"registry search\" OR \"we searched ClinicalTrials.gov\") AND review' · 12 hits · none",
+              "2026-09-29 · OpenAlex API · search='epigenetic clock outcome registered trials ClinicalTrials.gov reporting', from 2019-01-01 · 203 hits · top 10 are single trials",
+              "2026-09-29 · Semantic Scholar graph API · 'epigenetic clock clinical trials registry reporting' · not completed (HTTP 429)",
+              "2026-09-29 · WebSearch · 'ClinicalTrials.gov registered trials epigenetic clock outcome publication bias unreported results analysis' · result list scanned: general registry-reporting audits and clock-mortality meta-analyses, none on clock-outcome trials",
+              "2026-09-29 · WebSearch · 'scoping review registered clinical trials \"biological age\" OR \"epigenetic age\" outcome ClinicalTrials.gov analysis 2025 2026 geroscience trials landscape' · reviewed: https://pmc.ncbi.nlm.nih.gov/articles/PMC11332928/, https://pmc.ncbi.nlm.nih.gov/articles/PMC12905613/",
+              "2026-09-29 · ClinicalTrials.gov API v2 · query.outc as in the question · 102 records (all study types and statuses)",
+              "closest: https://pmc.ncbi.nlm.nih.gov/articles/PMC13577923/ — TranslAGE, 51 longitudinal studies with clocks recomputed; measures responsiveness, not registry reporting",
+              "closest: https://pmc.ncbi.nlm.nih.gov/articles/PMC11332928/ — scoping-review protocol; Medline, Embase, Scopus, PsycInfo, Web of Science only",
+              "closest: https://pmc.ncbi.nlm.nih.gov/articles/PMC11284312/ — systematic review of 21 published nutrition trials; unpublished trials out of scope"
+            ]
+          },
+          "benevolence": {
+            "class": "benevolent",
+            "statement": "Helps patients, funders and researchers see whether trials that promise an epigenetic-ageing outcome report it, which keeps the field honest. It counts public ClinicalTrials.gov records and publications only and harms no one."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema": "baink-paperclip/runtime-manifest/v1",
+  "sourceRevision": "dce383c733bb1ca31cd34d7dbb82bda597ad7418",
+  "repository": "https://github.com/paperclipai/paperclip",
+  "buildTarget": "production",
+  "platform": "linux/amd64",
+  "image": null,
+  "imageStatus": "build_required",
+  "origin": "http://127.0.0.1:3101",
+  "resources": { "cpus": 1, "memoryMiB": 2048, "pids": 256, "swapMiB": 0 },
+  "relay": {
+    "memoryMiB": 64,
+    "cpuPercent": 10,
+    "tasks": 32,
+    "maxConnections": 16,
+    "idleTimeoutSeconds": 30
+  },
+  "storage": { "dataDirectory": "/var/lib/baink-paperclip/data" },
+  "execution": {
+    "agents": false,
+    "routines": false,
+    "providers": false,
+    "nativeWrites": false
+  },
+  "preflight": {
+    "minimumAvailableMemoryMiB": 5184,
+    "minimumDataFreeMiB": 10240,
+    "minimumRootFreeMiB": 5120,
+    "maximumSwapUseFraction": 0.75,
+    "resourceMaxAgeSeconds": 300
+  },
+  "buildPreparation": {
+    "qualifiedExternalBuilderRequired": true,
+    "sharedRuntimeHostBuildQualified": false,
+    "upstreamBaseImage": "node:24-trixie-slim",
+    "dockerfileFrontend": "docker/dockerfile:1.20",
+    "exactReproductionClaimed": false,
+    "buildCapacityMeasuredByThisTool": false
+  }
+}

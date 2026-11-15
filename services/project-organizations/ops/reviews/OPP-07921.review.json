@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-07921",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "neutral",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No home robot cooks, cleans and tidies autonomously like a human helper, so the Main KPI of 500,000,000 households is unmet. The leading consumer humanoid, 1X NEO, opened $20,000 preorders for 2026 delivery and relies on remote human teleoperators for tasks it cannot do alone; an analysis found no independently verified customer deliveries by July 2026 (https://www.eweek.com/news/1x-neo-humanoid-home-robot-2026/, https://ai2.work/blog/1x-neo-ships-into-homes-with-a-human-teleoperator-still-inside). The best open policy work, Physical Intelligence's pi0.5 with openpi code, cleans kitchens and bedrooms in new homes as research (https://www.pi.website/blog/pi05). On the BEHAVIOR-1K household benchmark the 2025 winner reached only about 12 percent full-task success (https://behavior.stanford.edu/challenge/archive/2025/index.html). Moley's robot kitchen claims market entry but has missed launches since 2018 (https://www.moley.com/about-us/). Honest limit: openpi and BEHAVIOR are open baselines, so tasks replicating them are known work; reliability, safety and cost are open."
+  },
+  "additionalSearches": [
+    {
+      "query": "1X NEO home humanoid robot deliveries 2026 teleoperation household chores",
+      "source": "https://www.eweek.com/news/1x-neo-humanoid-home-robot-2026/",
+      "observedAt": "2026-11-06T00:43:12Z",
+      "finding": "1X NEO: $20,000 or $499/month, 2026 US delivery, teleoperated Expert Mode for tasks it cannot do autonomously."
+    },
+    {
+      "query": "Physical Intelligence pi0.5 household robot generalization open source openpi",
+      "source": "https://www.pi.website/blog/pi05",
+      "observedAt": "2026-11-06T00:43:18Z",
+      "finding": "pi0.5 VLA cleans kitchens and bedrooms in unseen homes in research trials; reference code openpi is Apache 2.0."
+    },
+    {
+      "query": "robot cooking at home autonomous general purpose kitchen robot commercial 2025 Moley",
+      "source": "https://www.moley.com/about-us/",
+      "observedAt": "2026-11-06T00:43:24Z",
+      "finding": "Moley claims market entry in 2025; earlier 2018 and 2021 consumer launch targets were missed; no independent shipment data."
+    },
+    {
+      "query": "BEHAVIOR-1K household tasks benchmark robot success rate 2025 challenge results",
+      "source": "https://behavior.stanford.edu/challenge/archive/2025/index.html",
+      "observedAt": "2026-11-06T00:43:30Z",
+      "finding": "BEHAVIOR 2025 Challenge: top held-out full-task success about 12.4 percent across 50 household tasks."
+    }
+  ]
+}

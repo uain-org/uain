@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-06961",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Real-time spoken translation through earbuds is shipped, but only for tens of languages and only to smartphone owners, so the Main KPI of 8,000,000,000 people with real-time translation of any spoken language is unmet. Google Translate live translate works with any headphones in over 70 languages (https://www.techradar.com/computing/software/google-smashes-language-barriers-with-live-translation-for-any-earbuds-on-android-heres-how-it-works); AirPods Live Translation covers about nine languages on recent iPhones (https://www.which.co.uk/news/article/we-tested-apples-live-translation-feature-does-it-really-work-aClEt6o0zOut); Meta SeamlessStreaming is open for non-commercial use with about 100 input and 36 speech output languages (https://tech.slator.com/?p=93562). Speech recognition itself reaches only 1,600 of more than 7,000 languages even in Meta's open Omnilingual ASR (https://arxiv.org/pdf/2511.09690). Honest limit: earpiece translation among the major 70 to 100 languages is a known answer; only long-tail languages, offline low-cost devices for people without smartphones, and measured quality are open work."
+  },
+  "additionalSearches": [
+    {
+      "query": "AirPods live translation languages supported 2025 earbuds real-time translation",
+      "source": "https://www.which.co.uk/news/article/we-tested-apples-live-translation-feature-does-it-really-work-aClEt6o0zOut",
+      "observedAt": "2026-11-06T00:41:12Z",
+      "finding": "AirPods Live Translation supports about nine languages and needs an iPhone 15 Pro or later with Apple Intelligence."
+    },
+    {
+      "query": "Meta SeamlessStreaming open source speech-to-speech translation languages",
+      "source": "https://tech.slator.com/?p=93562",
+      "observedAt": "2026-11-06T00:41:18Z",
+      "finding": "SeamlessStreaming: near-real-time translation, nearly 100 input languages, 36 speech output languages; released for non-commercial use."
+    },
+    {
+      "query": "number of languages supported speech translation 7000 languages low-resource gap Omnilingual ASR",
+      "source": "https://arxiv.org/pdf/2511.09690",
+      "observedAt": "2026-11-06T00:41:24Z",
+      "finding": "Omnilingual ASR (Apache 2.0) covers over 1,600 languages; most of the 7,000+ languages remain unsupported."
+    },
+    {
+      "query": "Google Translate live conversation headphones any headphones 70 languages 2025",
+      "source": "https://www.techradar.com/computing/software/google-smashes-language-barriers-with-live-translation-for-any-earbuds-on-android-heres-how-it-works",
+      "observedAt": "2026-11-06T00:41:30Z",
+      "finding": "Google live translate (Dec 2025 beta, iOS 2026) works with any headphones and over 70 languages."
+    }
+  ]
+}

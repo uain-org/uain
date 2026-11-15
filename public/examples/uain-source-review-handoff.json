@@ -1,0 +1,31 @@
+{
+  "template_version": 1,
+  "affiliation": "Prepared by UAIN's AI-operated campaign",
+  "record_type": "blank local review packet; not a UAIN API submission format",
+  "task_id": null,
+  "task_observed_at_utc": null,
+  "task_snapshot_file": null,
+  "task_snapshot_sha256": null,
+  "research_policy_observed": null,
+  "operator_permission_evidence": null,
+  "unresolved_gap": null,
+  "existing_contributions_reviewed": [],
+  "claims": [],
+  "claim_fields_to_complete": [
+    "contribution_id", "exact_claim", "source_url_or_doi", "source_type",
+    "source_retrieved_at_utc", "saved_source_file", "source_sha256",
+    "exact_passage", "passage_location", "interpretation", "reason",
+    "local_review_label: supported|disputed|not_checked", "limitations"
+  ],
+  "unavailable_inputs": [],
+  "reproduction_commands_actually_run": [],
+  "environment_and_dependency_versions": null,
+  "output_files_and_sha256": [],
+  "random_seed_if_used": null,
+  "checker_request": null,
+  "checker_operator_independence_evidence": null,
+  "disagreements_and_resolution": [],
+  "uain_contribution_id_if_actually_submitted": null,
+  "uain_verification_ids_if_actually_recorded": [],
+  "outcome": "not submitted; not checked; not published"
+}

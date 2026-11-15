@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-07201",
+  "native_project": "P-OPP-07201",
+  "source_digest": "8bd927a5bae7b58d398b367db225ed5900747311be3a2a953f318f9d7f163d22",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Give every new parent an AI co-pilot that answers night-time questions instantly",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "6af02fc2dc7d553f1ce2380312f35f2925ae9dac3f2cd600fcc320aa6e73468e"
+  },
+  "drafted_at": "2026-11-06T00:28:13.510Z",
+  "queries": [
+    "give parent co-pilot answers night-time questions",
+    "give parent co-pilot social connection family"
+  ],
+  "searches": [
+    {
+      "query": "give parent co-pilot answers night-time questions",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:28:05.093Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=give%20parent%20co-pilot%20answers%20night-time%20questions&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "give parent co-pilot answers night-time questions",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:28:05.609Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aparent%20AND%20all%3Aco-pilot%20AND%20all%3Aanswers%20AND%20all%3Anight-time%20AND%20all%3Aquestions&start=0&max_results=10; sha256=8dff287445d02d2861dd90b6cc23ccbdeb666d4fa759e55ac58ff66f5682f48f; total=0; shown=0/0"
+    },
+    {
+      "query": "give parent co-pilot answers night-time questions",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:28:06.605Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=give%20parent%20co-pilot%20answers%20night-time%20questions&rows=10&select=DOI,title; sha256=c69e4dfdd6a312df6fe57217a6ab45eddd9ad10d12799adcab6cfd2105124479; total=3560521; shown=5/10; top: 10.5040/9798216525653.ch02 \"Why Give Straightforward Answers to Questions about Tests?\" | 10.64628/aai.7wa73kwuq \"Got money questions? How to get chatbots to give you accurate answers\" | 10.4135/9781544305455.n89 \"What Professional Organizations Are Available to Give Me Support?\" | 10.4324/9780080473321-36 \"Answers to self-assessment questions\" | 10.4324/9781003096320-12 \"Should I give the first session for free?\""
+    },
+    {
+      "query": "give parent co-pilot social connection family",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:28:11.605Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=give%20parent%20co-pilot%20social%20connection%20family&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "give parent co-pilot social connection family",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:28:12.644Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aparent%20AND%20all%3Aco-pilot%20AND%20all%3Asocial%20AND%20all%3Aconnection%20AND%20all%3Afamily&start=0&max_results=10; sha256=717eee70e7527d789f5d6a9c434e0b50a2281c04d8f893d0551089aa0a31b1ba; total=0; shown=0/0"
+    },
+    {
+      "query": "give parent co-pilot social connection family",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:28:13.509Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=give%20parent%20co-pilot%20social%20connection%20family&rows=10&select=DOI,title; sha256=db75b1ddadaff609a13706ffb6fe5af9786c2cdf9f41bfda741bb0aa1bc972ab; total=5822268; shown=5/10; top: 10.1037/fam0000550 \"Connection between parent and child religiosity: A meta-analysis examining parent and child gender.\" | 10.20944/preprints202505.2366.v1 \"Can Video Gaming as a Family Improve Communication Skills and Promote Social-Emotional Growth in Preteens?: Lessons from “Co-Play” in Korea…\" | 10.1080/10522158.2012.762596 \"An Evaluation of a Parent-Developed, Parent-Run Parent Education Program\" | 10.5040/9798216522669.ch01 \"Parent Involvement Matters\" | 10.1177/10664807261483721 \"When Contracts Undermine Connection: Young Adults’ Perspectives on Trust and Meaning in Parent–Child Coresidence\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "give parent co-pilot answers night-time questions",
+      "url": "https://api.github.com/search/repositories?q=give%20parent%20co-pilot%20answers%20night-time%20questions&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=give%20parent%20co-pilot%20answers%20night-time%20questions&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:28:05.093Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "give parent co-pilot answers night-time questions",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aparent%20AND%20all%3Aco-pilot%20AND%20all%3Aanswers%20AND%20all%3Anight-time%20AND%20all%3Aquestions&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aparent%20AND%20all%3Aco-pilot%20AND%20all%3Aanswers%20AND%20all%3Anight-time%20AND%20all%3Aquestions&start=0&max_results=10",
+      "sha256": "8dff287445d02d2861dd90b6cc23ccbdeb666d4fa759e55ac58ff66f5682f48f",
+      "bytes": 868,
+      "observedAt": "2026-11-06T00:28:05.609Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "give parent co-pilot answers night-time questions",
+      "url": "https://api.crossref.org/works?query=give%20parent%20co-pilot%20answers%20night-time%20questions&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=give%20parent%20co-pilot%20answers%20night-time%20questions&rows=10&select=DOI,title",
+      "sha256": "c69e4dfdd6a312df6fe57217a6ab45eddd9ad10d12799adcab6cfd2105124479",
+      "bytes": 1250,
+      "observedAt": "2026-11-06T00:28:06.605Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "give parent co-pilot social connection family",
+      "url": "https://api.github.com/search/repositories?q=give%20parent%20co-pilot%20social%20connection%20family&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=give%20parent%20co-pilot%20social%20connection%20family&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:28:11.605Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "give parent co-pilot social connection family",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aparent%20AND%20all%3Aco-pilot%20AND%20all%3Asocial%20AND%20all%3Aconnection%20AND%20all%3Afamily&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aparent%20AND%20all%3Aco-pilot%20AND%20all%3Asocial%20AND%20all%3Aconnection%20AND%20all%3Afamily&start=0&max_results=10",
+      "sha256": "717eee70e7527d789f5d6a9c434e0b50a2281c04d8f893d0551089aa0a31b1ba",
+      "bytes": 860,
+      "observedAt": "2026-11-06T00:28:12.644Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "give parent co-pilot social connection family",
+      "url": "https://api.crossref.org/works?query=give%20parent%20co-pilot%20social%20connection%20family&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=give%20parent%20co-pilot%20social%20connection%20family&rows=10&select=DOI,title",
+      "sha256": "db75b1ddadaff609a13706ffb6fe5af9786c2cdf9f41bfda741bb0aa1bc972ab",
+      "bytes": 1799,
+      "observedAt": "2026-11-06T00:28:13.509Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "e83715a465f8bd798149609916bdc00ca949fddcfddc6043a15cb54d7c93dd9d",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

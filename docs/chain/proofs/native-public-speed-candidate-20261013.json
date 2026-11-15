@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-13",
+  "scope": "Read-only candidate qualification against the mounted production native reader and PostgreSQL projection; temporary candidate files removed after measurement",
+  "production_services_restarted": false,
+  "production_state_mutated": false,
+  "baseline_same_pod_seconds": {
+    "stats_cold": 12.593,
+    "stats_warm": 0.301,
+    "tasks_cold": 14.285,
+    "tasks_warm": 0.320
+  },
+  "candidate_seconds": {
+    "projects_initial_cold": 32.042,
+    "stats_after_projects": 1.229,
+    "tasks_after_projects": 1.554,
+    "project_details_after_projects_range": [1.85, 2.11],
+    "changed_query_search_page_range": [0.305, 0.347],
+    "warm_stats_projects_range": [0.320, 0.325]
+  },
+  "candidate_initial_projects": {
+    "count": 3,
+    "proof_batches": 82,
+    "sql_selects": 1109
+  },
+  "candidate_warm_changed_queries": {
+    "fresh_checkpoint_verifications_per_request": 1,
+    "additional_record_proof_batches": 0,
+    "sql_selects_per_request": 4
+  },
+  "rss_peak_mib": 123,
+  "limits": [
+    "Initial complete proof construction still costs about 32 seconds and runs before replica readiness",
+    "Every request verifies a fresh checkpoint; changed event/reward, archive or publication generations rebuild rather than serving stale state",
+    "This report is candidate qualification, not production ingress acceptance or a guarantee of constant latency"
+  ]
+}

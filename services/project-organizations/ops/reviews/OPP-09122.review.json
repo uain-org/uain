@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-09122",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "neutral",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Free-viewpoint replay has been deployed in some stadiums, but no service lets fans watch any match from any seat or the ball's view, and none reaches 1,000,000,000 fans, so the Main KPI is unmet. Intel True View was installed in about 20 NFL, 8 NBA and 10 soccer stadiums before Intel closed its volumetric studio and sought to sell the unit (https://www.tomshardware.com/news/intel-reportedly-wants-to-sell-its-sports-tech-business). Gaussian-splatting free-viewpoint sports is at research, pilot and early commercial stage, with no verified major-league production deployment (https://journal.smpte.org/conferences/SMPTE%202025%20Media%20Technology%20Summit/20/, https://www.ri.cmu.edu/moving-beyond-the-broadcast/). The NBA's Vision Pro offering is fixed-position immersive video of select Lakers games, replays a day or more later (https://support.watch.nba.com/hc/en-us/articles/20891550821783-Apple-Vision-Pro). Ball-tracking replay exists only in amateur cameras such as BallerCam (https://ballercam.com/blogs/updates/introducing-180-explore-view). Honest limit: multi-camera volumetric replay per venue is known engineering; open problems are camera-sparse reconstruction for any match, live latency and cost, and rights holders control access."
+  },
+  "additionalSearches": [
+    {
+      "query": "free viewpoint video sports Intel True View discontinued Canon free viewpoint system volumetric replay",
+      "source": "https://www.tomshardware.com/news/intel-reportedly-wants-to-sell-its-sports-tech-business",
+      "observedAt": "2026-11-06T00:46:00Z",
+      "finding": "Intel True View in about 20 NFL, 8 NBA and 10+ soccer stadiums; Intel shut its volumetric studio and explored selling the unit."
+    },
+    {
+      "query": "Gaussian splatting live sports 4D reconstruction real time free viewpoint broadcast 2025",
+      "source": "https://www.ri.cmu.edu/moving-beyond-the-broadcast/",
+      "observedAt": "2026-11-06T00:46:06Z",
+      "finding": "Live 4D Gaussian splatting for sports is research and pilots (CMU LiveSplats 2026, SMPTE 2025 case study); lack of multiview ground truth is a key obstacle."
+    },
+    {
+      "query": "NBA Apple Vision Pro immersive volumetric replays Hawk-Eye skeletal tracking 3D replay fans app",
+      "source": "https://support.watch.nba.com/hc/en-us/articles/20891550821783-Apple-Vision-Pro",
+      "observedAt": "2026-11-06T00:46:12Z",
+      "finding": "NBA on Vision Pro: select Lakers games in immersive multi-angle video, replays 1 to 3 days later; not free viewpoint."
+    },
+    {
+      "query": "ball point of view camera replay any seat virtual view match app users million",
+      "source": "https://ballercam.com/blogs/updates/introducing-180-explore-view",
+      "observedAt": "2026-11-06T00:46:18Z",
+      "finding": "Any-seat views exist only as ticketing previews (StubHub VR); ball-tracking replay only in amateur products like BallerCam 180 view."
+    }
+  ]
+}

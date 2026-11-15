@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01446",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Plants have been grown in orbit, but nothing approaches the Main KPI of 1,000 tonnes of food grown off Earth per year. NASA's Veggie and Advanced Plant Habitat have grown lettuce, kale, radishes and chile peppers on the ISS in six-plant chambers, and China's Tiangong has grown more than 20 varieties of 14 species and harvested its first orbit-grown rice on 5 August 2026 (https://www.gktoday.in/china-harvests-first-rice-crop-grown-in-space/); a 2026 New Phytologist review describes space crops as still a supplement to packaged food. Ground analogue Lunar Palace 365 met a crew's plant-food need for 370 days in a sealed system on Earth (https://www.biorxiv.org/content/10.1101/2021.01.12.426282.full.pdf). For Mars, NASA's Ohalo III is a crop testbed being built for the ISS to inform transit-mission systems, and the January 2026 Deep Space Food Challenge seeks an Earth-independent food system (https://ntrs.nasa.gov/citations/20260002161); lunar regolith simulants stress plants. No seed line or system has grown food on the Moon or Mars, and no off-Earth output is reported in tonnes. Honest limit: growing leafy crops in orbital chambers is known, so tasks that only repeat Veggie or Tiangong-style grow-outs are known answers; the open work is seed lines and systems that produce staple food at scale in partial gravity, radiation and regolith, and each task needs its own basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "plants grown in space food production ISS Veggie Chinese Tiangong rice 2026 Mars regolith crops",
+      "source": "https://www.gktoday.in/china-harvests-first-rice-crop-grown-in-space/",
+      "observedAt": "2026-11-06T01:15:00Z",
+      "finding": "Shenzhou-23 astronauts harvested the first orbit-grown rice on Tiangong on 5 August 2026; more than 20 varieties of 14 species have been grown in orbit. NASA Veggie holds six plants; ISS has grown lettuce, kale, radishes and chile peppers. Regolith simulants cause plant stress; a 2026 New Phytologist review calls space crops a supplement."
+    },
+    {
+      "query": "Shenzhou Tiangong space-grown food quantity kilograms per year bioregenerative life support Lunar Palace",
+      "source": "https://www.biorxiv.org/content/10.1101/2021.01.12.426282.full.pdf",
+      "observedAt": "2026-11-06T01:20:00Z",
+      "finding": "No kilograms-per-year figure exists for Tiangong food; Shenzhou-21 harvested cherry tomatoes in February 2026 as a milestone. Lunar Palace 1 (ground analogue, Beihang) regenerated 55 percent of food in 105 days (2014) and in Lunar Palace 365 plant production met the crew plant-food need, on Earth only."
+    },
+    {
+      "query": "NASA Mars food production plan crop growth chamber Mars surface 2030s Ohalo Artemis lunar greenhouse experiment 2026",
+      "source": "https://ntrs.nasa.gov/citations/20260002161",
+      "observedAt": "2026-11-06T01:25:00Z",
+      "finding": "NASA Ohalo III is a next-generation crop testbed being built for ISS testing to drive Mars-transit crop system design; MarsOasis (2018 SBIR) is only a concept; NASA launched the Deep Space Food Challenge: Mars to Table in January 2026. No funded Mars-surface crop system or lunar greenhouse result found."
+    },
+    {
+      "query": "\"space crop production\" OR bioregenerative crop 2024-2026 (Europe PMC)",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22space%20crop%20production%22%20OR%20%28%22bioregenerative%22%20AND%20crop%20AND%20PUB_YEAR%3A%5B2024%20TO%202026%5D%29&format=json&pageSize=5&sort=CITED%20desc",
+      "observedAt": "2026-11-06T01:19:50Z",
+      "finding": "Europe PMC returns 76 records; top hits are a 2024 Commun Biol review of plant physiology for space exploration, 2020 ISS Advanced Plant Habitat canopy photosynthesis validation and lettuce metatranscriptome work. Research on orbital growth hardware; no off-Earth food production at scale."
+    }
+  ]
+}

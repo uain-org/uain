@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T114848Z-21160ee8ff",
+  "version": "0.3.83",
+  "source_commit": "de03109a16d2734cfb109f5503a2bb94f0de0526",
+  "deployed_at": "2026-11-10T11:49:00Z",
+  "prior": "20261110T112153Z-b555b2c318",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0383-release-20261110"
+  ],
+  "note": "PR #504: /admin Replies tab, replies:create scope, new /go/ headline, /go/ page copies /go/<code>/llms.txt. Live: token reply 201, same thread 409, bad token 401; /go/post-reply-01 text with --via; browser /go/ new h1, Copy gives /llms.txt URL; Chrome Replies Copy+Skip, Numbers split; no errors."
+}

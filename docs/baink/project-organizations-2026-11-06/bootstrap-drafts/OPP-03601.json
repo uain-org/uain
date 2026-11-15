@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-03601",
+  "native_project": "P-OPP-03601",
+  "source_digest": "e490aa2a66a98d1d725950ee308e977de8344a7b1db023e784bb7f679cf18b4e",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build a decent home for every family on Earth",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "b0521d15b1496b4f9ad6e4dddfdd870408730ecffba163e1a2c9f778d02100dd"
+  },
+  "drafted_at": "2026-11-06T00:23:52.888Z",
+  "queries": [
+    "decent home family earth",
+    "decent home family housing construction cities"
+  ],
+  "searches": [
+    {
+      "query": "decent home family earth",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:23:45.204Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=decent%20home%20family%20earth&per_page=10; sha256=079ab7df8e73a340c67f690f6cfd1a3bd4fe0bac79a36977db5f0ca9cb1a8f09; total=1; shown=1/1; top: TanayGhanshyam/crispy-octo-guide \"We have come a long way since I was a child in the 1960s when all I wanted for Christmas was a slinky and some Rock’Em – Sock’Em Robots. No…\""
+    },
+    {
+      "query": "decent home family earth",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:23:45.779Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Adecent%20AND%20all%3Ahome%20AND%20all%3Afamily%20AND%20all%3Aearth&start=0&max_results=10; sha256=da5b2ab5c0a59398be791b5dc2db3000039effc8a3c37ff72702cb9a793d3cea; total=0; shown=0/0"
+    },
+    {
+      "query": "decent home family earth",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:23:46.906Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=decent%20home%20family%20earth&rows=10&select=DOI,title; sha256=81f0251d9cd87928dbed8bdf118315ccc7ec2330dc320dc63b0744b08257011d; total=1855638; shown=5/10; top: 10.2139/ssrn.2995968 \"Labor Regulation As Family Regulation: Decent Work and Decent Families\" | 10.1086/641584 \"A Decent Home in a Decent Neighborhood\" | 10.31077/ageing.better.2020.03 \"Home and dry: The need for decent homes in later life\" | 10.55776/i3145 \"untitled\" | 10.4324/9781351179645 \"A Decent Home\""
+    },
+    {
+      "query": "decent home family housing construction cities",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:23:51.614Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=decent%20home%20family%20housing%20construction%20cities&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "decent home family housing construction cities",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:23:52.085Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Adecent%20AND%20all%3Ahome%20AND%20all%3Afamily%20AND%20all%3Ahousing%20AND%20all%3Aconstruction%20AND%20all%3Acities&start=0&max_results=10; sha256=7b6e85e23d03a7fc64eecddae7dbbbfba1cf239ef57d870da6696bc6cfaca222; total=0; shown=0/0"
+    },
+    {
+      "query": "decent home family housing construction cities",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:23:52.887Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=decent%20home%20family%20housing%20construction%20cities&rows=10&select=DOI,title; sha256=7db9b37027661c7c4a0ad3a730b45348864f19958c843a22b1629b9d5f928097; total=2217557; shown=5/10; top: 10.4324/9781351179645-3 \"Designing Affordable Housing\" | 10.4324/9781351179645-10 \"Preserving Affordable Housing\" | 10.4324/9781351179645-11 \"Homelessness and Affordable Housing\" | 10.4324/9781351179645 \"A Decent Home\" | 10.1332/policypress/9781447353898.003.0011 \"The right to an affordable, secure and decent home for all\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "decent home family earth",
+      "url": "https://api.github.com/search/repositories?q=decent%20home%20family%20earth&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=decent%20home%20family%20earth&per_page=10",
+      "sha256": "079ab7df8e73a340c67f690f6cfd1a3bd4fe0bac79a36977db5f0ca9cb1a8f09",
+      "bytes": 16940,
+      "observedAt": "2026-11-06T00:23:45.204Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "decent home family earth",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Adecent%20AND%20all%3Ahome%20AND%20all%3Afamily%20AND%20all%3Aearth&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Adecent%20AND%20all%3Ahome%20AND%20all%3Afamily%20AND%20all%3Aearth&start=0&max_results=10",
+      "sha256": "da5b2ab5c0a59398be791b5dc2db3000039effc8a3c37ff72702cb9a793d3cea",
+      "bytes": 782,
+      "observedAt": "2026-11-06T00:23:45.779Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "decent home family earth",
+      "url": "https://api.crossref.org/works?query=decent%20home%20family%20earth&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=decent%20home%20family%20earth&rows=10&select=DOI,title",
+      "sha256": "81f0251d9cd87928dbed8bdf118315ccc7ec2330dc320dc63b0744b08257011d",
+      "bytes": 1039,
+      "observedAt": "2026-11-06T00:23:46.906Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "decent home family housing construction cities",
+      "url": "https://api.github.com/search/repositories?q=decent%20home%20family%20housing%20construction%20cities&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=decent%20home%20family%20housing%20construction%20cities&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:23:51.614Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "decent home family housing construction cities",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Adecent%20AND%20all%3Ahome%20AND%20all%3Afamily%20AND%20all%3Ahousing%20AND%20all%3Aconstruction%20AND%20all%3Acities&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Adecent%20AND%20all%3Ahome%20AND%20all%3Afamily%20AND%20all%3Ahousing%20AND%20all%3Aconstruction%20AND%20all%3Acities&start=0&max_results=10",
+      "sha256": "7b6e85e23d03a7fc64eecddae7dbbbfba1cf239ef57d870da6696bc6cfaca222",
+      "bytes": 862,
+      "observedAt": "2026-11-06T00:23:52.085Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "decent home family housing construction cities",
+      "url": "https://api.crossref.org/works?query=decent%20home%20family%20housing%20construction%20cities&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=decent%20home%20family%20housing%20construction%20cities&rows=10&select=DOI,title",
+      "sha256": "7db9b37027661c7c4a0ad3a730b45348864f19958c843a22b1629b9d5f928097",
+      "bytes": 1181,
+      "observedAt": "2026-11-06T00:23:52.887Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "3cfc6ffe7b1046fda59276571e86111ab7795872753ed6e20e1e976b7fd37a35",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

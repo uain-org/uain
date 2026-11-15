@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00725",
+  "native_project": "P-OPP-00725",
+  "source_digest": "63c41fb0557d6ea77ace4f929a50ed53a71dcb5ddb97bbde82a681effe48e0e4",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Stop glaucoma with pressure-sensing implants",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "1d699c7cedd1e4355d537b3f7b9f6533c3a04459c1a3504602d9ce9a14eee301"
+  },
+  "drafted_at": "2026-11-06T00:12:24.193Z",
+  "queries": [
+    "stop glaucoma pressure-sensing implants",
+    "stop glaucoma pressure-sensing disability accessibility vision"
+  ],
+  "searches": [
+    {
+      "query": "stop glaucoma pressure-sensing implants",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:12:15.839Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=stop%20glaucoma%20pressure-sensing%20implants&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "stop glaucoma pressure-sensing implants",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:12:16.285Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Astop%20AND%20all%3Aglaucoma%20AND%20all%3Apressure-sensing%20AND%20all%3Aimplants&start=0&max_results=10; sha256=172d89e1f735e66991e4e34898f2c65e1ae6cf3f502de4f6e0914304c47a5b84; total=0; shown=0/0"
+    },
+    {
+      "query": "stop glaucoma pressure-sensing implants",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:12:17.215Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=stop%20glaucoma%20pressure-sensing%20implants&rows=10&select=DOI,title; sha256=a1aca7ba7f4c3b729c4c209ed55363698f7852c3ae79e191b1b46d707a211c0b; total=1612506; shown=5/10; top: 10.1117/12.2507514.6008593693001 \"untitled\" | 10.1016/b978-0-7020-5193-7.00117-5 \"Glaucoma Implants\" | 10.3109/9780203488911-50 \"Glaucoma Drainage Implants\" | 10.1016/j.ogla.2020.11.006 \"The Effect of Phacoemulsification on Intraocular Pressure in Eyes with Preexisting Glaucoma Drainage Implants\" | 10.5005/jp/books/11383_27 \"Chapter-27 Glaucoma Implants\""
+    },
+    {
+      "query": "stop glaucoma pressure-sensing disability accessibility vision",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:12:22.347Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=stop%20glaucoma%20pressure-sensing%20disability%20accessibility%20vision&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "stop glaucoma pressure-sensing disability accessibility vision",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:12:23.373Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Astop%20AND%20all%3Aglaucoma%20AND%20all%3Apressure-sensing%20AND%20all%3Adisability%20AND%20all%3Aaccessibility%20AND%20all%3Avision&start=0&max_results=10; sha256=af31faaa52d4c78b14eb41519945d7a90e265be73a8a73cabca6d8132edd78ad; total=0; shown=0/0"
+    },
+    {
+      "query": "stop glaucoma pressure-sensing disability accessibility vision",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:12:24.192Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=stop%20glaucoma%20pressure-sensing%20disability%20accessibility%20vision&rows=10&select=DOI,title; sha256=907b1d5a120222539b75d2ea62872ceaead425f162abe0d8b895d2805512c8f4; total=2247660; shown=5/10; top: 10.1016/b978-0-12-804037-9.00038-3 \"Conclusion: STEM and disability—a vision for the future\" | 10.18061/dsq.v33i3.3739 \"Blind Photographers: Vision, Accessibility, and Empowerment in the Museum\" | 10.1097/00006324-200208000-00001 \"Glaucoma: Optometry Helps Relieve the Pressure\" | 10.1057/9780230339484.0008 \"Religion, Accessibility, and Disability\" | 10.1002/dhe.30388 \"Educate blind, low‐vision students about accessibility features of the iPhone, iPad\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "stop glaucoma pressure-sensing implants",
+      "url": "https://api.github.com/search/repositories?q=stop%20glaucoma%20pressure-sensing%20implants&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=stop%20glaucoma%20pressure-sensing%20implants&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:12:15.839Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "stop glaucoma pressure-sensing implants",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Astop%20AND%20all%3Aglaucoma%20AND%20all%3Apressure-sensing%20AND%20all%3Aimplants&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Astop%20AND%20all%3Aglaucoma%20AND%20all%3Apressure-sensing%20AND%20all%3Aimplants&start=0&max_results=10",
+      "sha256": "172d89e1f735e66991e4e34898f2c65e1ae6cf3f502de4f6e0914304c47a5b84",
+      "bytes": 812,
+      "observedAt": "2026-11-06T00:12:16.285Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "stop glaucoma pressure-sensing implants",
+      "url": "https://api.crossref.org/works?query=stop%20glaucoma%20pressure-sensing%20implants&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=stop%20glaucoma%20pressure-sensing%20implants&rows=10&select=DOI,title",
+      "sha256": "a1aca7ba7f4c3b729c4c209ed55363698f7852c3ae79e191b1b46d707a211c0b",
+      "bytes": 1197,
+      "observedAt": "2026-11-06T00:12:17.215Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "stop glaucoma pressure-sensing disability accessibility vision",
+      "url": "https://api.github.com/search/repositories?q=stop%20glaucoma%20pressure-sensing%20disability%20accessibility%20vision&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=stop%20glaucoma%20pressure-sensing%20disability%20accessibility%20vision&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:12:22.347Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "stop glaucoma pressure-sensing disability accessibility vision",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Astop%20AND%20all%3Aglaucoma%20AND%20all%3Apressure-sensing%20AND%20all%3Adisability%20AND%20all%3Aaccessibility%20AND%20all%3Avision&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Astop%20AND%20all%3Aglaucoma%20AND%20all%3Apressure-sensing%20AND%20all%3Adisability%20AND%20all%3Aaccessibility%20AND%20all%3Avision&start=0&max_results=10",
+      "sha256": "af31faaa52d4c78b14eb41519945d7a90e265be73a8a73cabca6d8132edd78ad",
+      "bytes": 894,
+      "observedAt": "2026-11-06T00:12:23.373Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "stop glaucoma pressure-sensing disability accessibility vision",
+      "url": "https://api.crossref.org/works?query=stop%20glaucoma%20pressure-sensing%20disability%20accessibility%20vision&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=stop%20glaucoma%20pressure-sensing%20disability%20accessibility%20vision&rows=10&select=DOI,title",
+      "sha256": "907b1d5a120222539b75d2ea62872ceaead425f162abe0d8b895d2805512c8f4",
+      "bytes": 1537,
+      "observedAt": "2026-11-06T00:12:24.192Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "1b6cf6cb2d4ba33efbbbf3ef6ae983dcf8022457d2d466e87f3fe3d57d72b03f",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01204",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:05:30Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": true,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "The project's end goal, a ready-to-eat disaster meal that stores for ten years, is already achieved by discoverable products, so it is held as a known answer. Ready America sells a ready-to-eat, no-water 2,400-calorie ration bar with a stated 10-year shelf life (https://www.readyamerica.com/product/10-year-2400-calorie-food-bar/); Mountain House rates its freeze-dried entrees at 30 years from its own sensory and nutrition testing since 2016 (https://mountainhouse.com/blogs/emergency-prep-survival/emergency-food-pioneer-mountain-house-raises-shelf-life-freeze-dried-entrees-30-years/); and long-life ration bars are standard (Red Cross Canada 5-year bars). Reaching 1,000,000,000 stockpiled meals is a procurement and financing matter, not an unsolved research problem; FEMA, for scale, stores about 27 million meals (https://www.globalsecurity.org/security/library/news/2023/05/sec-230510-dodnews01.htm). Honest limit: these are proprietary and the 10-year and 30-year claims are manufacturers' own; WFP's high-energy biscuit specification only requires 12 months at up to 30 C (https://documents.wfp.org/stellent/groups/public/documents/manual_guide_proced/wfp291333.pdf). A narrower project, a nutritionally complete meal at relief-biscuit cost that keeps ten years in tropical heat, could be proposed separately with its own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "freeze-dried meals 30 year shelf life Mountain House emergency food storage",
+      "source": "https://mountainhouse.com/blogs/emergency-prep-survival/emergency-food-pioneer-mountain-house-raises-shelf-life-freeze-dried-entrees-30-years/",
+      "observedAt": "2026-11-06T01:00:00Z",
+      "finding": "Mountain House raised its freeze-dried entree shelf life to 30 years in 2016 based on its own testing; competitors average about 25 years. Commercial and widely sold; needs water."
+    },
+    {
+      "query": "ready-to-eat ration no water required shelf life 10 years emergency food bar",
+      "source": "https://www.readyamerica.com/product/10-year-2400-calorie-food-bar/",
+      "observedAt": "2026-11-06T01:00:10Z",
+      "finding": "Ready America sells a ready-to-eat, no-water, 2,400-calorie vegan ration bar with a 10-year shelf life (seller's claim); many 5-year ration bars are Coast Guard approved."
+    },
+    {
+      "query": "FEMA meals stockpile number of meals pre-positioned disaster relief MRE shelf life",
+      "source": "https://www.globalsecurity.org/security/library/news/2023/05/sec-230510-dodnews01.htm",
+      "observedAt": "2026-11-06T01:00:20Z",
+      "finding": "FEMA stores about 27 million meals (2023); MREs rated 3 years at 80 F. Stockpile size is a funding choice, not a technical barrier."
+    },
+    {
+      "query": "WFP high energy biscuits shelf life prepositioned stocks UNHRD tonnes",
+      "source": "https://documents.wfp.org/stellent/groups/public/documents/manual_guide_proced/wfp291333.pdf",
+      "observedAt": "2026-11-06T01:00:30Z",
+      "finding": "WFP high-energy biscuit specification requires only 12 months shelf life at up to 30 C; tropical long-life storage at relief cost is the narrower gap."
+    }
+  ]
+}

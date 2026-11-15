@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-06241",
+  "native_project": "P-OPP-06241",
+  "source_digest": "2a2c036a6598a78656e94e12390cb6db9b3101c347be68623aad09a28a4b9e79",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build a space elevator carrying cargo to orbit",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "1b60c76233151350c19faeb9e6fc2829ad27da5dd24496c23682eed2a887169b"
+  },
+  "drafted_at": "2026-11-06T00:26:55.462Z",
+  "queries": [
+    "space elevator carrying cargo orbit",
+    "space elevator carrying exploration settlement launch"
+  ],
+  "searches": [
+    {
+      "query": "space elevator carrying cargo orbit",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:26:47.218Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=space%20elevator%20carrying%20cargo%20orbit&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "space elevator carrying cargo orbit",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:26:47.742Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aspace%20AND%20all%3Aelevator%20AND%20all%3Acarrying%20AND%20all%3Acargo%20AND%20all%3Aorbit&start=0&max_results=10; sha256=666d44d223624f100b0bf8d1e57b3bfd3cebdc6c4607d67b00888a010036c538; total=0; shown=0/0"
+    },
+    {
+      "query": "space elevator carrying cargo orbit",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:26:49.314Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=space%20elevator%20carrying%20cargo%20orbit&rows=10&select=DOI,title; sha256=d7b5b7ee953310db1784a8078a07a2174fc89a5a99508c4fdd34474a805a6015; total=1158485; shown=5/10; top: 10.21203/rs.3.rs-1336619/v1 \"Libration-Free Cargo Transfer of Floating Space Elevator\" | 10.1063/pt.5.029128 \"Space elevator proposed for launching cargo and astronauts\" | 10.1063/1.1472209 \"Magnetically levitated space elevator to low-earth orbit\" | 10.2514/6.2021-4221 \"A mission-based orbit keeping method of the partial space elevator\" | 10.1016/j.asr.2021.05.028 \"Stable cargo transportation of partial space elevator with multiple actuators\""
+    },
+    {
+      "query": "space elevator carrying exploration settlement launch",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:26:53.839Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=space%20elevator%20carrying%20exploration%20settlement%20launch&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "space elevator carrying exploration settlement launch",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:26:54.613Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aspace%20AND%20all%3Aelevator%20AND%20all%3Acarrying%20AND%20all%3Aexploration%20AND%20all%3Asettlement%20AND%20all%3Alaunch&start=0&max_results=10; sha256=df1fe1385d9c41a5463a973c43e2ebf4c34d309c6495bb1733d585d6277a1d98; total=0; shown=0/0"
+    },
+    {
+      "query": "space elevator carrying exploration settlement launch",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:26:55.461Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=space%20elevator%20carrying%20exploration%20settlement%20launch&rows=10&select=DOI,title; sha256=4ba142e2a46fc6b8347dd103846f6706c88eb8750ec19d90df75eb9326d73f5b; total=1460069; shown=5/10; top: 10.1016/b978-008044731-5/50032-9 \"Space Elevator, Transport System for Space Elevator, and Tether System\" | 10.2514/6.2010-8743 \"Solar Power Satellites, Space Elevator, and Reusable Launch\" | 10.2139/ssrn.6075346 \"The Moon Space Elevator: Science, Technology, Challenges, and Its Transformational Role in Future Space Exploration\" | 10.1016/j.spacepol.2006.02.005 \"The space elevator in the context of current space exploration policy\" | 10.1007/978-0-387-77640-8_2 \"Human space exploration and settlement\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "space elevator carrying cargo orbit",
+      "url": "https://api.github.com/search/repositories?q=space%20elevator%20carrying%20cargo%20orbit&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=space%20elevator%20carrying%20cargo%20orbit&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:26:47.218Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "space elevator carrying cargo orbit",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aspace%20AND%20all%3Aelevator%20AND%20all%3Acarrying%20AND%20all%3Acargo%20AND%20all%3Aorbit&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aspace%20AND%20all%3Aelevator%20AND%20all%3Acarrying%20AND%20all%3Acargo%20AND%20all%3Aorbit&start=0&max_results=10",
+      "sha256": "666d44d223624f100b0bf8d1e57b3bfd3cebdc6c4607d67b00888a010036c538",
+      "bytes": 822,
+      "observedAt": "2026-11-06T00:26:47.742Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "space elevator carrying cargo orbit",
+      "url": "https://api.crossref.org/works?query=space%20elevator%20carrying%20cargo%20orbit&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=space%20elevator%20carrying%20cargo%20orbit&rows=10&select=DOI,title",
+      "sha256": "d7b5b7ee953310db1784a8078a07a2174fc89a5a99508c4fdd34474a805a6015",
+      "bytes": 1467,
+      "observedAt": "2026-11-06T00:26:49.314Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "space elevator carrying exploration settlement launch",
+      "url": "https://api.github.com/search/repositories?q=space%20elevator%20carrying%20exploration%20settlement%20launch&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=space%20elevator%20carrying%20exploration%20settlement%20launch&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:26:53.839Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "space elevator carrying exploration settlement launch",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aspace%20AND%20all%3Aelevator%20AND%20all%3Acarrying%20AND%20all%3Aexploration%20AND%20all%3Asettlement%20AND%20all%3Alaunch&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aspace%20AND%20all%3Aelevator%20AND%20all%3Acarrying%20AND%20all%3Aexploration%20AND%20all%3Asettlement%20AND%20all%3Alaunch&start=0&max_results=10",
+      "sha256": "df1fe1385d9c41a5463a973c43e2ebf4c34d309c6495bb1733d585d6277a1d98",
+      "bytes": 876,
+      "observedAt": "2026-11-06T00:26:54.613Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "space elevator carrying exploration settlement launch",
+      "url": "https://api.crossref.org/works?query=space%20elevator%20carrying%20exploration%20settlement%20launch&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=space%20elevator%20carrying%20exploration%20settlement%20launch&rows=10&select=DOI,title",
+      "sha256": "4ba142e2a46fc6b8347dd103846f6706c88eb8750ec19d90df75eb9326d73f5b",
+      "bytes": 1430,
+      "observedAt": "2026-11-06T00:26:55.461Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "8ce6d72d65c55938e030fe82542576f297d546f3e533f4fb3c46179606cafc62",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

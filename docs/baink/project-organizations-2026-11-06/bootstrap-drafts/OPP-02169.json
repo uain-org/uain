@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-02169",
+  "native_project": "P-OPP-02169",
+  "source_digest": "5b1bb3556087b5123215e9c592149829fc076470a08784bda8fe1395af4d7592",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build electric freight corridors for trucks on all major highways",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "d8d06d7ee0964e93ffc25909e0a1a55c9c9d7843c56756a6da1da861f15e5f77"
+  },
+  "drafted_at": "2026-11-06T00:22:08.910Z",
+  "queries": [
+    "electric freight corridors trucks major highways",
+    "electric freight corridors climate atmosphere emissions"
+  ],
+  "searches": [
+    {
+      "query": "electric freight corridors trucks major highways",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:22:01.022Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=electric%20freight%20corridors%20trucks%20major%20highways&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "electric freight corridors trucks major highways",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:22:01.484Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aelectric%20AND%20all%3Afreight%20AND%20all%3Acorridors%20AND%20all%3Atrucks%20AND%20all%3Amajor%20AND%20all%3Ahighways&start=0&max_results=10; sha256=5aeb6b773f180d646944fb330fd06e1da3b47741915dc7f19312d263074ddf9e; total=0; shown=0/0"
+    },
+    {
+      "query": "electric freight corridors trucks major highways",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:22:02.765Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=electric%20freight%20corridors%20trucks%20major%20highways&rows=10&select=DOI,title; sha256=06f3b8f4a3de0ff0b3cec4c6330af0ea0cb473fbc458f1630ca78df1d615984a; total=991129; shown=5/10; top: 10.2139/ssrn.5162825 \"Low-Carbon Routing and Charging Planning for Electric Freight Trucks Utilizing Local Surplus Solar Power\" | 10.46855/energy-proceedings-8600 \"Technical and Economic Feasibility of Electrified Highways for Heavy-Duty Electric Trucks\" | 10.2139/ssrn.6460625 \"Spatially flexible charging demand allocation of long-haul battery-electric trucks along inter-zonal transport corridors\" | 10.1016/j.apenergy.2022.119935 \"Economic feasibility of electrified highways for heavy-duty electric trucks\" | 10.3403/02181116u \"Industrial variable-reach trucks\""
+    },
+    {
+      "query": "electric freight corridors climate atmosphere emissions",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:22:07.504Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=electric%20freight%20corridors%20climate%20atmosphere%20emissions&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "electric freight corridors climate atmosphere emissions",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:22:08.011Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aelectric%20AND%20all%3Afreight%20AND%20all%3Acorridors%20AND%20all%3Aclimate%20AND%20all%3Aatmosphere%20AND%20all%3Aemissions&start=0&max_results=10; sha256=c522d546a25a366393ea1aef2ebd3e5137dccedc77e211d9ed06fbe5207638b7; total=0; shown=0/0"
+    },
+    {
+      "query": "electric freight corridors climate atmosphere emissions",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:22:08.908Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=electric%20freight%20corridors%20climate%20atmosphere%20emissions&rows=10&select=DOI,title; sha256=480c541de81b5bf804e8185c2966c9b27d417d02407006b9e0e3f3532b0895eb; total=1367607; shown=5/10; top: 10.1163/9789004322714_cclc_2020-0028-0224 \"Revving Canada’s economy with zero-emissions freight: With 10% of our emissions coming from freight, targeted federal support for ZEV truck…\" | 10.4271/2026-01-0469 \"Planning Public Charging Infrastructure Locations for Electric Freight Highway Corridors\" | 10.1163/9789004322714_cclc_2017-0028-029 \"The State of Freight - Understanding greenhouse gas emissions from goods movement in Canada\" | 10.1049/iet-tv.48.41412 \"untitled\" | 10.3390/atmos14010034 \"Climate Indicators of Landslide Risks on Alaska National Park Road Corridors\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "electric freight corridors trucks major highways",
+      "url": "https://api.github.com/search/repositories?q=electric%20freight%20corridors%20trucks%20major%20highways&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=electric%20freight%20corridors%20trucks%20major%20highways&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:22:01.022Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "electric freight corridors trucks major highways",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aelectric%20AND%20all%3Afreight%20AND%20all%3Acorridors%20AND%20all%3Atrucks%20AND%20all%3Amajor%20AND%20all%3Ahighways&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aelectric%20AND%20all%3Afreight%20AND%20all%3Acorridors%20AND%20all%3Atrucks%20AND%20all%3Amajor%20AND%20all%3Ahighways&start=0&max_results=10",
+      "sha256": "5aeb6b773f180d646944fb330fd06e1da3b47741915dc7f19312d263074ddf9e",
+      "bytes": 866,
+      "observedAt": "2026-11-06T00:22:01.484Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "electric freight corridors trucks major highways",
+      "url": "https://api.crossref.org/works?query=electric%20freight%20corridors%20trucks%20major%20highways&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=electric%20freight%20corridors%20trucks%20major%20highways&rows=10&select=DOI,title",
+      "sha256": "06f3b8f4a3de0ff0b3cec4c6330af0ea0cb473fbc458f1630ca78df1d615984a",
+      "bytes": 1490,
+      "observedAt": "2026-11-06T00:22:02.765Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "electric freight corridors climate atmosphere emissions",
+      "url": "https://api.github.com/search/repositories?q=electric%20freight%20corridors%20climate%20atmosphere%20emissions&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=electric%20freight%20corridors%20climate%20atmosphere%20emissions&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:22:07.504Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "electric freight corridors climate atmosphere emissions",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aelectric%20AND%20all%3Afreight%20AND%20all%3Acorridors%20AND%20all%3Aclimate%20AND%20all%3Aatmosphere%20AND%20all%3Aemissions&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aelectric%20AND%20all%3Afreight%20AND%20all%3Acorridors%20AND%20all%3Aclimate%20AND%20all%3Aatmosphere%20AND%20all%3Aemissions&start=0&max_results=10",
+      "sha256": "c522d546a25a366393ea1aef2ebd3e5137dccedc77e211d9ed06fbe5207638b7",
+      "bytes": 880,
+      "observedAt": "2026-11-06T00:22:08.011Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "electric freight corridors climate atmosphere emissions",
+      "url": "https://api.crossref.org/works?query=electric%20freight%20corridors%20climate%20atmosphere%20emissions&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=electric%20freight%20corridors%20climate%20atmosphere%20emissions&rows=10&select=DOI,title",
+      "sha256": "480c541de81b5bf804e8185c2966c9b27d417d02407006b9e0e3f3532b0895eb",
+      "bytes": 1572,
+      "observedAt": "2026-11-06T00:22:08.908Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "b67ce2d7c3fe6d6e09ebd6a3fb7a2773b8c776548f52e7f06c9c3510011611c5",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

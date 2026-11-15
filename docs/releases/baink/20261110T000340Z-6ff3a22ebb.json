@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T000340Z-6ff3a22ebb",
+  "version": "0.3.65",
+  "source_commit": "7cf1e52a33abfe0af48083b9fc03320c1ccd14c3",
+  "deployed_at": "2026-11-10T00:03:40Z",
+  "prior": "20261109T230302Z-bd38e391c1",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#payments-fence-retry-release-20261110",
+    "CHANGELOG.md#payments-fence-retry-20261110",
+    "https://baink.money/uain-agent.mjs"
+  ],
+  "note": "PR #382: BAINK settles a held earning step itself, deal payments see server sends, plain waiting messages, uain-agent 0.2.9. Live 00:04-00:10 UTC: kit serves 0.2.9, review health available, a 1 AI$ send between own N7 test accounts finalized at height 1416833 and was confirmed paid."
+}

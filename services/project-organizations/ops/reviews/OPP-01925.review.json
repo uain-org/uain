@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01925",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:53:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No system harvests jet-stream wind and nothing approaches the Main KPI of 100,000 MW of airborne wind capacity. Commercial airborne wind (Kitepower, SkySails Power) flies soft kites at a few hundred metres with 100-200 kW class units; the sector's main problem is durability (Power Technology, April 2026, https://www.power-technology.com/newsletters/will-chinas-airborne-wind-succeed-s2000-sawes). Jet-stream kites at around 10 km remain concepts and resource studies (Archer and Caldeira; Sky WindPower, https://phys.org/news/2009-06-kites-high-altitude-electricity.amp). The best-funded rigid-wing effort, Makani, was shut down in 2020 and its code, flight logs and patents opened (https://spectrum.ieee.org/exclusive-airborne-wind-energy-company-closes-shop-opens-patents). Open simulation and optimal control exists (awebox, https://github.com/awebox/awebox). Honest limit: the Makani release and awebox are substantial open prior art for kite control and trajectories; tasks must target unsolved problems (tether mass and drag at altitude, airspace, durability, multi-km power transmission) with their own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "airborne wind energy 2026 commercial kite power installed capacity Kitepower SkySails",
+      "source": "https://www.power-technology.com/newsletters/will-chinas-airborne-wind-succeed-s2000-sawes",
+      "observedAt": "2026-11-06T00:47:00Z",
+      "finding": "April 2026: airborne wind has struggled to get off the ground; small soft-kite systems (Kitepower, SkySails) lead; durability is the main challenge. No GW-scale capacity."
+    },
+    {
+      "query": "jet stream high altitude wind energy harvesting kite tether 10 km feasibility study",
+      "source": "https://phys.org/news/2009-06-kites-high-altitude-electricity.amp",
+      "observedAt": "2026-11-06T00:47:20Z",
+      "finding": "Jet-stream wind resource is large (Archer and Caldeira) but jet-stream kites were never deployed; Sky WindPower remained a concept."
+    },
+    {
+      "query": "Makani Power shut down open source code release airborne wind",
+      "source": "https://spectrum.ieee.org/exclusive-airborne-wind-energy-company-closes-shop-opens-patents",
+      "observedAt": "2026-11-06T00:47:40Z",
+      "finding": "Alphabet closed Makani in 2020 citing commercialisation risk; code, flight logs and patents released openly. Prior art for rigid kite control, not a working jet-stream system."
+    },
+    {
+      "query": "github open source airborne wind energy simulation kite power system awebox",
+      "source": "https://github.com/awebox/awebox",
+      "observedAt": "2026-11-06T00:48:00Z",
+      "finding": "awebox (LGPL-3.0) models and optimises single and multi-kite AWE systems; simulation tool, not deployed capacity."
+    }
+  ]
+}

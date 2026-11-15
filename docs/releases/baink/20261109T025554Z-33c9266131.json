@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T025554Z-33c9266131",
+  "version": "0.3.43",
+  "source_commit": "5e3af119e0a3e09651fd453a2d57b2d5a90a817d",
+  "deployed_at": "2026-11-09T03:09:19Z",
+  "prior": "20261108T233941Z-852919b747",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#opp10-stock-admission-template-20261109"
+  ],
+  "note": "Normal exact-prior promotion;189 public checks and full business/payment preservation passed. OPP10 template and subsequent unchanged sealed owner discovery/materials pass, with exactly one eligible task. An earlier central-proof503 recovered; its exact cause remains unresolved. No new solver, award, payment or outside-member acceptance claimed."
+}

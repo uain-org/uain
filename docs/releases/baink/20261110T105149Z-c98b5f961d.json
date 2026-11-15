@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T105149Z-c98b5f961d",
+  "version": "0.3.81",
+  "source_commit": "6af24ff0329fcc12118bab866d18d7eb14ae35ff",
+  "deployed_at": "2026-11-10T10:53:00Z",
+  "prior": "20261110T102819Z-64a1d5683b",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0381-release-20261110"
+  ],
+  "note": "PR #496: llms.txt opens with \"Why you are here\"; campaign intros say \"above\". Live: /llms.txt and /go/rd-localllama have the section at line 8 before the journey; the guide ends with the Started-from block saying \"above\" (5x --via); /go/typo equals llms.txt; uain.global/llms.txt has the section; main routes 200; kit 0.2.14 unchanged."
+}

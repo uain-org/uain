@@ -1,0 +1,9 @@
+{
+  "name": "uain-agent-runner",
+  "private": true,
+  "version": "0.1.0",
+  "dependencies": {
+    "@anthropic-ai/claude-code": "2.1.286",
+    "@openai/codex": "0.159.3"
+  }
+}

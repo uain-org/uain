@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01924",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:50:30Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Floating wind in deep water far from shore is technically demonstrated but nowhere near the Main KPI of 500,000 MW of floating capacity. Global operational floating capacity was about 278 MW at the end of 2025 (GWEC 2026) with roughly 109 MW more operational in 2026 (RenewableUK, https://www.energyglobal.com/wind/07102026/new-renewableuk-report-shows-38-increase-in-global-operational-floating-offshore-wind-capacity/amp/), about 0.08% of the target. The largest farm, Hywind Tampen (88 MW, about 140 km offshore in 260-300 m of water, https://en.wikipedia.org/wiki/Hywind_Tampen), shows the concept works. Open design tools exist (NREL/NLR WEIS with RAFT and OpenFAST, https://github.com/nlrwindsystems/weis), but the unsolved problem is cost: floating LCOE remains several times fixed-bottom and 2025-2026 saw cancellations and halts (TwinHub CfD cancelled, Trollvind halted, https://www.rechargenews.com/floating-wind/the-floating-wind-revolution-is-delayed-heres-why/2-1-2001008). Honest limit: floating platforms, moorings and the design toolchain are prior art; tasks must target unsolved cost, mooring, installation or far-shore transmission problems with their own prior-art basis, not re-deriving Hywind-class designs."
+  },
+  "additionalSearches": [
+    {
+      "query": "global floating offshore wind installed capacity 2026 GW",
+      "source": "https://www.energyglobal.com/wind/07102026/new-renewableuk-report-shows-38-increase-in-global-operational-floating-offshore-wind-capacity/amp/",
+      "observedAt": "2026-11-06T00:44:00Z",
+      "finding": "Operational floating wind about 277-278 MW at end 2025; 109 MW added in 2026; 221 GW in development pipeline. Far below 500 GW."
+    },
+    {
+      "query": "Hywind Tampen floating wind farm distance from shore water depth",
+      "source": "https://en.wikipedia.org/wiki/Hywind_Tampen",
+      "observedAt": "2026-11-06T00:44:30Z",
+      "finding": "Hywind Tampen, 88 MW, about 140 km offshore in 260-300 m depth: deep far-shore floating wind is demonstrated at tens of MW scale."
+    },
+    {
+      "query": "open source floating offshore wind design tool github WEIS RAFT OpenFAST",
+      "source": "https://github.com/nlrwindsystems/weis",
+      "observedAt": "2026-11-06T00:45:00Z",
+      "finding": "WEIS (RAFT, OpenFAST) is an open floating turbine design and optimisation toolchain; design tools, not deployed capacity."
+    },
+    {
+      "query": "floating offshore wind cost barriers 2026 projects delayed cancelled",
+      "source": "https://www.rechargenews.com/floating-wind/the-floating-wind-revolution-is-delayed-heres-why/2-1-2001008",
+      "observedAt": "2026-11-06T00:45:30Z",
+      "finding": "GWEC June 2026: no floating capacity commissioned and no auction awards in 2025; commercialisation delayed by cost; UK and Norway projects cancelled or halted."
+    }
+  ]
+}

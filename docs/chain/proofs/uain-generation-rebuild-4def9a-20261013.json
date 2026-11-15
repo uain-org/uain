@@ -1,0 +1,127 @@
+{
+  "schema": "uain-production-shaped-generation-rebuild-readonly-v1",
+  "release": "4def9a6514d2ba01c44ed694b8e9804ff82d64fd",
+  "pod": "pilot-75ff84cf48-7h7gn",
+  "started_utc": "2026-10-13T11:34:32.273Z",
+  "completed_utc": "2026-10-13T11:35:32.002Z",
+  "method": "Copied only the live compiled public route to a unique /tmp directory and rewrote imports to the existing live modules. Its independent temporary process warmed projects once, then recreated only proofCache and cleared responseCache/responseBytes/inFlight/warmGeneration while retaining sourceCache and catalogCache.",
+  "postgres_readonly_session_verified": "on",
+  "select_only_query_enforced": true,
+  "store_ready_or_migrations_called": false,
+  "actual_proved_event_count": "463",
+  "actual_head_not_forged": true,
+  "production_chain_or_sql_writes": false,
+  "production_module_or_service_changes": false,
+  "retained_immutable_caches": {
+    "sourceRows": 316,
+    "sourceBytes": 1364214,
+    "catalogs": 13,
+    "responseEntries": 0,
+    "inFlight": 0
+  },
+  "stages": [
+    {
+      "stage": "initial_cold_projects",
+      "seconds": 33.622565057,
+      "status": 200,
+      "projectCount": 3,
+      "eventCount": "463",
+      "stateHeight": "239841",
+      "headCalls": 3,
+      "proofCalls": 82,
+      "headMs": 917.1018049999993,
+      "proofMs": 55708.64161200001,
+      "selects": 1109,
+      "cachesBefore": {
+        "sourceRows": 0,
+        "sourceBytes": 0,
+        "catalogs": 0,
+        "responseEntries": 0,
+        "inFlight": 0
+      },
+      "cachesAfter": {
+        "sourceRows": 316,
+        "sourceBytes": 1364214,
+        "catalogs": 13,
+        "responseEntries": 1,
+        "inFlight": 0
+      },
+      "rssMiB": 117.69140625,
+      "heapMiB": 13.958076477050781
+    },
+    {
+      "stage": "projects_rebuild_with_warm_immutable_sources",
+      "seconds": 25.811452164000002,
+      "status": 200,
+      "projectCount": 3,
+      "eventCount": "463",
+      "stateHeight": "239854",
+      "headCalls": 3,
+      "proofCalls": 64,
+      "headMs": 951.526982000003,
+      "proofMs": 42883.699300999986,
+      "selects": 1101,
+      "cachesBefore": {
+        "sourceRows": 316,
+        "sourceBytes": 1364214,
+        "catalogs": 13,
+        "responseEntries": 0,
+        "inFlight": 0
+      },
+      "cachesAfter": {
+        "sourceRows": 316,
+        "sourceBytes": 1364214,
+        "catalogs": 13,
+        "responseEntries": 1,
+        "inFlight": 0
+      },
+      "rssMiB": 115.703125,
+      "heapMiB": 12.140548706054688
+    },
+    {
+      "stage": "warm_projects_after_rebuild",
+      "seconds": 0.29227253900000505,
+      "status": 200,
+      "projectCount": 3,
+      "eventCount": "463",
+      "stateHeight": "239854",
+      "headCalls": 1,
+      "proofCalls": 0,
+      "headMs": 287.3079160000052,
+      "proofMs": 0,
+      "selects": 4,
+      "cachesBefore": {
+        "sourceRows": 316,
+        "sourceBytes": 1364214,
+        "catalogs": 13,
+        "responseEntries": 1,
+        "inFlight": 0
+      },
+      "cachesAfter": {
+        "sourceRows": 316,
+        "sourceBytes": 1364214,
+        "catalogs": 13,
+        "responseEntries": 1,
+        "inFlight": 0
+      },
+      "rssMiB": 115.9765625,
+      "heapMiB": 11.066558837890625
+    }
+  ],
+  "resource_bounds": {
+    "wall_timeout_seconds": 120,
+    "timeout_kill_grace_seconds": 5,
+    "go_max_procs": 2,
+    "max_record_proof_concurrency": 2,
+    "postgres_pool_max": 2,
+    "existing_pod_memory_limit_gib": 2,
+    "probe_process_rss_excludes_child_verifiers": true
+  },
+  "cleanup": {
+    "owned_temporary_module_runner_scratch_directory_removed": true,
+    "pod_ready_containers": "2/2",
+    "pod_restarts": 0
+  },
+  "limitation": "The actual chain head and record set stayed unchanged. Explicit local cache clearing models the reader cost of whole-generation invalidation, not a real new event, indexer catch-up, changed record dependencies or all-route generation rebuild.",
+  "conclusion": "Even with immutable source/catalog caches warm, projects rebuilding requires 25.811 seconds, 64 proof batches and 1,101 SELECTs. A 292 ms warm hit does not establish fast behavior following a command or event invalidation."
+}

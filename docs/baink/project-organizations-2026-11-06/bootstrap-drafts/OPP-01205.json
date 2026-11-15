@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-01205",
+  "native_project": "P-OPP-01205",
+  "source_digest": "0d6e2776879c100744fb3b429b18d56a48ab61f79ef02f74889382f55afadc8f",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Provide every household a guaranteed minimum calorie supply",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "6a60d7894f11dab52e566ba4b6a6ecd19b68e62ef8901c75f39d140fddda335a"
+  },
+  "drafted_at": "2026-11-06T00:15:25.802Z",
+  "queries": [
+    "household guaranteed minimum calorie supply",
+    "household guaranteed minimum food nutrition systems"
+  ],
+  "searches": [
+    {
+      "query": "household guaranteed minimum calorie supply",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:15:17.867Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=household%20guaranteed%20minimum%20calorie%20supply&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "household guaranteed minimum calorie supply",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:15:18.378Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Ahousehold%20AND%20all%3Aguaranteed%20AND%20all%3Aminimum%20AND%20all%3Acalorie%20AND%20all%3Asupply&start=0&max_results=10; sha256=d3cdcc194df3d8c064b383af2df262ae348fa946fe084c6f7fdc00cebad68bd0; total=0; shown=0/0"
+    },
+    {
+      "query": "household guaranteed minimum calorie supply",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:15:19.255Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=household%20guaranteed%20minimum%20calorie%20supply&rows=10&select=DOI,title; sha256=b0bde6a4ba1f09ad7c3b00ccd20179632c9db8306aa6be42fc47af291e80ba51; total=540881; shown=5/10; top: 10.2139/ssrn.5241848 \"Minimum Income and Household Labour Supply\" | 10.1515/bis-2024-0006 \"Comparing Guaranteed Minimum Income and Universal Basic Income: The Importance of Household Structure\" | 10.5089/9781513584379.001.a001 \"Guaranteed Minimum Income Schemes in Europe: Landscape and Design\" | 10.14264/b549c4b \"Numerical Methods for Guaranteed Minimum Withdrawal Benefits\" | 10.1111/j.1467-9965.2010.00418.x \"MINIMUM GUARANTEED PAYMENTS AND COSTLY CANCELLATION RIGHTS: A STOPPING GAME PERSPECTIVE\""
+    },
+    {
+      "query": "household guaranteed minimum food nutrition systems",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:15:24.396Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=household%20guaranteed%20minimum%20food%20nutrition%20systems&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "household guaranteed minimum food nutrition systems",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:15:24.872Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Ahousehold%20AND%20all%3Aguaranteed%20AND%20all%3Aminimum%20AND%20all%3Afood%20AND%20all%3Anutrition%20AND%20all%3Asystems&start=0&max_results=10; sha256=f2b02a079407e970fa878ec1ccb62e26e5a3413b0f43bc992f5f3c4b9278d88d; total=0; shown=0/0"
+    },
+    {
+      "query": "household guaranteed minimum food nutrition systems",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:15:25.801Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=household%20guaranteed%20minimum%20food%20nutrition%20systems&rows=10&select=DOI,title; sha256=442bc09f294d314e844235e0666c5311927c4815d58cce7d3ee3dc7bbb1bc677; total=6759309; shown=5/10; top: 10.1111/1747-0080.12322 \"Do low‐income Cypriots experience food stress? The cost of a healthy food basket relative to guaranteed minimum income in Nicosia, Cyprus\" | 10.47278/book.tl/2026.335 \"Women’s Empowerment in Agriculture and Their Effects on Household Food Security: Issues &amp Challenges\" | 10.23880/jmcs-16000124 \"Household Food and Nutrition Security in Nigeria\" | 10.1515/bis-2024-0006 \"Comparing Guaranteed Minimum Income and Universal Basic Income: The Importance of Household Structure\" | 10.1177/156482650002100424 \"Integration of Aquaculture into Smallholder Farming Systems for Improved Food Security and Household Nutrition\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "household guaranteed minimum calorie supply",
+      "url": "https://api.github.com/search/repositories?q=household%20guaranteed%20minimum%20calorie%20supply&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=household%20guaranteed%20minimum%20calorie%20supply&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:15:17.867Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "household guaranteed minimum calorie supply",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Ahousehold%20AND%20all%3Aguaranteed%20AND%20all%3Aminimum%20AND%20all%3Acalorie%20AND%20all%3Asupply&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Ahousehold%20AND%20all%3Aguaranteed%20AND%20all%3Aminimum%20AND%20all%3Acalorie%20AND%20all%3Asupply&start=0&max_results=10",
+      "sha256": "d3cdcc194df3d8c064b383af2df262ae348fa946fe084c6f7fdc00cebad68bd0",
+      "bytes": 838,
+      "observedAt": "2026-11-06T00:15:18.378Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "household guaranteed minimum calorie supply",
+      "url": "https://api.crossref.org/works?query=household%20guaranteed%20minimum%20calorie%20supply&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=household%20guaranteed%20minimum%20calorie%20supply&rows=10&select=DOI,title",
+      "sha256": "b0bde6a4ba1f09ad7c3b00ccd20179632c9db8306aa6be42fc47af291e80ba51",
+      "bytes": 1545,
+      "observedAt": "2026-11-06T00:15:19.255Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "household guaranteed minimum food nutrition systems",
+      "url": "https://api.github.com/search/repositories?q=household%20guaranteed%20minimum%20food%20nutrition%20systems&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=household%20guaranteed%20minimum%20food%20nutrition%20systems&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:15:24.396Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "household guaranteed minimum food nutrition systems",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Ahousehold%20AND%20all%3Aguaranteed%20AND%20all%3Aminimum%20AND%20all%3Afood%20AND%20all%3Anutrition%20AND%20all%3Asystems&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Ahousehold%20AND%20all%3Aguaranteed%20AND%20all%3Aminimum%20AND%20all%3Afood%20AND%20all%3Anutrition%20AND%20all%3Asystems&start=0&max_results=10",
+      "sha256": "f2b02a079407e970fa878ec1ccb62e26e5a3413b0f43bc992f5f3c4b9278d88d",
+      "bytes": 872,
+      "observedAt": "2026-11-06T00:15:24.872Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "household guaranteed minimum food nutrition systems",
+      "url": "https://api.crossref.org/works?query=household%20guaranteed%20minimum%20food%20nutrition%20systems&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=household%20guaranteed%20minimum%20food%20nutrition%20systems&rows=10&select=DOI,title",
+      "sha256": "442bc09f294d314e844235e0666c5311927c4815d58cce7d3ee3dc7bbb1bc677",
+      "bytes": 1752,
+      "observedAt": "2026-11-06T00:15:25.801Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "25918a7864c8e030aa80d400ed2ea4c7d3a1c78a8e4859447c5f53af5b173113",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

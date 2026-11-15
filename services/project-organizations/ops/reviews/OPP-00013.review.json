@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00013",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T02:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": true,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held as a known answer. The end goal as stated, older adults regaining strength, is already achieved by an openly published, freely available intervention: the Cochrane review of progressive resistance strength training pooled 121 randomised trials and about 6,700 older participants and found a large effect on muscle strength (73 trials, SMD 0.84) with small but significant gains in physical ability, chair-rising and stair-climbing, and rare serious adverse events (https://www.cochrane.org/evidence/CD002759.progressive-resistance-strength-training-improving-physical-function-older-adults). The protocol is public, costs nothing and needs no new discovery, so a project whose KPI is 1,000,000,000 older adults regaining strength is a delivery and adherence programme rather than a problem without a discoverable solution. The pharmacological half of the title is genuinely unsolved and should be stated: no drug is approved for sarcopenia, a 2024 meta-analysis of seven randomised trials found bimagrumab increased thigh muscle volume and fat-free mass with no reliable gain in strength, gait speed or six-minute walk distance (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11385021/), its tirzepatide combination was terminated in September 2025, apitegromab preserved muscle during weight loss in 102 adults without proving greater strength or function, and the registry shows only small phase 1-2 drug studies (https://clinicaltrials.gov/api/v2/studies?query.cond=sarcopenia&query.intr=drug&filter.overallStatus=COMPLETED&pageSize=15). Honest limit: a reframed project on a scalable therapy for people who cannot train, with function rather than mass as the endpoint, would be open work and would need its own prior-art basis; this one, as written, is not opened as new work."
+  },
+  "additionalSearches": [
+    {
+      "query": "progressive resistance training older adults sarcopenia Cochrane review strength gains evidence",
+      "source": "https://www.cochrane.org/evidence/CD002759.progressive-resistance-strength-training-improving-physical-function-older-adults",
+      "observedAt": "2026-11-06T02:26:00Z",
+      "finding": "Cochrane review CD002759 (Liu and Latham) pooled 121 randomised trials and about 6,700 older adults: large effect on strength (73 trials, SMD 0.84), small significant effect on physical ability (33 trials, SMD 0.14), gait speed about +0.08 m/s, rare serious adverse events. An open, free, published answer to older adults regaining strength; durability beyond the trials is not established."
+    },
+    {
+      "query": "bimagrumab apitegromab sarcopenia drug trial muscle mass function 2026",
+      "source": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11385021/",
+      "observedAt": "2026-11-06T02:29:00Z",
+      "finding": "A 2024 meta-analysis of seven randomised trials found bimagrumab increased thigh muscle volume and fat-free mass but gave no significant improvement in muscle strength or physical performance (gait speed, six-minute walk) except in the slowest participants. The tirzepatide combination trial was terminated in September 2025; apitegromab preserved muscle in 102 adults losing weight without proven function gains; neither is approved for sarcopenia."
+    },
+    {
+      "query": "completed drug trials for sarcopenia on ClinicalTrials.gov",
+      "source": "https://clinicaltrials.gov/api/v2/studies?query.cond=sarcopenia&query.intr=drug&filter.overallStatus=COMPLETED&pageSize=15",
+      "observedAt": "2026-11-06T02:31:00Z",
+      "finding": "The registry's completed sarcopenia drug studies are small and early: MK-0773 (170, phase 2), MK-677 (72, phase 1-2), intranasal oxytocin (23), metformin (120, phase 1-2), testosterone and thyroid hormone studies. No late-phase trial of a drug approved for sarcopenia appears, confirming no licensed pharmacological answer."
+    },
+    {
+      "query": "open-source repositories for sarcopenia and muscle aging interventions",
+      "source": "https://api.github.com/search/repositories?q=sarcopenia+muscle+aging&per_page=10&sort=stars",
+      "observedAt": "2026-11-06T02:33:00Z",
+      "finding": "The GitHub search returns only prediction, measurement and analysis projects (sarcopenia risk models, CT psoas radiomics, an offline habit tracker), none a deployed intervention. The open solution for this project is the published exercise prescription, not software."
+    }
+  ]
+}

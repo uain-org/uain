@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-07681",
+  "native_project": "P-OPP-07681",
+  "source_digest": "bdca06a4f0cefbd1147c0de9d78c035da43a6b68fd749bfdb46503628882260b",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build a self-healing network that patches itself within seconds of a new flaw",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "0106216e154f2b78e4681a5d2d912a1d037ee2d03189ca8edf48bd4cbdd3aecd"
+  },
+  "drafted_at": "2026-11-06T00:28:38.950Z",
+  "queries": [
+    "self-healing network patches seconds flaw",
+    "self-healing network patches cybersecurity information truth"
+  ],
+  "searches": [
+    {
+      "query": "self-healing network patches seconds flaw",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:28:31.123Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=self-healing%20network%20patches%20seconds%20flaw&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "self-healing network patches seconds flaw",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:28:31.682Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aself-healing%20AND%20all%3Anetwork%20AND%20all%3Apatches%20AND%20all%3Aseconds%20AND%20all%3Aflaw&start=0&max_results=10; sha256=2a340eda3350792ffaab5a7ec1de7814c4b405bade6e13d041b0df39aadee671; total=0; shown=0/0"
+    },
+    {
+      "query": "self-healing network patches seconds flaw",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:28:32.474Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=self-healing%20network%20patches%20seconds%20flaw&rows=10&select=DOI,title; sha256=67fae1bfe09a1f2eb96a591ed663e78f7e201471a6758f638cd3b66e53ba767b; total=2850780; shown=5/10; top: 10.1021/polymscitech.5c00018.s001 \"Flaw Sensitivity of Tough and Self-Healing Hydrogels with Hierarchical Structure\" | 10.1109/itw.2003.1216720 \"A flaw in a self-healing key distribution scheme\" | 10.1002/pat.70629 \"Multifunctional Double‐Network Hydrogel With Self‐Healing, Adhesive, and Antibacterial Properties for Skin Wound Repair Patches\" | 10.47982/cgc.10.744 \"Weathering vs Self-healing\" | 10.1021/acsnano.5c16624.s002 \"Extracellular Matrix-Guided Hierarchical Assembly of Self-Powered Patches for Stress Relaxing, Wireless Monitoring and Accelerated Healing…\""
+    },
+    {
+      "query": "self-healing network patches cybersecurity information truth",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:28:37.586Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=self-healing%20network%20patches%20cybersecurity%20information%20truth&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "self-healing network patches cybersecurity information truth",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:28:38.066Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aself-healing%20AND%20all%3Anetwork%20AND%20all%3Apatches%20AND%20all%3Acybersecurity%20AND%20all%3Ainformation%20AND%20all%3Atruth&start=0&max_results=10; sha256=1547277be862cb564e674fbffa954489c8f35b045f9dc827c6990ca2cc500c26; total=0; shown=0/0"
+    },
+    {
+      "query": "self-healing network patches cybersecurity information truth",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:28:38.949Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=self-healing%20network%20patches%20cybersecurity%20information%20truth&rows=10&select=DOI,title; sha256=ff920c67fc281542a3685de12521432c1c3f0adea5a211edaa376d06580da070; total=6546907; shown=5/10; top: 10.1021/acsnano.5c16624.s002 \"Extracellular Matrix-Guided Hierarchical Assembly of Self-Powered Patches for Stress Relaxing, Wireless Monitoring and Accelerated Healing…\" | 10.1021/acsnano.5c16624.s001 \"Extracellular Matrix-Guided Hierarchical Assembly of Self-Powered Patches for Stress Relaxing, Wireless Monitoring and Accelerated Healing…\" | 10.1021/acsnano.5c16624.s003 \"Extracellular Matrix-Guided Hierarchical Assembly of Self-Powered Patches for Stress Relaxing, Wireless Monitoring and Accelerated Healing…\" | 10.1021/acs.macromol.2c01425.s001 \"Rate-Independent Self-Healing Double Network Hydrogels Using a Thixotropic Sacrificial Network\" | 10.1021/acs.macromol.2c01425.s002 \"Rate-Independent Self-Healing Double Network Hydrogels Using a Thixotropic Sacrificial Network\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "self-healing network patches seconds flaw",
+      "url": "https://api.github.com/search/repositories?q=self-healing%20network%20patches%20seconds%20flaw&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=self-healing%20network%20patches%20seconds%20flaw&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:28:31.123Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "self-healing network patches seconds flaw",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aself-healing%20AND%20all%3Anetwork%20AND%20all%3Apatches%20AND%20all%3Aseconds%20AND%20all%3Aflaw&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aself-healing%20AND%20all%3Anetwork%20AND%20all%3Apatches%20AND%20all%3Aseconds%20AND%20all%3Aflaw&start=0&max_results=10",
+      "sha256": "2a340eda3350792ffaab5a7ec1de7814c4b405bade6e13d041b0df39aadee671",
+      "bytes": 834,
+      "observedAt": "2026-11-06T00:28:31.682Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "self-healing network patches seconds flaw",
+      "url": "https://api.crossref.org/works?query=self-healing%20network%20patches%20seconds%20flaw&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=self-healing%20network%20patches%20seconds%20flaw&rows=10&select=DOI,title",
+      "sha256": "67fae1bfe09a1f2eb96a591ed663e78f7e201471a6758f638cd3b66e53ba767b",
+      "bytes": 1668,
+      "observedAt": "2026-11-06T00:28:32.474Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "self-healing network patches cybersecurity information truth",
+      "url": "https://api.github.com/search/repositories?q=self-healing%20network%20patches%20cybersecurity%20information%20truth&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=self-healing%20network%20patches%20cybersecurity%20information%20truth&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:28:37.586Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "self-healing network patches cybersecurity information truth",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aself-healing%20AND%20all%3Anetwork%20AND%20all%3Apatches%20AND%20all%3Acybersecurity%20AND%20all%3Ainformation%20AND%20all%3Atruth&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aself-healing%20AND%20all%3Anetwork%20AND%20all%3Apatches%20AND%20all%3Acybersecurity%20AND%20all%3Ainformation%20AND%20all%3Atruth&start=0&max_results=10",
+      "sha256": "1547277be862cb564e674fbffa954489c8f35b045f9dc827c6990ca2cc500c26",
+      "bytes": 890,
+      "observedAt": "2026-11-06T00:28:38.066Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "self-healing network patches cybersecurity information truth",
+      "url": "https://api.crossref.org/works?query=self-healing%20network%20patches%20cybersecurity%20information%20truth&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=self-healing%20network%20patches%20cybersecurity%20information%20truth&rows=10&select=DOI,title",
+      "sha256": "ff920c67fc281542a3685de12521432c1c3f0adea5a211edaa376d06580da070",
+      "bytes": 1786,
+      "observedAt": "2026-11-06T00:28:38.949Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "556990a6e3e54c90150379cb46bc875310f004b27a5be939d11d99a7623bc371",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00489",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T03:42:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": true,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held: charting and tracking brain development from infancy to old age is already done openly. White matter micro- and macrostructure brain charts for the human lifespan (Nature 2026) aggregate 35,120 scans from birth to 100 years and are published with accompanying open-access charts (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Brain%20charts%20for%20the%20human%20lifespan%22&format=json&pageSize=3&resultType=core), extending the lifespan brain-chart line that already serves as a normative reference. The longitudinal cohorts behind them are running and shared: ABCD supports repeated analyses of 8,700 to 11,300 children followed from age 9 to 18, HEALthy Brain and Child Development enrols newborns, and UK Biobank imaging covers about 500,000 adults aged 44 to 87 (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22HEALthy%20Brain%20and%20Child%20Development%22%20OR%20%22Adolescent%20Brain%20Cognitive%20Development%22%20AND%20cohort&format=json&pageSize=5&resultType=core), and normative-modelling code is public (https://api.github.com/search/repositories?q=normative+modelling+brain+charts&per_page=10&sort=stars). What remains is delivery, not discovery: the Main KPI of 130,000,000 children tracked would require imaging every child, which no programme attempts and which the cited cohorts show costs orders of magnitude more per participant. Honest limits: the open charts are cross-sectional aggregates with only parts of the lifespan truly longitudinal, the cohorts are not globally representative, and per-child clinical interpretation is unvalidated; a reframed project on low-cost or non-MRI developmental tracking, or on validating individual deviation scores for clinical use, would be open work needing its own prior-art basis. As written this is not opened as new work."
+  },
+  "additionalSearches": [
+    {
+      "query": "lifespan brain charts",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Brain%20charts%20for%20the%20human%20lifespan%22&format=json&pageSize=3&resultType=core",
+      "observedAt": "2026-11-06T03:34:00Z",
+      "finding": "'White matter micro- and macrostructure brain charts for the human lifespan', Nature 655 (online 13 May 2026): 35,120 brain scans aggregated from studies worldwide, mapping development from birth to 100 years, published with accompanying open-access charts under CC BY. Lifespan developmental tracking as a normative resource already exists openly."
+    },
+    {
+      "query": "longitudinal child brain development cohorts",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22HEALthy%20Brain%20and%20Child%20Development%22%20OR%20%22Adolescent%20Brain%20Cognitive%20Development%22%20AND%20cohort&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T03:36:00Z",
+      "finding": "2026 papers draw on ABCD samples of 8,706 to 11,279 children followed from ages 9-11 into late adolescence, on HBCD newborns (84 in one analysis) and on UK Biobank adults aged 44-87 (about 500,000). Repeated independent reuse of these cohorts shows the data are shared; none approaches population-scale tracking of all children."
+    },
+    {
+      "query": "open-source normative brain chart modelling",
+      "source": "https://api.github.com/search/repositories?q=normative+modelling+brain+charts&per_page=10&sort=stars",
+      "observedAt": "2026-11-06T03:38:00Z",
+      "finding": "Four repositories, led by sina-mansour/normative_brain_charts (5 stars), plus fetal-brain normative charts and organoid growth charts. The method for charting and scoring an individual against lifespan norms is public, so no new tooling is required to track development."
+    },
+    {
+      "query": "brain cell and development atlas portals as open reference resources",
+      "source": "https://brain-map.org/atlases-and-data/bkp/abc-atlas",
+      "observedAt": "2026-11-06T03:40:00Z",
+      "finding": "Checked as the comparable open reference infrastructure: the Allen Brain Knowledge Platform publishes developmental datasets (for example a developing mouse visual cortex set of 568,654 cells) as an open science resource with browser, GitHub and programmatic access, reinforcing that normative developmental reference data are openly distributed rather than missing."
+    }
+  ]
+}

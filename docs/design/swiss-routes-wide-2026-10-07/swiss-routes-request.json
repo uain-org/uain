@@ -1,0 +1,9 @@
+{
+  "model": "bytedance-seed/seedream-5-0-flash",
+  "prompt": "Edit the supplied orbital Earth photograph. Preserve its exact ultrawide composition: the COMPLETE Earth remains in precisely the same right-hand position and scale, left 45 percent stays empty dark midnight-blue space, same realistic continents, same cyan atmospheric rim, same warm dawn at the far right. Do not move the globe or change its colors. Add a sophisticated, minimal worldwide network overlay. There is exactly ONE origin: a small bright icy-cyan pinpoint on SWITZERLAND, on the Alpine land immediately NORTH of northern Italy, east of France and west of Austria, near 46.8N 8.2E. It is approximately 68.6 percent across and 35.8 percent down this image; use the accurate Alpine geography rather than blindly using the approximate pixel position. All six elegant fine cyan curved routes share that ONE identical Swiss root, like a star topology. They curve over the globe outward toward Britain, Scandinavia, North Africa, southern Africa, western Asia and toward the western horizon across the Atlantic. These are thin luminous lifted arcs, graceful and restrained, not thick laser beams or straight spokes. A tiny luminous point marks the Swiss root, smaller dim destination points. No route starts from Africa, no second root, no connections between destination points. Keep the visible Alpine land around the origin so its geographic placement is evident. Render clean professional orbital photography with subtle luminous data arcs. Absolutely no words, letters, flags, national emblems, icons, badges, UI, labels, company logos, watermarks or corner marks.",
+  "resolution": "2K",
+  "aspect_ratio": "21:9",
+  "n": 1,
+  "seed": 710073,
+  "reference_file": "docs/design/earth-wide-2026-10-07/reference.png"
+}

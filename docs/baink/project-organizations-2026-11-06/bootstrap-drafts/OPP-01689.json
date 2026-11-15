@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-01689",
+  "native_project": "P-OPP-01689",
+  "source_digest": "1d281efeb385aad5a3e34b9a51de5ace3e84aa79b1a6d58f916e5b20db66950f",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Give schools and clinics water, toilets and soap",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "cc60b79e59b96a787a0b336b9115acab5dcbd598b66f70622cc54a9b803fcc2d"
+  },
+  "drafted_at": "2026-11-06T00:19:07.178Z",
+  "queries": [
+    "give schools clinics water toilets soap",
+    "give schools clinics oceans freshwater access"
+  ],
+  "searches": [
+    {
+      "query": "give schools clinics water toilets soap",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:18:59.052Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=give%20schools%20clinics%20water%20toilets%20soap&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "give schools clinics water toilets soap",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:18:59.593Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aschools%20AND%20all%3Aclinics%20AND%20all%3Awater%20AND%20all%3Atoilets%20AND%20all%3Asoap&start=0&max_results=10; sha256=e4303f07bdfa0d761ca128f4e3b79d0ab6bf56af00579977c7f30e5a12777e80; total=0; shown=0/0"
+    },
+    {
+      "query": "give schools clinics water toilets soap",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:19:00.513Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=give%20schools%20clinics%20water%20toilets%20soap&rows=10&select=DOI,title; sha256=47161090805bbe28b4e0a6515085595751a1f30936895a2336bfbe8630db6fce; total=2452550; shown=5/10; top: 10.1163/2210-7975_hrd-9861-2014010 \"Bulletin 254 April 1, 2014 Give a S#*T for Accessible Toilets in Uganda!\" | 10.5149/northcarolina/9781469621289.003.0003 \"Understanding Roman Sanitation from Archaeology Toilets, Sewers, and Water Systems\" | 10.1016/0738-081x9500116-w \"Mineral waters: Instead of soap or better than soap?\" | 10.5149/northcarolina/9781469621289.003.0004 \"Pinpointing Behaviors, Attitudes, and Ideals for Roman Toilets\" | 10.3030/867076 \"untitled\""
+    },
+    {
+      "query": "give schools clinics oceans freshwater access",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:19:05.608Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=give%20schools%20clinics%20oceans%20freshwater%20access&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "give schools clinics oceans freshwater access",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:19:06.083Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aschools%20AND%20all%3Aclinics%20AND%20all%3Aoceans%20AND%20all%3Afreshwater%20AND%20all%3Aaccess&start=0&max_results=10; sha256=276c32b8fda2161381be9aba5b508ce6d7e067427efbd6e29199743ac64d6dd2; total=0; shown=0/0"
+    },
+    {
+      "query": "give schools clinics oceans freshwater access",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:19:07.178Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=give%20schools%20clinics%20oceans%20freshwater%20access&rows=10&select=DOI,title; sha256=d07a76d7772bd57307faa2bdf02ca66c67d742de06bfd31c11e141184a8394b2; total=1315970; shown=5/10; top: 10.1002/opph.201590040 \"Lens to Turn Smartphone into Microscope\" | 10.63485/fc2d9-kjj47 \"Give the gift of access\" | 10.63485/mxsm3-x8e91 \"Give the gift of access\" | 10.26686/wgtn.24706656 \"Building a Monitoring Toolkit to Give Effect to Ngaa Rauru Freshwater Values\" | 10.64628/aa.dn5h4mqw6 \"Our oceans give new insights on elements made in supernovae\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "give schools clinics water toilets soap",
+      "url": "https://api.github.com/search/repositories?q=give%20schools%20clinics%20water%20toilets%20soap&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=give%20schools%20clinics%20water%20toilets%20soap&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:18:59.052Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "give schools clinics water toilets soap",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aschools%20AND%20all%3Aclinics%20AND%20all%3Awater%20AND%20all%3Atoilets%20AND%20all%3Asoap&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aschools%20AND%20all%3Aclinics%20AND%20all%3Awater%20AND%20all%3Atoilets%20AND%20all%3Asoap&start=0&max_results=10",
+      "sha256": "e4303f07bdfa0d761ca128f4e3b79d0ab6bf56af00579977c7f30e5a12777e80",
+      "bytes": 848,
+      "observedAt": "2026-11-06T00:18:59.593Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "give schools clinics water toilets soap",
+      "url": "https://api.crossref.org/works?query=give%20schools%20clinics%20water%20toilets%20soap&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=give%20schools%20clinics%20water%20toilets%20soap&rows=10&select=DOI,title",
+      "sha256": "47161090805bbe28b4e0a6515085595751a1f30936895a2336bfbe8630db6fce",
+      "bytes": 1253,
+      "observedAt": "2026-11-06T00:19:00.513Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "give schools clinics oceans freshwater access",
+      "url": "https://api.github.com/search/repositories?q=give%20schools%20clinics%20oceans%20freshwater%20access&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=give%20schools%20clinics%20oceans%20freshwater%20access&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:19:05.608Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "give schools clinics oceans freshwater access",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aschools%20AND%20all%3Aclinics%20AND%20all%3Aoceans%20AND%20all%3Afreshwater%20AND%20all%3Aaccess&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aschools%20AND%20all%3Aclinics%20AND%20all%3Aoceans%20AND%20all%3Afreshwater%20AND%20all%3Aaccess&start=0&max_results=10",
+      "sha256": "276c32b8fda2161381be9aba5b508ce6d7e067427efbd6e29199743ac64d6dd2",
+      "bytes": 860,
+      "observedAt": "2026-11-06T00:19:06.083Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "give schools clinics oceans freshwater access",
+      "url": "https://api.crossref.org/works?query=give%20schools%20clinics%20oceans%20freshwater%20access&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=give%20schools%20clinics%20oceans%20freshwater%20access&rows=10&select=DOI,title",
+      "sha256": "d07a76d7772bd57307faa2bdf02ca66c67d742de06bfd31c11e141184a8394b2",
+      "bytes": 1180,
+      "observedAt": "2026-11-06T00:19:07.178Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "af52a26e5f736cf1575fbc979f952714ff22fba951e452e12f25509694e3c7ef",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

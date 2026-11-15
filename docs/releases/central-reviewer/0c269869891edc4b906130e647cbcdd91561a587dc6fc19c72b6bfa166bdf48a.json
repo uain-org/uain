@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "central-reviewer",
+  "release_id": "0c269869891edc4b906130e647cbcdd91561a587dc6fc19c72b6bfa166bdf48a",
+  "version": null,
+  "source_commit": "7fdfd1e4321f60d44dc59d274c3d8a69e890eb32",
+  "deployed_at": "2026-11-15T02:49:16Z",
+  "prior": "d05a7f6663ab917746e3f4e95b9ebcb4a0833d147435465024b07e35f3512c59",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#custody-window-live-20261115",
+    "docs/security/custody-install-runbook-2026-11-15.md"
+  ],
+  "note": "Worker part: d05a7f66 with worker.mjs, cli-provider.mjs, custody-client.mjs from main; other files and the Node runtime path (fc00eabf) unchanged. Custody part 3b3e303c, same window. SV-1, SV-4 reviewer half. Live check: CS-280075e3 rejected over a checker pass, final at height 1635746. Rollback: release:rollback --part worker --release d05a7f66."
+}

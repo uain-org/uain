@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "controlled-holder",
+  "release_id": "9b9cb0a97a88bc4617217ba26a803788f9fa19a31c87febd7fc637d531e02a61",
+  "version": null,
+  "source_commit": "96b47ae7d968dfe0250e934a1f17669d9997fdc2",
+  "deployed_at": "2026-11-08T21:27:00Z",
+  "prior": "e581212c78d7a32b6f84ca582d36a97bfc191684865bc62860e42dba50c8581c",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#holder10-app41-preparation-20261109"
+  ],
+  "note": "Normal signed10 controlled upgrade; 64 public downloads and 54 runtime assets verified. Same keys metadata, 177 journal/config files, owner/state/image/caps preserved. Native caught up; both role companions healthy. Narrow sealed P9 history GET verified existing awards. V1 provenance remains unavailable; no new financial action or outside adoption."
+}

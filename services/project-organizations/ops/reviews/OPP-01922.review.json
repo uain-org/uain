@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01922",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Printed solar on flexible rolls is demonstrated but nowhere near the Main KPI of 500,000,000 square metres installed per year. The record fully roll-to-roll printed perovskite modules are 11 percent at 50 square cm (Nature Communications 2024) and 11 to 12 percent at 100 square cm on a commercial-scale printer in 2025 (https://taiyangnews.info/australias-csiro-led-team-reports-new-efficiency-record/), and a 2026 Advanced Science review notes flexible modules remain under 22 percent with open problems in film quality at high throughput, long-term stability and integration cost (https://eprints.whiterose.ac.uk/id/eprint/240548/). TNO's spin-out Perovion plans the first roll-to-roll perovskite factory for construction in 2030 (https://www.tno.nl/en/newsroom/2026/03/tno-launches-perovion-technologies/). Heliatek's IEC-certified HeliaSol organic film is the main commercial printed product, from a line designed for about 1 to 2 million square metres a year, and the organic solar market is only about US$0.3 to 2 billion with large-area modules losing 20 to 30 percent efficiency versus cells (https://heliatek.com/en). Honest limit: roll-to-roll coating of perovskite and organic cells is published and partly commercial, so tasks that reproduce the CSIRO or Heliatek processes are known answers; the open work is printed modules with silicon-competitive efficiency, outdoor lifetime and cost at hundreds of millions of square metres, and each task needs its own basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "roll-to-roll printed perovskite solar module efficiency 2026 CSIRO Power Roll commercial printed solar manufacturing",
+      "source": "https://taiyangnews.info/australias-csiro-led-team-reports-new-efficiency-record/",
+      "observedAt": "2026-11-06T01:32:00Z",
+      "finding": "CSIRO-led teams reported 11 percent for 50 square cm fully roll-to-roll printed perovskite modules (15.5 percent small cells, carbon electrodes, Nature Communications 2024) and 11 to 12 percent for 100 square cm modules on an ACAP commercial-scale printer in 2025; ARENA lists an 18 percent R2R lab target. No commercial sales found."
+    },
+    {
+      "query": "Heliatek organic solar film production capacity square metres per year 2025 2026 printed OPV market",
+      "source": "https://heliatek.com/en",
+      "observedAt": "2026-11-06T01:33:00Z",
+      "finding": "Heliatek raised EUR 80 million in 2016 for a 1 million square metre per year roll-to-roll HeliaFilm line inaugurated in 2019; its site now claims up to 2 million square metres a year of HeliaSol (undated); earlier output was a few tens of thousands of square metres. No 2025-2026 output or shipment figures found."
+    },
+    {
+      "query": "flexible perovskite solar commercial production 2026 roll-to-roll stability lifetime degradation outdoor printed solar cost per watt",
+      "source": "https://www.tno.nl/en/newsroom/2026/03/tno-launches-perovion-technologies/",
+      "observedAt": "2026-11-06T01:33:00Z",
+      "finding": "TNO launched Perovion (March 2026) planning the first roll-to-roll perovskite factory for construction in 2030; PEARL reported 4.5 percent R2R minimodules of 36 square cm; a 2026 Advanced Science review says flexible module efficiency remains under 22 percent with stability and integration-cost challenges. No outdoor lifetime or cost-per-watt data found."
+    },
+    {
+      "query": "organic photovoltaics printed solar film commercial installed area worldwide square metres ASCA Armor OPV market size 2025",
+      "source": "https://pubs.rsc.org/en/content/articlepdf/2022/OG/d5ee07830j",
+      "observedAt": "2026-11-06T01:33:00Z",
+      "finding": "Organic solar market estimates for 2025 range from about US$343 million to US$2.01 billion; no worldwide installed-area figure exists; an RSC review notes large-area module efficiency typically falls 20 to 30 percent versus small cells, and a 2025 commentary says the sector is still translating lab results into products."
+    }
+  ]
+}

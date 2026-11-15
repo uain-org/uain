@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-02163",
+  "native_project": "P-OPP-02163",
+  "source_digest": "350aa1a4fd864d12ef2e80ec373ebcce23d7150a613c0a9a711ea1e6c051bacf",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Offer electric aircraft for regional flights",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "d8d06d7ee0964e93ffc25909e0a1a55c9c9d7843c56756a6da1da861f15e5f77"
+  },
+  "drafted_at": "2026-11-06T00:21:04.112Z",
+  "queries": [
+    "offer electric aircraft regional flights",
+    "offer electric aircraft climate atmosphere emissions"
+  ],
+  "searches": [
+    {
+      "query": "offer electric aircraft regional flights",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:20:56.099Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=offer%20electric%20aircraft%20regional%20flights&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "offer electric aircraft regional flights",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:20:56.612Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Aelectric%20AND%20all%3Aaircraft%20AND%20all%3Aregional%20AND%20all%3Aflights&start=0&max_results=10; sha256=f2dcfeb5fe43c24197334c12ea7d31d20715cc51b36eff6063c276741eec795b; total=1; shown=1/1; top: arXiv:2504.18031v2 \"Joint Resource Estimation and Trajectory Optimization for eVTOL-involved CR network: A Monte Carlo Tree Search-based Approach\""
+    },
+    {
+      "query": "offer electric aircraft regional flights",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:20:57.588Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=offer%20electric%20aircraft%20regional%20flights&rows=10&select=DOI,title; sha256=9900d48ffc219ec821fab74ace9f5d69d23d31536967aa9e9d5555053f0921e8; total=1331608; shown=5/10; top: 10.1109/iteceats66641.2026.11592923 \"Optimal Deployment of Electric Aircraft for Canadian Domestic Flights\" | 10.4050/sm-2023-esymp-46 \"Electric Aircraft Symposium 2023 - The Team Has Two First Flights - P2 Xcursion, Elfly\" | 10.1016/s1464-28592100614-3 \"Universal Hydrogen to accelerate test flights of hydrogen-powered regional aircraft\" | 10.15394/ijaaa.2018.1240 \"Competitiveness of Hybrid Electric Aircraft on Short Range Scheduled Flights\" | 10.1016/j.trpro.2020.11.022 \"The prospects of hybrid-electric regional air transport - an assessment of travel time benefits of domestic short-haul flights in Germany w…\""
+    },
+    {
+      "query": "offer electric aircraft climate atmosphere emissions",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:21:02.553Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=offer%20electric%20aircraft%20climate%20atmosphere%20emissions&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "offer electric aircraft climate atmosphere emissions",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:21:03.070Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Aelectric%20AND%20all%3Aaircraft%20AND%20all%3Aclimate%20AND%20all%3Aatmosphere%20AND%20all%3Aemissions&start=0&max_results=10; sha256=e1ed3068c52f1c6ec6d626acc6a157f4292eec7570ad6173974ad15727b722b1; total=0; shown=0/0"
+    },
+    {
+      "query": "offer electric aircraft climate atmosphere emissions",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:21:04.111Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=offer%20electric%20aircraft%20climate%20atmosphere%20emissions&rows=10&select=DOI,title; sha256=9fcd4167b3f2685631fa971f2572c713937d55023dbe1b5109e136544da5662b; total=1500610; shown=5/10; top: 10.1127/0941-2948/2002/0011-0139 \"AEROCHEM II: Modelling the impact of aircraft emissions on ozone and other chemical compounds in the atmosphere\" | 10.1163/9789004322714_cclc_2015-0174-006 \"Brazils bold offer of 37 cut in greenhouse gas emissions wins praise\" | 10.3390/atmos13101660 \"The Emissions of Water Vapour and NOx from Modelled Hydrogen-Fuelled Aircraft and the Impact of NOx Reduction on Climate Compared with Kero…\" | 10.2514/6.2018-5025 \"Mission Analysis and Emissions for Conventional and Hybrid-Electric Regional Jet Aircraft\" | 10.3390/atmos11040418 \"Aircraft Takeoff Performance in a Changing Climate for Canadian Airports\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "offer electric aircraft regional flights",
+      "url": "https://api.github.com/search/repositories?q=offer%20electric%20aircraft%20regional%20flights&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=offer%20electric%20aircraft%20regional%20flights&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:20:56.099Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "offer electric aircraft regional flights",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Aelectric%20AND%20all%3Aaircraft%20AND%20all%3Aregional%20AND%20all%3Aflights&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Aelectric%20AND%20all%3Aaircraft%20AND%20all%3Aregional%20AND%20all%3Aflights&start=0&max_results=10",
+      "sha256": "f2dcfeb5fe43c24197334c12ea7d31d20715cc51b36eff6063c276741eec795b",
+      "bytes": 3587,
+      "observedAt": "2026-11-06T00:20:56.612Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "offer electric aircraft regional flights",
+      "url": "https://api.crossref.org/works?query=offer%20electric%20aircraft%20regional%20flights&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=offer%20electric%20aircraft%20regional%20flights&rows=10&select=DOI,title",
+      "sha256": "9900d48ffc219ec821fab74ace9f5d69d23d31536967aa9e9d5555053f0921e8",
+      "bytes": 1495,
+      "observedAt": "2026-11-06T00:20:57.588Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "offer electric aircraft climate atmosphere emissions",
+      "url": "https://api.github.com/search/repositories?q=offer%20electric%20aircraft%20climate%20atmosphere%20emissions&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=offer%20electric%20aircraft%20climate%20atmosphere%20emissions&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:21:02.553Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "offer electric aircraft climate atmosphere emissions",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Aelectric%20AND%20all%3Aaircraft%20AND%20all%3Aclimate%20AND%20all%3Aatmosphere%20AND%20all%3Aemissions&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Aelectric%20AND%20all%3Aaircraft%20AND%20all%3Aclimate%20AND%20all%3Aatmosphere%20AND%20all%3Aemissions&start=0&max_results=10",
+      "sha256": "e1ed3068c52f1c6ec6d626acc6a157f4292eec7570ad6173974ad15727b722b1",
+      "bytes": 874,
+      "observedAt": "2026-11-06T00:21:03.070Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "offer electric aircraft climate atmosphere emissions",
+      "url": "https://api.crossref.org/works?query=offer%20electric%20aircraft%20climate%20atmosphere%20emissions&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=offer%20electric%20aircraft%20climate%20atmosphere%20emissions&rows=10&select=DOI,title",
+      "sha256": "9fcd4167b3f2685631fa971f2572c713937d55023dbe1b5109e136544da5662b",
+      "bytes": 1492,
+      "observedAt": "2026-11-06T00:21:04.111Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "bb970dd8305627f16e2a7b0fb666ef8a0a24b54257979b011015a7473c304450",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

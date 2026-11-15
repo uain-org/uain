@@ -1,0 +1,51 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-02642",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable enzyme digests any plastic in hours; fast enzymatic depolymerisation is solved only for PET and some polyesters, so the Main KPI of 100,000,000 tonnes of plastic digested per year is unmet. For PET, Carbios's engineered cutinase depolymerised 90% of PET waste in 10 hours (Nature 2020), and its plant was planned for over 130 tonnes per day (https://en.wikipedia.org/wiki/Carbios); FAST-PETase is openly published (709 citations, https://europepmc.org/article/MED/35478237). For the plastics that dominate production the answer is missing: a review finds research has mostly not produced working biocatalysts for polyethylene, polypropylene, PVC, polystyrene, ether-based polyurethane, polyamide and synthetic rubber (https://europepmc.org/article/MED/36099200), nylon-6 enzymes are only at screening stage (https://doi.org/10.1038/s41467-024-45523-5), and claims of insect polystyrene digestion are disputed (https://doi.org/10.1039/d5su00725a). Open discovery resources exist (PlaszymeDB, PETadex and metagenomic miners on GitHub) but list candidates, not hours-scale polyolefin enzymes. Honest limit: PET hydrolase engineering is a known answer, so tasks that re-engineer PETases or replicate LCC-ICCG or FAST-PETase are not new work; the open, checkable work is a verified enzyme or enzyme-plus-pretreatment route for polyolefins, PVC or polystyrene."
+  },
+  "additionalSearches": [
+    {
+      "query": "enzymatic depolymerization polyethylene enzyme hours (2024 onward)",
+      "source": "https://api.openalex.org/works?search=enzymatic%20depolymerization%20polyethylene%20enzyme%20hours&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:16:17Z",
+      "finding": "843 works, nearly all on PET (internal electric field acceleration 2026, PET review 2026, esterase E4 on PET) plus nylon-6 screening (2024); no hours-scale enzymatic depolymerisation of polyethylene found."
+    },
+    {
+      "query": "FAST-PETase machine learning engineered PET hydrolase depolymerization",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=FAST-PETase%20machine%20learning%20engineered%20PET%20hydrolase%20depolymerization&format=json&pageSize=8&sort=CITED%20desc",
+      "observedAt": "2026-11-06T01:16:19Z",
+      "finding": "58 records led by ML-aided PET hydrolase engineering (2022, 709 citations) and mechanism-based PET hydrolase design; also 'Microbial enzymes will offer limited solutions to the global plastic pollution crisis' (2023) and 'Bottlenecks in biobased approaches to plastic degradation' (2024)."
+    },
+    {
+      "query": "polyethylene polypropylene enzymatic degradation evidence critique (2024 onward)",
+      "source": "https://api.openalex.org/works?search=polyethylene%20polypropylene%20enzymatic%20degradation%20evidence%20critique&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:16:20Z",
+      "finding": "39 works including 2026 calls for evidence standards in plastic biodegradation and the 2025 exchange disputing that mealworms chemically degrade expanded polystyrene. No validated polyolefin enzyme."
+    },
+    {
+      "query": "plastic degrading enzyme (GitHub repositories)",
+      "source": "https://api.github.com/search/repositories?q=plastic%20degrading%20enzyme&sort=stars&per_page=8",
+      "observedAt": "2026-11-06T01:16:22Z",
+      "finding": "37 repositories: M-PARTY metagenomic search, PlaszymeDB curated enzyme database, PlaszymeX GNN predictor, PETadex database. Discovery tools only, no working polyolefin enzyme."
+    },
+    {
+      "query": "Microbial enzymes limited solutions review (PMID 36099200)",
+      "source": "https://api.openalex.org/works/pmid:36099200",
+      "observedAt": "2026-11-06T01:21:53Z",
+      "finding": "Chow et al., Microbial Biotechnology 2022: research has mostly not delivered biocatalysts for PE, PP, PVC, ether-PU, polyamide, PS and synthetic rubber; only a few enzymes act on PET and ester-PU."
+    },
+    {
+      "query": "Carbios enzymatic PET recycling status",
+      "source": "https://en.wikipedia.org/wiki/Carbios",
+      "observedAt": "2026-11-06T01:22:01Z",
+      "finding": "Carbios processed about 250 kg per day in 2023 and planned a facility for over 130 tonnes per day; its enzyme broke down 90% of PET in 10 hours (Nature 2020). PET only."
+    }
+  ]
+}

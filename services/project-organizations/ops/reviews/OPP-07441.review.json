@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-07441",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Generic AI job matching exists at very large scale, but nothing finds workers their next role before layoffs, so the Main KPI of 1,000,000,000 workers with career navigation in the project's sense is unmet. LinkedIn has over 1 billion members and a free AI Job Match, with an AI coach for Premium members (https://www.searchenginejournal.com/linkedin-reaches-1-billion-members-unveils-ai-job-search-tools/499939); these react to search, not to layoff risk. Layoff-risk navigators such as FutureFit AI and MyCareer Navigator are new and unmeasured at scale (https://solve.mit.edu/solutions/24008). Evidence that AI matching moves employment is weak: a Swedish public-employment RCT over 1.9 million users found a net employment effect of about 2 percent (https://conference.iza.org/EVAL_2023/rathelot_r3660.pdf). Open building blocks exist, e.g. Nesta's Mapping Career Causeways with ESCO and O*NET transition recommendations (https://github-redirect.dependabot.com/nestauk/mapping-career-causeways). Honest limit: if the KPI were read as access to any AI job matching, LinkedIn would already meet it; only pre-layoff prediction with measured placement gains is open work."
+  },
+  "additionalSearches": [
+    {
+      "query": "AI career navigator predict layoff risk reskilling match next job platform workers scale 2025",
+      "source": "https://solve.mit.edu/solutions/24008",
+      "observedAt": "2026-11-06T00:42:24Z",
+      "finding": "FutureFit AI and HR Rebooted MyCareer Navigator offer automation-risk scoring and paths; vendor-reported, no scale or outcome data."
+    },
+    {
+      "query": "LinkedIn AI job match career coach members 1 billion 2025 features",
+      "source": "https://www.searchenginejournal.com/linkedin-reaches-1-billion-members-unveils-ai-job-search-tools/499939",
+      "observedAt": "2026-11-06T00:42:30Z",
+      "finding": "LinkedIn reached 1 billion members; Job Match is free to all users and an AI coach is offered to Premium; not predictive of layoffs."
+    },
+    {
+      "query": "public employment service AI job matching evaluation randomized trial displaced workers outcomes",
+      "source": "https://conference.iza.org/EVAL_2023/rathelot_r3660.pdf",
+      "observedAt": "2026-11-06T00:42:36Z",
+      "finding": "Swedish PES recommender RCT (1.9M users): match probability rose but the net employment effect was about 2 percent; French Bob Emploi had no employment effect."
+    },
+    {
+      "query": "open source career pathway recommendation skills taxonomy ESCO O*NET job transition tool github",
+      "source": "https://github-redirect.dependabot.com/nestauk/mapping-career-causeways",
+      "observedAt": "2026-11-06T00:42:42Z",
+      "finding": "Nesta Mapping Career Causeways is open code for ESCO/O*NET career transition recommendations with automation-risk estimates."
+    }
+  ]
+}

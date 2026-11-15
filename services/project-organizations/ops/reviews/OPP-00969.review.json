@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00969",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:59:30Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable solution provides midwife-led care for all of roughly 130,000,000 births a year, so the Main KPI is not met. An ICM-led study (January 2026) estimates the world is short about 980,000 midwives and projects a shortfall of 690,000 to 830,000 by 2030, over 90% in low- and middle-income countries (https://internationalmidwives.org/pressrelease/world-faces-shortage-of-nearly-one-million-midwives/). Even skilled attendance of any kind reached 86% of births in 2023, with 69% for the poorest fifth (https://data.unicef.org/topic/maternal-health/delivery-care/). Midwife-led systems are proven at national scale only in a few high-income countries: about 80-90% of New Zealand pregnancies register with a midwife lead maternity carer (https://pmc.ncbi.nlm.nih.gov/articles/PMC5038958), and the evidence base for midwife continuity is mature (Cochrane review, https://www.cochrane.org/news/cochrane-making-difference-midwifery). Honest limit: the care model itself is known and evidenced; the unsolved part is workforce, training and financing at global scale, and tasks that re-derive the clinical evidence for midwife-led care are not new work."
+  },
+  "additionalSearches": [
+    {
+      "query": "State of the World's Midwifery 2025 report shortage of midwives births attended",
+      "source": "https://internationalmidwives.org/pressrelease/world-faces-shortage-of-nearly-one-million-midwives/",
+      "observedAt": "2026-11-06T00:54:00Z",
+      "finding": "ICM-led study (January 2026): about 980,000 more midwives needed across 181 countries; shortage projected at 690,000-830,000 by 2030. Africa holds nearly half the gap."
+    },
+    {
+      "query": "midwife-led continuity of care models Cochrane review coverage proportion of births worldwide",
+      "source": "https://www.cochrane.org/news/cochrane-making-difference-midwifery",
+      "observedAt": "2026-11-06T00:54:10Z",
+      "finding": "Cochrane review (2024 update, 17 RCTs) supports midwife continuity of care; no global coverage figure exists; Australia estimated at 3-5% continuity versus about 80% in New Zealand."
+    },
+    {
+      "query": "skilled birth attendance global coverage 2025 UNICEF percentage births attended by skilled health personnel",
+      "source": "https://data.unicef.org/topic/maternal-health/delivery-care/",
+      "observedAt": "2026-11-06T00:54:20Z",
+      "finding": "86% of births had any skilled attendant in 2023 (96% richest vs 69% poorest fifth); midwife-led care specifically is far lower. Goal not met."
+    },
+    {
+      "query": "Netherlands New Zealand midwife-led maternity system percentage of births lead maternity carer midwife",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5038958",
+      "observedAt": "2026-11-06T00:54:30Z",
+      "finding": "New Zealand: 91.5% of pregnancies in a national cohort registered with a midwife lead maternity carer. Midwife-led systems exist nationally only in a few countries such as New Zealand and the Netherlands."
+    }
+  ]
+}

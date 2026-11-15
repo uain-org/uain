@@ -1,0 +1,36 @@
+{
+  "name": "uain-contracts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "UAIN on-chain anchoring (Base Sepolia) and a draft credits token that must not be deployed before legal opinions.",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "build": "node scripts/compile.mjs && tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "anchor": "node scripts/anchor-root.mjs",
+    "catchup": "node scripts/operations.mjs catchup",
+    "deploy": "node scripts/operations.mjs deploy",
+    "audit": "node scripts/operations.mjs audit",
+    "publish": "node scripts/operations.mjs publish"
+  },
+  "devDependencies": {
+    "@ethereumjs/common": "^10.1.3",
+    "@ethereumjs/util": "^10.1.3",
+    "@ethereumjs/vm": "^10.1.3",
+    "@openzeppelin/contracts": "^5.6.1",
+    "solc": "^0.8.26",
+    "viem": "^2.56.8",
+    "typescript": "5.9.3",
+    "@types/node": "22.19.19"
+  },
+  "overrides": {
+    "solc": {
+      "follow-redirects": "1.16.2",
+      "tmp": "0.2.7"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T085309Z-e9f6f91d37",
+  "version": "0.3.75",
+  "source_commit": "cae0e58c1d7859744fc4cac9a44bd27ad271a23d",
+  "deployed_at": "2026-11-10T08:54:33Z",
+  "prior": "20261110T083847Z-ce229e3123",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0375-release-20261110",
+    "CHANGELOG.md#payments-security-findings-20261110"
+  ],
+  "note": "PR #472: security review money-path findings (shared already-paid guard, S2 residual, S6, S7, D1-D3, C2, C3, C7). release:verify and release:promote --expected-prior passed; health and review health ok; public routes 200. Test accounts: a 1 AI$ request paid once (height 1432166) and confirmed; a second send, the wallet pay route and the payee's cancel refused with payment_request_paid."
+}

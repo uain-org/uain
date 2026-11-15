@@ -1,0 +1,92 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/.vinext/
+/out/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local environment
+.env*
+
+# deployment and generated files
+.vercel
+next-env.d.ts
+/dist/
+/.wrangler/
+/outputs/
+/work/
+
+# Pilot connection server: local store, keys and logs never ship
+services/pilot/.data/
+services/*/node_modules/
+services/*/dist/
+contracts/node_modules/
+contracts/build/
+apps/*/node_modules/
+contracts/dist/
+
+# TypeScript incremental build info
+tsconfig.tsbuildinfo
+
+# CesiumJS runtime assets copied from node_modules at build time
+public/cesium/
+
+# Native shielded exchange artifacts (built on servers/CI)
+chain/private-exchange/target/
+chain/private-public-fixtures/
+
+# Native client test-only dependencies
+/chain/node_modules/
+
+.worktrees/
+
+.worktree-archives/
+
+/output/
+
+/tmp/
+
+__pycache__/
+
+.ruff_cache/
+
+# Claude Code agent worktrees
+.claude/worktrees/
+
+# Local scratch and test residue (cleanup 9 Nov 2026, RJ-2/RJ-3)
+/.chart-data-*/
+/installer-test-tmp/
+/upgrade-profile-test-tmp/
+/.superpowers/
+
+# Rahul's local standing instructions: never pushed to GitHub
+/rahul.md
+/Rahul.md
+
+# Key material and local databases never belong in the tree (13 Nov 2026
+# security review); no tracked file matched these when they were added.
+*.key
+*.sqlite
+*.db
+.claude/settings.local.json

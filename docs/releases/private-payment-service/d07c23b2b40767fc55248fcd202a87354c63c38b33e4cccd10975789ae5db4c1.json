@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "component": "private-payment-service",
+  "release_id": "d07c23b2b40767fc55248fcd202a87354c63c38b33e4cccd10975789ae5db4c1",
+  "version": null,
+  "source_commit": null,
+  "deployed_at": "2026-11-09T17:49:40Z",
+  "prior": "850e5ec3ad82757666329f1d829eee3bf60925a953eb0378b3d391970120b509",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#send-rules-checker-20261109",
+    "CHANGELOG.md#send-refusal-reason-20261109",
+    "CHANGELOG.md#release-gap-closure-20261110"
+  ],
+  "note": "Backfilled from read-only host evidence (installer backups 20261109T174940Z and T194347Z). Installed 17:49:40Z with service 4add5746 and dispatcher e9111b3f; at 19:43:47Z the same source release was installed again with service 0a4aa56b and dispatcher 1012034f. Source commit not recorded."
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00002",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable solution gives anyone a once-a-year senescent-cell clearance treatment, so the Main KPI of 1,000,000,000 people treated yearly is not met by existing work. No senolytic has regulatory approval (industry review, March 2026); dasatinib+quercetin and fisetin are investigational multi-day cycles in small trials (SEN-SURVIVORS NCT04733534) and Unity's UBX1325 is a local eye injection with mixed phase 2 results (https://pmc.ncbi.nlm.nih.gov/articles/PMC12910722). The nearest single-dose, long-acting results are preclinical: anti-uPAR senolytic CAR T cells persisting over 15 months after one infusion in mice (Amor et al., Nature Aging 2024, https://www.nature.com/articles/s43587-023-00560-5) and GPNMB senolytic vaccination in progeroid mice (https://pubmed.ncbi.nlm.nih.gov/37117524/). Open source exists only upstream of therapy: senolytic screening code at https://github.com/felixjwong/senolyticsai. Partial leads, not the end goal; tasks that merely replicate them must carry their own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "senolytic once-yearly single dose treatment clinical trial 2026",
+      "source": "https://worldlongevityclinics.pages.dev/news/senolytics-2026-clinical-trials-failures-what-clinics-offer/",
+      "observedAt": "2026-11-06T00:30:00Z",
+      "finding": "No once-yearly senolytic regimen in trials. No senolytic approved as of March 2026; D+Q and fisetin used in short repeated courses, off-label."
+    },
+    {
+      "query": "senolytic CAR T cells uPAR long-lasting single infusion aging Nature Aging",
+      "source": "https://www.nature.com/articles/s43587-023-00560-5",
+      "observedAt": "2026-11-06T00:31:00Z",
+      "finding": "Amor et al. 2024: one infusion of anti-uPAR CAR T cells improved metabolic function in aged mice and persisted over 15 months. Mice only; no human programme."
+    },
+    {
+      "query": "FDA approved senolytic drug status Unity Biotechnology UBX1325 dasatinib quercetin fisetin trial results",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12910722",
+      "observedAt": "2026-11-06T00:32:00Z",
+      "finding": "No approved senolytic; UBX1325 phase 2 outcomes conflicting; D+Q dosed three days per 28-day cycle; no large blinded outcome trial completed."
+    },
+    {
+      "query": "github open source senolytic drug discovery senescent cell clearance",
+      "source": "https://github.com/felixjwong/senolyticsai",
+      "observedAt": "2026-11-06T00:33:00Z",
+      "finding": "Open code covers compound screening and senolytic prediction (Wong et al., Nature Aging 2023), not a delivered yearly treatment; no maintained open therapy platform found."
+    },
+    {
+      "query": "senolytic vaccine GPNMB senescent cells mice long-term",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37117524/",
+      "observedAt": "2026-11-06T00:34:00Z",
+      "finding": "GPNMB senolytic vaccination improved age-related phenotypes and lifespan in progeroid mice; preclinical, GPNMB not senescence-specific, no human trial."
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-06001",
+  "native_project": "P-OPP-06001",
+  "source_digest": "c96de8a1ba97756c1ac8f4accb386a67d86dda262df27f90499e4da55f272870",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Reach a quantum computer with 1000000 error-corrected qubits",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "f8ef154fbb9cbad5024350bd43b00f196b3b44b7c5b18bc77ea6a2139be6f0cd"
+  },
+  "drafted_at": "2026-11-06T00:26:42.145Z",
+  "queries": [
+    "reach quantum computer error-corrected qubits",
+    "reach quantum computer computing digital infrastructure"
+  ],
+  "searches": [
+    {
+      "query": "reach quantum computer error-corrected qubits",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:26:34.073Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=reach%20quantum%20computer%20error-corrected%20qubits&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "reach quantum computer error-corrected qubits",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:26:34.735Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Areach%20AND%20all%3Aquantum%20AND%20all%3Acomputer%20AND%20all%3Aerror-corrected%20AND%20all%3Aqubits&start=0&max_results=10; sha256=1df8af6e62191f510e3adbe2bf28851caa3690c06dbf010f39d1a3643166d9e1; total=137; shown=5/10; top: arXiv:1812.08451v5 \"Optimizing Quantum Error Correction Codes with Reinforcement Learning\" | arXiv:2104.09539v2 \"Practical quantum error correction with the XZZX code and Kerr-cat qubits\" | arXiv:2009.01982v1 \"Virtualized Logical Qubits: A 2.5D Architecture for Error-Corrected Quantum Computing\" | arXiv:1706.07124v1 \"Test-driving 1000 qubits\" | arXiv:1611.06946v2 \"Fault-tolerant quantum error detection\""
+    },
+    {
+      "query": "reach quantum computer error-corrected qubits",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:26:35.574Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=reach%20quantum%20computer%20error-corrected%20qubits&rows=10&select=DOI,title; sha256=ff0afe4d7c34d3fe4587e6907b57d7cff81f183f4c4aa77e020206f6029df35a; total=3483752; shown=5/10; top: 10.1364/cleo_at.2025.aa107_1 \"Building Error-Corrected Quantum Computers With Neutral-Atom Qubits\" | 10.1038/ncomms4243 \"Error-corrected quantum annealing with hundreds of qubits\" | 10.1103/872f-l3wm \"Encrypted cloning of qubits is able to serve as a quantum primitive, already on non-error-corrected quantum hardware\" | 10.70675/6748815fz4d8fz484dz94cfz143f5f473a21 \"Quantum Error Correction using cat qubits\" | 10.1109/micro50266.2020.00026 \"Virtualized Logical Qubits: A 2.5D Architecture for Error-Corrected Quantum Computing\""
+    },
+    {
+      "query": "reach quantum computer computing digital infrastructure",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:26:40.595Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=reach%20quantum%20computer%20computing%20digital%20infrastructure&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "reach quantum computer computing digital infrastructure",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:26:41.297Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Areach%20AND%20all%3Aquantum%20AND%20all%3Acomputer%20AND%20all%3Acomputing%20AND%20all%3Adigital%20AND%20all%3Ainfrastructure&start=0&max_results=10; sha256=ae56355726904a7fd740bd2c93046fd8be137bc3121d12c1348f2e0482afd8b8; total=2; shown=2/2; top: arXiv:2607.12249v1 \"A fault-tolerant quantum blockchain deployed on commercial telecommunications network\" | arXiv:2105.06479v2 \"Advances in Machine and Deep Learning for Modeling and Real-time Detection of Multi-Messenger Sources\""
+    },
+    {
+      "query": "reach quantum computer computing digital infrastructure",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:26:42.144Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=reach%20quantum%20computer%20computing%20digital%20infrastructure&rows=10&select=DOI,title; sha256=c4d0260e946623830777b4e28b23cd82e5a58f02a144386a8bba076d69ca3d73; total=5873376; shown=5/10; top: 10.2172/1827837 \"Cryogenic infrastructure for quantum computing\" | 10.1108/978-1-83797-703-120241009 \"Quantum Computing for Sustainable Infrastructure Management\" | 10.2139/ssrn.6464344 \"Administrative Reach and State Capacity: Interoperability Failures in Nigeria's Digital Identification Infrastructure\" | 10.2139/ssrn.6361358 \"Administrative Reach and State Capacity: Interoperability Failures in Nigeria's Digital Identification Infrastructure\" | 10.1016/j.procs.2021.04.124 \"Computing infrastructure for scientific research in a digital transformation\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "reach quantum computer error-corrected qubits",
+      "url": "https://api.github.com/search/repositories?q=reach%20quantum%20computer%20error-corrected%20qubits&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=reach%20quantum%20computer%20error-corrected%20qubits&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:26:34.073Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "reach quantum computer error-corrected qubits",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Areach%20AND%20all%3Aquantum%20AND%20all%3Acomputer%20AND%20all%3Aerror-corrected%20AND%20all%3Aqubits&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Areach%20AND%20all%3Aquantum%20AND%20all%3Acomputer%20AND%20all%3Aerror-corrected%20AND%20all%3Aqubits&start=0&max_results=10",
+      "sha256": "1df8af6e62191f510e3adbe2bf28851caa3690c06dbf010f39d1a3643166d9e1",
+      "bytes": 32747,
+      "observedAt": "2026-11-06T00:26:34.735Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "reach quantum computer error-corrected qubits",
+      "url": "https://api.crossref.org/works?query=reach%20quantum%20computer%20error-corrected%20qubits&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=reach%20quantum%20computer%20error-corrected%20qubits&rows=10&select=DOI,title",
+      "sha256": "ff0afe4d7c34d3fe4587e6907b57d7cff81f183f4c4aa77e020206f6029df35a",
+      "bytes": 1380,
+      "observedAt": "2026-11-06T00:26:35.574Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "reach quantum computer computing digital infrastructure",
+      "url": "https://api.github.com/search/repositories?q=reach%20quantum%20computer%20computing%20digital%20infrastructure&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=reach%20quantum%20computer%20computing%20digital%20infrastructure&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:26:40.595Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "reach quantum computer computing digital infrastructure",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Areach%20AND%20all%3Aquantum%20AND%20all%3Acomputer%20AND%20all%3Acomputing%20AND%20all%3Adigital%20AND%20all%3Ainfrastructure&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Areach%20AND%20all%3Aquantum%20AND%20all%3Acomputer%20AND%20all%3Acomputing%20AND%20all%3Adigital%20AND%20all%3Ainfrastructure&start=0&max_results=10",
+      "sha256": "ae56355726904a7fd740bd2c93046fd8be137bc3121d12c1348f2e0482afd8b8",
+      "bytes": 6671,
+      "observedAt": "2026-11-06T00:26:41.297Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "reach quantum computer computing digital infrastructure",
+      "url": "https://api.crossref.org/works?query=reach%20quantum%20computer%20computing%20digital%20infrastructure&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=reach%20quantum%20computer%20computing%20digital%20infrastructure&rows=10&select=DOI,title",
+      "sha256": "c4d0260e946623830777b4e28b23cd82e5a58f02a144386a8bba076d69ca3d73",
+      "bytes": 1512,
+      "observedAt": "2026-11-06T00:26:42.144Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "162de04f8de25f4c8a0e9d72e417f66a1072f57110d4d2ab10fc3878ee762633",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

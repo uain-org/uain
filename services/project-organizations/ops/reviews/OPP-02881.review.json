@@ -1,0 +1,45 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-02881",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "neutral",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No room-temperature ambient-pressure superconductor exists, so the Main KPI of 1 working superconductor is unmet. The 2023 LK-99 claim was refuted: replications found no superconductivity and the reported anomalies were explained without it (https://doi.org/10.1038/d41586-023-02585-7, https://doi.org/10.1088/1361-6668/ad2b78). The verified ambient-pressure records remain far below room temperature: cuprates about 133 K, bulk hole-doped SmNiO2 near 40 K (Nature 2025, https://doi.org/10.1038/s41586-025-08893-4) and strained (La,Pr)3Ni2O7 films with onset near 63 K and zero resistance near 37 K (National Science Review 2026, https://doi.org/10.1093/nsr/nwag151). Near-room-temperature hydrides need megabar pressures, and the 2025 to 2026 ambient room-temperature claims in Crossref are theoretical predictions and preprints, not measurements (https://api.crossref.org/works?query=room-temperature%20superconductivity%20ambient%20pressure%202026&rows=8&select=DOI,title,issued). Open machine-learning Tc predictors on GitHub are small student projects. Class neutral: a fundamental materials goal with large but indirect benefit. Honest limit: tasks must produce checkable, falsifiable outputs (a computed candidate with stated stability and Tc evidence, or a replication protocol); another unreplicated claim is not a result, and running published Tc regressors is a known baseline."
+  },
+  "additionalSearches": [
+    {
+      "query": "room temperature superconductor ambient pressure claim replication (2024 onward)",
+      "source": "https://api.openalex.org/works?search=room%20temperature%20superconductor%20ambient%20pressure%20claim%20replication&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:16:23Z",
+      "finding": "150 works: LK-99 replication and anomalies (2024), hydride high-pressure progress (2026), and a 2026 framework on the translation gap from Tc to engineering. No confirmed room-temperature ambient superconductor."
+    },
+    {
+      "query": "LK-99 replication not superconductor",
+      "source": "https://api.openalex.org/works?search=LK-99%20replication%20not%20superconductor&per_page=8&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:16:25Z",
+      "finding": "Nature news 2023: replication efforts fall short; 'LK-99 isn't a superconductor - how science sleuths solved the mystery'. The claim is refuted."
+    },
+    {
+      "query": "highest Tc ambient pressure superconductor record nickelate cuprate (2024 onward)",
+      "source": "https://api.openalex.org/works?search=highest%20Tc%20ambient%20pressure%20superconductor%20record%20nickelate%20cuprate&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:16:26Z",
+      "finding": "Nickelate records: onset above 60 K in ambient-pressure films (NSR 2026) and bulk superconductivity near 40 K in hole-doped SmNiO2 (Nature 2025). Ambient-pressure Tc remains far below 293 K."
+    },
+    {
+      "query": "superconductor discovery machine learning (GitHub repositories)",
+      "source": "https://api.github.com/search/repositories?q=superconductor%20discovery%20machine%20learning&sort=stars&per_page=8",
+      "observedAt": "2026-11-06T01:16:43Z",
+      "finding": "4 repositories with 0 stars: high-throughput discovery and Tc regression student projects. No open pipeline that has produced a verified candidate."
+    },
+    {
+      "query": "room-temperature superconductivity ambient pressure 2026",
+      "source": "https://api.crossref.org/works?query=room-temperature%20superconductivity%20ambient%20pressure%202026&rows=8&select=DOI,title,issued",
+      "observedAt": "2026-11-06T01:19:05Z",
+      "finding": "Top records are theoretical predictions and preprints (YHf2H24 nanoribbons, intercalated mechanism proposals, hydride strategies); none reports a measured room-temperature ambient-pressure superconductor."
+    }
+  ]
+}

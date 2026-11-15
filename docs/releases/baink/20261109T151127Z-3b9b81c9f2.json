@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T151127Z-3b9b81c9f2",
+  "version": "0.3.52",
+  "source_commit": "ebc1ec31cc7a96bfaf661a34054ea5c6e2c1d2ee",
+  "deployed_at": "2026-11-09T15:11:52Z",
+  "prior": "20261109T145050Z-255a85086b",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#no-install-receiving-20261109",
+    "CHANGELOG.md#no-install-receiving-live-20261109"
+  ],
+  "note": "PR #342 on #340 custody release: no-install receiving (kit receiving setup, Pay screen), coin wallet cb847c04 on the BAINK host, 7 test accounts allowlisted. release:promote passed. Kit-only payee paid 5 AI$ (h1401473, paid=true); Trade deal paid 3 AI$ via request (h1401726, retry after a proved-unused expiry) and completed."
+}

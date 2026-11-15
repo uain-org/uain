@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261111T142010Z-c72c0f439a",
+  "version": "0.3.90",
+  "source_commit": "4e542b4425622fb5f1504c90f48f90fb41c7ef54",
+  "deployed_at": "2026-11-11T14:20:30Z",
+  "prior": "20261111T035834Z-2a3bbdbf9a",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#capacity-bounds-release-20261111"
+  ],
+  "note": "PR #524: payment-checker model queue archives finished jobs (public-review/model-archive) instead of refusing after 1,000; Retry-After, retryAfterSeconds and next on every 429/503. verify and promote --expected-prior passed; the live release matched origin/main's current.json before promote; review health available, brokerReady and rootReady true at 14:21 UTC."
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-08881",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "neutral",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No modern bridge is designed for, or demonstrated to reach, a thousand years without major repair, so the Main KPI (amended by Rahul on 6 November 2026 to 1,000 bridges built in total) is unmet. The longest specified design life found is 300 years for Brisbane's Gateway Bridge, using duplex stainless rebar in splash zones (https://assda.asn.au/blog/69-stainless-integral-to-bridges-300-year-design-life); the Hong Kong-Zhuhai-Macao Bridge was built to 120 years (https://en.wikipedia.org/wiki/Hong_Kong%E2%80%93Zhuhai%E2%80%93Macau_Bridge), and UHPC footbridges to about 100 years (https://iastatedigitalpress.com/uhpc/article/9717/galley/9761/view). Steel-free precast masonry arches aim at centuries but no 1,000-year design claim was found (https://www.asme.org/topics-resources/content/precast-masonry-arch-bridge-lasts-centuries), and Roman-style self-healing concrete is lab-stage (https://news.mit.edu/topic/infrastructure?page=3&type=2). Honest limit: Roman masonry arches show 2,000-year life is physically possible, so unreinforced-arch replication is known; a 1,000-year life cannot be verified within the project and needs an agreed design-basis proof."
+  },
+  "additionalSearches": [
+    {
+      "query": "bridge design life 1000 years ultra high performance concrete stainless steel reinforcement longest design life bridge",
+      "source": "https://assda.asn.au/blog/69-stainless-integral-to-bridges-300-year-design-life",
+      "observedAt": "2026-11-06T00:45:12Z",
+      "finding": "Longest specified design life found: 300 years for Gateway Bridge, Brisbane (2011), with LDX 2101 stainless rebar in pile caps; no 1,000-year bridge."
+    },
+    {
+      "query": "Hong Kong-Zhuhai-Macao bridge 120 year design life; bridges designed for 200 years",
+      "source": "https://en.wikipedia.org/wiki/Hong_Kong%E2%80%93Zhuhai%E2%80%93Macau_Bridge",
+      "observedAt": "2026-11-06T00:45:18Z",
+      "finding": "HZMB design life is 120 years; mainland bridges are normally designed for 100 years."
+    },
+    {
+      "query": "unreinforced masonry arch bridge 1000 year life new construction modern stone arch bridge built recently",
+      "source": "https://www.asme.org/topics-resources/content/precast-masonry-arch-bridge-lasts-centuries",
+      "observedAt": "2026-11-06T00:45:24Z",
+      "finding": "Queen's University Belfast precast masonry arch with no corrodible steel is intended to last centuries; no 1,000-year claim; most modern arches use corrodible reinforced concrete."
+    },
+    {
+      "query": "Roman concrete self-healing lime clasts MIT 2023 long-lasting infrastructure application",
+      "source": "https://news.mit.edu/topic/infrastructure?page=3&type=2",
+      "observedAt": "2026-11-06T00:45:30Z",
+      "finding": "MIT 2023: hot-mixed lime clasts let Roman concrete self-heal cracks in two weeks in lab tests; no field-scale bridge deployment."
+    }
+  ]
+}

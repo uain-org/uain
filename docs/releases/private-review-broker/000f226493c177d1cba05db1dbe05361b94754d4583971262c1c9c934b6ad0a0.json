@@ -1,0 +1,15 @@
+{
+ "schema": 1,
+ "component": "private-review-broker",
+ "release_id": "000f226493c177d1cba05db1dbe05361b94754d4583971262c1c9c934b6ad0a0",
+ "version": null,
+ "source_commit": "480711d5f6dc95ad14df82779d7030988c825783",
+ "deployed_at": "2026-11-09T16:20:06Z",
+ "prior": "5faf2d411eacadb2143a5fc0a34bdfc7e40ed936c45451f06267f1daf60e0a5d",
+ "status": "publicly-verified",
+ "evidence": [
+  "CHANGELOG.md#review-broker-move-20261109",
+  "https://baink.money/api/native/review/health"
+ ],
+ "note": "PR #348 move: the live 5faf2d41 bytes with the broker files under apps/baink/review-broker/ (broker.mjs differs only in 3 import paths, equal to main). Unit ExecStart swapped, restarted while idle 16:20:06Z; health re-signed 16:20:10Z rootReady and modelQualified; NRestarts 0."
+}

@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T145050Z-255a85086b",
+  "version": "0.3.51",
+  "source_commit": "7a2df277a1a9c05f31fe4308b1b2c04beef2f025",
+  "deployed_at": "2026-11-09T14:51:22Z",
+  "prior": "20261109T140451Z-91c8846830",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#server-send-switch-on-20261109",
+    "CHANGELOG.md#server-send-n7-payment-20261109"
+  ],
+  "note": "PR #323 + #339: no-install sending on for two own test accounts (BAINK_SERVER_SEND_ALLOWED_MEMBERS), custody checker with one AI decision per send, coin wallet fc2b14ed pinned. release:promote passed; both paths healthy. N7: kit pay 1 AI$ finalized at height 1400977 in one attempt, payer debited exactly 1, payee confirmed paid=true; a non-listed account is refused with server_send_not_open."
+}

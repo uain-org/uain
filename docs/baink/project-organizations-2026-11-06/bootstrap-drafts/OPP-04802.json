@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-04802",
+  "native_project": "P-OPP-04802",
+  "source_digest": "55aa8d5012f8aca4f94c7714ecd0465c355c25a53dd25e48c7eba733f7138a1b",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build a pre-school in every village run by a teacher plus AI assistant",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "5bb7ebbe2e916f8626ccc46bce0bd68324ab424c7664911a4815d6ff21ab750b"
+  },
+  "drafted_at": "2026-11-06T00:25:37.041Z",
+  "queries": [
+    "pre-school village run teacher plus assistant",
+    "pre-school village run education learning early"
+  ],
+  "searches": [
+    {
+      "query": "pre-school village run teacher plus assistant",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:25:29.100Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=pre-school%20village%20run%20teacher%20plus%20assistant&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "pre-school village run teacher plus assistant",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:25:29.590Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Apre-school%20AND%20all%3Avillage%20AND%20all%3Arun%20AND%20all%3Ateacher%20AND%20all%3Aplus%20AND%20all%3Aassistant&start=0&max_results=10; sha256=d1c655d93a98444a340d14470d0f2124de94eb56e183f3c9c945200ca461537f; total=0; shown=0/0"
+    },
+    {
+      "query": "pre-school village run teacher plus assistant",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:25:30.542Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=pre-school%20village%20run%20teacher%20plus%20assistant&rows=10&select=DOI,title; sha256=83d156219d1fd498014dd4f6aa4fbbf81f347c9be95687d0bb5c8484ac90a6db; total=2328372; shown=5/10; top: 10.15503/jecs2026.1.175.197 \"Pre-School Teacher Professionalisation in the Workplace: The Perspective of the Beginning Teacher with Teaching Assistant Experience\" | 10.35940/ijmh.e0552.014520 \"Occupational Mobility among the Kaivarttas (Fisherman Community) in a Village Setting\" | 10.1086/453250 \"Education\" | 10.2307/j.ctv2sp3d23.4 \"Pre-School Era In My Village\" | 10.12968/prps.2000.1.24.40920 \"Working with a teaching assistant\""
+    },
+    {
+      "query": "pre-school village run education learning early",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:25:35.554Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=pre-school%20village%20run%20education%20learning%20early&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "pre-school village run education learning early",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:25:36.049Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Apre-school%20AND%20all%3Avillage%20AND%20all%3Arun%20AND%20all%3Aeducation%20AND%20all%3Alearning%20AND%20all%3Aearly&start=0&max_results=10; sha256=9cabdf4005ffd1bed315e89363c3ea81ad5a3aa3653b34dc3918a99afdc99d40; total=0; shown=0/0"
+    },
+    {
+      "query": "pre-school village run education learning early",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:25:37.041Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=pre-school%20village%20run%20education%20learning%20early&rows=10&select=DOI,title; sha256=f247afe12fcc699ff1e11cc4ad18e82ca16eb593c36f04a2066d619c46db01dc; total=9780733; shown=5/10; top: 10.4324/9781351312684-17 \"Issues in Early Learning and Pre-School Education\" | 10.4324/9781315068794-16 \"Bilingual children in the pre-school years: different experiences of early learning\" | 10.4324/9781351041621-6 \"New directions in early education\" | 10.4324/9781351041621-4 \"A structured approach to early education\" | 10.58653/nche.v11i1.05 \"Design Thinking and Material Utilisation Creativity in Early Childhood Teacher Education: A Case of Kyambogo University\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "pre-school village run teacher plus assistant",
+      "url": "https://api.github.com/search/repositories?q=pre-school%20village%20run%20teacher%20plus%20assistant&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=pre-school%20village%20run%20teacher%20plus%20assistant&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:25:29.100Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "pre-school village run teacher plus assistant",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Apre-school%20AND%20all%3Avillage%20AND%20all%3Arun%20AND%20all%3Ateacher%20AND%20all%3Aplus%20AND%20all%3Aassistant&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Apre-school%20AND%20all%3Avillage%20AND%20all%3Arun%20AND%20all%3Ateacher%20AND%20all%3Aplus%20AND%20all%3Aassistant&start=0&max_results=10",
+      "sha256": "d1c655d93a98444a340d14470d0f2124de94eb56e183f3c9c945200ca461537f",
+      "bytes": 860,
+      "observedAt": "2026-11-06T00:25:29.590Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "pre-school village run teacher plus assistant",
+      "url": "https://api.crossref.org/works?query=pre-school%20village%20run%20teacher%20plus%20assistant&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=pre-school%20village%20run%20teacher%20plus%20assistant&rows=10&select=DOI,title",
+      "sha256": "83d156219d1fd498014dd4f6aa4fbbf81f347c9be95687d0bb5c8484ac90a6db",
+      "bytes": 1297,
+      "observedAt": "2026-11-06T00:25:30.542Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "pre-school village run education learning early",
+      "url": "https://api.github.com/search/repositories?q=pre-school%20village%20run%20education%20learning%20early&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=pre-school%20village%20run%20education%20learning%20early&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:25:35.554Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "pre-school village run education learning early",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Apre-school%20AND%20all%3Avillage%20AND%20all%3Arun%20AND%20all%3Aeducation%20AND%20all%3Alearning%20AND%20all%3Aearly&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Apre-school%20AND%20all%3Avillage%20AND%20all%3Arun%20AND%20all%3Aeducation%20AND%20all%3Alearning%20AND%20all%3Aearly&start=0&max_results=10",
+      "sha256": "9cabdf4005ffd1bed315e89363c3ea81ad5a3aa3653b34dc3918a99afdc99d40",
+      "bytes": 864,
+      "observedAt": "2026-11-06T00:25:36.049Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "pre-school village run education learning early",
+      "url": "https://api.crossref.org/works?query=pre-school%20village%20run%20education%20learning%20early&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=pre-school%20village%20run%20education%20learning%20early&rows=10&select=DOI,title",
+      "sha256": "f247afe12fcc699ff1e11cc4ad18e82ca16eb593c36f04a2066d619c46db01dc",
+      "bytes": 1359,
+      "observedAt": "2026-11-06T00:25:37.041Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "bd6b5a8436f401f7e6804fc013eceac0928d1133be1569247723f5cfa826c360",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

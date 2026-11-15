@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00482",
+  "native_project": "P-OPP-00482",
+  "source_digest": "ba6575013df5037f26f8a25f1fee5e04f32c0cfe01eb4c1cfaab52fe0828bf7c",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build a live whole-brain simulation",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "71b7c4cd54d18f74bfec2fa9cc0a469eecfbd00811747e553d948d7f9371cac8"
+  },
+  "drafted_at": "2026-11-06T00:10:14.200Z",
+  "queries": [
+    "live whole-brain simulation",
+    "live whole-brain simulation neuroscience mental health"
+  ],
+  "searches": [
+    {
+      "query": "live whole-brain simulation",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:10:06.137Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=live%20whole-brain%20simulation&per_page=10; sha256=9a2e366b4fc9a6bd83ccf31684012f083af09c5373f80da91c5a276e36f5c182; total=4; shown=4/4; top: comfuture/flylab \"Live whole-brain Drosophila connectome simulation with an embodied fly in the browser\" | dorywoof/BioGrid \"A whole-brain spiking model of the FlyWire fruit fly connectome that screens 140 sensory types for steering pathways and predicts a thermo-…\" | NewYorkImperialist/fly-simulator \"A physically simulated fruit fly (NeuroMechFly + MuJoCo) with a live whole-brain created to suffer for eternity.\" | JacobEGarcia/fly-mind \"The first uploaded brain - interactive whole-brain emulation of Drosophila: 139,255 real FlyWire neurons, live spiking simulation, embodied…\""
+    },
+    {
+      "query": "live whole-brain simulation",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:10:07.048Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Alive%20AND%20all%3Awhole-brain%20AND%20all%3Asimulation&start=0&max_results=10; sha256=3ea6a3774f758e792e453550650e4e22b36bf8fa28803e99422a54d2e65cd19d; total=3; shown=3/3; top: arXiv:1509.02580v2 \"Brain Model of Information Based Exchange\" | arXiv:2206.00141v1 \"Extended depth-of-field light-sheet microscopy improves imaging of large volumes at high numerical aperture\" | arXiv:2512.16763v1 \"Pattern recognition in complex systems via vector-field representations of spatio-temporal data\""
+    },
+    {
+      "query": "live whole-brain simulation",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:10:08.235Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=live%20whole-brain%20simulation&rows=10&select=DOI,title; sha256=e08ec1279bfccbeeca4c9643ddd1060854da9fe2b1ea9020eb24da5b24631f5b; total=2372133; shown=5/10; top: 10.2307/jj.8306312.15 \"WHOLE BRAIN SIMULATION\" | 10.2307/j.ctt9qh0x7.14 \"WHOLE BRAIN SIMULATION\" | 10.1515/9781400851935-015 \"Whole Brain Simulation\" | 10.1515/9780691258928-015 \"Whole Brain Simulation\" | 10.1101/2021.02.18.431886 \"neurolib: a simulation framework for whole-brain neural mass modeling\""
+    },
+    {
+      "query": "live whole-brain simulation neuroscience mental health",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:10:12.301Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=live%20whole-brain%20simulation%20neuroscience%20mental%20health&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "live whole-brain simulation neuroscience mental health",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:10:13.316Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Alive%20AND%20all%3Awhole-brain%20AND%20all%3Asimulation%20AND%20all%3Aneuroscience%20AND%20all%3Amental%20AND%20all%3Ahealth&start=0&max_results=10; sha256=0677d7b363df6bf2739ed625c85b1718590b18756c9ea0ee077759740e163eb1; total=0; shown=0/0"
+    },
+    {
+      "query": "live whole-brain simulation neuroscience mental health",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:10:14.199Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=live%20whole-brain%20simulation%20neuroscience%20mental%20health&rows=10&select=DOI,title; sha256=019a45f50f4f1097d68a9a3620595c51acce4c250f93f74234d6d6e291fc2cdb; total=8043634; shown=5/10; top: 10.1101/2021.02.18.431886 \"neurolib: a simulation framework for whole-brain neural mass modeling\" | 10.1162/netn_a_00109 \"Bridging global and local topology in whole-brain networks using the network statistic jackknife\" | 10.1002/jnr.24480 \"Translating striatal activity from brain slice to whole animal neurophysiology: A guide for neuroscience research integrating diverse level…\" | 10.1016/j.bpsc.2022.06.002 \"Large-Scale Exploration of Whole-Brain Structural Connectivity in Anorexia Nervosa: Alterations in the Connectivity of Frontal and Subcorti…\" | 10.1016/j.neubiorev.2026.106721 \"The applications of single-cell and spatial transcriptomics in neuroscience and brain disorders\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "live whole-brain simulation",
+      "url": "https://api.github.com/search/repositories?q=live%20whole-brain%20simulation&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=live%20whole-brain%20simulation&per_page=10",
+      "sha256": "9a2e366b4fc9a6bd83ccf31684012f083af09c5373f80da91c5a276e36f5c182",
+      "bytes": 21719,
+      "observedAt": "2026-11-06T00:10:06.137Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "live whole-brain simulation",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Alive%20AND%20all%3Awhole-brain%20AND%20all%3Asimulation&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Alive%20AND%20all%3Awhole-brain%20AND%20all%3Asimulation&start=0&max_results=10",
+      "sha256": "3ea6a3774f758e792e453550650e4e22b36bf8fa28803e99422a54d2e65cd19d",
+      "bytes": 8914,
+      "observedAt": "2026-11-06T00:10:07.048Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "live whole-brain simulation",
+      "url": "https://api.crossref.org/works?query=live%20whole-brain%20simulation&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=live%20whole-brain%20simulation&rows=10&select=DOI,title",
+      "sha256": "e08ec1279bfccbeeca4c9643ddd1060854da9fe2b1ea9020eb24da5b24631f5b",
+      "bytes": 1250,
+      "observedAt": "2026-11-06T00:10:08.235Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "live whole-brain simulation neuroscience mental health",
+      "url": "https://api.github.com/search/repositories?q=live%20whole-brain%20simulation%20neuroscience%20mental%20health&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=live%20whole-brain%20simulation%20neuroscience%20mental%20health&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:10:12.301Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "live whole-brain simulation neuroscience mental health",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Alive%20AND%20all%3Awhole-brain%20AND%20all%3Asimulation%20AND%20all%3Aneuroscience%20AND%20all%3Amental%20AND%20all%3Ahealth&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Alive%20AND%20all%3Awhole-brain%20AND%20all%3Asimulation%20AND%20all%3Aneuroscience%20AND%20all%3Amental%20AND%20all%3Ahealth&start=0&max_results=10",
+      "sha256": "0677d7b363df6bf2739ed625c85b1718590b18756c9ea0ee077759740e163eb1",
+      "bytes": 878,
+      "observedAt": "2026-11-06T00:10:13.316Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "live whole-brain simulation neuroscience mental health",
+      "url": "https://api.crossref.org/works?query=live%20whole-brain%20simulation%20neuroscience%20mental%20health&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=live%20whole-brain%20simulation%20neuroscience%20mental%20health&rows=10&select=DOI,title",
+      "sha256": "019a45f50f4f1097d68a9a3620595c51acce4c250f93f74234d6d6e291fc2cdb",
+      "bytes": 1764,
+      "observedAt": "2026-11-06T00:10:14.199Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "88f0eefa8d3990fe8d5950c295dc6f05fa93eaa833f24b8bae2fc164fc58ccdb",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01445",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable system designs a custom crop variety for any field in weeks, so the Main KPI of 500,000,000 farmers with a field-tuned variety is unmet. AI breeding companies predict performance of untested combinations in silico (Inari, Computomics, Heritable Agriculture, Wild Bioscience, DNA Harvest Partners with ToolGen, https://www.htgf.de/en/computomics-interview/), but the fastest reported timelines are months for selection stages at Bayer (four to six months instead of five to six years) and about four years from start to shelf for a Heritable Ag strawberry (https://agfundernews.com/digital-twins-heritable-ag-combines-ai-genomics-and-environmental-data-to-slash-rd-timelines). Variety development still takes 8 to 15 years including multi-environment trials, and speed breeding projects six to seven years for peanut (https://wildpeanutlab.uga.edu/files/2019/06/2019-Hickey-Breeding-crops-to-feed-10-billion_Nature-Biotech.pdf); regulatory testing remains. Envirotyping with genomic prediction is active research (57 Europe PMC records 2023-2026, for example G3 2023, Theor Appl Genet 2024) but predicts across target environments, not one field. Honest limit: genomic prediction and per-field variety recommendation from existing catalogues are known, so tasks that only re-fit published GxE prediction models or recommend among released varieties are known answers; the open work is designing and validating a new field-specific variety on a weeks timescale, and each task needs its own basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "AI designed crop variety for specific field genomic prediction weeks breeding startup 2026 Inari Avalo",
+      "source": "https://www.htgf.de/en/computomics-interview/",
+      "observedAt": "2026-11-06T01:15:00Z",
+      "finding": "Inari, Computomics (EUR 6.3M Series B, August 2026), Heritable Agriculture, Wild Bioscience, Rainbow Crops and DNA Harvest Partners with ToolGen use AI to predict untested trait combinations and environment-specific performance. Computomics states a variety takes 10 to 15 years to reach market. No source shows a field-specific variety delivered in weeks."
+    },
+    {
+      "query": "speed breeding generation time crop variety release timeline years minimum regulatory testing",
+      "source": "https://wildpeanutlab.uga.edu/files/2019/06/2019-Hickey-Breeding-crops-to-feed-10-billion_Nature-Biotech.pdf",
+      "observedAt": "2026-11-06T01:15:00Z",
+      "finding": "Cross-to-registered-variety spans 10 to 15 years with multi-environment testing and seed multiplication (8 to 10 for maize); speed breeding cut peanut generation time from 145 to 89 days with release projected at six to seven years; DS Faraday (2017) was the first speed-bred wheat variety. Field testing remains necessary."
+    },
+    {
+      "query": "\"envirotyping\" AND \"genomic prediction\" 2023-2026 (Europe PMC)",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22envirotyping%22%20AND%20%22genomic%20prediction%22%20AND%20PUB_YEAR%3A%5B2023%20TO%202026%5D&format=json&pageSize=5&sort=CITED%20desc",
+      "observedAt": "2026-11-06T01:19:01Z",
+      "finding": "Europe PMC returns 57 records, including envirome-wide associations for multi-year wheat prediction (G3 2023), extending the breeder's equation to target populations of environments (Front Plant Sci 2023) and machine learning combining genetic and environmental data for maize yield (Theor Appl Genet 2024). Prediction across environments, not per-field design."
+    },
+    {
+      "query": "AI crop variety recommendation per field digital twin breeding generative design weeks plant 2026 \"in weeks\"",
+      "source": "https://agfundernews.com/digital-twins-heritable-ag-combines-ai-genomics-and-environmental-data-to-slash-rd-timelines",
+      "observedAt": "2026-11-06T01:25:00Z",
+      "finding": "Bayer reports AI cutting some selection stages from five to six years to four to six months; Heritable Ag targets a strawberry variety on shelves in four years and simulates crops in virtual fields at 10 m; Iowa State builds field digital twins. No source claims a variety designed in weeks; regulatory approval still applies."
+    }
+  ]
+}

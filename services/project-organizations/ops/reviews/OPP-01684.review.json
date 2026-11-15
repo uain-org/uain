@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01684",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": true,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held: the project's deliverable, safe-to-drink tap water in a city, is a known and documented answer. Conventional treatment, disinfection and continuously pressurised distribution, managed under WHO's Guidelines for Drinking-water Quality and Water Safety Plans (the catchment-to-consumer risk approach WHO calls the most effective means of ensuring safe supply, with open guidance for urban utilities, https://www.who.int/publications/m/item/guidelines-for-urban-utility-managed-piped-drinking-water-supplies), already deliver safe tap water citywide; Singapore, for example, gives its whole population 24-hour high-quality piped water, including NEWater reuse validated by about 20,000 tests (https://southeastasiainfra.com/sustainable-supply/). Honest limit: the 4,500,000,000-resident KPI is far from met; JMP 2025 reports 2.1 billion people lack safely managed drinking water and that urban drinking-water coverage has stagnated (https://www.unicefusa.org/press/fast-facts-1-4-people-globally-still-lack-access-safe-drinking-water-who-unicef), and intermittent supply lets contaminants enter depressurised pipes, as Indian 24x7 conversion studies document (https://indiawaterweek.thewaternetwork.com/storage2/cI8LFxgpNKMwcmGI5Ej5kuLiamRdhQP1lTu2gLbxRFSWxoCN1IK1Jdj7APer_-bZOfJaP0RNQ8yHW4y5YaZcRR_vTCfvqCB1tDmVKKTHwLQ). Those are investment, utility-governance and operations problems with known engineering answers, so under the 29 September 2026 rule the project is not opened as new work. A reframed project on a specific unsolved technical gap, such as low-cost real-time contamination detection in intermittent networks, would need its own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "safely managed drinking water urban population lacking 2025 JMP cities tap water not safe to drink",
+      "source": "https://www.unicefusa.org/press/fast-facts-1-4-people-globally-still-lack-access-safe-drinking-water-who-unicef",
+      "observedAt": "2026-11-06T01:21:00Z",
+      "finding": "JMP 2025: 2.1 billion people (1 in 4) lack safely managed drinking water; global coverage rose from 50 to 60 percent 2015-2024 while urban drinking-water and hygiene coverage stagnated; safely managed means on premises, available when needed and free from contamination. No count of cities with unsafe tap water found."
+    },
+    {
+      "query": "WHO Water Safety Plans guidelines drinking-water quality 2022 cities adoption intermittent supply contamination urban utilities",
+      "source": "https://www.who.int/publications/m/item/guidelines-for-urban-utility-managed-piped-drinking-water-supplies",
+      "observedAt": "2026-11-06T01:27:00Z",
+      "finding": "WHO Water Safety Plans (since the 2004 third edition of the drinking-water guidelines, HACCP-based, catchment to consumer) are described by WHO as the most effective means of consistently ensuring safe supply; WHO publishes climate-resilient WSP guidance for urban utilities; low-income settlements get intermittent supply and higher contamination risk."
+    },
+    {
+      "query": "cities where tap water safe to drink list global urban piped water quality intermittent supply India Africa 2025 study",
+      "source": "https://morungexpress.com/tap-water-undrinkable-delhi-13-state-capitals-paswan",
+      "observedAt": "2026-11-06T01:27:00Z",
+      "finding": "Results were mostly consumer surveys; an older Indian government study of 21 cities found tap water undrinkable in Delhi and 13 state capitals with only Mumbai fully compliant; Durban rated safest in South Africa. No 2025 global city-level study found."
+    },
+    {
+      "query": "Singapore NEWater 24x7 water supply programme city transition intermittent to continuous safe tap water case study cost",
+      "source": "https://southeastasiainfra.com/sustainable-supply/",
+      "observedAt": "2026-11-06T01:27:00Z",
+      "finding": "Singapore's entire population has continuous access to high-quality piped water (24-hour supply, 100 percent access); NEWater followed a two-year safety study of about 20,000 tests; system cost rose from about S$500 million (2000) to S$1.3 billion (2015). Indian 24x7 conversion reviews flag pressure management, leakage and contaminant intrusion in depressurised pipes."
+    }
+  ]
+}

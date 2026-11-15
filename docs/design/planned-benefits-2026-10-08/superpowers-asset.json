@@ -1,0 +1,14 @@
+{
+  "tool_mode": "built-in image_gen",
+  "prompt": "Use case: style-matched website card asset for UAIN. Recreate the attached reference's realistic cinematic landscape of a powerful compute federation: rows of upright blue data-center server cabinets in an expansive alpine valley, mountains and clouds behind, luminous blue infrastructure links across the ground, subtle lights on cabinet edges. Natural portrait canvas 1024x1280. Upper 50 percent contains the detailed scene, with the mountains across top and servers around upper-middle. Lower 50 percent smoothly transitions within the image to deep dark blue #08283f, slightly lighter blue at the very bottom, providing an uninterrupted text-safe region for long actual HTML title/body. Match the reference art direction, cool blue palette, realistic light and density. Avoid abrupt transition or visible horizontal boundary. No letters, typography, logo, button, UI, borders, decorations or watermarks. This is a background image only, not a card screenshot. Keep the scene faithful to the supplied crop. Opaque background.",
+  "reference": "work/benefits-20261008/references/superpowers.webp",
+  "generated": "~/.codex/generated_images/01a11635-de5d-7b52-8667-a386c4bd2164/exec-23d0cc99-4215-4eaa-afec-d18be2183542.png",
+  "final": "public/images/landing/benefits/superpowers.webp",
+  "dimensions": {
+    "width": 1122,
+    "height": 1402
+  },
+  "bytes": 131832,
+  "encoding": "cwebp quality 84 method 6; original aspect ratio preserved",
+  "inspection": "Realistic blue server federation in alpine valley; no UI text or watermarks; smooth lower navy space."
+}

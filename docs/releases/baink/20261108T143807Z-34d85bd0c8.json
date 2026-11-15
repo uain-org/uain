@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261108T143807Z-34d85bd0c8",
+  "version": "0.3.38",
+  "source_commit": "40534a74ef2637408e3a0c5c6790b5d8ab8cafe1",
+  "deployed_at": "2026-11-08T14:40:35Z",
+  "prior": "20261108T104945Z-7cdb5a05ec",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#subscription-pilot-20261108"
+  ],
+  "note": "Guarded standalone promotion completed; production and preview health/release IDs pass; all56public assets match immutable inventory; browser landing and login-method entry pass. Authenticated held/usable task UI and fresh award/payment qualification remain separate."
+}

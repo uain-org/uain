@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01209",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable solution makes staple crops drought-proof, so the Main KPI of 1,000,000,000 people growing drought-proof crops is far from met. The best deployed answers are drought-tolerant, not drought-proof. HB4 wheat, approved in Argentina, gave a 13 percent field yield advantage under reproductive-stage water deficit in INTA's April 2026 Field Crops Research study and had about 100,000 ha planted cumulatively by 2024 (https://repositorio.inta.gob.ar/handle/20.500.12123/25002). DTMA drought-tolerant maize out-yields checks in managed trials, but in Malawi's 2011/12 early-season drought it did no better than other improved maize (https://link.springer.com/10.1007/s12571-015-0511-4), and modelled gains are 3 to 20 percent. Cereal losses in drought years still average 13.7 percent globally, and the UNCCD frames even 25 to 30 percent drought yield gains as tolerance, not immunity (https://www.unccd.int/resources/unccd-library/new-hostile-climate-drought-tolerant-crops-systems-needed-unprecedented). Europe PMC returns only 6 records for the phrase drought-proof crop, none reporting such a crop. Honest limit: drought tolerance in maize, wheat and sorghum is a mature field with released varieties, so tasks that re-breed or re-test HB4 or DTMA-type tolerance are known answers; the open work is crops that hold yield under severe, early or multi-season drought, and each task needs its own basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "HB4 drought tolerant wheat adoption hectares 2026 yield under drought",
+      "source": "https://repositorio.inta.gob.ar/handle/20.500.12123/25002",
+      "observedAt": "2026-11-06T01:10:00Z",
+      "finding": "INTA (Field Crops Research, April 2026): HaHB4 wheat yield advantage under reproductive-phase water deficit was 15 percent in the greenhouse and 13 percent in the field. Bioceres reported more than 55,000 ha in 2022-23 and over 100,000 ha cumulative in Argentina; company claims of 20 to 42 percent are less independent. Tolerance, not drought-proofing."
+    },
+    {
+      "query": "drought tolerant maize Africa adoption DTMA yield advantage severe drought limits",
+      "source": "https://link.springer.com/10.1007/s12571-015-0511-4",
+      "observedAt": "2026-11-06T01:10:00Z",
+      "finding": "DTMA varieties out-yielded checks by 83 to 137 percent under managed drought on-farm, but modelled gains are 3 to 20 percent, and in Malawi 2011/12 DT maize did not perform significantly better than other improved maize because the drought struck early. Adoption is limited by seed availability and price."
+    },
+    {
+      "query": "\"drought-proof\" crop (Europe PMC)",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22drought-proof%22%20crop&format=json&pageSize=5&sort=CITED%20desc",
+      "observedAt": "2026-11-06T01:18:56Z",
+      "finding": "Europe PMC returns only 6 records for \"drought-proof\" crop; none reports a drought-proof staple crop (top hits are a 2018 review on improving drought tolerance and sugarcane genotype-by-environment work). Null result for an existing solution."
+    },
+    {
+      "query": "no crop variety fully drought proof yield losses under severe drought staple crops 2025 2026 study climate",
+      "source": "https://www.unccd.int/resources/unccd-library/new-hostile-climate-drought-tolerant-crops-systems-needed-unprecedented",
+      "observedAt": "2026-11-06T01:30:00Z",
+      "finding": "Cereal production losses averaged 13.7 percent in drought years since 1985 (Nature 2016); over 160 drought-tolerant maize varieties for sub-Saharan Africa yield 25 to 30 percent more under drought, which reduces losses but does not prevent them. No source shows a fully drought-proof variety."
+    }
+  ]
+}

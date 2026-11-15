@@ -1,0 +1,45 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01926",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:54:30Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No self-cleaning, dust-proof panel is deployed at scale, so the Main KPI of 300,000 MW of desert solar with no water cleaning is not met by the project's approach. The panel-intrinsic routes remain research: MIT's electrostatic dust removal (2022, patent pending, no commercial launch found, https://www.technologyreview.com/2022/04/27/1048479/a-better-way-to-clean-solar-panels), electrodynamic screens with small field trials only (Sol Clarity, 11 panels; Brunel 2025 simulation, https://bura.brunel.ac.uk/handle/2438/33024), and anti-soiling coatings whose multi-year desert durability is unproven (CSU thesis, https://mountainscholar.org/handle/10217/195368). Honest limit: the 'no water' half of the KPI is partly answered by deployed waterless robotic cleaning (Ecoppia, about 99% dust removal claimed, https://www.pv-tech.org/news/ecoppia-installs-cleaning-robots-for-40mw-solar-plant-on-israel-jordan-bord; Noor Abu Dhabi's 1,430 dry robots, https://noorabudhabi.ae/plants/robotic-cleaning-system/). I found no total for GW served by waterless robots and cannot rule out that it is a large fraction of MENA desert PV; it is not shown to reach 300 GW. Tasks must not reward re-inventing waterless robots and must target durable panel-intrinsic dust rejection with their own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "waterless solar panel cleaning robots deserts deployed GW Ecoppia 2026",
+      "source": "https://www.pv-tech.org/news/ecoppia-installs-cleaning-robots-for-40mw-solar-plant-on-israel-jordan-bord",
+      "observedAt": "2026-11-06T00:48:30Z",
+      "finding": "Ecoppia waterless robots deployed at tens-of-MW sites in Israel and Middle East; no GW-scale total found; robots, not self-cleaning panels."
+    },
+    {
+      "query": "electrostatic dust removal solar panels MIT waterless self-cleaning commercialization",
+      "source": "https://www.technologyreview.com/2022/04/27/1048479/a-better-way-to-clean-solar-panels",
+      "observedAt": "2026-11-06T00:48:45Z",
+      "finding": "MIT electrostatic system recovers about 95% of lost power for particles over 30 um in the lab; patent pending; no commercial deployment found."
+    },
+    {
+      "query": "anti-soiling superhydrophobic coating solar module desert field test durability",
+      "source": "https://mountainscholar.org/handle/10217/195368",
+      "observedAt": "2026-11-06T00:49:00Z",
+      "finding": "Research has not conclusively shown hydrophobic coatings survive a module lifetime outdoors; desert durability mostly lab abrasion tests."
+    },
+    {
+      "query": "electrodynamic screen solar panel dust shield field deployment 2025 2026",
+      "source": "https://bura.brunel.ac.uk/handle/2438/33024",
+      "observedAt": "2026-11-06T00:49:15Z",
+      "finding": "Electrodynamic screens: 2025 self-powered EDS design is simulation only; Sol Clarity field test of 11 panels; no large-scale installations found."
+    },
+    {
+      "query": "gigawatt solar plant waterless robotic cleaning Al Dhafra Sudair Middle East robots GW installed",
+      "source": "https://noorabudhabi.ae/plants/robotic-cleaning-system/",
+      "observedAt": "2026-11-06T00:49:30Z",
+      "finding": "Noor Abu Dhabi uses 1,430 dry cleaning robots on 3.3 million panels; Al Dhafra 2 GW also robot-cleaned. Waterless robots are deployed prior art for the no-water part."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-03361",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "neutral",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No operator offers robotaxis in every city above 100,000 people; service exists in a few dozen at most, against the Main KPI of 9,000 cities. Waymo lists rider-only service in 13 US metro areas plus Austin and Atlanta through Uber and names no next cities (https://waymo.com/faq/); Baidu Apollo Go lists full commercial service in five cities (Beijing, Chongqing, Shenzhen, Wuhan, Dubai) (https://en.wikipedia.org/wiki/Apollo_Go). Where it runs, the safety case is strong: Waymo's 56.7-million-mile comparison shows lower crash rates than human benchmarks by crash type (https://doi.org/10.1080/15389588.2025.2499887). But each new city still needs mapping, validation and regulatory approval, and open driving stacks on GitHub are academic prototypes (FusionAD, 43 stars). Class neutral: road-safety and access benefit, but a 2026 study finds robotaxis reduce taxi drivers' income (https://doi.org/10.1057/s41599-026-07366-x) and deployment is commercially controlled. Honest limit: robotaxi technology exists, so the city-by-city roll-out is a commercial and regulatory task, not research; the open, checkable work is methods that cut the per-city cost of validation and generalisation (for example, verified transfer of a driving policy to an unmapped city), not restating existing deployments."
+  },
+  "additionalSearches": [
+    {
+      "query": "robotaxi deployment scaling cities autonomous driving generalization (2024 onward)",
+      "source": "https://api.openalex.org/works?search=robotaxi%20deployment%20scaling%20cities%20autonomous%20driving%20generalization&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:17:04Z",
+      "finding": "104 works: cross-city dispatch, foundation-model surveys, nuPlan and nuScenes benchmarks. No method shown to deploy robotaxis to arbitrary cities without per-city validation."
+    },
+    {
+      "query": "Waymo safety rider-only miles crash rates comparison (2024 onward)",
+      "source": "https://api.openalex.org/works?search=Waymo%20safety%20rider-only%20miles%20crash%20rates%20comparison&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:17:06Z",
+      "finding": "Waymo rider-only crash comparisons at 7.1 and 56.7 million miles show lower crash rates than human benchmarks in its operating areas; evidence is limited to those cities."
+    },
+    {
+      "query": "autonomous driving stack open source (GitHub repositories)",
+      "source": "https://api.github.com/search/repositories?q=autonomous%20driving%20stack%20open%20source&sort=stars&per_page=8",
+      "observedAt": "2026-11-06T01:17:07Z",
+      "finding": "8 repositories: FusionAD (43 stars), a self-driving golf cart, course material. No open stack running a commercial robotaxi service."
+    },
+    {
+      "query": "robotaxi commercial operations China Baidu Apollo Go cities 2025 (2024 onward)",
+      "source": "https://api.openalex.org/works?search=robotaxi%20commercial%20operations%20China%20Baidu%20Apollo%20Go%20cities%202025&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:19:06Z",
+      "finding": "44 works: robotaxis reduce taxi drivers' income (2026), user trust and switching studies, regulatory divergence across US, EU and China. Deployments are city-limited."
+    },
+    {
+      "query": "Waymo service cities",
+      "source": "https://waymo.com/faq/",
+      "observedAt": "2026-11-06T01:21:00Z",
+      "finding": "Rider-only service in 13 metro areas (Dallas, Denver, Houston, Las Vegas, Los Angeles, Miami, Nashville, Orlando, Phoenix, San Antonio, San Diego, SF Bay Area, Tampa) plus Austin and Atlanta via Uber; no future cities named."
+    },
+    {
+      "query": "Apollo Go service cities",
+      "source": "https://en.wikipedia.org/wiki/Apollo_Go",
+      "observedAt": "2026-11-06T01:22:53Z",
+      "finding": "Full commercial service in Beijing, Chongqing, Shenzhen, Wuhan and Dubai (from 1 April 2026); Abu Dhabi announced only."
+    }
+  ]
+}

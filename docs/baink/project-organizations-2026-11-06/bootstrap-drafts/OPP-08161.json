@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-08161",
+  "native_project": "P-OPP-08161",
+  "source_digest": "79c8d370cd33f795fad7e11c0b0f0f6237bd30784e1090fd124fcafadf6b8d60",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Give every person a verified digital legal identity they control",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "54ea5626300d8e0774d5afdfb25c64d764c0329757290d8883d17073ccca1e3c"
+  },
+  "drafted_at": "2026-11-06T00:29:04.963Z",
+  "queries": [
+    "give person digital legal identity control",
+    "give person digital rights ethics inclusion"
+  ],
+  "searches": [
+    {
+      "query": "give person digital legal identity control",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:28:57.231Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=give%20person%20digital%20legal%20identity%20control&per_page=10; sha256=77cb7caba337e8b15afa05e10d687c159ea6f9533b0589c813fa82b76daa0f36; total=1; shown=1/1; top: Rastaman4e/-1 \"NICEHASH PLATFORM TERMS OF USE AND NICEHASH MINING TERMS OF SERVICE PLEASE READ THESE NICEHASH PLATFORM TERMS OF USE AND NICEHASH MINING TE…\""
+    },
+    {
+      "query": "give person digital legal identity control",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:28:57.887Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aperson%20AND%20all%3Adigital%20AND%20all%3Alegal%20AND%20all%3Aidentity%20AND%20all%3Acontrol&start=0&max_results=10; sha256=11c1c276eecfbf003541d416793ae58a2e7afca6f08a6de59c6a6b33190acddf; total=0; shown=0/0"
+    },
+    {
+      "query": "give person digital legal identity control",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:28:58.778Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=give%20person%20digital%20legal%20identity%20control&rows=10&select=DOI,title; sha256=ebb3d687655bc2ff5a523fd3b8c22652c9ccca3420e694b5553891823a013364; total=5385870; shown=5/10; top: 10.2139/ssrn.6509718 \"Legal Identity or Digital Control? National Digital ID Systems, Exclusion, and Digital Authoritarian Practices in Uganda\" | 10.1017/upo9780980723007.004 \"Digital Identity – A New Legal Concept\" | 10.1017/upo9780980723007.003 \"Digital Identity – Introduction\" | 10.1017/upo9780980723007.009 \"Digital Identity – Conclusion\" | 10.1016/j.clsr.2009.03.009 \"Digital identity – The legal person?\""
+    },
+    {
+      "query": "give person digital rights ethics inclusion",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:29:03.618Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=give%20person%20digital%20rights%20ethics%20inclusion&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "give person digital rights ethics inclusion",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:29:04.089Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aperson%20AND%20all%3Adigital%20AND%20all%3Arights%20AND%20all%3Aethics%20AND%20all%3Ainclusion&start=0&max_results=10; sha256=d54deb93244c601d75cb8a0c0486d958b223a1e4f067b16c595f752a75ddd1f1; total=0; shown=0/0"
+    },
+    {
+      "query": "give person digital rights ethics inclusion",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:29:04.963Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=give%20person%20digital%20rights%20ethics%20inclusion&rows=10&select=DOI,title; sha256=27322ed09fd77a0353894e036e7ac8cd1de8afeb331ad4591c6958d3e73834ed; total=2447150; shown=5/10; top: 10.1093/hebz/9780192846815.003.0014 \"Gender and Inclusion, Digital Disruption, and Ethics\" | 10.1017/cbo9780511582950.018 \"Rights and persons: the religious ground of human rights\" | 10.1201/9781003616702-32 \"Immersive Technology Needs Digital Accessibility Ethics\" | 10.1201/9781003616702-18 \"Facial Difference, AI Bias, and Digital Accessibility Ethics\" | 10.1201/9781003616702-13 \"Hackathons, Student Projects, and Digital Accessibility Ethics\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "give person digital legal identity control",
+      "url": "https://api.github.com/search/repositories?q=give%20person%20digital%20legal%20identity%20control&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=give%20person%20digital%20legal%20identity%20control&per_page=10",
+      "sha256": "77cb7caba337e8b15afa05e10d687c159ea6f9533b0589c813fa82b76daa0f36",
+      "bytes": 72954,
+      "observedAt": "2026-11-06T00:28:57.231Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "give person digital legal identity control",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aperson%20AND%20all%3Adigital%20AND%20all%3Alegal%20AND%20all%3Aidentity%20AND%20all%3Acontrol&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aperson%20AND%20all%3Adigital%20AND%20all%3Alegal%20AND%20all%3Aidentity%20AND%20all%3Acontrol&start=0&max_results=10",
+      "sha256": "11c1c276eecfbf003541d416793ae58a2e7afca6f08a6de59c6a6b33190acddf",
+      "bytes": 854,
+      "observedAt": "2026-11-06T00:28:57.887Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "give person digital legal identity control",
+      "url": "https://api.crossref.org/works?query=give%20person%20digital%20legal%20identity%20control&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=give%20person%20digital%20legal%20identity%20control&rows=10&select=DOI,title",
+      "sha256": "ebb3d687655bc2ff5a523fd3b8c22652c9ccca3420e694b5553891823a013364",
+      "bytes": 1340,
+      "observedAt": "2026-11-06T00:28:58.778Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "give person digital rights ethics inclusion",
+      "url": "https://api.github.com/search/repositories?q=give%20person%20digital%20rights%20ethics%20inclusion&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=give%20person%20digital%20rights%20ethics%20inclusion&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:29:03.618Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "give person digital rights ethics inclusion",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aperson%20AND%20all%3Adigital%20AND%20all%3Arights%20AND%20all%3Aethics%20AND%20all%3Ainclusion&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aperson%20AND%20all%3Adigital%20AND%20all%3Arights%20AND%20all%3Aethics%20AND%20all%3Ainclusion&start=0&max_results=10",
+      "sha256": "d54deb93244c601d75cb8a0c0486d958b223a1e4f067b16c595f752a75ddd1f1",
+      "bytes": 856,
+      "observedAt": "2026-11-06T00:29:04.089Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "give person digital rights ethics inclusion",
+      "url": "https://api.crossref.org/works?query=give%20person%20digital%20rights%20ethics%20inclusion&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=give%20person%20digital%20rights%20ethics%20inclusion&rows=10&select=DOI,title",
+      "sha256": "27322ed09fd77a0353894e036e7ac8cd1de8afeb331ad4591c6958d3e73834ed",
+      "bytes": 1284,
+      "observedAt": "2026-11-06T00:29:04.963Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "316b6fe113338690163e6721363a789601983db6205395874f5c7731344aeee3",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

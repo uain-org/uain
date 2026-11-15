@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-07",
+  "image": {
+    "model": "black-forest-labs/flux-3-image",
+    "prompt": "Preserve this exact orbital Earth photograph, ultrawide canvas, full Earth at right, empty left 45%, blue atmosphere, warm sunlight, continents and camera position. Add exactly one small cyan network source on SWITZERLAND: the small Alpine land immediately north of northern Italy and east of France, on the northern edge of the white arc of the Alps. Its image position is x=2003,y=440 on the 2934x1258 reference, normalized x=.6827,y=.3498. Switzerland is ABOVE and a little right of Corsica, not further northeast in Germany or Poland. Place the one root here, keep its underlying land recognizable. Six thin elegant cyan luminous arcs spring outward from that same exact Swiss pinpoint toward Britain, Scandinavia, North Africa, South Africa, western Asia and the Atlantic horizon. Lift each arc gently above the globe with a fine glow, like beautiful orbital data trails. Destinations are small faint dots; all arcs have just one common Swiss origin. No new origin over Africa or eastern Europe. Preserve natural photorealism, no geometric grid or mesh. Absolutely no writing, labels, flags, badges, country symbols, logos, watermarks or corner marks. Only the route overlay changes; preserve the composition and colors exactly.",
+    "resolution": "2K",
+    "aspect_ratio": "21:9",
+    "n": 1,
+    "reference_file": "docs/design/earth-wide-2026-10-07/reference.png"
+  },
+  "image_costs_usd": [
+    0.018,
+    0.018,
+    0.05
+  ],
+  "selected_reference_sha256": "64a5ed2fbe8b03103d40b22385435b0c78b909674907012cce4bfbe6c87580c8",
+  "video": {
+    "model": "minimax/hailuo-3",
+    "prompt": "Create a visibly animated ultrawide orbital network film, from the supplied clean Earth first frame to the supplied Swiss-network final frame. Retain exactly the same entire globe on the right, same scale and position, empty left 45 percent, midnight blue, cyan atmospheric rim and warm dawn on the far right. The camera stays locked. The important action is CLEAR AND CONTINUOUS, NOT a still photograph: at 0.3 seconds a tiny cyan light ignites at the single precise Swiss Alpine origin shown in the final reference; from seconds 0.5 through 3 six elegant thin blue arcs visibly DRAW OUTWARD from this one Swiss root over the globe to their destinations. Growing luminous tips advance outward along the curves; routes must visibly extend from the same root, not simply fade into view. During seconds 3 through 7 repeated tiny bright pulses TRAVEL from Switzerland OUTWARD along all established paths, with several clearly visible packets simultaneously moving. The Swiss origin gently breathes, clouds visibly drift softly, atmospheric blue light shimmers subtly. At the finish use the final reference geography and restrained arcs. Switzerland, immediately north of Italy, remains the only bright root throughout; no shifting origin, no second hub, no destination-to-destination lines. Keep the entire globe visible, no zoom, no pan, no framing change. No text, letters, flags, icons, branding, logos, watermarks, UI or corner marks. Motion must be unmistakable when watching for one second at normal playback speed. Elegant natural orbital photography and precise restrained cyan network graphics.",
+    "duration": 8,
+    "resolution": "2K",
+    "aspect_ratio": "21:9",
+    "generate_audio": false,
+    "provider": {
+      "order": [
+        "minimax"
+      ],
+      "allow_fallbacks": false,
+      "options": {
+        "minimax": {
+          "parameters": {
+            "aigc_watermark": false
+          }
+        }
+      }
+    },
+    "first_frame": "docs/design/earth-wide-2026-10-07/reference.png",
+    "last_frame": "swiss-routes-c.png"
+  },
+  "video_job_id": "gen-vid-1791367260-gMPGMpUNB33BwdWTkIdW",
+  "video_status": "completed",
+  "video_usage": {
+    "cost": 1.0296,
+    "is_byok": false
+  },
+  "source_video_sha256": "f8bc7e83073f9dca1f7dac02d41c02ef446a2fc70cd4b96481e78b975247f478",
+  "reported_total_cost_usd": 1.1156,
+  "exports": {
+    "video_path": "public/videos/uain-swiss-wide-motion-2026-10.mp4",
+    "video_sha256": "e8545ed84c5c490905720b330c2b114cca2cf442acb5b1f26b3c52609060c53c",
+    "poster_path": "public/images/landing/swiss-wide-motion-2026-10.webp",
+    "poster_sha256": "2673f907c17bc45485dc0198fbc138056d676885ea7640ecb3fec0f5f13aee0a",
+    "width": 2560,
+    "height": 1086,
+    "duration_seconds": 7.4,
+    "fps": 30,
+    "audio_streams": 0,
+    "first_last_decoded_sha256": "b148f8813e2b7e71ea1761318a66fdad0e09d163a3c415e1da5971cbec69e40f"
+  }
+}

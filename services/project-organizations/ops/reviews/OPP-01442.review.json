@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01442",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No staple crop carries a more efficient photosynthesis pathway in farmers' fields, so the Main KPI of 600,000,000 extra tonnes of grain per year is unmet. The engineering is proven only in field trials: RIPE's synthetic photorespiration bypass raised tobacco biomass by about 40 percent over two field seasons (Science 2019, https://ripe.illinois.edu/node/314), and multigene photoprotection (VPZ) raised soybean yield by an average 24.5 percent in five transgenic lines (Science 2022, https://www.lancaster.ac.uk/news/researchers-prove-bioengineering-better-photosynthesis-increases-yields-in-food-crops-for-the-first-time-ever); a chloroplastic bypass and maize GOLDEN2-LIKE genes have raised rice productivity in experiments (Mol Plant 2019; Commun Biol 2020). The C4 Rice Project has installed parts of the C4 biochemistry but anatomy remains the bottleneck, with only a first proto-Kranz step reported (https://c4rice.com/the-science/engineering-photosynthesis-what-we-are-doing/). No published rice or wheat field result from these lines and no regulatory approval or farmer release was found. Honest limit: the pathways themselves are published, so tasks that only re-implement the RIPE tobacco or soybean constructs are known answers; the open work is multi-season grain-yield gains in rice, wheat or maize and a deployable C4 rice, and each task needs its own basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "RIPE project photosynthesis field trial yield increase soybean rice 2025 2026 results",
+      "source": "https://www.lancaster.ac.uk/news/researchers-prove-bioengineering-better-photosynthesis-increases-yields-in-food-crops-for-the-first-time-ever",
+      "observedAt": "2026-11-06T01:10:00Z",
+      "finding": "RIPE (Science 2022): soybeans with three extra photoprotection genes gave an average 24.5 percent field yield increase (up to 33 percent) with unchanged seed protein. Follow-up trials were planned; no 2025-2026 RIPE soybean or rice results were found."
+    },
+    {
+      "query": "C4 rice project progress 2026 Kranz anatomy engineered",
+      "source": "https://c4rice.com/the-science/engineering-photosynthesis-what-we-are-doing/",
+      "observedAt": "2026-11-06T01:10:00Z",
+      "finding": "The C4 Rice Project introduces C4 biochemistry into C3-anatomy rice while a separate stream works on Kranz anatomy; GOLDEN2-LIKE from maize gave a first proto-Kranz step (Current Biology). Reviews note biochemistry advanced quickly but anatomy remains difficult. No 2026 prototype found."
+    },
+    {
+      "query": "\"photorespiratory bypass\" AND rice (Europe PMC)",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22photorespiratory%20bypass%22%20AND%20rice&format=json&pageSize=5&sort=CITED%20desc",
+      "observedAt": "2026-11-06T01:18:57Z",
+      "finding": "Europe PMC returns 78 records; top hits are a 2024 Plant Cell perspective on improving photosynthesis to raise yield, a 2019 Mol Plant chloroplastic photorespiratory bypass in rice, and 2020 maize GOLDEN2-LIKE genes raising rice biomass and grain yield. Experimental lines only; no deployed variety."
+    },
+    {
+      "query": "photorespiration bypass field trial tobacco rice yield gain 2024 2025 2026 crop photosynthesis engineering farmers approval",
+      "source": "https://ripe.illinois.edu/node/314",
+      "observedAt": "2026-11-06T01:24:00Z",
+      "finding": "The 2019 Science tobacco field trial gave about 40 percent more biomass with an algal glycolate dehydrogenase and squash malate synthase plus PLGG1 suppression. Translation to soybean, cowpea, rice, potato, tomato and eggplant was announced; no published rice field result, approval or farmer adoption was found."
+    }
+  ]
+}

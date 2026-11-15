@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-06001",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "neutral",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No machine has anywhere near 1,000,000 logical-grade qubits; the largest reported error-corrected counts are about 48 to 50 logical qubits on Quantinuum Helios in 2026 (https://www.sec.gov/Archives/edgar/data/0002110105/000162827926000199/filename1.htm), so the Main KPI is unmet by four orders of magnitude. Google Willow showed below-threshold scaling for a single distance-7 surface-code memory (https://physics.aps.org/articles/v17/176). Public roadmaps stop far short: IBM Starling targets 200 logical qubits by 2029 and Blue Jay 2,000 later (https://thequantuminsider.com/2025/06/10/ibm-offers-roadmap-toward-large-scale-fault-tolerant-quantum-computer/), and Quantinuum Apollo targets hundreds by 2029. Honest limit: this is a hardware and capital-intensive programme led by large companies; open contributions UAIN members can make are mostly in decoders, codes and compilation, where substantial open work (qLDPC codes, real-time decoders) already exists, so each task needs its own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "largest number of logical qubits demonstrated 2025 2026 error corrected",
+      "source": "https://physicsworld.com/a/quantum-processor-integrates-48-logical-qubits/",
+      "observedAt": "2026-11-06T00:39:12Z",
+      "finding": "Largest error-corrected counts reported are about 48 logical qubits (Harvard/QuEra 2023; Quantinuum Helios 2026 with 94 error-detected)."
+    },
+    {
+      "query": "Google Willow below threshold surface code logical qubit Nature 2024",
+      "source": "https://physics.aps.org/articles/v17/176",
+      "observedAt": "2026-11-06T00:39:18Z",
+      "finding": "Willow ran one distance-7 surface code at 0.143 percent error per cycle with exponential suppression; a single logical memory, not a computer of many logical qubits."
+    },
+    {
+      "query": "IBM Starling 200 logical qubits 2029 roadmap fault tolerant",
+      "source": "https://thequantuminsider.com/2025/06/10/ibm-offers-roadmap-toward-large-scale-fault-tolerant-quantum-computer/",
+      "observedAt": "2026-11-06T00:39:24Z",
+      "finding": "IBM plans Starling with 200 logical qubits by 2029 and Blue Jay with 2,000 logical qubits after; no roadmap reaches a million."
+    },
+    {
+      "query": "million logical qubits roadmap PsiQuantum Quantinuum Apollo 2029 2030s",
+      "source": "https://www.sec.gov/Archives/edgar/data/0002110105/000162827926000199/filename1.htm",
+      "observedAt": "2026-11-06T00:39:30Z",
+      "finding": "Quantinuum filing: Helios 50 logical qubits, Sol about 100 by 2027, Apollo hundreds by 2029; no public plan for a million logical qubits."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "private-review-broker",
+  "release_id": "15d52e3dff155e34f2a565cea2695b903a27d47ab8f438df487d0f98533023bd",
+  "version": null,
+  "source_commit": "9576df85d14bbb44a63fe21473ed1b96c995d4ba",
+  "deployed_at": "2026-11-08T16:28:57Z",
+  "prior": "8f90bc2f08c6328250013b64080125ba7ffeeea1c660221ba76f6875fa5b9f28",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#subscription-pilot-20261108",
+    "https://baink.money/api/native/review/health"
+  ],
+  "note": "Root-owned 16-file closure uses verified OAuth subscription admission. Actual opaque-purpose refusal qualification and signed public availability pass; identity, namespace, rate bounds and journals preserved. Heartbeat is not release-version or payment proof."
+}

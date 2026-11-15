@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-01446",
+  "native_project": "P-OPP-01446",
+  "source_digest": "5d45615f06a14003f552a71b656f87a79c9cfae8980a2836fbf60b392ed855d4",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Develop seeds that grow in space and on Mars",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "ed9c203d58d6e76b908a7e2d5785787f2aaeb23342c34c9a93f84eb9bc4aee4b"
+  },
+  "drafted_at": "2026-11-06T00:17:09.936Z",
+  "queries": [
+    "develop seeds grow space mars",
+    "develop seeds grow agriculture land crop"
+  ],
+  "searches": [
+    {
+      "query": "develop seeds grow space mars",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:17:02.007Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=develop%20seeds%20grow%20space%20mars&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "develop seeds grow space mars",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:17:02.622Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Adevelop%20AND%20all%3Aseeds%20AND%20all%3Agrow%20AND%20all%3Aspace%20AND%20all%3Amars&start=0&max_results=10; sha256=daa1dd94efc869d98f2c41d88225e3d3329ae2fb04a964ed13fc7e21044b84dc; total=1; shown=1/1; top: arXiv:2512.16084v1 \"Can plants grow on the Moon and Mars: seed germination enhancement using magnesium oxide coated halloysite nanotubes (MgO HNTs)\""
+    },
+    {
+      "query": "develop seeds grow space mars",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:17:03.538Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=develop%20seeds%20grow%20space%20mars&rows=10&select=DOI,title; sha256=603f196c0500d50d4493b02f939de39a0d690b294dddacb01b585adfa804d063; total=1303358; shown=5/10; top: 10.62211/43pf-11td \"Why Nothing Can Grow on Mars\" | 10.64628/aa.vtwe767sx \"Can you grow potatoes on Mars?\" | 10.1021/scimeetings.0c00570 \"How seeds grow: Project SEED mentor perspective\" | 10.1061/40177207136 \"The Surface Extreme Environment Dwelling System (SEEDS) for Mars\" | 10.5962/bhl.title.136650 \"Quality garden seeds Grand Rapids Growers' quality seeds Seeds that grow [bulletin] /\""
+    },
+    {
+      "query": "develop seeds grow agriculture land crop",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:17:08.448Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=develop%20seeds%20grow%20agriculture%20land%20crop&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "develop seeds grow agriculture land crop",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:17:08.971Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Adevelop%20AND%20all%3Aseeds%20AND%20all%3Agrow%20AND%20all%3Aagriculture%20AND%20all%3Aland%20AND%20all%3Acrop&start=0&max_results=10; sha256=ed12914e9d784e30e833532a7174c0642745ae782d49ff1f3bdb23dbe0423e99; total=1; shown=1/1; top: arXiv:2302.02273v1 \"Plasma Agriculture: A green technology to attain the sustainable agriculture goal\""
+    },
+    {
+      "query": "develop seeds grow agriculture land crop",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:17:09.935Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=develop%20seeds%20grow%20agriculture%20land%20crop&rows=10&select=DOI,title; sha256=71704c0cffc4f2de1c1824abd4243edcf61f766a0eda0dbfe6c4fff0b1fe4275; total=1445343; shown=5/10; top: 10.2307/j.ctvh8r04g.8 \"How Plants Grow, and What They Need To Grow Well\" | 10.2139/ssrn.998600 \"Female Land Rights, Crop Specialization, and Productivity in Paraguayan Agriculture\" | 10.1094/grow-cot-12-16-097 \"Crop Management Update\" | 10.1094/grow-cot-11-25-512 \"Crop Consultant Panel\" | 10.1021/scimeetings.0c00570 \"How seeds grow: Project SEED mentor perspective\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "develop seeds grow space mars",
+      "url": "https://api.github.com/search/repositories?q=develop%20seeds%20grow%20space%20mars&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=develop%20seeds%20grow%20space%20mars&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:17:02.007Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "develop seeds grow space mars",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Adevelop%20AND%20all%3Aseeds%20AND%20all%3Agrow%20AND%20all%3Aspace%20AND%20all%3Amars&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Adevelop%20AND%20all%3Aseeds%20AND%20all%3Agrow%20AND%20all%3Aspace%20AND%20all%3Amars&start=0&max_results=10",
+      "sha256": "daa1dd94efc869d98f2c41d88225e3d3329ae2fb04a964ed13fc7e21044b84dc",
+      "bytes": 3397,
+      "observedAt": "2026-11-06T00:17:02.622Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "develop seeds grow space mars",
+      "url": "https://api.crossref.org/works?query=develop%20seeds%20grow%20space%20mars&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=develop%20seeds%20grow%20space%20mars&rows=10&select=DOI,title",
+      "sha256": "603f196c0500d50d4493b02f939de39a0d690b294dddacb01b585adfa804d063",
+      "bytes": 1426,
+      "observedAt": "2026-11-06T00:17:03.538Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "develop seeds grow agriculture land crop",
+      "url": "https://api.github.com/search/repositories?q=develop%20seeds%20grow%20agriculture%20land%20crop&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=develop%20seeds%20grow%20agriculture%20land%20crop&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:17:08.448Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "develop seeds grow agriculture land crop",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Adevelop%20AND%20all%3Aseeds%20AND%20all%3Agrow%20AND%20all%3Aagriculture%20AND%20all%3Aland%20AND%20all%3Acrop&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Adevelop%20AND%20all%3Aseeds%20AND%20all%3Agrow%20AND%20all%3Aagriculture%20AND%20all%3Aland%20AND%20all%3Acrop&start=0&max_results=10",
+      "sha256": "ed12914e9d784e30e833532a7174c0642745ae782d49ff1f3bdb23dbe0423e99",
+      "bytes": 3263,
+      "observedAt": "2026-11-06T00:17:08.971Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "develop seeds grow agriculture land crop",
+      "url": "https://api.crossref.org/works?query=develop%20seeds%20grow%20agriculture%20land%20crop&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=develop%20seeds%20grow%20agriculture%20land%20crop&rows=10&select=DOI,title",
+      "sha256": "71704c0cffc4f2de1c1824abd4243edcf61f766a0eda0dbfe6c4fff0b1fe4275",
+      "bytes": 1204,
+      "observedAt": "2026-11-06T00:17:09.935Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "a9e3251fcc3ffb9273fb0eac59a64b154c71e4b826228270efa137f1964ab503",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

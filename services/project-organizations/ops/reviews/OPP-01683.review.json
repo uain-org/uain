@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01683",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": true,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held: the project's deliverable, a handwashing station that dispenses soap automatically, is a known answer. Battery-powered infrared soap dispensers sell retail for about US$15 to 35, and complete touchless stations exist both commercially (the Cambro mobile station needs no plumbing or electrical hookup) and for low-resource settings: solar touchless stations with infrared tap and soap sensors marketed to schools (Sunsink), the sensor-started off-grid Soapy unit in rural India, Nikola Energy's solar IoT barrel station for camps and schools (https://globalhandwashing.org/station/sunsink-hand-washing-machine/; https://solve.mit.edu/solutions/41165), and the US$12 Povu Poa foaming dispenser in Kenya (https://pmc.ncbi.nlm.nih.gov/articles/PMC8070052). SNV publishes open technical guidance with costs for foot-operated and solar hands-free designs (https://snv.org/assets/downloads/f/191310/0ae1aa224e/202012-practical-_options-for-handwashing-stations.pdf). Honest limit: the 2,000,000,000-person KPI is unmet (JMP 2025: 1.7 billion lack basic hygiene, 611 million have no facility at all), cheap stations fall into disuse within about 18 months, and soap supply and theft are the binding constraints (https://link.springer.com/10.1186/s12889-020-09101-w). Those are durability, supply and behaviour problems; the automatic dispenser is a known answer, so under the 29 September 2026 rule the project is not opened as new work. A reframed project on stations that stay in use and stocked would need its own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "JMP 2025 sanitation safely managed 3.4 billion lack basic handwashing facility soap water 1.7 billion",
+      "source": "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/monitoring-and-evidence/wash-monitoring",
+      "observedAt": "2026-11-06T01:21:00Z",
+      "finding": "JMP 2025: 1.7 billion people lack basic hygiene services (soap and water at home); 1 billion have a limited service and 611 million no handwashing facility; 1.5 billion gained basic hygiene since 2015."
+    },
+    {
+      "query": "low-cost automatic soap dispenser handwashing station low-income settings off-grid touchless sensor product",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8070052",
+      "observedAt": "2026-11-06T01:21:00Z",
+      "finding": "Retail battery infrared soap dispensers cost about US$15 to 35; the Cambro mobile station is fully touchless with no plumbing or electrical hookup (about US$1,250); a UVM DIY touchless station costs about US$156; Povu Poa in Kenya is a US$12 low-cost foaming dispenser and frugal tap. Automatic dispensing exists; affordable rugged off-grid versions are fewer."
+    },
+    {
+      "query": "handwashing station design low-resource HappyTap Tippy tap evaluation soap availability behaviour automatic dispensing",
+      "source": "https://link.springer.com/10.1186/s12889-020-09101-w",
+      "observedAt": "2026-11-06T01:21:00Z",
+      "finding": "A systematic review of 20 tippy-tap studies found their presence increased handwashing and soap use; soap is prone to theft in low-income areas; IPA found most early devices fell out of use within 18 months and redesigned; in Zambia participants preferred cheaper stations. The binding constraints are upkeep, soap supply and behaviour."
+    },
+    {
+      "query": "solar-powered automatic soap dispenser handwashing station developing countries schools product touchless foot pedal",
+      "source": "https://globalhandwashing.org/station/sunsink-hand-washing-machine/",
+      "observedAt": "2026-11-06T01:27:00Z",
+      "finding": "Solar touchless stations exist for low-resource settings: Sunsink (infrared tap and soap sensors, 250 W panels, marketed to schools, above US$150), Solawash, Soapy (sensor-started, off-grid, rural India, 600-plus washes per 100 L), Nikola Energy (solar IoT barrel serving 700 people per fill) and Arusha Technical College; SNV publishes costed pedal and solar designs."
+    }
+  ]
+}

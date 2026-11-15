@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "private-review-broker",
+  "release_id": "21eaa9599401cb74f074c83a5f4e8582b677a34a68591fe448cbe286938c8f98",
+  "version": null,
+  "source_commit": "ee6abf52c1ca354d71bc5009981e8351e1a9fed9",
+  "deployed_at": "2026-11-10T08:36:22Z",
+  "prior": "000f226493c177d1cba05db1dbe05361b94754d4583971262c1c9c934b6ad0a0",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#release-gap-closure-20261110",
+    "https://baink.money/api/native/review/health"
+  ],
+  "note": "The 19-file import closure of broker.mjs from main ee6abf52 (all bytes equal main); id is the sha256 of source-manifest.json. First release:promote of this component (guarded unit switch, idle broker). Health re-signed 08:36:26Z: available, brokerReady, rootReady and modelQualified true; NRestarts 0. No payment has needed the AI checker since, so no review decision is observed."
+}

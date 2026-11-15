@@ -1,0 +1,322 @@
+{
+ "schema": "uain-survey-parts-build-v1",
+ "project": "OPP-00004",
+ "revision": 2,
+ "supersedes": "T-OPP-00004-1-prior-art-survey",
+ "dropped": [
+  {
+   "kind": "doi",
+   "id": "10.1016/s0262-40791530636-9",
+   "status": "not_found"
+  }
+ ],
+ "parts": [
+  {
+   "request": {
+    "id": "survey-OPP-00004-r2-p1",
+    "member": "uain158ac8d0debcf01d43164ef14736597da589d8b54",
+    "operation": "central_task_open",
+    "payload": {
+     "id": "T-OPP-00004-1-prior-art-survey-r2-p1",
+     "project": "P-OPP-00004",
+     "title": "Prior-art survey: Restore the thymus so immunity stays youthful (part 1 of 3)",
+     "criteria": "Prior-art survey part 1 of 3 for \"Restore the thymus so immunity stays youthful\". Main KPI: \"500,000,000 older adults with a restored thymus\". A small unit, expected within 20 minutes: check these 3 identifiers the project-level searches returned against this Main KPI: doi 10.3410/f.739135920.793580966; doi 10.3410/f.739135920.793581176; doi 10.3410/f.739135920.793582270. Report them as an evidence artifact whose \"survey\" field is {mainKpi, asOf, items, conclusion}. mainKpi is the Main KPI above, exactly. asOf is the survey date (YYYY-MM-DD). Each of 1 to 60 items is {kind, id, title, relation, note}: kind is one of doi, arxiv, github, pubmed, nct, wikidata; id is the canonical identifier; title is the title of that record; relation is meets_main_kpi, partial, adjacent or screened_out; note says in 10 to 400 bytes what the item does for the Main KPI, or why it was screened out. Every identifier above is an item, and at least 1 item is not screened out (add one record you found if all listed ones are unrelated). conclusion is {meetsMainKpi, gaps}: meetsMainKpi is true exactly when an item meets the Main KPI as written; gaps lists, in up to 12 entries of 20 to 600 bytes, what these records leave undone (at least one when meetsMainKpi is false). Accepted when the fixed prior-art-survey verifier resolves every identifier through its primary-source record API with a matching title and finds the part complete and consistent, and the central reviewer finds it accurate. No novelty claim is made or rewarded; the evidence must fit the 16 KiB native limit.",
+     "acceptance_digest": "2b36ce1338d9f4c25279d8283e938c77f43901e208246e7ec18756b65aa55d9b",
+     "eligibility": "new",
+     "eligibility_digest": "2534ea93070cb4ffd1eceaba05d9c9f9558503886c96e6c35f78d55d67a4a1f3",
+     "solver_amount": "60000000",
+     "reviewer_amount": "10000000",
+     "evidence_digest": "654e53251303d89165145b023c36233b96988d1c26d5c93473b91f11b8219de9"
+    }
+   },
+   "evidence": {
+    "schema": "uain-project-organization-survey-part-v1",
+    "decision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-06",
+     "record": "docs/baink/project-organizations-2026-11-06/decisions.md#d2"
+    },
+    "splitDecision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-09",
+     "record": "docs/baink/questions-9-nov-2026.md#c1"
+    },
+    "projectId": "OPP-00004",
+    "revision": 2,
+    "part": 1,
+    "parts": 3,
+    "supersedes": "T-OPP-00004-1-prior-art-survey",
+    "draftDigest": "bae19bd726fedc4849832fc53b38396b7b184ced2a2b4a7ef0c2d8615fd5cbd8",
+    "reviewedDigest": "30fd55ae9687588d780760b2c2043b424bac0d695aacc631f70f0999971e090e",
+    "preflightDigest": "4195c7192b7b5b3b21f0f124184241e52a217cba3d0fb05d1dc6afb13d2a9169",
+    "policyDigest": "a558678eea16a82a108dc05dab035fdfaa751fc758c5e943e232b79e3343719c",
+    "requiredIds": [
+     {
+      "kind": "doi",
+      "id": "10.3410/f.739135920.793580966"
+     },
+     {
+      "kind": "doi",
+      "id": "10.3410/f.739135920.793581176"
+     },
+     {
+      "kind": "doi",
+      "id": "10.3410/f.739135920.793582270"
+     }
+    ],
+    "dropped": [
+     {
+      "kind": "doi",
+      "id": "10.1016/s0262-40791530636-9",
+      "status": "not_found"
+     }
+    ],
+    "novelty": "Each listed record is unresolved: no accepted inventory of this project covers it yet."
+   },
+   "policy": {
+    "schema": "uain-task-verification-policy-v1",
+    "class": "prior_art_survey",
+    "taskId": "T-OPP-00004-1-prior-art-survey-r2-p1",
+    "projectId": "P-OPP-00004",
+    "criteriaDigest": "2b36ce1338d9f4c25279d8283e938c77f43901e208246e7ec18756b65aa55d9b",
+    "inputs": [],
+    "primarySourceHosts": [
+     "api.crossref.org",
+     "api.github.com",
+     "clinicaltrials.gov",
+     "eutils.ncbi.nlm.nih.gov",
+     "export.arxiv.org",
+     "www.wikidata.org"
+    ],
+    "driver": {
+     "name": "prior-art-survey",
+     "sha256": "8ee79b891db4d7d1b0cf497d0173e31fbfe7f96cf818d3ecf2c4bbdb0d1b6f4e"
+    },
+    "successTests": [
+     {
+      "id": "survey",
+      "mainKpi": "500,000,000 older adults with a restored thymus",
+      "minIncluded": 1,
+      "minKinds": 1,
+      "requiredIds": [
+       {
+        "kind": "doi",
+        "id": "10.3410/f.739135920.793580966"
+       },
+       {
+        "kind": "doi",
+        "id": "10.3410/f.739135920.793581176"
+       },
+       {
+        "kind": "doi",
+        "id": "10.3410/f.739135920.793582270"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "request": {
+    "id": "survey-OPP-00004-r2-p2",
+    "member": "uain158ac8d0debcf01d43164ef14736597da589d8b54",
+    "operation": "central_task_open",
+    "payload": {
+     "id": "T-OPP-00004-1-prior-art-survey-r2-p2",
+     "project": "P-OPP-00004",
+     "title": "Prior-art survey: Restore the thymus so immunity stays youthful (part 2 of 3)",
+     "criteria": "Prior-art survey part 2 of 3 for \"Restore the thymus so immunity stays youthful\". Main KPI: \"500,000,000 older adults with a restored thymus\". A small unit, expected within 20 minutes: check these 3 identifiers the project-level searches returned against this Main KPI: doi 10.1111/j.1753-4887.2010.00336.x; doi 10.1016/j.immuni.2019.10.003; doi 10.65649/wkyx0n81. Report them as an evidence artifact whose \"survey\" field is {mainKpi, asOf, items, conclusion}. mainKpi is the Main KPI above, exactly. asOf is the survey date (YYYY-MM-DD). Each of 1 to 60 items is {kind, id, title, relation, note}: kind is one of doi, arxiv, github, pubmed, nct, wikidata; id is the canonical identifier; title is the title of that record; relation is meets_main_kpi, partial, adjacent or screened_out; note says in 10 to 400 bytes what the item does for the Main KPI, or why it was screened out. Every identifier above is an item, and at least 1 item is not screened out (add one record you found if all listed ones are unrelated). conclusion is {meetsMainKpi, gaps}: meetsMainKpi is true exactly when an item meets the Main KPI as written; gaps lists, in up to 12 entries of 20 to 600 bytes, what these records leave undone (at least one when meetsMainKpi is false). Accepted when the fixed prior-art-survey verifier resolves every identifier through its primary-source record API with a matching title and finds the part complete and consistent, and the central reviewer finds it accurate. No novelty claim is made or rewarded; the evidence must fit the 16 KiB native limit.",
+     "acceptance_digest": "c9b2b9b9b039e11a10da33638548826932f3bf7446d8e09264be4224ffc23521",
+     "eligibility": "new",
+     "eligibility_digest": "2534ea93070cb4ffd1eceaba05d9c9f9558503886c96e6c35f78d55d67a4a1f3",
+     "solver_amount": "60000000",
+     "reviewer_amount": "10000000",
+     "evidence_digest": "fc159657c4ae37f3bb00e9b4cdb13769477bebd33d9d06fe56d46b53965f2162"
+    }
+   },
+   "evidence": {
+    "schema": "uain-project-organization-survey-part-v1",
+    "decision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-06",
+     "record": "docs/baink/project-organizations-2026-11-06/decisions.md#d2"
+    },
+    "splitDecision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-09",
+     "record": "docs/baink/questions-9-nov-2026.md#c1"
+    },
+    "projectId": "OPP-00004",
+    "revision": 2,
+    "part": 2,
+    "parts": 3,
+    "supersedes": "T-OPP-00004-1-prior-art-survey",
+    "draftDigest": "bae19bd726fedc4849832fc53b38396b7b184ced2a2b4a7ef0c2d8615fd5cbd8",
+    "reviewedDigest": "30fd55ae9687588d780760b2c2043b424bac0d695aacc631f70f0999971e090e",
+    "preflightDigest": "4195c7192b7b5b3b21f0f124184241e52a217cba3d0fb05d1dc6afb13d2a9169",
+    "policyDigest": "61d77c14edf472b603f2ba61d03b1da9798d07adabe95031845f9afc09828f1f",
+    "requiredIds": [
+     {
+      "kind": "doi",
+      "id": "10.1111/j.1753-4887.2010.00336.x"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1016/j.immuni.2019.10.003"
+     },
+     {
+      "kind": "doi",
+      "id": "10.65649/wkyx0n81"
+     }
+    ],
+    "dropped": [
+     {
+      "kind": "doi",
+      "id": "10.1016/s0262-40791530636-9",
+      "status": "not_found"
+     }
+    ],
+    "novelty": "Each listed record is unresolved: no accepted inventory of this project covers it yet."
+   },
+   "policy": {
+    "schema": "uain-task-verification-policy-v1",
+    "class": "prior_art_survey",
+    "taskId": "T-OPP-00004-1-prior-art-survey-r2-p2",
+    "projectId": "P-OPP-00004",
+    "criteriaDigest": "c9b2b9b9b039e11a10da33638548826932f3bf7446d8e09264be4224ffc23521",
+    "inputs": [],
+    "primarySourceHosts": [
+     "api.crossref.org",
+     "api.github.com",
+     "clinicaltrials.gov",
+     "eutils.ncbi.nlm.nih.gov",
+     "export.arxiv.org",
+     "www.wikidata.org"
+    ],
+    "driver": {
+     "name": "prior-art-survey",
+     "sha256": "8ee79b891db4d7d1b0cf497d0173e31fbfe7f96cf818d3ecf2c4bbdb0d1b6f4e"
+    },
+    "successTests": [
+     {
+      "id": "survey",
+      "mainKpi": "500,000,000 older adults with a restored thymus",
+      "minIncluded": 1,
+      "minKinds": 1,
+      "requiredIds": [
+       {
+        "kind": "doi",
+        "id": "10.1111/j.1753-4887.2010.00336.x"
+       },
+       {
+        "kind": "doi",
+        "id": "10.1016/j.immuni.2019.10.003"
+       },
+       {
+        "kind": "doi",
+        "id": "10.65649/wkyx0n81"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "request": {
+    "id": "survey-OPP-00004-r2-p3",
+    "member": "uain158ac8d0debcf01d43164ef14736597da589d8b54",
+    "operation": "central_task_open",
+    "payload": {
+     "id": "T-OPP-00004-1-prior-art-survey-r2-p3",
+     "project": "P-OPP-00004",
+     "title": "Prior-art survey: Restore the thymus so immunity stays youthful (part 3 of 3)",
+     "criteria": "Prior-art survey part 3 of 3 for \"Restore the thymus so immunity stays youthful\". Main KPI: \"500,000,000 older adults with a restored thymus\". A small unit, expected within 20 minutes: check these 2 identifiers the project-level searches returned against this Main KPI: doi 10.1038/s41587-026-03137-w; doi 10.1038/s41592-022-01584-2. Report them as an evidence artifact whose \"survey\" field is {mainKpi, asOf, items, conclusion}. mainKpi is the Main KPI above, exactly. asOf is the survey date (YYYY-MM-DD). Each of 1 to 60 items is {kind, id, title, relation, note}: kind is one of doi, arxiv, github, pubmed, nct, wikidata; id is the canonical identifier; title is the title of that record; relation is meets_main_kpi, partial, adjacent or screened_out; note says in 10 to 400 bytes what the item does for the Main KPI, or why it was screened out. Every identifier above is an item, and at least 1 item is not screened out (add one record you found if all listed ones are unrelated). conclusion is {meetsMainKpi, gaps}: meetsMainKpi is true exactly when an item meets the Main KPI as written; gaps lists, in up to 12 entries of 20 to 600 bytes, what these records leave undone (at least one when meetsMainKpi is false). Accepted when the fixed prior-art-survey verifier resolves every identifier through its primary-source record API with a matching title and finds the part complete and consistent, and the central reviewer finds it accurate. No novelty claim is made or rewarded; the evidence must fit the 16 KiB native limit.",
+     "acceptance_digest": "7e2d66019efaca8d735b48b96de4dd4b8b7fba30cdf5b5223a05d9da1361450f",
+     "eligibility": "new",
+     "eligibility_digest": "2534ea93070cb4ffd1eceaba05d9c9f9558503886c96e6c35f78d55d67a4a1f3",
+     "solver_amount": "40000000",
+     "reviewer_amount": "10000000",
+     "evidence_digest": "b6c90ba22a2631c84208a3d63b702f1f9a40e7310a743824411146d4c2ee2c76"
+    }
+   },
+   "evidence": {
+    "schema": "uain-project-organization-survey-part-v1",
+    "decision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-06",
+     "record": "docs/baink/project-organizations-2026-11-06/decisions.md#d2"
+    },
+    "splitDecision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-09",
+     "record": "docs/baink/questions-9-nov-2026.md#c1"
+    },
+    "projectId": "OPP-00004",
+    "revision": 2,
+    "part": 3,
+    "parts": 3,
+    "supersedes": "T-OPP-00004-1-prior-art-survey",
+    "draftDigest": "bae19bd726fedc4849832fc53b38396b7b184ced2a2b4a7ef0c2d8615fd5cbd8",
+    "reviewedDigest": "30fd55ae9687588d780760b2c2043b424bac0d695aacc631f70f0999971e090e",
+    "preflightDigest": "4195c7192b7b5b3b21f0f124184241e52a217cba3d0fb05d1dc6afb13d2a9169",
+    "policyDigest": "e2c42933e79c75d91c8b5768b40e0e1eb6b8e887e4d1f077d68b961398d665be",
+    "requiredIds": [
+     {
+      "kind": "doi",
+      "id": "10.1038/s41587-026-03137-w"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1038/s41592-022-01584-2"
+     }
+    ],
+    "dropped": [
+     {
+      "kind": "doi",
+      "id": "10.1016/s0262-40791530636-9",
+      "status": "not_found"
+     }
+    ],
+    "novelty": "Each listed record is unresolved: no accepted inventory of this project covers it yet."
+   },
+   "policy": {
+    "schema": "uain-task-verification-policy-v1",
+    "class": "prior_art_survey",
+    "taskId": "T-OPP-00004-1-prior-art-survey-r2-p3",
+    "projectId": "P-OPP-00004",
+    "criteriaDigest": "7e2d66019efaca8d735b48b96de4dd4b8b7fba30cdf5b5223a05d9da1361450f",
+    "inputs": [],
+    "primarySourceHosts": [
+     "api.crossref.org",
+     "api.github.com",
+     "clinicaltrials.gov",
+     "eutils.ncbi.nlm.nih.gov",
+     "export.arxiv.org",
+     "www.wikidata.org"
+    ],
+    "driver": {
+     "name": "prior-art-survey",
+     "sha256": "8ee79b891db4d7d1b0cf497d0173e31fbfe7f96cf818d3ecf2c4bbdb0d1b6f4e"
+    },
+    "successTests": [
+     {
+      "id": "survey",
+      "mainKpi": "500,000,000 older adults with a restored thymus",
+      "minIncluded": 1,
+      "minKinds": 1,
+      "requiredIds": [
+       {
+        "kind": "doi",
+        "id": "10.1038/s41587-026-03137-w"
+       },
+       {
+        "kind": "doi",
+        "id": "10.1038/s41592-022-01584-2"
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

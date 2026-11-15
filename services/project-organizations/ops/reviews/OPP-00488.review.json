@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00488",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T03:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Portability and ultra-fine detail have not been combined, so the Main KPI of one portable high-resolution brain imager is open work. Fine detail today needs a stationary ultra-high-field magnet: in vivo human resolutions of 0.35 mm isotropic quantitative T2* in visual cortex, 0.5 mm mesoscale whole-brain T2* at 10.5 T and 0.8 mm arterial spin labelling at 7 T, each dependent on navigator-guided motion and field correction and limited by SNR, venous bias and physiological noise (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%227%20Tesla%22%20AND%20%22in%20vivo%22%20AND%20%22human%20brain%22%20AND%20resolution%20AND%20mesoscale&format=json&pageSize=5&resultType=core). Portable scanners are the opposite trade: systematic reviews of 11 studies each at 0.064 to 0.55 T and at or below 0.1 T (about 694 scans, 281 to 677 unique patients) report bedside feasibility and infarct detection of 90 percent, midline-shift sensitivity 93 percent and haemorrhage sensitivity 80.4 percent rising to 92.1 percent with deep-learning reconstruction, but up to 28 percent non-diagnostic exams from motion, no reported spatial resolution, and a call for prospective multicentre validation (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22portable%20MRI%22%20AND%20brain%20AND%20%28low-field%20OR%20point-of-care%29&format=json&pageSize=5&resultType=core). Open source covers only reconstruction: 14 small repositories, top-starred at 2, doing low-field super-resolution and pseudo-high-field synthesis (https://api.github.com/search/repositories?q=low+field+MRI+reconstruction&per_page=10&sort=stars). Honest limits: low-field portable MRI is a deployed, clinically studied product and high-field mesoscale imaging is published, so tasks that only re-run either are known answers; the open work is physics, not software, and real time at cell or laminar scale is not demonstrated by anything found here."
+  },
+  "additionalSearches": [
+    {
+      "query": "portable and low-field brain MRI performance",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22portable%20MRI%22%20AND%20brain%20AND%20%28low-field%20OR%20point-of-care%29&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T03:33:00Z",
+      "finding": "Two 2026 systematic reviews (11 studies at 0.064-0.55 T; 11 studies at or below 0.1 T, about 694 participants) report ICU and emergency feasibility, infarct detection 90 percent, midline shift 93 percent sensitivity, haemorrhage 80.4 percent rising to 92.1 percent with deep-learning reconstruction, up to 28 percent non-diagnostic exams from motion, no spatial-resolution figures, and substantial risk of bias with multicentre validation still required."
+    },
+    {
+      "query": "finest in vivo human brain imaging resolution",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%227%20Tesla%22%20AND%20%22in%20vivo%22%20AND%20%22human%20brain%22%20AND%20resolution%20AND%20mesoscale&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T03:35:00Z",
+      "finding": "In vivo human records in 2026: 0.35 mm isotropic quantitative T2* along the visual hierarchy, 0.5 mm mesoscale whole-brain T2* at 10.5 T, 0.8 mm arterial spin labelling at 7 T, each requiring motion-resolved self-navigation or navigator-guided field correction. Obstacles cited are SNR, venous bias, physiological noise and field-dependent contrast; none of these studies is portable."
+    },
+    {
+      "query": "open-source low-field MRI reconstruction code",
+      "source": "https://api.github.com/search/repositories?q=low+field+MRI+reconstruction&per_page=10&sort=stars",
+      "observedAt": "2026-11-06T03:37:00Z",
+      "finding": "14 repositories, top-starred at 2: low-field super-resolution, physics-guided self-supervised pseudo-high-field synthesis, uncertainty-aware reconstruction and scan triage. Open code addresses image quality, not the hardware trade between portability and resolution."
+    },
+    {
+      "query": "functional ultrasound as a candidate portable high-resolution modality",
+      "source": "https://api.github.com/search/repositories?q=functional+ultrasound+imaging+brain&per_page=10&sort=stars",
+      "observedAt": "2026-11-06T03:39:00Z",
+      "finding": "Four repositories, all animal work (whole-brain functional ultrasound in awake mice, 23 stars; a developing-brain toolkit for mice and non-human primates). The main portable candidate modality has no human high-resolution implementation, open or otherwise."
+    }
+  ]
+}

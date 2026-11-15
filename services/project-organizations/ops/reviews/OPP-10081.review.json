@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-10081",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Values-matched AI giving advisors already exist, but at small scale, so the Main KPI of 1,000,000,000 donors with an AI giving advisor is unmet. Products include The Life You Can Save's GPT-based SmartAdvisor (December 2025), BBB Wise Giving Alliance's AskGive (August 2025) and TIFIN Give's Louise (https://www.finanzen.net/nachricht/aktien/the-life-you-can-save-launches-ai-powered-smartadvisor-to-help-donors-maximize-global-impact-15329917, https://give.org/news/askgive-ai-charitable-giving-launch); Daffy recommends grants from history and preferences and lets ChatGPT users give from their fund (https://help.daffy.org/en/articles/11037910-how-is-daffy-using-ai). Open-source values-matching exists in small projects such as MatchMission and Donatelo (https://github.com/280jayden/MatchMission). About 61 to 64 percent of people worldwide give each year, several billion donors, mostly in faith and community giving outside these US-centred tools (https://www.philanthropy.org.au/news-and-stories/nearly-two-thirds-of-the-planets-population-gave-to-charity-last-year-world-giving-report-2025/). Honest limit: a values-to-charity chatbot is a known answer, so building another is not new work; open work is reach beyond US donor-advised funds and recommendations validated against measured impact."
+  },
+  "additionalSearches": [
+    {
+      "query": "AI philanthropic advisor app match donors values charities GiveWell chatbot 2025",
+      "source": "https://give.org/news/askgive-ai-charitable-giving-launch",
+      "observedAt": "2026-11-06T00:47:36Z",
+      "finding": "TLYCS SmartAdvisor (Dec 2025), BBB AskGive (Aug 2025), TIFIN Give Louise and others give AI values-based giving advice; no GiveWell AI tool found."
+    },
+    {
+      "query": "Charity Navigator AI giving assistant; Giving What We Can AI; donor-advised fund AI recommendation Daffy",
+      "source": "https://help.daffy.org/en/articles/11037910-how-is-daffy-using-ai",
+      "observedAt": "2026-11-06T00:47:42Z",
+      "finding": "Daffy launched AI Quick Donate and grant recommendations in April 2025 and a ChatGPT app over 1.5 million US nonprofits."
+    },
+    {
+      "query": "number of individual donors worldwide CAF World Giving Index 2025 people donated money",
+      "source": "https://www.philanthropy.org.au/news-and-stories/nearly-two-thirds-of-the-planets-population-gave-to-charity-last-year-world-giving-report-2025/",
+      "observedAt": "2026-11-06T00:47:48Z",
+      "finding": "CAF World Giving Report 2025: 64 percent of people gave money in 2024; later coverage cites 61 percent in 2025."
+    },
+    {
+      "query": "open source charity recommendation values matching tool github effective altruism donation",
+      "source": "https://github.com/280jayden/MatchMission",
+      "observedAt": "2026-11-06T00:47:54Z",
+      "finding": "MatchMission (values quiz ranking nonprofits) and Donatelo (MIT, cause-area split) are small open-source projects."
+    }
+  ]
+}

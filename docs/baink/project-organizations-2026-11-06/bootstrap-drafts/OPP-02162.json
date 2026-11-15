@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-02162",
+  "native_project": "P-OPP-02162",
+  "source_digest": "4656b8e31a0c21dbcac9287278a411d0380f47693320c0174346bd39eb7a0161",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Make cement that absorbs CO2 as it cures",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "d8d06d7ee0964e93ffc25909e0a1a55c9c9d7843c56756a6da1da861f15e5f77"
+  },
+  "drafted_at": "2026-11-06T00:20:51.226Z",
+  "queries": [
+    "cement absorbs co2 cures",
+    "cement absorbs co2 climate atmosphere emissions"
+  ],
+  "searches": [
+    {
+      "query": "cement absorbs co2 cures",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:20:43.030Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=cement%20absorbs%20co2%20cures&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "cement absorbs co2 cures",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:20:44.057Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Acement%20AND%20all%3Aabsorbs%20AND%20all%3Aco2%20AND%20all%3Acures&start=0&max_results=10; sha256=6dd006eaf10c8443494819803837843b8c8023ea6177b127e37a4ea52d956965; total=0; shown=0/0"
+    },
+    {
+      "query": "cement absorbs co2 cures",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:20:44.940Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=cement%20absorbs%20co2%20cures&rows=10&select=DOI,title; sha256=bd136c88b71d6327010f0f76ac13d61a528caacfb081e68075fc2b6d57b31be3; total=371334; shown=5/10; top: 10.1016/s1369-70210180109-7 \"Cement that cures below freezing\" | 10.14710/reaktor.5.1.27-30 \"Parameter Kga- Enhancement Factor Dalam Sistem Absorbs CO2 Dengan Larutan NaOH\" | 10.3030/190123526 \"untitled\" | 10.1016/j.cement.2024.100099 \"Gas CO2 foaming and intermixing in portland cement paste to sequester CO2\" | 10.1177/237455680308.n5 \"developed-world-absorbs-china-shock\""
+    },
+    {
+      "query": "cement absorbs co2 climate atmosphere emissions",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:20:49.448Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=cement%20absorbs%20co2%20climate%20atmosphere%20emissions&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "cement absorbs co2 climate atmosphere emissions",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:20:50.343Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Acement%20AND%20all%3Aabsorbs%20AND%20all%3Aco2%20AND%20all%3Aclimate%20AND%20all%3Aatmosphere%20AND%20all%3Aemissions&start=0&max_results=10; sha256=940e3c0ecd188314e1ae2572e7ee3282dc076c11e25738f572cfcee2c99a8b04; total=0; shown=0/0"
+    },
+    {
+      "query": "cement absorbs co2 climate atmosphere emissions",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:20:51.226Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=cement%20absorbs%20co2%20climate%20atmosphere%20emissions&rows=10&select=DOI,title; sha256=af1d6cb80bd59b2933a3608e2562e94f409474442e9a06f0f1b701fccff11042; total=1247589; shown=5/10; top: 10.3390/atmos14030566 \"Emissions and CO2 Concentration—An Evidence Based Approach\" | 10.3390/atmos12091193 \"Influence of Population Density on CO2 Emissions Eliminating the Influence of Climate\" | 10.1016/b978-008044276-1/50157-4 \"The Cement Industry and Global Climate ChangeCurrent and Potential Future Cement Industry CO2 Emissions\" | 10.5194/essd-2018-90-rc1 \"Review ESSD-2018-90, CO2 emissions from cement production\" | 10.3390/atmos13091494 \"Cutting Cement Industry CO2 Emissions through Metakaolin Use in Construction\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "cement absorbs co2 cures",
+      "url": "https://api.github.com/search/repositories?q=cement%20absorbs%20co2%20cures&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=cement%20absorbs%20co2%20cures&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:20:43.030Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "cement absorbs co2 cures",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Acement%20AND%20all%3Aabsorbs%20AND%20all%3Aco2%20AND%20all%3Acures&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Acement%20AND%20all%3Aabsorbs%20AND%20all%3Aco2%20AND%20all%3Acures&start=0&max_results=10",
+      "sha256": "6dd006eaf10c8443494819803837843b8c8023ea6177b127e37a4ea52d956965",
+      "bytes": 782,
+      "observedAt": "2026-11-06T00:20:44.057Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "cement absorbs co2 cures",
+      "url": "https://api.crossref.org/works?query=cement%20absorbs%20co2%20cures&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=cement%20absorbs%20co2%20cures&rows=10&select=DOI,title",
+      "sha256": "bd136c88b71d6327010f0f76ac13d61a528caacfb081e68075fc2b6d57b31be3",
+      "bytes": 1126,
+      "observedAt": "2026-11-06T00:20:44.940Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "cement absorbs co2 climate atmosphere emissions",
+      "url": "https://api.github.com/search/repositories?q=cement%20absorbs%20co2%20climate%20atmosphere%20emissions&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=cement%20absorbs%20co2%20climate%20atmosphere%20emissions&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:20:49.448Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "cement absorbs co2 climate atmosphere emissions",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Acement%20AND%20all%3Aabsorbs%20AND%20all%3Aco2%20AND%20all%3Aclimate%20AND%20all%3Aatmosphere%20AND%20all%3Aemissions&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Acement%20AND%20all%3Aabsorbs%20AND%20all%3Aco2%20AND%20all%3Aclimate%20AND%20all%3Aatmosphere%20AND%20all%3Aemissions&start=0&max_results=10",
+      "sha256": "940e3c0ecd188314e1ae2572e7ee3282dc076c11e25738f572cfcee2c99a8b04",
+      "bytes": 864,
+      "observedAt": "2026-11-06T00:20:50.343Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "cement absorbs co2 climate atmosphere emissions",
+      "url": "https://api.crossref.org/works?query=cement%20absorbs%20co2%20climate%20atmosphere%20emissions&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=cement%20absorbs%20co2%20climate%20atmosphere%20emissions&rows=10&select=DOI,title",
+      "sha256": "af1d6cb80bd59b2933a3608e2562e94f409474442e9a06f0f1b701fccff11042",
+      "bytes": 1651,
+      "observedAt": "2026-11-06T00:20:51.226Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "cd0228d38249df2814bf1eecf3ff452aa6bee5b47536da438a4928e9ffeccf21",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

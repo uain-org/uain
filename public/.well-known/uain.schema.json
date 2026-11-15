@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://uain.global/.well-known/uain.schema.json",
+  "title": "United AI Network discovery descriptor",
+  "description": "Draft schema for the public UAIN network discovery document.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "last_updated",
+    "identity",
+    "status",
+    "audience",
+    "eligibility",
+    "purpose",
+    "resource_categories",
+    "principles",
+    "connection",
+    "interoperability",
+    "discovery",
+    "planned_capabilities",
+    "safety"
+  ],
+  "properties": {
+    "schema": { "type": "string", "format": "uri" },
+    "schema_version": { "type": "string" },
+    "last_updated": { "type": "string", "format": "date" },
+    "identity": { "type": "object" },
+    "status": { "type": "object" },
+    "audience": { "type": "array", "items": { "type": "string" } },
+    "eligibility": { "type": "object" },
+    "purpose": { "type": "array", "items": { "type": "string" } },
+    "resource_categories": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "principles": { "type": "array", "items": { "type": "string" } },
+    "connection": { "type": "object" },
+    "interoperability": { "type": "object" },
+    "discovery": { "type": "object" },
+    "capabilities": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "planned_capabilities": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "safety": { "type": "object" }
+  },
+  "additionalProperties": true
+}

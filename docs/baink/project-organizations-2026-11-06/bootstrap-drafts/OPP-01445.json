@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-01445",
+  "native_project": "P-OPP-01445",
+  "source_digest": "af0944a54fcf414c4be8354589e4504d79018ec675a1b046418190dfff1166d0",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build an AI that designs a custom crop variety for any field in weeks",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "ed9c203d58d6e76b908a7e2d5785787f2aaeb23342c34c9a93f84eb9bc4aee4b"
+  },
+  "drafted_at": "2026-11-06T00:16:57.207Z",
+  "queries": [
+    "designs custom crop variety field weeks",
+    "designs custom crop agriculture land science"
+  ],
+  "searches": [
+    {
+      "query": "designs custom crop variety field weeks",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:16:49.001Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=designs%20custom%20crop%20variety%20field%20weeks&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "designs custom crop variety field weeks",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:16:49.617Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Adesigns%20AND%20all%3Acustom%20AND%20all%3Acrop%20AND%20all%3Avariety%20AND%20all%3Afield%20AND%20all%3Aweeks&start=0&max_results=10; sha256=d05ae33dd97ed6c137aeef476d5767880f78be885a52b801a3bd393d8a163237; total=0; shown=0/0"
+    },
+    {
+      "query": "designs custom crop variety field weeks",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:16:50.846Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=designs%20custom%20crop%20variety%20field%20weeks&rows=10&select=DOI,title; sha256=4f5d4ac6f2fae16451188e94d0b17dcaeeb50479262855daffa23a59c96fb35c; total=1693114; shown=5/10; top: 10.2135/cropsci1971.0011183x001100020020x \"Genetic Variances in a Synthetic Variety of Maize Estimated by Two Mating Designs sup 1 /sup\" | 10.1109/fpga.2000.903446 \"Combining serialisation and reconfiguration for convolver designs\" | 10.1109/fpga.2002.1106698 \"Customising floating-point designs\" | 10.1002/9781394192595.fmatter1 \"Custom‐Designed Crop Breeding\" | 10.1002/9781394192595.fmatter \"Custom‐Designed Crop Breeding\""
+    },
+    {
+      "query": "designs custom crop agriculture land science",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:16:55.460Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=designs%20custom%20crop%20agriculture%20land%20science&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "designs custom crop agriculture land science",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:16:56.173Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Adesigns%20AND%20all%3Acustom%20AND%20all%3Acrop%20AND%20all%3Aagriculture%20AND%20all%3Aland%20AND%20all%3Ascience&start=0&max_results=10; sha256=2b5210ae51d1db9e393c9e6e0499b21ac4c00269d113af918a986e01cd5ace36; total=1; shown=1/1; top: arXiv:2506.17480v1 \"FINCH EYE: The Optical and Optomechanical Design of a GRISM-based SWIR Hyperspectral Imaging Payload for a 3U CubeSat\""
+    },
+    {
+      "query": "designs custom crop agriculture land science",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:16:57.207Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=designs%20custom%20crop%20agriculture%20land%20science&rows=10&select=DOI,title; sha256=bf291dcb310f18914b426962390746d59e45aae0a8d7da27918f6fb64fc29cac; total=16605263; shown=5/10; top: 10.1626/jcs.61.supplement2_255 \"Soil fertility problems on arable land aiming at sustainable agriculture.\" | 10.15302/j-fase-2021417 \"CROP DIVERSITY AND SUSTAINABLE AGRICULTURE: MECHANISMS, DESIGNS AND APPLICATIONS\" | 10.2139/ssrn.998600 \"Female Land Rights, Crop Specialization, and Productivity in Paraguayan Agriculture\" | 10.1002/9781394192595.fmatter1 \"Custom‐Designed Crop Breeding\" | 10.1002/9781394192595.fmatter \"Custom‐Designed Crop Breeding\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "designs custom crop variety field weeks",
+      "url": "https://api.github.com/search/repositories?q=designs%20custom%20crop%20variety%20field%20weeks&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=designs%20custom%20crop%20variety%20field%20weeks&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:16:49.001Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "designs custom crop variety field weeks",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Adesigns%20AND%20all%3Acustom%20AND%20all%3Acrop%20AND%20all%3Avariety%20AND%20all%3Afield%20AND%20all%3Aweeks&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Adesigns%20AND%20all%3Acustom%20AND%20all%3Acrop%20AND%20all%3Avariety%20AND%20all%3Afield%20AND%20all%3Aweeks&start=0&max_results=10",
+      "sha256": "d05ae33dd97ed6c137aeef476d5767880f78be885a52b801a3bd393d8a163237",
+      "bytes": 848,
+      "observedAt": "2026-11-06T00:16:49.617Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "designs custom crop variety field weeks",
+      "url": "https://api.crossref.org/works?query=designs%20custom%20crop%20variety%20field%20weeks&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=designs%20custom%20crop%20variety%20field%20weeks&rows=10&select=DOI,title",
+      "sha256": "4f5d4ac6f2fae16451188e94d0b17dcaeeb50479262855daffa23a59c96fb35c",
+      "bytes": 1301,
+      "observedAt": "2026-11-06T00:16:50.846Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "designs custom crop agriculture land science",
+      "url": "https://api.github.com/search/repositories?q=designs%20custom%20crop%20agriculture%20land%20science&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=designs%20custom%20crop%20agriculture%20land%20science&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:16:55.460Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "designs custom crop agriculture land science",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Adesigns%20AND%20all%3Acustom%20AND%20all%3Acrop%20AND%20all%3Aagriculture%20AND%20all%3Aland%20AND%20all%3Ascience&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Adesigns%20AND%20all%3Acustom%20AND%20all%3Acrop%20AND%20all%3Aagriculture%20AND%20all%3Aland%20AND%20all%3Ascience&start=0&max_results=10",
+      "sha256": "2b5210ae51d1db9e393c9e6e0499b21ac4c00269d113af918a986e01cd5ace36",
+      "bytes": 3029,
+      "observedAt": "2026-11-06T00:16:56.173Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "designs custom crop agriculture land science",
+      "url": "https://api.crossref.org/works?query=designs%20custom%20crop%20agriculture%20land%20science&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=designs%20custom%20crop%20agriculture%20land%20science&rows=10&select=DOI,title",
+      "sha256": "bf291dcb310f18914b426962390746d59e45aae0a8d7da27918f6fb64fc29cac",
+      "bytes": 1373,
+      "observedAt": "2026-11-06T00:16:57.207Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "2a826f844bf171bbbc7e484e1ea16c399ed6080a522047375d69042907196c31",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00485",
+  "native_project": "P-OPP-00485",
+  "source_digest": "d588568e8761a3847c47af00c97887717c09208a53d861e38ae30a600141a6d0",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Decode inner speech from brain signals",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "71b7c4cd54d18f74bfec2fa9cc0a469eecfbd00811747e553d948d7f9371cac8"
+  },
+  "drafted_at": "2026-11-06T00:10:52.947Z",
+  "queries": [
+    "decode inner speech brain signals",
+    "decode inner speech neuroscience mental health"
+  ],
+  "searches": [
+    {
+      "query": "decode inner speech brain signals",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:10:44.863Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=decode%20inner%20speech%20brain%20signals&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "decode inner speech brain signals",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:10:45.593Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Adecode%20AND%20all%3Ainner%20AND%20all%3Aspeech%20AND%20all%3Abrain%20AND%20all%3Asignals&start=0&max_results=10; sha256=4a187c63a3b4bc693d2243b5c0d7767214069ad712ae55c913d1c99a0b92c9de; total=6; shown=5/6; top: arXiv:2210.06472v1 \"Inner speech recognition through electroencephalographic signals\" | arXiv:2606.20696v1 \"MindAlign: Decoding Inner Speech from fMRI Signals via Multimodal Embedding Alignment under Limited Data\" | arXiv:2306.10854v1 \"Performance of data-driven inner speech decoding with same-task EEG-fMRI data fusion and bimodal models\" | arXiv:2510.24733v1 \"Decoding non-invasive brain activity with novel deep-learning approaches\" | arXiv:2307.10246v3 \"Deep Neural Networks and Brain Alignment: Brain Encoding and Decoding (Survey)\""
+    },
+    {
+      "query": "decode inner speech brain signals",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:10:47.240Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=decode%20inner%20speech%20brain%20signals&rows=10&select=DOI,title; sha256=b5d83a65971c0e3a4f06536b02d5275aab26e96b4e1d014d6d4009b1cee276b4; total=1783333; shown=5/10; top: 10.1016/j.imu.2024.101491 \"Ensemble-based feature engineering mechanism to decode imagined speech from brain signals\" | 10.31234/osf.io/8v5yd \"Can we decode phonetic features in inner speech using surface electromyography?\" | 10.1109/aiiot58121.2023.10174580 \"Can Machine Learning Algorithms Classify Inner Speech from EEG Brain Signals?\" | 10.1201/9781003544012-9 \"Classification of inner speech EEG signals for BCI applications\" | 10.1006/brln.1999.2229 \"Inner Speech and the Inner Life\""
+    },
+    {
+      "query": "decode inner speech neuroscience mental health",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:10:51.272Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=decode%20inner%20speech%20neuroscience%20mental%20health&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "decode inner speech neuroscience mental health",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:10:51.738Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Adecode%20AND%20all%3Ainner%20AND%20all%3Aspeech%20AND%20all%3Aneuroscience%20AND%20all%3Amental%20AND%20all%3Ahealth&start=0&max_results=10; sha256=684155267c0363a8cd298c91ae71edf29e0cb96c8d45c1e0a237e9ee129192b7; total=0; shown=0/0"
+    },
+    {
+      "query": "decode inner speech neuroscience mental health",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:10:52.947Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=decode%20inner%20speech%20neuroscience%20mental%20health&rows=10&select=DOI,title; sha256=1639a055519e9cfb9bcaed8fee178281513d8a9518c4f65bdfbc89472442ee27; total=6312668; shown=5/10; top: 10.1093/oso/9780198796640.003.0005 \"Inner Speech and Mental Imagery\" | 10.31234/osf.io/8v5yd \"Can we decode phonetic features in inner speech using surface electromyography?\" | 10.1108/979-8-88730-630-820251007 \"From Inner Speech to Mind Wandering\" | 10.51454/decode.v3i2.131 \"Teknik Preprocessing Pada Text Mining Menggunakan Data Tweet “Mental Health”\" | 10.1007/978-1-4684-1701-2_4 \"Generalization and Reduction in Speech during the Emergence of Mental Acts\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "decode inner speech brain signals",
+      "url": "https://api.github.com/search/repositories?q=decode%20inner%20speech%20brain%20signals&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=decode%20inner%20speech%20brain%20signals&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:10:44.863Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "decode inner speech brain signals",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Adecode%20AND%20all%3Ainner%20AND%20all%3Aspeech%20AND%20all%3Abrain%20AND%20all%3Asignals&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Adecode%20AND%20all%3Ainner%20AND%20all%3Aspeech%20AND%20all%3Abrain%20AND%20all%3Asignals&start=0&max_results=10",
+      "sha256": "4a187c63a3b4bc693d2243b5c0d7767214069ad712ae55c913d1c99a0b92c9de",
+      "bytes": 16921,
+      "observedAt": "2026-11-06T00:10:45.593Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "decode inner speech brain signals",
+      "url": "https://api.crossref.org/works?query=decode%20inner%20speech%20brain%20signals&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=decode%20inner%20speech%20brain%20signals&rows=10&select=DOI,title",
+      "sha256": "b5d83a65971c0e3a4f06536b02d5275aab26e96b4e1d014d6d4009b1cee276b4",
+      "bytes": 1534,
+      "observedAt": "2026-11-06T00:10:47.240Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "decode inner speech neuroscience mental health",
+      "url": "https://api.github.com/search/repositories?q=decode%20inner%20speech%20neuroscience%20mental%20health&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=decode%20inner%20speech%20neuroscience%20mental%20health&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:10:51.272Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "decode inner speech neuroscience mental health",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Adecode%20AND%20all%3Ainner%20AND%20all%3Aspeech%20AND%20all%3Aneuroscience%20AND%20all%3Amental%20AND%20all%3Ahealth&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Adecode%20AND%20all%3Ainner%20AND%20all%3Aspeech%20AND%20all%3Aneuroscience%20AND%20all%3Amental%20AND%20all%3Ahealth&start=0&max_results=10",
+      "sha256": "684155267c0363a8cd298c91ae71edf29e0cb96c8d45c1e0a237e9ee129192b7",
+      "bytes": 862,
+      "observedAt": "2026-11-06T00:10:51.738Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "decode inner speech neuroscience mental health",
+      "url": "https://api.crossref.org/works?query=decode%20inner%20speech%20neuroscience%20mental%20health&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=decode%20inner%20speech%20neuroscience%20mental%20health&rows=10&select=DOI,title",
+      "sha256": "1639a055519e9cfb9bcaed8fee178281513d8a9518c4f65bdfbc89472442ee27",
+      "bytes": 1323,
+      "observedAt": "2026-11-06T00:10:52.947Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "79ec7f46b6fb14c4d6f4aaf7482c3a4c7a3be5c4e502bfa7ee044ac8db3de8e0",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

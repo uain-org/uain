@@ -1,0 +1,17 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "project": "OPP-00968",
+  "source_digest": "2762da191ad69f1b1c34017f21de3eba73e12359b2608aa9c0188d7d68f71d6d",
+  "class": "benevolent",
+  "prior_art": {
+    "basis": "Independent review by claude-independent-prior-art-reviewer-20261106: No open or discoverable solution operates autonomous mobile health clinics at any scale, let alone 1,000,000; the Main KPI is not met. A peer-reviewed review describes autonomous mobile clinics as prototypes requiring level 4 driving (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9421545/, roadmap at https://www.arxiv.org/pdf/2204.04841); the projects found are concepts or prototypes (Texas A&M telehealth van, Renault U1st Vision, Toyota e-Palette mobile clinic demo, a Nuro patent). Staffed, driver-operated mobile clinics are mature but small in number: about 2,000 in the United States (https://equityhealthj.biomedcentral.com/track/pdf/10.1186/s12939-020-1135-7) and over 500 in Zhejiang, China, each with a doctor, nurse and driver (https://www.chinadaily.com.cn/a/202507/28/WS6886cddca310ad07b5d924a5.html). Honest limit: both autonomous driving and mobile clinics are established fields; the open gap is safe autonomous operation on rural roads with remote clinical oversight, and work that only redesigns a staffed mobile clinic is not new. (open solution found: no; known answer: no; 6 project-level searches of api.github.com/search/repositories, export.arxiv.org/api/query, api.crossref.org/works; draft 6f9d2e99d22e28335a556fd248703757fd9128a7e60213f06ca28e5c88b68a9c, source 2762da191ad69f1b1c34017f21de3eba73e12359b2608aa9c0188d7d68f71d6d)",
+    "searches": [
+      "api.github.com/search/repositories \"mobile health clinics autonomous vehicles\" url=https://api.github.com/search/repositories?q=mobile%20health%20clinics%20autonomous%20vehicles&per_page=10 sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "export.arxiv.org/api/query \"mobile health clinics autonomous vehicles\" url=https://export.arxiv.org/api/query?search_query=all%3Amobile%20AND%20all%3Ahealth%20AND%20all%3Aclinics%20AND%20all%3Aautonomous%20AND%20all%3Avehicles&start=0&max_results=10 sha256=d6b03047ef96932e657a8fba928f0c5b333a065cabd05b057db567ca7d63ba92",
+      "api.crossref.org/works \"mobile health clinics autonomous vehicles\" url=https://api.crossref.org/works?query=mobile%20health%20clinics%20autonomous%20vehicles&rows=10&select=DOI,title sha256=faae5588a3ced47507b3b139773d75dff8388a94dab490e0c71d75696d4ed7bc",
+      "api.github.com/search/repositories \"mobile health clinics healthcare systems medicine\" url=https://api.github.com/search/repositories?q=mobile%20health%20clinics%20healthcare%20systems%20medicine&per_page=10 sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "export.arxiv.org/api/query \"mobile health clinics healthcare systems medicine\" url=https://export.arxiv.org/api/query?search_query=all%3Amobile%20AND%20all%3Ahealth%20AND%20all%3Aclinics%20AND%20all%3Ahealthcare%20AND%20all%3Asystems%20AND%20all%3Amedicine&start=0&max_results=10 sha256=3e46e2b34441c14ac9e556451986d2eceb6cb9205f82e214751e3ab0408b5132",
+      "api.crossref.org/works \"mobile health clinics healthcare systems medicine\" url=https://api.crossref.org/works?query=mobile%20health%20clinics%20healthcare%20systems%20medicine&rows=10&select=DOI,title sha256=349124834862e5bfb7b39bd79f478fbefab001089a90f22af8840a76da23d647"
+    ]
+  }
+}

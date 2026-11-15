@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T171920Z-dcdb418f7e",
+  "version": "0.3.54",
+  "source_commit": "2726b47ca274ff716173fbe1d36ab46b3adf0c62",
+  "deployed_at": "2026-11-09T17:20:40Z",
+  "prior": "20261109T160709Z-9ae8c63c6a",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#remove-docker-holder-20261109"
+  ],
+  "note": "PR #353: Docker holder UI removed, requests paid on Send money, earlier wallet attempts releasable. release:promote passed; health ok. /wallet/ and /v2/ answer 410 (nginx, data kept); BAINK_WALLET_ONBOARDING_ENABLED removed. Landing loads with no console errors."
+}

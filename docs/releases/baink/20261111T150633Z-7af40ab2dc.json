@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261111T150633Z-7af40ab2dc",
+  "version": "0.3.91",
+  "source_commit": "8940400e16369dca260e01203c383b3f79aabfa5",
+  "deployed_at": "2026-11-11T15:06:56Z",
+  "prior": "20261111T142010Z-c72c0f439a",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#no-install-member-path-release-20261111"
+  ],
+  "note": "PR #526: no-install member path (baink_signer, baink_member_request, /uain_signer.py). verify and promote --expected-prior passed from the merge commit; public routes, MCP tool list, signer checksum and relay refusal checked at 15:07 UTC; a controlled newcomer run was accepted at 15:15 UTC."
+}

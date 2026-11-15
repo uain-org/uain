@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-08401",
+  "native_project": "P-OPP-08401",
+  "source_digest": "09de8252cdf04445bf1ee1363e71a10dc29faade8313e3b9f01cdbd529c3edee",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Reach full mechanistic interpretability of a frontier AI model from neurons to goals",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "1e9dbfdafd78dd1eaf6e7dbfabea17557c044554aea88e2ea44826c4054e1909"
+  },
+  "drafted_at": "2026-11-06T00:29:18.138Z",
+  "queries": [
+    "reach full mechanistic interpretability frontier model",
+    "reach full mechanistic safety alignment civilizational"
+  ],
+  "searches": [
+    {
+      "query": "reach full mechanistic interpretability frontier model",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:29:10.119Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=reach%20full%20mechanistic%20interpretability%20frontier%20model&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "reach full mechanistic interpretability frontier model",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:29:11.033Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Areach%20AND%20all%3Afull%20AND%20all%3Amechanistic%20AND%20all%3Ainterpretability%20AND%20all%3Afrontier%20AND%20all%3Amodel&start=0&max_results=10; sha256=5e9ef07c1a278208a6dd9e8583a0d8e0358eccf8c1d7d33c87c174fcd9933b0c; total=0; shown=0/0"
+    },
+    {
+      "query": "reach full mechanistic interpretability frontier model",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:29:11.855Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=reach%20full%20mechanistic%20interpretability%20frontier%20model&rows=10&select=DOI,title; sha256=63601b2b4319c2a6d3b1d16b6f0503aa6a29da3828b06735d588ec233e79340c; total=3643048; shown=5/10; top: 10.36227/techrxiv.177031352.23132160/v1 \"Mechanistic Interpretability for Large Language Model Alignment: Progress, Challenges, and Future Directions\" | 10.2139/ssrn.6159266 \"Mechanistic Interpretability for Large Language Model Alignment: Progress, Challenges, and Future Directions\" | 10.2139/ssrn.6967579 \"The Model as Microscope: Knowledge Discovery via Mechanistic Interpretability of Scientific Foundation Models\" | 10.20944/preprints202602.0128.v1 \"Mechanistic Interpretability for Large Language Model Alignment: Progress, Challenges, and Future Directions\" | 10.1093/annhyg/mer083 \"Advanced Reach Tool (ART): Development of the Mechanistic Model\""
+    },
+    {
+      "query": "reach full mechanistic safety alignment civilizational",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:29:16.629Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=reach%20full%20mechanistic%20safety%20alignment%20civilizational&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "reach full mechanistic safety alignment civilizational",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:29:17.150Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Areach%20AND%20all%3Afull%20AND%20all%3Amechanistic%20AND%20all%3Asafety%20AND%20all%3Aalignment%20AND%20all%3Acivilizational&start=0&max_results=10; sha256=dbb353c80012baf03b1ada7a3961214e95b73015c0563761056dc4791a748cec; total=0; shown=0/0"
+    },
+    {
+      "query": "reach full mechanistic safety alignment civilizational",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:29:18.137Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=reach%20full%20mechanistic%20safety%20alignment%20civilizational&rows=10&select=DOI,title; sha256=d406978eeb77c831aabf0219d7207ca08cf362b3ee1fb0d8be18efbb4926e1c8; total=1377232; shown=5/10; top: 10.70777/si.v2i6.16545 \"OpenAI: Toward Mechanistic Interpretability (MI)\" | 10.2139/ssrn.5626647 \"The Policy–Kardashev Alignment Scale: Linking Science, Technology, and Innovation Policy to Civilizational Trajectories\" | 10.52202/085713-0426 \"Towards Understanding Safety Alignment: A Mechanistic Perspective from Safety Neurons\" | 10.2139/ssrn.6328039 \"Constitutional Orders Under Algorithmic Pressure: Alignment Governance, Civilizational Identity, and the Fiduciary Limits of Delegation\" | 10.2139/ssrn.7667060 \"Beyond Computational Superiority: Global Collective Intelligence, Civilizational Alignment, and the Co-evolution of Humans and Artificial S…\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "reach full mechanistic interpretability frontier model",
+      "url": "https://api.github.com/search/repositories?q=reach%20full%20mechanistic%20interpretability%20frontier%20model&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=reach%20full%20mechanistic%20interpretability%20frontier%20model&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:29:10.119Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "reach full mechanistic interpretability frontier model",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Areach%20AND%20all%3Afull%20AND%20all%3Amechanistic%20AND%20all%3Ainterpretability%20AND%20all%3Afrontier%20AND%20all%3Amodel&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Areach%20AND%20all%3Afull%20AND%20all%3Amechanistic%20AND%20all%3Ainterpretability%20AND%20all%3Afrontier%20AND%20all%3Amodel&start=0&max_results=10",
+      "sha256": "5e9ef07c1a278208a6dd9e8583a0d8e0358eccf8c1d7d33c87c174fcd9933b0c",
+      "bytes": 878,
+      "observedAt": "2026-11-06T00:29:11.033Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "reach full mechanistic interpretability frontier model",
+      "url": "https://api.crossref.org/works?query=reach%20full%20mechanistic%20interpretability%20frontier%20model&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=reach%20full%20mechanistic%20interpretability%20frontier%20model&rows=10&select=DOI,title",
+      "sha256": "63601b2b4319c2a6d3b1d16b6f0503aa6a29da3828b06735d588ec233e79340c",
+      "bytes": 1775,
+      "observedAt": "2026-11-06T00:29:11.855Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "reach full mechanistic safety alignment civilizational",
+      "url": "https://api.github.com/search/repositories?q=reach%20full%20mechanistic%20safety%20alignment%20civilizational&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=reach%20full%20mechanistic%20safety%20alignment%20civilizational&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:29:16.629Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "reach full mechanistic safety alignment civilizational",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Areach%20AND%20all%3Afull%20AND%20all%3Amechanistic%20AND%20all%3Asafety%20AND%20all%3Aalignment%20AND%20all%3Acivilizational&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Areach%20AND%20all%3Afull%20AND%20all%3Amechanistic%20AND%20all%3Asafety%20AND%20all%3Aalignment%20AND%20all%3Acivilizational&start=0&max_results=10",
+      "sha256": "dbb353c80012baf03b1ada7a3961214e95b73015c0563761056dc4791a748cec",
+      "bytes": 878,
+      "observedAt": "2026-11-06T00:29:17.150Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "reach full mechanistic safety alignment civilizational",
+      "url": "https://api.crossref.org/works?query=reach%20full%20mechanistic%20safety%20alignment%20civilizational&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=reach%20full%20mechanistic%20safety%20alignment%20civilizational&rows=10&select=DOI,title",
+      "sha256": "d406978eeb77c831aabf0219d7207ca08cf362b3ee1fb0d8be18efbb4926e1c8",
+      "bytes": 1618,
+      "observedAt": "2026-11-06T00:29:18.137Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "634937302878c4062f3997514fb1f039f3c062bb4d24767181fabc7827e76d82",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

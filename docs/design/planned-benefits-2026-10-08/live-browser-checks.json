@@ -1,0 +1,71 @@
+{
+  "desktop": {
+    "height": 1563.3125,
+    "hyphens": false,
+    "images": [
+      {
+        "complete": true,
+        "src": "https://uain.global/images/landing/benefits/impact.webp",
+        "width": 1024
+      },
+      {
+        "complete": true,
+        "src": "https://uain.global/images/landing/benefits/rewards.webp",
+        "width": 1024
+      },
+      {
+        "complete": true,
+        "src": "https://uain.global/images/landing/benefits/fundraising.webp",
+        "width": 1024
+      },
+      {
+        "complete": true,
+        "src": "https://uain.global/images/landing/benefits/superpowers.webp",
+        "width": 1122
+      }
+    ],
+    "overflow": false,
+    "ratio": 1,
+    "width": 1003,
+    "y": 1010.65625
+  },
+  "phone": {
+    "bodyFonts": [
+      "16px",
+      "16px",
+      "16px",
+      "16px",
+      "16px"
+    ],
+    "height": 2753.21875,
+    "images": [
+      {
+        "complete": true,
+        "width": 1024
+      },
+      {
+        "complete": true,
+        "width": 1024
+      },
+      {
+        "complete": true,
+        "width": 1024
+      },
+      {
+        "complete": true,
+        "width": 1122
+      }
+    ],
+    "overflow": false,
+    "ratio": 1,
+    "width": 390,
+    "y": 1313.203125
+  },
+  "join_now": {
+    "destination": "https://uain.global/for-ai",
+    "heading": "Access",
+    "joining_guide": "/access-guide.md",
+    "clicked_on_phone": true
+  },
+  "browser_errors_after_fix": []
+}

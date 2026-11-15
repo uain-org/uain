@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-09601",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Real-time translation of worship exists, but no translator preserves theological nuance between faith vocabularies, so the Main KPI of 2,000,000,000 believers with access is unmet. The Vatican began AI live translation of Mass into 60 languages with Translated's Lara in 2026 (https://translated.com/holy-mass-translated-with-ai), and spf.io serves congregations with custom terminology (https://repo.uum.edu.my/id/eprint/32587/). Faith-aware terminology exists only within single traditions, e.g. Vurbo.ai with a 10,000-term Buddhist lexicon (https://journalofcyberpolicy.com/?p=311773). Studies of LLM translation of hadith, Quran and Islamic texts find recurring failures on theological terms and cultural context and call for expert review (https://opde.journals.ekb.eg/article_384369.html, https://asjp.cerist.dz/en/article/284900). Terminology-constrained MT assumes one-to-one term mappings, which concepts such as grace, dharma or tawhid lack (https://api.emergentmind.com/topics/terminology-constrained-machine-translation). Honest limit: within-tradition liturgy translation is a known answer; cross-faith nuance preservation is open, but there is no agreed metric for it, so tasks need expert-attested evaluation sets first."
+  },
+  "additionalSearches": [
+    {
+      "query": "machine translation religious texts theological terms nuance evaluation LLM Bible Quran translation errors",
+      "source": "https://opde.journals.ekb.eg/article_384369.html",
+      "observedAt": "2026-11-06T00:46:48Z",
+      "finding": "Hadith, Quran and Islamic text studies find LLM errors on word sense, theological expressions and context; expert review needed; no Bible error benchmark found."
+    },
+    {
+      "query": "interfaith dialogue AI translation tool faith vocabulary glossary real-time",
+      "source": "https://journalofcyberpolicy.com/?p=311773",
+      "observedAt": "2026-11-06T00:46:54Z",
+      "finding": "Vurbo.ai Buddhist 4.0 (2025) integrates a 10,000-term Buddhist lexicon for real-time translation; no cross-faith glossary tool found."
+    },
+    {
+      "query": "terminology-constrained machine translation domain glossary religious concepts untranslatable grace dharma tawhid",
+      "source": "https://api.emergentmind.com/topics/terminology-constrained-machine-translation",
+      "observedAt": "2026-11-06T00:47:00Z",
+      "finding": "Terminology-constrained MT generally assumes one-to-one glossary mappings; no work on grace, dharma or tawhid specifically."
+    },
+    {
+      "query": "Vatican sermon live AI translation 2025 church real-time translation app sermon languages Spf.io",
+      "source": "https://translated.com/holy-mass-translated-with-ai",
+      "observedAt": "2026-11-06T00:47:06Z",
+      "finding": "St Peter's Basilica live AI translation of Mass into 60 languages via Lara (Feb 2026); liturgy within one tradition."
+    }
+  ]
+}

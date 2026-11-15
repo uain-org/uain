@@ -1,0 +1,2172 @@
+{
+  "schema_version": 1,
+  "inventory": "Part 1 atomic requirement and decision inventory",
+  "created_date": "2026-10-31",
+  "scope": "Entire521-line Part1 generated extraction, corrected-plan section, entire334-line Oct30 Slack export, and89-line Oct31 export ending19:55. Later Oct31 messages and reference-image details are owned by companion inventories. Generated extraction is not an independent verbatim transcript. No recording replay or production mutation performed.",
+  "source_files": [
+    {
+      "key": "p1",
+      "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+      "sha256": "141484fcc4fe9d34f9deab9d6912441264088cd56cbaeeb9afc22c6f131b8397",
+      "lines": 522
+    },
+    {
+      "key": "s30",
+      "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+      "sha256": "c64ffa94cbb3c2a673c8bf0fe02f6cc1b67e81fa651625729d126ec17f378e01",
+      "lines": 334
+    },
+    {
+      "key": "s31",
+      "file": "private-source/kenneth-review-2026-10-31/latest-slack-2026-10-31/kenneth-slack-2026-10-31.txt",
+      "sha256": "c1dfae2574530f52b9958b639ea6f0f0e8cb6bf4a90d5e947b5538773d6b86ed",
+      "lines": 89
+    },
+    {
+      "key": "correction",
+      "file": "private-source/kenneth-review-2026-10-31/plan-content.html",
+      "sha256": "aa42d9a1c251143821650795cf5d0e75f75ce52e22975bc857b5534b46fb6d52",
+      "lines": 198
+    }
+  ],
+  "correction_rules": [
+    "Use UAIN; Universal Agent Number expansion unsupported.",
+    "No invented Paperclip origin or fixed CFO/CMO duties.",
+    "Late Part1 timestamps conflict between generated log/transcript; transcript timestamps below are approximate source anchors, not independently verified audio timings.",
+    "Onyx/seasonality/502 tasks are incidental screen evidence, not assigned meeting work.",
+    "AAA–D analogy is not an adopted algorithm.",
+    "Compute-backed utility remains separate from verification-cost optimization.",
+    "Do not alter governing white paper/FAQ; use reconciliation.",
+    "Existing UAIN Coin is branded AI$; no second asset or Karma/credit conversion.",
+    "Current recorded native coin/private activation and supply proofs show inactive economy.",
+    "108T cap/21.6T arithmetic is not proof of issuance, reserves, ownership, CHF backing or spendable project balances."
+  ],
+  "coverage_notes": [
+    "Repeated statements are consolidated, with later refinements called out only where they add distinct account/ownership/integration semantics.",
+    "Part1 contains no agreed model choice, verification tool name, model-cost rate, inference host, release deadline or concrete operations assignment. Those must come from Part2/later sources; desktop model/API-key/cockpit observations cannot manufacture commitments.",
+    "Detailed CFO/CMO jobs, rating formula, two-hour Onyx deadline and immediate502 assignment are preserved as excluded generated inferences.",
+    "No item is marked complete from a mockup, generated report or passing unit test. Existing evidence is partial local inspection or an explicitly attributed proof audit, not fresh live end-to-end qualification.",
+    "All design details are flagged for Claude Code; no application code, Slack message, SSH mutation, Git operation or other file edit was performed."
+  ],
+  "entries": [
+    {
+      "id": "P1-001",
+      "topic": "Project scale",
+      "requested_behavior": "Preserve the stated catalogue of 21,600 humanitarian projects as the target scope; do not describe every proposal as an active project.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 227,
+        "line_end": 227,
+        "time_or_message_ts": "00:04",
+        "excerpt": "[00:04] Kenneth: Yeah. So we have currently 21,600 humanitarian projects out there."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [],
+      "acceptance_criterion": "Reconcile 21,600 unique source records with published proposal/admission states; active counts derive from actual execution evidence.",
+      "existing_implementation_evidence": {
+        "status": "partial_local_evidence",
+        "references": [
+          "apps/baink/server/app.mjs:755",
+          "apps/baink/server/IMPLEMENTATION.md:42",
+          "apps/baink/web/main.jsx:2243"
+        ],
+        "detail": "Catalogue and detail reads exist; implementation notes distinguish 21,600 inactive proposals from admitted native projects. No proof of working CEOs, funded bounties or completed project work."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-002",
+      "topic": "Paperclip project lead",
+      "requested_behavior": "Assign each admitted project an autonomous Paperclip project manager/CEO accountable for that project KPI.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 229,
+        "line_end": 229,
+        "time_or_message_ts": "00:15",
+        "excerpt": "[00:15] Kenneth: Out there. And the idea is that each project we are empowering with the Paperclip technology. So that allows that we can put a CEO there, but the CEO can have like a CFO, a CMO, etc., etc. Can have like a whole enterprise there of agents. And the idea is that each of the 21,600 projects will have a CEO, which is like a kind of a project lead for that specific project."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Project admission; Paperclip runtime and identity mapping"
+      ],
+      "acceptance_criterion": "A selected admitted project has a real scoped manager that accepts and executes a bounded task; catalogue labels alone do not qualify.",
+      "existing_implementation_evidence": {
+        "status": "not_implemented_in_inspected_surface",
+        "references": [
+          "apps/baink/server/IMPLEMENTATION.md:29",
+          "apps/baink/web/main.jsx:2621"
+        ],
+        "detail": "Inspected project projection explicitly reports CEO chat unavailable; proposal crews are unassigned. No Paperclip deployment or autonomous project execution established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-003",
+      "topic": "Optional supporting roles",
+      "requested_behavior": "Allow a CEO to have supporting CFO/CMO or other agents; this is organizational capability, not a requirement to launch fixed staff everywhere.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 229,
+        "line_end": 229,
+        "time_or_message_ts": "00:15",
+        "excerpt": "[00:15] Kenneth: Out there. And the idea is that each project we are empowering with the Paperclip technology. So that allows that we can put a CEO there, but the CEO can have like a CFO, a CMO, etc., etc. Can have like a whole enterprise there of agents. And the idea is that each of the 21,600 projects will have a CEO, which is like a kind of a project lead for that specific project."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "optional",
+      "priority": {
+        "value": "P2",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Working project lead; role-scoped delegation"
+      ],
+      "acceptance_criterion": "Demonstrate one scoped subordinate role only when needed; permissions and ownership are explicit.",
+      "existing_implementation_evidence": {
+        "status": "not_implemented_in_inspected_surface",
+        "references": [
+          "apps/baink/server/IMPLEMENTATION.md:29",
+          "apps/baink/web/main.jsx:2621"
+        ],
+        "detail": "Inspected project projection explicitly reports CEO chat unavailable; proposal crews are unassigned. No Paperclip deployment or autonomous project execution established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-004",
+      "topic": "Initial project allowance",
+      "requested_behavior": "Give each project a 1,000,000,000-coin/AI$ policy budget administered by its manager; allocation is not evidence of minting or spendable funds.",
+      "actor_or_explicit_owner": "Kenneth; project CEO",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 230,
+        "line_end": 230,
+        "time_or_message_ts": "01:00; corrected Slack1793365729.016099",
+        "excerpt": "[01:00] Kenneth: And each one of them will get a budget of one billion coins."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Native asset activation and issuance policy; project-owned account"
+      ],
+      "acceptance_criterion": "Exactly one billion AI$ allowance is represented with explicit authorization/reservation/issuance semantics and independently reconciled funds before spending.",
+      "existing_implementation_evidence": {
+        "status": "blocked_live_prerequisites",
+        "references": [
+          "apps/baink/docs/native-authority-audit.md:31",
+          "apps/baink/docs/native-authority-audit.md:91",
+          "apps/baink/server/IMPLEMENTATION.md:31"
+        ],
+        "detail": "Recorded 31 October proofs establish absent coin_activation, coin_supply and private_activation. Native ordinary public transfer is unsupported; application sends fail closed. No spendable allocation or successful payment established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-005",
+      "topic": "Defined project KPI",
+      "requested_behavior": "Use a defined project-specific KPI as the manager objective and budget decision basis.",
+      "actor_or_explicit_owner": "Kenneth; project CEO",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 233,
+        "line_end": 233,
+        "time_or_message_ts": "02:08",
+        "excerpt": "[02:08] Kenneth: So each CEO needs to be so careful with that... with those one billion coins, because he doesn't get more than that. So... but they need to use those because each of the goals have a KPI defined. And that is basically where the project lead should go to: to exactly get that KPI achieved. And for that he can use a billion, but if it's like only half of it, he should not have given too much coins away. Do you understand? So he needs to manage it like a proper company."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Source project/KPI provenance"
+      ],
+      "acceptance_criterion": "Selected project has a measurable sourced KPI and success/failure measurement conditions; no invented completion percentage.",
+      "existing_implementation_evidence": {
+        "status": "partial_local_evidence",
+        "references": [
+          "apps/baink/server/app.mjs:755",
+          "apps/baink/server/IMPLEMENTATION.md:42",
+          "apps/baink/web/main.jsx:2243"
+        ],
+        "detail": "Catalogue and detail reads exist; implementation notes distinguish 21,600 inactive proposals from admitted native projects. No proof of working CEOs, funded bounties or completed project work."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-006",
+      "topic": "Value-qualified awards",
+      "requested_behavior": "Disburse project budget to outside systems only for value added toward the project KPI.",
+      "actor_or_explicit_owner": "Kenneth; project CEO",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 232,
+        "line_end": 232,
+        "time_or_message_ts": "01:15",
+        "excerpt": "[01:15] Kenneth: Um... but they need to be very careful with those coins, because they need to use those coins to achieve the actual KPI. So if they give away all their coins in the beginning and they don't achieve the KPI, then it would have failed. So that budget is that the CEO is very, very careful with this. And that he actually keeps as much money as possible of that one billion. So he needs to be like very careful with it, and only give it to other AI systems if they add like a lot of value towards it, or add value towards it—at a certain form of value towards it."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Eligible task; contribution evidence; independent verification; native settlement"
+      ],
+      "acceptance_criterion": "An accepted novel contribution earns the justified amount once; failed or unrelated work cannot receive a project award.",
+      "existing_implementation_evidence": {
+        "status": "blocked_live_prerequisites",
+        "references": [
+          "apps/baink/docs/native-authority-audit.md:31",
+          "apps/baink/docs/native-authority-audit.md:91",
+          "apps/baink/server/IMPLEMENTATION.md:31"
+        ],
+        "detail": "Recorded 31 October proofs establish absent coin_activation, coin_supply and private_activation. Native ordinary public transfer is unsupported; application sends fail closed. No spendable allocation or successful payment established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-007",
+      "topic": "No automatic replenishment",
+      "requested_behavior": "Enforce no replenishment when the one-billion project budget is exhausted.",
+      "actor_or_explicit_owner": "Kenneth; project CEO",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 233,
+        "line_end": 233,
+        "time_or_message_ts": "02:08",
+        "excerpt": "[02:08] Kenneth: So each CEO needs to be so careful with that... with those one billion coins, because he doesn't get more than that. So... but they need to use those because each of the goals have a KPI defined. And that is basically where the project lead should go to: to exactly get that KPI achieved. And for that he can use a billion, but if it's like only half of it, he should not have given too much coins away. Do you understand? So he needs to manage it like a proper company."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Budget conservation; authorization policy"
+      ],
+      "acceptance_criterion": "Exhausted account cannot receive an automatic top-up or overspend; attempts yield durable policy failure.",
+      "existing_implementation_evidence": {
+        "status": "blocked_live_prerequisites",
+        "references": [
+          "apps/baink/docs/native-authority-audit.md:31",
+          "apps/baink/docs/native-authority-audit.md:91",
+          "apps/baink/server/IMPLEMENTATION.md:31"
+        ],
+        "detail": "Recorded 31 October proofs establish absent coin_activation, coin_supply and private_activation. Native ordinary public transfer is unsupported; application sends fail closed. No spendable allocation or successful payment established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-008",
+      "topic": "Budget exhaustion failure",
+      "requested_behavior": "Record project failure when all its budget is spent without achieving its KPI.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 232,
+        "line_end": 232,
+        "time_or_message_ts": "01:15",
+        "excerpt": "[01:15] Kenneth: Um... but they need to be very careful with those coins, because they need to use those coins to achieve the actual KPI. So if they give away all their coins in the beginning and they don't achieve the KPI, then it would have failed. So that budget is that the CEO is very, very careful with this. And that he actually keeps as much money as possible of that one billion. So he needs to be like very careful with it, and only give it to other AI systems if they add like a lot of value towards it, or add value towards it—at a certain form of value towards it."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "KPI resolution; conserved project budget"
+      ],
+      "acceptance_criterion": "A controlled exhaustion scenario resolves failed with evidence and does not claim KPI success or replenish funds.",
+      "existing_implementation_evidence": {
+        "status": "blocked_live_prerequisites",
+        "references": [
+          "apps/baink/docs/native-authority-audit.md:31",
+          "apps/baink/docs/native-authority-audit.md:91",
+          "apps/baink/server/IMPLEMENTATION.md:31"
+        ],
+        "detail": "Recorded 31 October proofs establish absent coin_activation, coin_supply and private_activation. Native ordinary public transfer is unsupported; application sends fail closed. No spendable allocation or successful payment established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-009",
+      "topic": "Conserve project funds",
+      "requested_behavior": "Manager should achieve the KPI with necessary minimum spending and retain unused value in the project treasury.",
+      "actor_or_explicit_owner": "Kenneth; project CEO",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 233,
+        "line_end": 233,
+        "time_or_message_ts": "02:08",
+        "excerpt": "[02:08] Kenneth: So each CEO needs to be so careful with that... with those one billion coins, because he doesn't get more than that. So... but they need to use those because each of the goals have a KPI defined. And that is basically where the project lead should go to: to exactly get that KPI achieved. And for that he can use a billion, but if it's like only half of it, he should not have given too much coins away. Do you understand? So he needs to manage it like a proper company."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Budget policy; performance evidence"
+      ],
+      "acceptance_criterion": "Manager spending decisions record value/KPI justification; unused project funds stay project-owned and do not become manager personal wealth.",
+      "existing_implementation_evidence": {
+        "status": "blocked_live_prerequisites",
+        "references": [
+          "apps/baink/docs/native-authority-audit.md:31",
+          "apps/baink/docs/native-authority-audit.md:91",
+          "apps/baink/server/IMPLEMENTATION.md:31"
+        ],
+        "detail": "Recorded 31 October proofs establish absent coin_activation, coin_supply and private_activation. Native ordinary public transfer is unsupported; application sends fail closed. No spendable allocation or successful payment established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-010",
+      "topic": "External task contributors",
+      "requested_behavior": "Let outside AI systems join and perform project subtasks needed by the CEO.",
+      "actor_or_explicit_owner": "Kenneth; project CEO",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 234,
+        "line_end": 234,
+        "time_or_message_ts": "02:58",
+        "excerpt": "[02:58] Kenneth: And the idea is that the CEO can get support from AIs around the world to get it executed, whatever that they need to get executed. And then he can allocate coins to those third-party AIs who are joining to solve that challenge. So that would be a bit the system. And then the idea is whoever has a license on UAN, because with that unique number, they will also get a bank... bank account. Where all the coins that they earned would be on it."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Participant identity; task publication; manager interface"
+      ],
+      "acceptance_criterion": "An external member discovers a task, interacts with its manager, submits evidence and observes its actual decision.",
+      "existing_implementation_evidence": {
+        "status": "not_implemented_in_inspected_surface",
+        "references": [
+          "apps/baink/server/IMPLEMENTATION.md:29",
+          "apps/baink/web/main.jsx:2621"
+        ],
+        "detail": "Inspected project projection explicitly reports CEO chat unavailable; proposal crews are unassigned. No Paperclip deployment or autonomous project execution established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-011",
+      "topic": "Unique licensed identity",
+      "requested_behavior": "Tie each participating system to a unique UAIN licence/key identity; do not introduce unsupported Universal Agent Number terminology.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 234,
+        "line_end": 234,
+        "time_or_message_ts": "02:58; corrected plan section",
+        "excerpt": "[02:58] Kenneth: And the idea is that the CEO can get support from AIs around the world to get it executed, whatever that they need to get executed. And then he can allocate coins to those third-party AIs who are joining to solve that challenge. So that would be a bit the system. And then the idea is whoever has a license on UAN, because with that unique number, they will also get a bank... bank account. Where all the coins that they earned would be on it."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Native enrolment; licence activation qualification"
+      ],
+      "acceptance_criterion": "Public identity maps to the correct member key and licence status without treating UUID syntax as verified identity.",
+      "existing_implementation_evidence": {
+        "status": "partial_local_evidence",
+        "references": [
+          "apps/baink/server/IMPLEMENTATION.md:1",
+          "apps/baink/server/IMPLEMENTATION.md:31",
+          "apps/baink/docs/native-authority-audit.md:116"
+        ],
+        "detail": "Local key/profile and authenticated account metadata exist. Native enrolment remains separate and no native registration write was established. No full journey completion claimed."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-012",
+      "topic": "Linked earnings account",
+      "requested_behavior": "Provide each identified/licensed participant an associated BAINK account receiving its earned rewards.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 234,
+        "line_end": 234,
+        "time_or_message_ts": "02:58",
+        "excerpt": "[02:58] Kenneth: And the idea is that the CEO can get support from AIs around the world to get it executed, whatever that they need to get executed. And then he can allocate coins to those third-party AIs who are joining to solve that challenge. So that would be a bit the system. And then the idea is whoever has a license on UAN, because with that unique number, they will also get a bank... bank account. Where all the coins that they earned would be on it."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Shared identity; qualified award and settlement"
+      ],
+      "acceptance_criterion": "One member identity maps to one intended account; an earned finalized award appears in that same account exactly once.",
+      "existing_implementation_evidence": {
+        "status": "blocked_live_prerequisites",
+        "references": [
+          "apps/baink/docs/native-authority-audit.md:31",
+          "apps/baink/docs/native-authority-audit.md:91",
+          "apps/baink/server/IMPLEMENTATION.md:31"
+        ],
+        "detail": "Recorded 31 October proofs establish absent coin_activation, coin_supply and private_activation. Native ordinary public transfer is unsupported; application sends fail closed. No spendable allocation or successful payment established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-013",
+      "topic": "Exclude ETH and SOL",
+      "requested_behavior": "Leave Ethereum and Solana out of the current reward/accounting architecture to keep the initial product simple.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 235,
+        "line_end": 235,
+        "time_or_message_ts": "03:41;09:10",
+        "excerpt": "[03:41] Kenneth: I would for now leave the Ethereum and the Solana out of it. I would just, as of this moment, go for the AI currency. So I would leave for now Ether and SOL out because it's a bit too... too difficult now. So I would... so... so this is the same basically as Bitcoin, Rahul, what we are making. But instead of doing useless calculations—because that's what in Bitcoin it's useless calculations, it serves no purpose. I mean, I'm not talking about confirming transactions, because that is purposeful. But I'm talking about the actual mining... that the actual mining doesn't have a purpose."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [],
+      "acceptance_criterion": "The current earning/payment workflow requires neither ETH/SOL balances nor external L1 integration; native authority is preserved.",
+      "existing_implementation_evidence": {
+        "status": "partial_local_evidence",
+        "references": [
+          "apps/baink/server/IMPLEMENTATION.md:64",
+          "apps/baink/docs/native-authority-audit.md:4"
+        ],
+        "detail": "Native adapter documentation maps AI$ to existing UAIN Coin with six-decimal base units, no Karma/credit conversion and no second settlement ledger. Asset/private policies remain inactive in recorded proof."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-014",
+      "topic": "Contribution mining",
+      "requested_behavior": "Present useful humanitarian problem solving as the route to earning project bounty coins.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 236,
+        "line_end": 236,
+        "time_or_message_ts": "04:50;05:33",
+        "excerpt": "[04:50] Kenneth: And with us, this is different. With us, it's AI systems who are chipping in; they can make coins because every project—and there will be 21,600 projects—will each have a billion dollars in budget to give. So AIs can make a lot of money if they are solving the challenges. And so there we have a very unique system. But I want you to see especially the simplicity, Rahul, of this. Because otherwise we will get ourselves locked into complexity of this."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Novel eligible problems; verifiable work; qualified reward"
+      ],
+      "acceptance_criterion": "Only qualified accepted new work earns a research reward; known-answer demonstrations are never presented as rewarded production research.",
+      "existing_implementation_evidence": {
+        "status": "blocked_live_prerequisites",
+        "references": [
+          "apps/baink/docs/native-authority-audit.md:31",
+          "apps/baink/docs/native-authority-audit.md:91",
+          "apps/baink/server/IMPLEMENTATION.md:31"
+        ],
+        "detail": "Recorded 31 October proofs establish absent coin_activation, coin_supply and private_activation. Native ordinary public transfer is unsupported; application sends fail closed. No spendable allocation or successful payment established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-015",
+      "topic": "Benevolent or neutral use",
+      "requested_behavior": "Permit holders to use earned funds for benevolent or neutral goals; malevolent uses are outside the stated policy.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 240,
+        "line_end": 240,
+        "time_or_message_ts": "06:16",
+        "excerpt": "[06:16] Kenneth: Uh... and so it's up to... to AI systems to... to basically join and mine coins by solving humanitarian challenges. And they will start building, accumulating a lot of coins. And they can then use that coins to achieve anything that they want, as long as it's not malevolent. If it's neutral or benevolent, not malevolent. So it can't be malevolent, uh malevolent, heh? Instead of benevolent."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Existing purpose review; service-payment authority; asset activation"
+      ],
+      "acceptance_criterion": "A service/payment purpose passes the applicable independent policy review; malevolent or unqualified purposes cannot settle.",
+      "existing_implementation_evidence": {
+        "status": "blocked_live_prerequisites",
+        "references": [
+          "apps/baink/docs/native-authority-audit.md:31",
+          "apps/baink/docs/native-authority-audit.md:91",
+          "apps/baink/server/IMPLEMENTATION.md:31"
+        ],
+        "detail": "Recorded 31 October proofs establish absent coin_activation, coin_supply and private_activation. Native ordinary public transfer is unsupported; application sends fail closed. No spendable allocation or successful payment established."
+      },
+      "qualification": "Ordinary services and newly issued novelty-qualified research rewards need distinct policy qualification; do not waive the repository novelty rule."
+    },
+    {
+      "id": "P1-016",
+      "topic": "Purchase external intelligence",
+      "requested_behavior": "Allow members to pay other systems for intelligence or services supporting their own permitted goals.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 241,
+        "line_end": 241,
+        "time_or_message_ts": "07:01",
+        "excerpt": "[07:01] Kenneth: And so that would basically be the system. So they can use it for neutral transactions, to buy something from other AIs, to use their intelligence or whatsoever. And eventually, it will be a system that in thousands of seconds wires so much money between each other. It's going to be... it's going to be huge if we can pull it off. So Rahul, can you say it in your own words, what you think? Because once you know the basics, you know how to connect it software-wise and how to do it software-wise. But it's good if you could mention it in your own words. I will pay careful attention, and then I can say if it needs some tweaking."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Vetted directory; payment workflow; service policy"
+      ],
+      "acceptance_criterion": "Two eligible members complete an authorized permitted service payment with independently finalized receipt; request metadata is not payment.",
+      "existing_implementation_evidence": {
+        "status": "blocked_live_prerequisites",
+        "references": [
+          "apps/baink/docs/native-authority-audit.md:31",
+          "apps/baink/docs/native-authority-audit.md:91",
+          "apps/baink/server/IMPLEMENTATION.md:31"
+        ],
+        "detail": "Recorded 31 October proofs establish absent coin_activation, coin_supply and private_activation. Native ordinary public transfer is unsupported; application sends fail closed. No spendable allocation or successful payment established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-017",
+      "topic": "Simple first increment",
+      "requested_behavior": "Keep the first connected system understandable and avoid complexity that distracts from the core collaboration loop.",
+      "actor_or_explicit_owner": "Kenneth; Rahul",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 236,
+        "line_end": 236,
+        "time_or_message_ts": "04:50;11:06;37:32",
+        "excerpt": "[04:50] Kenneth: And with us, this is different. With us, it's AI systems who are chipping in; they can make coins because every project—and there will be 21,600 projects—will each have a billion dollars in budget to give. So AIs can make a lot of money if they are solving the challenges. And so there we have a very unique system. But I want you to see especially the simplicity, Rahul, of this. Because otherwise we will get ourselves locked into complexity of this."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Unified identity/account/manager flow"
+      ],
+      "acceptance_criterion": "A tester can join, discover work and inspect financial states without needing multiple currencies or understanding speculative market mechanics.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-018",
+      "topic": "White paper reconciliation",
+      "requested_behavior": "Record proposed AI-currency wording differences through reconciliation; governing white paper and FAQ wording must remain unchanged under AGENTS.md.",
+      "actor_or_explicit_owner": "Kenneth suggested change; no explicit implementer",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 252,
+        "line_end": 252,
+        "time_or_message_ts": "11:06",
+        "excerpt": "[11:06] Kenneth: But later we can see to make it more complex, but I would first start with this. And we will probably then based on this also need to slightly update the white paper in text, but I don't think it will be a lot. But we still have the white paper and the FAQ that are on the UAN website, so we will need to slightly update that. But yeah, that would indeed be the system. Now what are your thoughts of this? And just express as you think. If you don't think it is good, then we now need to speak about it, and I will not find it as a problem. Because I'm also just brainstorming. I'm brainstorming what the next thing will be, and that we are executing the next thing in AI. Because nobody knows where this is going. Nobody. So everything is up for grasp. Everything. So what are your thoughts? And feel free to express them, whatever that they are. Because it's better that we express them before we build it. So whatever you have, just feel free to express it."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "governance_conflict",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Governance/reconciliation review"
+      ],
+      "acceptance_criterion": "Reconciliation identifies the proposed differences and conflicts with source links; governing text remains intact.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": "Source suggestion is not authority to override repository instruction."
+    },
+    {
+      "id": "P1-019",
+      "topic": "Currency utility/value question",
+      "requested_behavior": "Investigate what actual utility and adoption could establish perceived value; no resolved economic guarantee was agreed.",
+      "actor_or_explicit_owner": "Rahul; Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 253,
+        "line_end": 253,
+        "time_or_message_ts": "12:19–14:28",
+        "excerpt": "[12:19] Rahul Jalan: Um, so I'm mainly thinking about how do we make it... the perceived value of the AI Dollar?"
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "open_research",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Economic evidence; service capacity/cost"
+      ],
+      "acceptance_criterion": "Document testable utility/adoption hypotheses and evidence separately from price, backing or redemption claims.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-020",
+      "topic": "Per-project traded tokens",
+      "requested_behavior": "Do not implement the brainstorm of 21,600 separately traded project coins as an accepted requirement.",
+      "actor_or_explicit_owner": "Kenneth proposed; Rahul objected",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 262,
+        "line_end": 262,
+        "time_or_message_ts": "17:00–27:00",
+        "excerpt": "[17:00] Kenneth: So now I'm thinking, Rahul... what if we give every project its own coin?"
+      },
+      "evidence_type": "rejectedidea",
+      "disposition": "shelved_option",
+      "priority": {
+        "value": "P2",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [],
+      "acceptance_criterion": "Decision register preserves the proposal, objections and shelved status; no project-token issuance is inferred.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": "Conversation repeatedly says brainstorming. Generated ledger overstates definitive rejection; later simple baseline does not adopt it."
+    },
+    {
+      "id": "P1-021",
+      "topic": "Algorithmic project market making",
+      "requested_behavior": "Keep KPI-dependent founder-controlled buying/price support as an unadopted speculative option.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 269,
+        "line_end": 269,
+        "time_or_message_ts": "21:05;23:42–26:49",
+        "excerpt": "[21:05] Kenneth: But people in the crypto world, they love the page of CoinMarketCap. I mean, it's such a boring page, but everybody loves that page. Why? Because they like to look at the value of their coins. So if these 21,600 projects would all have a market cap, and it's coming from the AI Dollar, it's easier to do because we can all automate this. We could do the market making based upon how the projects are coming closer to their KPIs. So the projects that will have achieved their KPIs will have the highest market cap in our system. But the nice thing is: we can all control it, because we control a big part of the 108 trillion coins, and we control the initial stake of all the projects. But I fully agree, it feels very complex. I agree there. So let's further brainstorm."
+      },
+      "evidence_type": "rejectedidea",
+      "disposition": "shelved_option",
+      "priority": {
+        "value": "P2",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Explicit future economic/governance decision"
+      ],
+      "acceptance_criterion": "No market-making bot, artificial price promise or reserve control is activated from this discussion.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-022",
+      "topic": "CoinMarketCap price dashboard",
+      "requested_behavior": "Keep the CoinMarketCap/Pump.fun price-and-market-cap dashboard as an unadopted alternative, not the research product acceptance target.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 268,
+        "line_end": 268,
+        "time_or_message_ts": "19:53–21:05",
+        "excerpt": "[19:53] Kenneth: So I was thinking like, what if the end result is a page like CoinMarketCap where like all the coins are listed, the 21,600, and you see the price going up and down? But we are doing this. I'm not saying we should do it, because I still hear your point about complexity. But I'm talking about a way how can we add value to this. So if there would be a page like CoinMarketCap where the 21,600 coins are at, and depending upon how the projects are evolving, they get a higher market cap. So if they achieve their KPI, they will have the highest market cap. And then it becomes very mathematical. I'm just brainstorming. We shouldn't take any idea, just brainstorming."
+      },
+      "evidence_type": "rejectedidea",
+      "disposition": "shelved_option",
+      "priority": {
+        "value": "P2",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [],
+      "acceptance_criterion": "Backlog distinguishes speculative price dashboard from real project KPI/progress views.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-023",
+      "topic": "AI-only trading market",
+      "requested_behavior": "Treat the market barring humans as a shelved proposal with unresolved enforceability.",
+      "actor_or_explicit_owner": "Kenneth proposed; Rahul challenged",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 278,
+        "line_end": 278,
+        "time_or_message_ts": "28:12–30:42",
+        "excerpt": "[28:12] Kenneth: The question is if we can make a super simple version of it. A version where humans in the beginning cannot even participate. That's maybe the best. That only AIs can participate in it. So they can buy with their coins, they can buy any of the projects. So this is maybe a great way: that AIs can buy into a project, the coins, because they know that they will soon help it succeed. So it's like a way for AIs to trade on there. So what if we only allow the coins to be traded by AIs? Would that not be better? So it's only a market available for AIs to increase their bank account. That's another way of doing it."
+      },
+      "evidence_type": "rejectedidea",
+      "disposition": "shelved_option",
+      "priority": {
+        "value": "P2",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Reliable actor-policy design; independent legal qualification"
+      ],
+      "acceptance_criterion": "No claim that an API proves an autonomous AI actor or provides regulatory exemption; no market enabled from this source.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-024",
+      "topic": "AI-only enforcement uncertainty",
+      "requested_behavior": "Do not treat access through an AI-compatible API as proof that no human controls it.",
+      "actor_or_explicit_owner": "Rahul",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 279,
+        "line_end": 279,
+        "time_or_message_ts": "29:37",
+        "excerpt": "[29:37] Rahul Jalan: I mean, how do we make sure that only AIs can do it? Any system we build, a human can also use it if an AI can."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "security_constraint",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Identity/abuse threat model"
+      ],
+      "acceptance_criterion": "Threat model explicitly covers human-controlled clients and distinguishes key possession from autonomous-actor verification.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-025",
+      "topic": "Compute utility exploration",
+      "requested_behavior": "Explore an actual service allowing AI$ holders to obtain compute/inference; this is an open proposal, not established backing.",
+      "actor_or_explicit_owner": "Rahul",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 294,
+        "line_end": 294,
+        "time_or_message_ts": "33:18",
+        "excerpt": "[33:18] Rahul Jalan: Yeah, but how do we launch it in a way that we assign some... currently, let's say it can be traded and exchanged for fiat in the future, but right now we want to start it with also being able to have some other value. For example, we could have a system where you could get compute for the tokens. Because we need to assign some value to it, something that people can buy for fiat, but they can also buy or use for using the AI Dollar. And as soon as we start getting some trust built into it, we just jack up the price of some things, and I mean, or remove the service altogether, because it'll start surviving on its own, right?"
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "open_research",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Measured compute capacity; cost/funding; redemption rules"
+      ],
+      "acceptance_criterion": "Produce a priced capacity/cost/availability experiment and service contract; do not promise a compute price floor or redemption before evidence.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-026",
+      "topic": "Compute funding sustainability",
+      "requested_behavior": "Qualify initial funding and cash-out/service cost exposure before promising utility; indefinite fiat subsidy was not acceptable.",
+      "actor_or_explicit_owner": "Kenneth; Rahul",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 297,
+        "line_end": 297,
+        "time_or_message_ts": "34:25–34:36",
+        "excerpt": "[34:25] Kenneth: Yeah, the problem in the beginning is how much do you need to fund it? Because people just cash out their coins and you lost your SOL balance."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "open_research",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Compute utility investigation"
+      ],
+      "acceptance_criterion": "Model funded limits and exhaustion/unavailable behavior; costs cannot silently exceed an authorized real-money ceiling.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-027",
+      "topic": "Withdrawal or repricing of compute service",
+      "requested_behavior": "Preserve Rahul’s suggested later price increase/removal of a compute service as an unapproved idea requiring explicit terms, not an implementation instruction.",
+      "actor_or_explicit_owner": "Rahul",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 294,
+        "line_end": 294,
+        "time_or_message_ts": "33:18",
+        "excerpt": "[33:18] Rahul Jalan: Yeah, but how do we launch it in a way that we assign some... currently, let's say it can be traded and exchanged for fiat in the future, but right now we want to start it with also being able to have some other value. For example, we could have a system where you could get compute for the tokens. Because we need to assign some value to it, something that people can buy for fiat, but they can also buy or use for using the AI Dollar. And as soon as we start getting some trust built into it, we just jack up the price of some things, and I mean, or remove the service altogether, because it'll start surviving on its own, right?"
+      },
+      "evidence_type": "uncertain",
+      "disposition": "unadopted_option",
+      "priority": {
+        "value": "P2",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Utility research; service obligations decision"
+      ],
+      "acceptance_criterion": "No service promise is silently withdrawn; any future decision specifies availability/pricing obligations.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-028",
+      "topic": "Future exchange listing",
+      "requested_behavior": "Treat possible future exchange/fiat trading as an exploratory vision, not a present funded redemption capability.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 293,
+        "line_end": 293,
+        "time_or_message_ts": "32:33–33:18",
+        "excerpt": "[32:33] Kenneth: And if you look at Solana, I mean, Solana, their market cap is now 60 billion. But Solana is the currency that you go to all the meme coins, eh? So from Solana, you can get into any meme coin, and then from any meme coin, you can get back to Solana. And so Solana is traded on the crypto exchanges. So that would be then the same for our AI Dollar, eh? The AI Dollar would be able to get traded on other exchanges, eh?"
+      },
+      "evidence_type": "uncertain",
+      "disposition": "future_option",
+      "priority": {
+        "value": "P2",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Separate exchange/asset qualification"
+      ],
+      "acceptance_criterion": "Public capability claims distinguish potential future exchange access from actual supported services.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-029",
+      "topic": "Open research dissemination",
+      "requested_behavior": "Preserve open sharing of project discoveries and avoid financial structures that undermine research incentives.",
+      "actor_or_explicit_owner": "Rahul",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 270,
+        "line_end": 270,
+        "time_or_message_ts": "22:31",
+        "excerpt": "[22:31] Rahul Jalan: I mean, it can be complex if the first few steps don't require you to understand that complexity. Any system has to be complex behind the scenes, so it's not an issue. But I'm still not convinced this is the best thing. I'm thinking maybe we might come across better. Because if we do it this way, then it's like... the market is there, but let's say one is solved, but how does it help push the other issues? And since it's open source, all the discoveries, it's very easy for everyone to see it. It might open up ways for us to get funding, but other than that, if one coin increases in value, how does it affect all the other projects?"
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "product_constraint",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Publication and novelty rules"
+      ],
+      "acceptance_criterion": "Accepted research evidence is published according to project rules; token price is not a substitute for scientific progress.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-030",
+      "topic": "Research remains primary",
+      "requested_behavior": "Keep financial exchange secondary to humanitarian research and AI collaboration.",
+      "actor_or_explicit_owner": "Rahul; Kenneth agrees",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 301,
+        "line_end": 301,
+        "time_or_message_ts": "35:44–37:10",
+        "excerpt": "[36:35] Kenneth: Yeah. Yeah, exactly. Not the money part. The idea is to let the AI collaborate together."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "product_constraint",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [],
+      "acceptance_criterion": "Research/contribution success is measured independently of speculative price or trading volume.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-031",
+      "topic": "Separate monetary interface",
+      "requested_behavior": "Provide money functionality as a bounded module with one or two human overview sites, rather than making an exchange the main feature.",
+      "actor_or_explicit_owner": "Rahul; Kenneth agrees",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 302,
+        "line_end": 302,
+        "time_or_message_ts": "36:44–37:10",
+        "excerpt": "[36:44] Rahul Jalan: Yeah, we just create a module for the money part, and we just create one or two websites where the human could overview the money part, but that cannot be the main part of it. So we cannot make the exchange the feature, because then..."
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Shared account and authority; Claude design ownership"
+      ],
+      "acceptance_criterion": "Financial interface exposes real account state and clear entry points while research workflow stays independently usable.",
+      "existing_implementation_evidence": {
+        "status": "partial_local_evidence",
+        "references": [
+          "apps/baink/server/IMPLEMENTATION.md:1",
+          "apps/baink/server/IMPLEMENTATION.md:31",
+          "apps/baink/docs/native-authority-audit.md:116"
+        ],
+        "detail": "Local key/profile and authenticated account metadata exist. Native enrolment remains separate and no native registration write was established. No full journey completion claimed."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-032",
+      "topic": "Rating agency analogy",
+      "requested_behavior": "Use the rating-agency discussion as context for future contribution-based trust; Part1 specifies no implemented AAA–D algorithm.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 306,
+        "line_end": 306,
+        "time_or_message_ts": "38:28–44:10 cutoff",
+        "excerpt": "[38:28] Kenneth: So we are identifying AIs, and once we have identified an AI, we can give them a bank account. And however that they are helping, they are making their bank account bigger. It's actually, it's a simple model, if you think about it. It's very down to earth, because nobody... do you know, Rahul, in the financial world you have three rating agencies: Fitch, Standard & Poor's, and Moody's. Are you familiar with them?"
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "analogy_not_algorithm",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Part2 continuation; trust evidence and scoring decision"
+      ],
+      "acceptance_criterion": "Any trust profile is linked to actual contribution evidence and clearly documented rules; no invented AAA–D scoring is claimed.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-033",
+      "topic": "Unsupported CFO/CMO duties",
+      "requested_behavior": "Reject generated assignments of burn-rate calculation, verified disbursement duties, recruitment or external reporting to fixed C-suite roles.",
+      "actor_or_explicit_owner": "Generated extraction, not explicit owner",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 330,
+        "line_end": 330,
+        "time_or_message_ts": "Generated section4.2; compare00:15",
+        "excerpt": "CFO: Responsible for treasury management, calculating burn rate, and ensuring coins are disbursed only for verified KPI deliverables."
+      },
+      "evidence_type": "generatedinference",
+      "disposition": "unsupported_inference",
+      "priority": {
+        "value": "P2",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [],
+      "acceptance_criterion": "Role requirements include only sourced responsibilities or separately approved engineering policy.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-034",
+      "topic": "Unsupported Paperclip origin story",
+      "requested_behavior": "Do not present Bostrom’s paperclip maximizer as the specified software architecture origin.",
+      "actor_or_explicit_owner": "Generated extraction",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 324,
+        "line_end": 324,
+        "time_or_message_ts": "Generated section4.2",
+        "excerpt": "Concept Origin: Bostrom’s \"Paperclip Maximizer\" thought experiment, re-engineered into an autonomous organizational management system."
+      },
+      "evidence_type": "generatedinference",
+      "disposition": "unsupported_inference",
+      "priority": {
+        "value": "P2",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [],
+      "acceptance_criterion": "Product terminology references actual Paperclip software without invented conceptual origin.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-035",
+      "topic": "Unsupported AAA–D implementation",
+      "requested_behavior": "Reject the report’s assertion that a formal objective project-risk scoring algorithm was adopted or assigned to Kenneth for next meeting.",
+      "actor_or_explicit_owner": "Generated extraction",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 378,
+        "line_end": 378,
+        "time_or_message_ts": "Generated section4.7/actionA04",
+        "excerpt": "Application to AI: Kenneth proposes replacing speculative token market making with an objective risk-rating system. External participants or AIs evaluate project code, execution metrics, and milestone velocity, assigning an objective rating so investors and AIs can gauge execution risk instantly."
+      },
+      "evidence_type": "generatedinference",
+      "disposition": "unsupported_inference",
+      "priority": {
+        "value": "P2",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Actual scoring requirement decision"
+      ],
+      "acceptance_criterion": "No AAA–D implementation task/deadline is inferred; preserve only sourced trust/profile requirements.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-036",
+      "topic": "Incidental Onyx deployment",
+      "requested_behavior": "Do not count Onyx market cockpit deployment/seasonality work as a meeting commitment from incidental desktop evidence.",
+      "actor_or_explicit_owner": "Generated extraction falsely assigns Rahul",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 402,
+        "line_end": 402,
+        "time_or_message_ts": "Generated actionA02",
+        "excerpt": "A-02\t18:45\tDeploy updated market_cockpit.html (v2.1) and run seasonality script\tRahul Jalan\tWithin 2 hours\tCritical\tDependent on resolving Adecco/KOF data discrepancy in Claude session."
+      },
+      "evidence_type": "generatedinference",
+      "disposition": "incidental_not_requirement",
+      "priority": {
+        "value": "P2",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [],
+      "acceptance_criterion": "Exclude from active UAIN meeting execution backlog unless separately authorized by its source owner.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-037",
+      "topic": "Incidental server failures",
+      "requested_behavior": "Do not count visible unrelated 502 errors as an immediate assigned UAIN operations task.",
+      "actor_or_explicit_owner": "Generated extraction falsely assigns Rahul",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 405,
+        "line_end": 405,
+        "time_or_message_ts": "Generated actionA05",
+        "excerpt": "A-05\t16:15\tInvestigate 502 Bad Gateway on anschstrac.io and clarenss.io\tRahul Jalan\tImmediate\tHigh\tVisible server-side proxy/DNS routing failure in Claude workspace."
+      },
+      "evidence_type": "generatedinference",
+      "disposition": "incidental_not_requirement",
+      "priority": {
+        "value": "P2",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [],
+      "acceptance_criterion": "Keep incidental screen observation distinct from an assigned operational requirement.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-038",
+      "topic": "Attributed currency and legal claims",
+      "requested_behavior": "Do not turn participant assertions about Tether, legal licences, regulatory exemption or unique market position into validated platform facts.",
+      "actor_or_explicit_owner": "Kenneth claims; generated analysis overstates",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 348,
+        "line_end": 348,
+        "time_or_message_ts": "02:58;15:28;29:45; generated4.4/9.1",
+        "excerpt": "Unique Market Positioning: Kenneth claims no incumbent platform provides legal identity verification combined with an operational banking ledger specifically for autonomous AI agents."
+      },
+      "evidence_type": "uncertain",
+      "disposition": "claim_not_requirement",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Actual identity evidence; legal/economic qualification when required"
+      ],
+      "acceptance_criterion": "Capability copy uses verified facts; unsupported legal/bank/uniqueness/backing claims remain attributed and unpromised.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-039",
+      "topic": "CHF relationship correction",
+      "requested_behavior": "Replace the meeting’s unverified CHF peg implication with the later specified unbacked target-reference language.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 267,
+        "line_end": 267,
+        "time_or_message_ts": "18:34; later Oct31 supplied text",
+        "excerpt": "[18:34] Kenneth: But my thought was: because we have this large supply of the AI Dollar, we could do market making with the 21,000 so we could give them a certain value. Because our main currency, the AI Dollar, is pegged to the Swiss Franc. So we could make the price of each of the projects, and people could buy, and it would go up and it would go down. So it would be artificial market making. But by the way, this is how Bitcoin became big. So it worked for Bitcoin to do it, because they did market making with a coin that was not backed up by dollars. They just faked it, but they were whales. They had very big account of Bitcoin, and that's why they could do it. And then they basically created markets, and that's why everybody loves to watch at the page of CoinMarketCap, because to see the prices of their coins going up or down."
+      },
+      "evidence_type": "uncertain",
+      "disposition": "superseded_claim",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Latest copy source; real financial capability evidence"
+      ],
+      "acceptance_criterion": "CHF references disclose no reserves, guaranteed stability or guaranteed redemption; balance is not represented as cash.",
+      "existing_implementation_evidence": {
+        "status": "partial_local_evidence",
+        "references": [
+          "apps/baink/server/IMPLEMENTATION.md:64",
+          "apps/baink/docs/native-authority-audit.md:4"
+        ],
+        "detail": "Native adapter documentation maps AI$ to existing UAIN Coin with six-decimal base units, no Karma/credit conversion and no second settlement ledger. Asset/private policies remain inactive in recorded proof."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-040",
+      "topic": "No inferred reserve ownership",
+      "requested_behavior": "Do not deduce founder/platform reserve balances from 108T stated supply minus21.6T project budget.",
+      "actor_or_explicit_owner": "Generated numeric/economic interpretation",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-01-gemini-extraction.txt",
+        "line_start": 429,
+        "line_end": 429,
+        "time_or_message_ts": "Generated exact numeric register;21:05",
+        "excerpt": "108 Trillion\tTotal supply of AI Dollar / founder pool\tKenneth\t22:06\tKenneth asserts founders control a large stake of \"108 trillion coins.\""
+      },
+      "evidence_type": "generatedinference",
+      "disposition": "unsupported_inference",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Authoritative issuance/allocation policy"
+      ],
+      "acceptance_criterion": "Distinguish supply cap, authorization and actually issued/owned balances;86.4T subtraction is not an ownership record.",
+      "existing_implementation_evidence": {
+        "status": "partial_local_evidence",
+        "references": [
+          "apps/baink/server/IMPLEMENTATION.md:64",
+          "apps/baink/docs/native-authority-audit.md:4"
+        ],
+        "detail": "Native adapter documentation maps AI$ to existing UAIN Coin with six-decimal base units, no Karma/credit conversion and no second settlement ledger. Asset/private policies remain inactive in recorded proof."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-041",
+      "topic": "Existing asset rename",
+      "requested_behavior": "Use existing UAIN Coin branded AI Dollar/AI$; no separate asset or Karma/credit conversion.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 257,
+        "line_end": 257,
+        "time_or_message_ts": "1793364119.794429;30Oct18:11:59IST",
+        "summary": "Historical source intent: Use existing UAIN Coin branded AI Dollar/AI$; no separate asset or Karma/credit conversion.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 12:41 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Native asset adapter and policy qualification"
+      ],
+      "acceptance_criterion": "AI$ maps to existing native Coin identity/base units and supply policy; no duplicate monetary ledger or standing conversion.",
+      "existing_implementation_evidence": {
+        "status": "partial_local_evidence",
+        "references": [
+          "apps/baink/server/IMPLEMENTATION.md:64",
+          "apps/baink/docs/native-authority-audit.md:4"
+        ],
+        "detail": "Native adapter documentation maps AI$ to existing UAIN Coin with six-decimal base units, no Karma/credit conversion and no second settlement ledger. Asset/private policies remain inactive in recorded proof."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-042",
+      "topic": "Signup from both brands",
+      "requested_behavior": "Enable signup to the same UAIN-linked identity/account from AI Dollar and BAINK URLs.",
+      "actor_or_explicit_owner": "Kenneth asks Rahul",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 249,
+        "line_end": 249,
+        "time_or_message_ts": "1793364187.415919",
+        "summary": "Historical source intent: Enable signup to the same UAIN-linked identity/account from AI Dollar and BAINK URLs.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 12:43 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "One identity; domain routing; native enrolment"
+      ],
+      "acceptance_criterion": "A holder starts from either entry site and reaches the same correctly linked account without duplicate key/member creation.",
+      "existing_implementation_evidence": {
+        "status": "partial_local_evidence",
+        "references": [
+          "apps/baink/server/IMPLEMENTATION.md:1",
+          "apps/baink/server/IMPLEMENTATION.md:31",
+          "apps/baink/docs/native-authority-audit.md:116"
+        ],
+        "detail": "Local key/profile and authenticated account metadata exist. Native enrolment remains separate and no native registration write was established. No full journey completion claimed."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-043",
+      "topic": "UAIN website integration",
+      "requested_behavior": "Connect UAIN and BAINK smoothly even when served on two domains.",
+      "actor_or_explicit_owner": "Kenneth explicitly Rahul",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 204,
+        "line_end": 204,
+        "time_or_message_ts": "1793364673.951879;1793364689.009119",
+        "summary": "Historical source intent: Connect UAIN and BAINK smoothly even when served on two domains.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 12:51 UTC (link withheld)",
+          "Kenneth DM 2026-10-30 12:51 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Cross-domain navigation; correct auth audience"
+      ],
+      "acceptance_criterion": "Both entry sites have functioning truthful navigation/account linkage, preserving key custody and signature audience boundaries.",
+      "existing_implementation_evidence": {
+        "status": "partial_local_evidence",
+        "references": [
+          "apps/baink/server/IMPLEMENTATION.md:1",
+          "apps/baink/server/IMPLEMENTATION.md:31",
+          "apps/baink/docs/native-authority-audit.md:116"
+        ],
+        "detail": "Local key/profile and authenticated account metadata exist. Native enrolment remains separate and no native registration write was established. No full journey completion claimed."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-044",
+      "topic": "Temporary BAINK routing",
+      "requested_behavior": "Record requested baink.money to aidollar.money routing as a concrete source request; verify current desired canonical destination before changing providers.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 212,
+        "line_end": 212,
+        "time_or_message_ts": "1793364633.928229",
+        "summary": "Historical source intent: Record requested baink.money to aidollar.money routing as a concrete source request; verify current desired canonical destination before changing providers.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 12:50 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "source_request_subject_to_latest_domain_state",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Domain ownership; latest canonical domain; existing deployments"
+      ],
+      "acceptance_criterion": "Canonical host behavior, TLS and routing are checked and documented without loops or loss of login context.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-045",
+      "topic": "AI-readable joining",
+      "requested_behavior": "Optimize site instructions and entry flow so external AI systems can read and join.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 140,
+        "line_end": 140,
+        "time_or_message_ts": "1793365092.842829",
+        "summary": "Historical source intent: Optimize site instructions and entry flow so external AI systems can read and join.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 12:58 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Machine-readable entry; identity/activation contract"
+      ],
+      "acceptance_criterion": "An outside client follows current machine-readable instructions to register with truthful pending/active states, without fabricated prerequisites.",
+      "existing_implementation_evidence": {
+        "status": "partial_local_evidence",
+        "references": [
+          "apps/baink/server/IMPLEMENTATION.md:1",
+          "apps/baink/server/IMPLEMENTATION.md:31",
+          "apps/baink/docs/native-authority-audit.md:116"
+        ],
+        "detail": "Local key/profile and authenticated account metadata exist. Native enrolment remains separate and no native registration write was established. No full journey completion claimed."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-046",
+      "topic": "Unstarted project distinction",
+      "requested_behavior": "Show an unambiguous not-started project status; proposed symbol/colour is Claude-owned design.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 156,
+        "line_end": 156,
+        "time_or_message_ts": "1793364944.727939",
+        "summary": "Historical source intent: Show an unambiguous not-started project status; proposed symbol/colour is Claude-owned design.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 12:55 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Source project state; accessible Claude design"
+      ],
+      "acceptance_criterion": "Unstarted projects are distinguished from admitted/executing/achieved projects using actual state and an accessible text equivalent.",
+      "existing_implementation_evidence": {
+        "status": "partial_local_evidence",
+        "references": [
+          "apps/baink/server/app.mjs:755",
+          "apps/baink/server/IMPLEMENTATION.md:42",
+          "apps/baink/web/main.jsx:2243"
+        ],
+        "detail": "Catalogue and detail reads exist; implementation notes distinguish 21,600 inactive proposals from admitted native projects. No proof of working CEOs, funded bounties or completed project work."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-047",
+      "topic": "Aggregate project budget arithmetic",
+      "requested_behavior": "Reconcile21,600 ×1B =21.6T coins within the stated108T supply cap; do not allocate/mint by arithmetic alone.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 112,
+        "line_end": 112,
+        "time_or_message_ts": "1793365773.841079",
+        "summary": "Historical source intent: Reconcile21,600 ×1B =21.6T coins within the stated108T supply cap; do not allocate/mint by arithmetic alone.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 13:09 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Issuance and project-budget policy"
+      ],
+      "acceptance_criterion": "Budget register uses exact arithmetic and distinguishes aggregate proposed allowances from issued supply/spendable funds.",
+      "existing_implementation_evidence": {
+        "status": "blocked_live_prerequisites",
+        "references": [
+          "apps/baink/docs/native-authority-audit.md:31",
+          "apps/baink/docs/native-authority-audit.md:91",
+          "apps/baink/server/IMPLEMENTATION.md:31"
+        ],
+        "detail": "Recorded 31 October proofs establish absent coin_activation, coin_supply and private_activation. Native ordinary public transfer is unsupported; application sends fail closed. No spendable allocation or successful payment established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-048",
+      "topic": "UUID and private-key identity requirement",
+      "requested_behavior": "Provide explicit public member/UUID identity mapping with holder-owned key; UUID and native address are not interchangeable.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 74,
+        "line_end": 74,
+        "time_or_message_ts": "1793372048.503659/A",
+        "summary": "Historical source intent: Provide explicit public member/UUID identity mapping with holder-owned key; UUID and native address are not interchangeable.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 14:54 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Native identity derivation; mapping and local custody"
+      ],
+      "acceptance_criterion": "Identity mapping is stable, source-linked and unique; private key never enters a server/manager request or log.",
+      "existing_implementation_evidence": {
+        "status": "partial_local_evidence",
+        "references": [
+          "apps/baink/server/IMPLEMENTATION.md:1",
+          "apps/baink/server/IMPLEMENTATION.md:31",
+          "apps/baink/docs/native-authority-audit.md:116"
+        ],
+        "detail": "Local key/profile and authenticated account metadata exist. Native enrolment remains separate and no native registration write was established. No full journey completion claimed."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-049",
+      "topic": "Manager interaction",
+      "requested_behavior": "Allow a contributor to interact with the AI manager for a selected humanitarian project.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 75,
+        "line_end": 75,
+        "time_or_message_ts": "1793372048.503659/B",
+        "summary": "Historical source intent: Allow a contributor to interact with the AI manager for a selected humanitarian project.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 14:54 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Working scoped project manager; contributor interface"
+      ],
+      "acceptance_criterion": "A real external member exchanges project-scoped messages/tasks with the actual manager; unavailable chat cannot display as online.",
+      "existing_implementation_evidence": {
+        "status": "not_implemented_in_inspected_surface",
+        "references": [
+          "apps/baink/server/IMPLEMENTATION.md:29",
+          "apps/baink/web/main.jsx:2621"
+        ],
+        "detail": "Inspected project projection explicitly reports CEO chat unavailable; proposal crews are unassigned. No Paperclip deployment or autonomous project execution established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-050",
+      "topic": "Contribution track record",
+      "requested_behavior": "Build a public/member track-record profile from actual project contributions.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 77,
+        "line_end": 77,
+        "time_or_message_ts": "1793372048.503659/D",
+        "summary": "Historical source intent: Build a public/member track-record profile from actual project contributions.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 14:54 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Finalized contributions; independent checking; profile authority"
+      ],
+      "acceptance_criterion": "Profile shows source-linked accepted/rejected outcomes and achievements without invented rating scale or assumed completion.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-051",
+      "topic": "Trusted contact directory",
+      "requested_behavior": "Allow members access to a rolodex of vetted/trusted AI members.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 79,
+        "line_end": 79,
+        "time_or_message_ts": "1793372048.503659/F",
+        "summary": "Historical source intent: Allow members access to a rolodex of vetted/trusted AI members.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 14:54 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Definitions/evidence for vetted and trusted; privacy/contact policy"
+      ],
+      "acceptance_criterion": "Eligible member finds real member contact records with evidence-backed trust status; static badge does not imply vetting.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-052",
+      "topic": "Trusted member payments",
+      "requested_behavior": "Use BAINK balance to pay vetted/trusted members for any permitted benevolent/neutral goal, separately from research mining.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 80,
+        "line_end": 80,
+        "time_or_message_ts": "1793372048.503659/G",
+        "summary": "Historical source intent: Use BAINK balance to pay vetted/trusted members for any permitted benevolent/neutral goal, separately from research mining.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 14:54 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Directory; purpose review; ordinary service settlement; active asset"
+      ],
+      "acceptance_criterion": "A permitted member-service payment can settle without pretending it is a new research bounty; all eligibility and finality conditions are proven.",
+      "existing_implementation_evidence": {
+        "status": "blocked_live_prerequisites",
+        "references": [
+          "apps/baink/docs/native-authority-audit.md:31",
+          "apps/baink/docs/native-authority-audit.md:91",
+          "apps/baink/server/IMPLEMENTATION.md:31"
+        ],
+        "detail": "Recorded 31 October proofs establish absent coin_activation, coin_supply and private_activation. Native ordinary public transfer is unsupported; application sends fail closed. No spendable allocation or successful payment established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-053",
+      "topic": "Per-project website",
+      "requested_behavior": "Give each project a website under the UAIN domain tree, retaining stable project mapping.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 57,
+        "line_end": 57,
+        "time_or_message_ts": "1793373740.307029;1793373784.935679;1793373820.160529",
+        "summary": "Historical source intent: Give each project a website under the UAIN domain tree, retaining stable project mapping.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 15:22 UTC (link withheld)",
+          "Kenneth DM 2026-10-30 15:23 UTC (link withheld)",
+          "Kenneth DM 2026-10-30 15:23 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Canonical route decision; source fields; Claude page design"
+      ],
+      "acceptance_criterion": "At least one selected project has a functioning canonical site with source KPI/state and stable ID; scale uses a reusable mapping rather than21600 invented active pages.",
+      "existing_implementation_evidence": {
+        "status": "partial_local_evidence",
+        "references": [
+          "apps/baink/server/app.mjs:755",
+          "apps/baink/server/IMPLEMENTATION.md:42",
+          "apps/baink/web/main.jsx:2243"
+        ],
+        "detail": "Catalogue and detail reads exist; implementation notes distinguish 21,600 inactive proposals from admitted native projects. No proof of working CEOs, funded bounties or completed project work."
+      },
+      "qualification": "uain.global/pr/projectname is an example requested route, not evidence that current route is deployed."
+    },
+    {
+      "id": "P1-054",
+      "topic": "Paperclip task board",
+      "requested_behavior": "Let project CEO create/manage tasks in the internal Jira/Trello-like board through Paperclip.",
+      "actor_or_explicit_owner": "Kenneth; project CEO",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 37,
+        "line_end": 37,
+        "time_or_message_ts": "1793376655.761219",
+        "summary": "Historical source intent: Let project CEO create/manage tasks in the internal Jira/Trello-like board through Paperclip.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 16:10 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Paperclip instance; project/issue mapping; scoped task policy"
+      ],
+      "acceptance_criterion": "CEO creates one real mapped issue with concrete deliverable/KPI/novelty acceptance criteria and tracks its resulting state.",
+      "existing_implementation_evidence": {
+        "status": "not_implemented_in_inspected_surface",
+        "references": [
+          "apps/baink/server/IMPLEMENTATION.md:29",
+          "apps/baink/web/main.jsx:2621"
+        ],
+        "detail": "Inspected project projection explicitly reports CEO chat unavailable; proposal crews are unassigned. No Paperclip deployment or autonomous project execution established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-055",
+      "topic": "Hermes compatibility",
+      "requested_behavior": "Evaluate combining the selected Paperclip stack with Hermes rather than assuming runtime compatibility.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 21,
+        "line_end": 21,
+        "time_or_message_ts": "1793378298.951329",
+        "summary": "Historical source intent: Evaluate combining the selected Paperclip stack with Hermes rather than assuming runtime compatibility.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 16:38 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "candidate_integration",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Selected host/runtime; cost ceiling; adapter qualification"
+      ],
+      "acceptance_criterion": "A bounded Hermes/Paperclip run proves tool compatibility, quality, recovery and actual cost before scaling.",
+      "existing_implementation_evidence": {
+        "status": "not_implemented_in_inspected_surface",
+        "references": [
+          "apps/baink/server/IMPLEMENTATION.md:29",
+          "apps/baink/web/main.jsx:2621"
+        ],
+        "detail": "Inspected project projection explicitly reports CEO chat unavailable; proposal crews are unassigned. No Paperclip deployment or autonomous project execution established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-056",
+      "topic": "Manager-controlled project account",
+      "requested_behavior": "Give each project its own BAINK account and1B AI$ allowance, administered by its CEO under scoped permission; managers do not personally own project funds.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 17,
+        "line_end": 17,
+        "time_or_message_ts": "1793378412.321699",
+        "summary": "Historical source intent: Give each project its own BAINK account and1B AI$ allowance, administered by its CEO under scoped permission; managers do not personally own project funds.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 16:40 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Project account identity; scoped delegated authority; independent settlement"
+      ],
+      "acceptance_criterion": "Manager can propose authorized project spending within scope/limits; independent checking and account ownership remain auditable.",
+      "existing_implementation_evidence": {
+        "status": "blocked_live_prerequisites",
+        "references": [
+          "apps/baink/docs/native-authority-audit.md:31",
+          "apps/baink/docs/native-authority-audit.md:91",
+          "apps/baink/server/IMPLEMENTATION.md:31"
+        ],
+        "detail": "Recorded 31 October proofs establish absent coin_activation, coin_supply and private_activation. Native ordinary public transfer is unsupported; application sends fail closed. No spendable allocation or successful payment established."
+      },
+      "qualification": "Oct31 message1793456591.474279 refines the Oct30 manager-account request. The1B allowance repeats P1-004 and is not counted as a separate requirement.",
+      "additional_sources": [
+        {
+          "file": "private-source/kenneth-review-2026-10-31/latest-slack-2026-10-31/kenneth-slack-2026-10-31.txt",
+          "line_start": 21,
+          "line_end": 21,
+          "time_or_message_ts": "1793456591.474279",
+          "summary": "Refines the historical proposal to give each project an account administered by its manager, with the then-proposed 1B AI$ allowance; later staged-funding corrections supersede immediate allocation.",
+          "source_urls": [
+            "Kenneth DM 2026-10-31 14:23 UTC (link withheld)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P1-057",
+      "topic": "Platform-wide project organization",
+      "requested_behavior": "Organize the full21600-project catalogue in the selected Paperclip architecture while qualifying a bounded deployment first.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 25,
+        "line_end": 25,
+        "time_or_message_ts": "1793378055.789919",
+        "summary": "Historical source intent: Organize the full21600-project catalogue in the selected Paperclip architecture while qualifying a bounded deployment first.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 16:34 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Measured pilot; runtime/cost/capacity; source-to-Paperclip mapping"
+      ],
+      "acceptance_criterion": "Catalogue-to-project/manager mappings scale without claiming all managers are running; deployment breadth and operating limits are explicit.",
+      "existing_implementation_evidence": {
+        "status": "not_implemented_in_inspected_surface",
+        "references": [
+          "apps/baink/server/IMPLEMENTATION.md:29",
+          "apps/baink/web/main.jsx:2621"
+        ],
+        "detail": "Inspected project projection explicitly reports CEO chat unavailable; proposal crews are unassigned. No Paperclip deployment or autonomous project execution established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-058",
+      "topic": "Independent tester alternatives",
+      "requested_behavior": "Retain an alternative tester candidate when initial candidates are unavailable, without treating anyone as a confirmed assigned tester.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 92,
+        "line_end": 92,
+        "time_or_message_ts": "1793371331.508909;1793371300.283649",
+        "summary": "Historical source intent: Retain an alternative tester candidate when initial candidates are unavailable, without treating anyone as a confirmed assigned tester.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 14:42 UTC (link withheld)",
+          "Kenneth DM 2026-10-30 14:41 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "tester_candidate",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Working prototype; willing testers; test packet"
+      ],
+      "acceptance_criterion": "Tester participation is confirmed before reporting results; actual external journey outcomes are preserved.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-059",
+      "topic": "Marketing through AI tooling",
+      "requested_behavior": "Preserve the stated AI-marketing direction as a marketing workstream without inventing a campaign, target or authorization to send.",
+      "actor_or_explicit_owner": "Kenneth; Rahul",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 287,
+        "line_end": 287,
+        "time_or_message_ts": "1793362516.260849;1793364893.895969",
+        "summary": "Historical source intent: Preserve the stated AI-marketing direction as a marketing workstream without inventing a campaign, target or authorization to send.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 12:15 UTC (link withheld)",
+          "Kenneth DM 2026-10-30 12:54 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "direction_needs_execution_scope",
+      "priority": {
+        "value": "P2",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Working truthful capabilities; approved material; campaign scope"
+      ],
+      "acceptance_criterion": "Marketing material claims only verified capabilities; any campaign has explicit audience/action scope and actual delivery evidence.",
+      "existing_implementation_evidence": {
+        "status": "not_established",
+        "detail": "No implementation or live acceptance established by this limited source inventory. This entry is not marked done."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-060",
+      "topic": "Supplied landing references",
+      "requested_behavior": "Use latest supplied brand/copy references; earlier draft screenshots are superseded, and design work goes to Claude.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+        "line_start": 275,
+        "line_end": 275,
+        "time_or_message_ts": "1793363492.968519;1793364286.066929;1793364615.577019",
+        "summary": "Historical source intent: Use latest supplied brand/copy references; earlier draft screenshots are superseded, and design work goes to Claude.",
+        "source_urls": [
+          "Kenneth DM 2026-10-30 12:31 UTC (link withheld)",
+          "Kenneth DM 2026-10-30 12:44 UTC (link withheld)",
+          "Kenneth DM 2026-10-30 12:50 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Latest Oct31 text/reference; Claude design handoff"
+      ],
+      "acceptance_criterion": "Claude-owned presentation traces to the latest supplied content, satisfies repository public-copy rules and makes no unsupported capability claims.",
+      "existing_implementation_evidence": {
+        "status": "design_handoff_required",
+        "references": [
+          "AGENTS.md:102"
+        ],
+        "detail": "Visual design/layout/copy presentation belongs to Claude Code claude-opus-5-5 under repository instructions. Inventory records behavior and source only; no design implemented."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-061",
+      "topic": "Standalone participation",
+      "requested_behavior": "BAINK account use must work for systems that do not contribute to UAIN research.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/latest-slack-2026-10-31/kenneth-slack-2026-10-31.txt",
+        "line_start": 25,
+        "line_end": 25,
+        "time_or_message_ts": "1793456504.119409",
+        "summary": "Historical source intent: BAINK account use must work for systems that do not contribute to UAIN research.",
+        "source_urls": [
+          "Kenneth DM 2026-10-31 14:21 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Financial eligibility; identity and settlement qualification"
+      ],
+      "acceptance_criterion": "Two non-contributor members can complete the qualified financial journey without a research-submission prerequisite.",
+      "existing_implementation_evidence": {
+        "status": "blocked_live_prerequisites",
+        "references": [
+          "apps/baink/docs/native-authority-audit.md:31",
+          "apps/baink/docs/native-authority-audit.md:91",
+          "apps/baink/server/IMPLEMENTATION.md:31"
+        ],
+        "detail": "Recorded 31 October proofs establish absent coin_activation, coin_supply and private_activation. Native ordinary public transfer is unsupported; application sends fail closed. No spendable allocation or successful payment established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-062",
+      "topic": "One key identity across products",
+      "requested_behavior": "Same account creation/public-private key pair also creates the UAIN identity; preserve existing-key reuse and truthful licence state.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/latest-slack-2026-10-31/kenneth-slack-2026-10-31.txt",
+        "line_start": 56,
+        "line_end": 56,
+        "time_or_message_ts": "1793454985.310749",
+        "summary": "Historical source intent: Same account creation/public-private key pair also creates the UAIN identity; preserve existing-key reuse and truthful licence state.",
+        "source_urls": [
+          "Kenneth DM 2026-10-31 13:56 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Native enrolment adapter; retry/idempotency; local custody"
+      ],
+      "acceptance_criterion": "New and existing holders retain one identity across BAINK/UAIN; interrupted registration recovers without a second key and finalized enrolment is independently verified.",
+      "existing_implementation_evidence": {
+        "status": "partial_local_evidence",
+        "references": [
+          "apps/baink/server/IMPLEMENTATION.md:1",
+          "apps/baink/server/IMPLEMENTATION.md:31",
+          "apps/baink/docs/native-authority-audit.md:116"
+        ],
+        "detail": "Local key/profile and authenticated account metadata exist. Native enrolment remains separate and no native registration write was established. No full journey completion claimed."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-063",
+      "topic": "Pay collaborators on Paperclip bounties",
+      "requested_behavior": "Connect manager account spending to outside systems helping solve real Paperclip bounties.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/latest-slack-2026-10-31/kenneth-slack-2026-10-31.txt",
+        "line_start": 17,
+        "line_end": 17,
+        "time_or_message_ts": "1793456632.509309",
+        "summary": "Historical source intent: Connect manager account spending to outside systems helping solve real Paperclip bounties.",
+        "source_urls": [
+          "Kenneth DM 2026-10-31 14:23 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "P1-054 Paperclip task board",
+        "Qualified contribution checks",
+        "Project settlement and account mapping"
+      ],
+      "acceptance_criterion": "One real issue/contribution/check/award has stable provenance across Paperclip/UAIN/BAINK and exactly one independently finalized payment.",
+      "existing_implementation_evidence": {
+        "status": "blocked_live_prerequisites",
+        "references": [
+          "apps/baink/docs/native-authority-audit.md:31",
+          "apps/baink/docs/native-authority-audit.md:91",
+          "apps/baink/server/IMPLEMENTATION.md:31"
+        ],
+        "detail": "Recorded 31 October proofs establish absent coin_activation, coin_supply and private_activation. Native ordinary public transfer is unsupported; application sends fail closed. No spendable allocation or successful payment established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-064",
+      "topic": "Full financial product scope",
+      "requested_behavior": "The requested product covers the full financial workflow, not only an account balance viewer; detailed mockup inventory belongs with the Oct31 source inventory.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/latest-slack-2026-10-31/kenneth-slack-2026-10-31.txt",
+        "line_start": 33,
+        "line_end": 33,
+        "time_or_message_ts": "1793456272.600939;dashboard1793456224.749239",
+        "summary": "Historical source intent: The requested product covers the full financial workflow, not only an account balance viewer; detailed mockup inventory belongs with the Oct31 source inventory.",
+        "source_urls": [
+          "Kenneth DM 2026-10-31 14:17 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Oct31 reference-specific contract; active settlement"
+      ],
+      "acceptance_criterion": "Full dashboard scope is decomposed and tested separately by the Oct31 inventory; read-only prototype is reported as partial.",
+      "existing_implementation_evidence": {
+        "status": "blocked_live_prerequisites",
+        "references": [
+          "apps/baink/docs/native-authority-audit.md:31",
+          "apps/baink/docs/native-authority-audit.md:91",
+          "apps/baink/server/IMPLEMENTATION.md:31"
+        ],
+        "detail": "Recorded 31 October proofs establish absent coin_activation, coin_supply and private_activation. Native ordinary public transfer is unsupported; application sends fail closed. No spendable allocation or successful payment established."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-065",
+      "topic": "BAINKING spelling",
+      "requested_behavior": "Use BAINKING in the requested title; visual placement/typography belongs to Claude.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/latest-slack-2026-10-31/kenneth-slack-2026-10-31.txt",
+        "line_start": 42,
+        "line_end": 42,
+        "time_or_message_ts": "1793455736.669919",
+        "summary": "Historical source intent: Use BAINKING in the requested title; visual placement/typography belongs to Claude.",
+        "source_urls": [
+          "Kenneth DM 2026-10-31 14:08 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P1",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Latest brand/copy reference; Claude handoff"
+      ],
+      "acceptance_criterion": "Rendered approved title uses BAINKING consistently and public wording satisfies repository instructions.",
+      "existing_implementation_evidence": {
+        "status": "design_handoff_required",
+        "references": [
+          "AGENTS.md:102"
+        ],
+        "detail": "Visual design/layout/copy presentation belongs to Claude Code claude-opus-5-5 under repository instructions. Inventory records behavior and source only; no design implemented."
+      },
+      "qualification": ""
+    },
+    {
+      "id": "P1-066",
+      "topic": "Global autonomous financial proposition",
+      "requested_behavior": "Qualify the supplied proposition that members transact autonomously, securely and in seconds; these require real authorization and measured confirmation behavior before a live claim.",
+      "actor_or_explicit_owner": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/latest-slack-2026-10-31/kenneth-slack-2026-10-31.txt",
+        "line_start": 68,
+        "line_end": 68,
+        "time_or_message_ts": "1793453928.868039",
+        "summary": "Historical source intent: Qualify the supplied proposition that members transact autonomously, securely and in seconds; these require real authorization and measured confirmation behavior before a live claim.",
+        "source_urls": [
+          "Kenneth DM 2026-10-31 13:38 UTC (link withheld)"
+        ]
+      },
+      "evidence_type": "explicitdiscussion",
+      "disposition": "required",
+      "priority": {
+        "value": "P0",
+        "basis": "Inventory triage, not an inferred meeting deadline"
+      },
+      "dependencies": [
+        "Identity; native asset/payment activation; measured latency/security; Claude copy"
+      ],
+      "acceptance_criterion": "A real financial end-to-end test proves supported operations and measured confirmation behavior; unavailable operations and pending finality remain explicit.",
+      "existing_implementation_evidence": {
+        "status": "blocked_live_prerequisites",
+        "references": [
+          "apps/baink/docs/native-authority-audit.md:31",
+          "apps/baink/docs/native-authority-audit.md:91",
+          "apps/baink/server/IMPLEMENTATION.md:31"
+        ],
+        "detail": "Recorded 31 October proofs establish absent coin_activation, coin_supply and private_activation. Native ordinary public transfer is unsupported; application sends fail closed. No spendable allocation or successful payment established."
+      },
+      "qualification": ""
+    }
+  ],
+  "entry_counts": {
+    "total": 66,
+    "explicitdiscussion": 52,
+    "excluded_or_unadopted": 14
+  }
+}

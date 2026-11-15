@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-02165",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": true,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held: the project's deliverable, a personal carbon wallet showing a real-time footprint, is a known and deployed answer. Doconomy's Aland Index attaches a footprint estimate to each card purchase and is available to any bank by API; Klarna shows it on every purchase for up to 90 million customers across 16 markets, and Citibank Hong Kong, Commercial Bank of Ceylon and the DO card built with Mastercard use it (https://ffnews.com/newsarticle/klarna-launches-carbon-footprint-insights-for-90-million-consumers); NatWest runs a transaction-based carbon tracker in its app (https://www.natwest.co.uk/banking-with-natwest/natwest-app/features/carbon-footprint-calculator.html); Joro computes a per-transaction footprint from linked accounts and Klima pairs a calculator with offsets (https://techcrunch.com/2022/10/27/personal-carbon-cutting-app-joro-raises-10m-series-a-from-sequoia-jay-zs-arrive); and GitHub lists 418 open carbon-footprint tracker repositories. Honest limit: the 8,000,000,000-person KPI is unmet, and spend-based estimates are coarse: a 2024 Bayreuth study found spend-based factors overestimated emissions by 11 percent through over-broad categories, NatWest concedes it uses average emissions per transaction, and seven online calculators gave one person 1.6 to 24.3 tCO2e a year (https://phys.org/news/2024-02-precise-carbon-footprint-method.html). Those are accuracy and reach problems; the wallet itself is a known answer, so under the 29 September 2026 rule the project is not opened as new work. A reframed project on validated product-level personal footprint accuracy would need its own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "personal carbon footprint app bank transactions Doconomy Aland Index Mastercard Carbon Calculator users 2026",
+      "source": "https://ffnews.com/newsarticle/klarna-launches-carbon-footprint-insights-for-90-million-consumers",
+      "observedAt": "2026-11-06T01:33:00Z",
+      "finding": "The Aland Index (Aland Bank, run by Doconomy) attaches a carbon footprint to each purchase and is offered to any bank via API; Klarna shows it on every purchase for up to 90 million customers in 16 markets; the DO card with Mastercard tracks per-purchase CO2; Citibank Hong Kong (2024) and Commercial Bank of Ceylon use it. No 2026 user count for a Mastercard calculator found."
+    },
+    {
+      "query": "transaction-based carbon footprint accuracy spend-based emission factors criticism personal carbon calculator study",
+      "source": "https://phys.org/news/2024-02-precise-carbon-footprint-method.html",
+      "observedAt": "2026-11-06T01:33:00Z",
+      "finding": "Bayreuth (2024): for about 8,500 products, spend-based estimates overestimated emissions by 11 percent through broad categories; Climatiq warns input-output factors are coarse and lagged; NatWest says its factors are averages per transaction; seven personal calculators gave one person 1.6 to 24.3 tCO2e a year versus about 9.5 from a detailed inventory. No peer-reviewed personal-app validation found."
+    },
+    {
+      "query": "carbon footprint tracker app (GitHub repository search)",
+      "source": "https://api.github.com/search/repositories?q=carbon%20footprint%20tracker%20app&sort=stars&per_page=5",
+      "observedAt": "2026-11-06T01:16:27Z",
+      "finding": "GitHub returns 418 repositories for carbon footprint tracker apps, including a Carbon-Footprint-Estimator-App (44 stars) and carbon-counter; the query for personal carbon footprint from bank transactions returns 0, so open trackers exist but transaction-linked open implementations are scarce."
+    },
+    {
+      "query": "Joro Klima carbon footprint app users personal carbon tracking real-time open source calculator 2025 2026",
+      "source": "https://techcrunch.com/2022/10/27/personal-carbon-cutting-app-joro-raises-10m-series-a-from-sequoia-jay-zs-arrive",
+      "observedAt": "2026-11-06T01:33:00Z",
+      "finding": "Joro links cards via Plaid and uses transaction categories and amounts plus lifestyle data in its proprietary Carbonizer model to estimate a footprint per transaction and monthly; it raised a US$10M Series A in 2022. Klima offers a 48-question calculator with offset subscriptions. Neither is open source; no current user counts found."
+    }
+  ]
+}

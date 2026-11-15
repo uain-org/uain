@@ -1,0 +1,45 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-03121",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "neutral",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No humanoid robot does any household chore autonomously, so the Main KPI of 1,000,000,000 home humanoid robots is unmet. The leading consumer home humanoid, 1X NEO, opened $20,000 preorders in October 2025 for 2026 delivery, deliveries were not confirmed by August 2026, and most demonstrated tasks were teleoperated by a remote human in VR (https://en.wikipedia.org/wiki/1X_Technologies). Open foundation models exist and are the state of the art: NVIDIA GR00T N1 for humanoids (https://doi.org/10.48550/arxiv.2503.14734), OpenVLA (https://doi.org/10.48550/arxiv.2406.09246) and pi-0.5, which reports partial open-world generalisation to cleaning tasks in unseen homes (https://doi.org/10.48550/arxiv.2504.16054); benchmarks such as RoboCasa365 (https://doi.org/10.48550/arxiv.2603.04356) measure task suites, not any chore. Open GitHub humanoid household projects are small simulations (HANDY, 8 stars). Class neutral, as for the comparable home-robot project OPP-07921: benefit to households and carers, but labour displacement and in-home privacy risk from teleoperation. Honest limit: running or fine-tuning the open VLA models on household benchmarks is a known baseline; new work is reliable long-horizon autonomy across arbitrary chores without teleoperation, with verified safety around people."
+  },
+  "additionalSearches": [
+    {
+      "query": "humanoid robot household tasks benchmark generalist policy home (2024 onward)",
+      "source": "https://api.openalex.org/works?search=humanoid%20robot%20household%20tasks%20benchmark%20generalist%20policy%20home&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:16:58Z",
+      "finding": "376 works: GR00T N1 open humanoid foundation model (2025, 122 citations), RoboCasa and RoboCasa365 simulation benchmarks, AutoEval real-world evaluation. Benchmarks cover task suites; none shows autonomous completion of any household chore."
+    },
+    {
+      "query": "humanoid robot policy household open-source (GitHub repositories)",
+      "source": "https://api.github.com/search/repositories?q=humanoid%20robot%20policy%20household%20open-source&sort=stars&per_page=8",
+      "observedAt": "2026-11-06T01:16:59Z",
+      "finding": "0 repositories. Null result for an open household humanoid policy."
+    },
+    {
+      "query": "vision-language-action model open weights mobile manipulation homes evaluation (2024 onward)",
+      "source": "https://api.openalex.org/works?search=vision-language-action%20model%20open%20weights%20mobile%20manipulation%20homes%20evaluation&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:17:03Z",
+      "finding": "3,893 works led by OpenVLA (341 citations), pi-0.5 open-world generalisation, VLA surveys. Generalisation to unseen homes is partial and task-limited."
+    },
+    {
+      "query": "humanoid household tasks (GitHub repositories)",
+      "source": "https://api.github.com/search/repositories?q=humanoid%20household%20tasks&sort=stars&per_page=8",
+      "observedAt": "2026-11-06T01:24:32Z",
+      "finding": "5 repositories: HANDY humanoid assistant (8 stars), simulated GR1 household tasks, LLM-driven 2D household agent. Simulations and prototypes only."
+    },
+    {
+      "query": "1X NEO home humanoid status",
+      "source": "https://en.wikipedia.org/wiki/1X_Technologies",
+      "observedAt": "2026-11-06T01:22:03Z",
+      "finding": "NEO preorders opened 28 October 2025 at $20,000 or $499 per month for 2026 release; not confirmed delivered by August 2026; most tasks teleoperated by a human in VR; early adopters' data needed for autonomy."
+    }
+  ]
+}

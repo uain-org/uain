@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T095758Z-aa71085849",
+  "version": "0.3.78",
+  "source_commit": "039a59cb1f9bd5ed3bad6303077605ddd8e3256f",
+  "deployed_at": "2026-11-10T09:58:40Z",
+  "prior": "20261110T095429Z-c14fd1f232",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0377-0378-release-20261110"
+  ],
+  "note": "PR #485: /go/ reads the served llms.txt. Live: /go/rd-localllama intro and --via, /go/typo equals llms.txt, /admin login in Chrome, Numbers and Posts, drafts token created a Draft, bad token 401, main routes 200."
+}

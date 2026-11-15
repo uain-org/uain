@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00005",
+  "native_project": "P-OPP-00005",
+  "source_digest": "099e188b09f3232a1dad5b8e5494fc774150bfa5333671ee6d1479642af6da72",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Refill stem cell reserves in aging tissues",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "25074dde1534788b09e20f840cca510bbb8eb8d3a635d6826b2391efb10ed447"
+  },
+  "drafted_at": "2026-11-06T00:06:45.219Z",
+  "queries": [
+    "refill stem cell reserves aging tissues",
+    "refill stem cell human health longevity"
+  ],
+  "searches": [
+    {
+      "query": "refill stem cell reserves aging tissues",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:06:35.766Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=refill%20stem%20cell%20reserves%20aging%20tissues&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "refill stem cell reserves aging tissues",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:06:37.976Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Arefill%20AND%20all%3Astem%20AND%20all%3Acell%20AND%20all%3Areserves%20AND%20all%3Aaging%20AND%20all%3Atissues&start=0&max_results=10; sha256=693112fdb8cb1b7d297c2851b61eea238c47fd84e895725e4d7eebd77016d586; total=0; shown=0/0"
+    },
+    {
+      "query": "refill stem cell reserves aging tissues",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:06:39.920Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=refill%20stem%20cell%20reserves%20aging%20tissues&rows=10&select=DOI,title; sha256=a13f2bbafdc596fa7a094fa5be3a33baf2b76b57c91d86f8836c3b536592b724; total=3990874; shown=5/10; top: 10.1615/tfec2021.bbe.032415 \"Novel Freezing Strategies to Retain the Stem Cell Reserves of Adipose Tissues\" | 10.1016/j.cryobiol.2020.07.005 \"Non-toxic freezing media to retain the stem cell reserves in adipose tissues\" | 10.1007/978-1-4419-1075-2_9 \"Telomere Dysfunction and Senescence in Stem Cell and Tissues Aging\" | 10.18632/aging.205400 \"Systemic changes induced by autologous stem cell ovarian transplant in plasma proteome of women with impaired ovarian reserves\" | 10.1007/978-3-7091-1232-8_1 \"Stem Cell Aging: An Overview\""
+    },
+    {
+      "query": "refill stem cell human health longevity",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:06:42.242Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=refill%20stem%20cell%20human%20health%20longevity&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "refill stem cell human health longevity",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:06:43.157Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Arefill%20AND%20all%3Astem%20AND%20all%3Acell%20AND%20all%3Ahuman%20AND%20all%3Ahealth%20AND%20all%3Alongevity&start=0&max_results=10; sha256=13a4250a7923b8a5c99f4ab4b5573c8ec07f9d2e1714bf494ce7de5b8e93421d; total=0; shown=0/0"
+    },
+    {
+      "query": "refill stem cell human health longevity",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:06:45.218Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=refill%20stem%20cell%20human%20health%20longevity&rows=10&select=DOI,title; sha256=58d69b8970a3279d0c20d75198613977f0405cf0f7d49a9e14472786440709f7; total=11158087; shown=5/10; top: 10.1016/j.stemcr.2025.102506 \"Cell competition eliminates aneuploid human pluripotent stem cells\" | 10.1038/s41467-022-28347-z \"Enhanced germline stem cell longevity in Drosophila diapause\" | 10.1016/j.stem.2023.09.006 \"Human embryo models made from pluripotent stem cells are not synthetic they aren’t embryos, either\" | 10.54499/2024.03713.bdana \"untitled\" | 10.1007/978-3-7091-1232-8_16 \"Closing the Circle: Stem Cell Rejuvenation and Longevity\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "refill stem cell reserves aging tissues",
+      "url": "https://api.github.com/search/repositories?q=refill%20stem%20cell%20reserves%20aging%20tissues&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=refill%20stem%20cell%20reserves%20aging%20tissues&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:06:35.766Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "refill stem cell reserves aging tissues",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Arefill%20AND%20all%3Astem%20AND%20all%3Acell%20AND%20all%3Areserves%20AND%20all%3Aaging%20AND%20all%3Atissues&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Arefill%20AND%20all%3Astem%20AND%20all%3Acell%20AND%20all%3Areserves%20AND%20all%3Aaging%20AND%20all%3Atissues&start=0&max_results=10",
+      "sha256": "693112fdb8cb1b7d297c2851b61eea238c47fd84e895725e4d7eebd77016d586",
+      "bytes": 848,
+      "observedAt": "2026-11-06T00:06:37.976Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "refill stem cell reserves aging tissues",
+      "url": "https://api.crossref.org/works?query=refill%20stem%20cell%20reserves%20aging%20tissues&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=refill%20stem%20cell%20reserves%20aging%20tissues&rows=10&select=DOI,title",
+      "sha256": "a13f2bbafdc596fa7a094fa5be3a33baf2b76b57c91d86f8836c3b536592b724",
+      "bytes": 1261,
+      "observedAt": "2026-11-06T00:06:39.920Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "refill stem cell human health longevity",
+      "url": "https://api.github.com/search/repositories?q=refill%20stem%20cell%20human%20health%20longevity&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=refill%20stem%20cell%20human%20health%20longevity&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:06:42.242Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "refill stem cell human health longevity",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Arefill%20AND%20all%3Astem%20AND%20all%3Acell%20AND%20all%3Ahuman%20AND%20all%3Ahealth%20AND%20all%3Alongevity&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Arefill%20AND%20all%3Astem%20AND%20all%3Acell%20AND%20all%3Ahuman%20AND%20all%3Ahealth%20AND%20all%3Alongevity&start=0&max_results=10",
+      "sha256": "13a4250a7923b8a5c99f4ab4b5573c8ec07f9d2e1714bf494ce7de5b8e93421d",
+      "bytes": 848,
+      "observedAt": "2026-11-06T00:06:43.157Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "refill stem cell human health longevity",
+      "url": "https://api.crossref.org/works?query=refill%20stem%20cell%20human%20health%20longevity&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=refill%20stem%20cell%20human%20health%20longevity&rows=10&select=DOI,title",
+      "sha256": "58d69b8970a3279d0c20d75198613977f0405cf0f7d49a9e14472786440709f7",
+      "bytes": 1411,
+      "observedAt": "2026-11-06T00:06:45.218Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "d1813d63fdb07c0877c9bfe99239e44f81f495c6748cf75edcfcf164e3fd32e8",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

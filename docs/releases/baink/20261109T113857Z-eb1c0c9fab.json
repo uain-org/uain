@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T113857Z-eb1c0c9fab",
+  "version": "0.3.48",
+  "source_commit": "30292ce873a9d10cc1c4da937ed7f3a3183a20ba",
+  "deployed_at": "2026-11-09T11:39:13Z",
+  "prior": "20261109T103659Z-3af65cb3dc",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0348-release-20261109",
+    "CHANGELOG.md#review-reliability-20261109"
+  ],
+  "note": "PR #302/#320: typed public-review errors, gateway retry and reconciliation, needs-evidence journey API (native window inactive until activation), agent kit revise/reassess. release:promote passed; header shows it; served kit byte-identical to main with the new tools; submission and review routes answer 401 unsigned."
+}

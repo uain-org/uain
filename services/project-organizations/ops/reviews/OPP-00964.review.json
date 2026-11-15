@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00964",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:51:30Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable solution gives 8,000,000,000 people a free health check every year; the WHO-World Bank UHC Global Monitoring Report 2025 finds 4.6 billion people still lack essential health services (https://www.news-medical.net/news/20251206/Billions-still-lack-essential-health-services-despite-worldwide-gains-in-coverage.aspx). The largest national free check programmes are partial: Indonesia's Cek Kesehatan Gratis (launched February 2025) reached about a quarter of its population in its first year (https://en.antaranews.com/news/403778/free-health-check-program-covers-25-pct-population-in-its-first-year), Vietnam about 30% by July 2026 (https://dtinews.dantri.com.vn/print/20260724161740947.htm), China's free check covers only residents aged 65 and over, and England's NHS Health Check (ages 40-74) had 35% uptake of invitations in 2025/26 (https://www.covermagazine.co.uk/news/4532410/uptake-nhs-health-checks-hits-lowest-level-decade). Honest limit: national free-check models are proven and published; the unsolved part is low-cost, high-uptake delivery at global scale, and a task that only restates a national programme design is not new work."
+  },
+  "additionalSearches": [
+    {
+      "query": "free annual health check entire population national programme coverage rate",
+      "source": "https://en.antaranews.com/news/403778/free-health-check-program-covers-25-pct-population-in-its-first-year",
+      "observedAt": "2026-11-06T00:46:00Z",
+      "finding": "Whole-population free checks exist only nationally: Indonesia covered about 25% of residents in year one; Vietnam reports about 30.1 million people (29.6%) by July 2026."
+    },
+    {
+      "query": "WHO universal health coverage service coverage index 2025 billions lack essential health services",
+      "source": "https://www.news-medical.net/news/20251206/Billions-still-lack-essential-health-services-despite-worldwide-gains-in-coverage.aspx",
+      "observedAt": "2026-11-06T00:46:10Z",
+      "finding": "UHC Global Monitoring Report 2025: 4.6 billion people lack essential services; service coverage index 71 of 100 in 2023, projected 74 by 2030. The global KPI is far from met."
+    },
+    {
+      "query": "NHS Health Check uptake percentage eligible invited 40-74",
+      "source": "https://www.covermagazine.co.uk/news/4532410/uptake-nhs-health-checks-hits-lowest-level-decade",
+      "observedAt": "2026-11-06T00:46:20Z",
+      "finding": "England's NHS Health Check (ages 40-74, five-yearly): 3.8 million invited in 2025/26, 35% took it up, the lowest in over a decade. Even a rich-country programme misses annual universal coverage."
+    },
+    {
+      "query": "China free annual physical examination elderly 65 national basic public health service number examined",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9389946",
+      "observedAt": "2026-11-06T00:46:30Z",
+      "finding": "China's national basic public health service offers a free yearly check only to residents aged 65 and over; age-limited and one country."
+    }
+  ]
+}

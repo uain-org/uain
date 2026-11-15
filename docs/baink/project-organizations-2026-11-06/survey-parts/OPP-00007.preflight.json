@@ -1,0 +1,67 @@
+{
+ "schema": "uain-survey-preflight-v1",
+ "projectId": "OPP-00007",
+ "checkedAt": "2026-11-09T08:00:04Z",
+ "records": [
+  {
+   "kind": "doi",
+   "id": "10.1016/j.ymthe.2026.02.045",
+   "status": "resolved",
+   "title": "An adipokine splitting mitochondria is necessary for muscle repair"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1007/978-1-59745-147-5_13",
+   "status": "resolved",
+   "title": "Hematopoietic Cell Therapy for Brain Repair"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1021/acsami.5c03525.s001",
+   "status": "resolved",
+   "title": "Nanoarchitectonics with Zinc-Doped Carbon Dots for Mitochondria-Targeted Repair and Regeneration Signaling Amplification in CLI Therapy"
+  },
+  {
+   "kind": "doi",
+   "id": "10.7124/bc.000927",
+   "status": "resolved",
+   "title": "Mechanisms of DNA repair in mitochondria"
+  },
+  {
+   "kind": "doi",
+   "id": "10.7551/mitpress/10837.003.0006",
+   "status": "resolved",
+   "title": "The Cell Therapy Approach"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1016/s1937-644818x0007-0",
+   "status": "not_found",
+   "title": null
+  },
+  {
+   "kind": "doi",
+   "id": "10.1016/s1937-64481830076-5",
+   "status": "not_found",
+   "title": null
+  },
+  {
+   "kind": "doi",
+   "id": "10.1016/s1937-64481830074-1",
+   "status": "not_found",
+   "title": null
+  },
+  {
+   "kind": "doi",
+   "id": "10.1016/s1937-64481830078-9",
+   "status": "not_found",
+   "title": null
+  },
+  {
+   "kind": "doi",
+   "id": "10.1016/s1937-64481830075-3",
+   "status": "not_found",
+   "title": null
+  }
+ ]
+}

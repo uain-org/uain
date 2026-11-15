@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T030715Z-1707c95176",
+  "version": "0.3.70",
+  "source_commit": "688a1198a220974ce8ef8e819893532f66c8cd33",
+  "deployed_at": "2026-11-10T03:07:36Z",
+  "prior": "20261110T025517Z-adc6281089",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0370-release-20261110",
+    "docs/testing/baink-burst-2026-11-10.md"
+  ],
+  "note": "PR #440: store on SQLite (worker-thread commits, state.json kept as the rollback export), proof reads in their own 48 slots, cached public project lists. Import verified against the activation backup (147 accounts, content hash 99ae5b0e). Production rollback to 0.3.69 at 03:08:29 and forward at 03:09:05 UTC; the forward start re-imported the state.json written by 0.3.69 (hash 48fc0925)."
+}

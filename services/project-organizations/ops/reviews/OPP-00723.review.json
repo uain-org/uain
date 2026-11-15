@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00723",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T03:52:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": true,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held as a known answer. Smart glasses and phone cameras that describe the world aloud for blind people are shipping, free or commercial, and in documented daily use. Be My Eyes offers free unlimited assistance in over 150 countries, claims about 1.13 million blind and low-vision users and 11.5 million volunteers, and includes its Be My AI product (https://www.bemyeyes.com/). A 2025 Translational Vision Science and Technology cross-over study of 25 people with vision loss found OrCam, Envision Glasses, Seeing AI and Google Lookout all significantly improved the odds of completing text tasks, with Seeing AI and Envision best at search and identification and high usability scores; a 2026 pilot ran OrCam MyEye 2 safely with ten children. Adoption is measured: a 2026 JVIB survey of 254 workers with visual impairments found wearable use at 10.2 percent, nearly all smart glasses, used frequently and rated important, with Ray-Ban Meta glasses running scene recognition used as the research comparator. Honest limits: the KPI of 43,000,000 users is far from met (Be My Eyes reports about 1.1 million), dedicated devices cost 3,500 to 6,000 US dollars, no open-source alternative was found, and research prototypes still chase cost and latency; but the capability exists and is discoverable, so a reframed project on affordability, offline operation or non-English coverage would need its own prior-art basis rather than this one."
+  },
+  "additionalSearches": [
+    {
+      "query": "deployed AI description services for blind users",
+      "source": "https://www.bemyeyes.com/",
+      "observedAt": "2026-11-06T03:44:00Z",
+      "finding": "Be My Eyes provides free unlimited live and AI visual assistance in over 150 countries, claims about 1,129,962 blind and low-vision users and 11.5 million volunteers, and lists its Be My AI product. A free, deployed answer to describing the world aloud already reaches over a million users."
+    },
+    {
+      "query": "evaluations of commercial assistive AI devices",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%22OrCam%22%20OR%20%22Envision%20Glasses%22%20OR%20%22Be%20My%20AI%22%29%20AND%20%28blind%20OR%20%22visual%20impairment%22%29&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T03:46:00Z",
+      "finding": "Seiple et al. (Transl Vis Sci Technol 2025): a cross-over study of 25 people with vision impairment found OrCam, Envision Glasses, Seeing AI and Google Lookout all significantly improved odds of completing text tasks, with Seeing AI and Envision better at search and identification and high System Usability Scale satisfaction. A 2026 Orphanet pilot used OrCam MyEye 2 safely and feasibly with ten children. Prototype papers cite device prices of 3,500 and 6,000 US dollars."
+    },
+    {
+      "query": "assistive smart glasses deployment evidence",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22smart%20glasses%22%20AND%20%28blind%20OR%20%22low%20vision%22%29%20AND%20%28%22scene%20description%22%20OR%20%22image%20captioning%22%20OR%20assistive%29&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T03:48:00Z",
+      "finding": "A 2026 JVIB survey of 254 workers with visual impairments in the US and Canada found wearable use rose to 10.2 percent, nearly all smart glasses, used frequently and considered important. A 2026 Displays study used Ray-Ban Meta glasses with Meta AI scene recognition as the commercial comparator for its research prototype. Deployment is real but no study reports large-scale assistive scene-description programmes."
+    },
+    {
+      "query": "open-source scene-description glasses",
+      "source": "https://api.github.com/search/repositories?q=blind+assistive+scene+description+glasses&per_page=10&sort=stars",
+      "observedAt": "2026-11-06T03:50:00Z",
+      "finding": "Zero repositories under these terms: the hold rests on deployed free and commercial products rather than on open-source code, and low-cost open designs remain a research-paper exercise."
+    }
+  ]
+}

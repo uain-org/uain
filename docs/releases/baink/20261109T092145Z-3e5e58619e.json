@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T092145Z-3e5e58619e",
+  "version": "0.3.45",
+  "source_commit": "1aee510c89e0049bf1fb19da7fb7046bca57745e",
+  "deployed_at": "2026-11-09T09:24:33Z",
+  "prior": "20261109T090021Z-3220a40bdf",
+  "status": "publicly-verified",
+  "evidence": [
+    "apps/baink/docs/holder-sync-status.md",
+    "https://baink.money/",
+    "https://aidollar.money/baink/"
+  ],
+  "note": "Combined PR293/295/296 UI; 149 runtime and 28 preview hashes plus 56 HTTPS files verified. Environment/business state preserved. Holder11 is published separately; installed wallet sync and private payment remain separate acceptance."
+}

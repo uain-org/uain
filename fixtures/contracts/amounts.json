@@ -1,0 +1,148 @@
+{
+ "schema": "uain-contract-fixture-v1",
+ "contract": "integer-amounts",
+ "description": "Integer micro-AI$ units are canonical decimal strings, never floats. 1 AI$ = 1,000,000 units. A central task amount is positive and at most the 1,000,000,000 AI$ lifetime ceiling (1e15 units), and solver plus reviewer must not exceed it. Coin ledger units are bounded by the 108-trillion-Coin supply cap.",
+ "sources": [
+  "apps/baink/server/central-earning-command.mjs",
+  "services/project-organizations/src/common.mjs units",
+  "ops/custody/project_organizations.py units",
+  "chain/federation/central_earning.go",
+  "chain/coin/ledger.go"
+ ],
+ "constants": {
+  "units_per_aid": "1000000",
+  "lifetime_ceiling_units": "1000000000000000",
+  "project_allocation_units": "10000000000",
+  "coin_supply_cap_units": "108000000000000000000"
+ },
+ "task_amounts": [
+  {
+   "value": "1",
+   "positive": true,
+   "nonnegative": true
+  },
+  {
+   "value": "999999999999999",
+   "positive": true,
+   "nonnegative": true
+  },
+  {
+   "value": "1000000000000000",
+   "positive": true,
+   "nonnegative": true
+  },
+  {
+   "value": "1000000000000001",
+   "positive": false,
+   "nonnegative": false
+  },
+  {
+   "value": "9999999999999999",
+   "positive": false,
+   "nonnegative": false
+  },
+  {
+   "value": "10000000000000000",
+   "positive": false,
+   "nonnegative": false
+  },
+  {
+   "value": "0",
+   "positive": false,
+   "nonnegative": true
+  },
+  {
+   "value": "01",
+   "positive": false,
+   "nonnegative": false
+  },
+  {
+   "value": "-1",
+   "positive": false,
+   "nonnegative": false
+  },
+  {
+   "value": "+1",
+   "positive": false,
+   "nonnegative": false
+  },
+  {
+   "value": "1.0",
+   "positive": false,
+   "nonnegative": false
+  },
+  {
+   "value": "1e3",
+   "positive": false,
+   "nonnegative": false
+  },
+  {
+   "value": " 1",
+   "positive": false,
+   "nonnegative": false
+  },
+  {
+   "value": "",
+   "positive": false,
+   "nonnegative": false
+  },
+  {
+   "value": 1,
+   "positive": false,
+   "nonnegative": false
+  }
+ ],
+ "task_amount_pairs": [
+  {
+   "solver_amount": "999999999999999",
+   "reviewer_amount": "1",
+   "valid": true
+  },
+  {
+   "solver_amount": "1000000000000000",
+   "reviewer_amount": "1",
+   "valid": false
+  },
+  {
+   "solver_amount": "500000000000000",
+   "reviewer_amount": "500000000000001",
+   "valid": false
+  },
+  {
+   "solver_amount": "500000000000000",
+   "reviewer_amount": "500000000000000",
+   "valid": true
+  },
+  {
+   "solver_amount": "1",
+   "reviewer_amount": "0",
+   "valid": false
+  }
+ ],
+ "coin_units": [
+  {
+   "value": "1",
+   "positive": true
+  },
+  {
+   "value": "108000000000000000000",
+   "positive": true
+  },
+  {
+   "value": "108000000000000000001",
+   "positive": false
+  },
+  {
+   "value": "0",
+   "positive": false
+  },
+  {
+   "value": "01",
+   "positive": false
+  },
+  {
+   "value": "1000000000000000000000",
+   "positive": false
+  }
+ ]
+}

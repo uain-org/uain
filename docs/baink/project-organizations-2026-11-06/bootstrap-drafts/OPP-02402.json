@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-02402",
+  "native_project": "P-OPP-02402",
+  "source_digest": "9c6f0337ff9414a85b65c4f3415db7f2796c657452bca9967abfcb91bd6f625b",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Resurrect the woolly mammoth as a breeding herd",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "e5ee2d04afec6b4c8ff762f7d2f10800b06e8ef8c92aa9911668418d5620f5e8"
+  },
+  "drafted_at": "2026-11-06T00:22:35.943Z",
+  "queries": [
+    "resurrect woolly mammoth breeding herd",
+    "resurrect woolly mammoth biodiversity ecosystems species"
+  ],
+  "searches": [
+    {
+      "query": "resurrect woolly mammoth breeding herd",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:22:26.996Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=resurrect%20woolly%20mammoth%20breeding%20herd&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "resurrect woolly mammoth breeding herd",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:22:27.501Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aresurrect%20AND%20all%3Awoolly%20AND%20all%3Amammoth%20AND%20all%3Abreeding%20AND%20all%3Aherd&start=0&max_results=10; sha256=5b1f1798ede2cf7288ea10e911e0d839d096d977af7e855d983b2deb19801e9c; total=0; shown=0/0"
+    },
+    {
+      "query": "resurrect woolly mammoth breeding herd",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:22:28.383Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=resurrect%20woolly%20mammoth%20breeding%20herd&rows=10&select=DOI,title; sha256=e2602ddd9830a8eea7bce8e2e5b66d828e5b5b74e9e49c55208f83d98b42bdef; total=164625; shown=5/10; top: 10.64628/ab.ysvhdh7wt \"Should AI be allowed to resurrect the dead?\" | 10.7554/elife.11994.005 \"Figure 2—figure supplement 1. Reconciled TP53/TP53RTG gene trees.\" | 10.64628/aa.aayfr454p \"Why we need to protect the extinct woolly mammoth\" | 10.1007/978-3-319-55065-7_1420 \"Woolly Mammoth\" | 10.1007/978-3-319-47829-6_1420-1 \"Woolly Mammoth\""
+    },
+    {
+      "query": "resurrect woolly mammoth biodiversity ecosystems species",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:22:33.497Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=resurrect%20woolly%20mammoth%20biodiversity%20ecosystems%20species&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "resurrect woolly mammoth biodiversity ecosystems species",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:22:34.714Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aresurrect%20AND%20all%3Awoolly%20AND%20all%3Amammoth%20AND%20all%3Abiodiversity%20AND%20all%3Aecosystems%20AND%20all%3Aspecies&start=0&max_results=10; sha256=461d9fceab4d32d393c9f407a9ceb962f8ed555a9e2f2e69b2a9bd8478726332; total=0; shown=0/0"
+    },
+    {
+      "query": "resurrect woolly mammoth biodiversity ecosystems species",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:22:35.942Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=resurrect%20woolly%20mammoth%20biodiversity%20ecosystems%20species&rows=10&select=DOI,title; sha256=cdf8be7d8aac9827342438a36c4bb4ba50be74f7194ada374126380510ff3453; total=1370993; shown=5/10; top: 10.1186/s13059-015-0800-4 \"Mammoth 2.0: will genome engineering resurrect extinct species?\" | 10.7554/elife.11994.005 \"Figure 2—figure supplement 1. Reconciled TP53/TP53RTG gene trees.\" | 10.5040/9781350376069.ch-001 \"Resurrecting the Woolly Mammoth and Muybridge’s Horse\" | 10.64628/aa.aayfr454p \"Why we need to protect the extinct woolly mammoth\" | 10.1007/978-3-319-55065-7_1420 \"Woolly Mammoth\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "resurrect woolly mammoth breeding herd",
+      "url": "https://api.github.com/search/repositories?q=resurrect%20woolly%20mammoth%20breeding%20herd&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=resurrect%20woolly%20mammoth%20breeding%20herd&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:22:26.996Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "resurrect woolly mammoth breeding herd",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aresurrect%20AND%20all%3Awoolly%20AND%20all%3Amammoth%20AND%20all%3Abreeding%20AND%20all%3Aherd&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aresurrect%20AND%20all%3Awoolly%20AND%20all%3Amammoth%20AND%20all%3Abreeding%20AND%20all%3Aherd&start=0&max_results=10",
+      "sha256": "5b1f1798ede2cf7288ea10e911e0d839d096d977af7e855d983b2deb19801e9c",
+      "bytes": 828,
+      "observedAt": "2026-11-06T00:22:27.501Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "resurrect woolly mammoth breeding herd",
+      "url": "https://api.crossref.org/works?query=resurrect%20woolly%20mammoth%20breeding%20herd&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=resurrect%20woolly%20mammoth%20breeding%20herd&rows=10&select=DOI,title",
+      "sha256": "e2602ddd9830a8eea7bce8e2e5b66d828e5b5b74e9e49c55208f83d98b42bdef",
+      "bytes": 1254,
+      "observedAt": "2026-11-06T00:22:28.383Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "resurrect woolly mammoth biodiversity ecosystems species",
+      "url": "https://api.github.com/search/repositories?q=resurrect%20woolly%20mammoth%20biodiversity%20ecosystems%20species&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=resurrect%20woolly%20mammoth%20biodiversity%20ecosystems%20species&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:22:33.497Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "resurrect woolly mammoth biodiversity ecosystems species",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aresurrect%20AND%20all%3Awoolly%20AND%20all%3Amammoth%20AND%20all%3Abiodiversity%20AND%20all%3Aecosystems%20AND%20all%3Aspecies&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aresurrect%20AND%20all%3Awoolly%20AND%20all%3Amammoth%20AND%20all%3Abiodiversity%20AND%20all%3Aecosystems%20AND%20all%3Aspecies&start=0&max_results=10",
+      "sha256": "461d9fceab4d32d393c9f407a9ceb962f8ed555a9e2f2e69b2a9bd8478726332",
+      "bytes": 882,
+      "observedAt": "2026-11-06T00:22:34.714Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "resurrect woolly mammoth biodiversity ecosystems species",
+      "url": "https://api.crossref.org/works?query=resurrect%20woolly%20mammoth%20biodiversity%20ecosystems%20species&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=resurrect%20woolly%20mammoth%20biodiversity%20ecosystems%20species&rows=10&select=DOI,title",
+      "sha256": "cdf8be7d8aac9827342438a36c4bb4ba50be74f7194ada374126380510ff3453",
+      "bytes": 1338,
+      "observedAt": "2026-11-06T00:22:35.942Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "03683e449b902e5cb855e87c245e78833fe6ea94d1058ddaa26b1395de0aee91",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

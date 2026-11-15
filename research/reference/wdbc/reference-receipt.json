@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "technical_reference_only": true,
+  "independent_review": false,
+  "source": {
+    "title": "Breast Cancer Wisconsin (Diagnostic)",
+    "creators": [
+      "William H. Wolberg",
+      "Olvi L. Mangasarian",
+      "W. Nick Street"
+    ],
+    "doi": "10.24432/C5DW2B",
+    "url": "https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "retrieved": "2026-09-29",
+    "modified_data": false
+  },
+  "methods": [
+    {
+      "path": "services/pilot/src/evidence/wdbc-reference.ts",
+      "sha256": "383b0501f5689bc289744ed1badb0468b007447d8e9281c59f1b78c2b84b28d8"
+    },
+    {
+      "path": "services/pilot/dist/src/evidence/wdbc-reference.js",
+      "sha256": "e22a063f0a369bf0e46bbbd5778576165fbcbe6d164d096bd1269ec5831de7ee"
+    },
+    {
+      "path": "services/pilot/scripts/reproduce-wdbc.mjs",
+      "sha256": "efb3fc47fd1a674f72024afd3a6dccc3536d6bf23fb7aeeaae98d001dcd9c3ff"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "uci-wdbc-data",
+      "manifest": {
+        "version": 1,
+        "uri": "https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data",
+        "sha256": "d606af411f3e5be8a317a5a8b652b425aaf0ff38ca683d5327ffff94c3695f4a",
+        "bytes": 124103,
+        "media_type": "text/csv",
+        "license": "CC-BY-4.0",
+        "role": "dataset"
+      }
+    }
+  ],
+  "reproduction": {
+    "version": 1,
+    "inputs": [
+      "uci-wdbc-data"
+    ],
+    "command": "node services/pilot/scripts/reproduce-wdbc.mjs",
+    "environment": "Node.js 22.13.0; TypeScript 5.9.3 compilation; built-in fs/crypto; no network",
+    "outputs": [
+      {
+        "metric": "rows",
+        "expected": 569,
+        "absolute_tolerance": 0
+      },
+      {
+        "metric": "features",
+        "expected": 30,
+        "absolute_tolerance": 0
+      },
+      {
+        "metric": "malignant",
+        "expected": 212,
+        "absolute_tolerance": 0
+      },
+      {
+        "metric": "benign",
+        "expected": 357,
+        "absolute_tolerance": 0
+      }
+    ]
+  },
+  "receipt": {
+    "version": 1,
+    "manifest_digest": "85073a0f356df18ff1ecf4b5687f708c7164f5a35f8c02c88b524c6bed8d4e83",
+    "outcome": "reproduced",
+    "command": "node services/pilot/scripts/reproduce-wdbc.mjs",
+    "environment": "Node.js 22.13.0; TypeScript 5.9.3 compilation; built-in fs/crypto; no network",
+    "detail": "Verified pinned bytes, unique row identifiers, 30 finite numeric cells per row, and recorded class counts. No prediction model or clinical finding.",
+    "inputs": [
+      {
+        "label": "uci-wdbc-data",
+        "status": "matched",
+        "observed_sha256": "d606af411f3e5be8a317a5a8b652b425aaf0ff38ca683d5327ffff94c3695f4a",
+        "observed_bytes": 124103
+      }
+    ],
+    "outputs": [
+      {
+        "metric": "rows",
+        "observed": 569
+      },
+      {
+        "metric": "features",
+        "observed": 30
+      },
+      {
+        "metric": "malignant",
+        "observed": 212
+      },
+      {
+        "metric": "benign",
+        "observed": 357
+      }
+    ]
+  }
+}

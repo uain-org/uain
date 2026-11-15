@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "central-reviewer",
+  "release_id": "cc2573bd5b8d41f5271fa7ba14568f29961e1cde97df915f9f9527a0aa0372bb",
+  "version": null,
+  "source_commit": "d6d4ad32ec69ada62919c47df703d2c8d634baad",
+  "deployed_at": "2026-11-10T13:35:50Z",
+  "prior": "9058ed17e353b6bcee823e0b211ebdc21c333f87117118e0476f9026a19b5f48",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#review-fairness-release-20261110",
+    "CHANGELOG.md#review-fairness-reasons-20261110"
+  ],
+  "note": "Worker-only overlay of 9058ed17 with 8 files from #510. 104/104 tests on staged bytes (pinned Node 22.22.0); store rehearsal on a clone of live jobs.json: 0 provider and custody calls, prior worker reopens it. Custody 361dd3cd untouched. After: active, 0 restarts, six awaiting-evidence jobs intact. Rollback: release:rollback --part worker."
+}

@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-03841",
+  "native_project": "P-OPP-03841",
+  "source_digest": "80af39759638d342045389f565a60c36890654b160d9923c048d444763834031",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Guarantee a daily income floor above the extreme poverty line to every person",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "e205cb1695a9220446306ed68eb8ba2e1af3adb6a105b8b7a42df11b46d804b2"
+  },
+  "drafted_at": "2026-11-06T00:24:19.060Z",
+  "queries": [
+    "guarantee daily income floor extreme poverty",
+    "guarantee daily income economy wealth basic"
+  ],
+  "searches": [
+    {
+      "query": "guarantee daily income floor extreme poverty",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:24:11.070Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=guarantee%20daily%20income%20floor%20extreme%20poverty&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "guarantee daily income floor extreme poverty",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:24:11.584Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aguarantee%20AND%20all%3Adaily%20AND%20all%3Aincome%20AND%20all%3Afloor%20AND%20all%3Aextreme%20AND%20all%3Apoverty&start=0&max_results=10; sha256=329698974c0f685ec018312b183a474bd018cd5391bafd5dfee85193af400deb; total=0; shown=0/0"
+    },
+    {
+      "query": "guarantee daily income floor extreme poverty",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:24:12.510Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=guarantee%20daily%20income%20floor%20extreme%20poverty&rows=10&select=DOI,title; sha256=0f6ae9d3b41a2a5b009ab84e3538ac270e313d6526e8d6ac7533a9191d211cbd; total=679746; shown=5/10; top: 10.1057/9781137031594.0008 \"Why Did We Lose the War on Poverty?\" | 10.1057/9781137045300_11 \"Canada: A Guaranteed Income Framework to Address Poverty and Inequality?\" | 10.1057/9781137031594_3 \"Why Did We Lose the War on Poverty?\" | 10.4324/9781315239934-17 \"The Cost of Eliminating Poverty in Canada: Basic Income With an Income Test Twist\" | 10.1007/978-3-030-66085-7 \"Is Basic Income Within Reach?\""
+    },
+    {
+      "query": "guarantee daily income economy wealth basic",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:24:17.624Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=guarantee%20daily%20income%20economy%20wealth%20basic&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "guarantee daily income economy wealth basic",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:24:18.138Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aguarantee%20AND%20all%3Adaily%20AND%20all%3Aincome%20AND%20all%3Aeconomy%20AND%20all%3Awealth%20AND%20all%3Abasic&start=0&max_results=10; sha256=d577660386cefbfe22f986740d59359784a6c8987e0dedd6c64b01e705ffacf7; total=0; shown=0/0"
+    },
+    {
+      "query": "guarantee daily income economy wealth basic",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:24:19.059Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=guarantee%20daily%20income%20economy%20wealth%20basic&rows=10&select=DOI,title; sha256=1555a4f9db467b76226ed0d5b20c74d2e4a79625d56183d2793e24768b354a2d; total=1784432; shown=5/10; top: 10.1057/9781137031594.0014 \"Is a Basic Income Guarantee Moral?\" | 10.1057/9781137031594.0019 \"Will a Basic Income Guarantee Work?\" | 10.1057/9781137031594.0023 \"Will a Basic Income Guarantee Threaten Democracy?\" | 10.1057/9781137031594.0024 \"How Is a Basic Income Guarantee Administered?\" | 10.1057/9781137031594.0020 \"Has the Basic Income Guarantee Ever Been Tested?\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "guarantee daily income floor extreme poverty",
+      "url": "https://api.github.com/search/repositories?q=guarantee%20daily%20income%20floor%20extreme%20poverty&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=guarantee%20daily%20income%20floor%20extreme%20poverty&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:24:11.070Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "guarantee daily income floor extreme poverty",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aguarantee%20AND%20all%3Adaily%20AND%20all%3Aincome%20AND%20all%3Afloor%20AND%20all%3Aextreme%20AND%20all%3Apoverty&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aguarantee%20AND%20all%3Adaily%20AND%20all%3Aincome%20AND%20all%3Afloor%20AND%20all%3Aextreme%20AND%20all%3Apoverty&start=0&max_results=10",
+      "sha256": "329698974c0f685ec018312b183a474bd018cd5391bafd5dfee85193af400deb",
+      "bytes": 858,
+      "observedAt": "2026-11-06T00:24:11.584Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "guarantee daily income floor extreme poverty",
+      "url": "https://api.crossref.org/works?query=guarantee%20daily%20income%20floor%20extreme%20poverty&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=guarantee%20daily%20income%20floor%20extreme%20poverty&rows=10&select=DOI,title",
+      "sha256": "0f6ae9d3b41a2a5b009ab84e3538ac270e313d6526e8d6ac7533a9191d211cbd",
+      "bytes": 1173,
+      "observedAt": "2026-11-06T00:24:12.510Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "guarantee daily income economy wealth basic",
+      "url": "https://api.github.com/search/repositories?q=guarantee%20daily%20income%20economy%20wealth%20basic&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=guarantee%20daily%20income%20economy%20wealth%20basic&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:24:17.624Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "guarantee daily income economy wealth basic",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aguarantee%20AND%20all%3Adaily%20AND%20all%3Aincome%20AND%20all%3Aeconomy%20AND%20all%3Awealth%20AND%20all%3Abasic&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aguarantee%20AND%20all%3Adaily%20AND%20all%3Aincome%20AND%20all%3Aeconomy%20AND%20all%3Awealth%20AND%20all%3Abasic&start=0&max_results=10",
+      "sha256": "d577660386cefbfe22f986740d59359784a6c8987e0dedd6c64b01e705ffacf7",
+      "bytes": 856,
+      "observedAt": "2026-11-06T00:24:18.138Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "guarantee daily income economy wealth basic",
+      "url": "https://api.crossref.org/works?query=guarantee%20daily%20income%20economy%20wealth%20basic&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=guarantee%20daily%20income%20economy%20wealth%20basic&rows=10&select=DOI,title",
+      "sha256": "1555a4f9db467b76226ed0d5b20c74d2e4a79625d56183d2793e24768b354a2d",
+      "bytes": 1181,
+      "observedAt": "2026-11-06T00:24:19.059Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "25c681a9cd52193879d982f928bd4923ddc92fb67c8fe1cf5071a0155c1522ba",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

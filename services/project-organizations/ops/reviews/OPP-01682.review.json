@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01682",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": true,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held: the project's deliverable, a toilet that needs no sewer, water or power, is a known answer. Urine-diverting dry toilets and container-based sanitation are waterless, sewerless and unpowered by design and are openly documented (SuSanA, SSWM), with SOIL's EkoLakay in Haiti and Sanergy's Fresh Life franchises in Nairobi and Kisumu serving roughly 100,000 to 150,000 people a day (https://en.wikipedia.org/wiki/Container-based_sanitation; https://panorama.solutions/en/solution/sanergy-urban-sanitation-challenge). For self-contained treatment, ISO 30500 sets safety and performance requirements for non-sewered prefabricated units, and TUV SUD certified the first compliant system (Ecosan) in January 2025 (https://www.tuvsud.com/en/resource-centre/case-studies/gates-foundation). Composting toilets such as Clivus Multrum are sold commercially. Honest limit: the 1,500,000,000-person KPI is far from met (JMP 2025: 3.4 billion lack safely managed sanitation and 354 million still practise open defecation, https://www.unicefusa.org/press/fast-facts-1-4-people-globally-still-lack-access-safe-drinking-water-who-unicef), and evidence that small composting units reliably kill pathogens is weak (https://forum.susana.org/241-composting-toilets-in-general/12642-how-aerobic-are-composting-toilets-really-how-much-pathogen-kill-clivus-multrum-and-comparison-with-uddts). Those are delivery, financing and treatment-verification problems; building the toilet itself is a known answer, so under the 29 September 2026 rule the project is not opened as new work. A reframed project on verified low-cost pathogen inactivation in unpowered units would need its own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "urine-diverting dry toilet no water no sewer no electricity container-based sanitation Sanergy Fresh Life SOIL scale people served 2026",
+      "source": "https://en.wikipedia.org/wiki/Container-based_sanitation",
+      "observedAt": "2026-11-06T01:21:00Z",
+      "finding": "Container-based sanitation is typically waterless, relying on urine-diverting toilets with dry cover material and container collection; SOIL runs EkoLakay in Haiti; Sanergy reports 3,000-plus Fresh Life Toilets serving 100,000 to 150,000 urban residents daily (figures undated). The no-sewer, no-water, no-power toilet is established."
+    },
+    {
+      "query": "Gates Reinvent the Toilet non-sewered sanitation ISO 30500 certified products commercial 2025 2026",
+      "source": "https://www.tuvsud.com/en/resource-centre/case-studies/gates-foundation",
+      "observedAt": "2026-11-06T01:21:00Z",
+      "finding": "ISO 30500 specifies safety and performance for prefabricated non-sewered treatment units; TUV SUD certified the first compliant system (Ecosan) in January 2025; testing labs are being set up in China, India, Senegal, South Africa and a US MASSTC platform from early 2026. No count of certified products or deployment figures found."
+    },
+    {
+      "query": "JMP 2025 sanitation safely managed 3.4 billion lack basic handwashing facility soap water 1.7 billion",
+      "source": "https://www.unicefusa.org/press/fast-facts-1-4-people-globally-still-lack-access-safe-drinking-water-who-unicef",
+      "observedAt": "2026-11-06T01:21:00Z",
+      "finding": "JMP 2025 (2024 data): 3.4 billion people lack safely managed sanitation, 354 million practise open defecation; 1.7 billion lack basic hygiene, of whom 611 million have no handwashing facility. The access gap is large; the technologies exist."
+    },
+    {
+      "query": "composting toilet waterless no electricity off-grid commercial product Separett Clivus Multrum safe pathogen treatment evidence",
+      "source": "https://forum.susana.org/241-composting-toilets-in-general/12642-how-aerobic-are-composting-toilets-really-how-much-pathogen-kill-clivus-multrum-and-comparison-with-uddts",
+      "observedAt": "2026-11-06T01:27:00Z",
+      "finding": "Commercial waterless composting toilets (Clivus Multrum, NSF Standard 41) exist; manufacturer data claim low fecal coliform, but a University of Washington Earth Auger study found little indicator reduction and SuSanA practitioners say evidence of safe output is thin; thermophilic 55 C for two weeks is the guideline few household units reach."
+    }
+  ]
+}

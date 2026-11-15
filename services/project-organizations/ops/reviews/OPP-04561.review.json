@@ -1,0 +1,51 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-04561",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": true,
+    "knownAnswer": true,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held: the Main KPI of 50 conflict-prone countries monitored by an early-warning system that predicts conflicts a year ahead is already met by an open, discoverable system. VIEWS (Uppsala University and PRIO) describes itself as an open-source project using AI to predict armed conflict 1 to 36 months ahead across the globe, releasing monthly country and sub-national forecasts, with the latest release covering September 2026 to August 2029 (https://viewsforecasting.org/); its forecasting code, pipeline and 2023 prediction-competition benchmarks are public on GitHub (https://api.github.com/search/repositories?q=org%3Aprio-data%20views&sort=stars&per_page=8), and the method is peer reviewed (https://doi.org/10.1177/0022343319823860). conflictforecast.org separately publishes the risk of an internal armed conflict outbreak within the next twelve months for countries not in conflict (https://conflictforecast.org/). A 2023 comparison of early-warning systems finds considerable overlap in which countries they flag as highest risk (https://doi.org/10.1016/j.ijforecast.2023.01.001). So both the deliverable (a year-ahead early-warning system) and the coverage target are achieved openly. Honest limit: forecasting the onset of conflict in previously peaceful places remains hard and is where accuracy is weakest; a reframed project with its own KPI on onset accuracy or on turning warnings into prevention would need its own prior-art basis, but this one is not opened as new work."
+  },
+  "additionalSearches": [
+    {
+      "query": "ViEWS violence early warning system forecasts armed conflict",
+      "source": "https://api.openalex.org/works?search=ViEWS%20violence%20early%20warning%20system%20forecasts%20armed%20conflict&per_page=8&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:01Z",
+      "finding": "ViEWS: A political violence early-warning system (JPR 2019, 173 citations), ViEWS2020 revision and evaluation (2021), and a 2023 review and comparison of conflict early-warning systems. Established, peer-reviewed open system."
+    },
+    {
+      "query": "conflict forecasting prediction challenge 2023 2024 fatalities months ahead (2024 onward)",
+      "source": "https://api.openalex.org/works?search=conflict%20forecasting%20prediction%20challenge%202023%202024%20fatalities%20months%20ahead&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:03Z",
+      "finding": "434 works: a global dataset on conflict forecasts and news topics (2024), transformer and attention models for fatality forecasting tied to the VIEWS challenge. Active open benchmark community."
+    },
+    {
+      "query": "org:prio-data views (GitHub repositories)",
+      "source": "https://api.github.com/search/repositories?q=org%3Aprio-data%20views&sort=stars&per_page=8",
+      "observedAt": "2026-11-06T01:24:27Z",
+      "finding": "37 repositories from PRIO: viewsforecasting monthly forecast scripts, views_pipeline with MLops and QA, prediction_competition_2023 benchmarks and evaluation, the views API and outreach docs updated October 2026. Open code confirmed."
+    },
+    {
+      "query": "conflict onset prediction accuracy new conflicts hard cases (2024 onward)",
+      "source": "https://api.openalex.org/works?search=conflict%20onset%20prediction%20accuracy%20new%20conflicts%20hard%20cases&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:08Z",
+      "finding": "11,739 loosely matched works; relevant items compare NLP methods for crisis early warning (2026) and spatio-temporal fatality prediction. Onset accuracy remains an open research question, recorded as the honest limit."
+    },
+    {
+      "query": "VIEWS forecasting site",
+      "source": "https://viewsforecasting.org/",
+      "observedAt": "2026-11-06T01:19:30Z",
+      "finding": "An open-source project leveraging AI to predict armed conflict 1-36 months ahead across the globe; monthly forecasts at country and sub-national levels; latest release September 2026 to August 2029; source code page linked."
+    },
+    {
+      "query": "conflictforecast.org",
+      "source": "https://conflictforecast.org/",
+      "observedAt": "2026-11-06T01:19:31Z",
+      "finding": "Shows the risk of an outbreak of internal armed conflict within the next twelve months for countries not in conflict, and forecast intensity for those in conflict."
+    }
+  ]
+}

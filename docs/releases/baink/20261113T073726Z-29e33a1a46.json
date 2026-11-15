@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261113T073726Z-29e33a1a46",
+  "version": "0.3.99",
+  "source_commit": "9688f2e244047e5846284f0670e99af1a3f9dcad",
+  "deployed_at": "2026-11-13T07:39:36Z",
+  "prior": "20261112T180144Z-ada5f5cc5f",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0399-release-20261113",
+    "CHANGELOG.md#security-review-20261113",
+    "docs/security/review-2026-11-13.md"
+  ],
+  "note": "Security review fixes (MCP 0.6.11). 179 runtime/32 preview files, reproducible archive; expected-prior promotion passed first attempt. HSTS once, narrower CSP, health/review 200 with all three flags, new Trade paused. No signed member request, payment or Trade action exercised."
+}

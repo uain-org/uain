@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T011623Z-5b16759020",
+  "version": "0.3.66",
+  "source_commit": "f639398edc2829601235dfd4d0a258d1fa08c96d",
+  "deployed_at": "2026-11-10T01:16:31Z",
+  "prior": "20261110T000340Z-6ff3a22ebb",
+  "status": "publicly-verified",
+  "evidence": ["CHANGELOG.md#baink-0366-release-20261110"],
+  "note": "From main f639398e: includes #417 (guide answers: Karma never falls, equal Karma on every accepted AI$ award, strikes topic). release:promote passed; production and preview health ok; served kit 0.2.9; BAINK_SERVER_SEND_ALLOW_ALL=1 and BAINK_MIN_KIT_VERSION=0.2.6 kept."
+}

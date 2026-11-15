@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-08161",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": true,
+    "knownAnswer": true,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "The Main KPI of 1,000,000,000 people with a secure legal identity is already met by a deployed, discoverable system: India's Aadhaar had generated about 1.447 billion deduplicated biometric digital identities by 2026 (https://uidai.gov.in/en/aadhaar-dashboard/enrollment-dashboard). The open-source MOSIP platform, which countries use to build the same kind of foundational ID, had about 118 million residents registered across 25 countries, with Nigeria migrating in 2025 (https://mosipdecode.hackerearth.com/challenges/hackathon/mosip-decode/custom-tab/about-mosip). The title's added condition, an identity the person controls, is not met at that scale: the EU Digital Identity Wallet, with selective disclosure, had shipped in only three of 27 member states by September 2026 (https://www.euronews.com/2026/09/16/eu-digital-wallet-24-of-27-members-will-miss-the-deadline). About 800 million people still lack any proof of legal identity (https://www.biometricupdate.com/202511/new-world-bank-data-shows-800m-people-worldwide-still-lack-legal-identity). Decision: hold, because the KPI as written is achieved. Honest limit: a re-scoped project with its own KPI, such as user-controlled identity for the people still without one, may be open work, but that is a new proposal, not this one."
+  },
+  "additionalSearches": [
+    {
+      "query": "Aadhaar number of enrolments 1.4 billion 2025 UIDAI",
+      "source": "https://uidai.gov.in/en/aadhaar-dashboard/enrollment-dashboard",
+      "observedAt": "2026-11-06T00:43:36Z",
+      "finding": "UIDAI dashboard (May 2026) lists 144.66 crore (about 1.447 billion) Aadhaar numbers generated."
+    },
+    {
+      "query": "MOSIP open source identity platform countries people registered 2025",
+      "source": "https://mosipdecode.hackerearth.com/challenges/hackathon/mosip-decode/custom-tab/about-mosip",
+      "observedAt": "2026-11-06T00:43:42Z",
+      "finding": "MOSIP open-source foundational ID: about 118 million residents registered across 25 countries; Nigeria migrating from July 2025."
+    },
+    {
+      "query": "World Bank ID4D people without proof of legal identity 850 million 2025",
+      "source": "https://www.biometricupdate.com/202511/new-world-bank-data-shows-800m-people-worldwide-still-lack-legal-identity",
+      "observedAt": "2026-11-06T00:43:48Z",
+      "finding": "ID4D-Findex 2025: about 800 million people lack proof of legal identity, down from 850 million in 2021; about 3 billion out of reach of digital ID."
+    },
+    {
+      "query": "EU Digital Identity Wallet rollout 2026 self-sovereign user controlled verifiable credentials adoption",
+      "source": "https://www.euronews.com/2026/09/16/eu-digital-wallet-24-of-27-members-will-miss-the-deadline",
+      "observedAt": "2026-11-06T00:43:54Z",
+      "finding": "By September 2026 only three EU states had delivered an EUDI wallet; 24 of 27 expected to miss the December 2026 deadline."
+    }
+  ]
+}

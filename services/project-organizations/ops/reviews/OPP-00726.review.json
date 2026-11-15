@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00726",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T04:10:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No one cures macular degeneration, so the Main KPI of 196,000,000 patients cured is open work, though what exists must be stated honestly. The two approved geographic-atrophy drugs only slow lesion growth, by about 16 to 22 percent (pegcetacoplan) and 14 to 28 percent (avacincaptad pegol), with little change in best-corrected or low-luminance acuity, vision-function benefit only in post hoc analyses, repeated intravitreal injections and increased risk of progression to wet disease (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22geographic%20atrophy%22%20AND%20%28pegcetacoplan%20OR%20avacincaptad%29%20AND%20%28outcomes%20OR%20%22visual%20function%22%29&format=json&pageSize=5&resultType=core). Gene therapy targets injection burden rather than cure, with ABBV-RGX-314 the only phase 2-3 programme (671 participants) among otherwise phase 1 and 1-2 cell and gene studies, including autologous iPSC-RPE in 10 patients and hESC-RPE in 16; none is approved. Photoreceptor and RPE replacement remains unproven: a 2026 PNAS study states functional visual gains from iPSC-derived RPE are modest to date, and reviews cite poor cell survival and integration. Open source is two small image-classification repositories (https://api.github.com/search/repositories?q=macular+degeneration+OCT+deep+learning&per_page=10&sort=stars). Honest limit: anti-VEGF and complement inhibition are standard care and thoroughly published, so tasks on them are known answers; the open work is restoring lost photoreceptor and RPE function, which no approved or open solution does."
+  },
+  "additionalSearches": [
+    {
+      "query": "approved geographic atrophy drugs and visual function",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22geographic%20atrophy%22%20AND%20%28pegcetacoplan%20OR%20avacincaptad%29%20AND%20%28outcomes%20OR%20%22visual%20function%22%29&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T04:01:00Z",
+      "finding": "2026 reviews: pegcetacoplan and avacincaptad pegol are the only FDA-approved options for geographic atrophy and slow lesion growth by about 16-22 and 14-28 percent versus sham, with little improvement in best-corrected or low-luminance acuity, vision benefits only from post hoc analyses, repeated injections, and increased risk of progression to wet AMD. Patients and physicians describe treatment as delaying progression without restoring vision."
+    },
+    {
+      "query": "registered cell and gene therapy trials in macular degeneration",
+      "source": "https://clinicaltrials.gov/api/v2/studies?query.cond=macular+degeneration&query.intr=stem+cell+OR+gene+therapy&pageSize=15",
+      "observedAt": "2026-11-06T04:03:00Z",
+      "finding": "The only late-stage entry is ABBV-RGX-314 subretinal gene therapy for neovascular AMD, phase 2-3 with 671 participants, active not recruiting; everything else is phase 1, 1-2 or early phase 1, including autologous iPSC-RPE transplantation in 10 patients, hESC-RPE subretinal implantation in 16, retinal stem and progenitor cells in 20, and several nAMD gene therapies with 10 to 48 participants. Nothing approved."
+    },
+    {
+      "query": "RPE stem cell transplantation outcomes",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22retinal%20pigment%20epithelium%22%20AND%20%28%22stem%20cell%22%20OR%20iPSC%29%20AND%20transplantation%20AND%20%28%22age-related%20macular%20degeneration%22%29%20AND%20trial&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T04:05:00Z",
+      "finding": "No trial-level restoration of vision appears. A 2026 PNAS study of the human RPE 3D epigenomic landscape states that functional visual gains achieved to date with iPSC-derived RPE are modest; 2026 reviews of stem-cell retinal restoration cite poor cell survival and integration; a Cell Reports Medicine review cites the 2014 RPE graft as a milestone without outcome data."
+    },
+    {
+      "query": "open-source AMD analysis projects",
+      "source": "https://api.github.com/search/repositories?q=macular+degeneration+OCT+deep+learning&per_page=10&sort=stars",
+      "observedAt": "2026-11-06T04:07:00Z",
+      "finding": "Two repositories (1 and 0 stars) doing OCT-based AMD classification and fundus segmentation. Open source addresses detection, not treatment, so no open solution cures or reverses the disease."
+    }
+  ]
+}

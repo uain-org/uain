@@ -1,0 +1,298 @@
+{
+ "schema": "uain-survey-parts-build-v1",
+ "project": "OPP-00006",
+ "revision": 2,
+ "supersedes": "T-OPP-00006-1-prior-art-survey",
+ "dropped": [],
+ "parts": [
+  {
+   "request": {
+    "id": "survey-OPP-00006-r2-p1",
+    "member": "uain158ac8d0debcf01d43164ef14736597da589d8b54",
+    "operation": "central_task_open",
+    "payload": {
+     "id": "T-OPP-00006-1-prior-art-survey-r2-p1",
+     "project": "P-OPP-00006",
+     "title": "Prior-art survey: Rebuild the extracellular matrix to make skin and organs flexible again (part 1 of 3)",
+     "criteria": "Prior-art survey part 1 of 3 for \"Rebuild the extracellular matrix to make skin and organs flexible again\". Main KPI: \"200,000,000 people treated\". A small unit, expected within 20 minutes: check these 3 identifiers the project-level searches returned against this Main KPI: doi 10.4103/1673-5374.235026; doi 10.1111/j.1525-1594.2007.00417.x; doi 10.1016/b978-0-12-821085-7.00002-6. Report them as an evidence artifact whose \"survey\" field is {mainKpi, asOf, items, conclusion}. mainKpi is the Main KPI above, exactly. asOf is the survey date (YYYY-MM-DD). Each of 1 to 60 items is {kind, id, title, relation, note}: kind is one of doi, arxiv, github, pubmed, nct, wikidata; id is the canonical identifier; title is the title of that record; relation is meets_main_kpi, partial, adjacent or screened_out; note says in 10 to 400 bytes what the item does for the Main KPI, or why it was screened out. Every identifier above is an item, and at least 1 item is not screened out (add one record you found if all listed ones are unrelated). conclusion is {meetsMainKpi, gaps}: meetsMainKpi is true exactly when an item meets the Main KPI as written; gaps lists, in up to 12 entries of 20 to 600 bytes, what these records leave undone (at least one when meetsMainKpi is false). Accepted when the fixed prior-art-survey verifier resolves every identifier through its primary-source record API with a matching title and finds the part complete and consistent, and the central reviewer finds it accurate. No novelty claim is made or rewarded; the evidence must fit the 16 KiB native limit.",
+     "acceptance_digest": "7047b1ef506e5019192ea0042b2cf16926e112f6f99fbab6df10403d493ff406",
+     "eligibility": "new",
+     "eligibility_digest": "09350b70a5d546b8a0eff268ae4ecf0ba93353873befd1de408b8ba410f77dc5",
+     "solver_amount": "60000000",
+     "reviewer_amount": "10000000",
+     "evidence_digest": "a94232fa33bc3970c6537dc8cbe7f2dc53142a252b5cc6cd0b81c47a86b3d91e"
+    }
+   },
+   "evidence": {
+    "schema": "uain-project-organization-survey-part-v1",
+    "decision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-06",
+     "record": "docs/baink/project-organizations-2026-11-06/decisions.md#d2"
+    },
+    "splitDecision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-09",
+     "record": "docs/baink/questions-9-nov-2026.md#c1"
+    },
+    "projectId": "OPP-00006",
+    "revision": 2,
+    "part": 1,
+    "parts": 3,
+    "supersedes": "T-OPP-00006-1-prior-art-survey",
+    "draftDigest": "64d9ada133598eee2df377ce4f34f49ca0aedc79970b287f3899bfd58ac77fc4",
+    "reviewedDigest": "1bc6ef49c281a8b70786f633f20274833af67262f37e43402aaa302ca0e5eeb3",
+    "preflightDigest": "6d18a60f1e589a02b489fee07907d06edf81c6bfe3a1b8ca421c7f024d497342",
+    "policyDigest": "720bbb888faaf3e2df02c5fd1cda6b98b78086f6331c8ef3fe2753ad0d21b24e",
+    "requiredIds": [
+     {
+      "kind": "doi",
+      "id": "10.4103/1673-5374.235026"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1111/j.1525-1594.2007.00417.x"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1016/b978-0-12-821085-7.00002-6"
+     }
+    ],
+    "dropped": [],
+    "novelty": "Each listed record is unresolved: no accepted inventory of this project covers it yet."
+   },
+   "policy": {
+    "schema": "uain-task-verification-policy-v1",
+    "class": "prior_art_survey",
+    "taskId": "T-OPP-00006-1-prior-art-survey-r2-p1",
+    "projectId": "P-OPP-00006",
+    "criteriaDigest": "7047b1ef506e5019192ea0042b2cf16926e112f6f99fbab6df10403d493ff406",
+    "inputs": [],
+    "primarySourceHosts": [
+     "api.crossref.org",
+     "api.github.com",
+     "clinicaltrials.gov",
+     "eutils.ncbi.nlm.nih.gov",
+     "export.arxiv.org",
+     "www.wikidata.org"
+    ],
+    "driver": {
+     "name": "prior-art-survey",
+     "sha256": "8ee79b891db4d7d1b0cf497d0173e31fbfe7f96cf818d3ecf2c4bbdb0d1b6f4e"
+    },
+    "successTests": [
+     {
+      "id": "survey",
+      "mainKpi": "200,000,000 people treated",
+      "minIncluded": 1,
+      "minKinds": 1,
+      "requiredIds": [
+       {
+        "kind": "doi",
+        "id": "10.4103/1673-5374.235026"
+       },
+       {
+        "kind": "doi",
+        "id": "10.1111/j.1525-1594.2007.00417.x"
+       },
+       {
+        "kind": "doi",
+        "id": "10.1016/b978-0-12-821085-7.00002-6"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "request": {
+    "id": "survey-OPP-00006-r2-p2",
+    "member": "uain158ac8d0debcf01d43164ef14736597da589d8b54",
+    "operation": "central_task_open",
+    "payload": {
+     "id": "T-OPP-00006-1-prior-art-survey-r2-p2",
+     "project": "P-OPP-00006",
+     "title": "Prior-art survey: Rebuild the extracellular matrix to make skin and organs flexible again (part 2 of 3)",
+     "criteria": "Prior-art survey part 2 of 3 for \"Rebuild the extracellular matrix to make skin and organs flexible again\". Main KPI: \"200,000,000 people treated\". A small unit, expected within 20 minutes: check these 3 identifiers the project-level searches returned against this Main KPI: doi 10.1021/acs.jproteome.2c00526.s001; doi 10.1201/9781420003871-36; doi 10.65649/amb5zx11. Report them as an evidence artifact whose \"survey\" field is {mainKpi, asOf, items, conclusion}. mainKpi is the Main KPI above, exactly. asOf is the survey date (YYYY-MM-DD). Each of 1 to 60 items is {kind, id, title, relation, note}: kind is one of doi, arxiv, github, pubmed, nct, wikidata; id is the canonical identifier; title is the title of that record; relation is meets_main_kpi, partial, adjacent or screened_out; note says in 10 to 400 bytes what the item does for the Main KPI, or why it was screened out. Every identifier above is an item, and at least 1 item is not screened out (add one record you found if all listed ones are unrelated). conclusion is {meetsMainKpi, gaps}: meetsMainKpi is true exactly when an item meets the Main KPI as written; gaps lists, in up to 12 entries of 20 to 600 bytes, what these records leave undone (at least one when meetsMainKpi is false). Accepted when the fixed prior-art-survey verifier resolves every identifier through its primary-source record API with a matching title and finds the part complete and consistent, and the central reviewer finds it accurate. No novelty claim is made or rewarded; the evidence must fit the 16 KiB native limit.",
+     "acceptance_digest": "94189780e8ebb1036da351f45b5593eb0b910dc512f86df8e1f3f1a8a09ebccf",
+     "eligibility": "new",
+     "eligibility_digest": "09350b70a5d546b8a0eff268ae4ecf0ba93353873befd1de408b8ba410f77dc5",
+     "solver_amount": "60000000",
+     "reviewer_amount": "10000000",
+     "evidence_digest": "453770c350351d3cf76512957883bde7943f305bfb3047b76a2aba0f65b9722e"
+    }
+   },
+   "evidence": {
+    "schema": "uain-project-organization-survey-part-v1",
+    "decision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-06",
+     "record": "docs/baink/project-organizations-2026-11-06/decisions.md#d2"
+    },
+    "splitDecision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-09",
+     "record": "docs/baink/questions-9-nov-2026.md#c1"
+    },
+    "projectId": "OPP-00006",
+    "revision": 2,
+    "part": 2,
+    "parts": 3,
+    "supersedes": "T-OPP-00006-1-prior-art-survey",
+    "draftDigest": "64d9ada133598eee2df377ce4f34f49ca0aedc79970b287f3899bfd58ac77fc4",
+    "reviewedDigest": "1bc6ef49c281a8b70786f633f20274833af67262f37e43402aaa302ca0e5eeb3",
+    "preflightDigest": "6d18a60f1e589a02b489fee07907d06edf81c6bfe3a1b8ca421c7f024d497342",
+    "policyDigest": "dc12c2ceb0590bc16d0c128e6ed6de6c7b020653f445cfcac47b5195f4920407",
+    "requiredIds": [
+     {
+      "kind": "doi",
+      "id": "10.1021/acs.jproteome.2c00526.s001"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1201/9781420003871-36"
+     },
+     {
+      "kind": "doi",
+      "id": "10.65649/amb5zx11"
+     }
+    ],
+    "dropped": [],
+    "novelty": "Each listed record is unresolved: no accepted inventory of this project covers it yet."
+   },
+   "policy": {
+    "schema": "uain-task-verification-policy-v1",
+    "class": "prior_art_survey",
+    "taskId": "T-OPP-00006-1-prior-art-survey-r2-p2",
+    "projectId": "P-OPP-00006",
+    "criteriaDigest": "94189780e8ebb1036da351f45b5593eb0b910dc512f86df8e1f3f1a8a09ebccf",
+    "inputs": [],
+    "primarySourceHosts": [
+     "api.crossref.org",
+     "api.github.com",
+     "clinicaltrials.gov",
+     "eutils.ncbi.nlm.nih.gov",
+     "export.arxiv.org",
+     "www.wikidata.org"
+    ],
+    "driver": {
+     "name": "prior-art-survey",
+     "sha256": "8ee79b891db4d7d1b0cf497d0173e31fbfe7f96cf818d3ecf2c4bbdb0d1b6f4e"
+    },
+    "successTests": [
+     {
+      "id": "survey",
+      "mainKpi": "200,000,000 people treated",
+      "minIncluded": 1,
+      "minKinds": 1,
+      "requiredIds": [
+       {
+        "kind": "doi",
+        "id": "10.1021/acs.jproteome.2c00526.s001"
+       },
+       {
+        "kind": "doi",
+        "id": "10.1201/9781420003871-36"
+       },
+       {
+        "kind": "doi",
+        "id": "10.65649/amb5zx11"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "request": {
+    "id": "survey-OPP-00006-r2-p3",
+    "member": "uain158ac8d0debcf01d43164ef14736597da589d8b54",
+    "operation": "central_task_open",
+    "payload": {
+     "id": "T-OPP-00006-1-prior-art-survey-r2-p3",
+     "project": "P-OPP-00006",
+     "title": "Prior-art survey: Rebuild the extracellular matrix to make skin and organs flexible again (part 3 of 3)",
+     "criteria": "Prior-art survey part 3 of 3 for \"Rebuild the extracellular matrix to make skin and organs flexible again\". Main KPI: \"200,000,000 people treated\". A small unit, expected within 20 minutes: check these 2 identifiers the project-level searches returned against this Main KPI: doi 10.1007/978-3-031-94465-9_10; doi 10.5772/62253. Report them as an evidence artifact whose \"survey\" field is {mainKpi, asOf, items, conclusion}. mainKpi is the Main KPI above, exactly. asOf is the survey date (YYYY-MM-DD). Each of 1 to 60 items is {kind, id, title, relation, note}: kind is one of doi, arxiv, github, pubmed, nct, wikidata; id is the canonical identifier; title is the title of that record; relation is meets_main_kpi, partial, adjacent or screened_out; note says in 10 to 400 bytes what the item does for the Main KPI, or why it was screened out. Every identifier above is an item, and at least 1 item is not screened out (add one record you found if all listed ones are unrelated). conclusion is {meetsMainKpi, gaps}: meetsMainKpi is true exactly when an item meets the Main KPI as written; gaps lists, in up to 12 entries of 20 to 600 bytes, what these records leave undone (at least one when meetsMainKpi is false). Accepted when the fixed prior-art-survey verifier resolves every identifier through its primary-source record API with a matching title and finds the part complete and consistent, and the central reviewer finds it accurate. No novelty claim is made or rewarded; the evidence must fit the 16 KiB native limit.",
+     "acceptance_digest": "9515a11e6076811cdd68b6f6e9931fcb0734c2b0bc3c03521c83b70597765dd2",
+     "eligibility": "new",
+     "eligibility_digest": "09350b70a5d546b8a0eff268ae4ecf0ba93353873befd1de408b8ba410f77dc5",
+     "solver_amount": "40000000",
+     "reviewer_amount": "10000000",
+     "evidence_digest": "31f8a2c1a7dd3e221444ffd8693bf5895bb611b49c66c44e7e4112c6bedcb9d5"
+    }
+   },
+   "evidence": {
+    "schema": "uain-project-organization-survey-part-v1",
+    "decision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-06",
+     "record": "docs/baink/project-organizations-2026-11-06/decisions.md#d2"
+    },
+    "splitDecision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-09",
+     "record": "docs/baink/questions-9-nov-2026.md#c1"
+    },
+    "projectId": "OPP-00006",
+    "revision": 2,
+    "part": 3,
+    "parts": 3,
+    "supersedes": "T-OPP-00006-1-prior-art-survey",
+    "draftDigest": "64d9ada133598eee2df377ce4f34f49ca0aedc79970b287f3899bfd58ac77fc4",
+    "reviewedDigest": "1bc6ef49c281a8b70786f633f20274833af67262f37e43402aaa302ca0e5eeb3",
+    "preflightDigest": "6d18a60f1e589a02b489fee07907d06edf81c6bfe3a1b8ca421c7f024d497342",
+    "policyDigest": "7572649aff40b5377051d7908e8608b0b929c656e520ff27691760d8cca60a2e",
+    "requiredIds": [
+     {
+      "kind": "doi",
+      "id": "10.1007/978-3-031-94465-9_10"
+     },
+     {
+      "kind": "doi",
+      "id": "10.5772/62253"
+     }
+    ],
+    "dropped": [],
+    "novelty": "Each listed record is unresolved: no accepted inventory of this project covers it yet."
+   },
+   "policy": {
+    "schema": "uain-task-verification-policy-v1",
+    "class": "prior_art_survey",
+    "taskId": "T-OPP-00006-1-prior-art-survey-r2-p3",
+    "projectId": "P-OPP-00006",
+    "criteriaDigest": "9515a11e6076811cdd68b6f6e9931fcb0734c2b0bc3c03521c83b70597765dd2",
+    "inputs": [],
+    "primarySourceHosts": [
+     "api.crossref.org",
+     "api.github.com",
+     "clinicaltrials.gov",
+     "eutils.ncbi.nlm.nih.gov",
+     "export.arxiv.org",
+     "www.wikidata.org"
+    ],
+    "driver": {
+     "name": "prior-art-survey",
+     "sha256": "8ee79b891db4d7d1b0cf497d0173e31fbfe7f96cf818d3ecf2c4bbdb0d1b6f4e"
+    },
+    "successTests": [
+     {
+      "id": "survey",
+      "mainKpi": "200,000,000 people treated",
+      "minIncluded": 1,
+      "minKinds": 1,
+      "requiredIds": [
+       {
+        "kind": "doi",
+        "id": "10.1007/978-3-031-94465-9_10"
+       },
+       {
+        "kind": "doi",
+        "id": "10.5772/62253"
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

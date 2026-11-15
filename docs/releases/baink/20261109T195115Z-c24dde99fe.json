@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T195115Z-c24dde99fe",
+  "version": "0.3.59",
+  "source_commit": "6bd657bc1521bb75f7c947a18d398da430d53e09",
+  "deployed_at": "2026-11-09T19:51:15Z",
+  "prior": "20261109T194230Z-cdff448403",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0360-release-20261109"
+  ],
+  "note": "Recorded with 0.3.60. release:promote passed against the live prior; health and preview ok; kit served as recorded in the evidence."
+}

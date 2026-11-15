@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00963",
+  "native_project": "P-OPP-00963",
+  "source_digest": "8b8745226a69d3cad337c1b09492cf0031dd94c5bab6f4c24d51d871bbe50573",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Create village health pods with diagnostics and telehealth",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "c0d1e4b2f79894f538274cbbca4f0616d33fa8c35c708e9327b3c4c51323903c"
+  },
+  "drafted_at": "2026-11-06T00:13:28.893Z",
+  "queries": [
+    "village health pods diagnostics telehealth",
+    "village health pods healthcare systems medicine"
+  ],
+  "searches": [
+    {
+      "query": "village health pods diagnostics telehealth",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:13:20.842Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=village%20health%20pods%20diagnostics%20telehealth&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "village health pods diagnostics telehealth",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:13:21.727Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Avillage%20AND%20all%3Ahealth%20AND%20all%3Apods%20AND%20all%3Adiagnostics%20AND%20all%3Atelehealth&start=0&max_results=10; sha256=fd91795868fe721392fc33ff6e4402eaf99f4e4349eb526cafadfad5c5ca0522; total=0; shown=0/0"
+    },
+    {
+      "query": "village health pods diagnostics telehealth",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:13:22.785Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=village%20health%20pods%20diagnostics%20telehealth&rows=10&select=DOI,title; sha256=913494133c1209c6c73da510426c5a32abdaf229a640a6c46326ff7673fd5618; total=5287181; shown=5/10; top: 10.4324/9780203933138-7 \"Telemedicine and Telehealth: Applications of ICTs for Health Care Delivery\" | 10.1016/b978-0-323-87480-9.00005-1 \"Remote diagnostics in urology\" | 10.3403/30477430 \"Health informatics � Cybersecurity framework for telehealth environments\" | 10.3403/30477430u \"Health informatics � Cybersecurity framework for telehealth environments\" | 10.1201/b11229-7 \"Tutorials on Usability Testing, Setting up Diagnostics, and Health Status Monitoring\""
+    },
+    {
+      "query": "village health pods healthcare systems medicine",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:13:27.389Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=village%20health%20pods%20healthcare%20systems%20medicine&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "village health pods healthcare systems medicine",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:13:27.864Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Avillage%20AND%20all%3Ahealth%20AND%20all%3Apods%20AND%20all%3Ahealthcare%20AND%20all%3Asystems%20AND%20all%3Amedicine&start=0&max_results=10; sha256=149d0863e1e753ac6b0c68b28c9a3ff425165937d3d3057a6999aa903a9782ad; total=0; shown=0/0"
+    },
+    {
+      "query": "village health pods healthcare systems medicine",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:13:28.892Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=village%20health%20pods%20healthcare%20systems%20medicine&rows=10&select=DOI,title; sha256=7f22896a15db14b0e1db7a009bc90f05d6eb9e50d633d6588b04b4efdc3d5b05; total=13794976; shown=5/10; top: 10.1093/med/9780198758778.003.0010 \"Strengthening Healthcare Systems and Health Information Systems\" | 10.1093/med/9780190667924.001.0001 \"Modeling Public Health and Healthcare Systems\" | 10.1093/med/9780197580196.003.0003 \"Healthcare Systems: Supporting and Advancing Child Health\" | 10.1007/1-84628-141-5_8 \"Decision Support Systems in Medicine\" | 10.1159/000521674 \"Integrating Oral Medicine within Saudi Arabia’s Healthcare Systems\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "village health pods diagnostics telehealth",
+      "url": "https://api.github.com/search/repositories?q=village%20health%20pods%20diagnostics%20telehealth&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=village%20health%20pods%20diagnostics%20telehealth&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:13:20.842Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "village health pods diagnostics telehealth",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Avillage%20AND%20all%3Ahealth%20AND%20all%3Apods%20AND%20all%3Adiagnostics%20AND%20all%3Atelehealth&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Avillage%20AND%20all%3Ahealth%20AND%20all%3Apods%20AND%20all%3Adiagnostics%20AND%20all%3Atelehealth&start=0&max_results=10",
+      "sha256": "fd91795868fe721392fc33ff6e4402eaf99f4e4349eb526cafadfad5c5ca0522",
+      "bytes": 836,
+      "observedAt": "2026-11-06T00:13:21.727Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "village health pods diagnostics telehealth",
+      "url": "https://api.crossref.org/works?query=village%20health%20pods%20diagnostics%20telehealth&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=village%20health%20pods%20diagnostics%20telehealth&rows=10&select=DOI,title",
+      "sha256": "913494133c1209c6c73da510426c5a32abdaf229a640a6c46326ff7673fd5618",
+      "bytes": 1315,
+      "observedAt": "2026-11-06T00:13:22.785Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "village health pods healthcare systems medicine",
+      "url": "https://api.github.com/search/repositories?q=village%20health%20pods%20healthcare%20systems%20medicine&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=village%20health%20pods%20healthcare%20systems%20medicine&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:13:27.389Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "village health pods healthcare systems medicine",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Avillage%20AND%20all%3Ahealth%20AND%20all%3Apods%20AND%20all%3Ahealthcare%20AND%20all%3Asystems%20AND%20all%3Amedicine&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Avillage%20AND%20all%3Ahealth%20AND%20all%3Apods%20AND%20all%3Ahealthcare%20AND%20all%3Asystems%20AND%20all%3Amedicine&start=0&max_results=10",
+      "sha256": "149d0863e1e753ac6b0c68b28c9a3ff425165937d3d3057a6999aa903a9782ad",
+      "bytes": 864,
+      "observedAt": "2026-11-06T00:13:27.864Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "village health pods healthcare systems medicine",
+      "url": "https://api.crossref.org/works?query=village%20health%20pods%20healthcare%20systems%20medicine&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=village%20health%20pods%20healthcare%20systems%20medicine&rows=10&select=DOI,title",
+      "sha256": "7f22896a15db14b0e1db7a009bc90f05d6eb9e50d633d6588b04b4efdc3d5b05",
+      "bytes": 1449,
+      "observedAt": "2026-11-06T00:13:28.892Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "2f59a74dcb3b7b82ed0a4528eab1797a4f55f517b83b2d06440ee649150cdd04",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

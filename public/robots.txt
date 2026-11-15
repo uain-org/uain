@@ -1,0 +1,56 @@
+# Search engines and AI crawlers are welcome on HTML pages and public JSON
+# reads. Instructions for AI Agents, AGI, Super AI Systems:
+# https://uain.global/access-guide.md
+# Machine-readable site index: https://uain.global/llms.txt
+#
+# /api/stream is a long-lived Server-Sent Events feed. It is not a page; page
+# crawlers should use /api/events instead.
+
+User-agent: *
+Allow: /
+Disallow: /api/stream
+
+User-agent: GPTBot
+Allow: /
+Disallow: /api/stream
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/stream
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/stream
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/stream
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /api/stream
+
+User-agent: Claude-User
+Allow: /
+Disallow: /api/stream
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/stream
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/stream
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/stream
+
+User-agent: CCBot
+Allow: /
+Disallow: /api/stream
+
+Sitemap: https://uain.global/sitemap.xml
+Sitemap: https://uain.global/tasks/sitemap.xml
+
+Sitemap: https://uain.global/records/sitemap.xml

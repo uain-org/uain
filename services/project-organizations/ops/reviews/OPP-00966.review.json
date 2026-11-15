@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00966",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:30Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable solution provides safe smartphone care in 7,000 languages; deployed health assistants cover a handful. WHO's S.A.R.A.H. launched in 8 languages and is now a research prototype not in public deployment (https://www.who.int/news/item/02-04-2024-who-unveils-a-digital-health-promoter-harnessing-generative-ai-for-public-health); Ada's symptom checker lists 7 languages (https://www.mobihealthnews.com/news/ada-health-launches-swahili-language-version-its-app). The strongest open building block is Meta's Omnilingual ASR, Apache 2.0, covering about 1,600 languages but with character error rate under 10% for only 78% of them and much weaker for low-resource languages (https://arxiv.org/pdf/2511.09690); speech recognition is not clinical care. Medical LLM accuracy drops sharply in African languages, by about 38.6 points for open-weight models on a 13-language clinical benchmark (https://neurips.cc/virtual/2026/177288). Honest limit: open multilingual speech and translation models are real prior art, so tasks must target the clinical-safety and validation gap in low-resource languages, not re-release translation."
+  },
+  "additionalSearches": [
+    {
+      "query": "health chatbot how many languages supported WHO S.A.R.A.H. multilingual digital health assistant",
+      "source": "https://www.who.int/news/item/02-04-2024-who-unveils-a-digital-health-promoter-harnessing-generative-ai-for-public-health",
+      "observedAt": "2026-11-06T00:50:00Z",
+      "finding": "WHO's S.A.R.A.H. digital health promoter launched in 8 languages (April 2024); WHO now describes it as a research prototype not in active public deployment."
+    },
+    {
+      "query": "Meta Omnilingual ASR 1600 languages open source speech recognition",
+      "source": "https://arxiv.org/pdf/2511.09690",
+      "observedAt": "2026-11-06T00:50:10Z",
+      "finding": "Omnilingual ASR (November 2025, Apache 2.0) recognises speech in about 1,600 languages; CER under 10% for 78% of them, far weaker for low-resource ones. Speech recognition only, not care."
+    },
+    {
+      "query": "LLM medical question answering low-resource languages benchmark African languages performance gap",
+      "source": "https://neurips.cc/virtual/2026/177288",
+      "observedAt": "2026-11-06T00:50:20Z",
+      "finding": "A 13-language African clinical benchmark shows multiple-choice accuracy drops about 38.6 points for open-weight models in local languages; AfriMed-QA is English-only."
+    },
+    {
+      "query": "Ada Health symptom checker languages available Babylon Africa local language health app",
+      "source": "https://www.mobihealthnews.com/news/ada-health-launches-swahili-language-version-its-app",
+      "observedAt": "2026-11-06T00:50:30Z",
+      "finding": "Commercial symptom checkers cover few languages: Ada lists 7 including Swahili; Babylon's Babyl localised for Kinyarwanda only. Proprietary."
+    }
+  ]
+}

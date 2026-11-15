@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00968",
+  "native_project": "P-OPP-00968",
+  "source_digest": "2762da191ad69f1b1c34017f21de3eba73e12359b2608aa9c0188d7d68f71d6d",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Provide mobile health clinics by autonomous vehicles",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "c0d1e4b2f79894f538274cbbca4f0616d33fa8c35c708e9327b3c4c51323903c"
+  },
+  "drafted_at": "2026-11-06T00:14:20.841Z",
+  "queries": [
+    "mobile health clinics autonomous vehicles",
+    "mobile health clinics healthcare systems medicine"
+  ],
+  "searches": [
+    {
+      "query": "mobile health clinics autonomous vehicles",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:14:12.857Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=mobile%20health%20clinics%20autonomous%20vehicles&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "mobile health clinics autonomous vehicles",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:14:13.361Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Amobile%20AND%20all%3Ahealth%20AND%20all%3Aclinics%20AND%20all%3Aautonomous%20AND%20all%3Avehicles&start=0&max_results=10; sha256=d6b03047ef96932e657a8fba928f0c5b333a065cabd05b057db567ca7d63ba92; total=0; shown=0/0"
+    },
+    {
+      "query": "mobile health clinics autonomous vehicles",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:14:14.302Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=mobile%20health%20clinics%20autonomous%20vehicles&rows=10&select=DOI,title; sha256=faae5588a3ced47507b3b139773d75dff8388a94dab490e0c71d75696d4ed7bc; total=6175743; shown=5/10; top: 10.1142/9789814368612_0002 \"Evolution of Autonomous Mobile Robots\" | 10.1142/9789814368612_0005 \"Structure of Cognitive Controller for an Autonomous Mobile Robot\" | 10.1109/oceans.2012.6405109 \"Underwater mobile docking of autonomous underwater vehicles\" | 10.70675/39210d97z33ecz473az96c4zb0aa4cdb97fe \"Dependability approaches for mobile environment : Application on connected autonomous vehicles.\" | 10.1016/b978-0-08-042366-1.50067-1 \"DECIDING THE BEHAVIOUR OF AN AUTONOMOUS MOBILE ROAD VEHICLE\""
+    },
+    {
+      "query": "mobile health clinics healthcare systems medicine",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:14:19.355Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=mobile%20health%20clinics%20healthcare%20systems%20medicine&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "mobile health clinics healthcare systems medicine",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:14:19.851Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Amobile%20AND%20all%3Ahealth%20AND%20all%3Aclinics%20AND%20all%3Ahealthcare%20AND%20all%3Asystems%20AND%20all%3Amedicine&start=0&max_results=10; sha256=3e46e2b34441c14ac9e556451986d2eceb6cb9205f82e214751e3ab0408b5132; total=0; shown=0/0"
+    },
+    {
+      "query": "mobile health clinics healthcare systems medicine",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:14:20.840Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=mobile%20health%20clinics%20healthcare%20systems%20medicine&rows=10&select=DOI,title; sha256=349124834862e5bfb7b39bd79f478fbefab001089a90f22af8840a76da23d647; total=14330029; shown=5/10; top: 10.4018/978-1-5225-8021-8.ch006 \"Mobile Health Applications in Prehospital Emergency Medicine\" | 10.17161/kjm.vol15.16543 \"Mobile Health Clinics as a Healthcare Delivery Model to Address Community Disparities\" | 10.17760/d20653167 \"Mobile health clinics: an effective healthcare industry model to address social determinants of health, reduce costs, and improve health ou…\" | 10.1080/24725579.2023.2231981 \"An integer programming model for the deployment of mobile health clinics\" | 10.1093/med/9780190667924.001.0001 \"Modeling Public Health and Healthcare Systems\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "mobile health clinics autonomous vehicles",
+      "url": "https://api.github.com/search/repositories?q=mobile%20health%20clinics%20autonomous%20vehicles&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=mobile%20health%20clinics%20autonomous%20vehicles&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:14:12.857Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "mobile health clinics autonomous vehicles",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Amobile%20AND%20all%3Ahealth%20AND%20all%3Aclinics%20AND%20all%3Aautonomous%20AND%20all%3Avehicles&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Amobile%20AND%20all%3Ahealth%20AND%20all%3Aclinics%20AND%20all%3Aautonomous%20AND%20all%3Avehicles&start=0&max_results=10",
+      "sha256": "d6b03047ef96932e657a8fba928f0c5b333a065cabd05b057db567ca7d63ba92",
+      "bytes": 834,
+      "observedAt": "2026-11-06T00:14:13.361Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "mobile health clinics autonomous vehicles",
+      "url": "https://api.crossref.org/works?query=mobile%20health%20clinics%20autonomous%20vehicles&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=mobile%20health%20clinics%20autonomous%20vehicles&rows=10&select=DOI,title",
+      "sha256": "faae5588a3ced47507b3b139773d75dff8388a94dab490e0c71d75696d4ed7bc",
+      "bytes": 1227,
+      "observedAt": "2026-11-06T00:14:14.302Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "mobile health clinics healthcare systems medicine",
+      "url": "https://api.github.com/search/repositories?q=mobile%20health%20clinics%20healthcare%20systems%20medicine&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=mobile%20health%20clinics%20healthcare%20systems%20medicine&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:14:19.355Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "mobile health clinics healthcare systems medicine",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Amobile%20AND%20all%3Ahealth%20AND%20all%3Aclinics%20AND%20all%3Ahealthcare%20AND%20all%3Asystems%20AND%20all%3Amedicine&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Amobile%20AND%20all%3Ahealth%20AND%20all%3Aclinics%20AND%20all%3Ahealthcare%20AND%20all%3Asystems%20AND%20all%3Amedicine&start=0&max_results=10",
+      "sha256": "3e46e2b34441c14ac9e556451986d2eceb6cb9205f82e214751e3ab0408b5132",
+      "bytes": 868,
+      "observedAt": "2026-11-06T00:14:19.851Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "mobile health clinics healthcare systems medicine",
+      "url": "https://api.crossref.org/works?query=mobile%20health%20clinics%20healthcare%20systems%20medicine&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=mobile%20health%20clinics%20healthcare%20systems%20medicine&rows=10&select=DOI,title",
+      "sha256": "349124834862e5bfb7b39bd79f478fbefab001089a90f22af8840a76da23d647",
+      "bytes": 1516,
+      "observedAt": "2026-11-06T00:14:20.840Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "6f9d2e99d22e28335a556fd248703757fd9128a7e60213f06ca28e5c88b68a9c",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

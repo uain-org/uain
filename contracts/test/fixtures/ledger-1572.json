@@ -1,0 +1,66 @@
+{
+  "note": "Production ledger, public data, fetched 4 October 2026: event 1572 (the RC-4578 award) and the signed root of 2026-09-30. The PEM matches LEDGER_PUBLIC_KEY_PEM and ledger-roots/key.json.",
+  "proof": {
+    "event_id": 1572,
+    "leaf": "2aa4e02aaaad65c399d7008ac4d44cc87465250be099a8c1dc8badebf9ca825a",
+    "date": "2026-09-30",
+    "index": 249,
+    "leaves": 279,
+    "proof": [
+      {
+        "position": "left",
+        "hash": "9e74b6d5daeb0fa27b9ec17ae473b337cc0a35fa524de5b6d5f9418830d672b5"
+      },
+      {
+        "position": "right",
+        "hash": "253169df0dc2095f75b2e56494445bd553dbab61cdb957e0e355ddfb6ae82db5"
+      },
+      {
+        "position": "right",
+        "hash": "ad1ad8a397a1110c22f5484c846b28a06197c50b992327a745481cce68aab559"
+      },
+      {
+        "position": "left",
+        "hash": "d310198218df87d95564321619e252292a54d7c44a077441945e928522125f89"
+      },
+      {
+        "position": "left",
+        "hash": "e910fe97a97f73cbc5880c6dffdfb75f39a36992c9968564f3c5fdda6753f255"
+      },
+      {
+        "position": "left",
+        "hash": "5d408bfffff7130f743ab46c07be8ffd50ca752619fadbf202b8ab95374896f9"
+      },
+      {
+        "position": "left",
+        "hash": "bc4763713d97c513a1ecb518978a2942251f2cfe4eb1fadb952c175a4c48ec4d"
+      },
+      {
+        "position": "left",
+        "hash": "ba099a3e8f60bb5bfc4f2881cfe54826fa1b3bcea6a872fa2409b76d3c30e36c"
+      },
+      {
+        "position": "right",
+        "hash": "1ffe355bcb214baf8f4e9fea2c7ab89a1346a05a83c7ebbb10df804113046c76"
+      }
+    ],
+    "root": "0a2e4417306bcdbe72154cefb1954d231f1e3fc571eca61cedbcc7b84d4932d4",
+    "provisional": false,
+    "signature": "JuyHdkCqfZGGgIPh5RrhJuBTnCNKoNG0zDRcImgWSOycmsQ2jkx+gv4YcszRJfRefDgQx4Ys/TnToB6cCI6TBg=="
+  },
+  "event": {
+    "id": 1572,
+    "hash": "2aa4e02aaaad65c399d7008ac4d44cc87465250be099a8c1dc8badebf9ca825a"
+  },
+  "root": {
+    "date": "2026-09-30",
+    "root": "0a2e4417306bcdbe72154cefb1954d231f1e3fc571eca61cedbcc7b84d4932d4",
+    "head": "a674d78ffb9172d42ed19c9b87900d5157e83070aa99ec9ea9c9d4ee2c3dae57",
+    "count": 279,
+    "first_id": 1323,
+    "last_id": 1601,
+    "signature": "JuyHdkCqfZGGgIPh5RrhJuBTnCNKoNG0zDRcImgWSOycmsQ2jkx+gv4YcszRJfRefDgQx4Ys/TnToB6cCI6TBg==",
+    "provisional": false
+  },
+  "pem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAje31vIyrita/VWJVnmVgQkPJjGmH0od88CqK+irV3M8=\n-----END PUBLIC KEY-----\n"
+}

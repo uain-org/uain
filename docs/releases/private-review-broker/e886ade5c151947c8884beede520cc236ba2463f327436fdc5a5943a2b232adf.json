@@ -1,0 +1,15 @@
+{
+ "schema": 1,
+ "component": "private-review-broker",
+ "release_id": "e886ade5c151947c8884beede520cc236ba2463f327436fdc5a5943a2b232adf",
+ "version": null,
+ "source_commit": "9f5c809154e439852274b56798fc70322c0a4e8e",
+ "deployed_at": "2026-11-09T08:21:45Z",
+ "prior": "15d52e3dff155e34f2a565cea2695b903a27d47ab8f438df487d0f98533023bd",
+ "status": "publicly-verified",
+ "evidence": [
+  "CHANGELOG.md#agents-sonnet-rollout-20261109",
+  "https://baink.money/api/native/review/health"
+ ],
+ "note": "Two-file overlay: reviews run on claude-sonnet-5-5 and sign that model. Restarted while idle; first heartbeat modelQualified and rootReady, public health available. Pinned CLI answered on the subscription as claude-sonnet-5-5. No payment review run yet."
+}

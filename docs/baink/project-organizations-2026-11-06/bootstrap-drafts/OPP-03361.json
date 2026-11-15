@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-03361",
+  "native_project": "P-OPP-03361",
+  "source_digest": "1c0d29a198c2085fc48221660d1a60f8e84c0f46c30185d0a0dc84870ef4a397",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Offer a robotaxi in every city above 100000 people",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "78a68b45674803b9f4e883f78889ac14e3d60a65b067dc4ac3e17df7979d7807"
+  },
+  "drafted_at": "2026-11-06T00:23:39.941Z",
+  "queries": [
+    "offer robotaxi city people",
+    "offer robotaxi city transport mobility autonomous"
+  ],
+  "searches": [
+    {
+      "query": "offer robotaxi city people",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:23:32.034Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=offer%20robotaxi%20city%20people&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "offer robotaxi city people",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:23:32.877Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Arobotaxi%20AND%20all%3Acity%20AND%20all%3Apeople&start=0&max_results=10; sha256=11b9af3d807d04876946cd141e694898f8b91bb9da38084b382439f899e73683; total=0; shown=0/0"
+    },
+    {
+      "query": "offer robotaxi city people",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:23:33.723Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=offer%20robotaxi%20city%20people&rows=10&select=DOI,title; sha256=4965e4b355d155983f207be406838db4a9eff555ad227187aaee79a5844fc5dc; total=1291986; shown=5/10; top: 10.3390/systems11120559 \"Does Robotaxi Offer a Positive Travel Experience? A Study of the Key Factors That Influence Consumers’ Use of the Robotaxi\" | 10.1037/e482502008-012 \"Young people of normal mental health\" | 10.3310/signal-000261 \"Mechanical clot removal may offer better outcomes for people with stroke\" | 10.3310/alert_40474 \"Some antidepressants can help people quit smoking, but other medications may offer greater benefits\" | 10.7748/nop.18.3.5.s7 \"Dementia bursaries on offer\""
+    },
+    {
+      "query": "offer robotaxi city transport mobility autonomous",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:23:38.609Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=offer%20robotaxi%20city%20transport%20mobility%20autonomous&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "offer robotaxi city transport mobility autonomous",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:23:39.140Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Arobotaxi%20AND%20all%3Acity%20AND%20all%3Atransport%20AND%20all%3Amobility%20AND%20all%3Aautonomous&start=0&max_results=10; sha256=2bd3854ca0c515084d2d087a6c2a2a6c3268423e0dfe4b5a43f73b922e69f88d; total=1; shown=1/1; top: arXiv:2408.10088v1 \"Recent Surge in Public Interest in Transportation: Sentiment Analysis of Baidu Apollo Go Using Weibo Data\""
+    },
+    {
+      "query": "offer robotaxi city transport mobility autonomous",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:23:39.940Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=offer%20robotaxi%20city%20transport%20mobility%20autonomous&rows=10&select=DOI,title; sha256=1222320db92e36308c104da3ac953118f7e0de5ecb77a0fb939898bf42fd6f86; total=1812375; shown=5/10; top: 10.14293/pr2199.003075.v1 \"Autonomous Mobility in Qatar: A Techno-Economic and Financial Analysis of Robotaxi Integration\" | 10.2139/ssrn.5908317 \"Does the Robotaxi Experience Motivate Autonomous Vehicle Purchase Intentions?\" | 10.3390/systems11120559 \"Does Robotaxi Offer a Positive Travel Experience? A Study of the Key Factors That Influence Consumers’ Use of the Robotaxi\" | 10.70675/97fcea9fz68aaz4c50z8cfbz33d605a78bd6 \"Dynamic mobility management approaches for autonomous transport systems\" | 10.1201/9781003605676-5 \"Navigating Autonomous Demand-Responsive Transport\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "offer robotaxi city people",
+      "url": "https://api.github.com/search/repositories?q=offer%20robotaxi%20city%20people&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=offer%20robotaxi%20city%20people&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:23:32.034Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "offer robotaxi city people",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Arobotaxi%20AND%20all%3Acity%20AND%20all%3Apeople&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Arobotaxi%20AND%20all%3Acity%20AND%20all%3Apeople&start=0&max_results=10",
+      "sha256": "11b9af3d807d04876946cd141e694898f8b91bb9da38084b382439f899e73683",
+      "bytes": 786,
+      "observedAt": "2026-11-06T00:23:32.877Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "offer robotaxi city people",
+      "url": "https://api.crossref.org/works?query=offer%20robotaxi%20city%20people&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=offer%20robotaxi%20city%20people&rows=10&select=DOI,title",
+      "sha256": "4965e4b355d155983f207be406838db4a9eff555ad227187aaee79a5844fc5dc",
+      "bytes": 1356,
+      "observedAt": "2026-11-06T00:23:33.723Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "offer robotaxi city transport mobility autonomous",
+      "url": "https://api.github.com/search/repositories?q=offer%20robotaxi%20city%20transport%20mobility%20autonomous&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=offer%20robotaxi%20city%20transport%20mobility%20autonomous&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:23:38.609Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "offer robotaxi city transport mobility autonomous",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Arobotaxi%20AND%20all%3Acity%20AND%20all%3Atransport%20AND%20all%3Amobility%20AND%20all%3Aautonomous&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Arobotaxi%20AND%20all%3Acity%20AND%20all%3Atransport%20AND%20all%3Amobility%20AND%20all%3Aautonomous&start=0&max_results=10",
+      "sha256": "2bd3854ca0c515084d2d087a6c2a2a6c3268423e0dfe4b5a43f73b922e69f88d",
+      "bytes": 3763,
+      "observedAt": "2026-11-06T00:23:39.140Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "offer robotaxi city transport mobility autonomous",
+      "url": "https://api.crossref.org/works?query=offer%20robotaxi%20city%20transport%20mobility%20autonomous&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=offer%20robotaxi%20city%20transport%20mobility%20autonomous&rows=10&select=DOI,title",
+      "sha256": "1222320db92e36308c104da3ac953118f7e0de5ecb77a0fb939898bf42fd6f86",
+      "bytes": 1353,
+      "observedAt": "2026-11-06T00:23:39.940Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "8ed54f5333b488bef09009496cd1feed7ec22918a7ff87827ce74c3f179f6a9f",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

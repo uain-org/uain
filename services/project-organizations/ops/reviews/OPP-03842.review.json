@@ -1,0 +1,45 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-03842",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable AI-managed micro-utility model delivers safe water to homes at scale, and the Main KPI of 2,000,000,000 people with safe water at home is unmet. The JMP 2025 update reports that 2.1 billion people, one in four, still lack safely managed drinking water (https://washdata.org/reports/jmp-2025-wash-households); a geospatial Science study found only one in three people in low- and middle-income countries used safely managed water in 2020, with faecal contamination the main limiting factor for almost half (https://doi.org/10.1126/science.adh9578). Small rural utilities struggle with revenue and contracts, for example in Mali (https://doi.org/10.1038/s41545-024-00341-6, https://doi.org/10.5751/es-15825-300128). Remote pump monitoring exists, but a 2024 review questions whether microprocessor-based systems suit the Global South and reports no scale figures (https://doi.org/10.1680/jwama.22.00074); open ML for water utilities on GitHub is three small leak-detection projects. Honest limit: piped schemes, kiosks, chlorination and sensors are known, so tasks that restate them are not new work; the open, checkable work is AI-driven operation that measurably cuts downtime and contamination and keeps a micro-utility solvent, validated in the field."
+  },
+  "additionalSearches": [
+    {
+      "query": "water kiosks safe drinking water rural small utilities sustainability (2024 onward)",
+      "source": "https://api.openalex.org/works?search=water%20kiosks%20safe%20drinking%20water%20rural%20small%20utilities%20sustainability&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:17:25Z",
+      "finding": "180 works: water partnerships, rural treatment feedbacks, creative financing for rural utilities, contractual uncertainty and volumetric pricing in rural Mali. Viability problems documented, no scaled model."
+    },
+    {
+      "query": "machine learning predictive maintenance rural water pumps handpump sensors (2024 onward)",
+      "source": "https://api.openalex.org/works?search=machine%20learning%20predictive%20maintenance%20rural%20water%20pumps%20handpump%20sensors&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:17:27Z",
+      "finding": "11 works: a 2024 review of rural pump monitoring tools in the Global South and a 2026 study of digital water monitoring and disease prevention. Monitoring is early, not AI-managed utilities."
+    },
+    {
+      "query": "safely managed drinking water JMP 2024 billion people lack (2024 onward)",
+      "source": "https://api.openalex.org/works?search=safely%20managed%20drinking%20water%20JMP%202024%20billion%20people%20lack&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:17:29Z",
+      "finding": "467 works: Science 2024 mapping of safe water use in LMICs (158 citations), household storage contamination even in safely managed systems (2026), rainwater harvesting potential (2025)."
+    },
+    {
+      "query": "water utility machine learning leak detection (GitHub repositories)",
+      "source": "https://api.github.com/search/repositories?q=water%20utility%20machine%20learning%20leak%20detection&sort=stars&per_page=8",
+      "observedAt": "2026-11-06T01:17:31Z",
+      "finding": "3 repositories (4, 0 and 0 stars): leak detection pipelines on utility telemetry. No open AI micro-utility operating system."
+    },
+    {
+      "query": "JMP 2025 WASH households update",
+      "source": "https://washdata.org/reports/jmp-2025-wash-households",
+      "observedAt": "2026-11-06T01:22:20Z",
+      "finding": "1 in 4, or 2.1 billion people globally, still lack access to safely managed drinking water."
+    }
+  ]
+}

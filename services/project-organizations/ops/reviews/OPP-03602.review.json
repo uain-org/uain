@@ -1,0 +1,45 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-03602",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable scheme offers rent-to-own homes with payments guaranteed never above a quarter of income, and none reaches the Main KPI of 500,000,000 households. Indonesia's state bank BTN launched a rent-to-own scheme in 2022 for low-income and informal workers, but a 2025 benchmark against Malaysia finds low awareness, weak regulatory support and limited uptake (https://doi.org/10.17358/brcs.6.2.319). Shared-equity and community land trust models are documented with outcome studies (https://doi.org/10.1186/s12889-024-20982-z, https://doi.org/10.1080/19491247.2024.2367830), and a 2025 NBER paper examines returns in affordable housing finance (https://doi.org/10.3386/w33470), but none guarantees a payment-to-income cap at scale. UN-Habitat projects 3 billion people will need adequate housing by 2030 (https://unhabitat.org/topic/housing). Honest limit: lease-purchase, shared equity, community land trusts and income-linked payment rules are known designs, so tasks that restate them are not new work; the unsolved part is financing the gap between 25% of low and informal incomes and the cost of a home while managing default and title risk, so tasks must target a checkable new piece such as an underwriting or risk-pooling method validated on data. Habitat for Humanity's homeownership page returned 404, so its payment rule is not relied on."
+  },
+  "additionalSearches": [
+    {
+      "query": "rent-to-own lease purchase affordable housing low income evaluation (2024 onward)",
+      "source": "https://api.openalex.org/works?search=rent-to-own%20lease%20purchase%20affordable%20housing%20low%20income%20evaluation&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:17:16Z",
+      "finding": "1,737 works: an Indonesia-Malaysia rent-to-own benchmark (2025), NBER 'An Alpha in Affordable Housing?' (2025), Egypt and Myanmar low-income strategies. Rent-to-own exists in pilots without an income cap guarantee."
+    },
+    {
+      "query": "shared equity homeownership community land trust affordability outcomes (2024 onward)",
+      "source": "https://api.openalex.org/works?search=shared%20equity%20homeownership%20community%20land%20trust%20affordability%20outcomes&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:17:18Z",
+      "finding": "708 works: shared-equity homeowner health trajectories (2025), community land trust frameworks (Memphis, Toronto, Australia). Known models, local scale."
+    },
+    {
+      "query": "housing affordability 30 percent income rule rent burden global (2024 onward)",
+      "source": "https://api.openalex.org/works?search=housing%20affordability%2030%20percent%20income%20rule%20rent%20burden%20global&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:17:20Z",
+      "finding": "1,625 works on affordability burdens (Greece, Croatia, US rental gap) and a 2025 study of affordability for Habitat for Humanity clients. No scheme found guaranteeing payments at or below 25% of income at scale."
+    },
+    {
+      "query": "Habitat for Humanity homeowner mortgage payment percent of income affordability (2024 onward)",
+      "source": "https://api.openalex.org/works?search=Habitat%20for%20Humanity%20homeowner%20mortgage%20payment%20percent%20of%20income%20affordability&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:22:37Z",
+      "finding": "31 works: local affordable-housing plans and a study defining affordability for Habitat clients; no evidence of a global or large-scale 25%-of-income rent-to-own programme."
+    },
+    {
+      "query": "Indonesia and Malaysia rent-to-own benchmark",
+      "source": "https://api.openalex.org/works/doi:10.17358/brcs.6.2.319",
+      "observedAt": "2026-11-06T01:24:02Z",
+      "finding": "BTN introduced rent-to-own in 2022 for low-income households and informal workers; the study finds low awareness, weak regulation, minimal stakeholder engagement and limited uptake, and recommends feasibility analysis."
+    }
+  ]
+}

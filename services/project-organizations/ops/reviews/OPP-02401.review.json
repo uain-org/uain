@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-02401",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable living genetic biobank covers endangered species at the Main KPI of 44,000 species banked; coverage of the most threatened species is a small fraction. A 2026 gap analysis of the Millennium Seed Bank Partnership, the largest seed-banking network (101 countries, 52,874 taxa banked), found only 474 critically endangered taxa banked, about 7.21% of them, only 9.49% in sufficient numbers for restoration, 6,120 critically endangered taxa unbanked, and 11.6 to 17.2% of those needing non-seed methods because their seeds are desiccation-intolerant (https://doi.org/10.1007/s10531-025-03246-z). Animal biobanks hold cells and gametes from thousands of species, limited by sample availability and species-specific cryotolerance (https://doi.org/10.1262/jrd.2025-114); coral cryobanking reached 100 species (https://doi.org/10.3390/cells11172668). GitHub has no open biobank registry or coverage tool for endangered species. Honest limit: seed banking and cell cryopreservation protocols are known, so tasks that only bank more samples with existing protocols are not new work; the open, checkable pieces are protocols for desiccation-intolerant seeds and taxa with no working cryopreservation, and a verified species-level coverage analysis. The Frozen Zoo inventory page could not be retrieved (404), so its counts are not relied on."
+  },
+  "additionalSearches": [
+    {
+      "query": "Frozen Zoo cryopreservation endangered species cell lines number of species",
+      "source": "https://api.openalex.org/works?search=Frozen%20Zoo%20cryopreservation%20endangered%20species%20cell%20lines%20number%20of%20species&per_page=8&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:15:58Z",
+      "finding": "317 works on biobanking for rare and endangered species: coral cryobanking of 100 species (2022), aquatic cryobanking, amphibian sperm storage, assisted reproduction reviews. No source reports a biobank covering most threatened species."
+    },
+    {
+      "query": "biobanking threatened species living cell cryobank coverage IUCN Red List (2024 onward)",
+      "source": "https://api.openalex.org/works?search=biobanking%20threatened%20species%20living%20cell%20cryobank%20coverage%20IUCN%20Red%20List&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:16:00Z",
+      "finding": "3 works; the 2026 review Biobanking biodiversity (doi 10.1262/jrd.2025-114) says material from thousands of wild species is preserved worldwide and names sample availability and species-specific cryotolerance as limits, with no species-coverage figure near 44,000."
+    },
+    {
+      "query": "Millennium Seed Bank threatened plant species conserved ex situ proportion (2024 onward)",
+      "source": "https://api.openalex.org/works?search=Millennium%20Seed%20Bank%20threatened%20plant%20species%20conserved%20ex%20situ%20proportion&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:16:02Z",
+      "finding": "74 works including the 2026 Biodiversity and Conservation gap analysis Mind the gap (doi 10.1007/s10531-025-03246-z): 474 critically endangered taxa banked in the MSBP, about 7.21%, with 6,120 unbanked; and a 2025 finding that plant evolutionary history is underrepresented in European seed banks."
+    },
+    {
+      "query": "biobank endangered species (GitHub repositories)",
+      "source": "https://api.github.com/search/repositories?q=biobank%20endangered%20species&sort=stars&per_page=8",
+      "observedAt": "2026-11-06T01:16:02Z",
+      "finding": "0 repositories. Null result for open biobank registries or coverage software for endangered species."
+    }
+  ]
+}

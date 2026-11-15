@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01205",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:07:30Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable solution guarantees a minimum calorie supply to all 8,100,000,000 people; SOFI 2025 estimates 673 million people (8.2%) were undernourished in 2024 and 2.3 billion moderately or severely food insecure, with 512 million projected still hungry in 2030 (https://www.downtoearth.org.in/health/around-82-of-worlds-population-affected-by-hunger-last-year-sofi-2025). The largest guarantee in operation is national: India's NFSA and PMGKAY give free grain to about 813.5 million people, extended to 2028 (https://www.easternmirrornagaland.com/free-grain-distribution-to-81-35-cr-poor-under-pmgkay-extended-for-5-years). About 30 constitutions recognise a justiciable right to food, but no universal calorie guarantee exists (https://www.fao.org/3/bs906e/bs906e.pdf). Costings of ending hunger range from about 11 to 267 billion US dollars a year (https://www.ifpri.org/blog/how-much-would-it-cost-end-hunger-worldwide-2030/). Honest limit: the interventions (public distribution, cash transfers, safety nets) are known and published, so this is chiefly a financing, logistics and governance problem; tasks must target a new, checkable piece, such as a verifiable household-level delivery or targeting method, not restate known programmes."
+  },
+  "additionalSearches": [
+    {
+      "query": "SOFI 2025 number of people hungry undernourished world 2024",
+      "source": "https://www.downtoearth.org.in/health/around-82-of-worlds-population-affected-by-hunger-last-year-sofi-2025",
+      "observedAt": "2026-11-06T01:02:00Z",
+      "finding": "SOFI 2025: 673 million undernourished in 2024 (range 638-720 million); 2.3 billion moderately or severely food insecure; 512 million projected in 2030."
+    },
+    {
+      "query": "PMGKAY free food grains 81 crore beneficiaries National Food Security Act entitlement",
+      "source": "https://www.easternmirrornagaland.com/free-grain-distribution-to-81-35-cr-poor-under-pmgkay-extended-for-5-years",
+      "observedAt": "2026-11-06T01:02:10Z",
+      "finding": "India gives free grain to about 813.5 million NFSA beneficiaries, extended for five years to 2028. Largest national guarantee; grain, not a full calorie guarantee for all."
+    },
+    {
+      "query": "universal food guarantee right to food legal entitlement countries minimum calorie guarantee programme evaluation",
+      "source": "https://www.fao.org/3/bs906e/bs906e.pdf",
+      "observedAt": "2026-11-06T01:02:20Z",
+      "finding": "About 30 constitutions explicitly recognise a justiciable right to food and 74 implicitly; no universal minimum calorie guarantee programme found."
+    },
+    {
+      "query": "cost of ending hunger by 2030 estimate billion per year Ceres2030",
+      "source": "https://www.ifpri.org/blog/how-much-would-it-cost-end-hunger-worldwide-2030/",
+      "observedAt": "2026-11-06T01:02:30Z",
+      "finding": "Published costings to end hunger range from about USD 11 billion to 267 billion a year; the problem is unfunded and unsolved."
+    }
+  ]
+}

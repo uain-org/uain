@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00242",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T02:50:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No universal coronavirus vaccine exists, openly or commercially, so the Main KPI of 8,000,000,000 people protected is untouched. The 357 indexed records on universal or pan-coronavirus vaccines are preclinical or modelling: epitope-focused immunogens conferring broad protection (bioRxiv 2026), an engineered HR1-stem-helix-HR2 trimer platform (Adv Sci 2026), receptor-binding-domain-independent conserved T/B epitope fusions (Emerg Microbes Infect 2026), clade 2 and 3 sarbecovirus nanoparticles in hamsters (Vaccine 2026) and heterologous betacoronavirus immunisation in non-human primates (Cell Rep 2026); none reports a licensed product (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22universal%20coronavirus%20vaccine%22%20OR%20%22pan-coronavirus%20vaccine%22&format=json&pageSize=15&resultType=lite). The registry has no pan-coronavirus vaccine trial: an intervention query returns only SARS-CoV-2-specific candidates such as the intranasal OCU500 phase 1 in 80 adults (https://clinicaltrials.gov/api/v2/studies?query.intr=pan-coronavirus+vaccine&pageSize=20), and the only first-in-human study surfaced by a phase 1 search is a SARS-CoV-2-specific outer-membrane-vesicle intranasal vaccine in 40 seropositive adults (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22pan-coronavirus%22%20AND%20vaccine%20AND%20%28%22phase%201%22%20OR%20%22first-in-human%22%29&format=json&pageSize=5&resultType=core). No open-source candidate or design repository was found (https://api.github.com/search/repositories?q=pan-coronavirus+vaccine+design&per_page=10). Honest limit: conserved-epitope immunogen strategies are published in detail, so a task that only restates or re-runs a published immunogen design is a known answer; the open work is correlates of broad protection, durable cross-clade efficacy in humans and a route to global supply."
+  },
+  "additionalSearches": [
+    {
+      "query": "universal coronavirus and pan-coronavirus vaccine literature",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22universal%20coronavirus%20vaccine%22%20OR%20%22pan-coronavirus%20vaccine%22&format=json&pageSize=15&resultType=lite",
+      "observedAt": "2026-11-06T02:35:00Z",
+      "finding": "357 hits, all preclinical or review: epitope-focused immunogens (bioRxiv 2026), HR1-stem-helix-HR2 trimer platform (Adv Sci 2026), conserved T/B epitope fusion designs (Emerg Microbes Infect 2026), sarbecovirus nanoparticles in hamsters, heterologous betacoronavirus immunisation in non-human primates. No record reports a licensed or late-phase universal coronavirus vaccine."
+    },
+    {
+      "query": "registered pan-coronavirus or universal coronavirus vaccine trials",
+      "source": "https://clinicaltrials.gov/api/v2/studies?query.intr=pan-coronavirus+vaccine&pageSize=20",
+      "observedAt": "2026-11-06T02:37:00Z",
+      "finding": "No pan-coronavirus vaccine trial is registered under this intervention query; the coronavirus entry returned is OCU500, a SARS-CoV-2 spike vaccine given intranasally in a phase 1 study of 80 previously vaccinated adults. Nothing in phase 3 and nothing universal."
+    },
+    {
+      "query": "first-in-human phase 1 pan-coronavirus vaccine studies",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22pan-coronavirus%22%20AND%20vaccine%20AND%20%28%22phase%201%22%20OR%20%22first-in-human%22%29&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T02:39:00Z",
+      "finding": "The only first-in-human vaccine study returned is SARS-CoV-2-specific: an outer-membrane-vesicle plus spike intranasal vaccine in 40 seropositive adults (Vaccines 2026), safe and immunogenic. The pan-coronavirus hits are reviews, a DNA-encoded antibody study and a 3CL protease inhibitor, not vaccines."
+    },
+    {
+      "query": "open-source universal coronavirus vaccine design repositories",
+      "source": "https://api.github.com/search/repositories?q=pan-coronavirus+vaccine+design&per_page=10",
+      "observedAt": "2026-11-06T02:41:00Z",
+      "finding": "Zero repositories: no open-source universal coronavirus vaccine candidate or design pipeline is published on GitHub under these terms."
+    }
+  ]
+}

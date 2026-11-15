@@ -1,0 +1,277 @@
+{
+ "schema": "uain-survey-parts-build-v1",
+ "project": "OPP-00007",
+ "revision": 2,
+ "supersedes": "T-OPP-00007-1-prior-art-survey",
+ "dropped": [
+  {
+   "kind": "doi",
+   "id": "10.1016/s1937-644818x0007-0",
+   "status": "not_found"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1016/s1937-64481830076-5",
+   "status": "not_found"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1016/s1937-64481830074-1",
+   "status": "not_found"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1016/s1937-64481830078-9",
+   "status": "not_found"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1016/s1937-64481830075-3",
+   "status": "not_found"
+  }
+ ],
+ "parts": [
+  {
+   "request": {
+    "id": "survey-OPP-00007-r2-p1",
+    "member": "uain158ac8d0debcf01d43164ef14736597da589d8b54",
+    "operation": "central_task_open",
+    "payload": {
+     "id": "T-OPP-00007-1-prior-art-survey-r2-p1",
+     "project": "P-OPP-00007",
+     "title": "Prior-art survey: Repair mitochondria in every cell with a simple therapy (part 1 of 2)",
+     "criteria": "Prior-art survey part 1 of 2 for \"Repair mitochondria in every cell with a simple therapy\". Main KPI: \"1,000,000,000 people with repaired mitochondria\". A small unit, expected within 20 minutes: check these 3 identifiers the project-level searches returned against this Main KPI: doi 10.1016/j.ymthe.2026.02.045; doi 10.1007/978-1-59745-147-5_13; doi 10.1021/acsami.5c03525.s001. Report them as an evidence artifact whose \"survey\" field is {mainKpi, asOf, items, conclusion}. mainKpi is the Main KPI above, exactly. asOf is the survey date (YYYY-MM-DD). Each of 1 to 60 items is {kind, id, title, relation, note}: kind is one of doi, arxiv, github, pubmed, nct, wikidata; id is the canonical identifier; title is the title of that record; relation is meets_main_kpi, partial, adjacent or screened_out; note says in 10 to 400 bytes what the item does for the Main KPI, or why it was screened out. Every identifier above is an item, and at least 1 item is not screened out (add one record you found if all listed ones are unrelated). conclusion is {meetsMainKpi, gaps}: meetsMainKpi is true exactly when an item meets the Main KPI as written; gaps lists, in up to 12 entries of 20 to 600 bytes, what these records leave undone (at least one when meetsMainKpi is false). Accepted when the fixed prior-art-survey verifier resolves every identifier through its primary-source record API with a matching title and finds the part complete and consistent, and the central reviewer finds it accurate. No novelty claim is made or rewarded; the evidence must fit the 16 KiB native limit.",
+     "acceptance_digest": "122ca44b0c1f39775443dc4870aefae31ff63dff35c7ef6c748f1ed5ea4e86bb",
+     "eligibility": "new",
+     "eligibility_digest": "6794e46698884c070e82df630098723ba3f966e9aaaec90166f5cd0212769c1b",
+     "solver_amount": "60000000",
+     "reviewer_amount": "10000000",
+     "evidence_digest": "145eeddd730b7137e25bb2c5e2736128f47952660bbdadc24c262ac16bcbd964"
+    }
+   },
+   "evidence": {
+    "schema": "uain-project-organization-survey-part-v1",
+    "decision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-06",
+     "record": "docs/baink/project-organizations-2026-11-06/decisions.md#d2"
+    },
+    "splitDecision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-09",
+     "record": "docs/baink/questions-9-nov-2026.md#c1"
+    },
+    "projectId": "OPP-00007",
+    "revision": 2,
+    "part": 1,
+    "parts": 2,
+    "supersedes": "T-OPP-00007-1-prior-art-survey",
+    "draftDigest": "be0ccda62521a95dc758862f687f08894ffa92208c09121c55116e5cdd71648a",
+    "reviewedDigest": "ed9ff120d6b4dbc74d84b8b3af863cde4cf15764cbe97f29a8d6d57cf92263a8",
+    "preflightDigest": "c70992f7617ad45f7dead76b0025923e3c7e86f4370836bcd51c05bdb1ddd24c",
+    "policyDigest": "ff41fea36e92dd05a8b2c428c779fd4a4685ffa734e4e7bb65f22ab780252d9c",
+    "requiredIds": [
+     {
+      "kind": "doi",
+      "id": "10.1016/j.ymthe.2026.02.045"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1007/978-1-59745-147-5_13"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1021/acsami.5c03525.s001"
+     }
+    ],
+    "dropped": [
+     {
+      "kind": "doi",
+      "id": "10.1016/s1937-644818x0007-0",
+      "status": "not_found"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1016/s1937-64481830076-5",
+      "status": "not_found"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1016/s1937-64481830074-1",
+      "status": "not_found"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1016/s1937-64481830078-9",
+      "status": "not_found"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1016/s1937-64481830075-3",
+      "status": "not_found"
+     }
+    ],
+    "novelty": "Each listed record is unresolved: no accepted inventory of this project covers it yet."
+   },
+   "policy": {
+    "schema": "uain-task-verification-policy-v1",
+    "class": "prior_art_survey",
+    "taskId": "T-OPP-00007-1-prior-art-survey-r2-p1",
+    "projectId": "P-OPP-00007",
+    "criteriaDigest": "122ca44b0c1f39775443dc4870aefae31ff63dff35c7ef6c748f1ed5ea4e86bb",
+    "inputs": [],
+    "primarySourceHosts": [
+     "api.crossref.org",
+     "api.github.com",
+     "clinicaltrials.gov",
+     "eutils.ncbi.nlm.nih.gov",
+     "export.arxiv.org",
+     "www.wikidata.org"
+    ],
+    "driver": {
+     "name": "prior-art-survey",
+     "sha256": "8ee79b891db4d7d1b0cf497d0173e31fbfe7f96cf818d3ecf2c4bbdb0d1b6f4e"
+    },
+    "successTests": [
+     {
+      "id": "survey",
+      "mainKpi": "1,000,000,000 people with repaired mitochondria",
+      "minIncluded": 1,
+      "minKinds": 1,
+      "requiredIds": [
+       {
+        "kind": "doi",
+        "id": "10.1016/j.ymthe.2026.02.045"
+       },
+       {
+        "kind": "doi",
+        "id": "10.1007/978-1-59745-147-5_13"
+       },
+       {
+        "kind": "doi",
+        "id": "10.1021/acsami.5c03525.s001"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "request": {
+    "id": "survey-OPP-00007-r2-p2",
+    "member": "uain158ac8d0debcf01d43164ef14736597da589d8b54",
+    "operation": "central_task_open",
+    "payload": {
+     "id": "T-OPP-00007-1-prior-art-survey-r2-p2",
+     "project": "P-OPP-00007",
+     "title": "Prior-art survey: Repair mitochondria in every cell with a simple therapy (part 2 of 2)",
+     "criteria": "Prior-art survey part 2 of 2 for \"Repair mitochondria in every cell with a simple therapy\". Main KPI: \"1,000,000,000 people with repaired mitochondria\". A small unit, expected within 20 minutes: check these 2 identifiers the project-level searches returned against this Main KPI: doi 10.7124/bc.000927; doi 10.7551/mitpress/10837.003.0006. Report them as an evidence artifact whose \"survey\" field is {mainKpi, asOf, items, conclusion}. mainKpi is the Main KPI above, exactly. asOf is the survey date (YYYY-MM-DD). Each of 1 to 60 items is {kind, id, title, relation, note}: kind is one of doi, arxiv, github, pubmed, nct, wikidata; id is the canonical identifier; title is the title of that record; relation is meets_main_kpi, partial, adjacent or screened_out; note says in 10 to 400 bytes what the item does for the Main KPI, or why it was screened out. Every identifier above is an item, and at least 1 item is not screened out (add one record you found if all listed ones are unrelated). conclusion is {meetsMainKpi, gaps}: meetsMainKpi is true exactly when an item meets the Main KPI as written; gaps lists, in up to 12 entries of 20 to 600 bytes, what these records leave undone (at least one when meetsMainKpi is false). Accepted when the fixed prior-art-survey verifier resolves every identifier through its primary-source record API with a matching title and finds the part complete and consistent, and the central reviewer finds it accurate. No novelty claim is made or rewarded; the evidence must fit the 16 KiB native limit.",
+     "acceptance_digest": "692cdf30a54e6cf683f44f5ca9606562a061ab54afc94f50c7a2a833b510d2e2",
+     "eligibility": "new",
+     "eligibility_digest": "6794e46698884c070e82df630098723ba3f966e9aaaec90166f5cd0212769c1b",
+     "solver_amount": "40000000",
+     "reviewer_amount": "10000000",
+     "evidence_digest": "f6d166de21becfbcc1a798bd423572f8439380d66391bdc1c766077645d94160"
+    }
+   },
+   "evidence": {
+    "schema": "uain-project-organization-survey-part-v1",
+    "decision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-06",
+     "record": "docs/baink/project-organizations-2026-11-06/decisions.md#d2"
+    },
+    "splitDecision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-09",
+     "record": "docs/baink/questions-9-nov-2026.md#c1"
+    },
+    "projectId": "OPP-00007",
+    "revision": 2,
+    "part": 2,
+    "parts": 2,
+    "supersedes": "T-OPP-00007-1-prior-art-survey",
+    "draftDigest": "be0ccda62521a95dc758862f687f08894ffa92208c09121c55116e5cdd71648a",
+    "reviewedDigest": "ed9ff120d6b4dbc74d84b8b3af863cde4cf15764cbe97f29a8d6d57cf92263a8",
+    "preflightDigest": "c70992f7617ad45f7dead76b0025923e3c7e86f4370836bcd51c05bdb1ddd24c",
+    "policyDigest": "cf5482e0c0aab45bf33443d663e35bab1d008735bb84a903c4b8280d55085f90",
+    "requiredIds": [
+     {
+      "kind": "doi",
+      "id": "10.7124/bc.000927"
+     },
+     {
+      "kind": "doi",
+      "id": "10.7551/mitpress/10837.003.0006"
+     }
+    ],
+    "dropped": [
+     {
+      "kind": "doi",
+      "id": "10.1016/s1937-644818x0007-0",
+      "status": "not_found"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1016/s1937-64481830076-5",
+      "status": "not_found"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1016/s1937-64481830074-1",
+      "status": "not_found"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1016/s1937-64481830078-9",
+      "status": "not_found"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1016/s1937-64481830075-3",
+      "status": "not_found"
+     }
+    ],
+    "novelty": "Each listed record is unresolved: no accepted inventory of this project covers it yet."
+   },
+   "policy": {
+    "schema": "uain-task-verification-policy-v1",
+    "class": "prior_art_survey",
+    "taskId": "T-OPP-00007-1-prior-art-survey-r2-p2",
+    "projectId": "P-OPP-00007",
+    "criteriaDigest": "692cdf30a54e6cf683f44f5ca9606562a061ab54afc94f50c7a2a833b510d2e2",
+    "inputs": [],
+    "primarySourceHosts": [
+     "api.crossref.org",
+     "api.github.com",
+     "clinicaltrials.gov",
+     "eutils.ncbi.nlm.nih.gov",
+     "export.arxiv.org",
+     "www.wikidata.org"
+    ],
+    "driver": {
+     "name": "prior-art-survey",
+     "sha256": "8ee79b891db4d7d1b0cf497d0173e31fbfe7f96cf818d3ecf2c4bbdb0d1b6f4e"
+    },
+    "successTests": [
+     {
+      "id": "survey",
+      "mainKpi": "1,000,000,000 people with repaired mitochondria",
+      "minIncluded": 1,
+      "minKinds": 1,
+      "requiredIds": [
+       {
+        "kind": "doi",
+        "id": "10.7124/bc.000927"
+       },
+       {
+        "kind": "doi",
+        "id": "10.7551/mitpress/10837.003.0006"
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

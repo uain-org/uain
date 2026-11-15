@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00724",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T04:00:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": true,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held as a known answer. Regrowing a damaged corneal surface from stem cells is an authorised, documented therapy: Holoclar, a tissue-engineered product made from the patient's own limbal cells grown on a fibrin membrane, has held an EU marketing authorisation since 17 February 2015, converted from conditional to standard on 22 February 2024, for adults with moderate to severe limbal stem-cell deficiency after ocular burns (https://www.ema.europa.eu/en/medicines/human/EPAR/holoclar). Independent programmes reproduce it: the CALEC phase 1-2 trial reported grafts meeting release criteria in 14 of 16 biopsies and 93 percent complete or partial success at 12 months and 92 percent at 18 months in 15 participants (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28CALEC%20OR%20%22cultivated%20autologous%20limbal%20epithelial%22%20OR%20%22iPSC-derived%20corneal%22%29%20AND%20trial&format=json&pageSize=5&resultType=core), and the registry carries a completed phase 4 autologous cultivated limbal stem cell transplantation study in 70 patients alongside simple limbal epithelial transplantation and oral mucosal sheet alternatives (https://clinicaltrials.gov/api/v2/studies?query.cond=limbal+stem+cell+deficiency&pageSize=15). Honest limits, stated plainly: the authorised indication is narrow (adults, burn aetiology, at least 1-2 square millimetres of surviving limbus, autologous only), the CALEC authors say therapeutic efficacy still needs evaluation with 18 months the longest follow-up, there is no FDA-approved therapy in the United States, no iPSC-derived corneal trial results appeared, endothelial and stromal regeneration are untouched, and the KPI of 12,000,000 patients treated is unmet. A reframed project on bilateral total deficiency, allogeneic or iPSC-derived grafts, or low-cost delivery would be open work needing its own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "authorised stem-cell therapy for corneal regeneration",
+      "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/holoclar",
+      "observedAt": "2026-11-06T03:51:00Z",
+      "finding": "Holoclar is an authorised tissue-engineered advanced therapy using the patient's own limbal cells expanded on a fibrin membrane, marketing authorisation issued 17 February 2015 and switched from conditional to standard on 22 February 2024, for adults with moderate to severe limbal stem-cell deficiency caused by ocular burns, requiring 1-2 square millimetres of undamaged limbus and given by a trained surgeon."
+    },
+    {
+      "query": "cultivated limbal epithelial and iPSC corneal transplantation trials",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28CALEC%20OR%20%22cultivated%20autologous%20limbal%20epithelial%22%20OR%20%22iPSC-derived%20corneal%22%29%20AND%20trial&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T03:53:00Z",
+      "finding": "CALEC phase 1-2 (Nature Communications 2025, NCT02592330, 15 participants): grafts met release criteria for 14 of 16 biopsies, complete or partial success 86 percent at 3 months, 93 percent at 12 and 92 percent at 18 months, no primary safety events. The authors state efficacy still needs evaluation; a 2025 Cornea review notes no FDA-approved therapy for the condition in the United States. No iPSC-derived corneal trial results appear."
+    },
+    {
+      "query": "registered limbal stem cell deficiency trials",
+      "source": "https://clinicaltrials.gov/api/v2/studies?query.cond=limbal+stem+cell+deficiency&pageSize=15",
+      "observedAt": "2026-11-06T03:55:00Z",
+      "finding": "The registry includes a completed phase 4 study of autologous cultivated limbal stem cell transplantation in 70 patients, a recruiting autologous cultured corneal epithelium study (54), living-related allograft (20), biodegradable scaffold (5), oral mucosal epithelial sheets (6) and a 500-patient non-interventional cohort. Multiple reproducible routes to corneal surface regeneration are in clinical use or study."
+    },
+    {
+      "query": "open-source corneal stem cell projects",
+      "source": "https://api.github.com/search/repositories?q=cornea+stem+cell+analysis&per_page=10&sort=stars",
+      "observedAt": "2026-11-06T03:57:00Z",
+      "finding": "Zero repositories: the known answer here is a licensed clinical product and published surgical technique rather than open-source software."
+    }
+  ]
+}

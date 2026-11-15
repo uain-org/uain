@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00004",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Thymic restoration in older adults has no approved or open solution, and nothing approaches the Main KPI of 500,000,000 older adults with a restored thymus. The only registered human programme is TRIIM-X (NCT04375657, phase 2, about 85 participants, growth hormone plus metformin and DHEA, thymic density by MRI/CT), an extension of the 9-man TRIIM pilot whose results were explicitly preliminary and are not independently replicated; its interim reports come from the sponsor (https://classic.clinicaltrials.gov/ct2/show/record/NCT04375657). Regenerative candidates remain earlier: KGF/palifermin is in transplant and MS trials rather than approved for age-related involution, IL-22 and BMP4 are preclinical (https://pmc.ncbi.nlm.nih.gov/articles/PMC8652142/table/T1), and Tolerance Bio's iPSC-derived thymic organoids are preclinical with pre-IND work planned (https://secure.businesswire.com/news/home/20251027232982/en/). No open-source or openly published method restores a human thymus, so this is open work, but tasks replicating TRIIM-style regimens are not new and need their own basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "TRIIM-X thymus regeneration trial results growth hormone DHEA metformin Fahy",
+      "source": "https://classic.clinicaltrials.gov/ct2/show/record/NCT04375657",
+      "observedAt": "2026-11-06T00:30:00Z",
+      "finding": "TRIIM-X is a phase 2, ~85-participant, 12-month trial of GH+metformin+DHEA with thymic density as primary outcome; only sponsor-reported interim signals exist, no peer-reviewed results."
+    },
+    {
+      "query": "thymus regeneration therapy clinical trial older adults 2026 Tolerance Bio Thymmune FOXN1",
+      "source": "https://lifespan.io/organizations/thymofox/",
+      "observedAt": "2026-11-06T00:31:00Z",
+      "finding": "Besides TRIIM-X no registered human thymus-regeneration trial found; TECregen is preclinical, Thymofox's site appears down, Thymmune and Vidaregen are early ARPA-backed efforts."
+    },
+    {
+      "query": "thymic involution reversal approved treatment KGF palifermin IL-22 BMP4 review",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8652142/table/T1",
+      "observedAt": "2026-11-06T00:32:00Z",
+      "finding": "No approved therapy reverses age-related thymic involution; KGF is in clinical trials for other settings, IL-22 and BMP4 are preclinical in thymic epithelial cells."
+    },
+    {
+      "query": "Tolerance Bio thymus iPSC-derived thymic epithelial cells engineered thymus organoid",
+      "source": "https://secure.businesswire.com/news/home/20251027232982/en/",
+      "observedAt": "2026-11-06T00:33:00Z",
+      "finding": "Tolerance Bio reports iPSC-derived thymic organoids educating human T cells in mice, with an allogeneic process and pre-IND studies planned; preclinical, not a restored human thymus."
+    }
+  ]
+}

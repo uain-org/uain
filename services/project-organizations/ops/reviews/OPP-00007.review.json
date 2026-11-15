@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00007",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T02:10:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable solution repairs mitochondria in every cell, so the Main KPI of 1,000,000,000 people with repaired mitochondria is far from met. The one approved mitochondria-targeted drug, elamipretide (Forzinity), received US accelerated approval in September 2025 for Barth syndrome only, on a knee-extensor strength endpoint and conditional on a confirmatory trial; its primary mitochondrial myopathy and dry-AMD programmes did not win approval (https://www.fightaging.org/archives/2025/10/fda-approval-for-mitochondrial-therapeutic-elamipretide-formerly-ss-31/). Mitochondrial transplantation in humans is a single unreviewed 2026 case report of autologous muscle mitochondria injected into one patient's eyes, safe but with no measurable acuity gain (https://sciencealert.com/world-first-mitochondria-from-a-womans-leg-were-injected-into-her-eyes), alongside a 6-participant safety study (NCT04548843) and mouse/monkey encapsulated-mitochondria work. The nearest consumer-scale option, urolithin A, gives modest and inconsistent muscle endurance and strength gains in small industry-funded trials of 66 and 88 participants (https://pmc.ncbi.nlm.nih.gov/articles/PMC9133463/), which is not cell-wide mitochondrial repair. Open source exists only upstream of therapy: mtDNA base-editing design and analysis code such as https://github.com/YangLab/eTALED_computational_analysis and the MitoEdit pipeline. Honest limit: a simple systemic therapy remains unsolved, but tasks that only re-run urolithin A or elamipretide-style regimens, or re-implement published mtDNA editing design tools, are known answers and need their own basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "elamipretide FDA approval status 2026 mitochondrial disease",
+      "source": "https://www.fightaging.org/archives/2025/10/fda-approval-for-mitochondrial-therapeutic-elamipretide-formerly-ss-31/",
+      "observedAt": "2026-11-06T01:40:00Z",
+      "finding": "Elamipretide (Forzinity) won FDA accelerated approval in September 2025 for Barth syndrome only, an ultra-rare disorder, on a muscle-strength surrogate and conditional on a confirmatory trial begun in 2026. No approved therapy repairs mitochondria generally; primary mitochondrial myopathy and dry-AMD trials did not lead to approval."
+    },
+    {
+      "query": "mitochondrial transplantation therapy human trial 2026 results",
+      "source": "https://sciencealert.com/world-first-mitochondria-from-a-womans-leg-were-injected-into-her-eyes",
+      "observedAt": "2026-11-06T01:45:00Z",
+      "finding": "Human mitochondrial transplantation in 2026 is one non-peer-reviewed case report: autologous leg-muscle mitochondria injected into both eyes of a single patient, safe with a transient pupillary response and no acuity change. Other work is a 6-participant safety study (NCT04548843) and preclinical mouse/monkey encapsulated-mitochondria and MitoCatch targeting studies."
+    },
+    {
+      "query": "urolithin A mitophagy clinical trial muscle older adults Mitopure evidence",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9133463/",
+      "observedAt": "2026-11-06T01:48:00Z",
+      "finding": "Urolithin A human trials are small (66 adults aged 65-90; 88 middle-aged adults), short (4 months), Amazentis-funded, and show modest muscle endurance and about 12 percent strength gains with several null endpoints including hand-grip. No large independent confirmatory trial and no demonstration of repaired mitochondria across cells."
+    },
+    {
+      "query": "open source mitochondrial DNA base editing mitochondria gene therapy github",
+      "source": "https://github.com/YangLab/eTALED_computational_analysis",
+      "observedAt": "2026-11-06T01:52:00Z",
+      "finding": "Open-source mitochondrial work is design and analysis software only: eTALED editing-efficiency and off-target analysis scripts, and the MitoEdit pipeline for choosing mtDNA target bases. No open-source mitochondrial therapy, delivery system or clinical programme was found."
+    }
+  ]
+}

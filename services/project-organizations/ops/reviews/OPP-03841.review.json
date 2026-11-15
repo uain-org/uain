@@ -1,0 +1,45 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-03841",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable solution guarantees every person a daily income above the extreme poverty line, so the Main KPI of 700,000,000 people lifted above it is unmet; no national or global income floor of this kind is in operation. The best cost evidence is a December 2025 NBER paper (Sahoo, Blumenstock, Niehaus, Selker, Wager): with real-world information constraints, using household surveys from 34 countries holding 76% of the world's poor, cutting extreme poverty from 13% to 1% by cash transfers would cost about 211 billion US dollars a year, 4.0 times the aggregate poverty gap but 19% of a universal basic income, about 0.28% of world GDP (https://doi.org/10.3386/w34583). A 2026 systematic review of 19 evaluations of large one-off cash transfers (2014 to 2024) supports poverty reduction, with mixed climate-resilience effects (https://doi.org/10.53832/evidence-fund.0128), and GiveDirectly's long-term Kenyan UBI experiment is evaluated (https://doi.org/10.21428/d28e8e57.b29641d0). Honest limit: cash transfers are a known, published intervention, so this is chiefly a financing, targeting and delivery problem, and tasks that restate cash programmes are not new work. The open, checkable pieces are the targeting gap (the 4x cost over the poverty gap comes from not knowing who is poor) and verified delivery to people without IDs or accounts. The World Bank PIP page did not render figures, so no headcount is cited."
+  },
+  "additionalSearches": [
+    {
+      "query": "universal basic income cash transfer extreme poverty global cost poverty gap (2024 onward)",
+      "source": "https://api.openalex.org/works?search=universal%20basic%20income%20cash%20transfer%20extreme%20poverty%20global%20cost%20poverty%20gap&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:17:21Z",
+      "finding": "2,741 works led by NBER w34583 'What Would it Cost to End Extreme Poverty?' (2025) and a 2026 systematic review of large-scale cash transfers in L&MICs. Costed proposals, no guarantee in operation."
+    },
+    {
+      "query": "GiveDirectly Kenya universal basic income long-term results (2024 onward)",
+      "source": "https://api.openalex.org/works?search=GiveDirectly%20Kenya%20universal%20basic%20income%20long-term%20results&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:17:23Z",
+      "finding": "49 works: evaluation of the Kenya long-term UBI experiment's short-term results (2024), surveys of UBI experiments. Experiments, not a universal floor."
+    },
+    {
+      "query": "unconditional cash transfers low income countries systematic review",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=unconditional%20cash%20transfers%20low%20income%20countries%20systematic%20review&format=json&pageSize=8&sort=CITED%20desc",
+      "observedAt": "2026-11-06T01:17:24Z",
+      "finding": "561 records; top-cited items are health-outcome reviews of conditional cash transfers and COVID-19 living-standards evidence. Cash-transfer evidence is mature; no universal income floor."
+    },
+    {
+      "query": "What Would it Cost to End Extreme Poverty? (NBER w34583)",
+      "source": "https://api.openalex.org/works/doi:10.3386/w34583",
+      "observedAt": "2026-11-06T01:22:40Z",
+      "finding": "About 211 billion US dollars a year to cut poverty from 13% to 1% across 34 countries with 76% of the world's poor; 4.0 times the poverty-gap reduction; 19% of a UBI's cost; about 0.28% of global GDP if extrapolated."
+    },
+    {
+      "query": "Large-scale cash transfers in L&MICs systematic review",
+      "source": "https://api.openalex.org/works/doi:10.53832/evidence-fund.0128",
+      "observedAt": "2026-11-06T01:22:41Z",
+      "finding": "19 impact evaluations of 15 large one-off cash transfer interventions, 2014-2024, mostly Sub-Saharan Africa: evidence supports poverty reduction; climate resilience effects limited and mixed."
+    }
+  ]
+}

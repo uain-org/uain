@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00969",
+  "native_project": "P-OPP-00969",
+  "source_digest": "880700f70853f0498eb334d3fd638341dacb35376f5836f2c7be2933d63e393b",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Provide midwife-led care everywhere",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "c0d1e4b2f79894f538274cbbca4f0616d33fa8c35c708e9327b3c4c51323903c"
+  },
+  "drafted_at": "2026-11-06T00:14:33.773Z",
+  "queries": [
+    "midwife-led care everywhere",
+    "midwife-led care everywhere healthcare systems medicine"
+  ],
+  "searches": [
+    {
+      "query": "midwife-led care everywhere",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:14:25.853Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=midwife-led%20care%20everywhere&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "midwife-led care everywhere",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:14:26.369Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Amidwife-led%20AND%20all%3Acare%20AND%20all%3Aeverywhere&start=0&max_results=10; sha256=216ab439d85dbd50d7b91d054b8f327b5e32daa3c76d3a7b77811b252aa86e60; total=0; shown=0/0"
+    },
+    {
+      "query": "midwife-led care everywhere",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:14:27.646Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=midwife-led%20care%20everywhere&rows=10&select=DOI,title; sha256=d2d874d4f14fbe769926e1ac5c3500821307a2c9a1bfdd0e9140c00c604ee718; total=2167667; shown=5/10; top: 10.5463/thesis.1129 \"Antenatal CTG in midwife-led care\" | 10.14264/e1d0890 \"Midwife-led continuity of care and breastfeeding beyond hospital discharge: a mixed methods study\" | 10.55975/rjvn6577 \"Midwife-Led Maternity Care in Afghanistan\" | 10.1002/cca.3599 \"For pregnant women, what are the effects of midwife-led and trained traditional birth attendant-led care?\" | 10.1016/s1462-94100580043-9 \"Family doctor/midwife-led antenatal care is cheaper than obstetric-led care in low-risk pregnant women\""
+    },
+    {
+      "query": "midwife-led care everywhere healthcare systems medicine",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:14:32.381Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=midwife-led%20care%20everywhere%20healthcare%20systems%20medicine&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "midwife-led care everywhere healthcare systems medicine",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:14:32.855Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Amidwife-led%20AND%20all%3Acare%20AND%20all%3Aeverywhere%20AND%20all%3Ahealthcare%20AND%20all%3Asystems%20AND%20all%3Amedicine&start=0&max_results=10; sha256=8ea836aa810da9572adba13a07630eb52279b7e1598019ec2137990f00af7a6e; total=0; shown=0/0"
+    },
+    {
+      "query": "midwife-led care everywhere healthcare systems medicine",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:14:33.772Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=midwife-led%20care%20everywhere%20healthcare%20systems%20medicine&rows=10&select=DOI,title; sha256=65cafd44661c0569b09912931a02262e548a993c83c5cf122a1c78f2e3e25a6b; total=10979449; shown=5/10; top: 10.1016/s1462-94100580043-9 \"Family doctor/midwife-led antenatal care is cheaper than obstetric-led care in low-risk pregnant women\" | 10.3390/healthcare14203487 \"Comparison of Midwife-Led and Obstetrician-Led Care Models: Associations with Maternal Bonding and Breastfeeding Self-Efficacy\" | 10.1016/j.srhc.2016.01.002 \"Midwife-led care before, during and after childbirth – the best option for most women and babies\" | 10.1054/ebhc.2002.0524 \"Midwife-led postnatal care with individual needs assessment may reduce postnatal depression\" | 10.1257/rct.19862-1.0 \"Information and Healthcare professionals' perceptions of the midwife-led model in Italy\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "midwife-led care everywhere",
+      "url": "https://api.github.com/search/repositories?q=midwife-led%20care%20everywhere&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=midwife-led%20care%20everywhere&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:14:25.853Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "midwife-led care everywhere",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Amidwife-led%20AND%20all%3Acare%20AND%20all%3Aeverywhere&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Amidwife-led%20AND%20all%3Acare%20AND%20all%3Aeverywhere&start=0&max_results=10",
+      "sha256": "216ab439d85dbd50d7b91d054b8f327b5e32daa3c76d3a7b77811b252aa86e60",
+      "bytes": 770,
+      "observedAt": "2026-11-06T00:14:26.369Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "midwife-led care everywhere",
+      "url": "https://api.crossref.org/works?query=midwife-led%20care%20everywhere&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=midwife-led%20care%20everywhere&rows=10&select=DOI,title",
+      "sha256": "d2d874d4f14fbe769926e1ac5c3500821307a2c9a1bfdd0e9140c00c604ee718",
+      "bytes": 1538,
+      "observedAt": "2026-11-06T00:14:27.646Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "midwife-led care everywhere healthcare systems medicine",
+      "url": "https://api.github.com/search/repositories?q=midwife-led%20care%20everywhere%20healthcare%20systems%20medicine&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=midwife-led%20care%20everywhere%20healthcare%20systems%20medicine&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:14:32.381Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "midwife-led care everywhere healthcare systems medicine",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Amidwife-led%20AND%20all%3Acare%20AND%20all%3Aeverywhere%20AND%20all%3Ahealthcare%20AND%20all%3Asystems%20AND%20all%3Amedicine&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Amidwife-led%20AND%20all%3Acare%20AND%20all%3Aeverywhere%20AND%20all%3Ahealthcare%20AND%20all%3Asystems%20AND%20all%3Amedicine&start=0&max_results=10",
+      "sha256": "8ea836aa810da9572adba13a07630eb52279b7e1598019ec2137990f00af7a6e",
+      "bytes": 880,
+      "observedAt": "2026-11-06T00:14:32.855Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "midwife-led care everywhere healthcare systems medicine",
+      "url": "https://api.crossref.org/works?query=midwife-led%20care%20everywhere%20healthcare%20systems%20medicine&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=midwife-led%20care%20everywhere%20healthcare%20systems%20medicine&rows=10&select=DOI,title",
+      "sha256": "65cafd44661c0569b09912931a02262e548a993c83c5cf122a1c78f2e3e25a6b",
+      "bytes": 1615,
+      "observedAt": "2026-11-06T00:14:33.772Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "fcf84723aa338066dd62a7e27daece6ccf847be4b00e78e86318022fc7804301",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

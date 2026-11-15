@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T102819Z-64a1d5683b",
+  "version": "0.3.80",
+  "source_commit": "bd4b72d3c8105b5de5d734618e1233e7210a7ec1",
+  "deployed_at": "2026-11-10T10:33:00Z",
+  "prior": "20261110T101304Z-ea27989326",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0380-release-20261110",
+    "CHANGELOG.md#kit-0214-field-reports-20261110",
+    "docs/testing/kit-0214-field-reports-live-2026-11-10.md"
+  ],
+  "note": "PR #493: kit 0.2.14 and MCP 0.6.5 for the 10 November field reports. verify and promote --expected-prior passed; kit-digest-check ok live; served kit matches the source; review queue answers cross-origin; baink_guide carries reviewQueue. Minimum kit unchanged (0.2.10)."
+}

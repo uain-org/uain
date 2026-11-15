@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261108T203804Z-9bb1283028",
+  "version": "0.3.41",
+  "source_commit": "96b47ae7d968dfe0250e934a1f17669d9997fdc2",
+  "deployed_at": "2026-11-08T20:45:40Z",
+  "prior": "20261108T170849Z-d88941b614",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#holder10-app41-preparation-20261109"
+  ],
+  "note": "Normal exact-prior promotion; both origins healthy, 189 paced public checks including 56 asset hashes and desktop/mobile browser checks passed. Holder activation was pending at this app acceptance and is recorded separately. Positive live reload or external-user payment acceptance is not claimed."
+}

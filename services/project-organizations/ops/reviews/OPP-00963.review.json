@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00963",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:49:30Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable solution delivers 1,000,000 village health pods with diagnostics and telehealth, so the Main KPI is not met by existing work. The largest deployed telehealth-at-the-village network is India's eSanjeevani hub-and-spoke service, linking about 142,000 Ayushman Arogya Mandir spokes by September 2026 (https://newsonair.gov.in/esanjeevani-achieves-milestone-of-50-cr-teleconsultations-from-across-the-country/), but these are staffed health centres, not self-contained diagnostic pods, and they cover one country. Unstaffed booth programmes are small: Ping An's One-minute Clinics reported contracts for nearly 1,000 units in 2019 (https://newshubasia.com/opinion/ping-an-good-doctor-launches-commercial-operation-of-one-minute-clinics-and-signs-contracts-for-nearly-1000-units-serving-more-than-3-million-users), and kiosk pilots such as iKure report tens of units. Open source exists for the software layer (OpenMRS, Bahmni, Intelehealth tele-consult on OpenMRS: https://sites.google.com/a/intelehealth.io/team-wiki/the-intelehealth-platform), not for a replicable pod with diagnostics. Honest limit: the components (point-of-care tests, open EMR, teleconsultation) are well known; a task that only reassembles them needs its own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "village health kiosk pod point-of-care diagnostics telemedicine rural deployment number of units",
+      "source": "https://www.electronicsforu.com/electronics-startups/innovations-innovators/ikure-health-monitoring-kiosks",
+      "observedAt": "2026-11-06T00:44:00Z",
+      "finding": "Village kiosk deployments found are pilots: iKure about 15 kiosks in West Bengal; a Zenodo-listed kiosk study reports 50 sites. No programme approaches a million pods."
+    },
+    {
+      "query": "Ayushman Arogya Mandir health and wellness centres number eSanjeevani teleconsultation 2025",
+      "source": "https://newsonair.gov.in/esanjeevani-achieves-milestone-of-50-cr-teleconsultations-from-across-the-country/",
+      "observedAt": "2026-11-06T00:44:10Z",
+      "finding": "eSanjeevani passed 50 crore teleconsultations by September 2026 via about 142,000 Ayushman Arogya Mandir spokes and 19,473 hubs. Staffed centres in one country, not diagnostic pods; far below 1,000,000."
+    },
+    {
+      "query": "open source telemedicine platform rural clinics github OpenMRS Bahmni point of care",
+      "source": "https://sites.google.com/a/intelehealth.io/team-wiki/the-intelehealth-platform",
+      "observedAt": "2026-11-06T00:44:20Z",
+      "finding": "Open software exists (OpenMRS, Bahmni EMR, Intelehealth low-bandwidth teleconsult on OpenMRS). It is the software layer only, with no open pod hardware or diagnostic kit design."
+    },
+    {
+      "query": "Ping An Good Doctor one-minute clinic unmanned booths number deployed",
+      "source": "https://newshubasia.com/opinion/ping-an-good-doctor-launches-commercial-operation-of-one-minute-clinics-and-signs-contracts-for-nearly-1000-units-serving-more-than-3-million-users",
+      "observedAt": "2026-11-06T00:44:30Z",
+      "finding": "Ping An's unstaffed One-minute Clinic booths: contracts for nearly 1,000 units in 8 Chinese provinces (January 2019); proprietary, urban, no later count found."
+    }
+  ]
+}

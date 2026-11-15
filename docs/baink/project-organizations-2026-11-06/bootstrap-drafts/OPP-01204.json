@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-01204",
+  "native_project": "P-OPP-01204",
+  "source_digest": "085fdb7e8bc7426fa015fdbbe2bc8cafd0ac6be700c454646caf9d512a92d17f",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Create ready-to-eat meals that store for ten years for disaster relief",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "6a60d7894f11dab52e566ba4b6a6ecd19b68e62ef8901c75f39d140fddda335a"
+  },
+  "drafted_at": "2026-11-06T00:15:12.867Z",
+  "queries": [
+    "ready-to-eat meals store ten years disaster",
+    "ready-to-eat meals store food nutrition systems"
+  ],
+  "searches": [
+    {
+      "query": "ready-to-eat meals store ten years disaster",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:15:04.878Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=ready-to-eat%20meals%20store%20ten%20years%20disaster&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "ready-to-eat meals store ten years disaster",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:15:05.400Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aready-to-eat%20AND%20all%3Ameals%20AND%20all%3Astore%20AND%20all%3Aten%20AND%20all%3Ayears%20AND%20all%3Adisaster&start=0&max_results=10; sha256=31d73f6c5c6c2d8a69aa26310b35b0f8479d850eeda7011be730e1be90fcc7ce; total=0; shown=0/0"
+    },
+    {
+      "query": "ready-to-eat meals store ten years disaster",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:15:06.307Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=ready-to-eat%20meals%20store%20ten%20years%20disaster&rows=10&select=DOI,title; sha256=b8213ecb3d07a0f7c94c383dcf5c3cefd0d3471dc1a1aa953266fcec08ffbfd8; total=968342; shown=5/10; top: 10.1016/b978-0-12-801773-9.00045-5 \"Ready to eat meals\" | 10.1016/s0197-45729790048-3 \"Ready-to-eat meals\" | 10.54598/004030 \"Nutritional gastronomy in focus: ready-to-eat meals, nutritional value and consumer attitudes\" | 10.1002/9780813808611.ch9 \"The Ten Principles of Sanitary Design for Ready‐to‐Eat Processing Equipment\" | 10.4314/gjas.v39i1.2122 \"Irradiation of ready meals for microbiological safety and shelf-life extension. 1. Microbiological quality of &lt i&gt waakye&lt /i&gt and…\""
+    },
+    {
+      "query": "ready-to-eat meals store food nutrition systems",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:15:11.399Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=ready-to-eat%20meals%20store%20food%20nutrition%20systems&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "ready-to-eat meals store food nutrition systems",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:15:11.953Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aready-to-eat%20AND%20all%3Ameals%20AND%20all%3Astore%20AND%20all%3Afood%20AND%20all%3Anutrition%20AND%20all%3Asystems&start=0&max_results=10; sha256=e2f57536c707ada3891f14f332195d98a8704536c43d15d0c6a969807d34b6fe; total=0; shown=0/0"
+    },
+    {
+      "query": "ready-to-eat meals store food nutrition systems",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:15:12.867Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=ready-to-eat%20meals%20store%20food%20nutrition%20systems&rows=10&select=DOI,title; sha256=c1c932e9e0a8e334a0749c3c03278db29b520d3876c3618e50c6619f66c0fd8d; total=6676243; shown=5/10; top: 10.1108/00346650010352889 \"Chemical composition of some ready‐to‐eat meals consumed in Qatar\" | 10.1016/b978-0-12-801773-9.00045-5 \"Ready to eat meals\" | 10.1080/09637486.2021.2012645 \"Do ready-to-eat meals of Greek supermarkets need reformulation?\" | 10.1080/03670244.1991.9991209 \"Food survey and chemical composition of food and ready‐to‐eat meals in the luo area of South Western Kenya\" | 10.1016/j.ijgfs.2026.101565 \"Front-of-pack nutrition labels on ready-to-eat meals\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "ready-to-eat meals store ten years disaster",
+      "url": "https://api.github.com/search/repositories?q=ready-to-eat%20meals%20store%20ten%20years%20disaster&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=ready-to-eat%20meals%20store%20ten%20years%20disaster&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:15:04.878Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "ready-to-eat meals store ten years disaster",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aready-to-eat%20AND%20all%3Ameals%20AND%20all%3Astore%20AND%20all%3Aten%20AND%20all%3Ayears%20AND%20all%3Adisaster&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aready-to-eat%20AND%20all%3Ameals%20AND%20all%3Astore%20AND%20all%3Aten%20AND%20all%3Ayears%20AND%20all%3Adisaster&start=0&max_results=10",
+      "sha256": "31d73f6c5c6c2d8a69aa26310b35b0f8479d850eeda7011be730e1be90fcc7ce",
+      "bytes": 856,
+      "observedAt": "2026-11-06T00:15:05.400Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "ready-to-eat meals store ten years disaster",
+      "url": "https://api.crossref.org/works?query=ready-to-eat%20meals%20store%20ten%20years%20disaster&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=ready-to-eat%20meals%20store%20ten%20years%20disaster&rows=10&select=DOI,title",
+      "sha256": "b8213ecb3d07a0f7c94c383dcf5c3cefd0d3471dc1a1aa953266fcec08ffbfd8",
+      "bytes": 1572,
+      "observedAt": "2026-11-06T00:15:06.307Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "ready-to-eat meals store food nutrition systems",
+      "url": "https://api.github.com/search/repositories?q=ready-to-eat%20meals%20store%20food%20nutrition%20systems&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=ready-to-eat%20meals%20store%20food%20nutrition%20systems&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:15:11.399Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "ready-to-eat meals store food nutrition systems",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aready-to-eat%20AND%20all%3Ameals%20AND%20all%3Astore%20AND%20all%3Afood%20AND%20all%3Anutrition%20AND%20all%3Asystems&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aready-to-eat%20AND%20all%3Ameals%20AND%20all%3Astore%20AND%20all%3Afood%20AND%20all%3Anutrition%20AND%20all%3Asystems&start=0&max_results=10",
+      "sha256": "e2f57536c707ada3891f14f332195d98a8704536c43d15d0c6a969807d34b6fe",
+      "bytes": 864,
+      "observedAt": "2026-11-06T00:15:11.953Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "ready-to-eat meals store food nutrition systems",
+      "url": "https://api.crossref.org/works?query=ready-to-eat%20meals%20store%20food%20nutrition%20systems&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=ready-to-eat%20meals%20store%20food%20nutrition%20systems&rows=10&select=DOI,title",
+      "sha256": "c1c932e9e0a8e334a0749c3c03278db29b520d3876c3618e50c6619f66c0fd8d",
+      "bytes": 1504,
+      "observedAt": "2026-11-06T00:15:12.867Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "9f8f9a027bfa75c23ce4711514dc0439e4bcc7fe9671e80a97b2ca4e4aff7402",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

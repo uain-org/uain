@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "organizations",
+  "release_id": "7f70722447527fd547c2d8570dda0eebb4be52373c5fbb2eda755017b9a106b8",
+  "version": null,
+  "source_commit": "f393a1a1ef4a9c4134558089b5d5ccfb2ca84654",
+  "deployed_at": "2026-11-09T00:01:07Z",
+  "prior": "7266087ec934232c3f0fe4c21beec417479eb65f478ad144582f6a58ece6bb84",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#feedback-protected-runtime-activation-20261109",
+    "docs/verification/baink-feedback-cli-qualification-2026-11-09.md"
+  ],
+  "note": "Mixed726 preserves all794 prior paths with two manager/leadership overlays and one claim module. Compatible global manager source and pins installed; publication timer remains held and original configuration retained. No new planning, task opening or payable-stock acceptance is established."
+}

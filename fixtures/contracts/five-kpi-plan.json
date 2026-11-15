@@ -1,0 +1,658 @@
+{
+ "schema": "uain-contract-fixture-v1",
+ "contract": "five-kpi-plan",
+ "description": "A central fund plan has one Main KPI (at least 20 bytes after trimming, at most 4096) and exactly five Sub-KPI stages numbered 1..5 in order, each criteria at least 20 bytes after trimming and at most 4096, with exactly the fields round and criteria. A fund application names a round from 1 to 5.",
+ "sources": [
+  "apps/baink/server/central-earning-command.mjs centralPayload",
+  "ops/custody/project_organizations.py central_payload",
+  "chain/federation/central_fund.go (state-bound; not exercised here)"
+ ],
+ "vectors": [
+  {
+   "name": "valid_five_stages",
+   "operation": "central_fund_plan",
+   "payload": {
+    "project": "P-OPP-00001",
+    "revision": 1,
+    "main_kpi": "Ship a verified bound with an independent replication by two checkers.",
+    "stages": [
+     {
+      "round": 1,
+      "criteria": "Stage 1: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 2,
+      "criteria": "Stage 2: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 3,
+      "criteria": "Stage 3: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 4,
+      "criteria": "Stage 4: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 5,
+      "criteria": "Stage 5: deliver the reviewed milestone evidence."
+     }
+    ],
+    "reason": "Initial reviewed plan.",
+    "evidence_digest": "2440a6a94ef96f9ce54662261d5aa7901c510b88d7c03b0db1c6a73919987531"
+   },
+   "valid": true
+  },
+  {
+   "name": "four_stages",
+   "operation": "central_fund_plan",
+   "payload": {
+    "project": "P-OPP-00001",
+    "revision": 1,
+    "main_kpi": "Ship a verified bound with an independent replication by two checkers.",
+    "stages": [
+     {
+      "round": 1,
+      "criteria": "Stage 1: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 2,
+      "criteria": "Stage 2: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 3,
+      "criteria": "Stage 3: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 4,
+      "criteria": "Stage 4: deliver the reviewed milestone evidence."
+     }
+    ],
+    "reason": "Initial reviewed plan.",
+    "evidence_digest": "2440a6a94ef96f9ce54662261d5aa7901c510b88d7c03b0db1c6a73919987531"
+   },
+   "valid": false
+  },
+  {
+   "name": "six_stages",
+   "operation": "central_fund_plan",
+   "payload": {
+    "project": "P-OPP-00001",
+    "revision": 1,
+    "main_kpi": "Ship a verified bound with an independent replication by two checkers.",
+    "stages": [
+     {
+      "round": 1,
+      "criteria": "Stage 1: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 2,
+      "criteria": "Stage 2: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 3,
+      "criteria": "Stage 3: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 4,
+      "criteria": "Stage 4: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 5,
+      "criteria": "Stage 5: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 6,
+      "criteria": "Stage 6: deliver the reviewed milestone evidence."
+     }
+    ],
+    "reason": "Initial reviewed plan.",
+    "evidence_digest": "2440a6a94ef96f9ce54662261d5aa7901c510b88d7c03b0db1c6a73919987531"
+   },
+   "valid": false
+  },
+  {
+   "name": "rounds_out_of_order",
+   "operation": "central_fund_plan",
+   "payload": {
+    "project": "P-OPP-00001",
+    "revision": 1,
+    "main_kpi": "Ship a verified bound with an independent replication by two checkers.",
+    "stages": [
+     {
+      "round": 2,
+      "criteria": "Stage 2: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 1,
+      "criteria": "Stage 1: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 3,
+      "criteria": "Stage 3: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 4,
+      "criteria": "Stage 4: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 5,
+      "criteria": "Stage 5: deliver the reviewed milestone evidence."
+     }
+    ],
+    "reason": "Initial reviewed plan.",
+    "evidence_digest": "2440a6a94ef96f9ce54662261d5aa7901c510b88d7c03b0db1c6a73919987531"
+   },
+   "valid": false
+  },
+  {
+   "name": "rounds_start_at_zero",
+   "operation": "central_fund_plan",
+   "payload": {
+    "project": "P-OPP-00001",
+    "revision": 1,
+    "main_kpi": "Ship a verified bound with an independent replication by two checkers.",
+    "stages": [
+     {
+      "round": 0,
+      "criteria": "Stage 1: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 1,
+      "criteria": "Stage 2: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 2,
+      "criteria": "Stage 3: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 3,
+      "criteria": "Stage 4: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 4,
+      "criteria": "Stage 5: deliver the reviewed milestone evidence."
+     }
+    ],
+    "reason": "Initial reviewed plan.",
+    "evidence_digest": "2440a6a94ef96f9ce54662261d5aa7901c510b88d7c03b0db1c6a73919987531"
+   },
+   "valid": false
+  },
+  {
+   "name": "round_as_string",
+   "operation": "central_fund_plan",
+   "payload": {
+    "project": "P-OPP-00001",
+    "revision": 1,
+    "main_kpi": "Ship a verified bound with an independent replication by two checkers.",
+    "stages": [
+     {
+      "round": 1,
+      "criteria": "Stage 1: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 2,
+      "criteria": "Stage 2: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": "3",
+      "criteria": "Stage 3: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 4,
+      "criteria": "Stage 4: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 5,
+      "criteria": "Stage 5: deliver the reviewed milestone evidence."
+     }
+    ],
+    "reason": "Initial reviewed plan.",
+    "evidence_digest": "2440a6a94ef96f9ce54662261d5aa7901c510b88d7c03b0db1c6a73919987531"
+   },
+   "valid": false
+  },
+  {
+   "name": "criteria_twenty_bytes",
+   "operation": "central_fund_plan",
+   "payload": {
+    "project": "P-OPP-00001",
+    "revision": 1,
+    "main_kpi": "Ship a verified bound with an independent replication by two checkers.",
+    "stages": [
+     {
+      "round": 1,
+      "criteria": "xxxxxxxxxxxxxxxxxxxx"
+     },
+     {
+      "round": 2,
+      "criteria": "Stage 2: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 3,
+      "criteria": "Stage 3: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 4,
+      "criteria": "Stage 4: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 5,
+      "criteria": "Stage 5: deliver the reviewed milestone evidence."
+     }
+    ],
+    "reason": "Initial reviewed plan.",
+    "evidence_digest": "2440a6a94ef96f9ce54662261d5aa7901c510b88d7c03b0db1c6a73919987531"
+   },
+   "valid": true
+  },
+  {
+   "name": "criteria_nineteen_bytes",
+   "operation": "central_fund_plan",
+   "payload": {
+    "project": "P-OPP-00001",
+    "revision": 1,
+    "main_kpi": "Ship a verified bound with an independent replication by two checkers.",
+    "stages": [
+     {
+      "round": 1,
+      "criteria": "xxxxxxxxxxxxxxxxxxx"
+     },
+     {
+      "round": 2,
+      "criteria": "Stage 2: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 3,
+      "criteria": "Stage 3: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 4,
+      "criteria": "Stage 4: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 5,
+      "criteria": "Stage 5: deliver the reviewed milestone evidence."
+     }
+    ],
+    "reason": "Initial reviewed plan.",
+    "evidence_digest": "2440a6a94ef96f9ce54662261d5aa7901c510b88d7c03b0db1c6a73919987531"
+   },
+   "valid": false
+  },
+  {
+   "name": "criteria_padded_to_twenty",
+   "operation": "central_fund_plan",
+   "payload": {
+    "project": "P-OPP-00001",
+    "revision": 1,
+    "main_kpi": "Ship a verified bound with an independent replication by two checkers.",
+    "stages": [
+     {
+      "round": 1,
+      "criteria": " xxxxxxxxxxxxxxxxxxx"
+     },
+     {
+      "round": 2,
+      "criteria": "Stage 2: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 3,
+      "criteria": "Stage 3: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 4,
+      "criteria": "Stage 4: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 5,
+      "criteria": "Stage 5: deliver the reviewed milestone evidence."
+     }
+    ],
+    "reason": "Initial reviewed plan.",
+    "evidence_digest": "2440a6a94ef96f9ce54662261d5aa7901c510b88d7c03b0db1c6a73919987531"
+   },
+   "valid": false
+  },
+  {
+   "name": "criteria_4096_bytes",
+   "operation": "central_fund_plan",
+   "payload": {
+    "project": "P-OPP-00001",
+    "revision": 1,
+    "main_kpi": "Ship a verified bound with an independent replication by two checkers.",
+    "stages": [
+     {
+      "round": 1,
+      "criteria": "Stage 1: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 2,
+      "criteria": "Stage 2: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 3,
+      "criteria": "Stage 3: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 4,
+      "criteria": "Stage 4: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 5,
+      "criteria": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+     }
+    ],
+    "reason": "Initial reviewed plan.",
+    "evidence_digest": "2440a6a94ef96f9ce54662261d5aa7901c510b88d7c03b0db1c6a73919987531"
+   },
+   "valid": true
+  },
+  {
+   "name": "criteria_4097_bytes",
+   "operation": "central_fund_plan",
+   "payload": {
+    "project": "P-OPP-00001",
+    "revision": 1,
+    "main_kpi": "Ship a verified bound with an independent replication by two checkers.",
+    "stages": [
+     {
+      "round": 1,
+      "criteria": "Stage 1: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 2,
+      "criteria": "Stage 2: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 3,
+      "criteria": "Stage 3: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 4,
+      "criteria": "Stage 4: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 5,
+      "criteria": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+     }
+    ],
+    "reason": "Initial reviewed plan.",
+    "evidence_digest": "2440a6a94ef96f9ce54662261d5aa7901c510b88d7c03b0db1c6a73919987531"
+   },
+   "valid": false
+  },
+  {
+   "name": "stage_extra_field",
+   "operation": "central_fund_plan",
+   "payload": {
+    "project": "P-OPP-00001",
+    "revision": 1,
+    "main_kpi": "Ship a verified bound with an independent replication by two checkers.",
+    "stages": [
+     {
+      "round": 1,
+      "criteria": "Stage 1: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 2,
+      "criteria": "Stage 2: deliver the reviewed milestone evidence.",
+      "weight": 1
+     },
+     {
+      "round": 3,
+      "criteria": "Stage 3: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 4,
+      "criteria": "Stage 4: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 5,
+      "criteria": "Stage 5: deliver the reviewed milestone evidence."
+     }
+    ],
+    "reason": "Initial reviewed plan.",
+    "evidence_digest": "2440a6a94ef96f9ce54662261d5aa7901c510b88d7c03b0db1c6a73919987531"
+   },
+   "valid": false
+  },
+  {
+   "name": "stage_missing_criteria",
+   "operation": "central_fund_plan",
+   "payload": {
+    "project": "P-OPP-00001",
+    "revision": 1,
+    "main_kpi": "Ship a verified bound with an independent replication by two checkers.",
+    "stages": [
+     {
+      "round": 1,
+      "criteria": "Stage 1: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 2
+     },
+     {
+      "round": 3,
+      "criteria": "Stage 3: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 4,
+      "criteria": "Stage 4: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 5,
+      "criteria": "Stage 5: deliver the reviewed milestone evidence."
+     }
+    ],
+    "reason": "Initial reviewed plan.",
+    "evidence_digest": "2440a6a94ef96f9ce54662261d5aa7901c510b88d7c03b0db1c6a73919987531"
+   },
+   "valid": false
+  },
+  {
+   "name": "main_kpi_nineteen_bytes",
+   "operation": "central_fund_plan",
+   "payload": {
+    "project": "P-OPP-00001",
+    "revision": 1,
+    "main_kpi": "kkkkkkkkkkkkkkkkkkk",
+    "stages": [
+     {
+      "round": 1,
+      "criteria": "Stage 1: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 2,
+      "criteria": "Stage 2: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 3,
+      "criteria": "Stage 3: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 4,
+      "criteria": "Stage 4: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 5,
+      "criteria": "Stage 5: deliver the reviewed milestone evidence."
+     }
+    ],
+    "reason": "Initial reviewed plan.",
+    "evidence_digest": "2440a6a94ef96f9ce54662261d5aa7901c510b88d7c03b0db1c6a73919987531"
+   },
+   "valid": false
+  },
+  {
+   "name": "reason_nine_bytes",
+   "operation": "central_fund_plan",
+   "payload": {
+    "project": "P-OPP-00001",
+    "revision": 1,
+    "main_kpi": "Ship a verified bound with an independent replication by two checkers.",
+    "stages": [
+     {
+      "round": 1,
+      "criteria": "Stage 1: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 2,
+      "criteria": "Stage 2: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 3,
+      "criteria": "Stage 3: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 4,
+      "criteria": "Stage 4: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 5,
+      "criteria": "Stage 5: deliver the reviewed milestone evidence."
+     }
+    ],
+    "reason": "rrrrrrrrr",
+    "evidence_digest": "2440a6a94ef96f9ce54662261d5aa7901c510b88d7c03b0db1c6a73919987531"
+   },
+   "valid": false
+  },
+  {
+   "name": "revision_zero",
+   "operation": "central_fund_plan",
+   "payload": {
+    "project": "P-OPP-00001",
+    "revision": 0,
+    "main_kpi": "Ship a verified bound with an independent replication by two checkers.",
+    "stages": [
+     {
+      "round": 1,
+      "criteria": "Stage 1: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 2,
+      "criteria": "Stage 2: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 3,
+      "criteria": "Stage 3: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 4,
+      "criteria": "Stage 4: deliver the reviewed milestone evidence."
+     },
+     {
+      "round": 5,
+      "criteria": "Stage 5: deliver the reviewed milestone evidence."
+     }
+    ],
+    "reason": "Initial reviewed plan.",
+    "evidence_digest": "2440a6a94ef96f9ce54662261d5aa7901c510b88d7c03b0db1c6a73919987531"
+   },
+   "valid": false
+  },
+  {
+   "name": "stages_not_array",
+   "operation": "central_fund_plan",
+   "payload": {
+    "project": "P-OPP-00001",
+    "revision": 1,
+    "main_kpi": "Ship a verified bound with an independent replication by two checkers.",
+    "stages": {
+     "1": {
+      "round": 1,
+      "criteria": "Stage 1: deliver the reviewed milestone evidence."
+     }
+    },
+    "reason": "Initial reviewed plan.",
+    "evidence_digest": "2440a6a94ef96f9ce54662261d5aa7901c510b88d7c03b0db1c6a73919987531"
+   },
+   "valid": false
+  },
+  {
+   "name": "round_0",
+   "operation": "central_fund_apply",
+   "payload": {
+    "id": "A-1",
+    "project": "P-OPP-00001",
+    "round": 0,
+    "revision": 1,
+    "evidence_digest": "97a5e41b45ddd2b2381046e77ccfa5c45d3553b81b66aeba7ed5c460c660f93f"
+   },
+   "valid": false
+  },
+  {
+   "name": "round_1",
+   "operation": "central_fund_apply",
+   "payload": {
+    "id": "A-1",
+    "project": "P-OPP-00001",
+    "round": 1,
+    "revision": 1,
+    "evidence_digest": "97a5e41b45ddd2b2381046e77ccfa5c45d3553b81b66aeba7ed5c460c660f93f"
+   },
+   "valid": true
+  },
+  {
+   "name": "round_5",
+   "operation": "central_fund_apply",
+   "payload": {
+    "id": "A-1",
+    "project": "P-OPP-00001",
+    "round": 5,
+    "revision": 1,
+    "evidence_digest": "97a5e41b45ddd2b2381046e77ccfa5c45d3553b81b66aeba7ed5c460c660f93f"
+   },
+   "valid": true
+  },
+  {
+   "name": "round_6",
+   "operation": "central_fund_apply",
+   "payload": {
+    "id": "A-1",
+    "project": "P-OPP-00001",
+    "round": 6,
+    "revision": 1,
+    "evidence_digest": "97a5e41b45ddd2b2381046e77ccfa5c45d3553b81b66aeba7ed5c460c660f93f"
+   },
+   "valid": false
+  },
+  {
+   "name": "round_1.5",
+   "operation": "central_fund_apply",
+   "payload": {
+    "id": "A-1",
+    "project": "P-OPP-00001",
+    "round": 1.5,
+    "revision": 1,
+    "evidence_digest": "97a5e41b45ddd2b2381046e77ccfa5c45d3553b81b66aeba7ed5c460c660f93f"
+   },
+   "valid": false
+  },
+  {
+   "name": "round_\"1\"",
+   "operation": "central_fund_apply",
+   "payload": {
+    "id": "A-1",
+    "project": "P-OPP-00001",
+    "round": "1",
+    "revision": 1,
+    "evidence_digest": "97a5e41b45ddd2b2381046e77ccfa5c45d3553b81b66aeba7ed5c460c660f93f"
+   },
+   "valid": false
+  },
+  {
+   "name": "round_true",
+   "operation": "central_fund_apply",
+   "payload": {
+    "id": "A-1",
+    "project": "P-OPP-00001",
+    "round": true,
+    "revision": 1,
+    "evidence_digest": "97a5e41b45ddd2b2381046e77ccfa5c45d3553b81b66aeba7ed5c460c660f93f"
+   },
+   "valid": false
+  }
+ ]
+}

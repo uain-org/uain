@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-01929",
+  "native_project": "P-OPP-01929",
+  "source_digest": "4ff66bd6ec2ca6fb28f5287a2b6982e8edfb9b6e13a74100517dda72069d846c",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Create robots that install solar farms without human crews",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "a593886e40be45f90bfce4a6ed04b48e378685bf622e70c0f495d00f470173b7"
+  },
+  "drafted_at": "2026-11-06T00:20:37.852Z",
+  "queries": [
+    "robots install solar farms human crews",
+    "robots install solar clean energy power"
+  ],
+  "searches": [
+    {
+      "query": "robots install solar farms human crews",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:20:29.993Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=robots%20install%20solar%20farms%20human%20crews&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "robots install solar farms human crews",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:20:30.492Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Arobots%20AND%20all%3Ainstall%20AND%20all%3Asolar%20AND%20all%3Afarms%20AND%20all%3Ahuman%20AND%20all%3Acrews&start=0&max_results=10; sha256=8affa8ae17ee2c6992691ba96ab8b02e6c4b31851ac115e4236f19b4e29e6efa; total=0; shown=0/0"
+    },
+    {
+      "query": "robots install solar farms human crews",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:20:31.441Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=robots%20install%20solar%20farms%20human%20crews&rows=10&select=DOI,title; sha256=b25fa1dc8a86a34cd335ee343adeab861974e133db0bd97edf0e699df9e88627; total=3988312; shown=5/10; top: 10.4016/34657.01 \"Solar Thermal Distributor Colorado\" | 10.1016/s1471-08460380069-0 \"California university to install record solar PV system\" | 10.4016/34620.01 \"Solar Thermal Collectors Colorado\" | 10.1016/s1471-08460400241-0 \"U.S. agency to install 3.1 MW solar system\" | 10.1016/s1471-08460870050-7 \"Bangladesh to install solar home systems\""
+    },
+    {
+      "query": "robots install solar clean energy power",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:20:36.470Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=robots%20install%20solar%20clean%20energy%20power&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "robots install solar clean energy power",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:20:36.951Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Arobots%20AND%20all%3Ainstall%20AND%20all%3Asolar%20AND%20all%3Aclean%20AND%20all%3Aenergy%20AND%20all%3Apower&start=0&max_results=10; sha256=f6b106b49b5486bec9d93663f47c590b9345c67184793c70b0a9164021dab5da; total=0; shown=0/0"
+    },
+    {
+      "query": "robots install solar clean energy power",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:20:37.851Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=robots%20install%20solar%20clean%20energy%20power&rows=10&select=DOI,title; sha256=ad3552ea42303742cbf216a43af6ee573aa0944ff994ada4c2756d179545e651; total=5188438; shown=5/10; top: 10.21203/rs.3.rs-1305439/v1 \"Clean energy from renewable energy sources, Solar energy for a clean environment and A Case Study: Kars Harakani Airport Solar Power Plant…\" | 10.18686/cest688 \"Achieving round-the-clock power from solar chimneys with solar boosting\" | 10.2166/9781780409443_0141 \"Energy management systems\" | 10.1016/j.solmat.2006.02.017 \"Photovoltaics: Clean power for the 21st century\" | 10.1016/j.sspwt.2026.08.001 \"Space solar power and wireless energy transmission: Integrated technology, safety, and governance pathways for future clean energy infrastr…\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "robots install solar farms human crews",
+      "url": "https://api.github.com/search/repositories?q=robots%20install%20solar%20farms%20human%20crews&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=robots%20install%20solar%20farms%20human%20crews&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:20:29.993Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "robots install solar farms human crews",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Arobots%20AND%20all%3Ainstall%20AND%20all%3Asolar%20AND%20all%3Afarms%20AND%20all%3Ahuman%20AND%20all%3Acrews&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Arobots%20AND%20all%3Ainstall%20AND%20all%3Asolar%20AND%20all%3Afarms%20AND%20all%3Ahuman%20AND%20all%3Acrews&start=0&max_results=10",
+      "sha256": "8affa8ae17ee2c6992691ba96ab8b02e6c4b31851ac115e4236f19b4e29e6efa",
+      "bytes": 846,
+      "observedAt": "2026-11-06T00:20:30.492Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "robots install solar farms human crews",
+      "url": "https://api.crossref.org/works?query=robots%20install%20solar%20farms%20human%20crews&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=robots%20install%20solar%20farms%20human%20crews&rows=10&select=DOI,title",
+      "sha256": "b25fa1dc8a86a34cd335ee343adeab861974e133db0bd97edf0e699df9e88627",
+      "bytes": 1326,
+      "observedAt": "2026-11-06T00:20:31.441Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "robots install solar clean energy power",
+      "url": "https://api.github.com/search/repositories?q=robots%20install%20solar%20clean%20energy%20power&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=robots%20install%20solar%20clean%20energy%20power&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:20:36.470Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "robots install solar clean energy power",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Arobots%20AND%20all%3Ainstall%20AND%20all%3Asolar%20AND%20all%3Aclean%20AND%20all%3Aenergy%20AND%20all%3Apower&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Arobots%20AND%20all%3Ainstall%20AND%20all%3Asolar%20AND%20all%3Aclean%20AND%20all%3Aenergy%20AND%20all%3Apower&start=0&max_results=10",
+      "sha256": "f6b106b49b5486bec9d93663f47c590b9345c67184793c70b0a9164021dab5da",
+      "bytes": 848,
+      "observedAt": "2026-11-06T00:20:36.951Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "robots install solar clean energy power",
+      "url": "https://api.crossref.org/works?query=robots%20install%20solar%20clean%20energy%20power&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=robots%20install%20solar%20clean%20energy%20power&rows=10&select=DOI,title",
+      "sha256": "ad3552ea42303742cbf216a43af6ee573aa0944ff994ada4c2756d179545e651",
+      "bytes": 1446,
+      "observedAt": "2026-11-06T00:20:37.851Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "81efd14ea5bad7d51dc8a5befa803785c687d68914540408227db0010bf61e86",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

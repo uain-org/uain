@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "organizations",
+  "release_id": "24ead69173a1a222cb6af24fcbaca0ca16b29061",
+  "version": null,
+  "source_commit": "24ead69173a1a222cb6af24fcbaca0ca16b29061",
+  "deployed_at": "2026-11-08T16:31:30Z",
+  "prior": "9af5280e24e4a9256d8f113e649d5ac10893c560",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#orgs-release-24ead691-20261108"
+  ],
+  "note": "9af5280e plus only the PR 273 leadership.mjs change (branch release/orgs-9af5280e-self-contained). Same 635-file inventory, hashes verified; two files differ from the prior release. Locked pointer swap; read-only manager check passes."
+}

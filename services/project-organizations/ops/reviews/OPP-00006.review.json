@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00006",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Rebuilding aged extracellular matrix across skin and organs has no open or approved solution, and nothing addresses the Main KPI of 200,000,000 people treated. The one drug tried in humans for matrix crosslinks, alagebrium (ALT-711), was abandoned by its sponsor in 2009 and a one-year randomised trial in older adults found no effect on arterial stiffness or endothelial function, attributed to the rodent-to-human difference in the crosslinks targeted (https://www.fightaging.org/archives/2014/01/further-confirmation-that-age-breaker-alagebrium-has-no-significant-effect-in-humans/). Glucosepane breakers are preclinical and the founding enzyme result could not be reproduced, pushing Revel Pharmaceuticals onto other targets (https://lifespan.io/organizations/revel-pharmaceuticals/). Organ-level matrix work is in vitro or in mice, such as the 2025 DECIPHER cardiac scaffold study, with no registered human ECM rejuvenation trial found (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8431718/). Topical tretinoin is the only partial, approved precedent: it restores dermal collagen I formation and elastic fibre morphology in photoaged facial skin (NEJM 1993; https://pubmed.ncbi.nlm.nih.gov/17166106/), which covers skin cosmesis only and not organ flexibility, so skin-only tasks are known answers and need their own basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "glucosepane crosslink breaker enzyme Revel Pharmaceuticals Spiegel extracellular matrix aging",
+      "source": "https://lifespan.io/organizations/revel-pharmaceuticals/",
+      "observedAt": "2026-11-06T00:30:00Z",
+      "finding": "Glucosepane-breaking enzymes from the Yale work could not be reproduced; Revel is preclinical and has shifted to carboxymethyl-lysine removal. No clinical crosslink breaker."
+    },
+    {
+      "query": "alagebrium ALT-711 AGE crosslink breaker clinical trial arterial stiffness outcome discontinued",
+      "source": "https://www.fightaging.org/archives/2014/01/further-confirmation-that-age-breaker-alagebrium-has-no-significant-effect-in-humans/",
+      "observedAt": "2026-11-06T00:31:00Z",
+      "finding": "Sponsor terminated alagebrium trials in 2009; a one-year randomised trial with and without exercise found no change in arterial stiffness or endothelial function in older adults."
+    },
+    {
+      "query": "extracellular matrix rejuvenation aging tissue stiffness therapy elastin regeneration organs clinical 2025",
+      "source": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8431718/",
+      "observedAt": "2026-11-06T00:32:00Z",
+      "finding": "ECM-targeted rejuvenation is in vitro or animal work (2025 DECIPHER cardiac scaffolds, mechanotransduction reviews, decellularised matrices); no registered human trial found."
+    },
+    {
+      "query": "topical retinoid tretinoin photoaging collagen dermal remodeling evidence skin elasticity restored",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/17166106/",
+      "observedAt": "2026-11-06T00:33:00Z",
+      "finding": "Topical tretinoin increases collagen I and III and improves elastic fibre morphology in photoaged skin, with papillary collagen thickness doubling on long-term use. Skin only, no organ effect."
+    }
+  ]
+}

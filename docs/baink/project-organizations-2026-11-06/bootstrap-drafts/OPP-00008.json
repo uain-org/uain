@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00008",
+  "native_project": "P-OPP-00008",
+  "source_digest": "464b5b9866766b454cf6dff52bb3b81339f3a14aabcf3c8eb3bdde433f059201",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Remove age-related protein clumps from brain and body",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "25074dde1534788b09e20f840cca510bbb8eb8d3a635d6826b2391efb10ed447"
+  },
+  "drafted_at": "2026-11-06T00:07:23.203Z",
+  "queries": [
+    "remove age-related protein clumps brain body",
+    "remove age-related protein human health longevity"
+  ],
+  "searches": [
+    {
+      "query": "remove age-related protein clumps brain body",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:07:14.789Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=remove%20age-related%20protein%20clumps%20brain%20body&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "remove age-related protein clumps brain body",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:07:15.407Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aremove%20AND%20all%3Aage-related%20AND%20all%3Aprotein%20AND%20all%3Aclumps%20AND%20all%3Abrain%20AND%20all%3Abody&start=0&max_results=10; sha256=7f4b1cc41594e6c1bc2eb99cb04879b8a11a0cf9a47adbb057be29ab94a3df42; total=0; shown=0/0"
+    },
+    {
+      "query": "remove age-related protein clumps brain body",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:07:16.441Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=remove%20age-related%20protein%20clumps%20brain%20body&rows=10&select=DOI,title; sha256=6766243d70ad84447eaa97c465533086a799cfc5e8f571f46b3d29847131ac7c; total=5018636; shown=5/10; top: 10.1002/scin.5591770515 \"Body &amp brain: Memory protein clumps like prion: Slug study hints that molecular ‘misbehavior’ has a purpose\" | 10.1021/acs.jproteome.6b00927.s001 \"Discovery of Age-Related Protein Folding Stability Differences in the Mouse Brain Proteome\" | 10.1021/acs.jproteome.6b00927.s003 \"Discovery of Age-Related Protein Folding Stability Differences in the Mouse Brain Proteome\" | 10.1021/acs.jproteome.6b00927.s005 \"Discovery of Age-Related Protein Folding Stability Differences in the Mouse Brain Proteome\" | 10.1021/acs.jproteome.6b00927.s002 \"Discovery of Age-Related Protein Folding Stability Differences in the Mouse Brain Proteome\""
+    },
+    {
+      "query": "remove age-related protein human health longevity",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:07:21.314Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=remove%20age-related%20protein%20human%20health%20longevity&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "remove age-related protein human health longevity",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:07:21.976Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aremove%20AND%20all%3Aage-related%20AND%20all%3Aprotein%20AND%20all%3Ahuman%20AND%20all%3Ahealth%20AND%20all%3Alongevity&start=0&max_results=10; sha256=64a09cf43a00ce8df2a9fec42a7a1d5a96a65128f4c740306cde18f1e2a3e3ba; total=0; shown=0/0"
+    },
+    {
+      "query": "remove age-related protein human health longevity",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:07:23.202Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=remove%20age-related%20protein%20human%20health%20longevity&rows=10&select=DOI,title; sha256=8adf4ed82048ec5d5b9f89e35862f8395119b60f236f7124da337c5ac501cf03; total=11087696; shown=5/10; top: 10.1201/9781420026566-8 \"Longevity and Age-Related Disease\" | 10.1101/2024.02.09.579604 \"Age-Related Dynamics of Methanogenic Archaea in the Human Gut Microbiome: Implications for Longevity and Health\" | 10.1007/978-3-030-82859-2_7 \"The Role of Antioxidant on Health and Age-Related Diseases in Aging\" | 10.61838/kman.longevity.1.1.4 \"Nutritional Interventions for Preventing Age-Related Cognitive Decline\" | 10.1016/s2666-75682100309-3 \"Against accepting age-related sight loss\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "remove age-related protein clumps brain body",
+      "url": "https://api.github.com/search/repositories?q=remove%20age-related%20protein%20clumps%20brain%20body&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=remove%20age-related%20protein%20clumps%20brain%20body&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:07:14.789Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "remove age-related protein clumps brain body",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aremove%20AND%20all%3Aage-related%20AND%20all%3Aprotein%20AND%20all%3Aclumps%20AND%20all%3Abrain%20AND%20all%3Abody&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aremove%20AND%20all%3Aage-related%20AND%20all%3Aprotein%20AND%20all%3Aclumps%20AND%20all%3Abrain%20AND%20all%3Abody&start=0&max_results=10",
+      "sha256": "7f4b1cc41594e6c1bc2eb99cb04879b8a11a0cf9a47adbb057be29ab94a3df42",
+      "bytes": 858,
+      "observedAt": "2026-11-06T00:07:15.407Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "remove age-related protein clumps brain body",
+      "url": "https://api.crossref.org/works?query=remove%20age-related%20protein%20clumps%20brain%20body&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=remove%20age-related%20protein%20clumps%20brain%20body&rows=10&select=DOI,title",
+      "sha256": "6766243d70ad84447eaa97c465533086a799cfc5e8f571f46b3d29847131ac7c",
+      "bytes": 1632,
+      "observedAt": "2026-11-06T00:07:16.441Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "remove age-related protein human health longevity",
+      "url": "https://api.github.com/search/repositories?q=remove%20age-related%20protein%20human%20health%20longevity&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=remove%20age-related%20protein%20human%20health%20longevity&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:07:21.314Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "remove age-related protein human health longevity",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aremove%20AND%20all%3Aage-related%20AND%20all%3Aprotein%20AND%20all%3Ahuman%20AND%20all%3Ahealth%20AND%20all%3Alongevity&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aremove%20AND%20all%3Aage-related%20AND%20all%3Aprotein%20AND%20all%3Ahuman%20AND%20all%3Ahealth%20AND%20all%3Alongevity&start=0&max_results=10",
+      "sha256": "64a09cf43a00ce8df2a9fec42a7a1d5a96a65128f4c740306cde18f1e2a3e3ba",
+      "bytes": 868,
+      "observedAt": "2026-11-06T00:07:21.976Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "remove age-related protein human health longevity",
+      "url": "https://api.crossref.org/works?query=remove%20age-related%20protein%20human%20health%20longevity&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=remove%20age-related%20protein%20human%20health%20longevity&rows=10&select=DOI,title",
+      "sha256": "8adf4ed82048ec5d5b9f89e35862f8395119b60f236f7124da337c5ac501cf03",
+      "bytes": 1427,
+      "observedAt": "2026-11-06T00:07:23.202Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "ece2e979973b3c707e80d13e78731d3c911fd08236ca14d8a005b4b85e4aeddc",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-01688",
+  "native_project": "P-OPP-01688",
+  "source_digest": "b8d2c28139e39c352d3d7f241d4125d2241e48176c8a33e353aebdb0f9a282d7",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build smart handpumps that call for repair when they fail",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "cc60b79e59b96a787a0b336b9115acab5dcbd598b66f70622cc54a9b803fcc2d"
+  },
+  "drafted_at": "2026-11-06T00:18:55.387Z",
+  "queries": [
+    "smart handpumps call repair fail",
+    "smart handpumps call water oceans freshwater"
+  ],
+  "searches": [
+    {
+      "query": "smart handpumps call repair fail",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:18:46.050Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=smart%20handpumps%20call%20repair%20fail&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "smart handpumps call repair fail",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:18:46.765Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Asmart%20AND%20all%3Ahandpumps%20AND%20all%3Acall%20AND%20all%3Arepair%20AND%20all%3Afail&start=0&max_results=10; sha256=a086a8a5c2c398f1d1ce01090f8c979711056e12a2e95f9942963cf6b2714638; total=0; shown=0/0"
+    },
+    {
+      "query": "smart handpumps call repair fail",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:18:47.583Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=smart%20handpumps%20call%20repair%20fail&rows=10&select=DOI,title; sha256=ec772aac991921d95474f9e9ca1a37e9173a576d8395b215794260cfff738eb2; total=1074042; shown=5/10; top: 10.1049/iet-tv.41.20281 \"untitled\" | 10.1049/iet-tv.41.20277 \"untitled\" | 10.35648/20.500.12413/11781/ii024 \"Smart Handpumps: Reliable Service Delivery at Scale in Rural Africa\" | 10.1049/cp.2014.0767 \"Smart handpumps: a preliminary data analysis\" | 10.1201/9781003302759-8 \"Don't Call Me Sue\""
+    },
+    {
+      "query": "smart handpumps call water oceans freshwater",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:18:53.575Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=smart%20handpumps%20call%20water%20oceans%20freshwater&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "smart handpumps call water oceans freshwater",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:18:54.422Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Asmart%20AND%20all%3Ahandpumps%20AND%20all%3Acall%20AND%20all%3Awater%20AND%20all%3Aoceans%20AND%20all%3Afreshwater&start=0&max_results=10; sha256=5b643912db0d9e7ecd380c61ab9b67e9eaa82034ee485dea661a757ed971a340; total=0; shown=0/0"
+    },
+    {
+      "query": "smart handpumps call water oceans freshwater",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:18:55.387Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=smart%20handpumps%20call%20water%20oceans%20freshwater&rows=10&select=DOI,title; sha256=6bda52018598b923a05ba5610d57eacfafb022352151ca4033139558ac339ffa; total=2788991; shown=5/10; top: 10.1049/iet-tv.41.20281 \"untitled\" | 10.1049/iet-tv.41.20277 \"untitled\" | 10.35648/20.500.12413/11781/ii024 \"Smart Handpumps: Reliable Service Delivery at Scale in Rural Africa\" | 10.1017/9781009193474.006 \"Gender Roles and Water Practices with the Handpumps\" | 10.1017/9781009193474.003 \"Life before the Handpumps\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "smart handpumps call repair fail",
+      "url": "https://api.github.com/search/repositories?q=smart%20handpumps%20call%20repair%20fail&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=smart%20handpumps%20call%20repair%20fail&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:18:46.050Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "smart handpumps call repair fail",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Asmart%20AND%20all%3Ahandpumps%20AND%20all%3Acall%20AND%20all%3Arepair%20AND%20all%3Afail&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Asmart%20AND%20all%3Ahandpumps%20AND%20all%3Acall%20AND%20all%3Arepair%20AND%20all%3Afail&start=0&max_results=10",
+      "sha256": "a086a8a5c2c398f1d1ce01090f8c979711056e12a2e95f9942963cf6b2714638",
+      "bytes": 816,
+      "observedAt": "2026-11-06T00:18:46.765Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "smart handpumps call repair fail",
+      "url": "https://api.crossref.org/works?query=smart%20handpumps%20call%20repair%20fail&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=smart%20handpumps%20call%20repair%20fail&rows=10&select=DOI,title",
+      "sha256": "ec772aac991921d95474f9e9ca1a37e9173a576d8395b215794260cfff738eb2",
+      "bytes": 1071,
+      "observedAt": "2026-11-06T00:18:47.583Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "smart handpumps call water oceans freshwater",
+      "url": "https://api.github.com/search/repositories?q=smart%20handpumps%20call%20water%20oceans%20freshwater&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=smart%20handpumps%20call%20water%20oceans%20freshwater&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:18:53.575Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "smart handpumps call water oceans freshwater",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Asmart%20AND%20all%3Ahandpumps%20AND%20all%3Acall%20AND%20all%3Awater%20AND%20all%3Aoceans%20AND%20all%3Afreshwater&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Asmart%20AND%20all%3Ahandpumps%20AND%20all%3Acall%20AND%20all%3Awater%20AND%20all%3Aoceans%20AND%20all%3Afreshwater&start=0&max_results=10",
+      "sha256": "5b643912db0d9e7ecd380c61ab9b67e9eaa82034ee485dea661a757ed971a340",
+      "bytes": 858,
+      "observedAt": "2026-11-06T00:18:54.422Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "smart handpumps call water oceans freshwater",
+      "url": "https://api.crossref.org/works?query=smart%20handpumps%20call%20water%20oceans%20freshwater&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=smart%20handpumps%20call%20water%20oceans%20freshwater&rows=10&select=DOI,title",
+      "sha256": "6bda52018598b923a05ba5610d57eacfafb022352151ca4033139558ac339ffa",
+      "bytes": 1306,
+      "observedAt": "2026-11-06T00:18:55.387Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "936ae52d6d9f9c7889e33534cc21c38d3a6def7424d1a4a0b65d065054f34943",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

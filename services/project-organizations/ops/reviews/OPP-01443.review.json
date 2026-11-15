@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01443",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Perennial grain is solved for one crop at modest scale, but nothing approaches the Main KPI of 300,000,000 hectares of perennial grain. Perennial rice PR23 (Yunnan University) yields on par with annual rice (6.8 versus 6.7 t/ha over four years) with about 60 percent less labour, and was grown on about 15,000 ha by more than 40,000 Chinese smallholders in 2021, though it needs re-sowing after four years (https://landinstitute.org/media-coverage/small-farms-in-china-are-warming-to-new-perennial-rice-crop). Kernza intermediate wheatgrass is commercial but low-yielding, about 745, 296 and 221 kg/ha in years one to three, with winter wheat producing 487 percent more grain over a three-year Cornell study (https://kernza.org/kernza-perennial-grain-yields-are-increasing/). Europe PMC holds only 46 records on perennial wheat yield and 45 on perennial sorghum or maize, mainly reviews of opportunities and challenges (for example Front Plant Sci 2022), with no released high-yield perennial wheat, maize or sorghum. Honest limit: perennial rice is a discoverable answer, so tasks that re-create or re-trial PR23-type rice are known answers; the open work is perennial wheat, maize and sorghum with competitive, sustained yields, and each task needs its own basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "perennial rice PR23 hectares farmers 2025 2026 Yunnan",
+      "source": "https://landinstitute.org/media-coverage/small-farms-in-china-are-warming-to-new-perennial-rice-crop",
+      "observedAt": "2026-11-06T01:10:00Z",
+      "finding": "PR23 covered about 15,378 ha in 2021 (from 3,642 ha of trials), grown by more than 40,000 Chinese smallholders; yield 6.8 versus 6.7 t/ha for annual rice over four years, about 60 percent less labour and half the inputs; re-sowing recommended after four years. No 2025-2026 hectare figure found."
+    },
+    {
+      "query": "Kernza intermediate wheatgrass grain yield percent of annual wheat acres 2026 perennial wheat sorghum progress",
+      "source": "https://kernza.org/kernza-perennial-grain-yields-are-increasing/",
+      "observedAt": "2026-11-06T01:15:00Z",
+      "finding": "Kernza averaged 745, 296 and 221 kg/ha grain in years one to three across Land Institute sites; Wyoming year-two 286 versus 2,172 kg/ha for wheat; Cornell found winter wheat produced 487 percent more grain over three years. Five breeding cycles raised yield 145 percent. Still a low-yielding crop in development."
+    },
+    {
+      "query": "\"perennial wheat\" AND yield (Europe PMC)",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22perennial%20wheat%22%20AND%20yield&format=json&pageSize=5&sort=CITED%20desc",
+      "observedAt": "2026-11-06T01:18:58Z",
+      "finding": "Europe PMC returns 46 records; top hits are reviews (Perennials as Future Grain Crops, Front Plant Sci 2022; Managing for Multifunctionality in Perennial Grain Crops, BioScience 2018) and trade-off studies. No released perennial wheat with yields competitive with annual wheat."
+    },
+    {
+      "query": "\"perennial sorghum\" OR \"perennial maize\" (Europe PMC)",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22perennial%20sorghum%22%20OR%20%22perennial%20maize%22&format=json&pageSize=5&sort=CITED%20desc",
+      "observedAt": "2026-11-06T01:18:59Z",
+      "finding": "Europe PMC returns 45 records, dominated by Johnsongrass (Sorghum halepense) weed and biomass genetics and general reviews. No perennial sorghum or maize grain crop in production was found."
+    }
+  ]
+}

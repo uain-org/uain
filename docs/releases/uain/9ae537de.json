@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "uain",
+  "release_id": "9ae537de",
+  "version": null,
+  "source_commit": "9ae537de324f0b3cda3a721ec55b4bafcd31d54a",
+  "deployed_at": "2026-11-08T21:18:12Z",
+  "prior": "9a8aa454",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#uain-platform-recovery-production-20261109"
+  ],
+  "note": "Normal main deployment completed; all three live image tags match the release and pending is clear. Pilot 4/4, web 2/2 and waitlist 1/1 ready; public readiness, network page, waitlist login boundary and official-SDK guide/download checks passed. Protected V2 custody activation remains separate."
+}

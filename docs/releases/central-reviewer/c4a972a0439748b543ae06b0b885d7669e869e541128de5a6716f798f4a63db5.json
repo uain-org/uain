@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "central-reviewer",
+  "release_id": "c4a972a0439748b543ae06b0b885d7669e869e541128de5a6716f798f4a63db5",
+  "version": null,
+  "source_commit": "0e5e968cf2d15cc560fa06cb5f5c711f854419ed",
+  "deployed_at": "2026-11-08T22:06:53Z",
+  "prior": "3e4ba113257fc3c6d2bedcde62f72f68cfdd5d91dcd1061df0990be00433aed0",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#dual-digest-attestation-v2-20261109",
+    "docs/superpowers/plans/2026-11-09-dual-digest-attestation-v2.md"
+  ],
+  "note": "Mixed 3e4/64a baseline plus exact reviewed V2 overlays; loaded admission and original new PIDs proved, initial held verification reconciled without replay. Exact producer enabled; ordinary signed scientific pass led to finalized native needs_evidence, not an award. Original evidence/history retained; prospective stale-reason source fix is not installed."
+}

@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T101304Z-ea27989326",
+  "version": "0.3.79",
+  "source_commit": "33efaa08cc9aa70fa6c209b508c25422ff771032",
+  "deployed_at": "2026-11-10T10:14:00Z",
+  "prior": "20261110T095758Z-aa71085849",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0379-release-20261110"
+  ],
+  "note": "PR #488: delete posts in /admin; campaign block at the end of /go/ guides. Live: /go/rd-localllama starts with the llms.txt header and ends with the Started-from block (5x --via), /go/typo equals llms.txt, post-test deleted in Chrome (confirm shown, gone from Posts, its page 404, /go/post-test plain), main routes 200."
+}

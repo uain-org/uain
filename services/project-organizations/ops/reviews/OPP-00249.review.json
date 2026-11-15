@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00249",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T03:10:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": true,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held as a known answer: self-amplifying RNA vaccines in a single dose are already deployed. Kostaive (zapomeran, ARCT-154) is a self-amplifying mRNA COVID-19 vaccine authorised across the EU on 12 February 2025 and, in the EMA's own words, given as a single injection into the muscle of the upper arm (https://www.ema.europa.eu/en/medicines/human/EPAR/kostaive); it was approved in Japan in 2023. Its evidence base is a completed phase 2-3 efficacy trial in 19,474 participants, with a further completed phase 3 co-administration study in 1,514 adults, and the platform has completed phase 1-2 influenza, pandemic influenza and Crimean-Congo haemorrhagic fever studies (https://clinicaltrials.gov/api/v2/studies?query.intr=self-amplifying+RNA+vaccine&pageSize=20), on a literature base of 908 records including 2025-2026 reviews of the platform's advantages and challenges (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22self-amplifying%20RNA%22%20AND%20vaccine%20AND%20%28approved%20OR%20licensed%20OR%20ARCT-154%20OR%20zapomeran%29&format=json&pageSize=8&resultType=lite). Deploying it is therefore a procurement and demand problem owned by manufacturers and regulators, not a problem lacking a discoverable solution. Honest limits: the KPI of 1,000,000,000 single-dose doses per year is nowhere near met, the pivotal efficacy study used two doses four weeks apart with the single injection being the standard regimen for the authorised product, no open-source replicon platform exists (https://api.github.com/search/repositories?q=self-amplifying+RNA+replicon&per_page=10&sort=stars), and saRNA for pathogens other than SARS-CoV-2 is still phase 1-2. A reframed project on a specific unapproved saRNA indication, or on saRNA volume manufacture, would need its own prior-art basis; this one is not opened as new work."
+  },
+  "additionalSearches": [
+    {
+      "query": "self-amplifying RNA vaccine approval status",
+      "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/kostaive",
+      "observedAt": "2026-11-06T03:06:00Z",
+      "finding": "Kostaive (zapomeran) is a self-amplifying mRNA COVID-19 vaccine with an EU marketing authorisation granted on 12 February 2025, described by EMA as given as a single intramuscular injection (the pivotal efficacy study used two doses four weeks apart). An approved, deployed single-dose saRNA vaccine therefore exists."
+    },
+    {
+      "query": "registered self-amplifying RNA vaccine trials",
+      "source": "https://clinicaltrials.gov/api/v2/studies?query.intr=self-amplifying+RNA+vaccine&pageSize=20",
+      "observedAt": "2026-11-06T03:07:00Z",
+      "finding": "The ARCT-154 phase 2-3 efficacy study enrolled 19,474 participants and is completed; a phase 3 co-administration study enrolled 1,514. Other saRNA programmes (seasonal and pandemic influenza, Crimean-Congo haemorrhagic fever, oncology) are phase 1 or 1-2, and ARCT-021 and two others were terminated."
+    },
+    {
+      "query": "self-amplifying RNA vaccine literature and platform reviews",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22self-amplifying%20RNA%22%20AND%20vaccine%20AND%20%28approved%20OR%20licensed%20OR%20ARCT-154%20OR%20zapomeran%29&format=json&pageSize=8&resultType=lite",
+      "observedAt": "2026-11-06T03:08:00Z",
+      "finding": "908 hits, including 2025-2026 reviews of saRNA progress, evidence gaps, advantages and challenges, and a 2025 EClinicalMedicine immunogenicity and safety study of the saRNA COVID-19 vaccine ARCT-2303. The platform is mature enough to carry a licensed product and a review literature."
+    },
+    {
+      "query": "open-source self-amplifying RNA replicon platforms",
+      "source": "https://api.github.com/search/repositories?q=self-amplifying+RNA+replicon&per_page=10&sort=stars",
+      "observedAt": "2026-11-06T03:09:00Z",
+      "finding": "Zero repositories: the deployed answer is a licensed commercial product, not an open-source platform, so the hold rests on a discoverable approved solution rather than on open code."
+    }
+  ]
+}

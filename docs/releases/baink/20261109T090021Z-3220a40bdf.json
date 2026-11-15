@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T090021Z-3220a40bdf",
+  "version": "0.3.45",
+  "source_commit": "9ccd7d31df78966815b5911be85b59a619098445",
+  "deployed_at": "2026-11-09T09:00:45Z",
+  "prior": "20261109T050212Z-21c692d3f4",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-release-0345-20261109",
+    "CHANGELOG.md#baink-status-refresh-ui-20261109"
+  ],
+  "note": "Normal exact-prior promotion of PR 293 web status and refresh fixes. Header, health and byte-identical HTML/JS on primary and preview verified; public page at 375 px has no overflow or console errors. Signed-in award and incoming-request checks not yet done live."
+}

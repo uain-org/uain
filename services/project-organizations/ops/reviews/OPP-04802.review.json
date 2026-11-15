@@ -1,0 +1,45 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-04802",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable solution provides a quality pre-school run by a teacher with an AI assistant in every village, and the Main KPI of 500,000 villages with a quality pre-school is not verifiably met. The nearest known answer is in India: Rocket Learning works with the Anganwadi daycare network and reports about 400,000 Anganwadi workers, about 6 million children and parents, 15 states and about 30% of India's public pre-schools, with play-based content, educator training, WhatsApp groups and an AI-enabled parent coach; its outcome claims (75% school-ready) carry no published method or comparison group (https://rocketlearning.org/). Anganwadi pre-school quality studies report gaps in infrastructure and pre-school education (https://doi.org/10.1007/s44217-025-00555-x), and an Indian RCT of adaptive WhatsApp nudging targets caregiver engagement, not teacher practice (https://doi.org/10.2139/ssrn.7038300). Mobile-based teacher support shows effects in rural Côte d'Ivoire primary schools (https://doi.org/10.3102/00028312261430679). GitHub has no open AI assistant for early-childhood teachers. Honest limit: India's model is close to the KPI in reach, so tasks that replicate WhatsApp content delivery to Anganwadi workers are known answers; the open, checkable work is a teacher-facing AI assistant that measurably raises pre-school quality on a validated instrument, and independently verified quality, outside India as well as in it."
+  },
+  "additionalSearches": [
+    {
+      "query": "Rocket Learning anganwadi WhatsApp early childhood education evaluation (2024 onward)",
+      "source": "https://api.openalex.org/works?search=Rocket%20Learning%20anganwadi%20WhatsApp%20early%20childhood%20education%20evaluation&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:16Z",
+      "finding": "1 work: 'Adaptive digital nudging improves caregiver engagement at scale: experimental evidence from India' (2026 SSRN, RCT tags, WhatsApp groups, early childhood education). Caregiver engagement, not verified pre-school quality."
+    },
+    {
+      "query": "preschool quality rural low-income countries teacher AI assistant (2024 onward)",
+      "source": "https://api.openalex.org/works?search=preschool%20quality%20rural%20low-income%20countries%20teacher%20AI%20assistant&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:17Z",
+      "finding": "481 works: scaling parenting programmes in four LMICs (2025), MugalimAI teacher workload study (2026), targeted instruction with mobile support in rural Cote d'Ivoire (2026). No validated teacher AI assistant for village pre-schools."
+    },
+    {
+      "query": "anganwadi preschool education learning outcomes quality (2024 onward)",
+      "source": "https://api.openalex.org/works?search=anganwadi%20preschool%20education%20learning%20outcomes%20quality&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:19Z",
+      "finding": "254 works: quality of pre-school education in Anganwadi centres (2025), infrastructure, WASH and pre-school education quality comparisons, district critiques (Odisha). Quality gaps are documented."
+    },
+    {
+      "query": "early childhood education AI teacher assistant (GitHub repositories)",
+      "source": "https://api.github.com/search/repositories?q=early%20childhood%20education%20AI%20teacher%20assistant&sort=stars&per_page=8",
+      "observedAt": "2026-11-06T01:18:20Z",
+      "finding": "0 repositories. Null result for open early-childhood teacher AI assistants."
+    },
+    {
+      "query": "Rocket Learning programme and scale",
+      "source": "https://rocketlearning.org/",
+      "observedAt": "2026-11-06T01:21:01Z",
+      "finding": "About 6 million children and parents, about 400,000 Anganwadi workers, 15 states and UTs, 200+ districts, about 30% of India's public pre-schools; AI-enabled parent coach and a GenAI companion called Appu; outcome figures without methodology."
+    }
+  ]
+}

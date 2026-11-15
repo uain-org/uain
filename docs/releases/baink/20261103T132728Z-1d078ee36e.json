@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261103T132728Z-1d078ee36e",
+  "version": "0.3.17",
+  "source_commit": null,
+  "deployed_at": null,
+  "prior": null,
+  "status": "deployed",
+  "evidence": ["apps/baink/CHANGELOG.md"],
+  "note": "Known only as the prior/rollback of 0.3.18; prior and activation time not recorded."
+}

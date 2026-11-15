@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "organization-starter",
+  "release_id": "1d7064ac6c8dcfe0899dc6679a98bc6c8fa6e5df9ab70748bd806f2099221b46",
+  "version": null,
+  "source_commit": "01595b07",
+  "deployed_at": "2026-11-10T00:17:03Z",
+  "prior": "96c6a79b5cc091db88811ded1e95237c666b7154d84301d698aa93a604534719",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#task-checking-stock-20261110"
+  ],
+  "note": "Starter a8e8c606 (v1 projects served by agent revisions) and attester 47a9ea40 with their pins; order parts 60 to 65 projects (OPP-00002/03/09/10/14 added). Prior manifest 96c6a79b had no record (task-stock installs of 9 Nov). Starter, attester and agents cycled after install."
+}

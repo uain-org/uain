@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00962",
+  "native_project": "P-OPP-00962",
+  "source_digest": "7eea88d4fe2312d24b49b998877d5607c8eac7a708b364bd1dfea5e388b6d12a",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build one primary-care AI assistant per 1,000 people",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "c0d1e4b2f79894f538274cbbca4f0616d33fa8c35c708e9327b3c4c51323903c"
+  },
+  "drafted_at": "2026-11-06T00:13:15.913Z",
+  "queries": [
+    "primary-care assistant people",
+    "primary-care assistant people healthcare systems medicine"
+  ],
+  "searches": [
+    {
+      "query": "primary-care assistant people",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:13:07.919Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=primary-care%20assistant%20people&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "primary-care assistant people",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:13:08.430Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aprimary-care%20AND%20all%3Aassistant%20AND%20all%3Apeople&start=0&max_results=10; sha256=495a5c0dd2e84caca5fd918e771e06af655f0678e889d3b73dece8203ef20cce; total=3; shown=3/3; top: arXiv:2512.12500v1 \"Explainable AI as a Double-Edged Sword in Dermatology: The Impact on Clinicians versus The Public\" | arXiv:2207.03529v1 \"A Novel IoT-based Framework for Non-Invasive Human Hygiene Monitoring using Machine Learning Techniques\" | arXiv:2512.08426v2 \"Beyond Companionship: Robotic Pets as Embodied Communication Media for Older Adults\""
+    },
+    {
+      "query": "primary-care assistant people",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:13:09.349Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=primary-care%20assistant%20people&rows=10&select=DOI,title; sha256=42bd10d8ed5f714eb006bb5866fc26cf56ef27484955f7f70e52bbc08552c197; total=3501829; shown=5/10; top: 10.7748/phc.2.5.18.s19 \"The Care Assistant ’s Guide to Working with Elderly Mentally Infirm People S Benson The Care Assistant ’s Guide to Working with Elderly Men…\" | 10.1377/forefront.20150312.045475 \"Care Team Redesign: Transforming Medical Assistant Roles in Primary Care\" | 10.4324/9780203138182-14 \"A classroom assistant\" | 10.1016/j.cpha.2020.02.009 \"Pediatric Palliative Care for the Primary Care Provider\" | 10.1186/isrctn10385799 \"Can health care assistant training improve the relational care of older people?\""
+    },
+    {
+      "query": "primary-care assistant people healthcare systems medicine",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:13:14.373Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=primary-care%20assistant%20people%20healthcare%20systems%20medicine&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "primary-care assistant people healthcare systems medicine",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:13:14.985Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aprimary-care%20AND%20all%3Aassistant%20AND%20all%3Apeople%20AND%20all%3Ahealthcare%20AND%20all%3Asystems%20AND%20all%3Amedicine&start=0&max_results=10; sha256=6152cba9a102d2f9349125ab1ca7f3d1a5946511dc953364a25209d44431ca6e; total=0; shown=0/0"
+    },
+    {
+      "query": "primary-care assistant people healthcare systems medicine",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:13:15.913Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=primary-care%20assistant%20people%20healthcare%20systems%20medicine&rows=10&select=DOI,title; sha256=fd50d17b82f3ca868859752cfb78ad8a529e0c641977819384f05fabf3b00c1a; total=12237355; shown=5/10; top: 10.1136/ebm.15.1.10 \"Healthcare assistant case management may reduce depression symptoms in primary care patients with major depression more than usual care\" | 10.7748/phc.2.5.18.s19 \"The Care Assistant ’s Guide to Working with Elderly Mentally Infirm People S Benson The Care Assistant ’s Guide to Working with Elderly Men…\" | 10.4135/9781036208745 \"Equitable COVID Care for BIPOC and People with Disabilities\" | 10.1136/ebm1010 \"Healthcare assistant case management may reduce depression symptoms in primary care patients with major depression more than usual care\" | 10.4102/phcfm.v12i1.2183 \"Primary healthcare implementation in practice: Evidence from primary healthcare managers in Ghana\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "primary-care assistant people",
+      "url": "https://api.github.com/search/repositories?q=primary-care%20assistant%20people&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=primary-care%20assistant%20people&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:13:07.919Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "primary-care assistant people",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aprimary-care%20AND%20all%3Aassistant%20AND%20all%3Apeople&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aprimary-care%20AND%20all%3Aassistant%20AND%20all%3Apeople&start=0&max_results=10",
+      "sha256": "495a5c0dd2e84caca5fd918e771e06af655f0678e889d3b73dece8203ef20cce",
+      "bytes": 9325,
+      "observedAt": "2026-11-06T00:13:08.430Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "primary-care assistant people",
+      "url": "https://api.crossref.org/works?query=primary-care%20assistant%20people&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=primary-care%20assistant%20people&rows=10&select=DOI,title",
+      "sha256": "42bd10d8ed5f714eb006bb5866fc26cf56ef27484955f7f70e52bbc08552c197",
+      "bytes": 1448,
+      "observedAt": "2026-11-06T00:13:09.349Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "primary-care assistant people healthcare systems medicine",
+      "url": "https://api.github.com/search/repositories?q=primary-care%20assistant%20people%20healthcare%20systems%20medicine&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=primary-care%20assistant%20people%20healthcare%20systems%20medicine&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:13:14.373Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "primary-care assistant people healthcare systems medicine",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aprimary-care%20AND%20all%3Aassistant%20AND%20all%3Apeople%20AND%20all%3Ahealthcare%20AND%20all%3Asystems%20AND%20all%3Amedicine&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aprimary-care%20AND%20all%3Aassistant%20AND%20all%3Apeople%20AND%20all%3Ahealthcare%20AND%20all%3Asystems%20AND%20all%3Amedicine&start=0&max_results=10",
+      "sha256": "6152cba9a102d2f9349125ab1ca7f3d1a5946511dc953364a25209d44431ca6e",
+      "bytes": 884,
+      "observedAt": "2026-11-06T00:13:14.985Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "primary-care assistant people healthcare systems medicine",
+      "url": "https://api.crossref.org/works?query=primary-care%20assistant%20people%20healthcare%20systems%20medicine&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=primary-care%20assistant%20people%20healthcare%20systems%20medicine&rows=10&select=DOI,title",
+      "sha256": "fd50d17b82f3ca868859752cfb78ad8a529e0c641977819384f05fabf3b00c1a",
+      "bytes": 1870,
+      "observedAt": "2026-11-06T00:13:15.913Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "4ec49235d0b1b5aa932abda19db31e992cf80941261ed63e4a5555598dd50178",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

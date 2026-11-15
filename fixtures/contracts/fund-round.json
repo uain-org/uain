@@ -1,0 +1,264 @@
+{
+  "description": "Later funding rounds (10 November 2026): the evidence bundle a central_fund_apply names and the decision record a central_fund_decide binds. The manager stage (JavaScript, services/project-organizations/src/fund-rounds.mjs) writes them; the root driver (Python, ops/custody/manager_stage.py) recomputes each digest before signing. FICTIONAL addresses and text only.",
+  "evidence": {
+    "value": {
+      "schema": "uain-fund-round-evidence-v1",
+      "project": "OPP-00002",
+      "nativeProject": "P-OPP-00002",
+      "round": 2,
+      "planRevision": 1,
+      "mainKpi": "FICTIONAL Main KPI: one independently replicated result, as written (κ ≥ 0.8).",
+      "criteria": "FICTIONAL sub-KPI 2: ≥ 95 % of the naïve cohort — “verified” — with a published dataset 😀 and line separator.",
+      "criteriaDigest": "5baac5cebc37499665534a299fb2bab1773731a6565bcd1ddf0f5977a54ceec2",
+      "tasks": [
+        {
+          "id": "T-OPP-00002-2-0123456789abcdef",
+          "title": "FICTIONAL task — ü",
+          "acceptanceDigest": "e3837d07d33e57d15065d93eccdc4c09156a40a64f3dc8856ef778424a2b7e00",
+          "submission": "S-fixture-1",
+          "author": "uain13333333333333333333333333333333333333333",
+          "evidenceDigest": "c2ef228708b36600bc1adc270db46abfeb43495410cb06001b4193b072119d4c",
+          "solverAmount": "400000000",
+          "reviewerAmount": "100000000"
+        }
+      ]
+    },
+    "canonical": "{\"criteria\":\"FICTIONAL sub-KPI 2: ≥ 95 % of the naïve cohort — “verified” — with a published dataset 😀 and line separator.\",\"criteriaDigest\":\"5baac5cebc37499665534a299fb2bab1773731a6565bcd1ddf0f5977a54ceec2\",\"mainKpi\":\"FICTIONAL Main KPI: one independently replicated result, as written (κ ≥ 0.8).\",\"nativeProject\":\"P-OPP-00002\",\"planRevision\":1,\"project\":\"OPP-00002\",\"round\":2,\"schema\":\"uain-fund-round-evidence-v1\",\"tasks\":[{\"acceptanceDigest\":\"e3837d07d33e57d15065d93eccdc4c09156a40a64f3dc8856ef778424a2b7e00\",\"author\":\"uain13333333333333333333333333333333333333333\",\"evidenceDigest\":\"c2ef228708b36600bc1adc270db46abfeb43495410cb06001b4193b072119d4c\",\"id\":\"T-OPP-00002-2-0123456789abcdef\",\"reviewerAmount\":\"100000000\",\"solverAmount\":\"400000000\",\"submission\":\"S-fixture-1\",\"title\":\"FICTIONAL task — ü\"}]}",
+    "sha256": "c3b901d9f4c9c19aaead9e612b31f0b296ffee60594d18a90840e87b4967acc0",
+    "application": "F-OPP-00002-2-c3b901d9f4c9c19a",
+    "apply_batch": {
+      "schema": "uain-fund-round-batch-v1",
+      "project": "OPP-00002",
+      "kind": "apply",
+      "attempt": 1,
+      "createdAt": "2026-11-10T01:00:00.000Z",
+      "request": {
+        "id": "F-OPP-00002-2-c3b901d9f4c9c19a-a1",
+        "member": "uain11111111111111111111111111111111111111111",
+        "operation": "central_fund_apply",
+        "payload": {
+          "id": "F-OPP-00002-2-c3b901d9f4c9c19a",
+          "project": "P-OPP-00002",
+          "round": 2,
+          "revision": 1,
+          "evidence_digest": "c3b901d9f4c9c19aaead9e612b31f0b296ffee60594d18a90840e87b4967acc0"
+        }
+      },
+      "evidence": {
+        "schema": "uain-fund-round-evidence-v1",
+        "project": "OPP-00002",
+        "nativeProject": "P-OPP-00002",
+        "round": 2,
+        "planRevision": 1,
+        "mainKpi": "FICTIONAL Main KPI: one independently replicated result, as written (κ ≥ 0.8).",
+        "criteria": "FICTIONAL sub-KPI 2: ≥ 95 % of the naïve cohort — “verified” — with a published dataset 😀 and line separator.",
+        "criteriaDigest": "5baac5cebc37499665534a299fb2bab1773731a6565bcd1ddf0f5977a54ceec2",
+        "tasks": [
+          {
+            "id": "T-OPP-00002-2-0123456789abcdef",
+            "title": "FICTIONAL task — ü",
+            "acceptanceDigest": "e3837d07d33e57d15065d93eccdc4c09156a40a64f3dc8856ef778424a2b7e00",
+            "submission": "S-fixture-1",
+            "author": "uain13333333333333333333333333333333333333333",
+            "evidenceDigest": "c2ef228708b36600bc1adc270db46abfeb43495410cb06001b4193b072119d4c",
+            "solverAmount": "400000000",
+            "reviewerAmount": "100000000"
+          }
+        ]
+      }
+    }
+  },
+  "decision": {
+    "value": {
+      "schema": "uain-fund-round-decision-v1",
+      "decider": "uain-fund-manager-decider-v1",
+      "project": "OPP-00002",
+      "nativeProject": "P-OPP-00002",
+      "application": "F-OPP-00002-2-c3b901d9f4c9c19a",
+      "round": 2,
+      "planRevision": 1,
+      "evidenceDigest": "c3b901d9f4c9c19aaead9e612b31f0b296ffee60594d18a90840e87b4967acc0",
+      "evidenceTasks": [
+        "T-OPP-00002-2-0123456789abcdef"
+      ],
+      "basis": "fund_manager_agent",
+      "verdict": "reject",
+      "mainKpiAchieved": false,
+      "findings": [
+        "FICTIONAL finding: the “published dataset” requirement is not met by the accepted work."
+      ],
+      "downgraded": null,
+      "feedback": "Sub-KPI 2 not accepted by the UAIN Fund Manager. FICTIONAL: the accepted work is partial — the published dataset is missing; résumé attached. (Evidence c3b901d9f4c9c19a: 1 accepted task.)",
+      "execution": {
+        "id": "fd-OPP-00002-2-00000000-0000-4000-8000-000000000001",
+        "model": "claude-sonnet-5-5",
+        "actual": true,
+        "promptDigest": "0f54b66f9521200d9d32b4f880048a654abf23dcfd143f456ef4d6f12f72a203",
+        "answerDigest": "8db2e1036f8591cd8331905f41dde6c96333534ec2f9e73b53cf138efe60c1bf",
+        "startedAt": "2026-11-10T01:00:00.000Z",
+        "finishedAt": "2026-11-10T01:00:09.000Z"
+      },
+      "decidedAt": "2026-11-10T01:00:10.000Z"
+    },
+    "canonical": "{\"application\":\"F-OPP-00002-2-c3b901d9f4c9c19a\",\"basis\":\"fund_manager_agent\",\"decidedAt\":\"2026-11-10T01:00:10.000Z\",\"decider\":\"uain-fund-manager-decider-v1\",\"downgraded\":null,\"evidenceDigest\":\"c3b901d9f4c9c19aaead9e612b31f0b296ffee60594d18a90840e87b4967acc0\",\"evidenceTasks\":[\"T-OPP-00002-2-0123456789abcdef\"],\"execution\":{\"actual\":true,\"answerDigest\":\"8db2e1036f8591cd8331905f41dde6c96333534ec2f9e73b53cf138efe60c1bf\",\"finishedAt\":\"2026-11-10T01:00:09.000Z\",\"id\":\"fd-OPP-00002-2-00000000-0000-4000-8000-000000000001\",\"model\":\"claude-sonnet-5-5\",\"promptDigest\":\"0f54b66f9521200d9d32b4f880048a654abf23dcfd143f456ef4d6f12f72a203\",\"startedAt\":\"2026-11-10T01:00:00.000Z\"},\"feedback\":\"Sub-KPI 2 not accepted by the UAIN Fund Manager. FICTIONAL: the accepted work is partial — the published dataset is missing; résumé attached. (Evidence c3b901d9f4c9c19a: 1 accepted task.)\",\"findings\":[\"FICTIONAL finding: the “published dataset” requirement is not met by the accepted work.\"],\"mainKpiAchieved\":false,\"nativeProject\":\"P-OPP-00002\",\"planRevision\":1,\"project\":\"OPP-00002\",\"round\":2,\"schema\":\"uain-fund-round-decision-v1\",\"verdict\":\"reject\"}",
+    "sha256": "90601b77baa04d62e8f490b2ef2c25062df76d75508100e428b4514bbcd05886",
+    "decide_batch": {
+      "schema": "uain-fund-round-batch-v1",
+      "project": "OPP-00002",
+      "kind": "decide",
+      "attempt": 1,
+      "createdAt": "2026-11-10T01:00:10.000Z",
+      "request": {
+        "id": "D-F-OPP-00002-2-c3b901d9f4c9c19a-a1",
+        "member": "uain12222222222222222222222222222222222222222",
+        "operation": "central_fund_decide",
+        "payload": {
+          "application": "F-OPP-00002-2-c3b901d9f4c9c19a",
+          "verdict": "reject",
+          "verification_digest": "90601b77baa04d62e8f490b2ef2c25062df76d75508100e428b4514bbcd05886",
+          "feedback": "Sub-KPI 2 not accepted by the UAIN Fund Manager. FICTIONAL: the accepted work is partial — the published dataset is missing; résumé attached. (Evidence c3b901d9f4c9c19a: 1 accepted task.)",
+          "main_kpi_achieved": false
+        }
+      },
+      "decision": {
+        "schema": "uain-fund-round-decision-v1",
+        "decider": "uain-fund-manager-decider-v1",
+        "project": "OPP-00002",
+        "nativeProject": "P-OPP-00002",
+        "application": "F-OPP-00002-2-c3b901d9f4c9c19a",
+        "round": 2,
+        "planRevision": 1,
+        "evidenceDigest": "c3b901d9f4c9c19aaead9e612b31f0b296ffee60594d18a90840e87b4967acc0",
+        "evidenceTasks": [
+          "T-OPP-00002-2-0123456789abcdef"
+        ],
+        "basis": "fund_manager_agent",
+        "verdict": "reject",
+        "mainKpiAchieved": false,
+        "findings": [
+          "FICTIONAL finding: the “published dataset” requirement is not met by the accepted work."
+        ],
+        "downgraded": null,
+        "feedback": "Sub-KPI 2 not accepted by the UAIN Fund Manager. FICTIONAL: the accepted work is partial — the published dataset is missing; résumé attached. (Evidence c3b901d9f4c9c19a: 1 accepted task.)",
+        "execution": {
+          "id": "fd-OPP-00002-2-00000000-0000-4000-8000-000000000001",
+          "model": "claude-sonnet-5-5",
+          "actual": true,
+          "promptDigest": "0f54b66f9521200d9d32b4f880048a654abf23dcfd143f456ef4d6f12f72a203",
+          "answerDigest": "8db2e1036f8591cd8331905f41dde6c96333534ec2f9e73b53cf138efe60c1bf",
+          "startedAt": "2026-11-10T01:00:00.000Z",
+          "finishedAt": "2026-11-10T01:00:09.000Z"
+        },
+        "decidedAt": "2026-11-10T01:00:10.000Z"
+      }
+    }
+  },
+  "missing_evidence": {
+    "value": {
+      "schema": "uain-fund-round-decision-v1",
+      "decider": "uain-fund-manager-decider-v1",
+      "project": "OPP-00002",
+      "nativeProject": "P-OPP-00002",
+      "application": "F-OPP-00002-2-c3b901d9f4c9c19a",
+      "round": 2,
+      "planRevision": 1,
+      "evidenceDigest": "c3b901d9f4c9c19aaead9e612b31f0b296ffee60594d18a90840e87b4967acc0",
+      "evidenceTasks": [],
+      "basis": "evidence_not_found",
+      "verdict": "reject",
+      "mainKpiAchieved": false,
+      "findings": [],
+      "downgraded": null,
+      "feedback": "Sub-KPI 2 not accepted by the UAIN Fund Manager. The application names evidence c3b901d9f4c9c19a for sub-KPI 2, but no set of work accepted by UAIN's central reviewer with that digest is on public record. Nothing is released. Apply again once accepted work for this sub-KPI is on record. (Evidence c3b901d9f4c9c19a: 0 accepted tasks.)",
+      "execution": null,
+      "decidedAt": "2026-11-10T01:00:11.000Z"
+    },
+    "sha256": "16026e774f8cc86cae0829e1355d014da1958afcdb4e33390e329406cfe1591c",
+    "payload": {
+      "application": "F-OPP-00002-2-c3b901d9f4c9c19a",
+      "verdict": "reject",
+      "verification_digest": "16026e774f8cc86cae0829e1355d014da1958afcdb4e33390e329406cfe1591c",
+      "feedback": "Sub-KPI 2 not accepted by the UAIN Fund Manager. The application names evidence c3b901d9f4c9c19a for sub-KPI 2, but no set of work accepted by UAIN's central reviewer with that digest is on public record. Nothing is released. Apply again once accepted work for this sub-KPI is on record. (Evidence c3b901d9f4c9c19a: 0 accepted tasks.)",
+      "main_kpi_achieved": false
+    }
+  },
+  "refusals": [
+    {
+      "name": "apply evidence digest changed",
+      "batch": "apply",
+      "patch": {
+        "path": [
+          "request",
+          "payload",
+          "evidence_digest"
+        ],
+        "value": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      },
+      "python": "fund_evidence_mismatch"
+    },
+    {
+      "name": "apply evidence edited after digest",
+      "batch": "apply",
+      "patch": {
+        "path": [
+          "evidence",
+          "criteria"
+        ],
+        "value": "FICTIONAL sub-KPI 2: ≥ 95 % of the naïve cohort — “verified” — with a published dataset 😀 and line separator. (edited)"
+      },
+      "python": "fund_evidence_mismatch"
+    },
+    {
+      "name": "decision feedback edited",
+      "batch": "decide",
+      "patch": {
+        "path": [
+          "request",
+          "payload",
+          "feedback"
+        ],
+        "value": "FICTIONAL feedback that the record does not hold."
+      },
+      "python": "fund_decision_mismatch"
+    },
+    {
+      "name": "decision claims the Main KPI outside sub-KPI 5",
+      "batch": "decide",
+      "patch": {
+        "path": [
+          "request",
+          "payload",
+          "main_kpi_achieved"
+        ],
+        "value": true
+      },
+      "python": "fund_decision_mismatch"
+    },
+    {
+      "name": "decision verdict flipped",
+      "batch": "decide",
+      "patch": {
+        "path": [
+          "request",
+          "payload",
+          "verdict"
+        ],
+        "value": "accept"
+      },
+      "python": "fund_decision_mismatch"
+    },
+    {
+      "name": "decision from a fixture execution",
+      "batch": "decide",
+      "patch": {
+        "path": [
+          "decision",
+          "execution",
+          "actual"
+        ],
+        "value": false
+      },
+      "python": "fund_decision_mismatch"
+    }
+  ]
+}

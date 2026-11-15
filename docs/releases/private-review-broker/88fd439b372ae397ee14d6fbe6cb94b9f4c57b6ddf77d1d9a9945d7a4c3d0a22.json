@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "private-review-broker",
+  "release_id": "88fd439b372ae397ee14d6fbe6cb94b9f4c57b6ddf77d1d9a9945d7a4c3d0a22",
+  "version": null,
+  "source_commit": "5bfad1321e0e541efedd7bc7f78aa02576ac4516",
+  "deployed_at": "2026-11-09T11:31:51Z",
+  "prior": "e886ade5c151947c8884beede520cc236ba2463f327436fdc5a5943a2b232adf",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#operation-aware-boundary-review-20261109",
+    "https://baink.money/api/native/review/health"
+  ],
+  "note": "Reviewed17-file broker overlay preserves signer, credentials, root inspector, journals and quota. Actual Sonnet3-case qualification passes; fresh negative probe and signed public health verified. Original refusal unchanged, no funds sent. Compatibility repair only: public no-install sending remains separate."
+}

@@ -1,0 +1,259 @@
+{
+ "schema": "uain-contract-fixture-v1",
+ "contract": "canonical-json",
+ "description": "Two distinct canonical JSON forms. \"chain\" is the native signing form (object keys sorted by UTF-8 bytes; < > & U+2028 U+2029 escaped as \\u00XX; safe integers only). \"organization\" is the project-organization digest form (JSON.stringify strings; keys sorted by UTF-16 code units, the default JavaScript sort). Each vector gives the raw JSON text every consumer parses with its own parser, the canonical text and the SHA-256 of its UTF-8 bytes.",
+ "sources": {
+  "chain": [
+   "apps/baink/server/native-financial-command.mjs canonicalJSON",
+   "chain/client/signing.mjs canonicalJSON",
+   "ops/custody/native_migration.py canonical",
+   "chain/federation/authorization.go SigningBytes payload normalization (json.Marshal)"
+  ],
+  "organization": [
+   "services/project-organizations/src/common.mjs canonical/digest",
+   "ops/custody/project_organizations.py js_canonical"
+  ]
+ },
+ "chain": {
+  "vectors": [
+   {
+    "name": "key_order_ascii",
+    "json": "{\"b\":1,\"a\":2,\"A\":3}",
+    "canonical": "{\"A\":3,\"a\":2,\"b\":1}",
+    "sha256": "e36823485c211bdf27aa7bb577fe79ba2ad122cfbb95023ae886736fd48e9b7c"
+   },
+   {
+    "name": "key_order_utf8_vs_utf16",
+    "json": "{\"\\ufffd\":1,\"\\ud83d\\ude00\":2,\"a\":3,\"B\":4,\"\\u00e9\":5}",
+    "canonical": "{\"B\":4,\"a\":3,\"é\":5,\"�\":1,\"😀\":2}",
+    "sha256": "0e0d581d8b268a5bcd9dae4998ebab01b1e82386b5e1e11e418b561efa63a732"
+   },
+   {
+    "name": "html_sensitive_characters",
+    "json": "\"<a href=\\\"x\\\">&amp;</a>\"",
+    "canonical": "\"\\u003ca href=\\\"x\\\"\\u003e\\u0026amp;\\u003c/a\\u003e\"",
+    "sha256": "6bf7789e231094bb32cf24febce7a426d6b4ddf22ff7c922910849c74b188f4c"
+   },
+   {
+    "name": "line_and_paragraph_separators",
+    "json": "\"a\\u2028b\\u2029c\"",
+    "canonical": "\"a\\u2028b\\u2029c\"",
+    "sha256": "24f86ea030d13aa0ad7f530c4f0cfdbfd3eb38b9ed526a9eebbebfd37f7b661f"
+   },
+   {
+    "name": "control_characters",
+    "json": "\"\\u0000\\u0001\\b\\f\\n\\r\\t\\u001f\\u007f\"",
+    "canonical": "\"\\u0000\\u0001\\b\\f\\n\\r\\t\\u001f\"",
+    "sha256": "810fa8cd36fe3b7c36249f652eb81dc26bafa9571969fc4a8d282380be264000"
+   },
+   {
+    "name": "quote_and_backslash",
+    "json": "\"\\\"\\\\/\"",
+    "canonical": "\"\\\"\\\\/\"",
+    "sha256": "106814b96b4576ad5efb709458f6a5e1d0b0653cf234738e0ccc6c435bdef084"
+   },
+   {
+    "name": "non_bmp_and_accents",
+    "json": "\"\\u00e9\\ud83d\\ude00\\u4e2d\"",
+    "canonical": "\"é😀中\"",
+    "sha256": "62adecf124df857ceb7b1c87e5daaa255cc7632887af5130666130365cad02d1"
+   },
+   {
+    "name": "nested_order_preserved",
+    "json": "{\"z\":[3,1,2,{\"y\":null,\"x\":true}],\"m\":{\"k\":false,\"j\":\"\"}}",
+    "canonical": "{\"m\":{\"j\":\"\",\"k\":false},\"z\":[3,1,2,{\"x\":true,\"y\":null}]}",
+    "sha256": "a6d68f8e356846937f6353eab52d45b3b4e341fbb26ae16eea843c0269c2150b"
+   },
+   {
+    "name": "safe_integer_bounds",
+    "json": "[0,-1,9007199254740991,-9007199254740991]",
+    "canonical": "[0,-1,9007199254740991,-9007199254740991]",
+    "sha256": "d1f4b91349edc7ebd49ff1de73304f618c38a7456b5e36df82573d372466fff6"
+   },
+   {
+    "name": "empty_values",
+    "json": "{\"a\":{},\"b\":[],\"c\":\"\"}",
+    "canonical": "{\"a\":{},\"b\":[],\"c\":\"\"}",
+    "sha256": "e052004170cc85d084722ffe760c499548014bfdbdf5275548b688255770dfc2"
+   }
+  ],
+  "edge_inputs": [
+   {
+    "name": "fraction",
+    "json": "{\"n\":1.5}",
+    "outcomes": {
+     "js-baink": "refused",
+     "js-chain-client": "refused",
+     "python-native-migration": "refused",
+     "go-federation": {
+      "canonical": "{\"n\":1.5}"
+     }
+    }
+   },
+   {
+    "name": "unsafe_integer",
+    "json": "{\"n\":9007199254740992}",
+    "outcomes": {
+     "js-baink": "refused",
+     "js-chain-client": "refused",
+     "python-native-migration": "refused",
+     "go-federation": {
+      "canonical": "{\"n\":9007199254740992}"
+     }
+    }
+   },
+   {
+    "name": "lone_high_surrogate",
+    "json": "\"\\ud800\"",
+    "outcomes": {
+     "js-baink": "refused",
+     "js-chain-client": "refused",
+     "python-native-migration": "refused",
+     "go-federation": {
+      "canonical": "\"�\""
+     }
+    }
+   },
+   {
+    "name": "lone_low_surrogate_key",
+    "json": "{\"\\udc00\":1}",
+    "outcomes": {
+     "js-baink": "refused",
+     "js-chain-client": "refused",
+     "python-native-migration": "refused",
+     "go-federation": {
+      "canonical": "{\"�\":1}"
+     }
+    }
+   },
+   {
+    "name": "integral_fraction_literal",
+    "json": "{\"n\":1.0}",
+    "outcomes": {
+     "js-baink": {
+      "canonical": "{\"n\":1}"
+     },
+     "js-chain-client": {
+      "canonical": "{\"n\":1}"
+     },
+     "python-native-migration": "refused",
+     "go-federation": {
+      "canonical": "{\"n\":1.0}"
+     }
+    }
+   }
+  ]
+ },
+ "organization": {
+  "vectors": [
+   {
+    "name": "key_order_ascii",
+    "json": "{\"b\":1,\"a\":2,\"A\":3}",
+    "canonical": "{\"A\":3,\"a\":2,\"b\":1}",
+    "sha256": "e36823485c211bdf27aa7bb577fe79ba2ad122cfbb95023ae886736fd48e9b7c"
+   },
+   {
+    "name": "key_order_utf8_vs_utf16",
+    "json": "{\"\\ufffd\":1,\"\\ud83d\\ude00\":2,\"a\":3,\"B\":4,\"\\u00e9\":5}",
+    "canonical": "{\"B\":4,\"a\":3,\"é\":5,\"😀\":2,\"�\":1}",
+    "sha256": "0a29a56fb022dc704a3a2c2bd9b6df76bb274c806df3641501e8f07934e488f4"
+   },
+   {
+    "name": "html_sensitive_characters",
+    "json": "\"<a href=\\\"x\\\">&amp;</a>\"",
+    "canonical": "\"<a href=\\\"x\\\">&amp;</a>\"",
+    "sha256": "4b6ec7661c30af34cf9b9b1b3333e812381acb1d323ad1f60e88aa5fd17b114d"
+   },
+   {
+    "name": "line_and_paragraph_separators",
+    "json": "\"a\\u2028b\\u2029c\"",
+    "canonical": "\"a b c\"",
+    "sha256": "18c6bee2c10cadf5dec772e4b216f9060a21814a302ce989e183178afcf43e1a"
+   },
+   {
+    "name": "control_characters",
+    "json": "\"\\u0000\\u0001\\b\\f\\n\\r\\t\\u001f\\u007f\"",
+    "canonical": "\"\\u0000\\u0001\\b\\f\\n\\r\\t\\u001f\"",
+    "sha256": "810fa8cd36fe3b7c36249f652eb81dc26bafa9571969fc4a8d282380be264000"
+   },
+   {
+    "name": "quote_and_backslash",
+    "json": "\"\\\"\\\\/\"",
+    "canonical": "\"\\\"\\\\/\"",
+    "sha256": "106814b96b4576ad5efb709458f6a5e1d0b0653cf234738e0ccc6c435bdef084"
+   },
+   {
+    "name": "non_bmp_and_accents",
+    "json": "\"\\u00e9\\ud83d\\ude00\\u4e2d\"",
+    "canonical": "\"é😀中\"",
+    "sha256": "62adecf124df857ceb7b1c87e5daaa255cc7632887af5130666130365cad02d1"
+   },
+   {
+    "name": "nested_order_preserved",
+    "json": "{\"z\":[3,1,2,{\"y\":null,\"x\":true}],\"m\":{\"k\":false,\"j\":\"\"}}",
+    "canonical": "{\"m\":{\"j\":\"\",\"k\":false},\"z\":[3,1,2,{\"x\":true,\"y\":null}]}",
+    "sha256": "a6d68f8e356846937f6353eab52d45b3b4e341fbb26ae16eea843c0269c2150b"
+   },
+   {
+    "name": "safe_integer_bounds",
+    "json": "[0,-1,9007199254740991,-9007199254740991]",
+    "canonical": "[0,-1,9007199254740991,-9007199254740991]",
+    "sha256": "d1f4b91349edc7ebd49ff1de73304f618c38a7456b5e36df82573d372466fff6"
+   },
+   {
+    "name": "empty_values",
+    "json": "{\"a\":{},\"b\":[],\"c\":\"\"}",
+    "canonical": "{\"a\":{},\"b\":[],\"c\":\"\"}",
+    "sha256": "e052004170cc85d084722ffe760c499548014bfdbdf5275548b688255770dfc2"
+   }
+  ],
+  "edge_inputs": [
+   {
+    "name": "fraction",
+    "json": "{\"n\":1.5}",
+    "outcomes": {
+     "js-organizations": "refused",
+     "python-organizations": "refused"
+    }
+   },
+   {
+    "name": "unsafe_integer",
+    "json": "{\"n\":9007199254740992}",
+    "outcomes": {
+     "js-organizations": "refused",
+     "python-organizations": "refused"
+    }
+   },
+   {
+    "name": "lone_high_surrogate",
+    "json": "\"\\ud800\"",
+    "outcomes": {
+     "js-organizations": {
+      "canonical": "\"\\ud800\""
+     },
+     "python-organizations": "refused"
+    }
+   },
+   {
+    "name": "lone_low_surrogate_key",
+    "json": "{\"\\udc00\":1}",
+    "outcomes": {
+     "js-organizations": {
+      "canonical": "{\"\\udc00\":1}"
+     },
+     "python-organizations": "refused"
+    }
+   },
+   {
+    "name": "integral_fraction_literal",
+    "json": "{\"n\":1.0}",
+    "outcomes": {
+     "js-organizations": {
+      "canonical": "{\"n\":1}"
+     },
+     "python-organizations": "refused"
+    }
+   }
+  ]
+ }
+}

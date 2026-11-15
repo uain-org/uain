@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "organizations",
+  "release_id": "473ba2fe45914fccc6b06a526e35b2fb7607c32c7dab73ecb74143096c506f96",
+  "version": null,
+  "source_commit": "7fdfd1e4321f60d44dc59d274c3d8a69e890eb32",
+  "deployed_at": "2026-11-15T02:50:26Z",
+  "prior": "8794a8eebc730244025b37e80e96cd8ebc119f6374d7c9028edcfbca3b3118c2",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#custody-window-live-20261115",
+    "docs/security/custody-install-runbook-2026-11-15.md"
+  ],
+  "note": "8794a8ee with 7 files from main (worker, manager-stage, fund-rounds, single-claim, new claim-tasks and achievement-receipt, fund-manager worker for T20, inert). Verifier pins 41a9b79f set at 02:49:57, timers stopped; the promote's attester check passed 02:50:50. SV-2 fund-round half, SV-3, SV-4. Rollback: restore the pins file, release:rollback --release 8794a8ee."
+}

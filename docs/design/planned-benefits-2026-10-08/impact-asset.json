@@ -1,0 +1,23 @@
+{
+  "asset": "impact",
+  "tool_mode": "built-in image_gen generation with composition reference",
+  "tool": "image_gen.imagegen",
+  "prompt": "Use case: stylized-concept\nAsset type: finished raster background for one UAIN landing benefit card, natural portrait 1024x1280 canvas.\nReference image: supplied impact crop is a composition, mood and realism reference. Create a faithful full portrait extension of that scene.\nPrimary request: macro blue luminous DNA strand winding vertically along the left foreground, realistic reflective solar panels across a mountain meadow in the middle, sun low over mountains near center, and distant blue planet in the upper right under a starry blue sky. Match the crop closely: cool blue scientific and cinematic realism, same subject scale and relative placements, subtle warm sunlight.\nComposition: imagery occupies the upper 58 percent of the portrait. The image gradually and smoothly fades through deep navy into a quiet dark blue #08283f in the lower 42 percent. Keep the lower area empty and text-safe: it will receive actual HTML title and paragraph. Very subtle slightly lighter blue at the bottom edge, as in the selected original card. Solar panels can faintly continue behind the smooth fade, without bright detail in the lower text area.\nConstraints: produce only the image background. NO letters, typography, text, numbers, buttons, UI, logos, watermark, borders, badges, people or additional invented subjects. Preserve reference composition and art direction. No montage panels, no card frame, no rounded corners.",
+  "reference_path": "work/benefits-20261008/references/impact.webp",
+  "generated_path": "~/.codex/generated_images/01a11b37-d6b5-7271-bd58-783471e41ffa/exec-424d6d93-6718-4fcd-8afd-ce9b5596bf90.png",
+  "generated_dimensions": {
+    "width": 1122,
+    "height": 1402
+  },
+  "output_path": "public/images/landing/benefits/impact.webp",
+  "output_dimensions": {
+    "width": 1024,
+    "height": 1280
+  },
+  "encoding": {
+    "format": "WebP",
+    "quality": 84,
+    "method": 6
+  },
+  "inspection_notes": "Viewed generated raster. Matches reference closely: luminous macro DNA left; solar panels, valley and low sunrise central; distant planet upper right. Smooth navy lower area with faint solar texture transitions to empty text-safe deep blue, subtly brighter bottom edge. No lettering, logos, UI, frames or badges. Portrait aspect ratio preserved."
+}

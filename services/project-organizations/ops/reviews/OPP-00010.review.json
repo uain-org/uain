@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00010",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T02:22:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "A 150-year human healthspan is not achieved by anyone, open or otherwise, and the Main KPI of 150 average healthy years is roughly 87 years above the observed global figure: healthy life expectancy was about 62.8 years in 2023 after a 1.54-year pandemic fall, against 63.5 years in 2019, with the gap to total life expectancy widening (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7568920/). The ceiling itself is contested model work, not an engineering plan: resilience-decline modelling puts a limit near 120 to 150 years from datasets in three countries, the 2016 estimate was about 115 with a 1-in-10,000 chance of 125, and the record of 122 years has stood since 1997 (https://www.thebrighterside.news/post/human-aging-models-suggest-people-may-never-live-past-150-heres-why). No geroprotector has shown a healthspan effect in a completed human trial: TAME, the flagship 3,000-person six-year metformin trial with an FDA-agreed composite endpoint, is still registered but unfunded and has not enrolled participants as of 2026 (https://www.stackingyears.com/blog/tame-trial-metformin-2026-status-update, a secondary source; the registry entry NCT04370067 should be checked before any claim is repeated). Open-source work exists around the problem but not as a solution to it: the MIT-licensed AI4L 1.0 evidence-review tool over 390-plus longevity interventions and the Longevitech catalogue of 90-plus open tools (https://www.pulse.bot/longevity/news/forever-healthy-releases-ai4l-10-for-practical-longevity-370ab297-cab3-4da8-a80d-833dbbdd29df/). Honest limit: the KPI is an aspiration with no demonstrated route, so tasks under it must be bounded and carry their own prior-art basis rather than restating the geroscience agenda."
+  },
+  "additionalSearches": [
+    {
+      "query": "healthy life expectancy global trend 2026 WHO HALE stagnation",
+      "source": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7568920/",
+      "observedAt": "2026-11-06T02:13:00Z",
+      "finding": "Global healthy life expectancy rose from 58.1 years (2000) to 63.5 (2019), fell about 1.54 years by 2021 and stood near 62.8 in 2023, with the HALE-to-life-expectancy gap widening. The observed baseline is therefore about 63 healthy years, not 150, and the trend is recovery rather than extension."
+    },
+    {
+      "query": "healthspan extension 150 years evidence maximum human lifespan limit 2026",
+      "source": "https://www.thebrighterside.news/post/human-aging-models-suggest-people-may-never-live-past-150-heres-why",
+      "observedAt": "2026-11-06T02:15:00Z",
+      "finding": "Published estimates of the human limit range from about 115 to 150 years and are model-based: resilience declines irreversibly between roughly 120 and 150 in step-count and health datasets from three countries; the 2016 estimate was about 115; the verified record is 122 years, unbeaten since 1997. No source claims a demonstrated route to 150 healthy years."
+    },
+    {
+      "query": "metformin rapamycin TAME trial status geroprotector human healthspan 2026",
+      "source": "https://www.stackingyears.com/blog/tame-trial-metformin-2026-status-update",
+      "observedAt": "2026-11-06T02:17:00Z",
+      "finding": "Secondary 2026 reporting agrees TAME (NCT04370067, about 3,000 adults aged 65-79, six years, composite of cardiovascular disease, cancer, dementia and death) is regulatory-ready but unfunded and has enrolled no participants; no geroprotector efficacy results are published. One outlier blog claims enrolment completed and is not corroborated. Primary registry confirmation still needed."
+    },
+    {
+      "query": "open source longevity intervention platform healthspan github aging research consortium",
+      "source": "https://www.pulse.bot/longevity/news/forever-healthy-releases-ai4l-10-for-practical-longevity-370ab297-cab3-4da8-a80d-833dbbdd29df/",
+      "observedAt": "2026-11-06T02:19:00Z",
+      "finding": "Open-source longevity work is tooling, not a healthspan solution: AI4L 1.0 (MIT licence) does evidence reviews over 390-plus interventions, and the Longevitech and Longevity OSS catalogues index 90-plus open repositories for clocks, wearables and clinic software. None extends healthspan."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "uain",
+  "release_id": "13874bc3",
+  "version": null,
+  "source_commit": "13874bc34232ebe26389a1494332c2424e8b5878",
+  "deployed_at": "2026-11-08T17:08:24Z",
+  "prior": "53964797",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#subscription-pilot-20261108"
+  ],
+  "note": "PR276 merged after all required checks; deployment42502667479 succeeded. Owning ConfigMap source and all three component image tags match13874bc3 with no pending activation; public pilot readiness passes. Standalone BAINK and holder/broker releases have separate records."
+}

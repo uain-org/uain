@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T194230Z-cdff448403",
+  "version": "0.3.58",
+  "source_commit": "3b25b4e86c27749ebd96ccf2d25281d50d02f5e5",
+  "deployed_at": "2026-11-09T19:42:30Z",
+  "prior": "20261109T182126Z-9a8da0f90a",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#send-refusal-reason-20261109"
+  ],
+  "note": "PR #362: a custody rule refusal reaches the payer with custody's reason. ALLOW_ALL kept. Custody release 19:43 UTC (service 0a4aa56b, dispatcher 1012034f). Proof: refuse-list send d88959d9 stored 'The custody checker refused this payment: member on the refuse list'."
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01689",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": true,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held: giving schools and clinics water, toilets and soap is a known, costed answer, not an unsolved research problem. The interventions are standard WASH infrastructure, and WHO and UNICEF publish the open WASH FIT improvement tool for health facilities, a 2025 global implementation report (https://www.who.int/publications/i/item/9789240104822) and school operation and maintenance costing tools; WHO and UNICEF estimate universal basic WASH in health facilities in the 46 least developed countries at US$6.5 to 9.6 billion over ten years, about US$0.65 per capita per year, and call it highly cost-effective (https://washinhcf.org/latest_news/full-analysis-of-global-costs-for-providing-basic-wash-services-in-hcf/). Honest limit: the 2,000,000-facility KPI is unmet. The 2026 JMP school report estimates that in 2025, 429 million school-age children lacked basic drinking water at school, 460 million basic sanitation and 545 million basic hygiene (https://data.unicef.org/resources/jmp-wash-in-schools-2026/), and the 2026 health-facility update reports only 40 percent of facilities with basic sanitation and 2.3 billion people without basic hygiene at their facility (https://washdata.org/node/29). Those are financing, delivery and maintenance gaps with known answers, so under the 29 September 2026 rule the project is not opened as new work. A reframed project on a specific unsolved technical gap, such as verifying sustained functionality at low cost, would need its own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "JMP 2024 WASH in schools health care facilities lacking basic water sanitation hygiene services billion",
+      "source": "https://washdata.org/node/29",
+      "observedAt": "2026-11-06T01:27:00Z",
+      "finding": "JMP 2024 health-facility report: 78 percent of facilities had basic water and 57 percent basic hygiene in 2022. The 2026 update (2025 data): basic water at 85 percent of facilities (1.2 billion people without), basic sanitation at 40 percent, basic hygiene at 72 percent (2.3 billion without), 3.4 billion without basic waste management."
+    },
+    {
+      "query": "WASH FIT health care facilities tool WHO UNICEF schools WASH package proven cost per facility",
+      "source": "https://www.who.int/publications/i/item/9789241511698",
+      "observedAt": "2026-11-06T01:27:00Z",
+      "finding": "WASH FIT is the WHO/UNICEF risk-based improvement tool covering water, sanitation, hand hygiene, cleaning and waste for small facilities in low- and middle-income countries, with a February 2025 global implementation report; universal basic WASH in HCF in 46 LDCs is costed at US$6.5 to 9.6 billion over 10 years (about US$0.65 per capita per year). No per-facility cost published."
+    },
+    {
+      "query": "JMP 2024 WASH in schools report children without basic drinking water sanitation hygiene service at school",
+      "source": "https://data.unicef.org/resources/jmp-wash-in-schools-2026/",
+      "observedAt": "2026-11-06T01:32:00Z",
+      "finding": "JMP 2024 schools report: 447 million children lacked basic drinking water, 427 million basic sanitation and 646 million basic hygiene at school (2023). The 2026 edition (2025 data): 429 million lacked basic drinking water, 460 million basic sanitation and 545 million basic hygiene."
+    },
+    {
+      "query": "health care facilities WASH universal access 2030 cost-effective interventions known solutions financing gap UNICEF WHO 2026 report",
+      "source": "https://washinhcf.org/resource/global-progress-report-on-wash-waste-and-electricity-2025/",
+      "observedAt": "2026-11-06T01:33:00Z",
+      "finding": "The 2025 WHO/UNICEF Global Progress Report on WASH, Waste and Electricity in HCF: about 1.1 billion people treated in facilities without clean water in 2023; universal basic WASH in LDC facilities achievable for under US$10 billion and described as highly cost-effective; recommends costed national road maps and health-budget integration. Financing, not technology, is the gap."
+    }
+  ]
+}

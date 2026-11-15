@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00005",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Refilling stem cell reserves in aging tissues is unsolved; nothing comes near the Main KPI of 300,000,000 people with replenished stem cells. Rejuvenation of aged blood stem cells is preclinical: RhoA inhibition with Rhosin (Nature Aging 2025) and CASIN are ex vivo mouse or human-cell work, and the one clinical-stage attempt, Rejenevie AR-100, was suspended (https://lifespan.io/road-maps/the-rejuvenation-roadmap/rejenevie-therapeutics-ar-100). Muscle satellite-cell restoration remains in reviews and animal models with no approved therapy (https://pmc.ncbi.nlm.nih.gov/articles/PMC5271918). The furthest-advanced human work is adjacent, not the goal: allogeneic MSC infusion (laromestrocel/Lomecel-B) missed its 180-day primary endpoint in a 148-participant phase 2b and reports a 9-month walk-distance gain in a later analysis (https://www.biospace.com/longeveron-s-cell-therapy-shows-mixed-results-in-aging-frailty-investors-respond-favorably), which is symptomatic benefit rather than a replenished endogenous stem cell pool; plasma exchange reduced multi-omic biological age by about 2.6 years with fading effects (Aging Cell 2025). No open-source or openly published solution replenishes human stem cell reserves."
+  },
+  "additionalSearches": [
+    {
+      "query": "rejuvenate aged hematopoietic stem cells therapy human clinical trial stem cell exhaustion 2025",
+      "source": "https://lifespan.io/road-maps/the-rejuvenation-roadmap/rejenevie-therapeutics-ar-100",
+      "observedAt": "2026-11-06T00:30:00Z",
+      "finding": "No completed human HSC rejuvenation trial; RhoA/Rhosin and CASIN work is ex vivo and preclinical; Rejenevie AR-100 phase 2 suspended with no restart reported."
+    },
+    {
+      "query": "Longeveron Lomecel-B aging frailty trial results mesenchymal stem cell",
+      "source": "https://www.biospace.com/longeveron-s-cell-therapy-shows-mixed-results-in-aging-frailty-investors-respond-favorably",
+      "observedAt": "2026-11-06T00:31:00Z",
+      "finding": "Phase 2b (n=148, NCT03169231) missed the 180-day six-minute-walk primary endpoint; a later publication reports a 63.4 m gain at nine months. Donor MSC infusion, not restored endogenous reserves."
+    },
+    {
+      "query": "restore muscle stem cell satellite cell niche aging therapy approved treatment stem cell exhaustion review",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5271918",
+      "observedAt": "2026-11-06T00:32:00Z",
+      "finding": "Reviews describe niche-driven satellite cell loss and only partial rejuvenation in experiments; no approved clinical treatment restores satellite cell function."
+    },
+    {
+      "query": "therapeutic plasma exchange or heterochronic factors restore aged stem cell function human trial results",
+      "source": "https://www.buckinstitute.org/news/clinical-trial-and-multi-omics-analysis-demonstrates-the-impact-of-therapeutic-plasma-exchange-on-biological-age/",
+      "observedAt": "2026-11-06T00:33:00Z",
+      "finding": "Placebo-controlled TPE+IVIG trial (n=42) reduced multi-omic biological age by about 2.6 years, with effects not sustained; no stem cell replenishment endpoint."
+    }
+  ]
+}

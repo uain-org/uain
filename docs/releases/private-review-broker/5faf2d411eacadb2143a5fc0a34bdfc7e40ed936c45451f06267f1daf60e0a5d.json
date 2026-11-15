@@ -1,0 +1,15 @@
+{
+ "schema": 1,
+ "component": "private-review-broker",
+ "release_id": "5faf2d411eacadb2143a5fc0a34bdfc7e40ed936c45451f06267f1daf60e0a5d",
+ "version": null,
+ "source_commit": "7243058fb19885617ae4a982d108d307d534347b",
+ "deployed_at": "2026-11-09T14:26:51Z",
+ "prior": "88fd439b372ae397ee14d6fbe6cb94b9f4c57b6ddf77d1d9a9945d7a4c3d0a22",
+ "status": "publicly-verified",
+ "evidence": [
+  "CHANGELOG.md#server-send-switch-on-20261109",
+  "https://baink.money/api/native/review/health"
+ ],
+ "note": "Two-file overlay on the prior release: review-operation-policy.mjs (operation policy v2, adds the server_send contract) and service-broker.mjs (the contract enters the qualification profile). Every other file is byte-identical to the prior release. Restarted while idle; requalified 14:26:57Z (probe refused as required); rootReady and modelQualified; public review health available."
+}

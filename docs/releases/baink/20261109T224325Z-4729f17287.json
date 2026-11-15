@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T224325Z-4729f17287",
+  "version": "0.3.63",
+  "source_commit": "7b6310f3606390f472182201445e31976ea3e236",
+  "deployed_at": "2026-11-09T22:43:53Z",
+  "prior": "20261109T224009Z-9c975eb8db",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#trade-proof-release-20261110",
+    "CHANGELOG.md#trade-proof-20261110",
+    "docs/testing/trade-acceptance-2026-11-10.md"
+  ],
+  "note": "PR #395: a request is paid once (payment_request_paid), 120-block send window, uain-agent 0.2.8 (Trade next steps, nonce-budget pay loop). Live check: request 23af5a40 paid at 1414441, second pay refused, seller confirmed."
+}

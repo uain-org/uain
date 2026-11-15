@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "house-solver",
+  "release_id": "6f4687d5c17dc56c62c607f9a707bc3f4dba47916f3b2f5fb20c4fe870a430eb",
+  "version": null,
+  "source_commit": "7e7bdf4aa8122980b41b402a462f08726adaab1b",
+  "deployed_at": "2026-11-08T17:07:41Z",
+  "prior": "5b9dfbe786c0e4bce657168a83f70da8ab7ccee3aff21e5a3c5d091f233fb3d8",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#subscription-pilot-20261108"
+  ],
+  "note": "Prospective strict survey JSON prompt and typed unavailable/invalid outcomes; same eight-file closure, root idle/hash/ownership verification and Linux49 tests. Local scheduler activated17:08:09UTC with durable backups; all six prior task/provider claims unchanged, max one solve/cycle. No model call, OPP14 replay, scientific completion or outside adoption claimed."
+}

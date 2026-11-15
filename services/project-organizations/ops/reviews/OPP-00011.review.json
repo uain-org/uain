@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00011",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T02:24:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": true,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held: an open solution already covers this project's deliverable. A lifelong biological age dashboard needs an age estimator and a surface to show it, and both are open and discoverable today. pyaging ships 170-plus published aging clocks across DNA methylation, histone marks, ATAC-seq, RNA-seq and blood chemistry as an open-source GPU-accelerated Python package on GitHub and PyPI (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11058068/); BioAge implements Klemera-Doubal, PhenoAge and homeostatic dysregulation from ordinary blood chemistry under GPL-3.0 (https://rdrr.io/github/dayoonkwon/BioAge/f/README.md); methylclock and methylCIPHER cover R; and the Longevitech and Longevity OSS catalogues index 90-plus further open repositories including wearable integration and clinic dashboards. Consumer dashboards are also deployed at scale by TruDiagnostic, Function Health and Whoop. What is missing is not an unsolved research problem but validity and reach: a 2025 Epigenomics critique concludes clocks fail standard clinical-utility criteria and rule out current individual-level use, with lab-to-lab variation and repeat estimates on one sample differing by a decade (https://bpb-us-e1.wpmucdn.com/sites.psu.edu/dist/0/9948/files/2025/12/Apsley-et-al_2025_Epigenomics.pdf), and a February 2026 eBioMedicine editorial notes most clocks are correlational, blood- or saliva-trained, and unproven for tracking intervention effects (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12905613/). Honest limit: the 8,000,000,000-person KPI is unmet and clock validation is real open work, but building the dashboard itself is a known, openly available answer, so under the 29 September 2026 rule this project is not opened as new work. A reframed project on clock reliability and uncertainty quantification would need its own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "open source biological age clock software biolearn pyaging methylclock",
+      "source": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11058068/",
+      "observedAt": "2026-11-06T02:14:00Z",
+      "finding": "pyaging (Bioinformatics 2024) is an open-source Python package on GitHub and PyPI with 170-plus published aging clocks over methylation, histone marks, ATAC-seq, RNA-seq and blood chemistry, GPU-accelerated via PyTorch; methylclock and methylCIPHER provide R equivalents. Computing biological age is openly solved."
+    },
+    {
+      "query": "phenotypic age calculator open source blood biomarkers PhenoAge Klemera Doubal implementation",
+      "source": "https://rdrr.io/github/dayoonkwon/BioAge/f/README.md",
+      "observedAt": "2026-11-06T02:16:00Z",
+      "finding": "BioAge (GeroScience 2022, GPL-3.0, github.com/dayoonkwon/BioAge) implements Klemera-Doubal, PhenoAge and homeostatic dysregulation from routine blood chemistry, with user-supplied biomarkers and training data, and was used on CALERIE trial labs. An openly licensed dashboard back end therefore already exists."
+    },
+    {
+      "query": "epigenetic clock clinical validity reliability criticism not ready clinical use 2026",
+      "source": "https://bpb-us-e1.wpmucdn.com/sites.psu.edu/dist/0/9948/files/2025/12/Apsley-et-al_2025_Epigenomics.pdf",
+      "observedAt": "2026-11-06T02:18:00Z",
+      "finding": "Apsley et al. (Epigenomics 2025) argue technical and biological properties rule out individual-level use: clocks fail common clinical-utility standards versus established biomarkers, carry substantial measurement error and lab or platform variation, and individual decisions on them may be uninformative or harmful."
+    },
+    {
+      "query": "consumer biological age test dashboard TruDiagnostic Function Health Whoop Age accuracy criticism",
+      "source": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12905613/",
+      "observedAt": "2026-11-06T02:20:00Z",
+      "finding": "A February 2026 eBioMedicine editorial on moving clocks toward clinical use notes most clocks derive features from correlation not causation, are blood- or saliva-trained with limited cross-tissue generalisation, and are used as trial endpoints without clear evidence they track intervention effects; consumer dashboards from TruDiagnostic, Function Health and Whoop are already deployed but unvalidated and unregulated, with repeat estimates on one sample reportedly differing by a decade."
+    }
+  ]
+}

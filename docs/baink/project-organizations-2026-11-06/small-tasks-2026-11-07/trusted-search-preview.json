@@ -1,0 +1,723 @@
+{
+  "schema": "uain-small-task-trusted-search-preview-v1",
+  "notice": "Output of the repository trusted search step (services/project-organizations/src/prior-art.mjs createPriorArtSearch().run, no assessment), run read-only from the drafting machine. Status assessment_required means the searches were collected and no novelty decision was made. This preview does not replace the production run: the manager stage reruns the search and the independent fenced assessment when it prices a task.",
+  "ranAt": "2026-11-06T21:00:05.325Z",
+  "previews": [
+    {
+      "key": "opp-00002-senolytic-outcome-audit",
+      "projectId": "OPP-00002",
+      "registryTotalRecheck": 23,
+      "queries": [
+        "senolytic trials completed registered published primary",
+        "senolytic trials completed query pubmed row"
+      ],
+      "status": "assessment_required",
+      "searches": [
+        {
+          "query": "senolytic trials completed registered published primary",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:58:15.500Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=senolytic%20trials%20completed%20registered%20published%20primary&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "senolytic trials completed registered published primary",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:58:16.320Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Asenolytic%20AND%20all%3Atrials%20AND%20all%3Acompleted%20AND%20all%3Aregistered%20AND%20all%3Apublished%20AND%20all%3Aprimary&start=0&max_results=10; sha256=9d27201b90236bad3638c139573eb173f418f7a6f6f7472e7b7768c8d541a414; total=0; shown=0/0"
+        },
+        {
+          "query": "senolytic trials completed registered published primary",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:58:17.091Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=senolytic%20trials%20completed%20registered%20published%20primary&rows=10&select=DOI,title; sha256=edfa6af4685910950506014f06c364f2b6262527edabb0236213362e815879fe; total=1374859; shown=5/10; top: 10.1001/jama.2009.1242 \"Comparison of Registered and Published Primary Outcomes in Randomized Controlled Trials\" | 10.1001/jama.2009.1433 \"Incorrect Data in: Comparison of Registered and Published Primary Outcomes in Randomized Controlled Trials\" | 10.1016/j.medcli.2025.107159 \"Ethical approval and conduct of registered non-pharmacological non-commercial completed Spanish trials: A systematic review of published re…\" | 10.1016/j.medcle.2025.107159 \"Ethical approval and conduct of registered non-pharmacological non-commercial completed Spanish trials: A systematic review of published re…\" | 10.1097/sla.0b013e3182864fa3 \"Comparison of Registered and Published Primary Outcomes in Randomized Clinical Trials of Surgical Interventions\""
+        },
+        {
+          "query": "senolytic trials completed query pubmed row",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:58:18.492Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=senolytic%20trials%20completed%20query%20pubmed%20row&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "senolytic trials completed query pubmed row",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:58:18.931Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Asenolytic%20AND%20all%3Atrials%20AND%20all%3Acompleted%20AND%20all%3Aquery%20AND%20all%3Apubmed%20AND%20all%3Arow&start=0&max_results=10; sha256=0d3fad09e9b9137d709057ff7e5fc8633f5531f13f7dc22ec3317a9e62655267; total=0; shown=0/0"
+        },
+        {
+          "query": "senolytic trials completed query pubmed row",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:58:19.723Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=senolytic%20trials%20completed%20query%20pubmed%20row&rows=10&select=DOI,title; sha256=dfe40b6825c671377dc53c4fb376601f297ae1be5c24cc117faabbc2dfa3fca8; total=369862; shown=5/10; top: 10.1088/1361-6498/ae8aff/data1 \"Search query in PubMed syntax\" | 10.63485/kysdx-vnm62 \"PNAS backfile completed at PubMed Central\" | 10.63485/dvmaa-v2k16 \"PNAS backfile completed at PubMed Central\" | 10.32614/cran.package.researchassociate \"ResearchAssociate: Retrieving Publications from PubMed Database Based on User Query\" | 10.1007/978-1-4842-3888-2_23 \"Row-by-Row Processing\""
+        }
+      ],
+      "failures": [
+        {
+          "source": "semantic_scholar",
+          "query": "senolytic trials completed registered published primary",
+          "code": "unexpected_status"
+        },
+        {
+          "source": "semantic_scholar",
+          "query": "senolytic trials completed query pubmed row",
+          "code": "unexpected_status"
+        }
+      ]
+    },
+    {
+      "key": "opp-00002-senolytic-dosing-census",
+      "projectId": "OPP-00002",
+      "registryTotalRecheck": 64,
+      "queries": [
+        "senolytic trial arms dosing-interval census registry",
+        "senolytic trial arms query rows row"
+      ],
+      "status": "assessment_required",
+      "searches": [
+        {
+          "query": "senolytic trial arms dosing-interval census registry",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:58:24.943Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=senolytic%20trial%20arms%20dosing-interval%20census%20registry&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "senolytic trial arms dosing-interval census registry",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:58:25.401Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Asenolytic%20AND%20all%3Atrial%20AND%20all%3Aarms%20AND%20all%3Adosing-interval%20AND%20all%3Acensus%20AND%20all%3Aregistry&start=0&max_results=10; sha256=f6830c140748bdafd0b825c8f27c29050733266151a9099908b723dec845c3d1; total=0; shown=0/0"
+        },
+        {
+          "query": "senolytic trial arms dosing-interval census registry",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:58:26.865Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=senolytic%20trial%20arms%20dosing-interval%20census%20registry&rows=10&select=DOI,title; sha256=5edc6590fa832c4c61e228c238ce0a4c584534c5241ce672765669c68c0bae2c; total=925142; shown=5/10; top: 10.1136/bmj.n522 \"Optimal dosing interval for covid-19 vaccines: we need clinical trial evidence and to consider past infection\" | 10.32388/wlp20n \"Amount Recovered Over Dosing Interval\" | 10.32388/elo0r6 \"Percent Recovered Over Dosing Interval\" | 10.32388/sfc0cm \"Procedure Dosing Frequency per Interval\" | 10.1007/978-3-642-28753-4_200637 \"Dosing Interval\""
+        },
+        {
+          "query": "senolytic trial arms query rows row",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:58:28.153Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=senolytic%20trial%20arms%20query%20rows%20row&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "senolytic trial arms query rows row",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:58:28.639Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Asenolytic%20AND%20all%3Atrial%20AND%20all%3Aarms%20AND%20all%3Aquery%20AND%20all%3Arows%20AND%20all%3Arow&start=0&max_results=10; sha256=f4c4fb4d89246ccbd1d9bf6b8a6360c0ee3262bae9c36aa34feb1a55327e273c; total=0; shown=0/0"
+        },
+        {
+          "query": "senolytic trial arms query rows row",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:58:29.494Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=senolytic%20trial%20arms%20query%20rows%20row&rows=10&select=DOI,title; sha256=3cca52339279ad1174985862d70e2a272636bd327a6fce97db305e7936f46463; total=775387; shown=5/10; top: 10.1007/978-1-4842-3888-2_23 \"Row-by-Row Processing\" | 10.7717/peerj.10403/fig-8 \"Figure 8: Row 1 is a study group, and rows 2–5 are control groups.\" | 10.1007/978-1-4842-8891-7_18 \"Row-by-Row Processing from Cursors and Other Causes\" | 10.1007/979-8-8688-1865-3_18 \"Row-by-Row Processing from Cursors and Other Causes\" | 10.1523/eneuro.0207-21.2021.f5-1 \"untitled\""
+        }
+      ],
+      "failures": [
+        {
+          "source": "semantic_scholar",
+          "query": "senolytic trial arms dosing-interval census registry",
+          "code": "unexpected_status"
+        },
+        {
+          "source": "semantic_scholar",
+          "query": "senolytic trial arms query rows row",
+          "code": "unexpected_status"
+        }
+      ]
+    },
+    {
+      "key": "opp-00003-clock-outcome-reporting-audit",
+      "projectId": "OPP-00003",
+      "registryTotalRecheck": 26,
+      "queries": [
+        "epigenetic clock outcomes completed trials registered",
+        "epigenetic clock outcomes pubmed query row"
+      ],
+      "status": "assessment_required",
+      "searches": [
+        {
+          "query": "epigenetic clock outcomes completed trials registered",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:58:34.731Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=epigenetic%20clock%20outcomes%20completed%20trials%20registered&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "epigenetic clock outcomes completed trials registered",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:58:35.181Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aepigenetic%20AND%20all%3Aclock%20AND%20all%3Aoutcomes%20AND%20all%3Acompleted%20AND%20all%3Atrials%20AND%20all%3Aregistered&start=0&max_results=10; sha256=06c6a921862e07d3b2e6d78c21ce0096d25e539b516714d96f509a19fd012319; total=0; shown=0/0"
+        },
+        {
+          "query": "epigenetic clock outcomes completed trials registered",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:58:36.046Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=epigenetic%20clock%20outcomes%20completed%20trials%20registered&rows=10&select=DOI,title; sha256=4394071dd586373c7a73c832159911e0c1fbd8c0777c07784e93ce7974ec9fd8; total=1305869; shown=5/10; top: 10.1001/jama.299.21.2543 \"Patient-Important Outcomes in Registered Diabetes Trials\" | 10.1016/j.medcli.2025.106964 \"Patient and public involvement in registered non-pharmacological non-commercial Spanish trials completed in 2009–2024: A systematic review\" | 10.1016/j.cct.2009.02.005 \"The use of patient-reported outcomes instruments in registered clinical trials: Evidence from ClinicalTrials.gov\" | 10.2307/j.ctt5vjz1s.10 \"Completed Trials\" | 10.1001/jama.2009.1242 \"Comparison of Registered and Published Primary Outcomes in Randomized Controlled Trials\""
+        },
+        {
+          "query": "epigenetic clock outcomes pubmed query row",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:58:37.510Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=epigenetic%20clock%20outcomes%20pubmed%20query%20row&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "epigenetic clock outcomes pubmed query row",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:58:38.000Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aepigenetic%20AND%20all%3Aclock%20AND%20all%3Aoutcomes%20AND%20all%3Apubmed%20AND%20all%3Aquery%20AND%20all%3Arow&start=0&max_results=10; sha256=39b272b95eb8f2b1a40530d5c3647579ec7b589706c968348c10259673586206; total=0; shown=0/0"
+        },
+        {
+          "query": "epigenetic clock outcomes pubmed query row",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:58:38.813Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=epigenetic%20clock%20outcomes%20pubmed%20query%20row&rows=10&select=DOI,title; sha256=83af6fd5831c85ba5dd8e09b95c12415c075ce52c78279911c7770cb48bd6643; total=1062880; shown=5/10; top: 10.1088/1361-6498/ae8aff/data1 \"Search query in PubMed syntax\" | 10.32614/cran.package.researchassociate \"ResearchAssociate: Retrieving Publications from PubMed Database Based on User Query\" | 10.1007/978-1-4842-3888-2_23 \"Row-by-Row Processing\" | 10.59350/cwnj4-n1547 \"Your Publications (with PMCID) as a PubMed Query\" | 10.59350/v47eh-mw411 \"Your Publications (with PMCID) as a PubMed Query\""
+        }
+      ],
+      "failures": [
+        {
+          "source": "semantic_scholar",
+          "query": "epigenetic clock outcomes completed trials registered",
+          "code": "unexpected_status"
+        },
+        {
+          "source": "semantic_scholar",
+          "query": "epigenetic clock outcomes pubmed query row",
+          "code": "unexpected_status"
+        }
+      ]
+    },
+    {
+      "key": "opp-00004-thymic-outcome-census",
+      "projectId": "OPP-00004",
+      "registryTotalRecheck": 39,
+      "queries": [
+        "thymic function outcome measures completed adult",
+        "thymic function outcome query rows row"
+      ],
+      "status": "assessment_required",
+      "searches": [
+        {
+          "query": "thymic function outcome measures completed adult",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:58:44.036Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=thymic%20function%20outcome%20measures%20completed%20adult&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "thymic function outcome measures completed adult",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:58:44.515Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Athymic%20AND%20all%3Afunction%20AND%20all%3Aoutcome%20AND%20all%3Ameasures%20AND%20all%3Acompleted%20AND%20all%3Aadult&start=0&max_results=10; sha256=016b3cef40bd8e98083519050891a6da5791591e804805cb7384ab77f15ef639; total=0; shown=0/0"
+        },
+        {
+          "query": "thymic function outcome measures completed adult",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:58:45.416Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=thymic%20function%20outcome%20measures%20completed%20adult&rows=10&select=DOI,title; sha256=d3dd78f70ff591f6f3ef5b601a0e04276820df38366a504a4027772de632f316; total=2091938; shown=5/10; top: 10.3410/f.718038869.793481963 \"Faculty Opinions recommendation of Thymic epithelial β-catenin is required for adult thymic homeostasis and function.\" | 10.1055/b-0034-62453 \"3.3 Outcome Measures\" | 10.1186/isrctn16875645 \"Exploring outcome measures in adult patients with POLG-related mitochondrial disease\" | 10.2147/prom.s28179 \"Development and validation of the self-completed ascites impact measure to understand patient motivation for requesting a paracentesis\" | 10.1007/978-3-319-47709-1_4 \"Patient-Reported Outcome Measures Available for Adult Lumbar Scoliosis\""
+        },
+        {
+          "query": "thymic function outcome query rows row",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:58:46.733Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=thymic%20function%20outcome%20query%20rows%20row&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "thymic function outcome query rows row",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:58:47.208Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Athymic%20AND%20all%3Afunction%20AND%20all%3Aoutcome%20AND%20all%3Aquery%20AND%20all%3Arows%20AND%20all%3Arow&start=0&max_results=10; sha256=839767fa739d6d0b39307fb9e0cc53b579ed28153ec2ec4c664b61248b5ae953; total=0; shown=0/0"
+        },
+        {
+          "query": "thymic function outcome query rows row",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:58:48.111Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=thymic%20function%20outcome%20query%20rows%20row&rows=10&select=DOI,title; sha256=f6e356813b6f771df16f3f5515f585922c435634e02b6244691e166cb1f2358e; total=1470263; shown=5/10; top: 10.1007/978-1-4842-3888-2_23 \"Row-by-Row Processing\" | 10.32614/cran.package.condusco \"condusco: Query-Driven Pipeline Execution and Query Templates\" | 10.1093/protein/4.2.221 \"Parameter relation rows: a query system for protein structure function relationships\" | 10.7717/peerj.10403/fig-8 \"Figure 8: Row 1 is a study group, and rows 2–5 are control groups.\" | 10.1007/978-1-4842-8891-7_18 \"Row-by-Row Processing from Cursors and Other Causes\""
+        }
+      ],
+      "failures": [
+        {
+          "source": "semantic_scholar",
+          "query": "thymic function outcome measures completed adult",
+          "code": "unexpected_status"
+        },
+        {
+          "source": "semantic_scholar",
+          "query": "thymic function outcome query rows row",
+          "code": "unexpected_status"
+        }
+      ]
+    },
+    {
+      "key": "opp-00005-msc-frailty-outcome-audit",
+      "projectId": "OPP-00005",
+      "registryTotalRecheck": 9,
+      "queries": [
+        "mesenchymal stem cell frailty ageing trials",
+        "mesenchymal stem cell query pubmed row"
+      ],
+      "status": "assessment_required",
+      "searches": [
+        {
+          "query": "mesenchymal stem cell frailty ageing trials",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:58:53.306Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=mesenchymal%20stem%20cell%20frailty%20ageing%20trials&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "mesenchymal stem cell frailty ageing trials",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:58:53.984Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Amesenchymal%20AND%20all%3Astem%20AND%20all%3Acell%20AND%20all%3Afrailty%20AND%20all%3Aageing%20AND%20all%3Atrials&start=0&max_results=10; sha256=1b85655b0d37ae1bfb9fc8f428935c0beb7dc1fd736e2586ac2aadd1be2cc05e; total=0; shown=0/0"
+        },
+        {
+          "query": "mesenchymal stem cell frailty ageing trials",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:58:54.838Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=mesenchymal%20stem%20cell%20frailty%20ageing%20trials&rows=10&select=DOI,title; sha256=753abe335090bd58730496b1a660e3f68446f798b20aa870571559cfa4b3e6b1; total=3901856; shown=5/10; top: 10.1007/1-4020-3959-x_9 \"Clinical Trials of Human Mesenchymal Stem Cells to Support Hematopoietic Stem Cell Transplantation\" | 10.23937/2469-570x/1410029 \"Mesenchymal Stem Cell: Considerations for Manufacturing and Clinical Trials on Cell Therapy Product\" | 10.1007/978-1-62703-200-1_19 \"Mesenchymal Stromal Cells in the Clinic: What Do the Clinical Trials Say?\" | 10.54393/pbmj.v8i2.1218 \"Mesenchymal Stem Cell-Derived Exosomes in Clinical Trials\" | 10.1186/s13287-023-03607-x \"Comments on: “Mesenchymal stem cells transplantation for perianal fistulas: a systematic review and meta-analysis of clinical trials”\""
+        },
+        {
+          "query": "mesenchymal stem cell query pubmed row",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:58:56.126Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=mesenchymal%20stem%20cell%20query%20pubmed%20row&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "mesenchymal stem cell query pubmed row",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:58:56.638Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Amesenchymal%20AND%20all%3Astem%20AND%20all%3Acell%20AND%20all%3Aquery%20AND%20all%3Apubmed%20AND%20all%3Arow&start=0&max_results=10; sha256=47b9671e01aa4a6b9d92d9433f468bd6f2a02a906a4d6ceaa458780adfbeeb67; total=0; shown=0/0"
+        },
+        {
+          "query": "mesenchymal stem cell query pubmed row",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:58:57.473Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=mesenchymal%20stem%20cell%20query%20pubmed%20row&rows=10&select=DOI,title; sha256=a7d316c0723035538b3dc22504e5ea43f1e9d7e737ff68a4aefba306fbbe0829; total=3563338; shown=5/10; top: 10.1088/1361-6498/ae8aff/data1 \"Search query in PubMed syntax\" | 10.21037/sci.2016.04.04 \"Another milestone: Stem Cell Investigation is indexed in PubMed/PMC\" | 10.32614/cran.package.researchassociate \"ResearchAssociate: Retrieving Publications from PubMed Database Based on User Query\" | 10.1007/978-1-62703-200-1_9 \"Mesenchymal Stem Cells and Haematopoietic Stem Cell Culture\" | 10.17816/gc640858-4392774 \"Fig. 1. Chondrocyte sources for cell-based and tissue-engineered therapies of cartilage defects iPSC, induced pluripotent stem cell MSC, me…\""
+        }
+      ],
+      "failures": [
+        {
+          "source": "semantic_scholar",
+          "query": "mesenchymal stem cell frailty ageing trials",
+          "code": "unexpected_status"
+        },
+        {
+          "source": "semantic_scholar",
+          "query": "mesenchymal stem cell query pubmed row",
+          "code": "unexpected_status"
+        }
+      ]
+    },
+    {
+      "key": "opp-00006-alagebrium-reporting-audit",
+      "projectId": "OPP-00006",
+      "registryTotalRecheck": 13,
+      "queries": [
+        "alagebrium crosslink breaker trials results-reporting audit",
+        "alagebrium crosslink breaker query nct pubmed"
+      ],
+      "status": "assessment_required",
+      "searches": [
+        {
+          "query": "alagebrium crosslink breaker trials results-reporting audit",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:59:02.913Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aalagebrium%20AND%20all%3Acrosslink%20AND%20all%3Abreaker%20AND%20all%3Atrials%20AND%20all%3Aresults-reporting%20AND%20all%3Aaudit&start=0&max_results=10; sha256=c0e75d3b47b77f5de2eec5bbc4ed81fe4a79812e748845ea0c0ee27776fca821; total=0; shown=0/0"
+        },
+        {
+          "query": "alagebrium crosslink breaker trials results-reporting audit",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:59:03.711Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=alagebrium%20crosslink%20breaker%20trials%20results-reporting%20audit&rows=10&select=DOI,title; sha256=cee8ccb2ccc465f12fa53031427938641ec7df9ff76c45c496753792d98d8e72; total=1334818; shown=5/10; top: 10.1038/sj.ki.5002387 \"Role of the AGE crosslink breaker, alagebrium, as a renoprotective agent in diabetes\" | 10.1097/hjh.0b013e328013e7dd \"Advanced glycation endproduct crosslink breaker (alagebrium) improves endothelial function in patients with isolated systolic hypertension\" | 10.19163/1994-9480-2026-23-2-74-83 \"Comparative study of the effects of antiglycation compound aminoguanidine and crosslink breaker alagebrium on late ocular complications in…\" | 10.1186/1745-6215-15-20 \"Reporting of interventions in randomised trials: an audit of journal Instructions to Authors\" | 10.1201/9781420035308-8 \"Reporting of Results\""
+        },
+        {
+          "query": "alagebrium crosslink breaker query nct pubmed",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:59:05.160Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aalagebrium%20AND%20all%3Acrosslink%20AND%20all%3Abreaker%20AND%20all%3Aquery%20AND%20all%3Anct%20AND%20all%3Apubmed&start=0&max_results=10; sha256=fd628637420b8d8be82950e8374aa49c64b9251b96fe121e96c1b85bdcf5ed06; total=0; shown=0/0"
+        },
+        {
+          "query": "alagebrium crosslink breaker query nct pubmed",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:59:05.941Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=alagebrium%20crosslink%20breaker%20query%20nct%20pubmed&rows=10&select=DOI,title; sha256=9a1b63e16df90eda9ed58a55095ff3980a637e8fa26d6e5f2b4c44f306ef1d52; total=62989; shown=5/10; top: 10.1038/sj.ki.5002387 \"Role of the AGE crosslink breaker, alagebrium, as a renoprotective agent in diabetes\" | 10.1097/hjh.0b013e328013e7dd \"Advanced glycation endproduct crosslink breaker (alagebrium) improves endothelial function in patients with isolated systolic hypertension\" | 10.1088/1361-6498/ae8aff/data1 \"Search query in PubMed syntax\" | 10.32614/cran.package.researchassociate \"ResearchAssociate: Retrieving Publications from PubMed Database Based on User Query\" | 10.19163/1994-9480-2026-23-2-74-83 \"Comparative study of the effects of antiglycation compound aminoguanidine and crosslink breaker alagebrium on late ocular complications in…\""
+        }
+      ],
+      "failures": [
+        {
+          "source": "github_repositories",
+          "query": "alagebrium crosslink breaker trials results-reporting audit",
+          "code": "unexpected_status"
+        },
+        {
+          "source": "semantic_scholar",
+          "query": "alagebrium crosslink breaker trials results-reporting audit",
+          "code": "unexpected_status"
+        },
+        {
+          "source": "github_repositories",
+          "query": "alagebrium crosslink breaker query nct pubmed",
+          "code": "unexpected_status"
+        },
+        {
+          "source": "semantic_scholar",
+          "query": "alagebrium crosslink breaker query nct pubmed",
+          "code": "unexpected_status"
+        }
+      ]
+    },
+    {
+      "key": "opp-00007-mito-outcome-audit",
+      "projectId": "OPP-00007",
+      "registryTotalRecheck": 15,
+      "queries": [
+        "urolithin elamipretide mitoq ageing muscle trials",
+        "urolithin elamipretide mitoq query pubmed row"
+      ],
+      "status": "assessment_required",
+      "searches": [
+        {
+          "query": "urolithin elamipretide mitoq ageing muscle trials",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:59:11.284Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aurolithin%20AND%20all%3Aelamipretide%20AND%20all%3Amitoq%20AND%20all%3Aageing%20AND%20all%3Amuscle%20AND%20all%3Atrials&start=0&max_results=10; sha256=d3f504e8416a622ddf882cfeedc67e20628ca24ea3aed7192386118d907edc0e; total=0; shown=0/0"
+        },
+        {
+          "query": "urolithin elamipretide mitoq ageing muscle trials",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:59:12.125Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=urolithin%20elamipretide%20mitoq%20ageing%20muscle%20trials&rows=10&select=DOI,title; sha256=556a282f8d81f8458bcba64283bb9a0311f5f54f04187de8213180cd29a518b2; total=834317; shown=5/10; top: 10.1113/jp291266 \"From mice to muscle: does MitoQ translate to human strength in ageing?\" | 10.33549/physiolres.935810 \"Targeting Mitochondria in MASLD: Comparative Evaluation of MitoQ and SS-31 (Elamipretide) in Aged Female Mice under Nutritional Stress\" | 10.31525/ct1-nct04098510 \"Concentration of MitoQ in Human Skeletal Muscle\" | 10.3389/fnut.2026.1834344 \"Effects of Urolithin A supplementation on muscle health outcomes in humans from randomized controlled trials\" | 10.1016/j.arr.2026.103157 \"Urolithin A: Potential to enhance autophagic clearance and mitigate neuroinflammation in Alzheimer’s disease\""
+        },
+        {
+          "query": "urolithin elamipretide mitoq query pubmed row",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:59:13.588Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aurolithin%20AND%20all%3Aelamipretide%20AND%20all%3Amitoq%20AND%20all%3Aquery%20AND%20all%3Apubmed%20AND%20all%3Arow&start=0&max_results=10; sha256=1cd57b92021c764a7ffd4a3962064d2068ee6d121214f3f16f49ff62e4593030; total=0; shown=0/0"
+        },
+        {
+          "query": "urolithin elamipretide mitoq query pubmed row",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:59:14.402Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=urolithin%20elamipretide%20mitoq%20query%20pubmed%20row&rows=10&select=DOI,title; sha256=b366c8c860d48f403d1b59e700b27ac294fb6b33b3049e09019c7e5be027915f; total=77625; shown=5/10; top: 10.1088/1361-6498/ae8aff/data1 \"Search query in PubMed syntax\" | 10.32614/cran.package.researchassociate \"ResearchAssociate: Retrieving Publications from PubMed Database Based on User Query\" | 10.1007/978-1-4842-3888-2_23 \"Row-by-Row Processing\" | 10.59350/cwnj4-n1547 \"Your Publications (with PMCID) as a PubMed Query\" | 10.59350/v47eh-mw411 \"Your Publications (with PMCID) as a PubMed Query\""
+        }
+      ],
+      "failures": [
+        {
+          "source": "github_repositories",
+          "query": "urolithin elamipretide mitoq ageing muscle trials",
+          "code": "unexpected_status"
+        },
+        {
+          "source": "semantic_scholar",
+          "query": "urolithin elamipretide mitoq ageing muscle trials",
+          "code": "unexpected_status"
+        },
+        {
+          "source": "github_repositories",
+          "query": "urolithin elamipretide mitoq query pubmed row",
+          "code": "unexpected_status"
+        },
+        {
+          "source": "semantic_scholar",
+          "query": "urolithin elamipretide mitoq query pubmed row",
+          "code": "unexpected_status"
+        }
+      ]
+    },
+    {
+      "key": "opp-00007-pcr-recovery-census",
+      "projectId": "OPP-00007",
+      "registryTotalRecheck": 15,
+      "queries": [
+        "phosphocreatine recovery atpmax endpoints ageing muscle",
+        "phosphocreatine recovery atpmax query rows row"
+      ],
+      "status": "assessment_required",
+      "searches": [
+        {
+          "query": "phosphocreatine recovery atpmax endpoints ageing muscle",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:59:19.598Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=phosphocreatine%20recovery%20atpmax%20endpoints%20ageing%20muscle&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "phosphocreatine recovery atpmax endpoints ageing muscle",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:59:20.064Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aphosphocreatine%20AND%20all%3Arecovery%20AND%20all%3Aatpmax%20AND%20all%3Aendpoints%20AND%20all%3Aageing%20AND%20all%3Amuscle&start=0&max_results=10; sha256=7fa9caefea14aa5bce0a99eec67a2e5b5a1a08ba48a6dd93fcc85f92df30c04c; total=0; shown=0/0"
+        },
+        {
+          "query": "phosphocreatine recovery atpmax endpoints ageing muscle",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:59:21.086Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=phosphocreatine%20recovery%20atpmax%20endpoints%20ageing%20muscle&rows=10&select=DOI,title; sha256=6f7d06c2a2844547c7cf692671e94bbcc4c5fe89a3f8b3e308ad32a32aecce0c; total=965637; shown=5/10; top: 10.7717/peerj.2259/fig-4 \"Figure 4: The recovery of phosphocreatine.\" | 10.1042/bj2910681 \"Absence of phosphocreatine resynthesis in human calf muscle during ischaemic recovery\" | 10.1093/ageing/afz076.04 \"49EFFECT OF ALLOPURINOL ON SKELETAL MUSCLE PHOSPHOCREATINE RECOVERY RATE AND PHYSICAL FUNCTION IN OLDER PEOPLE WITH IMPAIRED PHYSICAL FUNCT…\" | 10.1093/ageing/afaa061 \"Effect of allopurinol on phosphocreatine recovery and muscle function in older people with impaired physical function: a randomised control…\" | 10.1016/j.acra.2011.02.014 \"The Feasibility of Measuring Phosphocreatine Recovery Kinetics in Muscle Using a Single-shot 31P RARE MRI Sequence\""
+        },
+        {
+          "query": "phosphocreatine recovery atpmax query rows row",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:59:22.369Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=phosphocreatine%20recovery%20atpmax%20query%20rows%20row&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "phosphocreatine recovery atpmax query rows row",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:59:22.825Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aphosphocreatine%20AND%20all%3Arecovery%20AND%20all%3Aatpmax%20AND%20all%3Aquery%20AND%20all%3Arows%20AND%20all%3Arow&start=0&max_results=10; sha256=e16ab2dd4fb673b4503a6ca911c75fa42add2f7091ddf53b90499b1a63acf903; total=0; shown=0/0"
+        },
+        {
+          "query": "phosphocreatine recovery atpmax query rows row",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:59:23.866Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=phosphocreatine%20recovery%20atpmax%20query%20rows%20row&rows=10&select=DOI,title; sha256=9553701086780f1ae73fd766162227909cfc1d33303699ea7a6f8b1871a67d56; total=488784; shown=5/10; top: 10.7717/peerj.2259/fig-4 \"Figure 4: The recovery of phosphocreatine.\" | 10.1007/978-1-4842-3888-2_23 \"Row-by-Row Processing\" | 10.7717/peerj.10403/fig-8 \"Figure 8: Row 1 is a study group, and rows 2–5 are control groups.\" | 10.1007/978-1-4842-8891-7_18 \"Row-by-Row Processing from Cursors and Other Causes\" | 10.1007/979-8-8688-1865-3_18 \"Row-by-Row Processing from Cursors and Other Causes\""
+        }
+      ],
+      "failures": [
+        {
+          "source": "semantic_scholar",
+          "query": "phosphocreatine recovery atpmax endpoints ageing muscle",
+          "code": "unexpected_status"
+        },
+        {
+          "source": "semantic_scholar",
+          "query": "phosphocreatine recovery atpmax query rows row",
+          "code": "unexpected_status"
+        }
+      ]
+    },
+    {
+      "key": "opp-00008-autophagy-reporting-audit",
+      "projectId": "OPP-00008",
+      "registryTotalRecheck": 30,
+      "queries": [
+        "rapamycin everolimus spermidine trehalose ageing trials",
+        "rapamycin everolimus spermidine query nct pubmed"
+      ],
+      "status": "assessment_required",
+      "searches": [
+        {
+          "query": "rapamycin everolimus spermidine trehalose ageing trials",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:59:29.107Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=rapamycin%20everolimus%20spermidine%20trehalose%20ageing%20trials&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "rapamycin everolimus spermidine trehalose ageing trials",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:59:29.560Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Arapamycin%20AND%20all%3Aeverolimus%20AND%20all%3Aspermidine%20AND%20all%3Atrehalose%20AND%20all%3Aageing%20AND%20all%3Atrials&start=0&max_results=10; sha256=b21af8d1058f0ef61f74c46aed146e545e2927c8276bc10f7035f472d8626544; total=0; shown=0/0"
+        },
+        {
+          "query": "rapamycin everolimus spermidine trehalose ageing trials",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:59:30.343Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=rapamycin%20everolimus%20spermidine%20trehalose%20ageing%20trials&rows=10&select=DOI,title; sha256=2a414da3997a2119f5c1cf58d7fe37f552252751bf86c3a89fc1e1528ad5c89c; total=420105; shown=5/10; top: 10.5005/jp/books/12839_32 \"Rapamycin Inhibitors: Sirolimus, Everolimus\" | 10.1097/01.tp.0000219703.39149.85 \"Target of Rapamycin Inhibitors (Sirolimus and Everolimus) for Primary Immunosuppression of Kidney Transplant Recipients: A Systematic Revie…\" | 10.18699/sbb-2022-419 \"Therapy of Parkinson’s disease-like deficits with rapamycin and trehalose in murine models with attenuated neuroinflammation\" | 10.1007/s00059-004-2556-6 \"Rapamycin Analogs for Stent-Based Local Drug Delivery\" | 10.1007/978-4-431-55531-5_11 \"Mammalian Targets of Rapamycin Inhibitors: Temsirolimus and Everolimus\""
+        },
+        {
+          "query": "rapamycin everolimus spermidine query nct pubmed",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:59:31.694Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=rapamycin%20everolimus%20spermidine%20query%20nct%20pubmed&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "rapamycin everolimus spermidine query nct pubmed",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:59:32.583Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Arapamycin%20AND%20all%3Aeverolimus%20AND%20all%3Aspermidine%20AND%20all%3Aquery%20AND%20all%3Anct%20AND%20all%3Apubmed&start=0&max_results=10; sha256=81f6224a1d190766f950e52963c1e7dd0b5265fdf6977e3fc3088218cf5a3b7e; total=0; shown=0/0"
+        },
+        {
+          "query": "rapamycin everolimus spermidine query nct pubmed",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:59:33.368Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=rapamycin%20everolimus%20spermidine%20query%20nct%20pubmed&rows=10&select=DOI,title; sha256=1cabbcda5d566f6af4c9756e003570fe6031f5519dc39421029e2fd6b005b4c8; total=67285; shown=5/10; top: 10.1088/1361-6498/ae8aff/data1 \"Search query in PubMed syntax\" | 10.32614/cran.package.researchassociate \"ResearchAssociate: Retrieving Publications from PubMed Database Based on User Query\" | 10.59350/cwnj4-n1547 \"Your Publications (with PMCID) as a PubMed Query\" | 10.59350/v47eh-mw411 \"Your Publications (with PMCID) as a PubMed Query\" | 10.2196/medinform.3740 \"Analysis of PubMed User Sessions Using a Full-Day PubMed Query Log: A Comparison of Experienced and Nonexperienced PubMed Users\""
+        }
+      ],
+      "failures": [
+        {
+          "source": "semantic_scholar",
+          "query": "rapamycin everolimus spermidine trehalose ageing trials",
+          "code": "unexpected_status"
+        },
+        {
+          "source": "semantic_scholar",
+          "query": "rapamycin everolimus spermidine query nct pubmed",
+          "code": "unexpected_status"
+        }
+      ]
+    },
+    {
+      "key": "opp-00009-telomere-outcome-audit",
+      "projectId": "OPP-00009",
+      "registryTotalRecheck": 9,
+      "queries": [
+        "telomerase activator trials ta-65 danazol cycloastragenol",
+        "telomerase activator trials query row record"
+      ],
+      "status": "assessment_required",
+      "searches": [
+        {
+          "query": "telomerase activator trials ta-65 danazol cycloastragenol",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:59:38.028Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=telomerase%20activator%20trials%20ta-65%20danazol%20cycloastragenol&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "telomerase activator trials ta-65 danazol cycloastragenol",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:59:38.476Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Atelomerase%20AND%20all%3Aactivator%20AND%20all%3Atrials%20AND%20all%3Ata-65%20AND%20all%3Adanazol%20AND%20all%3Acycloastragenol&start=0&max_results=10; sha256=86b05d34be5cc60f5d5a699a400bba8befe5f6a0c54266ca8aacc15fc2c52733; total=0; shown=0/0"
+        },
+        {
+          "query": "telomerase activator trials ta-65 danazol cycloastragenol",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:59:39.254Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=telomerase%20activator%20trials%20ta-65%20danazol%20cycloastragenol&rows=10&select=DOI,title; sha256=02abe184b915a19da825ed05a76b2735b55d013ce3c2288e40e7fa44c2d66b4b; total=1608239; shown=5/10; top: 10.2165/00128413-200715880-00019 \"A telomerase activator [TA 65] has demonstrated significant anti-ageing benefits,\" | 10.1186/isrctn16613292 \"Telomerase activator TA-65MD® in patients with ACS (TACTIC)\" | 10.21926/obm.geriatr.2102168 \"Double-Blind, Placebo-Controlled, Randomized Clinical Trial Demonstrates Telomerase Activator TA-65 Decreases Immunosenescent CD8+CD28- T C…\" | 10.1080/00498254.2016.1204568 \"Pharmacokinetics, metabolism, and excretion of cycloastragenol, a potent telomerase activator in rats\" | 10.1159/000365290 \"Cycloastragenol Is a Potent Telomerase Activator in Neuronal Cells: Implications for Depression Management\""
+        },
+        {
+          "query": "telomerase activator trials query row record",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:59:40.532Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=telomerase%20activator%20trials%20query%20row%20record&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "telomerase activator trials query row record",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:59:41.060Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Atelomerase%20AND%20all%3Aactivator%20AND%20all%3Atrials%20AND%20all%3Aquery%20AND%20all%3Arow%20AND%20all%3Arecord&start=0&max_results=10; sha256=43d5f786bc93abbe8b791a95dbba8d20c003790336b7aa89269b300e7d319145; total=0; shown=0/0"
+        },
+        {
+          "query": "telomerase activator trials query row record",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:59:41.896Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=telomerase%20activator%20trials%20query%20row%20record&rows=10&select=DOI,title; sha256=9cafaebba7ce5582d20ef596234ecbadaceb3874b6bb242af92618577cb91002; total=762197; shown=5/10; top: 10.1007/978-1-4842-3888-2_23 \"Row-by-Row Processing\" | 10.1007/978-1-4842-8891-7_18 \"Row-by-Row Processing from Cursors and Other Causes\" | 10.1007/979-8-8688-1865-3_18 \"Row-by-Row Processing from Cursors and Other Causes\" | 10.1007/978-1-4302-6742-3_22 \"Row-by-Row Processing\" | 10.1186/isrctn16613292 \"Telomerase activator TA-65MD® in patients with ACS (TACTIC)\""
+        }
+      ],
+      "failures": [
+        {
+          "source": "semantic_scholar",
+          "query": "telomerase activator trials ta-65 danazol cycloastragenol",
+          "code": "unexpected_status"
+        },
+        {
+          "source": "semantic_scholar",
+          "query": "telomerase activator trials query row record",
+          "code": "unexpected_status"
+        }
+      ]
+    },
+    {
+      "key": "opp-00010-metformin-outcome-audit",
+      "projectId": "OPP-00010",
+      "registryTotalRecheck": 12,
+      "queries": [
+        "metformin ageing trials completed registered published",
+        "metformin ageing trials query pubmed row"
+      ],
+      "status": "assessment_required",
+      "searches": [
+        {
+          "query": "metformin ageing trials completed registered published",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:59:47.086Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=metformin%20ageing%20trials%20completed%20registered%20published&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "metformin ageing trials completed registered published",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:59:47.703Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Ametformin%20AND%20all%3Aageing%20AND%20all%3Atrials%20AND%20all%3Acompleted%20AND%20all%3Aregistered%20AND%20all%3Apublished&start=0&max_results=10; sha256=0f429a1e032c824f7a16bcde5142a7eee48a7e2b0c6143f135b29ab56bfdf6a5; total=0; shown=0/0"
+        },
+        {
+          "query": "metformin ageing trials completed registered published",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:59:48.573Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=metformin%20ageing%20trials%20completed%20registered%20published&rows=10&select=DOI,title; sha256=e76110078af1aa0c91a568fc42eebdead3f9b3b91cb703bd38f05930e2945d35; total=555190; shown=5/10; top: 10.1016/j.medcli.2025.107159 \"Ethical approval and conduct of registered non-pharmacological non-commercial completed Spanish trials: A systematic review of published re…\" | 10.1016/j.medcle.2025.107159 \"Ethical approval and conduct of registered non-pharmacological non-commercial completed Spanish trials: A systematic review of published re…\" | 10.1001/jama.2009.1242 \"Comparison of Registered and Published Primary Outcomes in Randomized Controlled Trials\" | 10.1001/jama.2009.1433 \"Incorrect Data in: Comparison of Registered and Published Primary Outcomes in Randomized Controlled Trials\" | 10.1186/1745-6215-11-43 \"A systematic review of clinical trials of pharmacological interventions for acute ischaemic stroke (1955-2008) that were completed, but not…\""
+        },
+        {
+          "query": "metformin ageing trials query pubmed row",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:59:49.889Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=metformin%20ageing%20trials%20query%20pubmed%20row&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "metformin ageing trials query pubmed row",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:59:50.400Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Ametformin%20AND%20all%3Aageing%20AND%20all%3Atrials%20AND%20all%3Aquery%20AND%20all%3Apubmed%20AND%20all%3Arow&start=0&max_results=10; sha256=3de8955512cc95ec6a03be7c88001579bdc7f4b8b3d74cdcbc993e9015c5fbb6; total=0; shown=0/0"
+        },
+        {
+          "query": "metformin ageing trials query pubmed row",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:59:51.188Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=metformin%20ageing%20trials%20query%20pubmed%20row&rows=10&select=DOI,title; sha256=0eae617c9e544d60746d92f635d5a359f55d1cfd1589ebc80aa8b7f997dd1ebe; total=498590; shown=5/10; top: 10.1088/1361-6498/ae8aff/data1 \"Search query in PubMed syntax\" | 10.32614/cran.package.researchassociate \"ResearchAssociate: Retrieving Publications from PubMed Database Based on User Query\" | 10.1007/978-1-4842-3888-2_23 \"Row-by-Row Processing\" | 10.59350/cwnj4-n1547 \"Your Publications (with PMCID) as a PubMed Query\" | 10.59350/v47eh-mw411 \"Your Publications (with PMCID) as a PubMed Query\""
+        }
+      ],
+      "failures": [
+        {
+          "source": "semantic_scholar",
+          "query": "metformin ageing trials completed registered published",
+          "code": "unexpected_status"
+        },
+        {
+          "source": "semantic_scholar",
+          "query": "metformin ageing trials query pubmed row",
+          "code": "unexpected_status"
+        }
+      ]
+    },
+    {
+      "key": "opp-00014-plasma-outcome-audit",
+      "projectId": "OPP-00014",
+      "registryTotalRecheck": 9,
+      "queries": [
+        "plasma exchange young ageing trials registered",
+        "plasma exchange young query pubmed row"
+      ],
+      "status": "assessment_required",
+      "searches": [
+        {
+          "query": "plasma exchange young ageing trials registered",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:59:56.399Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=plasma%20exchange%20young%20ageing%20trials%20registered&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "plasma exchange young ageing trials registered",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:59:57.306Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aplasma%20AND%20all%3Aexchange%20AND%20all%3Ayoung%20AND%20all%3Aageing%20AND%20all%3Atrials%20AND%20all%3Aregistered&start=0&max_results=10; sha256=4fba67609e0315293f7a5bc85980482d37cd214e5a6e1ffe7479320826edb035; total=0; shown=0/0"
+        },
+        {
+          "query": "plasma exchange young ageing trials registered",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T20:59:58.177Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=plasma%20exchange%20young%20ageing%20trials%20registered&rows=10&select=DOI,title; sha256=8263c07fc304fb4b26e0f1c96ac3d56ae5f4e2b1dbbf4b7c69d968b3d1eba1b3; total=3018658; shown=5/10; top: 10.1016/0047-63747590015-9 \"Cholesterol exchange between the red blood cells and plasma of young and old rats\" | 10.32592/ircmj.2020.22.8.47 \"Comparative Analysis of 9 COVID-19 Convalescent Plasma Protocols Registered by Cochrane Central Register of Controlled Trials\" | 10.1186/s13063-024-08029-5 \"Trials that turn from retrospectively registered to prospectively registered: a cohort study of “retroactively prospective” clinical trial…\" | 10.1093/ageing/24.1.49 \"Hospital- and Home-based Rehabilitation after Discharge from Hospital for Stroke Patients: Analysis of Two Trials\" | 10.1186/1745-6215-13-210 \"Information on blinding in registered records of clinical trials\""
+        },
+        {
+          "query": "plasma exchange young query pubmed row",
+          "source": "api.github.com/search/repositories",
+          "observedAt": "2026-11-06T20:59:59.477Z",
+          "resultSummary": "url=https://api.github.com/search/repositories?q=plasma%20exchange%20young%20query%20pubmed%20row&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+        },
+        {
+          "query": "plasma exchange young query pubmed row",
+          "source": "export.arxiv.org/api/query",
+          "observedAt": "2026-11-06T20:59:59.924Z",
+          "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aplasma%20AND%20all%3Aexchange%20AND%20all%3Ayoung%20AND%20all%3Aquery%20AND%20all%3Apubmed%20AND%20all%3Arow&start=0&max_results=10; sha256=a9e43dceeeec0473036c88344da60c7c93609cbba0d7d8f2eebf3e3810022cc6; total=0; shown=0/0"
+        },
+        {
+          "query": "plasma exchange young query pubmed row",
+          "source": "api.crossref.org/works",
+          "observedAt": "2026-11-06T21:00:00.994Z",
+          "resultSummary": "url=https://api.crossref.org/works?query=plasma%20exchange%20young%20query%20pubmed%20row&rows=10&select=DOI,title; sha256=8703230ed2801ca4c8a83f31f797cc31f27eae8e484712f1f863d6c354a3e67c; total=2667228; shown=5/10; top: 10.1088/1361-6498/ae8aff/data1 \"Search query in PubMed syntax\" | 10.32614/cran.package.researchassociate \"ResearchAssociate: Retrieving Publications from PubMed Database Based on User Query\" | 10.1007/978-1-4842-3888-2_23 \"Row-by-Row Processing\" | 10.59350/cwnj4-n1547 \"Your Publications (with PMCID) as a PubMed Query\" | 10.59350/v47eh-mw411 \"Your Publications (with PMCID) as a PubMed Query\""
+        }
+      ],
+      "failures": [
+        {
+          "source": "semantic_scholar",
+          "query": "plasma exchange young ageing trials registered",
+          "code": "unexpected_status"
+        },
+        {
+          "source": "semantic_scholar",
+          "query": "plasma exchange young query pubmed row",
+          "code": "unexpected_status"
+        }
+      ]
+    }
+  ]
+}

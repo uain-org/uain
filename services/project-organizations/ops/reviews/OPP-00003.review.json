@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00003",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Safe epigenetic reset without loss of cell identity is an open problem, far from the Main KPI of 100,000,000 people with epigenetic resets. The first human partial-reprogramming trial, Life Biosciences ER-100 (OSK, doxycycline-inducible, injected locally in the eye for glaucoma and NAION), only had its IND cleared in January 2026 and is a phase 1 safety study in a handful of participants (https://longevity.technology/news/fda-clears-first-human-trial-of-epigenetic-reprogramming-therapy/). The 2025 review of in vivo reprogramming still lists teratoma formation, organ failure and loss of cell identity as unresolved, with identity loss demonstrated in pancreatic acinar cells and in transiently reprogrammed mesenchymal cells (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12610414/). Chemical reprogramming claimed to preserve identity is single-cell-line in vitro work with undisclosed cocktails (Yang et al., Aging 2023, https://static-site-aging-prod.impactaging.com/article/204896/pdf). No open protocol or open-source system for safe systemic reprogramming was found; published protocols are paper-bound and partly access-restricted."
+  },
+  "additionalSearches": [
+    {
+      "query": "Life Biosciences ER-100 partial epigenetic reprogramming OSK first human trial 2026",
+      "source": "https://longevity.technology/news/fda-clears-first-human-trial-of-epigenetic-reprogramming-therapy/",
+      "observedAt": "2026-11-06T00:30:00Z",
+      "finding": "FDA cleared the ER-100 IND in January 2026: phase 1, first-in-human, safety and tolerability, local ocular delivery, c-Myc omitted. No efficacy or population-scale delivery."
+    },
+    {
+      "query": "partial reprogramming teratoma risk loss of cell identity safety Yamanaka factors in vivo review 2025",
+      "source": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12610414/",
+      "observedAt": "2026-11-06T00:31:00Z",
+      "finding": "Jo et al. 2025 review: teratoma, organ failure and loss of cell identity remain critical safety problems; requirements differ per tissue; no whole-body solution."
+    },
+    {
+      "query": "chemical reprogramming cocktails reverse transcriptomic age without loss of identity Sinclair 2023 Aging",
+      "source": "https://static-site-aging-prod.impactaging.com/article/204896/pdf",
+      "observedAt": "2026-11-06T00:32:00Z",
+      "finding": "Yang et al. 2023 report reduced transcriptomic age without identity loss in vitro in one cell line; cocktail recipes withheld, no animal validation, criticised as preliminary."
+    },
+    {
+      "query": "open source partial epigenetic reprogramming protocol github OSK rejuvenation",
+      "source": "https://bio-protocol.org/eLIFErap90579",
+      "observedAt": "2026-11-06T00:33:00Z",
+      "finding": "No openly published OSK partial-reprogramming protocol or open-source platform found; protocols sit behind paper requests and reviews, so nothing open achieves the goal."
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00726",
+  "native_project": "P-OPP-00726",
+  "source_digest": "9b9abaa2b1da5c648a40eebb5888c181cf768c39032a2acecc3d8ec489933fc8",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Cure macular degeneration",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "1d699c7cedd1e4355d537b3f7b9f6533c3a04459c1a3504602d9ce9a14eee301"
+  },
+  "drafted_at": "2026-11-06T00:12:36.747Z",
+  "queries": [
+    "cure macular degeneration",
+    "cure macular degeneration disability accessibility vision"
+  ],
+  "searches": [
+    {
+      "query": "cure macular degeneration",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:12:28.822Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=cure%20macular%20degeneration&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "cure macular degeneration",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:12:29.262Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Acure%20AND%20all%3Amacular%20AND%20all%3Adegeneration&start=0&max_results=10; sha256=3910230edb541daa4b56d75047299a2250e098d62f56cfe0a70db2f7433ea4a1; total=1; shown=1/1; top: arXiv:2510.02781v3 \"GCVAMD: A Modified CausalVAE Model for Causal Age-related Macular Degeneration Risk Factor Detection and Prediction\""
+    },
+    {
+      "query": "cure macular degeneration",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:12:31.111Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=cure%20macular%20degeneration&rows=10&select=DOI,title; sha256=51b3970da60dbd93ab2fb517a4e9a797e197bd9288457b550f78434136b84eff; total=138602; shown=5/10; top: 10.54985/peeref.2211p4104893 \"Stem cell technology to cure age-related macular degeneration (AMD)\" | 10.14445/22490183/ijbtt-v15i2p101 \"Exploring Gene Therapy as a Cure for Age-Related Macular Degeneration\" | 10.2217/17460751.2.4.335 \"Project Initiated to Develop Cure for Age-Related Macular Degeneration\" | 10.1201/b14548-13 \"Neovascular age-related macular degeneration\" | 10.1007/3-540-26977-0_5 \"Epidemiology of Age-Related Macular Degeneration\""
+    },
+    {
+      "query": "cure macular degeneration disability accessibility vision",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:12:35.365Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=cure%20macular%20degeneration%20disability%20accessibility%20vision&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "cure macular degeneration disability accessibility vision",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:12:35.857Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Acure%20AND%20all%3Amacular%20AND%20all%3Adegeneration%20AND%20all%3Adisability%20AND%20all%3Aaccessibility%20AND%20all%3Avision&start=0&max_results=10; sha256=9a24550e4ccd56fdb7cbbd04533a5de611f62b5d128ebbcc02cbf674bc6b2143; total=0; shown=0/0"
+    },
+    {
+      "query": "cure macular degeneration disability accessibility vision",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:12:36.746Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=cure%20macular%20degeneration%20disability%20accessibility%20vision&rows=10&select=DOI,title; sha256=c8a36380c7e20ce5a9553c20542cf15adcecd49068fa5ee069336d7c66ee4f87; total=858785; shown=5/10; top: 10.23880/oajo-16000s2-022 \"Effect of Colour Vision on Age Related Macular Degeneration\" | 10.5772/intechopen.104227 \"Low-Vision Rehabilitation with Audio-Biofeedback in Age-Related Macular Degeneration\" | 10.54985/peeref.2211p4104893 \"Stem cell technology to cure age-related macular degeneration (AMD)\" | 10.1167/jov.25.9.1645 \"Peripheral stereopsis in macular degeneration\" | 10.1167/16.4.33 \"Oculomotor Considerations in Macular Degeneration\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "cure macular degeneration",
+      "url": "https://api.github.com/search/repositories?q=cure%20macular%20degeneration&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=cure%20macular%20degeneration&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:12:28.822Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "cure macular degeneration",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Acure%20AND%20all%3Amacular%20AND%20all%3Adegeneration&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Acure%20AND%20all%3Amacular%20AND%20all%3Adegeneration&start=0&max_results=10",
+      "sha256": "3910230edb541daa4b56d75047299a2250e098d62f56cfe0a70db2f7433ea4a1",
+      "bytes": 3354,
+      "observedAt": "2026-11-06T00:12:29.262Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "cure macular degeneration",
+      "url": "https://api.crossref.org/works?query=cure%20macular%20degeneration&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=cure%20macular%20degeneration&rows=10&select=DOI,title",
+      "sha256": "51b3970da60dbd93ab2fb517a4e9a797e197bd9288457b550f78434136b84eff",
+      "bytes": 1233,
+      "observedAt": "2026-11-06T00:12:31.111Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "cure macular degeneration disability accessibility vision",
+      "url": "https://api.github.com/search/repositories?q=cure%20macular%20degeneration%20disability%20accessibility%20vision&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=cure%20macular%20degeneration%20disability%20accessibility%20vision&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:12:35.365Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "cure macular degeneration disability accessibility vision",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Acure%20AND%20all%3Amacular%20AND%20all%3Adegeneration%20AND%20all%3Adisability%20AND%20all%3Aaccessibility%20AND%20all%3Avision&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Acure%20AND%20all%3Amacular%20AND%20all%3Adegeneration%20AND%20all%3Adisability%20AND%20all%3Aaccessibility%20AND%20all%3Avision&start=0&max_results=10",
+      "sha256": "9a24550e4ccd56fdb7cbbd04533a5de611f62b5d128ebbcc02cbf674bc6b2143",
+      "bytes": 884,
+      "observedAt": "2026-11-06T00:12:35.857Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "cure macular degeneration disability accessibility vision",
+      "url": "https://api.crossref.org/works?query=cure%20macular%20degeneration%20disability%20accessibility%20vision&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=cure%20macular%20degeneration%20disability%20accessibility%20vision&rows=10&select=DOI,title",
+      "sha256": "c8a36380c7e20ce5a9553c20542cf15adcecd49068fa5ee069336d7c66ee4f87",
+      "bytes": 1517,
+      "observedAt": "2026-11-06T00:12:36.746Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "11848490e1012b49628ffac06ff1fe087f0d37ea7df440ebaa7edb14ce0b1ba9",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

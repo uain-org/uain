@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01929",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:57:45Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Robotic solar installation exists only at pilot and early commercial scale, far from the Main KPI of 1,000,000 MW installed by robots per year (more than all solar installed worldwide: about 647-698 GW in 2025, https://www.pv-tech.org/global-solar-pv-installations-reached-647gw-in-2025/). The leading robots still work with human crews: AES Maximo installed 100 MW at Bellefield by March 2026 (https://www.pv-tech.org/youre-going-to-see-a-lot-more-of-these-maximo-on-robotic-installation-utility-scale-solar-projects/); Terabase Terafab V2 finished field testing in 2026 with a rated output of about 1 GW per line-year and autonomous rovers still promised (https://www.terabase.energy/resources/terabase-energys-next-generation-terafab-completes-field-testing-ready-for-deployment); Built Robotics' autonomous pile driver runs with a two-person crew (https://www.builtrobotics.com/press/the-elusive-dream-of-fully-autonomous-construction-vehicles). No open-source end-to-end crewless system was found; Luminous has announced an open construction dataset only. Honest limit: module pick-and-place, autonomous piling and field-factory assembly are commercial prior art; tasks must target the unsolved parts (crewless site prep, trenching, electrical termination, QA, and generalising across terrain) with their own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "AES Atlas solar installation robot 2026 deployment megawatts installed by robots",
+      "source": "https://www.pv-tech.org/youre-going-to-see-a-lot-more-of-these-maximo-on-robotic-installation-utility-scale-solar-projects/",
+      "observedAt": "2026-11-06T00:52:00Z",
+      "finding": "AES Maximo robots installed 100 MW at the 1 GW Bellefield project by March 2026; company claims about 2x speed. Pilot-scale relative to the KPI."
+    },
+    {
+      "query": "Terabase Terafab automated solar construction Sarcos Built Robotics solar pile driving autonomous 2026",
+      "source": "https://www.terabase.energy/resources/terabase-energys-next-generation-terafab-completes-field-testing-ready-for-deployment",
+      "observedAt": "2026-11-06T00:52:15Z",
+      "finding": "Terafab V2 completed field testing March 2026 after five first-generation deployments; about 1 GW per factory-year; rovers 'soon' fully autonomous."
+    },
+    {
+      "query": "global annual solar PV installations 2025 GW total",
+      "source": "https://www.pv-tech.org/global-solar-pv-installations-reached-647gw-in-2025/",
+      "observedAt": "2026-11-06T00:52:30Z",
+      "finding": "Global PV additions in 2025 were about 647 GW (Ember), 664 GW (SolarPower Europe) or 698 GW (IEA PVPS); the KPI exceeds all installation worldwide."
+    },
+    {
+      "query": "fully autonomous solar farm construction without human crew robot open source",
+      "source": "https://www.builtrobotics.com/press/the-elusive-dream-of-fully-autonomous-construction-vehicles",
+      "observedAt": "2026-11-06T00:52:45Z",
+      "finding": "No open-source crewless solar construction system; Built Robotics RPD 35 needs a two-person crew; Charge Robotics claims a fully autonomous system, unverified."
+    }
+  ]
+}

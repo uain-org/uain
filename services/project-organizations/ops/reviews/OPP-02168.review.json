@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-02168",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No rice paddy system emits no methane, so the Main KPI of 150,000,000 hectares of low-methane rice is far from met. The best field practices cut methane by about half: alternate wetting and drying reduced methane by 51.6 percent versus continuous flooding in a 2024 Global Change Biology meta-analysis while raising nitrous oxide by 44 percent (https://katalog.dhi-paris.fr/vufind/Record/NLM381115356/Description), and adoption remains limited. Combined AWD with acid-modified straw biochar cut seasonal methane by 75 to 89 percent in a three-year 2025 study (https://biochartoday.com/news/engineered-biochar-and-awd-cut-rice-methane-emissions-by-up-to-90-while-boosting-yield-by-12-in-3-year-field-study/), and Punjab and Indonesia trials began in 2026. Low-methane varieties remain experimental: SUSIBA2 rice cut methane to about 10 percent of control before flowering in Chinese trials (2015, https://www.osti.gov/biblio/1221487) and a non-GMO line reportedly emitted 70 percent less. Meanwhile a May 2026 Nature Food study found rice-paddy greenhouse emissions nearly doubled over six decades, with Asia 90.2 percent of the total and management able to cut about 10 percent without yield loss (https://carbon-pulse.com/514869/). Honest limit: AWD and biochar are known and published, so tasks that re-measure them are known answers; the open work is near-zero-methane rice systems at farm scale without yield or nitrous-oxide penalties, and each task needs its own basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "alternate wetting and drying methane reduction percent meta-analysis rice paddy adoption area",
+      "source": "https://katalog.dhi-paris.fr/vufind/Record/NLM381115356/Description",
+      "observedAt": "2026-11-06T01:33:00Z",
+      "finding": "Zhao et al. (Global Change Biology 2024): AWD cut methane by 51.6 percent and CH4+N2O warming potential by 46.9 percent versus continuous flooding, with N2O up 44 percent; a 2019 meta-analysis of 52 studies found 53 percent less methane, 105 percent more N2O and 3.6 percent less yield. No global adoption hectarage found."
+    },
+    {
+      "query": "low-methane rice variety SUSIBA2 field trial methane emissions near zero 2025 2026",
+      "source": "https://www.osti.gov/biblio/1221487",
+      "observedAt": "2026-11-06T01:33:00Z",
+      "finding": "SUSIBA2 rice (Nature 2015) significantly reduced methane in three-year Chinese field trials, to about 10 percent of control before flowering and 0.3 percent at one stage; a non-GMO line bred from Heijing reportedly emitted 70 percent less methane at 8.96 t/ha in a two-year trial (secondary report). No 2025-2026 SUSIBA2 trial or released variety found."
+    },
+    {
+      "query": "rice methane emissions global share 2026 no-methane rice dry direct seeding aerobic rice methane zero",
+      "source": "https://carbon-pulse.com/514869/",
+      "observedAt": "2026-11-06T01:33:00Z",
+      "finding": "A May 2026 Nature Food study: global rice-paddy greenhouse emissions nearly doubled over six decades (1961-2020), methane dominant, Asia 90.2 percent of 2001-2020 emissions; improved management could cut about 10 percent without yield loss. Nothing supports zero-methane dry direct seeding or aerobic rice."
+    },
+    {
+      "query": "rice methane mitigation practices combined field trial reduction 80 90 percent biochar AWD straw management 2025 2026",
+      "source": "https://biochartoday.com/news/engineered-biochar-and-awd-cut-rice-methane-emissions-by-up-to-90-while-boosting-yield-by-12-in-3-year-field-study/",
+      "observedAt": "2026-11-06T01:34:00Z",
+      "finding": "A three-year study (Environmental Technology and Innovation 2025) found AWD with acid-modified rice-straw biochar cut seasonal methane by 75 to 89 percent versus continuous flooding; TNC/IRRI/PAU Punjab 2026 first-year results favour biochar with AWD and DSR; an IPB Indonesia trial began April 2026; straw compost raised methane 150 percent in a 2014 Vietnam study."
+    }
+  ]
+}

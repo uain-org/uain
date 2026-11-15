@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-06721",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "neutral",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Text-to-floor-plan generators exist, but none produces buildable, permit-ready plans, so the Main KPI of 1,000,000,000 people able to generate buildable home plans is unmet. Independent guides say no AI floor plan generator yet produces drawings a building department accepts; outputs are schematic (https://www.maket.ai/blog/ai-floor-plan-generator-guide-2026). Maket and similar tools give basic code hints only (https://archgyan.com/maket-ai-floor-plan-generation-residential/); open research such as HouseDiffusion generates vector layouts without structure or code (https://github.com/aminshabani/house_diffusion). AI permit pre-checks such as Archistar with the ICC check plans against code for reviewers but do not author them (https://www.iccsafe.org/about/periodicals-and-newsroom/international-code-council-collaborates-with-archistar-to-modernize-permitting-and-accelerate-housing-development). Honest limit: schematic layout generation and rule-based code checking are known answers; new work is the gap between them (structure, services, jurisdiction-specific compliance and a licensed sign-off path), and vendor permit-ready claims were not independently verified."
+  },
+  "additionalSearches": [
+    {
+      "query": "AI generate house floor plan permit ready construction drawings from text description",
+      "source": "https://www.maket.ai/blog/ai-floor-plan-generator-guide-2026",
+      "observedAt": "2026-11-06T00:40:24Z",
+      "finding": "Text-to-floor-plan tools are common; independent sources say none produce drawings building departments accept; output is schematic."
+    },
+    {
+      "query": "Maket.ai generative residential floor plans users limitations building code",
+      "source": "https://archgyan.com/maket-ai-floor-plan-generation-residential/",
+      "observedAt": "2026-11-06T00:40:30Z",
+      "finding": "Maket includes basic code considerations but is not a substitute for licensed code review; no independent accuracy tests found."
+    },
+    {
+      "query": "open source house plan generator github floor plan generation diffusion HouseDiffusion",
+      "source": "https://github.com/aminshabani/house_diffusion",
+      "observedAt": "2026-11-06T00:40:36Z",
+      "finding": "HouseDiffusion is open-source vector floor plan generation trained on RPLAN; layouts only, no structure or code compliance."
+    },
+    {
+      "query": "automated building code compliance checking residential plans AI 2025 permit",
+      "source": "https://www.iccsafe.org/about/periodicals-and-newsroom/international-code-council-collaborates-with-archistar-to-modernize-permitting-and-accelerate-housing-development",
+      "observedAt": "2026-11-06T00:40:42Z",
+      "finding": "Archistar and the ICC deploy AI pre-checks for single-family permits; checks plans for reviewers, does not generate buildable plans."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T230302Z-bd38e391c1",
+  "version": "0.3.64",
+  "source_commit": "6dffbb65317ffcf233c9f79d8321ff9d2a82ad87",
+  "deployed_at": "2026-11-09T23:03:02Z",
+  "prior": "20261109T224325Z-4729f17287",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0364-release-20261110",
+    "CHANGELOG.md#baink-evidence-web-open-tasks-20261110",
+    "CHANGELOG.md#baink-plain-language-20261110"
+  ],
+  "note": "PR #383: needs-evidence web journey, open-first task listing (order=newest&state=open), request payment locks on /api/requests, safe deletions BW-4/BS-1..BS-5, plain-language web. Live 23:03-23:09 UTC: 6/6 assets byte-identical on both paths; open-only listing returned 112 open tasks of 183 newest first, all open; /api/requests rows carry payment; 375 px landing has no overflow."
+}

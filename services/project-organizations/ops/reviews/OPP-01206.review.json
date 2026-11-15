@@ -1,0 +1,45 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01206",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": true,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held: an open solution already covers this project's deliverable. A satellite-and-AI crop monitor for every farm is assembled today from open, discoverable parts. ESA WorldCereal is an open-source system that produces seasonal global cropland, crop-type and irrigation maps at 10 m and lets any user map a custom area and season with pre-trained models (https://worldcereal.github.io/worldcereal-documentation/intro/purpose_scope.html; code at github.com/WorldCereal/worldcereal-classification). The Fields of The World global map publishes 3.17 billion field polygons for 2024 and 2025 across 241 countries under CC-BY-4.0 (https://arxiv.org/abs/2605.11055), which exceeds one boundary per each of the roughly 570 million farms counted by Lowder et al. GEOGLAM's Crop Monitor already gives monthly consensus crop conditions for 93 percent of global agricultural land, and Google's ALU and AMED APIs identify the crop, sowing and harvest on individual fields with refresh about every two weeks across 140 million-plus hectares (https://blog.google/intl/en-in/company-news/scaling-agri-resilience-from-india-to-the-world/). Honest limit: accuracy on sub-hectare, intercropped smallholder fields is not independently validated and farmer-level reach is small, so per-field reliability for smallholders is real open work; but building the monitor itself is a known, openly available answer and under the 29 September 2026 rule the project is not opened as new work. A reframed project on validated smallholder field-level accuracy would need its own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "ESA WorldCereal open source global crop type map 2026",
+      "source": "https://worldcereal.github.io/worldcereal-documentation/intro/purpose_scope.html",
+      "observedAt": "2026-11-06T01:04:00Z",
+      "finding": "WorldCereal is an open-source system for seasonally updated global temporary cropland, crop type and irrigation maps at 10 m; users can generate maps for a custom area and season with pre-trained models (eleven default crop types). Phase II runs to December 2026 with new global products; the classification code is public on GitHub (WorldCereal/worldcereal-classification, about 100 stars)."
+    },
+    {
+      "query": "Fields of The World global field boundary dataset open source",
+      "source": "https://arxiv.org/abs/2605.11055",
+      "observedAt": "2026-11-06T01:08:00Z",
+      "finding": "The FTW global field-boundary map (arXiv 2605.11055, May 2026) publishes 3.17 billion Sentinel-2-derived field polygons for 2024 and 2025 across 241 countries and territories under CC-BY-4.0 on Source Cooperative, with GeoParquet, PMTiles and a confidence layer; the FTW benchmark, models and TorchGeo loaders are open."
+    },
+    {
+      "query": "GEOGLAM Crop Monitor field-level global coverage smallholder farms satellite 2026",
+      "source": "https://storymaps.arcgis.com/stories/8c091564bdc248a5ad13bb7698786669",
+      "observedAt": "2026-11-06T01:08:00Z",
+      "finding": "GEOGLAM Crop Monitor reports give monthly consensus crop conditions for 93 percent of global agricultural land, with Early Warning reports issued through 2026. NASA and G20 material notes the open limit: average smallholder fields under 1 ha, often mixed or intercropped, and global monitoring imagery of up to 30 m."
+    },
+    {
+      "query": "number of farms worldwide 570 million smallholder satellite advisory coverage digital agriculture",
+      "source": "https://www.cgap.org/blog/global-distribution-of-smallholder-and-family-farms",
+      "observedAt": "2026-11-06T01:08:00Z",
+      "finding": "Lowder, Skoet and Raney (World Development 2016) estimate more than 570 million farms worldwide, 84 percent under 2 ha. Digital advisory services reach only a small fraction of smallholders; no source quantified satellite advisory coverage per farm."
+    },
+    {
+      "query": "Google Agricultural Landscape Understanding field-level India AI model open API 2025 2026",
+      "source": "https://blog.google/intl/en-in/company-news/scaling-agri-resilience-from-india-to-the-world/",
+      "observedAt": "2026-11-06T01:13:00Z",
+      "finding": "Google ALU (2024) segments field boundaries and AMED (July 2025) identifies the crop on each field, its size and sowing and harvest dates, refreshed about every two weeks, offered as research APIs; Terrastack has used them over 140 million-plus hectares and they are expanding across Asia-Pacific and Africa. Licensing terms are unclear and independent accuracy confirmation is lacking."
+    }
+  ]
+}

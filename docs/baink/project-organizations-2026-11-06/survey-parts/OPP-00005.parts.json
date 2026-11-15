@@ -1,0 +1,306 @@
+{
+ "schema": "uain-survey-parts-build-v1",
+ "project": "OPP-00005",
+ "revision": 2,
+ "supersedes": "T-OPP-00005-1-prior-art-survey",
+ "dropped": [],
+ "parts": [
+  {
+   "request": {
+    "id": "survey-OPP-00005-r2-p1",
+    "member": "uain158ac8d0debcf01d43164ef14736597da589d8b54",
+    "operation": "central_task_open",
+    "payload": {
+     "id": "T-OPP-00005-1-prior-art-survey-r2-p1",
+     "project": "P-OPP-00005",
+     "title": "Prior-art survey: Refill stem cell reserves in aging tissues (part 1 of 3)",
+     "criteria": "Prior-art survey part 1 of 3 for \"Refill stem cell reserves in aging tissues\". Main KPI: \"300,000,000 people with replenished stem cells\". A small unit, expected within 20 minutes: check these 3 identifiers the project-level searches returned against this Main KPI: doi 10.1615/tfec2021.bbe.032415; doi 10.1016/j.cryobiol.2020.07.005; doi 10.1007/978-1-4419-1075-2_9. Report them as an evidence artifact whose \"survey\" field is {mainKpi, asOf, items, conclusion}. mainKpi is the Main KPI above, exactly. asOf is the survey date (YYYY-MM-DD). Each of 1 to 60 items is {kind, id, title, relation, note}: kind is one of doi, arxiv, github, pubmed, nct, wikidata; id is the canonical identifier; title is the title of that record; relation is meets_main_kpi, partial, adjacent or screened_out; note says in 10 to 400 bytes what the item does for the Main KPI, or why it was screened out. Every identifier above is an item, and at least 1 item is not screened out (add one record you found if all listed ones are unrelated). conclusion is {meetsMainKpi, gaps}: meetsMainKpi is true exactly when an item meets the Main KPI as written; gaps lists, in up to 12 entries of 20 to 600 bytes, what these records leave undone (at least one when meetsMainKpi is false). Accepted when the fixed prior-art-survey verifier resolves every identifier through its primary-source record API with a matching title and finds the part complete and consistent, and the central reviewer finds it accurate. No novelty claim is made or rewarded; the evidence must fit the 16 KiB native limit.",
+     "acceptance_digest": "d4c8d55408b8f020bb3162f07a63dff89ac1b597dc913f229301c3dcb91b8a69",
+     "eligibility": "new",
+     "eligibility_digest": "b887321ce7ee98953211578d605ab3382a245f952f84cdd7c495a56fc1239cd3",
+     "solver_amount": "60000000",
+     "reviewer_amount": "10000000",
+     "evidence_digest": "8a265f843833610a22fcaa1d684c32bc2fb118ae7c7dc1faa95d87a6e413a27c"
+    }
+   },
+   "evidence": {
+    "schema": "uain-project-organization-survey-part-v1",
+    "decision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-06",
+     "record": "docs/baink/project-organizations-2026-11-06/decisions.md#d2"
+    },
+    "splitDecision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-09",
+     "record": "docs/baink/questions-9-nov-2026.md#c1"
+    },
+    "projectId": "OPP-00005",
+    "revision": 2,
+    "part": 1,
+    "parts": 3,
+    "supersedes": "T-OPP-00005-1-prior-art-survey",
+    "draftDigest": "8a14da1c297169d2508c8c86510964893cc90444ed66a865650cc1d69129ae89",
+    "reviewedDigest": "be4b641f2ab8b79b0a455919e2c68ffe2b752a72bbdea733050040aca60dd319",
+    "preflightDigest": "4249a83485a5feb82e7425f3af782f9caa32419873132b5c6f4d2dcee963f87c",
+    "policyDigest": "52ef4926b5651a6903a09c5ffacdc3ae76f3f744d5bc759e3cca9adf335567b0",
+    "requiredIds": [
+     {
+      "kind": "doi",
+      "id": "10.1615/tfec2021.bbe.032415"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1016/j.cryobiol.2020.07.005"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1007/978-1-4419-1075-2_9"
+     }
+    ],
+    "dropped": [],
+    "novelty": "Each listed record is unresolved: no accepted inventory of this project covers it yet."
+   },
+   "policy": {
+    "schema": "uain-task-verification-policy-v1",
+    "class": "prior_art_survey",
+    "taskId": "T-OPP-00005-1-prior-art-survey-r2-p1",
+    "projectId": "P-OPP-00005",
+    "criteriaDigest": "d4c8d55408b8f020bb3162f07a63dff89ac1b597dc913f229301c3dcb91b8a69",
+    "inputs": [],
+    "primarySourceHosts": [
+     "api.crossref.org",
+     "api.github.com",
+     "clinicaltrials.gov",
+     "eutils.ncbi.nlm.nih.gov",
+     "export.arxiv.org",
+     "www.wikidata.org"
+    ],
+    "driver": {
+     "name": "prior-art-survey",
+     "sha256": "8ee79b891db4d7d1b0cf497d0173e31fbfe7f96cf818d3ecf2c4bbdb0d1b6f4e"
+    },
+    "successTests": [
+     {
+      "id": "survey",
+      "mainKpi": "300,000,000 people with replenished stem cells",
+      "minIncluded": 1,
+      "minKinds": 1,
+      "requiredIds": [
+       {
+        "kind": "doi",
+        "id": "10.1615/tfec2021.bbe.032415"
+       },
+       {
+        "kind": "doi",
+        "id": "10.1016/j.cryobiol.2020.07.005"
+       },
+       {
+        "kind": "doi",
+        "id": "10.1007/978-1-4419-1075-2_9"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "request": {
+    "id": "survey-OPP-00005-r2-p2",
+    "member": "uain158ac8d0debcf01d43164ef14736597da589d8b54",
+    "operation": "central_task_open",
+    "payload": {
+     "id": "T-OPP-00005-1-prior-art-survey-r2-p2",
+     "project": "P-OPP-00005",
+     "title": "Prior-art survey: Refill stem cell reserves in aging tissues (part 2 of 3)",
+     "criteria": "Prior-art survey part 2 of 3 for \"Refill stem cell reserves in aging tissues\". Main KPI: \"300,000,000 people with replenished stem cells\". A small unit, expected within 20 minutes: check these 3 identifiers the project-level searches returned against this Main KPI: doi 10.18632/aging.205400; doi 10.1007/978-3-7091-1232-8_1; doi 10.1016/j.stemcr.2025.102506. Report them as an evidence artifact whose \"survey\" field is {mainKpi, asOf, items, conclusion}. mainKpi is the Main KPI above, exactly. asOf is the survey date (YYYY-MM-DD). Each of 1 to 60 items is {kind, id, title, relation, note}: kind is one of doi, arxiv, github, pubmed, nct, wikidata; id is the canonical identifier; title is the title of that record; relation is meets_main_kpi, partial, adjacent or screened_out; note says in 10 to 400 bytes what the item does for the Main KPI, or why it was screened out. Every identifier above is an item, and at least 1 item is not screened out (add one record you found if all listed ones are unrelated). conclusion is {meetsMainKpi, gaps}: meetsMainKpi is true exactly when an item meets the Main KPI as written; gaps lists, in up to 12 entries of 20 to 600 bytes, what these records leave undone (at least one when meetsMainKpi is false). Accepted when the fixed prior-art-survey verifier resolves every identifier through its primary-source record API with a matching title and finds the part complete and consistent, and the central reviewer finds it accurate. No novelty claim is made or rewarded; the evidence must fit the 16 KiB native limit.",
+     "acceptance_digest": "e6ca50d714084e454b4b00eff6ff67ed7d7c15e9338f1e5c3e28e0e263e985c3",
+     "eligibility": "new",
+     "eligibility_digest": "b887321ce7ee98953211578d605ab3382a245f952f84cdd7c495a56fc1239cd3",
+     "solver_amount": "60000000",
+     "reviewer_amount": "10000000",
+     "evidence_digest": "2973db99c565e32c14aaf828cd45ca2cd37f7731ee92e7c0b02ed5c91a594c38"
+    }
+   },
+   "evidence": {
+    "schema": "uain-project-organization-survey-part-v1",
+    "decision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-06",
+     "record": "docs/baink/project-organizations-2026-11-06/decisions.md#d2"
+    },
+    "splitDecision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-09",
+     "record": "docs/baink/questions-9-nov-2026.md#c1"
+    },
+    "projectId": "OPP-00005",
+    "revision": 2,
+    "part": 2,
+    "parts": 3,
+    "supersedes": "T-OPP-00005-1-prior-art-survey",
+    "draftDigest": "8a14da1c297169d2508c8c86510964893cc90444ed66a865650cc1d69129ae89",
+    "reviewedDigest": "be4b641f2ab8b79b0a455919e2c68ffe2b752a72bbdea733050040aca60dd319",
+    "preflightDigest": "4249a83485a5feb82e7425f3af782f9caa32419873132b5c6f4d2dcee963f87c",
+    "policyDigest": "8d33134733203ea5aed6b64336531ad13e6fe497c719f460bdc4234922786645",
+    "requiredIds": [
+     {
+      "kind": "doi",
+      "id": "10.18632/aging.205400"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1007/978-3-7091-1232-8_1"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1016/j.stemcr.2025.102506"
+     }
+    ],
+    "dropped": [],
+    "novelty": "Each listed record is unresolved: no accepted inventory of this project covers it yet."
+   },
+   "policy": {
+    "schema": "uain-task-verification-policy-v1",
+    "class": "prior_art_survey",
+    "taskId": "T-OPP-00005-1-prior-art-survey-r2-p2",
+    "projectId": "P-OPP-00005",
+    "criteriaDigest": "e6ca50d714084e454b4b00eff6ff67ed7d7c15e9338f1e5c3e28e0e263e985c3",
+    "inputs": [],
+    "primarySourceHosts": [
+     "api.crossref.org",
+     "api.github.com",
+     "clinicaltrials.gov",
+     "eutils.ncbi.nlm.nih.gov",
+     "export.arxiv.org",
+     "www.wikidata.org"
+    ],
+    "driver": {
+     "name": "prior-art-survey",
+     "sha256": "8ee79b891db4d7d1b0cf497d0173e31fbfe7f96cf818d3ecf2c4bbdb0d1b6f4e"
+    },
+    "successTests": [
+     {
+      "id": "survey",
+      "mainKpi": "300,000,000 people with replenished stem cells",
+      "minIncluded": 1,
+      "minKinds": 1,
+      "requiredIds": [
+       {
+        "kind": "doi",
+        "id": "10.18632/aging.205400"
+       },
+       {
+        "kind": "doi",
+        "id": "10.1007/978-3-7091-1232-8_1"
+       },
+       {
+        "kind": "doi",
+        "id": "10.1016/j.stemcr.2025.102506"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "request": {
+    "id": "survey-OPP-00005-r2-p3",
+    "member": "uain158ac8d0debcf01d43164ef14736597da589d8b54",
+    "operation": "central_task_open",
+    "payload": {
+     "id": "T-OPP-00005-1-prior-art-survey-r2-p3",
+     "project": "P-OPP-00005",
+     "title": "Prior-art survey: Refill stem cell reserves in aging tissues (part 3 of 3)",
+     "criteria": "Prior-art survey part 3 of 3 for \"Refill stem cell reserves in aging tissues\". Main KPI: \"300,000,000 people with replenished stem cells\". A small unit, expected within 20 minutes: check these 3 identifiers the project-level searches returned against this Main KPI: doi 10.1038/s41467-022-28347-z; doi 10.1016/j.stem.2023.09.006; doi 10.1007/978-3-7091-1232-8_16. Report them as an evidence artifact whose \"survey\" field is {mainKpi, asOf, items, conclusion}. mainKpi is the Main KPI above, exactly. asOf is the survey date (YYYY-MM-DD). Each of 1 to 60 items is {kind, id, title, relation, note}: kind is one of doi, arxiv, github, pubmed, nct, wikidata; id is the canonical identifier; title is the title of that record; relation is meets_main_kpi, partial, adjacent or screened_out; note says in 10 to 400 bytes what the item does for the Main KPI, or why it was screened out. Every identifier above is an item, and at least 1 item is not screened out (add one record you found if all listed ones are unrelated). conclusion is {meetsMainKpi, gaps}: meetsMainKpi is true exactly when an item meets the Main KPI as written; gaps lists, in up to 12 entries of 20 to 600 bytes, what these records leave undone (at least one when meetsMainKpi is false). Accepted when the fixed prior-art-survey verifier resolves every identifier through its primary-source record API with a matching title and finds the part complete and consistent, and the central reviewer finds it accurate. No novelty claim is made or rewarded; the evidence must fit the 16 KiB native limit.",
+     "acceptance_digest": "7240c6c7d431ab4a505832ca2b678eb15c93e34f959d01a222fbc28950323b62",
+     "eligibility": "new",
+     "eligibility_digest": "b887321ce7ee98953211578d605ab3382a245f952f84cdd7c495a56fc1239cd3",
+     "solver_amount": "60000000",
+     "reviewer_amount": "10000000",
+     "evidence_digest": "b15e58f6f0103014c702e9896af6d1ef41893c1ea4ae4c544b30cc122b30d2b5"
+    }
+   },
+   "evidence": {
+    "schema": "uain-project-organization-survey-part-v1",
+    "decision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-06",
+     "record": "docs/baink/project-organizations-2026-11-06/decisions.md#d2"
+    },
+    "splitDecision": {
+     "decidedBy": "Rahul",
+     "decidedAt": "2026-11-09",
+     "record": "docs/baink/questions-9-nov-2026.md#c1"
+    },
+    "projectId": "OPP-00005",
+    "revision": 2,
+    "part": 3,
+    "parts": 3,
+    "supersedes": "T-OPP-00005-1-prior-art-survey",
+    "draftDigest": "8a14da1c297169d2508c8c86510964893cc90444ed66a865650cc1d69129ae89",
+    "reviewedDigest": "be4b641f2ab8b79b0a455919e2c68ffe2b752a72bbdea733050040aca60dd319",
+    "preflightDigest": "4249a83485a5feb82e7425f3af782f9caa32419873132b5c6f4d2dcee963f87c",
+    "policyDigest": "2e7c15a4a3e05245c8f665531aa6ff8516ea562374d0f4a7531975709d3cac95",
+    "requiredIds": [
+     {
+      "kind": "doi",
+      "id": "10.1038/s41467-022-28347-z"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1016/j.stem.2023.09.006"
+     },
+     {
+      "kind": "doi",
+      "id": "10.1007/978-3-7091-1232-8_16"
+     }
+    ],
+    "dropped": [],
+    "novelty": "Each listed record is unresolved: no accepted inventory of this project covers it yet."
+   },
+   "policy": {
+    "schema": "uain-task-verification-policy-v1",
+    "class": "prior_art_survey",
+    "taskId": "T-OPP-00005-1-prior-art-survey-r2-p3",
+    "projectId": "P-OPP-00005",
+    "criteriaDigest": "7240c6c7d431ab4a505832ca2b678eb15c93e34f959d01a222fbc28950323b62",
+    "inputs": [],
+    "primarySourceHosts": [
+     "api.crossref.org",
+     "api.github.com",
+     "clinicaltrials.gov",
+     "eutils.ncbi.nlm.nih.gov",
+     "export.arxiv.org",
+     "www.wikidata.org"
+    ],
+    "driver": {
+     "name": "prior-art-survey",
+     "sha256": "8ee79b891db4d7d1b0cf497d0173e31fbfe7f96cf818d3ecf2c4bbdb0d1b6f4e"
+    },
+    "successTests": [
+     {
+      "id": "survey",
+      "mainKpi": "300,000,000 people with replenished stem cells",
+      "minIncluded": 1,
+      "minKinds": 1,
+      "requiredIds": [
+       {
+        "kind": "doi",
+        "id": "10.1038/s41467-022-28347-z"
+       },
+       {
+        "kind": "doi",
+        "id": "10.1016/j.stem.2023.09.006"
+       },
+       {
+        "kind": "doi",
+        "id": "10.1007/978-3-7091-1232-8_16"
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

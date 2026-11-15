@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T141625Z-45b650ac4d",
+  "version": "0.3.86",
+  "source_commit": "d7be56b0af60c9a2950ba69075ca50f66373bcfb",
+  "deployed_at": "2026-11-10T14:16:25Z",
+  "prior": "20261110T125411Z-fafa55427a",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0386-release-20261110",
+    "CHANGELOG.md#baink-plain-language-2-20261110"
+  ],
+  "note": "PR #512: plain-language web pass, part 2 (server task status labels, Paid tasks first on Work, backup first on Security, one main action per deal, inline appeal, plain history). Live 14:16-14:20 UTC: 6/6 assets byte-identical on both paths; part-2 strings present, no window.prompt; 375 px landing no overflow, no console errors; open-only listing 228 of 350 open newest first."
+}

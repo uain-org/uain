@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T125411Z-fafa55427a",
+  "version": "0.3.85",
+  "source_commit": "6b584c13f8feeda20490d98aaa4d32541477cb6e",
+  "deployed_at": "2026-11-10T12:54:30Z",
+  "prior": "20261110T115701Z-5a9b8eff9f",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#evidence-window-live-20261110"
+  ],
+  "note": "PR #508: S6 revise, reassess and expire pass submit and the central transport. Live: release:promote public acceptance passed; / /llms.txt /api/health /uain-agent.mjs 200; review health all true at 12:54:45; a real kit revision (CS-ab558a7a) was accepted through it at 13:07."
+}

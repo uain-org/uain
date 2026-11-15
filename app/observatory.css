@@ -1,0 +1,2921 @@
+/* The observatory: a full-screen console over a CesiumJS globe. The layout,
+   palette and glass panels follow God's Eye View (MIT). */
+
+.obs {
+  --bg: #0a0a0f;
+  --glass: rgba(9, 18, 27, 0.92);
+  --glass-border: rgba(77, 141, 255, 0.24);
+  --accent: #4d8dff;
+  --text: #e8eaed;
+  --text-dim: rgba(232, 234, 237, 0.52);
+  --mono: 'JetBrains Mono', 'SF Mono', ui-monospace, Menlo, monospace;
+  --hud: rgba(110, 160, 255, 0.8);
+  --hud-glow: rgba(77, 141, 255, 0.45);
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+}
+
+.obs[data-look='surveillance'] {
+  --hud: rgba(51, 255, 51, 0.85);
+  --hud-glow: rgba(51, 255, 51, 0.5);
+  --accent: #5dff6e;
+}
+
+/* Keep the site's existing destinations within reach in either look. */
+.obs .obs-site-nav {
+  position: absolute;
+  top: 70px;
+  left: 24px;
+  z-index: 500;
+}
+
+.obs-site-nav .mobile-nav {
+  display: block;
+}
+
+.obs-site-nav summary {
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  background: var(--glass);
+  padding: 7px 12px;
+  color: var(--text);
+  font-size: 12px;
+}
+
+.obs-site-nav nav {
+  top: 40px;
+  right: auto;
+  left: 0;
+  width: min(240px, calc(100vw - 48px));
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  background: var(--glass);
+  padding: 8px 14px;
+}
+
+.obs-site-nav nav a {
+  border-color: var(--glass-border);
+  color: var(--text);
+}
+
+.obs-site-nav nav a[aria-current='page'] {
+  color: var(--accent);
+}
+
+.obs :is(a, button, summary, input):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.obs-failure {
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--bg);
+  padding: 24px;
+  color: var(--text);
+  text-align: center;
+}
+
+.obs-failure h2,
+.obs-failure p {
+  margin: 0;
+}
+
+.obs-failure a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.obs-feed-status {
+  position: absolute;
+  top: 108px;
+  left: 50%;
+  z-index: 400;
+  width: min(460px, calc(100vw - 32px));
+  transform: translateX(-50%);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  background: var(--glass);
+  padding: 8px 12px;
+  color: var(--text);
+  font-size: 12px;
+  text-align: center;
+}
+
+.obs-feed-status[hidden] {
+  display: none;
+}
+
+.obs[data-feed='stale'] .obs-time span::before {
+  background: #b46d14;
+}
+
+.obs[data-look='thermal'] {
+  --hud: rgba(255, 255, 255, 0.78);
+  --hud-glow: rgba(255, 255, 255, 0.4);
+  --accent: #ffe0aa;
+}
+
+.obs[data-look='retro'] {
+  --hud: rgba(255, 170, 0, 0.85);
+  --hud-glow: rgba(255, 170, 0, 0.5);
+  --accent: #ffb038;
+}
+
+.obs button {
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.obs__viewer,
+.obs__detect {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.obs__viewer .cesium-viewer,
+.obs__viewer .cesium-widget,
+.obs__viewer canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.obs__detect {
+  z-index: 5;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* Detail's monitor look: a faint grid and a scanner line that sweeps the
+   globe, in UAIN blue. Decoration only, so it never takes a click. */
+.obs__scan {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  overflow: hidden;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(77, 141, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(77, 141, 255, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.obs__scan::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 90px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(77, 141, 255, 0.04) 75%,
+    rgba(120, 170, 255, 0.28) 99%,
+    transparent
+  );
+  content: '';
+  animation: obs-scan 7s linear infinite;
+}
+
+@keyframes obs-scan {
+  from {
+    transform: translateY(-90px);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+.obs[data-view='network'] .obs__scan,
+.obs[data-view='humanity'] .obs__scan {
+  display: none;
+}
+
+/* --------------------------------------------------------- network view */
+
+.obs__network {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.obs[data-view='network'] .obs__network {
+  display: block;
+}
+
+.obs[data-view='network'] .obs__viewer,
+.obs[data-view='humanity'] .obs__viewer {
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.obs-netlegend {
+  position: absolute;
+  top: max(12vh, 108px);
+  left: 36px;
+  z-index: 100;
+  display: none;
+  gap: 6px;
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  background: var(--glass);
+  padding: 12px 14px;
+  font-size: 11px;
+}
+
+.obs[data-view='network'] .obs-netlegend {
+  display: grid;
+}
+
+.obs-netlegend::before {
+  content: 'A line shows what an AI does on a problem';
+  max-width: 190px;
+  margin-bottom: 4px;
+  color: var(--text-dim);
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.obs-netlegend span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.obs-netlegend i {
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+/* -------------------------------------------------------- humanity view */
+
+.obs-humanity {
+  position: absolute;
+  top: 176px;
+  right: 372px;
+  bottom: 84px;
+  left: 36px;
+  z-index: 8;
+  display: none;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  align-content: start;
+  gap: 12px;
+  overflow-y: auto;
+  padding-right: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(77, 141, 255, 0.3) transparent;
+}
+
+.obs[data-view='humanity'] .obs-humanity {
+  display: grid;
+}
+
+.obs-domain {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  background: rgba(6, 13, 20, 0.86);
+  padding: 14px;
+}
+
+.obs-domain h3 {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.obs-domain strong {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.obs-domain__meter {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.obs-domain__meter i {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #1463ff, #6fa2ff);
+}
+
+.obs-domain p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 10.5px;
+  line-height: 1.45;
+}
+
+.obs-domain__count {
+  margin-top: 6px !important;
+  color: var(--accent) !important;
+}
+
+.obs-domain__list {
+  display: grid;
+  gap: 4px;
+}
+
+/* ------------------------------------------------- mode, view, headline */
+
+.obs-switch {
+  position: absolute;
+  top: 74px;
+  left: 50%;
+  display: flex;
+  gap: 14px;
+  transform: translateX(-50%);
+}
+
+.obs-switch > div {
+  display: flex;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  background: var(--glass);
+}
+
+.obs-switch button {
+  border: 0;
+  background: transparent;
+  padding: 6px 14px;
+  color: var(--text-dim);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.obs-switch button[aria-pressed='true'] {
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+  color: white;
+}
+
+.obs-switch em {
+  margin-left: 4px;
+  border: 1px solid currentcolor;
+  border-radius: 4px;
+  padding: 0 4px;
+  font-size: 8.5px;
+  font-style: normal;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.obs-headline {
+  position: absolute;
+  top: 112px;
+  left: 50%;
+  display: flex;
+  width: max-content;
+  max-width: calc(100vw - 780px);
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 18px;
+  transform: translateX(-50%);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  background: rgba(6, 13, 20, 0.82);
+  padding: 5px 16px;
+  color: var(--text-dim);
+  font-size: 11px;
+}
+
+.obs-headline strong {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.obs[data-mode='vision'] .obs-panel--real {
+  display: none;
+}
+
+.obs-problem {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 18px minmax(0, 1fr);
+  align-items: center;
+  gap: 1px 9px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.025);
+  padding: 5px 8px;
+  text-align: left;
+}
+
+.obs-problem:hover {
+  border-color: var(--accent);
+}
+
+/* A small copy of the ring: how much of the problem is done. */
+.obs-problem i {
+  grid-row: span 2;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #0b1620 52%, transparent 54%),
+    conic-gradient(var(--stage) var(--fill), rgba(255, 255, 255, 0.14) 0);
+}
+
+.obs-problem span {
+  overflow: hidden;
+  color: var(--text);
+  font-size: 10.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.obs-problem em {
+  color: var(--text-dim);
+  font-size: 9.5px;
+  font-style: normal;
+}
+
+.obs-concept {
+  position: absolute;
+  bottom: 178px;
+  left: 50%;
+  display: none;
+  margin: 0;
+  transform: translateX(-50%);
+  border: 1px dashed #c9a7ff;
+  border-radius: 6px;
+  background: rgba(20, 10, 36, 0.78);
+  padding: 4px 12px;
+  color: #e3d2ff;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.obs[data-mode='vision'] .obs-concept {
+  display: block;
+}
+
+/* ------------------------------------------------------------------ HUD */
+
+.obs-hud {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  pointer-events: none;
+  color: var(--hud);
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  line-height: 1.7;
+  text-shadow: 0 0 4px var(--hud-glow);
+  transition: opacity 0.4s ease;
+}
+
+.obs[data-hud='false'] .obs-hud {
+  opacity: 0;
+}
+
+.obs-hud__corner {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  border-radius: 6px;
+  background: rgba(3, 9, 14, 0.8);
+  padding: 6px 10px;
+}
+
+.obs-hud__tl {
+  top: max(18vh, 170px);
+  left: 388px;
+}
+
+.obs-hud__tr {
+  top: max(18vh, 170px);
+  right: 388px;
+  text-align: right;
+}
+
+.obs-hud__bl {
+  bottom: 214px;
+  left: 388px;
+}
+
+.obs-hud__br {
+  right: 388px;
+  bottom: 214px;
+  text-align: right;
+}
+
+.obs-hud__bracket {
+  font-size: 22px;
+  line-height: 1;
+  opacity: 0.6;
+}
+
+.obs-hud__mode {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.obs-hud__live {
+  color: #ff4d4d;
+  text-shadow: 0 0 6px rgba(255, 77, 77, 0.8);
+  animation: obs-blink 1.6s steps(2) infinite;
+}
+
+.obs-hud__summary {
+  max-width: 300px;
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+@keyframes obs-blink {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+/* ------------------------------------------------------- tracked readout */
+
+.obs-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 120;
+  display: grid;
+  width: 340px;
+  max-height: min(74vh, 600px);
+  gap: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(190, 232, 242, 0.18);
+  border-top: 2px solid var(--accent);
+  border-radius: 4px;
+  background: rgba(4, 12, 16, 0.86);
+  padding: 10px 12px;
+  pointer-events: none;
+  font-size: 11px;
+  letter-spacing: 0.6px;
+}
+
+/* The card lets clicks through to the globe, except on its way back. */
+.obs-card > button {
+  justify-self: start;
+  margin-top: 4px;
+  border: 1px solid var(--accent);
+  border-radius: 7px;
+  background: transparent;
+  padding: 4px 10px;
+  color: var(--accent);
+  font-size: 11px;
+  pointer-events: auto;
+}
+
+.obs-card > button[hidden] {
+  display: none;
+}
+
+.obs-card[hidden] {
+  display: none;
+}
+
+.obs-card i {
+  color: var(--accent);
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.obs-card strong {
+  color: rgba(232, 240, 244, 0.96);
+  font-size: 13px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.obs-card p {
+  margin: 0;
+  color: rgba(147, 161, 173, 0.95);
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.obs-card > span {
+  margin-top: 4px;
+  color: var(--text-dim);
+  font-size: 10px;
+}
+
+.obs-card__extra {
+  display: grid;
+  gap: 4px;
+}
+
+.obs-card__second {
+  display: grid;
+  gap: 4px;
+}
+
+/* Detail's pop-up, after World Monitor's: a glowing blue frame, chips for
+   the kind and how serious it is, the place in accent, the headline, then a
+   footer with the date and the source. */
+.obs[data-skin='detail'] .obs-card {
+  width: 380px;
+  gap: 6px;
+  border: 1px solid rgba(110, 160, 255, 0.75);
+  border-radius: 6px;
+  background: rgba(3, 8, 20, 0.94);
+  padding: 14px 16px 12px;
+  box-shadow:
+    0 0 18px rgba(77, 141, 255, 0.35),
+    inset 0 0 22px rgba(77, 141, 255, 0.06);
+}
+
+.obs-card__chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.obs-card__chips > span {
+  display: contents;
+}
+
+.obs[data-skin='detail'] .obs-card__chips i {
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  padding: 3px 8px;
+  color: var(--accent);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.obs[data-skin='detail'] .obs-card__chips > span i {
+  border-color: rgba(110, 160, 255, 0.55);
+  background: rgba(77, 141, 255, 0.12);
+  color: #a9c6ff;
+}
+
+.obs-card__close {
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  padding: 0 2px;
+  color: color-mix(in srgb, var(--accent) 80%, white);
+  font-size: 20px;
+  line-height: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.obs-card__where {
+  color: #8db4ff;
+  font-size: 12px;
+  font-style: normal;
+}
+
+.obs-card__where[hidden],
+.obs-card__foot[hidden] {
+  display: none;
+}
+
+.obs[data-skin='detail'] .obs-card strong {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.obs-card__foot {
+  margin-top: 6px;
+  border-top: 1px solid rgba(110, 160, 255, 0.22);
+  padding-top: 8px;
+  color: var(--text-dim);
+  font-size: 10.5px;
+}
+
+@media (max-width: 760px) {
+  .obs[data-skin='detail'] .obs-card {
+    width: calc(100vw - 24px);
+  }
+}
+
+/* A problem's details take the place of the list while it is open. */
+.obs-panel--problem {
+  flex: 1;
+  gap: 5px;
+  overflow-y: auto;
+  border-top: 2px solid var(--accent);
+  font-size: 11px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(77, 141, 255, 0.3) transparent;
+}
+
+.obs-panel--problem[hidden] {
+  display: none;
+}
+
+.obs[data-problem='open'] .obs-rail--right .obs-panel:not(.obs-panel--problem) {
+  display: none;
+}
+
+.obs-panel--problem > button {
+  align-self: start;
+  border: 1px solid var(--glass-border);
+  border-radius: 7px;
+  background: transparent;
+  padding: 3px 9px;
+  font-size: 10.5px;
+}
+
+.obs-panel--problem > i {
+  margin-top: 6px;
+  color: var(--accent);
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.obs-panel--problem > strong {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.obs-panel--problem p {
+  margin: 0;
+  color: rgba(147, 161, 173, 0.95);
+  line-height: 1.45;
+}
+
+.obs-card__flow {
+  grid-template-columns: 82px minmax(0, 1fr) auto;
+}
+
+.obs-card__flow span {
+  color: var(--dot) !important;
+  font-weight: 600;
+}
+
+.obs-card__extra:empty {
+  display: none;
+}
+
+.obs-card__stage {
+  color: var(--stage) !important;
+  font-weight: 600;
+}
+
+.obs-card__meter {
+  height: 5px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.obs-card__meter i {
+  display: block;
+  height: 100%;
+}
+
+.obs-card__role {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr) 26px;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-dim);
+  font-size: 10px;
+}
+
+.obs-card__role div {
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.obs-card__role div i {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: var(--accent);
+}
+
+.obs-card__role em {
+  color: var(--text);
+  font-style: normal;
+  text-align: right;
+}
+
+.obs-card__head {
+  margin-top: 6px !important;
+  color: var(--text-dim) !important;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.obs-card__line {
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr) auto;
+  gap: 6px;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.obs-card__line[data-who] {
+  cursor: pointer;
+}
+
+.obs-card__line[data-who]:hover p {
+  color: var(--accent);
+}
+
+.obs-card__line span {
+  color: var(--text-dim);
+}
+
+.obs-card__line p {
+  color: rgba(222, 232, 238, 0.95);
+}
+
+.obs-card__line em {
+  align-self: start;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0 4px;
+  color: var(--text-dim);
+  font-size: 8.5px;
+  font-style: normal;
+  white-space: nowrap;
+}
+
+.obs-card__line[data-sure='Verified'] em,
+.obs-card__line[data-sure='On the record'] em {
+  background: rgba(63, 224, 168, 0.18);
+  color: #9be8c8;
+}
+
+.obs-card__line[data-sure='Simulated'] em {
+  background: rgba(201, 167, 255, 0.18);
+  color: #d9c4ff;
+}
+
+.obs-card__line[data-sure='Prediction'] {
+  opacity: 0.5;
+}
+
+.obs-card[data-plain='true'] > span,
+.obs[data-view='network'] .obs-card > span {
+  display: none;
+}
+
+/* ---------------------------------------------------------------- chrome */
+
+.obs-chrome {
+  z-index: 100;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.obs-title {
+  position: absolute;
+  top: 28px;
+  left: 36px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.obs-title svg,
+.obs-loader svg {
+  width: 48px;
+  height: 48px;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.4;
+  filter: drop-shadow(0 0 6px rgba(77, 141, 255, 0.55));
+}
+
+.obs-title__pupil {
+  fill: var(--accent);
+}
+
+.obs-title p {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 8px;
+}
+
+.obs-title p span {
+  color: var(--accent);
+  font-weight: 300;
+}
+
+.obs-title small {
+  color: var(--text-dim);
+  font-size: 10px;
+  letter-spacing: 5px;
+}
+
+.obs-actions {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  display: flex;
+  gap: 8px;
+  transform: translateX(-50%);
+}
+
+.obs button[aria-pressed='true'] {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  color: white;
+}
+
+.obs-rail {
+  position: absolute;
+  top: max(12vh, 108px);
+  bottom: 138px;
+  display: flex;
+  width: 320px;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.obs-rail--left {
+  left: 36px;
+}
+
+.obs-rail--right {
+  right: 36px;
+}
+
+.obs-panel {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  background: var(--glass);
+  padding: 14px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.obs-rail--right .obs-panel {
+  flex: 1;
+}
+
+.obs-panel h2 {
+  margin: 0 0 10px;
+  color: var(--text-dim);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.obs-panel__group {
+  margin: 4px 0 3px;
+  color: var(--accent);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.obs-rail--left .obs-panel:first-child {
+  min-height: 0;
+  flex: 1;
+}
+
+.obs-rail--left .obs-panel:first-child > div {
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(77, 141, 255, 0.3) transparent;
+}
+
+.obs-panel__scroll {
+  display: grid;
+  min-height: 0;
+  flex: 1;
+  align-content: start;
+  gap: 4px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(77, 141, 255, 0.3) transparent;
+}
+
+.obs-toggle {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2px 8px;
+  margin-bottom: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 4px 9px;
+  color: var(--text-dim);
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  text-align: left;
+}
+
+.obs-toggle i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.obs-toggle span {
+  color: var(--text);
+}
+
+.obs-toggle small {
+  grid-column: 2 / -1;
+  color: var(--text-dim);
+  font-size: 9.5px;
+  line-height: 1.3;
+}
+
+.obs-toggle[aria-pressed='false'] {
+  opacity: 0.45;
+}
+
+.obs-row,
+.obs-entry {
+  display: grid;
+  width: 100%;
+  border: 1px solid transparent;
+  border-left: 2px solid var(--accent);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.025);
+  padding: 5px 8px;
+  text-align: left;
+}
+
+.obs-row {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  font-size: 10.5px;
+}
+
+.obs-row i,
+.obs-entry i {
+  color: var(--accent);
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.obs-row span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.obs-row em {
+  max-width: 96px;
+  overflow: hidden;
+  color: var(--text-dim);
+  font-size: 9px;
+  font-style: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.obs-entry {
+  --accent: #8db4ff;
+  gap: 2px;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.obs-entry span {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--text-dim);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.obs-toast {
+  position: absolute;
+  bottom: 138px;
+  left: 50%;
+  z-index: 200;
+  max-width: min(80vw, 760px);
+  transform: translate(-50%, 8px);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: rgba(4, 12, 16, 0.9);
+  padding: 9px 16px;
+  opacity: 0;
+  pointer-events: none;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+}
+
+.obs-toast[data-on='true'] {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+.obs-credits {
+  position: absolute;
+  right: 372px;
+  bottom: 2vh;
+  z-index: 90;
+  max-width: 30vw;
+  opacity: 0.55;
+  font-size: 9px;
+}
+
+.obs-credits .cesium-credit-logoContainer {
+  display: none !important;
+}
+
+.obs-loader {
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 14px;
+  background: var(--bg);
+  transition: opacity 0.8s ease;
+}
+
+.obs-loader[data-done='true'] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.obs-loader svg {
+  width: 112px;
+  height: 112px;
+  animation: obs-pulse 2s ease-in-out infinite;
+}
+
+.obs-loader p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 6px;
+}
+
+.obs-loader small {
+  color: var(--text-dim);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+/* After a few seconds the loader says why it is slow and where else to look
+   (10 November 2026: testers saw a blank screen for 15 seconds). */
+.obs-loader p.obs-loader__slow {
+  max-width: min(420px, calc(100vw - 48px));
+  color: var(--text-dim);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.6;
+  text-align: center;
+  opacity: 0;
+  animation: obs-loader-slow 0.6s ease 5s forwards;
+}
+
+.obs-loader__slow a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+@keyframes obs-loader-slow {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes obs-pulse {
+  50% {
+    opacity: 0.45;
+    transform: scale(0.96);
+  }
+}
+
+/* Words for readers without the canvas: present, but under the console. */
+.obs-words {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------ layout: the globe first
+
+   Only the title, the two switches, a line of numbers and one bar along the
+   bottom are always there. Everything else opens when it is asked for. */
+
+.obs-title {
+  top: 20px;
+  left: 24px;
+}
+
+.obs-switch {
+  top: 22px;
+}
+
+.obs-actions {
+  top: 22px;
+  right: 24px;
+  left: auto;
+  transform: none;
+}
+
+.obs-headline {
+  top: 64px;
+  max-width: calc(100vw - 48px);
+  max-height: 30px;
+  overflow: hidden;
+  padding: 3px 14px;
+}
+
+.obs-concept {
+  /* Above the LIVE wire, so the label is always in the picture. */
+  bottom: 102px;
+  z-index: 301;
+  padding: 3px 12px;
+}
+
+.obs-toast {
+  bottom: 136px;
+}
+
+.obs-credits {
+  right: auto;
+  bottom: 62px;
+  left: 24px;
+  max-width: none;
+}
+
+/* Side panels: closed until their button is pressed. */
+.obs-rail {
+  top: 108px;
+  bottom: 74px;
+  display: none;
+  width: 330px;
+}
+
+.obs-rail--left {
+  left: 24px;
+}
+
+.obs-rail--right {
+  right: 24px;
+}
+
+.obs[data-left='open'] .obs-rail--left,
+.obs[data-right='open'] .obs-rail--right {
+  display: flex;
+}
+
+.obs-rail .obs-panel {
+  min-height: 0;
+  flex: 1;
+}
+
+.obs-rail--left .obs-panel > div {
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(77, 141, 255, 0.3) transparent;
+}
+
+.obs-panel > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.obs-panel > header h2 {
+  margin: 0;
+}
+
+.obs-panel > header button {
+  border: 1px solid var(--glass-border);
+  border-radius: 7px;
+  background: transparent;
+  padding: 3px 9px;
+  font-size: 11px;
+}
+
+.obs-tabs {
+  display: flex;
+  gap: 4px;
+}
+
+[data-tab-panel] {
+  display: none;
+}
+
+.obs[data-tab='problems'] [data-tab-panel='problems'],
+.obs[data-tab='agents'] [data-tab-panel='agents'],
+.obs[data-tab='ledger'] [data-tab-panel='ledger'] {
+  display: grid;
+}
+
+.obs[data-problem='open'] .obs-panel--list {
+  display: none;
+}
+
+/* A closed panel leaves a tab on its edge. */
+.obs-handle {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  width: 34px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transform: translateY(-50%);
+  border: 1px solid rgba(77, 141, 255, 0.34);
+  background: rgba(7, 14, 21, 0.94);
+  padding: 12px 0;
+}
+
+.obs-handle:hover {
+  border-color: var(--accent);
+}
+
+.obs-handle--left {
+  left: 0;
+  border-left: 0;
+  border-radius: 0 10px 10px 0;
+}
+
+.obs-handle--right {
+  right: 0;
+  border-right: 0;
+  border-radius: 10px 0 0 10px;
+}
+
+.obs-handle b {
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.obs-handle span {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+
+.obs-handle i {
+  display: grid;
+  gap: 5px;
+}
+
+.obs-handle u {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.obs-handle em {
+  color: var(--accent);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.obs[data-left='open'] .obs-handle--left,
+.obs[data-right='open'] .obs-handle--right,
+.obs[data-view='network'] .obs-handle--left,
+.obs[data-view='humanity'] .obs-handle--left {
+  display: none;
+}
+
+/* The readouts sit clear of whichever panels are open. */
+.obs-hud__tl,
+.obs-hud__tr {
+  top: 108px;
+}
+
+.obs-hud__bl,
+.obs-hud__br {
+  bottom: 110px;
+}
+
+.obs-hud__tl,
+.obs-hud__bl {
+  left: 48px;
+}
+
+.obs-hud__tr,
+.obs-hud__br {
+  right: 48px;
+}
+
+.obs[data-left='open'] .obs-hud__tl,
+.obs[data-left='open'] .obs-hud__bl {
+  left: 370px;
+}
+
+.obs[data-right='open'] .obs-hud__tr,
+.obs[data-right='open'] .obs-hud__br {
+  right: 370px;
+}
+
+.obs-humanity {
+  top: 108px;
+  right: 48px;
+  bottom: 74px;
+  left: 24px;
+}
+
+.obs[data-right='open'] .obs-humanity {
+  right: 370px;
+}
+
+.obs-netlegend {
+  top: 108px;
+  left: 24px;
+}
+
+.obs-credits {
+  left: 48px;
+}
+
+/* The bar along the bottom. */
+.obs-dock {
+  position: absolute;
+  right: 24px;
+  bottom: 14px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(77, 141, 255, 0.28);
+  border-radius: 12px;
+  background: rgba(9, 18, 27, 0.94);
+  padding: 7px 10px;
+}
+
+.obs-dock button,
+.obs-actions button {
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  background: transparent;
+  padding: 6px 11px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.obs-time {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+}
+
+.obs-time input {
+  min-width: 40px;
+  flex: 1;
+  accent-color: var(--accent);
+}
+
+.obs-time span {
+  /* A fixed width and even digits, so the slider beside it never resizes
+     as the words change. */
+  width: 244px;
+  overflow: hidden;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.obs[data-time='past'] .obs-time span {
+  color: #ffd84d;
+}
+
+.obs[data-time='future'] .obs-time span {
+  color: #c9a7ff;
+}
+
+/* Away from the Earth view, what belongs to the globe steps out. */
+.obs[data-view='network'] .obs__detect,
+.obs[data-view='network'] .obs-hud,
+.obs[data-view='network'] .obs-rail--left,
+.obs[data-view='network'] .obs-credits,
+.obs[data-view='humanity'] .obs__detect,
+.obs[data-view='humanity'] .obs-hud,
+.obs[data-view='humanity'] .obs-rail--left,
+.obs[data-view='humanity'] .obs-credits {
+  display: none;
+}
+
+.obs-dock button:hover,
+.obs-actions button:hover,
+.obs-toggle:hover,
+.obs-row:hover,
+.obs-entry:hover {
+  border-color: var(--accent);
+}
+
+.obs-toggle em {
+  color: var(--accent);
+  font-size: 9px;
+  font-style: normal;
+  opacity: 0.8;
+}
+
+.obs[data-view='network'] .obs-earth-only,
+.obs[data-view='humanity'] .obs-earth-only {
+  display: none;
+}
+
+/* Menus open over everything else. */
+.obs-actions,
+.obs-dock {
+  z-index: 310;
+}
+
+.obs-rail .obs-panel {
+  background: rgba(7, 14, 21, 0.97);
+}
+
+.obs[data-left='open'] .obs-credits {
+  display: none;
+}
+
+/* Small menus that open from a button. */
+.obs-menu-wrap {
+  position: relative;
+}
+
+.obs-menu {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 0;
+  z-index: 300;
+  display: none;
+  min-width: 190px;
+  gap: 4px;
+  border: 1px solid rgba(77, 141, 255, 0.34);
+  border-radius: 10px;
+  background: rgba(7, 14, 21, 0.97);
+  padding: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.obs-menu[data-open='true'] {
+  display: grid;
+}
+
+.obs-menu--right {
+  right: 0;
+  left: auto;
+}
+
+.obs-menu--down {
+  top: calc(100% + 8px);
+  right: 0;
+  bottom: auto;
+  left: auto;
+}
+
+.obs-menu button {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  text-align: left;
+}
+
+.obs-menu em {
+  color: var(--accent);
+  font-size: 9.5px;
+  font-style: normal;
+}
+
+.obs-card__flow {
+  grid-template-columns: 92px minmax(0, 1fr) auto;
+}
+
+@media (max-width: 1400px) {
+  .obs-title p {
+    font-size: 15px;
+    letter-spacing: 4px;
+  }
+
+  .obs-title small {
+    display: none;
+  }
+
+  .obs-title svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 760px) {
+  .obs .obs-site-nav {
+    top: 128px;
+    left: 12px;
+  }
+
+  .obs[data-skin='detail'] .obs-feed-status {
+    top: 174px;
+  }
+
+  .obs-title {
+    top: 12px;
+    left: 12px;
+  }
+
+  .obs-title p span {
+    display: none;
+  }
+
+  .obs-actions {
+    top: 12px;
+    right: 12px;
+  }
+
+  .obs-actions [data-act='tilt'] {
+    display: none;
+  }
+
+  .obs-switch {
+    top: 54px;
+    left: 12px;
+    max-width: calc(100vw - 24px);
+    flex-wrap: wrap;
+    gap: 6px;
+    transform: none;
+  }
+
+  .obs-switch button {
+    padding: 5px 10px;
+  }
+
+  .obs-headline,
+  .obs-credits,
+  .obs-netlegend,
+  .obs-hud__tr,
+  .obs-hud__br,
+  .obs-time input,
+  .obs-time span {
+    display: none !important;
+  }
+
+  .obs-time {
+    flex: 0 1 auto;
+  }
+
+  .obs-hud__tl {
+    top: 136px;
+    left: 12px;
+  }
+
+  .obs-hud__bl {
+    bottom: 76px;
+    left: 12px;
+  }
+
+  .obs-dock {
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .obs-concept {
+    bottom: 112px;
+    max-width: 92vw;
+    white-space: normal;
+  }
+
+  .obs[data-view='network'] .obs-concept,
+  .obs[data-view='humanity'] .obs-concept {
+    bottom: 104px;
+  }
+
+  .obs-handle {
+    top: 46%;
+    width: 28px;
+    padding: 9px 0;
+  }
+
+  .obs-handle i {
+    display: none;
+  }
+
+  /* A panel comes up as a sheet from the bottom. */
+  .obs-rail {
+    top: 34vh;
+    right: 8px;
+    bottom: 104px;
+    left: 8px;
+    z-index: 300;
+    width: auto;
+  }
+
+  .obs-humanity {
+    top: 176px;
+    right: 12px;
+    bottom: 104px;
+    left: 12px;
+  }
+
+  .obs-menu {
+    position: fixed;
+    right: 8px;
+    bottom: 104px;
+    left: 8px;
+    top: auto;
+  }
+
+  .obs-menu--down {
+    top: 50px;
+    bottom: auto;
+  }
+}
+
+/* "How it works", beside the title, after World Monitor. */
+.obs-how-open {
+  align-self: center;
+  margin-left: 6px;
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  background: var(--glass);
+  padding: 6px 12px;
+  color: var(--text-dim);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.obs-how-open:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.obs-how {
+  /* The site's reset zeroes margins, which pinned the dialog top left. */
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(520px, calc(100vw - 32px));
+  height: fit-content;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  border-radius: 4px;
+  background: #050b18;
+  padding: 0;
+  color: var(--text);
+  font-family: var(--mono);
+  box-shadow: 0 0 40px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.obs-how::backdrop {
+  background: rgba(2, 5, 12, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.obs-how > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--glass-border);
+  padding: 12px 18px;
+}
+
+.obs-how h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.obs-how h2::before {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  content: '';
+}
+
+.obs-how > header button {
+  border: 0;
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.obs-how section {
+  padding: 16px 20px 0;
+}
+
+.obs-how h3 {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.obs-how p,
+.obs-how ul {
+  margin: 0;
+  color: color-mix(in srgb, var(--text) 85%, transparent);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.obs-how ul {
+  padding-left: 18px;
+  list-style: square;
+}
+
+.obs-how li::marker {
+  color: var(--accent);
+}
+
+.obs-how-open__short {
+  display: none;
+}
+
+.obs-how b {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.obs-how footer {
+  margin: 18px 20px 0;
+  border-top: 1px solid var(--glass-border);
+  padding-top: 12px;
+  color: var(--text-dim);
+  font-size: 10.5px;
+  line-height: 1.6;
+}
+
+.obs-how footer a {
+  color: var(--accent);
+}
+
+.obs-how__ok {
+  display: block;
+  width: calc(100% - 40px);
+  margin: 16px 20px 20px;
+  border: 0;
+  border-radius: 3px;
+  background: var(--accent);
+  padding: 11px;
+  color: #020814;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* The three pages along the top, after World Monitor's tabs. */
+.obs-pages {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  z-index: 320;
+  display: flex;
+  gap: 4px;
+  transform: translateX(-50%);
+}
+
+.obs-pages button {
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  background: var(--glass);
+  padding: 7px 16px;
+  color: var(--text-dim);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.obs-pages button[aria-pressed='true'] {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 18%, var(--glass));
+  color: var(--text);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+/* The mode and view switches step down under the tabs. */
+.obs .obs-switch {
+  top: 66px;
+}
+
+.obs .obs-headline {
+  top: 106px;
+}
+
+/* The flat map has no tilt and no Network or Humanity: those are the
+   globe's. */
+.obs[data-page='map'] .obs-switch__views,
+.obs[data-page='map'] [data-act='tilt'] {
+  display: none;
+}
+
+/* THE LOG puts the globe and its controls away. */
+.obs[data-page='log'] .obs__viewer,
+.obs[data-page='log'] .obs__scan,
+.obs[data-page='log'] .obs__detect,
+.obs[data-page='log'] .obs__network,
+.obs[data-page='log'] .obs-netlegend,
+.obs[data-page='log'] .obs-hud,
+.obs[data-page='log'] .obs-card,
+.obs[data-page='log'] .obs-switch,
+.obs[data-page='log'] .obs-headline,
+.obs[data-page='log'] .obs-concept,
+.obs[data-page='log'] .obs-actions,
+.obs[data-page='log'] .obs-humanity,
+.obs[data-page='log'] .obs-rail,
+.obs[data-page='log'] .obs-handle,
+.obs[data-page='log'] .obs-dock,
+.obs[data-page='log'] .obs-credits,
+.obs[data-page='log'] .obs-wire {
+  display: none !important;
+}
+
+.obs-log {
+  position: absolute;
+  inset: 76px 0 0;
+  z-index: 110;
+  overflow-y: auto;
+  padding: 24px max(24px, calc(50% - 460px)) 120px;
+}
+
+.obs-log[hidden] {
+  display: none;
+}
+
+.obs-log header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px 20px;
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 14px;
+}
+
+.obs-log h2 {
+  margin: 0;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+}
+
+.obs-log header p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 11px;
+}
+
+.obs-log__filters {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.obs-log__filters button {
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  background: transparent;
+  padding: 5px 12px;
+  color: var(--text-dim);
+  font-size: 11px;
+}
+
+.obs-log__filters button[aria-pressed='true'] {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.obs-log__list {
+  position: relative;
+  margin: 0;
+  padding: 10px 0 0 34px;
+  list-style: none;
+}
+
+/* The timeline's spine. */
+.obs-log__list::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 9px;
+  width: 1px;
+  background: color-mix(in srgb, var(--accent) 55%, transparent);
+  content: '';
+}
+
+.obs-log__list li {
+  position: relative;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.obs-log__list li::before {
+  position: absolute;
+  top: 22px;
+  left: -30px;
+  width: 9px;
+  height: 9px;
+  box-sizing: border-box;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  background: var(--bg);
+  content: '';
+}
+
+.obs-log__list li:first-child::before {
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.obs-log__list li[data-kind='quake']::before {
+  border-color: #ff6a4a;
+}
+
+.obs-log__list li[data-kind='nasa']::before {
+  border-color: #ffb03c;
+}
+
+.obs-log__list button {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 16px 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.obs-log__list button:hover p {
+  color: var(--text);
+}
+
+.obs-log__list button > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  font-size: 11px;
+}
+
+.obs-log__list b {
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  padding: 2px 7px;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.obs-log__list li[data-kind='quake'] b {
+  border-color: #ff6a4a;
+  color: #ff8a6a;
+}
+
+.obs-log__list li[data-kind='nasa'] b {
+  border-color: #ffb03c;
+  color: #ffc46b;
+}
+
+.obs-log__list span {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  color: var(--text-dim);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.obs-log__list time {
+  color: var(--text-dim);
+  font-size: 10px;
+}
+
+.obs-log__list p {
+  margin: 8px 0 0;
+  color: color-mix(in srgb, var(--text) 82%, transparent);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.obs-log__more {
+  display: block;
+  margin: 22px auto 0;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: transparent;
+  padding: 8px 20px;
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.obs-log__more[hidden] {
+  display: none;
+}
+
+/* The UTC clock, under the top right buttons, after World Monitor. */
+.obs-clock {
+  position: absolute;
+  top: 64px;
+  right: 24px;
+  color: color-mix(in srgb, var(--accent) 75%, white);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.12em;
+  text-shadow: 0 0 8px color-mix(in srgb, var(--accent) 45%, transparent);
+  white-space: nowrap;
+}
+
+/* LOCATE, under the numbers, after World Monitor. */
+.obs-locate {
+  position: absolute;
+  top: 146px;
+  left: 50%;
+  z-index: 305;
+  width: 240px;
+  transform: translateX(-50%);
+}
+
+.obs-locate label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  background: var(--glass);
+  padding: 6px 10px;
+}
+
+.obs-locate:focus-within label {
+  border-color: var(--accent);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.obs-locate svg {
+  width: 15px;
+  height: 15px;
+  flex: none;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.obs-locate input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.obs-locate input:focus,
+.obs-locate input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.obs-locate input::placeholder {
+  color: color-mix(in srgb, var(--accent) 70%, var(--text-dim));
+}
+
+.obs-locate input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.obs-locate kbd {
+  border: 1px solid var(--glass-border);
+  border-radius: 4px;
+  padding: 0 6px;
+  color: var(--text-dim);
+  font-family: inherit;
+  font-size: 10px;
+}
+
+.obs-locate ul {
+  margin: 6px 0 0;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  background: var(--glass);
+  padding: 4px;
+  list-style: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.obs-locate ul[hidden] {
+  display: none;
+}
+
+.obs-locate li {
+  border-radius: 5px;
+  padding: 7px 10px;
+  color: var(--text);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.obs-locate li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.obs-locate li small {
+  color: var(--text-dim);
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.obs-locate__open {
+  display: none;
+}
+
+.obs-locate li[data-picked='true'],
+.obs-locate li:hover {
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+/* Detail's controls, bottom right, after World Monitor. */
+.obs-ctrl {
+  position: absolute;
+  right: 24px;
+  bottom: 110px;
+  z-index: 305;
+  display: none;
+  gap: 2px;
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  background: var(--glass);
+  padding: 6px;
+}
+
+.obs[data-skin='detail'] .obs-ctrl {
+  display: grid;
+}
+
+.obs-ctrl > button,
+.obs-ctrl .obs-menu-wrap > button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  padding: 8px 12px 8px 8px;
+  color: color-mix(in srgb, var(--accent) 70%, white);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.obs-ctrl > button:hover,
+.obs-ctrl .obs-menu-wrap > button:hover,
+.obs-ctrl button[aria-pressed='true'] {
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  color: var(--text);
+}
+
+.obs-ctrl svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  fill: none;
+  stroke: currentcolor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.obs-ctrl .obs-menu button {
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  padding: 6px 10px;
+  color: var(--text);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.obs-ctrl .obs-menu button:hover,
+.obs-ctrl .obs-menu button[aria-pressed='true'] {
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+/* The settings menu opens to the left of the panel. */
+.obs-menu--side {
+  top: auto;
+  right: calc(100% + 10px);
+  bottom: 0;
+  left: auto;
+}
+
+/* With the problems panel open, the controls step in beside it. */
+.obs[data-right='open'] .obs-ctrl {
+  right: 370px;
+}
+
+/* The flat map and the log have no use for what is the globe's. */
+.obs[data-page='log'] .obs-ctrl,
+.obs[data-page='log'] .obs-locate,
+.obs[data-page='log'] .obs-clock {
+  display: none;
+}
+
+/* Kenneth's nine categories, down the left, in place of World Monitor's
+   side menu. Detail only; Filter in the bottom right opens the layers. */
+.obs-counts {
+  position: absolute;
+  top: 196px;
+  left: 24px;
+  z-index: 300;
+  display: none;
+  width: 236px;
+  margin: 0;
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  background: rgba(3, 9, 24, 0.94);
+  padding: 6px;
+  list-style: none;
+}
+
+.obs[data-skin='detail'] .obs-counts {
+  display: grid;
+}
+
+.obs[data-skin='detail'] .obs-handle--left,
+.obs[data-page='log'] .obs-counts,
+.obs[data-left='open'] .obs-counts {
+  display: none;
+}
+
+.obs-counts li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  padding: 6px 8px;
+  cursor: default;
+}
+
+/* A caption over each part of the panel. */
+.obs-counts li[data-kind='cap'] {
+  padding: 7px 8px 2px;
+  color: var(--text-dim);
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.obs-counts li[data-kind='cap']:not(:first-child) {
+  margin-top: 4px;
+  border-top: 1px solid var(--glass-border);
+  border-radius: 0;
+}
+
+.obs-counts span {
+  flex: 1;
+  color: color-mix(in srgb, var(--accent) 70%, white);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.obs-counts b {
+  color: var(--text);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.obs-counts i {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+/* Projects is the sum of the two rows under it, not a thing to click. */
+.obs-counts li[data-kind='sum'] i {
+  display: none;
+}
+
+.obs-counts li[data-kind='sum'] span,
+.obs-counts li[data-kind='sum'] b {
+  color: var(--text-dim);
+}
+
+/* A kind of dot, in its colour on the map: click to show or hide it. */
+.obs-counts li[data-kind='switch'] i {
+  background: var(--dot);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--dot) 70%, transparent);
+}
+
+.obs-counts li[data-shown='false'] i {
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--text-dim);
+}
+
+.obs-counts li[data-shown='false'] span,
+.obs-counts li[data-shown='false'] b {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+
+/* One of these is always chosen, as with radio buttons. */
+.obs-counts li[data-kind='only'] i {
+  box-shadow: inset 0 0 0 1.5px var(--accent);
+}
+
+.obs-counts li[data-only='true'] {
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.obs-counts li[data-only='true'] i {
+  background: var(--accent);
+  box-shadow:
+    inset 0 0 0 2px rgb(3, 9, 24),
+    0 0 0 1.5px var(--accent);
+}
+
+.obs-counts li[data-only='true'] span,
+.obs-counts li[data-only='true'] b {
+  color: #ffffff;
+}
+
+.obs-counts li[data-kind='only'] b {
+  font-size: 12px;
+}
+
+.obs-counts li[role='button'] {
+  cursor: pointer;
+}
+
+.obs-counts li[role='button']:hover,
+.obs-counts li[role='button']:focus-visible {
+  outline: none;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+/* What a row counts, beside it the moment the pointer arrives. */
+@media (hover: hover) {
+  .obs-counts li[data-tip]:hover::after,
+  .obs-counts li[data-tip]:focus-visible::after {
+    position: absolute;
+    top: -2px;
+    left: calc(100% + 14px);
+    z-index: 5;
+    width: 290px;
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    background: rgba(3, 9, 24, 0.97);
+    padding: 8px 11px;
+    color: var(--text);
+    font-size: 11px;
+    line-height: 1.5;
+    content: attr(data-tip);
+    pointer-events: none;
+  }
+}
+
+/* The wire: a news line above the bottom bar, after World Monitor. Detail
+   and the Earth view only. */
+.obs-wire {
+  position: absolute;
+  right: 24px;
+  bottom: 66px;
+  left: 24px;
+  z-index: 300;
+  display: flex;
+  height: 28px;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(77, 141, 255, 0.28);
+  border-radius: 8px;
+  background: rgba(4, 10, 24, 0.92);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.obs-wire__live {
+  display: flex;
+  height: 100%;
+  flex: none;
+  align-items: center;
+  gap: 7px;
+  border-right: 1px solid rgba(77, 141, 255, 0.28);
+  padding: 0 12px;
+  color: #ff5a5a;
+  font-weight: 700;
+}
+
+.obs-wire__live::before {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ff3b3b;
+  box-shadow: 0 0 8px #ff3b3b;
+  content: '';
+  animation: obs-wire-pulse 1.6s ease-in-out infinite;
+}
+
+.obs-wire__window {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 3%,
+    #000 97%,
+    transparent
+  );
+}
+
+.obs-wire__track {
+  display: flex;
+  width: max-content;
+  animation: obs-wire 60s linear infinite;
+}
+
+.obs-wire:hover .obs-wire__track,
+.obs-wire:focus-within .obs-wire__track {
+  animation-play-state: paused;
+}
+
+.obs-wire__item {
+  flex: none;
+  border: 0;
+  background: transparent;
+  padding: 0 14px;
+  color: #a9c6ff;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.obs-wire__item::after {
+  margin-left: 28px;
+  color: rgba(77, 141, 255, 0.5);
+  content: '•';
+}
+
+.obs-wire__item:hover {
+  color: #fff;
+}
+
+.obs-wire__item i {
+  margin-right: 8px;
+  color: #4d8dff;
+  font-style: normal;
+}
+
+@keyframes obs-wire {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes obs-wire-pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* Room for the wire above the bar. */
+.obs[data-skin='detail']:not([data-view='network']):not([data-view='humanity'])
+  .obs-rail {
+  bottom: 104px;
+}
+
+.obs[data-skin='detail']:not([data-view='network']):not([data-view='humanity'])
+  .obs-credits {
+  bottom: 100px;
+}
+
+.obs[data-skin='detail']:not([data-view='network']):not([data-view='humanity'])
+  .obs-toast {
+  bottom: 140px;
+}
+
+/* Detail's wide title leaves no room beside it, so on a wide screen the
+   button sits after the subtitle, clear of the tabs. */
+@media (min-width: 1401px) {
+  .obs[data-skin='detail'] .obs-how-open {
+    position: absolute;
+    top: 44px;
+    left: 280px;
+    margin: 0;
+    padding: 4px 10px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .obs-how-open {
+    padding: 5px 9px;
+    letter-spacing: 0.12em;
+  }
+}
+
+/* Where the title and the tabs leave no room, the button is a "?". */
+@media (max-width: 1100px) {
+  .obs-how-open {
+    width: 26px;
+    height: 26px;
+    margin-left: 0;
+    border-radius: 50%;
+    padding: 0;
+    font-size: 13px;
+    letter-spacing: 0;
+  }
+
+  .obs-how-open__long {
+    display: none;
+  }
+
+  .obs-how-open__short {
+    display: inline;
+  }
+}
+
+@media (max-width: 1100px) {
+  .obs-ctrl > button,
+  .obs-ctrl .obs-menu-wrap > button {
+    padding: 8px;
+    font-size: 0;
+    letter-spacing: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  /* On a phone, as on World Monitor: LOCATE is a loupe until pressed, the
+     clock sits in the row under the tabs, and the controls are a column of
+     icons on the right. */
+  .obs-clock {
+    top: 140px;
+    right: auto;
+    left: 14px;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+
+  .obs[data-locate='open'] .obs-locate {
+    z-index: 600;
+  }
+
+  .obs-card {
+    z-index: 310;
+  }
+
+  .obs-locate {
+    top: 98px;
+    right: 12px;
+    left: auto;
+    width: auto;
+    transform: none;
+  }
+
+  .obs-locate__open {
+    display: grid;
+    width: 36px;
+    height: 34px;
+    place-items: center;
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    background: var(--glass);
+    padding: 0;
+  }
+
+  .obs-locate > label {
+    display: none;
+  }
+
+  .obs[data-locate='open'] .obs-locate {
+    left: 12px;
+    right: 12px;
+    width: auto;
+  }
+
+  .obs[data-locate='open'] .obs-locate__open {
+    display: none;
+  }
+
+  .obs[data-locate='open'] .obs-locate > label {
+    display: flex;
+  }
+
+  .obs[data-locate='open'] .obs-clock {
+    visibility: hidden;
+  }
+
+  .obs-locate kbd {
+    display: none;
+  }
+
+  /* On a phone the panel is a column of the four dots and their numbers,
+     still switches; the Show choice needs the room of a wider screen. */
+  .obs-counts {
+    top: 230px;
+    left: 8px;
+    width: auto;
+    gap: 2px;
+    padding: 4px;
+  }
+
+  .obs-counts li {
+    flex-direction: column;
+    gap: 2px;
+    padding: 4px 5px;
+  }
+
+  .obs-counts span,
+  .obs-counts li[data-kind='cap'],
+  .obs-counts li[data-kind='sum'],
+  .obs-counts li[data-kind='only'] {
+    display: none;
+  }
+
+  .obs-counts b {
+    font-size: 11px;
+  }
+
+  .obs[data-skin='detail'] .obs-ctrl {
+    right: 12px;
+    bottom: 154px;
+    gap: 6px;
+    border: 0;
+    background: transparent;
+    padding: 0;
+  }
+
+  .obs-ctrl > button,
+  .obs-ctrl .obs-menu-wrap > button {
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+    border: 1px solid var(--glass-border);
+    background: var(--glass);
+    padding: 0;
+    font-size: 0;
+    letter-spacing: 0;
+  }
+
+  .obs[data-right='open'] .obs-ctrl {
+    display: none;
+  }
+
+  .obs-pages {
+    top: 58px;
+    left: 12px;
+    transform: none;
+  }
+
+  .obs-pages button {
+    padding: 6px 9px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .obs .obs-switch {
+    top: 98px;
+  }
+
+  .obs .obs-site-nav {
+    top: 172px;
+  }
+
+  .obs[data-page='log'] .obs-site-nav {
+    top: 104px;
+  }
+
+  .obs-log {
+    inset: 150px 0 0;
+    padding: 16px 14px 100px;
+  }
+
+  .obs-wire {
+    right: 8px;
+    bottom: 108px;
+    left: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .obs-loader svg {
+    animation: none;
+  }
+
+  .obs-wire__track,
+  .obs-wire__live::before {
+    animation: none;
+  }
+
+  .obs-wire__window {
+    overflow-x: auto;
+  }
+
+  .obs__scan::after {
+    display: none;
+  }
+}
+
+/* On THE LOG the notice sat on top of the log's filter buttons (10 November
+   2026). There it goes above the bottom bar instead, clear of the list. */
+.obs[data-page='log'] .obs-feed-status,
+.obs[data-page='log'][data-skin] .obs-feed-status {
+  top: auto;
+  bottom: 92px;
+}

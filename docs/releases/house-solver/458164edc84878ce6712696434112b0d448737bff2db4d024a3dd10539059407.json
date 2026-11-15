@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "house-solver",
+  "release_id": "458164edc84878ce6712696434112b0d448737bff2db4d024a3dd10539059407",
+  "version": null,
+  "source_commit": "ef374c8bb72cfe9e7ac5850b5360e9f3443020ef",
+  "deployed_at": "2026-11-08T19:14:09Z",
+  "prior": "6f4687d5c17dc56c62c607f9a707bc3f4dba47916f3b2f5fb20c4fe870a430eb",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#house-format-recovery-20261109"
+  ],
+  "note": "Held root/local closure and sealed adapter verified. One authorized cycle finalized join/submission; OPP14 remains under review with awards absent on immutable noncanonical evidence. Attester hold isolation separately installed; future producer source-only. STOP retained; LaunchAgent quiet. Exact P9 accepted-history API read passed. No verdict/payment claim."
+}

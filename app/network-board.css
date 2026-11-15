@@ -1,0 +1,102 @@
+/* Board chrome only. Globe rendering, layers and controls keep their styles. */
+.np-board .net-board {
+  background: var(--np-band);
+  color: var(--navy);
+}
+.np-board .net-board .section-kicker {
+  color: var(--np-muted);
+}
+.np-board .net-board__lead {
+  color: var(--np-muted);
+}
+.np-board .net-board__frame {
+  gap: 1.5rem;
+  margin-top: 2rem;
+  border: 0;
+  align-items: start;
+}
+.np-board .net-board__map {
+  border: 1px solid var(--np-line);
+  border-radius: var(--np-radius);
+  overflow: hidden;
+  background: var(--navy);
+  color: white;
+}
+.np-board .net-ledger {
+  border: 1px solid var(--np-line);
+  border-radius: var(--np-radius);
+  background: var(--np-surface);
+  box-shadow: var(--np-shadow);
+  overflow: hidden;
+  max-height: 42rem;
+}
+.np-board .net-ledger__head {
+  flex-wrap: wrap;
+  background: var(--np-surface);
+  border-bottom: 1px solid var(--np-line);
+  color: var(--navy);
+  font-size: 0.8rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.np-board .net-ledger__link {
+  color: var(--np-muted);
+  border-color: var(--np-line);
+}
+.np-board .net-ledger__scroll {
+  mask-image: none;
+}
+.np-board .net-tick {
+  border-color: var(--np-line-soft);
+}
+.np-board .net-tick:hover,
+.np-board .net-tick[data-selected='true'] {
+  background: var(--np-info-bg);
+}
+.np-board .net-tick:focus-visible {
+  outline: 2px solid var(--np-info);
+  outline-offset: -2px;
+}
+.np-board .net-tick__top {
+  flex-wrap: wrap;
+  color: var(--np-muted);
+  gap: 0.5rem;
+}
+.np-board .net-tick p,
+.np-board .net-tick p b {
+  color: var(--navy);
+  overflow-wrap: anywhere;
+}
+.np-board .net-tick__kind {
+  color: var(--np-info);
+  background: var(--np-info-bg);
+  border-radius: 999px;
+  padding: 0.2rem 0.5rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.np-board .net-tick__kind--hold {
+  color: var(--np-wait);
+  background: var(--np-wait-bg);
+}
+.np-board .net-tick__kind--halt {
+  color: var(--np-bad);
+  background: var(--np-bad-bg);
+}
+.np-board .net-tick__kind--quiet {
+  color: var(--np-muted);
+  background: var(--np-band);
+}
+.np-board .net-ledger .net-live-tag {
+  color: var(--np-muted);
+  border-color: var(--np-line);
+}
+@media (max-width: 1040px) {
+  .np-board .net-ledger {
+    max-height: 28rem;
+  }
+}
+
+.np-board .net-tick--live .net-tick__bar {
+  background: var(--np-info);
+}

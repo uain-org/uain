@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-04081",
+  "native_project": "P-OPP-04081",
+  "source_digest": "b83a3766a82737199851149bbe4db3e83633f5c7294fe9d899ac5740bf4228a8",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Make every payment worldwide instant and free",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "e976d3240c7cd4ea428fb8e021728c203d3e8374f5c2b11cd10c8a44c5981068"
+  },
+  "drafted_at": "2026-11-06T00:24:45.063Z",
+  "queries": [
+    "payment worldwide instant free",
+    "payment worldwide instant finance markets trade"
+  ],
+  "searches": [
+    {
+      "query": "payment worldwide instant free",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:24:37.222Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=payment%20worldwide%20instant%20free&per_page=10; sha256=467866c987f024aa3863b4e851801aae14b5ebea324e5e93738b75317e480d91; total=2; shown=2/2; top: rodomenzain/AGROCOIN \"How this all started? Our journey started 20 years ago with a business franchise, where we had been producing and supplying agricultural pr…\" | rodomenzain/Agrocoin-Release \"How this all started? Our journey started 20 years ago with a business franchise, where we had been producing and supplying agricultural pr…\""
+    },
+    {
+      "query": "payment worldwide instant free",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:24:37.799Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Apayment%20AND%20all%3Aworldwide%20AND%20all%3Ainstant%20AND%20all%3Afree&start=0&max_results=10; sha256=38e0105286b44cc7e27a8d8c6117f1efbd4d7498e682505c46eaddd94102ff48; total=0; shown=0/0"
+    },
+    {
+      "query": "payment worldwide instant free",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:24:38.720Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=payment%20worldwide%20instant%20free&rows=10&select=DOI,title; sha256=a222a6651609043c5168c3ca1e3d823561dec57c75256083676f2ba2990159f7; total=1195296; shown=5/10; top: 10.5089/9798400249266.002.a004 \"Pix: Brazil’s Successful Instant Payment System\" | 10.5089/9798400221897.001.a001 \"Instant Payments: Regulatory Innovation and Payment Substitution Across Countries\" | 10.2139/ssrn.4362385 \"Integration of the Instant Payment System into Hungary's Payment Infrastructure\" | 10.2139/ssrn.7213458 \"The Instant Payment Gap: Reforming the EFTA for Authorized Push Payment Fraud\" | 10.2139/ssrn.3854915 \"Tips - TARGET Instant Payment Settlement the Pan-European Infrastructure for the Settlement of Instant Payments [Tips - Target Instant Paym…\""
+    },
+    {
+      "query": "payment worldwide instant finance markets trade",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:24:43.633Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=payment%20worldwide%20instant%20finance%20markets%20trade&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "payment worldwide instant finance markets trade",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:24:44.148Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Apayment%20AND%20all%3Aworldwide%20AND%20all%3Ainstant%20AND%20all%3Afinance%20AND%20all%3Amarkets%20AND%20all%3Atrade&start=0&max_results=10; sha256=89359ea0e4e1a47c5408d5146e3f2e4bb8a71537d605817f6717650b30b60409; total=0; shown=0/0"
+    },
+    {
+      "query": "payment worldwide instant finance markets trade",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:24:45.062Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=payment%20worldwide%20instant%20finance%20markets%20trade&rows=10&select=DOI,title; sha256=d2e32bf3db303908aaac2609f1b6f4261a5344a61a4a33e6fdd1e57aa6cd47d1; total=1419395; shown=5/10; top: 10.1080/1540496x.2004.11052567 \"Trends in Workers' Remittances : A Worldwide Overview\" | 10.2753/ree1540-496x430304 \"Stock Market Turmoil: Worldwide Effects of Middle East Conflicts\" | 10.1080/1540496x.2018.1500890 \"An Analysis of IFRS and SME-IFRS Adoption Determinants: A Worldwide Study\" | 10.1080/1540496x.2006.11052658 \"Index to Emerging Markets Finance and Trade\" | 10.1007/978-1-4842-3114-2_8 \"Making the Sale: Proposals, Shipping, Payment, and Trade Finance\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "payment worldwide instant free",
+      "url": "https://api.github.com/search/repositories?q=payment%20worldwide%20instant%20free&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=payment%20worldwide%20instant%20free&per_page=10",
+      "sha256": "467866c987f024aa3863b4e851801aae14b5ebea324e5e93738b75317e480d91",
+      "bytes": 19427,
+      "observedAt": "2026-11-06T00:24:37.222Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "payment worldwide instant free",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Apayment%20AND%20all%3Aworldwide%20AND%20all%3Ainstant%20AND%20all%3Afree&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Apayment%20AND%20all%3Aworldwide%20AND%20all%3Ainstant%20AND%20all%3Afree&start=0&max_results=10",
+      "sha256": "38e0105286b44cc7e27a8d8c6117f1efbd4d7498e682505c46eaddd94102ff48",
+      "bytes": 794,
+      "observedAt": "2026-11-06T00:24:37.799Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "payment worldwide instant free",
+      "url": "https://api.crossref.org/works?query=payment%20worldwide%20instant%20free&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=payment%20worldwide%20instant%20free&rows=10&select=DOI,title",
+      "sha256": "a222a6651609043c5168c3ca1e3d823561dec57c75256083676f2ba2990159f7",
+      "bytes": 1676,
+      "observedAt": "2026-11-06T00:24:38.720Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "payment worldwide instant finance markets trade",
+      "url": "https://api.github.com/search/repositories?q=payment%20worldwide%20instant%20finance%20markets%20trade&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=payment%20worldwide%20instant%20finance%20markets%20trade&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:24:43.633Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "payment worldwide instant finance markets trade",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Apayment%20AND%20all%3Aworldwide%20AND%20all%3Ainstant%20AND%20all%3Afinance%20AND%20all%3Amarkets%20AND%20all%3Atrade&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Apayment%20AND%20all%3Aworldwide%20AND%20all%3Ainstant%20AND%20all%3Afinance%20AND%20all%3Amarkets%20AND%20all%3Atrade&start=0&max_results=10",
+      "sha256": "89359ea0e4e1a47c5408d5146e3f2e4bb8a71537d605817f6717650b30b60409",
+      "bytes": 864,
+      "observedAt": "2026-11-06T00:24:44.148Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "payment worldwide instant finance markets trade",
+      "url": "https://api.crossref.org/works?query=payment%20worldwide%20instant%20finance%20markets%20trade&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=payment%20worldwide%20instant%20finance%20markets%20trade&rows=10&select=DOI,title",
+      "sha256": "d2e32bf3db303908aaac2609f1b6f4261a5344a61a4a33e6fdd1e57aa6cd47d1",
+      "bytes": 1343,
+      "observedAt": "2026-11-06T00:24:45.062Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "4981c9913a76c1c5b38dc1b9af95f2cca3945e06088d1581ff0522f05dec8892",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

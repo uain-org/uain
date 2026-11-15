@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00008",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T02:12:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Clearing age-related protein aggregates from brain and body has no solution at the Main KPI of 500,000,000 people cleared of aggregates, though amyloid-beta is a partial exception that must be stated honestly. Lecanemab and donanemab are approved and do clear brain amyloid in most treated patients (donanemab 76-80 percent, clearance in 6-24 months), but they slow decline by only about five to seven months, carry ARIA in 12.6 and 24 percent of patients with boxed warnings, and are restricted to amyloid-confirmed patients with zero or one ApoE4 allele plus MRI monitoring, so they reach a small fraction of patients and clear one aggregate species only (https://www.eneuro.org/content/13/7/ENEURO.0112-26.2026.full.txt). Other aggregates are unsolved: tau antibodies and antisense (diranersen cut insoluble tau yet missed its Phase 2 endpoint in 2026; posdinemab, zagotenemab, semorinemab abandoned or disappointing) and alpha-synuclein antibodies (prasinezumab) failed on clinical outcomes (https://pharmaphorum.com/news/trial-miss-doesnt-dent-biogens-faith-alzheimers-drug). Systemic amyloid depletion remains first-in-human: CPHPC plus anti-SAP antibody in 15 then 23 patients, and cliramitug (NI006-101, 46 participants) reducing cardiac ATTR surrogates (https://mdedge.com/content/amyloid-depleter/antibody-duo-reduces-systemic-amyloidosis-severity). No open-source aggregate-clearance platform exists; open code covers aggregation-kinetics fitting only (https://www-knowles.ch.cam.ac.uk/software). Honest limit: brain amyloid clearance is a known answer, so amyloid-beta-only tasks need their own prior-art basis; the open work is other aggregate species, body-wide clearance and access."
+  },
+  "additionalSearches": [
+    {
+      "query": "lecanemab donanemab amyloid clearance approval 2026 limitations",
+      "source": "https://www.eneuro.org/content/13/7/ENEURO.0112-26.2026.full.txt",
+      "observedAt": "2026-11-06T01:55:00Z",
+      "finding": "A 2026 review reports anti-amyloid antibodies do clear brain amyloid (donanemab in 6-20 months, 76-80 percent of patients) but the clinical benefit is about five to seven months of slowed progression, with ARIA-E in 12.6 percent (lecanemab) and 24 percent (donanemab) versus about 2 percent on placebo, boxed warnings, and approval restricted to zero or one ApoE4 allele with amyloid confirmation and MRI monitoring."
+    },
+    {
+      "query": "tau alpha-synuclein aggregate clearance therapy trial failure 2026",
+      "source": "https://pharmaphorum.com/news/trial-miss-doesnt-dent-biogens-faith-alzheimers-drug",
+      "observedAt": "2026-11-06T01:58:00Z",
+      "finding": "Biogen's diranersen reduced insoluble tau aggregates at all doses in the Phase 2 CELIA trial but missed its efficacy endpoint (2026). Posdinemab was abandoned; zagotenemab, LY3372689 and semorinemab disappointed. Prasinezumab failed to show clinical effectiveness for alpha-synuclein and it is unclear whether the aggregates were removed at all."
+    },
+    {
+      "query": "systemic amyloidosis tafamidis antibody amyloid depleter clinical trial 2026",
+      "source": "https://mdedge.com/content/amyloid-depleter/antibody-duo-reduces-systemic-amyloidosis-severity",
+      "observedAt": "2026-11-06T02:00:00Z",
+      "finding": "Body-wide amyloid removal is still first-in-human: CPHPC (miridesap) plus anti-SAP antibody dezamizumab in 15 then 23 patients showed clearance from liver and some tissues, and the 2026 Nature Medicine follow-up of cliramitug (NI006-101, NCT04360434, 46 participants) reduced cardiac ATTR surrogate markers. No approved aggregate depleter for systemic amyloid and nothing at population scale."
+    },
+    {
+      "query": "open source protein aggregation clearance drug discovery platform github aggregates",
+      "source": "https://www-knowles.ch.cam.ac.uk/software",
+      "observedAt": "2026-11-06T02:03:00Z",
+      "finding": "No open-source aggregate-clearance platform found. Open code is limited to analysis, such as Amylofit for fitting protein aggregation kinetics; the ProMiDis bacterial misfolding-rescue screening platform and the 200-million cyclic peptide screen are research platforms with no public repository."
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-06722",
+  "native_project": "P-OPP-06722",
+  "source_digest": "bbbbbb03a290f55c6ce823ce70d19d9324fb408508c6daa214e715eca758579b",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build self-assembling buildings grown from living materials",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "ae94673baacf87714f62fe364ccf6ae94048b50c96cae3857536c979002c8d41"
+  },
+  "drafted_at": "2026-11-06T00:27:34.032Z",
+  "queries": [
+    "self-assembling buildings grown living materials",
+    "self-assembling buildings grown arts culture creativity"
+  ],
+  "searches": [
+    {
+      "query": "self-assembling buildings grown living materials",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:27:26.250Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=self-assembling%20buildings%20grown%20living%20materials&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "self-assembling buildings grown living materials",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:27:26.872Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aself-assembling%20AND%20all%3Abuildings%20AND%20all%3Agrown%20AND%20all%3Aliving%20AND%20all%3Amaterials&start=0&max_results=10; sha256=5fcc51ef824d9c06d8355c65a555cbabe27d323f4218781b15c39512a8c1393a; total=0; shown=0/0"
+    },
+    {
+      "query": "self-assembling buildings grown living materials",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:27:27.921Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=self-assembling%20buildings%20grown%20living%20materials&rows=10&select=DOI,title; sha256=28e7776790a8c9058784a26d5020e76f1680fd812b4c1351fdc1d3d56b212a3f; total=5506106; shown=5/10; top: 10.1007/978-3-030-92949-7_3 \"Programmable Self-Assembling Protein Nanomaterials: Current Status and Prospects\" | 10.54499/2023.04716.bd \"untitled\" | 10.1016/b978-0-08-102015-9.00008-3 \"DNA-based materials as self-assembling scaffolds for interfacing with cells\" | 10.1038/nature.2013.12743 \"Scientists print self-assembling 'living tissue'\" | 10.1007/978-3-319-71578-0_4 \"Experimental Study of Self-Assembling Systems Characterized by Directional Interactions\""
+    },
+    {
+      "query": "self-assembling buildings grown arts culture creativity",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:27:32.637Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=self-assembling%20buildings%20grown%20arts%20culture%20creativity&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "self-assembling buildings grown arts culture creativity",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:27:33.162Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aself-assembling%20AND%20all%3Abuildings%20AND%20all%3Agrown%20AND%20all%3Aarts%20AND%20all%3Aculture%20AND%20all%3Acreativity&start=0&max_results=10; sha256=f5f422ccf3b51f29dce59bcd40371b509a1012e84e628933fef3c0942c4b0b3d; total=0; shown=0/0"
+    },
+    {
+      "query": "self-assembling buildings grown arts culture creativity",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:27:34.032Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=self-assembling%20buildings%20grown%20arts%20culture%20creativity&rows=10&select=DOI,title; sha256=9a2a1929d119adabe39bb3f43fef08f989e77b5513510efb3d7e197b6a808263; total=3242128; shown=5/10; top: 10.4324/9781315231594-28 \"Culture, Creativity and Death\" | 10.1037/aca0000317.supp \"Supplemental Material for The Creative Self: Do People Distinguish Creative Self-Perceptions, Efficacy, and Personal Identity?\" | 10.1037/aca0000875.supp \"Supplemental Material for The Role of Self-Conscious Emotions in Everyday Creativity: A Daily Diary Study\" | 10.1017/cbo9781316050774.010 \"Assembling publics, assembling routines, assembling values: Journalistic self-conception and the crisis in journalism\" | 10.1037/aca0000594.supp \"Supplemental Material for Toward Equitable Creativity Self-Assessment: Measurement Invariance and Mean Differences Across Ethnicity in the…\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "self-assembling buildings grown living materials",
+      "url": "https://api.github.com/search/repositories?q=self-assembling%20buildings%20grown%20living%20materials&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=self-assembling%20buildings%20grown%20living%20materials&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:27:26.250Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "self-assembling buildings grown living materials",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aself-assembling%20AND%20all%3Abuildings%20AND%20all%3Agrown%20AND%20all%3Aliving%20AND%20all%3Amaterials&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aself-assembling%20AND%20all%3Abuildings%20AND%20all%3Agrown%20AND%20all%3Aliving%20AND%20all%3Amaterials&start=0&max_results=10",
+      "sha256": "5fcc51ef824d9c06d8355c65a555cbabe27d323f4218781b15c39512a8c1393a",
+      "bytes": 848,
+      "observedAt": "2026-11-06T00:27:26.872Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "self-assembling buildings grown living materials",
+      "url": "https://api.crossref.org/works?query=self-assembling%20buildings%20grown%20living%20materials&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=self-assembling%20buildings%20grown%20living%20materials&rows=10&select=DOI,title",
+      "sha256": "28e7776790a8c9058784a26d5020e76f1680fd812b4c1351fdc1d3d56b212a3f",
+      "bytes": 1515,
+      "observedAt": "2026-11-06T00:27:27.921Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "self-assembling buildings grown arts culture creativity",
+      "url": "https://api.github.com/search/repositories?q=self-assembling%20buildings%20grown%20arts%20culture%20creativity&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=self-assembling%20buildings%20grown%20arts%20culture%20creativity&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:27:32.637Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "self-assembling buildings grown arts culture creativity",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aself-assembling%20AND%20all%3Abuildings%20AND%20all%3Agrown%20AND%20all%3Aarts%20AND%20all%3Aculture%20AND%20all%3Acreativity&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aself-assembling%20AND%20all%3Abuildings%20AND%20all%3Agrown%20AND%20all%3Aarts%20AND%20all%3Aculture%20AND%20all%3Acreativity&start=0&max_results=10",
+      "sha256": "f5f422ccf3b51f29dce59bcd40371b509a1012e84e628933fef3c0942c4b0b3d",
+      "bytes": 880,
+      "observedAt": "2026-11-06T00:27:33.162Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "self-assembling buildings grown arts culture creativity",
+      "url": "https://api.crossref.org/works?query=self-assembling%20buildings%20grown%20arts%20culture%20creativity&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=self-assembling%20buildings%20grown%20arts%20culture%20creativity&rows=10&select=DOI,title",
+      "sha256": "9a2a1929d119adabe39bb3f43fef08f989e77b5513510efb3d7e197b6a808263",
+      "bytes": 1659,
+      "observedAt": "2026-11-06T00:27:34.032Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "eb05639e7e9fe143276bf5d5df53ca97c8590344f84908f799e1f7c220211907",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

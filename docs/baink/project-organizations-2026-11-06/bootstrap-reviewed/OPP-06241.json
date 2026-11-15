@@ -1,0 +1,17 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "project": "OPP-06241",
+  "source_digest": "2a2c036a6598a78656e94e12390cb6db9b3101c347be68623aad09a28a4b9e79",
+  "class": "neutral",
+  "prior_art": {
+    "basis": "Independent review by claude-independent-prior-art-reviewer-20261106: No space elevator exists and none can be built with available materials, so the Main KPI of 1 working space elevator is unmet. The tether is the pacing item: ISEC estimates 60 to 100 GPa is required, an order of magnitude beyond current materials (https://isec.org/space-elevator-newsletter-2018-april), while the strongest carbon nanotube fibres reported reach about 8.2 GPa quasi-static and 14 GPa dynamic on short samples (https://english.imech.ac.cn/news/rp/202406/t20240624_665537.html). Obayashi keeps a 2050 concept and says current technology is not sufficient (https://www.sciencealert.com/japanese-company-plans-to-build-a-tower-into-space-by-2050), and the only orbital demonstration, STARS-Me, moved a 6 cm climber on a 10 m tether (https://www.space.com/42041-space-elevator-test-stars-me.html). Honest limit: the binding problem is materials science at kilometre scale; tasks restating ISEC or Obayashi architectures are known work, and only verifiable progress on tether material or a new architecture is new. (open solution found: no; known answer: no; 6 project-level searches of api.github.com/search/repositories, export.arxiv.org/api/query, api.crossref.org/works; draft 8ce6d72d65c55938e030fe82542576f297d546f3e533f4fb3c46179606cafc62, source 2a2c036a6598a78656e94e12390cb6db9b3101c347be68623aad09a28a4b9e79)",
+    "searches": [
+      "api.github.com/search/repositories \"space elevator carrying cargo orbit\" url=https://api.github.com/search/repositories?q=space%20elevator%20carrying%20cargo%20orbit&per_page=10 sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "export.arxiv.org/api/query \"space elevator carrying cargo orbit\" url=https://export.arxiv.org/api/query?search_query=all%3Aspace%20AND%20all%3Aelevator%20AND%20all%3Acarrying%20AND%20all%3Acargo%20AND%20all%3Aorbit&start=0&max_results=10 sha256=666d44d223624f100b0bf8d1e57b3bfd3cebdc6c4607d67b00888a010036c538",
+      "api.crossref.org/works \"space elevator carrying cargo orbit\" url=https://api.crossref.org/works?query=space%20elevator%20carrying%20cargo%20orbit&rows=10&select=DOI,title sha256=d7b5b7ee953310db1784a8078a07a2174fc89a5a99508c4fdd34474a805a6015",
+      "api.github.com/search/repositories \"space elevator carrying exploration settlement launch\" url=https://api.github.com/search/repositories?q=space%20elevator%20carrying%20exploration%20settlement%20launch&per_page=10 sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "export.arxiv.org/api/query \"space elevator carrying exploration settlement launch\" url=https://export.arxiv.org/api/query?search_query=all%3Aspace%20AND%20all%3Aelevator%20AND%20all%3Acarrying%20AND%20all%3Aexploration%20AND%20all%3Asettlement%20AND%20all%3Alaunch&start=0&max_results=10 sha256=df1fe1385d9c41a5463a973c43e2ebf4c34d309c6495bb1733d585d6277a1d98",
+      "api.crossref.org/works \"space elevator carrying exploration settlement launch\" url=https://api.crossref.org/works?query=space%20elevator%20carrying%20exploration%20settlement%20launch&rows=10&select=DOI,title sha256=4ba142e2a46fc6b8347dd103846f6706c88eb8750ec19d90df75eb9326d73f5b"
+    ]
+  }
+}

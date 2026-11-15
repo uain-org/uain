@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "uain",
+  "release_id": "618e55ee",
+  "version": null,
+  "source_commit": "618e55ee53ce1ea17a83be0157d2f5bad33bee5c",
+  "deployed_at": "2026-11-08T14:45:37Z",
+  "prior": "c7c0b42d",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#subscription-pilot-20261108"
+  ],
+  "note": "Ready pilot4/web2/waitlist1 images and release ConfigMap match source; public pilot health passes. Deploy run42490699565 succeeded."
+}

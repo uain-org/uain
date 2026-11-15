@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T160709Z-9ae8c63c6a",
+  "version": "0.3.53",
+  "source_commit": "680af082033f3dea72f2c6d37e1f7c567e701de0",
+  "deployed_at": "2026-11-09T16:08:30Z",
+  "prior": "20261109T151127Z-3b9b81c9f2",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#kit-pay-settles-open-steps-20261109"
+  ],
+  "note": "PR #346: uain-agent 0.2.2, pay settles open sent steps first. release:promote passed; production and preview health ok; https://baink.money/uain-agent.mjs serves settleOpenSteps. /etc/baink.env unchanged."
+}

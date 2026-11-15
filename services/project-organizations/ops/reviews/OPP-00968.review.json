@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00968",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:57:30Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable solution operates autonomous mobile health clinics at any scale, let alone 1,000,000; the Main KPI is not met. A peer-reviewed review describes autonomous mobile clinics as prototypes requiring level 4 driving (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9421545/, roadmap at https://www.arxiv.org/pdf/2204.04841); the projects found are concepts or prototypes (Texas A&M telehealth van, Renault U1st Vision, Toyota e-Palette mobile clinic demo, a Nuro patent). Staffed, driver-operated mobile clinics are mature but small in number: about 2,000 in the United States (https://equityhealthj.biomedcentral.com/track/pdf/10.1186/s12939-020-1135-7) and over 500 in Zhejiang, China, each with a doctor, nurse and driver (https://www.chinadaily.com.cn/a/202507/28/WS6886cddca310ad07b5d924a5.html). Honest limit: both autonomous driving and mobile clinics are established fields; the open gap is safe autonomous operation on rural roads with remote clinical oversight, and work that only redesigns a staffed mobile clinic is not new."
+  },
+  "additionalSearches": [
+    {
+      "query": "autonomous vehicle mobile health clinic self-driving medical van deployed",
+      "source": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9421545/",
+      "observedAt": "2026-11-06T00:52:00Z",
+      "finding": "Autonomous mobile clinics are described as prototypes needing level 4 autonomy; Texas A&M van, Renault U1st Vision and Artefact Aim are prototypes or concepts. No deployment found."
+    },
+    {
+      "query": "Toyota e-Palette mobile clinic autonomous healthcare pilot",
+      "source": "https://motor-fan.jp/article/1397485/toyota_e-palette_service_02_1/",
+      "observedAt": "2026-11-06T00:52:10Z",
+      "finding": "Toyota e-Palette shown as a mobile clinic concept with a nurse aboard and remote stethoscope; no autonomous clinical deployment, dates or scale reported."
+    },
+    {
+      "query": "number of mobile health clinics worldwide United States mobile clinic count",
+      "source": "https://equityhealthj.biomedcentral.com/track/pdf/10.1186/s12939-020-1135-7",
+      "observedAt": "2026-11-06T00:52:20Z",
+      "finding": "Staffed mobile clinics number about 2,000 in the United States, serving about 7 million people a year; no global count; none autonomous."
+    },
+    {
+      "query": "China unmanned autonomous medical vehicle rural clinic robotaxi health checkup vehicle 2026",
+      "source": "https://www.chinadaily.com.cn/a/202507/28/WS6886cddca310ad07b5d924a5.html",
+      "observedAt": "2026-11-06T00:52:30Z",
+      "finding": "Zhejiang runs over 500 smart mobile clinics with ECG and lab analysers, each crewed by doctor, nurse and driver; no unmanned medical vehicles found."
+    }
+  ]
+}

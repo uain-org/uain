@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-02642",
+  "native_project": "P-OPP-02642",
+  "source_digest": "b31394c927ddf39f0becad1c646c5fe20a1fb6a1ca9d98bb8243377dc4c3c220",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build enzymes that digest any plastic in hours",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "50639eb7d3b704a3aa2ed085d80f297b84d70cf394c5b0718f2ecaf7866d7c16"
+  },
+  "drafted_at": "2026-11-06T00:23:00.837Z",
+  "queries": [
+    "enzymes digest plastic hours",
+    "enzymes digest plastic pollution waste circular"
+  ],
+  "searches": [
+    {
+      "query": "enzymes digest plastic hours",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:22:53.009Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=enzymes%20digest%20plastic%20hours&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "enzymes digest plastic hours",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:22:53.491Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aenzymes%20AND%20all%3Adigest%20AND%20all%3Aplastic%20AND%20all%3Ahours&start=0&max_results=10; sha256=d6f7d411c520f25efb720874b0d6de94d3ee8bca65ecb225e8543b171fc1bdcf; total=0; shown=0/0"
+    },
+    {
+      "query": "enzymes digest plastic hours",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:22:54.289Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=enzymes%20digest%20plastic%20hours&rows=10&select=DOI,title; sha256=39a3094dfa7cc05cd054270e4e0330a8dcda0e16b011b40c79fb653579efc359; total=680149; shown=5/10; top: 10.54499/2024.05090.bd \"untitled\" | 10.1097/00006527-199301320-00008 \"Psychosocial Issues in Plastic Surgical Nursing\" | 10.1097/01.prs.0000080582.08512.1c \"SHORTER HOURS FOR RESIDENTS\" | 10.1097/00000637-200211000-00020 \"Duty Hours: Three Generations\" | 10.1097/00006527-199101140-00004 \"Nursing Management of the Elderly Plastic Surgical Patient Continuing Education Posttest\""
+    },
+    {
+      "query": "enzymes digest plastic pollution waste circular",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:22:59.557Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=enzymes%20digest%20plastic%20pollution%20waste%20circular&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "enzymes digest plastic pollution waste circular",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:22:59.990Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aenzymes%20AND%20all%3Adigest%20AND%20all%3Aplastic%20AND%20all%3Apollution%20AND%20all%3Awaste%20AND%20all%3Acircular&start=0&max_results=10; sha256=e96a187aab16648892b299c948bf24b22007fcaea8b5465748cd07398ac9c87a; total=0; shown=0/0"
+    },
+    {
+      "query": "enzymes digest plastic pollution waste circular",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:23:00.835Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=enzymes%20digest%20plastic%20pollution%20waste%20circular&rows=10&select=DOI,title; sha256=8a2415f9296c0b4c001ba7b5161539dd0b87971400ce9c75942d820b8092e457; total=1537889; shown=5/10; top: 10.1016/b978-0-443-22069-2.00021-8 \"Resources from plastic waste for pollution abatement and circular economy\" | 10.3390/waste1020034 \"Attitudes towards Plastic Pollution: A Review and Mitigations beyond Circular Economy\" | 10.1016/b978-0-443-45248-2.00026-2 \"Plastic waste in aquatic systems: Circular economy approaches for sustainable resource transformation\" | 10.1201/9781003465447-1 \"Current Status of Plastic Pollution in Thailand\" | 10.31224/osf.io/tvxem \"Safely recovering value from plastic waste in the Global South: Opportunities and challenges for circular economy and plastic pollution mit…\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "enzymes digest plastic hours",
+      "url": "https://api.github.com/search/repositories?q=enzymes%20digest%20plastic%20hours&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=enzymes%20digest%20plastic%20hours&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:22:53.009Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "enzymes digest plastic hours",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aenzymes%20AND%20all%3Adigest%20AND%20all%3Aplastic%20AND%20all%3Ahours&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aenzymes%20AND%20all%3Adigest%20AND%20all%3Aplastic%20AND%20all%3Ahours&start=0&max_results=10",
+      "sha256": "d6f7d411c520f25efb720874b0d6de94d3ee8bca65ecb225e8543b171fc1bdcf",
+      "bytes": 790,
+      "observedAt": "2026-11-06T00:22:53.491Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "enzymes digest plastic hours",
+      "url": "https://api.crossref.org/works?query=enzymes%20digest%20plastic%20hours&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=enzymes%20digest%20plastic%20hours&rows=10&select=DOI,title",
+      "sha256": "39a3094dfa7cc05cd054270e4e0330a8dcda0e16b011b40c79fb653579efc359",
+      "bytes": 1266,
+      "observedAt": "2026-11-06T00:22:54.289Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "enzymes digest plastic pollution waste circular",
+      "url": "https://api.github.com/search/repositories?q=enzymes%20digest%20plastic%20pollution%20waste%20circular&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=enzymes%20digest%20plastic%20pollution%20waste%20circular&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:22:59.557Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "enzymes digest plastic pollution waste circular",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aenzymes%20AND%20all%3Adigest%20AND%20all%3Aplastic%20AND%20all%3Apollution%20AND%20all%3Awaste%20AND%20all%3Acircular&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aenzymes%20AND%20all%3Adigest%20AND%20all%3Aplastic%20AND%20all%3Apollution%20AND%20all%3Awaste%20AND%20all%3Acircular&start=0&max_results=10",
+      "sha256": "e96a187aab16648892b299c948bf24b22007fcaea8b5465748cd07398ac9c87a",
+      "bytes": 864,
+      "observedAt": "2026-11-06T00:22:59.990Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "enzymes digest plastic pollution waste circular",
+      "url": "https://api.crossref.org/works?query=enzymes%20digest%20plastic%20pollution%20waste%20circular&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=enzymes%20digest%20plastic%20pollution%20waste%20circular&rows=10&select=DOI,title",
+      "sha256": "8a2415f9296c0b4c001ba7b5161539dd0b87971400ce9c75942d820b8092e457",
+      "bytes": 1545,
+      "observedAt": "2026-11-06T00:23:00.835Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "b119f892039b910487ebf218c7f960d79ef7cf72bba97420665e29cdd3f4fd7a",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "strict": true, "allowJs": false, "noEmit": true },
+  "include": [
+    "src/research/**/*.ts", "src/api/research-tools.ts", "src/config.ts", "src/identity/**/*.ts", "src/evidence/**/*.ts",
+    "src/integrations/**/*.ts", "src/operations/**/*.ts",
+    "src/runtime/openrouter.ts", "src/runtime/writer.ts", "src/domain/resources.ts", "src/domain/regions.ts", "src/domain/skill-grading.ts", "src/ledger/chain.ts", "src/ledger/records.ts",
+    "src/storage/identity-file.ts"
+  ]
+}

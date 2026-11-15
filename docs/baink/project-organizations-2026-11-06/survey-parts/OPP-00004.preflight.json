@@ -1,0 +1,61 @@
+{
+ "schema": "uain-survey-preflight-v1",
+ "projectId": "OPP-00004",
+ "checkedAt": "2026-11-09T07:59:40Z",
+ "records": [
+  {
+   "kind": "doi",
+   "id": "10.1016/s0262-40791530636-9",
+   "status": "not_found",
+   "title": null
+  },
+  {
+   "kind": "doi",
+   "id": "10.3410/f.739135920.793580966",
+   "status": "resolved",
+   "title": "Faculty Opinions recommendation of Reprogramming to recover youthful epigenetic information and restore vision."
+  },
+  {
+   "kind": "doi",
+   "id": "10.3410/f.739135920.793581176",
+   "status": "resolved",
+   "title": "Faculty Opinions recommendation of Reprogramming to recover youthful epigenetic information and restore vision."
+  },
+  {
+   "kind": "doi",
+   "id": "10.3410/f.739135920.793582270",
+   "status": "resolved",
+   "title": "Faculty Opinions recommendation of Reprogramming to recover youthful epigenetic information and restore vision."
+  },
+  {
+   "kind": "doi",
+   "id": "10.1111/j.1753-4887.2010.00336.x",
+   "status": "resolved",
+   "title": "Can consuming flavonoids restore old microglia to their youthful state?"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1016/j.immuni.2019.10.003",
+   "status": "resolved",
+   "title": "Building a Human Thymus: A Pointillist View"
+  },
+  {
+   "kind": "doi",
+   "id": "10.65649/wkyx0n81",
+   "status": "resolved",
+   "title": "Restore Dogma"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1038/s41587-026-03137-w",
+   "status": "resolved",
+   "title": "Thymus renaissance poised to boost health and longevity"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1038/s41592-022-01584-2",
+   "status": "resolved",
+   "title": "A tissue-engineered artificial human thymus from human iPSCs to study T cell immunity"
+  }
+ ]
+}

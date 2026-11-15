@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "uain",
+  "release_id": "53964797",
+  "version": null,
+  "source_commit": "539647975f517b543c6255ecea2dad9d0d8214cc",
+  "deployed_at": "2026-11-08T16:45:17Z",
+  "prior": "61c0d188",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#subscription-pilot-20261108"
+  ],
+  "note": "Prior live main release read from the owning release ConfigMap before13874bc3 deployment; workflow42500666419 succeeded. Retained as actual prior lineage, not an additional activation."
+}

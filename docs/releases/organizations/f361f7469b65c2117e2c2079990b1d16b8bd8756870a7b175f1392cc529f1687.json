@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "organizations",
+  "release_id": "f361f7469b65c2117e2c2079990b1d16b8bd8756870a7b175f1392cc529f1687",
+  "version": null,
+  "source_commit": "01595b07",
+  "deployed_at": "2026-11-10T00:17:03Z",
+  "prior": "6b87679900e39926ac77452d712d8cbf121b66664e9921646e48dba1bf0eae0a",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#task-checking-stock-20261110"
+  ],
+  "note": "Overlay of 6b876799 with 9 files from main 01595b07 (verification, survey-sources, survey, prior-art, verify-survey, starter-authority, reviewer worker, two BAINK command modules) plus verifiers registry-audit and single-claim. manager-stage closure left as live (fund-rounds restages on top). Attester ran cleanly on it."
+}

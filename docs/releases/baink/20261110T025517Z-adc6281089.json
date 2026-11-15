@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T025517Z-adc6281089",
+  "version": "0.3.69",
+  "source_commit": "b139b00d70927cb3b61092886d50d838135dc2b9",
+  "deployed_at": "2026-11-10T02:55:17Z",
+  "prior": "20261110T022151Z-bc9889f5c5",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0369-release-20261110",
+    "CHANGELOG.md#baink-0361-0362-claimable-20261110"
+  ],
+  "note": "PR #436: uain-agent 0.2.10 served (newest open tasks via the server filter, no double pay, expired-unused settled), award history for non-members, pilot central reads in chunks of 32."
+}

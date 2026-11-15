@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-01682",
+  "native_project": "P-OPP-01682",
+  "source_digest": "e40625029971bb6454a92309a122550cc522ba2fd301fb24122c19ecc2a712b1",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build toilets that need no sewer, water or power",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "cc60b79e59b96a787a0b336b9115acab5dcbd598b66f70622cc54a9b803fcc2d"
+  },
+  "drafted_at": "2026-11-06T00:17:49.115Z",
+  "queries": [
+    "toilets need sewer water power",
+    "toilets need sewer oceans freshwater access"
+  ],
+  "searches": [
+    {
+      "query": "toilets need sewer water power",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:17:40.920Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=toilets%20need%20sewer%20water%20power&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "toilets need sewer water power",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:17:41.436Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Atoilets%20AND%20all%3Aneed%20AND%20all%3Asewer%20AND%20all%3Awater%20AND%20all%3Apower&start=0&max_results=10; sha256=0273f43f991bfcac34405fcc40993b0e2146f5c0f9ee1bf908a888270f46ada6; total=0; shown=0/0"
+    },
+    {
+      "query": "toilets need sewer water power",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:17:42.866Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=toilets%20need%20sewer%20water%20power&rows=10&select=DOI,title; sha256=8e12126e01188ac59fc7a0baca4a1c2a02d94c6a05fc842cf670a1e81b14a033; total=3984719; shown=5/10; top: 10.18356/33d5d427-en \"Percentages of the population using toilets connected to piped sewer systems in urban areas in Arab countries\" | 10.18356/181615e8-en \"Percentages of the population using toilets connected to piped sewer systems in rural areas in Arab countries\" | 10.64628/aa.7kvm9mwux \"Caught short: we need to talk about public toilets\" | 10.64628/aai.gu9rvtvmm \"How to steer money for drinking water and sewer upgrades to the communities that need it most\" | 10.5149/northcarolina/9781469621289.003.0003 \"Understanding Roman Sanitation from Archaeology Toilets, Sewers, and Water Systems\""
+    },
+    {
+      "query": "toilets need sewer oceans freshwater access",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:17:47.475Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=toilets%20need%20sewer%20oceans%20freshwater%20access&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "toilets need sewer oceans freshwater access",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:17:48.087Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Atoilets%20AND%20all%3Aneed%20AND%20all%3Asewer%20AND%20all%3Aoceans%20AND%20all%3Afreshwater%20AND%20all%3Aaccess&start=0&max_results=10; sha256=6362e976195656c9c488fb9f07d41d2c22747126ac9f0d679035cd470c61c5b0; total=0; shown=0/0"
+    },
+    {
+      "query": "toilets need sewer oceans freshwater access",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:17:49.113Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=toilets%20need%20sewer%20oceans%20freshwater%20access&rows=10&select=DOI,title; sha256=34d1ab85341b67ec204f581e9ecc9a9db4b9166a8907ec1d17d0ca16ace57bf5; total=972679; shown=5/10; top: 10.18356/33d5d427-en \"Percentages of the population using toilets connected to piped sewer systems in urban areas in Arab countries\" | 10.18356/181615e8-en \"Percentages of the population using toilets connected to piped sewer systems in rural areas in Arab countries\" | 10.64628/aa.7kvm9mwux \"Caught short: we need to talk about public toilets\" | 10.64628/aaj.56yfv4td4 \"We all need toilets – expert insights into what happens when there aren’t enough of them\" | 10.2139/ssrn.4090869 \"Access to Toilets and Violence Against Women\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "toilets need sewer water power",
+      "url": "https://api.github.com/search/repositories?q=toilets%20need%20sewer%20water%20power&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=toilets%20need%20sewer%20water%20power&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:17:40.920Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "toilets need sewer water power",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Atoilets%20AND%20all%3Aneed%20AND%20all%3Asewer%20AND%20all%3Awater%20AND%20all%3Apower&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Atoilets%20AND%20all%3Aneed%20AND%20all%3Asewer%20AND%20all%3Awater%20AND%20all%3Apower&start=0&max_results=10",
+      "sha256": "0273f43f991bfcac34405fcc40993b0e2146f5c0f9ee1bf908a888270f46ada6",
+      "bytes": 812,
+      "observedAt": "2026-11-06T00:17:41.436Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "toilets need sewer water power",
+      "url": "https://api.crossref.org/works?query=toilets%20need%20sewer%20water%20power&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=toilets%20need%20sewer%20water%20power&rows=10&select=DOI,title",
+      "sha256": "8e12126e01188ac59fc7a0baca4a1c2a02d94c6a05fc842cf670a1e81b14a033",
+      "bytes": 1489,
+      "observedAt": "2026-11-06T00:17:42.866Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "toilets need sewer oceans freshwater access",
+      "url": "https://api.github.com/search/repositories?q=toilets%20need%20sewer%20oceans%20freshwater%20access&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=toilets%20need%20sewer%20oceans%20freshwater%20access&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:17:47.475Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "toilets need sewer oceans freshwater access",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Atoilets%20AND%20all%3Aneed%20AND%20all%3Asewer%20AND%20all%3Aoceans%20AND%20all%3Afreshwater%20AND%20all%3Aaccess&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Atoilets%20AND%20all%3Aneed%20AND%20all%3Asewer%20AND%20all%3Aoceans%20AND%20all%3Afreshwater%20AND%20all%3Aaccess&start=0&max_results=10",
+      "sha256": "6362e976195656c9c488fb9f07d41d2c22747126ac9f0d679035cd470c61c5b0",
+      "bytes": 856,
+      "observedAt": "2026-11-06T00:17:48.087Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "toilets need sewer oceans freshwater access",
+      "url": "https://api.crossref.org/works?query=toilets%20need%20sewer%20oceans%20freshwater%20access&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=toilets%20need%20sewer%20oceans%20freshwater%20access&rows=10&select=DOI,title",
+      "sha256": "34d1ab85341b67ec204f581e9ecc9a9db4b9166a8907ec1d17d0ca16ace57bf5",
+      "bytes": 1453,
+      "observedAt": "2026-11-06T00:17:49.113Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "0dc78687ec93ed001d7cb7cade34bb84e1fa4ccc9d78bccd6c381e38ed075bf9",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

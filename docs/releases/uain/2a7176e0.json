@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "uain",
+  "release_id": "2a7176e0",
+  "version": null,
+  "source_commit": "2a7176e0a1f3a2e08b87fdb01c5163791db4cdfa",
+  "deployed_at": "2026-11-09T00:23:20Z",
+  "prior": "621b6ba2",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#release-record-ci-scope-20261109"
+  ],
+  "note": "Normal status-publication workflow42539087816 completed a full rollout because canonical release JSON was still unknown to the classifier. Retained as actual deployment history; the subsequent CI fix addresses that publication loop."
+}

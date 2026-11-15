@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01448",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No self-fertilising rice exists in farmers' fields, so the Main KPI of 150,000,000 hectares is unmet. The closest result is UC Davis rice edited by CRISPR to accumulate and exude apigenin, which promoted biofilm formation by soil nitrogen-fixing bacteria and raised grain yield under limited soil nitrogen in limited experiments (Yan et al., Plant Biotechnol J 2022, https://escholarship.org/uc/item/3xs0w2f2); a November 2025 follow-up identified 20 plant compounds for wheat (https://sciencedaily.com/releases/2025/11/251123115435.htm). Engineering nitrogenase into rice has reached expression of NifH and NifB components, not fixation; oxygen sensitivity remains the core obstacle. Legume-style nodulation in cereals is still basic science: 2026 Science and Science Advances papers on NodD signalling and the NIN regulator produced nodule-like structures that could not complete the symbiosis (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10013914/). Pivot Bio sells nitrogen-fixing microbes for maize, sorghum, wheat and cotton, but rice is not on its 2026 list and its yield claims are company data. Honest limit: microbial inoculants and the apigenin rice concept are published, so tasks that only re-run them are known answers; the open work is rice that measurably supplies its own nitrogen at field scale, and each task needs its own basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "engineered rice apigenin biofilm nitrogen fixation soil bacteria reduce fertilizer 2024 2025 study",
+      "source": "https://escholarship.org/uc/item/3xs0w2f2",
+      "observedAt": "2026-11-06T01:20:00Z",
+      "finding": "Yan et al. (Plant Biotechnol J 2022, UC Davis, Blumwald): CRISPR blocking apigenin breakdown made rice exude more apigenin, promoting nitrogen-fixing bacterial biofilms and raising grain yield under nitrogen limitation; proof of concept with limited experiments, patent applied, no farm-scale deployment found."
+    },
+    {
+      "query": "nitrogen-fixing cereal engineering status 2026 nitrogenase plants rice symbiosis field",
+      "source": "https://sciencedaily.com/releases/2025/11/251123115435.htm",
+      "observedAt": "2026-11-06T01:20:00Z",
+      "finding": "Madrid groups have expressed nitrogenase components NifH and NifB in rice, without demonstrated fixation; nitrogenase is extremely oxygen-sensitive; mitochondrial targeting is one strategy. UC Davis (November 2025) screened 2,800 plant chemicals and found 20 that promote bacterial biofilms for wheat. No field-deployed nitrogen-fixing cereal."
+    },
+    {
+      "query": "Pivot Bio nitrogen-fixing microbes rice field results acres 2026 biological nitrogen fixation cereals commercial",
+      "source": "https://www.global-agriculture.com/biologicals/pivot-bio-joins-europabio-advancing-innovation-in-sustainable-agriculture/",
+      "observedAt": "2026-11-06T01:24:00Z",
+      "finding": "An April 2026 announcement lists Pivot Bio products for corn, silage, sorghum, wheat and cotton, not rice; performance claims (up to 40 lb N per acre) are company data; no independent rice trial or 2026 acreage was found."
+    },
+    {
+      "query": "nitrogen fixing rice root nodules symbiosis engineering rice legume-like nodule 2025 2026 breakthrough",
+      "source": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10013914/",
+      "observedAt": "2026-11-06T01:25:00Z",
+      "finding": "Reviews (BMC Biology 2019, PLoS Biology 2023) confirm rice, wheat and maize do not associate with rhizobia. 2026 Science work on flavonoid-NodD binding and a Science Advances NIN-motif study produced nodule-like structures that could not complete symbiosis. No functional rice nodulation reported."
+    }
+  ]
+}

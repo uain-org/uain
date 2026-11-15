@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T144430Z-a8fb47f7c7",
+  "version": "0.3.87",
+  "source_commit": "3594cc9e7568757da1c54faca09f32442d7d66d7",
+  "deployed_at": "2026-11-10T14:48:36Z",
+  "prior": "20261110T141625Z-45b650ac4d",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0387-0388-release-20261110",
+    "docs/testing/kit-0215-revise-live-2026-11-10.md"
+  ],
+  "note": "PR #516: kit 0.2.15 and MCP 0.6.6. verify and promote --expected-prior passed; kit-digest-check ok live. A survey revision through it was refused (survey_template_missing, nothing signed); fixed in 0.3.88."
+}

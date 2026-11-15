@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00002",
+  "native_project": "P-OPP-00002",
+  "source_digest": "ab52007dbccd5b9833d4734c0277af54944afcc95deba1475d2a77569523c9d9",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Clear senescent zombie cells with a once-a-year treatment",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "25074dde1534788b09e20f840cca510bbb8eb8d3a635d6826b2391efb10ed447"
+  },
+  "drafted_at": "2026-11-06T00:04:58.703Z",
+  "queries": [
+    "clear senescent zombie cells once-a-year treatment",
+    "clear senescent zombie human health longevity"
+  ],
+  "searches": [
+    {
+      "query": "clear senescent zombie cells once-a-year treatment",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:04:51.125Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=clear%20senescent%20zombie%20cells%20once-a-year%20treatment&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "clear senescent zombie cells once-a-year treatment",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:04:51.207Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aclear%20AND%20all%3Asenescent%20AND%20all%3Azombie%20AND%20all%3Acells%20AND%20all%3Aonce-a-year%20AND%20all%3Atreatment&start=0&max_results=10; sha256=d105dff5dafb41198841043d90384ed01c590540d676e7e332b23c828103c044; total=0; shown=0/0"
+    },
+    {
+      "query": "clear senescent zombie cells once-a-year treatment",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:04:52.114Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=clear%20senescent%20zombie%20cells%20once-a-year%20treatment&rows=10&select=DOI,title; sha256=ce8d9f68fc90564bf068ed4691a839f93ab4ae891c385828a727f054f54618ff; total=4959361; shown=5/10; top: 10.1002/bies.201670910 \"To clear, or not to clear (senescent cells)? That is the question\" | 10.1038/s41577-020-0388-0 \"Driving CARs to clear senescent cells\" | 10.1038/d41573-020-00117-w \"Driving CARs to clear senescent cells\" | 10.64628/aai.rg4gqehsh \"Microwave repairs might annihilate zombie potholes once and for all\" | 10.64628/aa.kv5wegtmu \"Let’s kill the Australian identity card zombie once and for all\""
+    },
+    {
+      "query": "clear senescent zombie human health longevity",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:04:57.292Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=clear%20senescent%20zombie%20human%20health%20longevity&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "clear senescent zombie human health longevity",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:04:57.360Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aclear%20AND%20all%3Asenescent%20AND%20all%3Azombie%20AND%20all%3Ahuman%20AND%20all%3Ahealth%20AND%20all%3Alongevity&start=0&max_results=10; sha256=f8f457ae24f019d485c5f08bdc27d969edf0101d646181e79faa6b9d748099fd; total=0; shown=0/0"
+    },
+    {
+      "query": "clear senescent zombie human health longevity",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:04:58.702Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=clear%20senescent%20zombie%20human%20health%20longevity&rows=10&select=DOI,title; sha256=115db399afa55f2ba26e3995a4c8f86b144e11d636d845803ac1a7f5fa6d82ef; total=8112771; shown=5/10; top: 10.64063/3049-1681.vol.3.issue4.1 \"Hallmarks of Aging 2.0: Decoding the Molecular Drivers of Human Longevity – Senolytics Vs. Senomorphics as Strategies to Eliminate Senescen…\" | 10.1007/978-3-319-26239-0_16 \"Targeting Senescent Cells to Improve Human Health\" | 10.1007/978-3-030-87532-9_3 \"Immunesenescence and Compromised Removal of Senescent Cells: Implications for Health in Old Age\" | 10.1002/bies.201670910 \"To clear, or not to clear (senescent cells)? That is the question\" | 10.21203/rs.3.rs-10938318/v1 \"Zombie Capacity That Won't Clear: Behavioral Anchoring and Rigid Supply in Offshore Drilling, 2002–2025\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "clear senescent zombie cells once-a-year treatment",
+      "url": "https://api.github.com/search/repositories?q=clear%20senescent%20zombie%20cells%20once-a-year%20treatment&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=clear%20senescent%20zombie%20cells%20once-a-year%20treatment&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:04:51.125Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "clear senescent zombie cells once-a-year treatment",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aclear%20AND%20all%3Asenescent%20AND%20all%3Azombie%20AND%20all%3Acells%20AND%20all%3Aonce-a-year%20AND%20all%3Atreatment&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aclear%20AND%20all%3Asenescent%20AND%20all%3Azombie%20AND%20all%3Acells%20AND%20all%3Aonce-a-year%20AND%20all%3Atreatment&start=0&max_results=10",
+      "sha256": "d105dff5dafb41198841043d90384ed01c590540d676e7e332b23c828103c044",
+      "bytes": 870,
+      "observedAt": "2026-11-06T00:04:51.207Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "clear senescent zombie cells once-a-year treatment",
+      "url": "https://api.crossref.org/works?query=clear%20senescent%20zombie%20cells%20once-a-year%20treatment&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=clear%20senescent%20zombie%20cells%20once-a-year%20treatment&rows=10&select=DOI,title",
+      "sha256": "ce8d9f68fc90564bf068ed4691a839f93ab4ae891c385828a727f054f54618ff",
+      "bytes": 1237,
+      "observedAt": "2026-11-06T00:04:52.114Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "clear senescent zombie human health longevity",
+      "url": "https://api.github.com/search/repositories?q=clear%20senescent%20zombie%20human%20health%20longevity&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=clear%20senescent%20zombie%20human%20health%20longevity&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:04:57.292Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "clear senescent zombie human health longevity",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aclear%20AND%20all%3Asenescent%20AND%20all%3Azombie%20AND%20all%3Ahuman%20AND%20all%3Ahealth%20AND%20all%3Alongevity&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aclear%20AND%20all%3Asenescent%20AND%20all%3Azombie%20AND%20all%3Ahuman%20AND%20all%3Ahealth%20AND%20all%3Alongevity&start=0&max_results=10",
+      "sha256": "f8f457ae24f019d485c5f08bdc27d969edf0101d646181e79faa6b9d748099fd",
+      "bytes": 860,
+      "observedAt": "2026-11-06T00:04:57.360Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "clear senescent zombie human health longevity",
+      "url": "https://api.crossref.org/works?query=clear%20senescent%20zombie%20human%20health%20longevity&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=clear%20senescent%20zombie%20human%20health%20longevity&rows=10&select=DOI,title",
+      "sha256": "115db399afa55f2ba26e3995a4c8f86b144e11d636d845803ac1a7f5fa6d82ef",
+      "bytes": 1509,
+      "observedAt": "2026-11-06T00:04:58.702Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "1c59eca3ec18ed868774b1fa870b06bb98e97802d14dd7a7eb17dd18407eaf23",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

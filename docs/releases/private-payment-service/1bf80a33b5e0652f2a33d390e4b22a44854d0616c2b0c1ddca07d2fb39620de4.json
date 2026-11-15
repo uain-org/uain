@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "component": "private-payment-service",
+  "release_id": "1bf80a33b5e0652f2a33d390e4b22a44854d0616c2b0c1ddca07d2fb39620de4",
+  "version": null,
+  "source_commit": "7cf1e52a",
+  "deployed_at": "2026-11-10T00:07:26Z",
+  "prior": "d07c23b2b40767fc55248fcd202a87354c63c38b33e4cccd10975789ae5db4c1",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#payments-fence-retry-release-20261110",
+    "CHANGELOG.md#release-gap-closure-20261110",
+    "CHANGELOG.md#custody-window-live-20261115"
+  ],
+  "note": "Recorded from read-only host evidence (policy source, adoption.json, installer backup private-payment-release-20261110T000726Z). Service 1e6f09c3, dispatcher 2b97f021; health ready at height 1416782. Only native-pilot-sequence.mjs came from 7cf1e52a; three source files keep bytes older than main (native-payments ad952b08, private-state df6b54ab, native-financial-command 2f2b7f55)."
+}

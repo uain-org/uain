@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00246",
+  "native_project": "P-OPP-00246",
+  "source_digest": "114323c7d3eb01396d2c6138e5c9d07ff17dab1a8780e2fc5e8f1a27e353229d",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Develop needle-free patch vaccines",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "368d3a3adc8ceb7b94d031702a2bf14173f61c48b07b65ea75bc00a69f106781"
+  },
+  "drafted_at": "2026-11-06T00:09:34.607Z",
+  "queries": [
+    "develop needle-free patch vaccines",
+    "develop needle-free patch infectious disease pandemics"
+  ],
+  "searches": [
+    {
+      "query": "develop needle-free patch vaccines",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:09:26.745Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=develop%20needle-free%20patch%20vaccines&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "develop needle-free patch vaccines",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:09:27.228Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Adevelop%20AND%20all%3Aneedle-free%20AND%20all%3Apatch%20AND%20all%3Avaccines&start=0&max_results=10; sha256=7ba82ec6d5487726dd95fcc3dab17a71e24dfafb83d02c445f7c13d0ce51b2fb; total=0; shown=0/0"
+    },
+    {
+      "query": "develop needle-free patch vaccines",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:09:28.280Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=develop%20needle-free%20patch%20vaccines&rows=10&select=DOI,title; sha256=f0c9c92afe23ac2c4277664acc649d46a55efb67e2cb5086cbd3052bb76cda89; total=1180688; shown=5/10; top: 10.1021/acsabm.5c01361.s001 \"Needle-Free Transdermal Patch for Influenza Vaccination\" | 10.1385/1-59745-168-1:83 \"Needle-Free Injection of DNA Vaccines: A Brief Overview and Methodology\" | 10.1201/9781439834404-39 \"Mucosal Immunization and Needle-Free Injection Devices\" | 10.3109/9781420060744-43 \"Mucosal Immunization and Needle-Free Injection Devices\" | 10.1586/14760584.6.5.809 \"Transcutaneous immunization with heat-labile enterotoxin: development of a needle-free vaccine patch\""
+    },
+    {
+      "query": "develop needle-free patch infectious disease pandemics",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:09:33.253Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=develop%20needle-free%20patch%20infectious%20disease%20pandemics&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "develop needle-free patch infectious disease pandemics",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:09:33.728Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Adevelop%20AND%20all%3Aneedle-free%20AND%20all%3Apatch%20AND%20all%3Ainfectious%20AND%20all%3Adisease%20AND%20all%3Apandemics&start=0&max_results=10; sha256=db8da0ab7e48e959bed8d13a5399cd2343ffec2eb4c6a9bbe358dccac8a72651; total=0; shown=0/0"
+    },
+    {
+      "query": "develop needle-free patch infectious disease pandemics",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:09:34.606Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=develop%20needle-free%20patch%20infectious%20disease%20pandemics&rows=10&select=DOI,title; sha256=68892121dae4c0b3e17a0bfe56a071475be93f6352233b4e11838e2a1ea8b884; total=3981571; shown=5/10; top: 10.5040/9781666999662.ch-007 \"Inoculation And Infectious Disease\" | 10.1021/acsabm.5c01361.s001 \"Needle-Free Transdermal Patch for Influenza Vaccination\" | 10.5771/9780739180273-155 \"7 Inoculation and Infectious Disease\" | 10.52750/480504 \"The Stories We Tell: Infectious Disease and Film History\" | 10.1093/oso/9780192863843.003.0003 \"The Three Great Pandemics of Plague\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "develop needle-free patch vaccines",
+      "url": "https://api.github.com/search/repositories?q=develop%20needle-free%20patch%20vaccines&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=develop%20needle-free%20patch%20vaccines&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:09:26.745Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "develop needle-free patch vaccines",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Adevelop%20AND%20all%3Aneedle-free%20AND%20all%3Apatch%20AND%20all%3Avaccines&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Adevelop%20AND%20all%3Aneedle-free%20AND%20all%3Apatch%20AND%20all%3Avaccines&start=0&max_results=10",
+      "sha256": "7ba82ec6d5487726dd95fcc3dab17a71e24dfafb83d02c445f7c13d0ce51b2fb",
+      "bytes": 802,
+      "observedAt": "2026-11-06T00:09:27.228Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "develop needle-free patch vaccines",
+      "url": "https://api.crossref.org/works?query=develop%20needle-free%20patch%20vaccines&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=develop%20needle-free%20patch%20vaccines&rows=10&select=DOI,title",
+      "sha256": "f0c9c92afe23ac2c4277664acc649d46a55efb67e2cb5086cbd3052bb76cda89",
+      "bytes": 1439,
+      "observedAt": "2026-11-06T00:09:28.280Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "develop needle-free patch infectious disease pandemics",
+      "url": "https://api.github.com/search/repositories?q=develop%20needle-free%20patch%20infectious%20disease%20pandemics&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=develop%20needle-free%20patch%20infectious%20disease%20pandemics&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:09:33.253Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "develop needle-free patch infectious disease pandemics",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Adevelop%20AND%20all%3Aneedle-free%20AND%20all%3Apatch%20AND%20all%3Ainfectious%20AND%20all%3Adisease%20AND%20all%3Apandemics&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Adevelop%20AND%20all%3Aneedle-free%20AND%20all%3Apatch%20AND%20all%3Ainfectious%20AND%20all%3Adisease%20AND%20all%3Apandemics&start=0&max_results=10",
+      "sha256": "db8da0ab7e48e959bed8d13a5399cd2343ffec2eb4c6a9bbe358dccac8a72651",
+      "bytes": 878,
+      "observedAt": "2026-11-06T00:09:33.728Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "develop needle-free patch infectious disease pandemics",
+      "url": "https://api.crossref.org/works?query=develop%20needle-free%20patch%20infectious%20disease%20pandemics&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=develop%20needle-free%20patch%20infectious%20disease%20pandemics&rows=10&select=DOI,title",
+      "sha256": "68892121dae4c0b3e17a0bfe56a071475be93f6352233b4e11838e2a1ea8b884",
+      "bytes": 1168,
+      "observedAt": "2026-11-06T00:09:34.606Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "5d1e46c20e8569d61db3a12500d1da6d86c6f64b5c99037944a180e1c05971f2",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-04801",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "neutral",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No AI storyteller has been shown to grow toddlers' vocabulary, so the Main KPI of 150,000,000 toddlers with an AI storytelling companion is unmet in its intended sense. The controlled evidence covers older children only: an RCT of 67 children aged 5 to 8 learning English found LLM-guided dialogic reading gave vocabulary gains comparable to parent-led reading (https://doi.org/10.1111/bjet.13615), and Mathemyths found 35 children aged 4 to 8 learned mathematical language comparably with an LLM or a human storytelling partner (https://doi.org/10.1145/3613904.3642647). For under-threes, the proven route is human: a global meta-analysis of parenting interventions in the first three years shows gains in child development (https://europepmc.org/article/MED/33970913), and reviews of screen exposure in young children raise cognitive concerns (https://europepmc.org/article/MED/36059724). Open-source AI storyteller apps exist on GitHub (TaleWeaver for ages 4 to 10, GabbyGarden) with no outcome evaluation. Class neutral: potential language benefit, but real risk for under-threes from screen and AI exposure, data collection and displacing caregiver talk. Honest limit: building an LLM storyteller is a known answer and is not new work; the open, checkable work is a safe, voice-first, play-based design for children under three with a measured vocabulary effect against caregiver-led reading."
+  },
+  "additionalSearches": [
+    {
+      "query": "AI storytelling conversational agent children vocabulary learning randomized (2024 onward)",
+      "source": "https://api.openalex.org/works?search=AI%20storytelling%20conversational%20agent%20children%20vocabulary%20learning%20randomized&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:09Z",
+      "finding": "521 works: Mathemyths LLM co-creative storytelling (CHI 2024, 108 citations), parent-led vs AI-guided dialogic reading RCT (BJET 2025), Colin and TaleBot co-creation systems. Evidence is for ages 4 to 8."
+    },
+    {
+      "query": "toddlers screen media language development AI voice assistant under 3 (2024 onward)",
+      "source": "https://api.openalex.org/works?search=toddlers%20screen%20media%20language%20development%20AI%20voice%20assistant%20under%203&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:10Z",
+      "finding": "210 works: developmentally aligned AI framework (2025), child development in the AI era, a 2026 briefing on screen and AI use by children. No trial of an AI storyteller with under-threes."
+    },
+    {
+      "query": "ai storyteller kids (GitHub repositories)",
+      "source": "https://api.github.com/search/repositories?q=ai%20storyteller%20kids&sort=stars&per_page=8",
+      "observedAt": "2026-11-06T01:18:12Z",
+      "finding": "25 repositories: GabbyGarden (4 stars), TaleWeaver voice-first storytelling for ages 4-10, an ESP32 picture-book storyteller. Building the app is a known answer; none reports vocabulary outcomes."
+    },
+    {
+      "query": "dialogic reading intervention toddlers vocabulary meta-analysis",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=dialogic%20reading%20intervention%20toddlers%20vocabulary%20meta-analysis&format=json&pageSize=8&sort=CITED%20desc",
+      "observedAt": "2026-11-06T01:18:15Z",
+      "finding": "38 records led by a global meta-analysis of parenting interventions in the first three years (2021, 437 citations), parent training and child language (2019), and screen exposure effects on young children (2022). Human-delivered interventions are the evidence base."
+    },
+    {
+      "query": "Parent-led vs AI-guided dialogic reading RCT",
+      "source": "https://api.openalex.org/works/doi:10.1111/bjet.13615",
+      "observedAt": "2026-11-06T01:20:30Z",
+      "finding": "67 EFL children aged 5-8 randomised to AI-led or parent-led dialogic reading: AI better on comprehension, comparable vocabulary and retelling gains, immediate and delayed."
+    }
+  ]
+}

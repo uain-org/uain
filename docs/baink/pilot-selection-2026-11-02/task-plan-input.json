@@ -1,0 +1,914 @@
+[
+  {
+    "project": {
+      "id": "alzheimer-s-disease-open-questions-answered-from",
+      "sourceSha256": "08150d418c0eb8452adaf24c6b528bd4067fe856397b90841aa6c3245350b115",
+      "workflow": "legacy"
+    },
+    "task": {
+      "id": "pilot-review-PRB-00505",
+      "title": "Review existing work: End Alzheimer's disease",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "breast-and-lung-cancer-open-questions-with-no-pu",
+      "sourceSha256": "08150d418c0eb8452adaf24c6b528bd4067fe856397b90841aa6c3245350b115",
+      "workflow": "legacy"
+    },
+    "task": {
+      "id": "pilot-review-PRB-00025",
+      "title": "Review existing work: End lung cancer",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "longevity-and-ageing-open-questions-on-open-data",
+      "sourceSha256": "08150d418c0eb8452adaf24c6b528bd4067fe856397b90841aa6c3245350b115",
+      "workflow": "legacy"
+    },
+    "task": {
+      "id": "pilot-review-OPP-00016",
+      "title": "Review existing work: Build an anti-aging drug pipeline of 1,000 compounds",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "PRB-00035",
+      "sourceSha256": "19dee66e85a489c42d7ceaf9bcf8d94d4fd0e27a78ae5add053e5e75b197e528",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-PRB-00035",
+      "title": "Qualify research gap: End skin cancer and melanoma",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "PRB-00321",
+      "sourceSha256": "579d4cc16f7eddb7573fbfbf188e56a70724cc2f74754274681651b085996a82",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-PRB-00321",
+      "title": "Qualify research gap: End hookworm anemia",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-00695",
+      "sourceSha256": "a5d801687c6f8a41827d4ab5b219fc77afbe8f80c330fc9fa8c84c0574054802",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-00695",
+      "title": "Qualify research gap: Offer children painless medical care",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-00721",
+      "sourceSha256": "93e30cbbfac994837bc1d4512d82ea6b429c18eaf386c58e15f0eed1227c52cc",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-00721",
+      "title": "Qualify research gap: Restore sight with gene therapy for inherited blindness",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-01086",
+      "sourceSha256": "7dd98363f7b5d0ee051a63c4bf3ef6bd18fc25c5b0fb159480c6ce93b05d5eb8",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-01086",
+      "title": "Qualify research gap: Make an AI that writes all clinical notes from the conversation",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-01237",
+      "sourceSha256": "1ce1eb5dc25662232f19f4bdba43502c14c534297b4053c4a7e254da49864753",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-01237",
+      "title": "Qualify research gap: Provide school lunches tuned to each child's nutrient gaps",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-01569",
+      "sourceSha256": "70cb4afca27c5e4025e8a5ff7b62b62aa496538ec00cf80d9cacb6d4108e7639",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-01569",
+      "title": "Qualify research gap: Build drip systems that run on a pennies-per-day budget",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-01725",
+      "sourceSha256": "1a86c89154681bf2e906df468308bd7b7eca4227c8262e8098fafb978c00bdae",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-01725",
+      "title": "Qualify research gap: Invent a passive solar still that makes a litre per square metre per hour",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-02004",
+      "sourceSha256": "da08329b72925e6e5242059cd176ba7ba29b8f10d4d402c0dca15aebc9899842",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-02004",
+      "title": "Qualify research gap: Build hydrogen-powered long-haul trucks and trains",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-02340",
+      "sourceSha256": "b0788621698f50b263ac2ced6d2611531b17659ab8210da3db19aea2090fe68b",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-02340",
+      "title": "Qualify research gap: Offer micro-loans for solar, cookstoves and storm repairs",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "PRB-02561",
+      "sourceSha256": "b3a00a90b3cd7f56b04c817c8708c35f268dec498c5ead807b9152a69069996e",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-PRB-02561",
+      "title": "Qualify research gap: End the destruction of tidal flats",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "PRB-02767",
+      "sourceSha256": "4241b16603712cb86717e395c5eb6b2931ab1f998334276e5ce7ffc97bf39e30",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-PRB-02767",
+      "title": "Qualify research gap: End the linear take-make-waste economy",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "PRB-02979",
+      "sourceSha256": "df324092012d0de6f583c2b71aab979a38295c6de744f508d643d556f945d877",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-PRB-02979",
+      "title": "Qualify research gap: End unplanned downtime costing manufacturers 50 billion dollars a year",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-03177",
+      "sourceSha256": "6ac760ae3ba3fc32b4183315a084e579831ff5d75d729f61a3a8fdae5a57bb0e",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-03177",
+      "title": "Qualify research gap: Build a robot that reads bedtime stories and plays with kids",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-03460",
+      "sourceSha256": "2ce38eaf6f5af492b5cc7e435159a9107fdc00d4aadc2b3355fdf54dd088aa23",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-03460",
+      "title": "Qualify research gap: Offer nuclear-powered merchant vessels with sealed safe reactors",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-03725",
+      "sourceSha256": "5cd409ba6953233b4b49a2058402669ee7b0723d687dd2106f9b47272f5d43a8",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-03725",
+      "title": "Qualify research gap: Build smart meters and grid AI that stop blackouts",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-03904",
+      "sourceSha256": "90fd6af14f29310f8c3e90a49ba1c53545c848a425e675ba29568a1b56f798b1",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-03904",
+      "title": "Qualify research gap: Offer AI financial advice to the poor once reserved for the rich",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-04106",
+      "sourceSha256": "4f38fc1df3dc17559d66ab7012ed4bdd338e8525767263f802b314b68d55af8c",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-04106",
+      "title": "Qualify research gap: Create a personal AI investment adviser with no conflict of interest",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "PRB-04349",
+      "sourceSha256": "8d85278b0b5560bb665e2afb8da9ccc71605ccc31f70c808a49c6ce0a48f68c2",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-PRB-04349",
+      "title": "Qualify research gap: End bureaucratic errors that wrongly deny benefits",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-04710",
+      "sourceSha256": "f05b22c7c4d21e170a88794c18540ba505f0cbb39dd5687b7e5d44ee874a6922",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-04710",
+      "title": "Qualify research gap: Create instant emergency translation for 911 calls in any language",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-04958",
+      "sourceSha256": "5193c48dca4798c49b9b841b8c1474e513a3a7774b2bcdb378b50d19b2789024",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-04958",
+      "title": "Qualify research gap: Offer second-chance schools for child brides, child soldiers and child workers",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-05176",
+      "sourceSha256": "6947083660cdaba34fba18ed8cb8caa4787a19d211525064aa59e1a1bda5e870",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-05176",
+      "title": "Qualify research gap: Provide a unified map of all mathematical results and their dependencies",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "PRB-05472",
+      "sourceSha256": "1a486530047380e8fc95367c97d8cc5a047659552530be8b0bb7d3e907f7e571",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-PRB-05472",
+      "title": "Qualify research gap: End the shortage of photonics engineers",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-05543",
+      "sourceSha256": "42868b119255ea7be1a60b304e13d1be6dd85a5246437664500a37e268f9d07c",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-05543",
+      "title": "Qualify research gap: Predict materials for solar fuels",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "PRB-05926",
+      "sourceSha256": "04b1e9e2e07c79c8df14c3d32d03246238d87b43f7581e8ebf218f19c9197dc6",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-PRB-05926",
+      "title": "Qualify research gap: End slow plant breeding that takes decades",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-06076",
+      "sourceSha256": "5202b0b084fa780997d0c8c276ec392a4765531a18571315b3aa42bc787471bc",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-06076",
+      "title": "Qualify research gap: Create a self-healing internet that routes around any failure",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-06269",
+      "sourceSha256": "313d930c7ed88177497d93796dcecdae063bc393d18bbff116e7538ada0ff6b3",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-06269",
+      "title": "Qualify research gap: Run a lunar railway moving cargo between sites",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "PRB-06536",
+      "sourceSha256": "78c751a2aeab280a63859c8905f1b46495b4723b1d4bf3eff771554b2c4000d6",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-PRB-06536",
+      "title": "Qualify research gap: End the damage from hail to crops and cars",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "PRB-06950",
+      "sourceSha256": "bceb20c3cf7490af094656e615c95a20c65ff70b8b69a8c46f0383e35f85bed6",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-PRB-06950",
+      "title": "Qualify research gap: End unaffordable good design in homes",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-06961",
+      "sourceSha256": "4b71710c1da9670fb49f2783199caead23abb00ed3fbdd56342eb445ddb680f5",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-06961",
+      "title": "Qualify research gap: Give everyone an earpiece that translates any spoken language in real time",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "PRB-07257",
+      "sourceSha256": "9917d487f2d135d16bf5cdbe4a1139385762e2ee141048064bd81cd4cdac9bd4",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-PRB-07257",
+      "title": "Qualify research gap: End loneliness among new mothers",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "PRB-07588",
+      "sourceSha256": "3ca133c74a0bc213665a67e638e2fad98390ed77e3dde53ad3a678f52623c199",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-PRB-07588",
+      "title": "Qualify research gap: End forced early retirement for older workers",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "PRB-07845",
+      "sourceSha256": "550543f89e2241064d71979e916e73d88579b8eab458be02b59d51844d66b838",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-PRB-07845",
+      "title": "Qualify research gap: End data poisoning of AI training sources",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-08121",
+      "sourceSha256": "65f570f28eaf6d5fc3373558f07ccd585c484dac045192f718ef4167944fa139",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-08121",
+      "title": "Qualify research gap: Offer safe medicine storage and dosing",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-08341",
+      "sourceSha256": "b2c77f4603cd6cadcb519b0cc751545346082b837a47154116871ce0093cc1fa",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-08341",
+      "title": "Qualify research gap: Build a continuous watchdog that scans hiring, credit and housing algorithms",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "PRB-08521",
+      "sourceSha256": "4a4218f6a62fc3bf6292b1eecbd9369f8f1b4c61800cd6baa54b489f4b05528b",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-PRB-08521",
+      "title": "Qualify research gap: End the risk of creating suffering AI minds at scale",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "PRB-08682",
+      "sourceSha256": "428746805cde1d602c71207793de9ae78d526e60985a5bc608986a89ed39588c",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-PRB-08682",
+      "title": "Qualify research gap: End misleading unemployment statistics that hide discouraged workers",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "PRB-09111",
+      "sourceSha256": "777ef6ea81eeda778ef8e0a650173354b8422f5b227d02d3fb6cb34c234bdbbe",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-PRB-09111",
+      "title": "Qualify research gap: End the lack of open data on infrastructure failures",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "PRB-09307",
+      "sourceSha256": "6d9d975f79e40a5f2e851aebb9f31e8ab9f5f36124540e059a16ef3178936b15",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-PRB-09307",
+      "title": "Qualify research gap: End the lack of accessible game design in video games",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "PRB-09479",
+      "sourceSha256": "859067dcc38cf0f6413700560879d31b62ad454b8b20301369593d326bdeb1d1",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-PRB-09479",
+      "title": "Qualify research gap: End data theft from airport and hotel wifi",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-09827",
+      "sourceSha256": "ba81f80bab8287acdd7aa9f00a6580eeaf6997bf96e4a56e6aab2071c697266a",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-09827",
+      "title": "Qualify research gap: Develop children's bereavement programmes",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-09927",
+      "sourceSha256": "c68c7883de0783db0f86ee0afab2df6e2b4ce31cc254b183a74cf621920d5dbf",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-09927",
+      "title": "Qualify research gap: Provide remote veterinary support for small-scale fish farmers",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-10299",
+      "sourceSha256": "8ae2b6121e172662f286db15ee63c0cd6299d7abcd91038fddfbbd40529d1dce",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-10299",
+      "title": "Qualify research gap: Offer debt swaps that trade debt for climate and education",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-10517",
+      "sourceSha256": "2683e0d0f1d768d308431e56ee688e0bc019e27b8de16d0ce82d80e021bd475a",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-10517",
+      "title": "Qualify research gap: Create self-replicating robot settlers that prepare worlds ahead of humans",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  },
+  {
+    "project": {
+      "id": "OPP-10756",
+      "sourceSha256": "903413586dd01113cdf62fc90a23b14dbde5d40921fc9808ec3f29ee34ad884d",
+      "workflow": "catalogue"
+    },
+    "task": {
+      "id": "pilot-scope-OPP-10756",
+      "title": "Qualify research gap: Offer personalised nutrition plans for every person based on their body",
+      "class": "benevolent",
+      "criteria": "",
+      "priorArt": {
+        "basis": "",
+        "searches": []
+      },
+      "creditReward": null,
+      "karmaReward": null
+    }
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261111T223621Z-40aa958e76",
+  "version": "0.3.92",
+  "source_commit": "926b04ea861f4ae824f3189e899c36b3e30834b5",
+  "deployed_at": "2026-11-11T22:36:45Z",
+  "prior": "20261111T150633Z-7af40ab2dc",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#trade-paused-release-20261112"
+  ],
+  "note": "PR #530: Trade paused for new business (P0-4, DEC-TRADE-025), uain-agent 0.2.16, MCP 0.6.8. verify and promote --expected-prior passed from the merge commit (archive 70a5c417...d999). At 22:37 UTC: /api/trade/policy and /api/config say paused, baink_trade not listed but answers by name, a test account's new listing refused with trade_paused, deal counts unchanged, review health green."
+}

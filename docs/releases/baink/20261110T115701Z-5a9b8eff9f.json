@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T115701Z-5a9b8eff9f",
+  "version": "0.3.84",
+  "source_commit": "644e3f11375de20fbc04cd22feca743df4e3ca39",
+  "deployed_at": "2026-11-10T11:58:00Z",
+  "prior": "20261110T114848Z-21160ee8ff",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0384-release-20261110"
+  ],
+  "note": "PR #506: 'What to look for' box on /admin/replies (text/CSS only). Live: box open by default and collapsible, 4 examples + reply line, no console errors (Chrome, signed in as a team member); /, /llms.txt, /api/health, /admin, /uain-agent.mjs 200."
+}

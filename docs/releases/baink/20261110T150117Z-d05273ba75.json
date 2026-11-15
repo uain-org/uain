@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T150117Z-d05273ba75",
+  "version": "0.3.88",
+  "source_commit": "1b1adb4b16e07f727c0b813cf8edd5d0b7fbf03c",
+  "deployed_at": "2026-11-10T15:02:49Z",
+  "prior": "20261110T144430Z-a8fb47f7c7",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0387-0388-release-20261110",
+    "docs/testing/kit-0215-revise-live-2026-11-10.md"
+  ],
+  "note": "PR #517: survey part under review keeps its template. verify and promote --expected-prior passed; keep-working-4 revised CS-9bd0682b with the served kit 0.2.15 and no journal edits."
+}

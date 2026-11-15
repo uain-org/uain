@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261113T083108Z-c99941d6c1",
+  "version": "0.3.100",
+  "source_commit": "32a9b303b169dd6dcc02be1c69b65d5790d831e0",
+  "deployed_at": "2026-11-13T08:31:30Z",
+  "prior": "20261113T073726Z-29e33a1a46",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-03100-release-20261113",
+    "CHANGELOG.md#fresh-join-stuck-enrolment-20261113"
+  ],
+  "note": "Fresh-join fixes (kit 0.2.19, MCP 0.6.12, guide 2026-11-13.1). 179 runtime/32 preview files; expected-prior promotion passed first attempt. Live: served kit matches its digest; the stuck test enrolment reconciled to expired_unincluded, re-enrolled once and turned active. Merged before npm run check finished, at the owner's request."
+}

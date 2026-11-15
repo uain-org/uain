@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01685",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable system drills a low-cost water well by robot in a day, so the Main KPI of 50,000,000 robot-drilled wells is unmet. Low-cost drilling exists but is manual or conventional: bailer and PAT rigs cut costs sharply in soft formations, with equipment-only costs near US$300 for a 30 m handpump borehole in Cambodia, while sub-Saharan borehole costs range from US$2,000 to 500,000 (Danert et al., https://horizon.documentation.ird.fr/exl-doc/pleins_textes/divers16-07/010048825.pdf; https://nora.nerc.ac.uk/id/eprint/9185/1/CEB%20Danert%20Draft%204%20UNESCO%2022%20April09.pdf), and manual drilling is limited to under about 40 m in alluvial or soft rock. Autonomy is advancing elsewhere: H&P and NOV deployed robotic pipe handling on a Permian oil rig in September 2025 and Nabors retrofits hands-free drill floors (https://drillingcontractor.org/hp-deploys-flexrobotics-on-permian-rig-74310), but these are large oil rigs. Borobotics' Grabowski is a compact autonomous electric drilling robot for 250 m geothermal boreholes, slower than diesel rigs and with undisclosed speed and cost (https://www.heise.de/en/news/Fully-autonomous-drilling-robot-drills-efficiently-and-cost-effectively-10250703.html?view=print). Honest limit: drilling automation and low-cost manual methods are known, so tasks that only re-implement pipe-handling robotics or PAT-rig designs are known answers; the open work is an affordable autonomous rig that sites and completes a sanitary water well in hard rock in a day, and each task needs its own basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "autonomous robotic water well drilling rig low-cost borehole one day",
+      "source": "https://www.heise.de/en/news/Fully-autonomous-drilling-robot-drills-efficiently-and-cost-effectively-10250703.html?view=print",
+      "observedAt": "2026-11-06T01:27:00Z",
+      "finding": "No autonomous robot that drills a low-cost water well in a day was found. Borobotics (ZHAW spin-out) has a compact electric autonomous drilling robot for geothermal boreholes; a Texas portable rig costs about US$2,000 for 100 ft; UCM bailer hand-drilling cuts costs up to 95 percent but is human-powered."
+    },
+    {
+      "query": "manual drilling low-cost borehole cost per well Africa PAT rig days to drill",
+      "source": "https://horizon.documentation.ird.fr/exl-doc/pleins_textes/divers16-07/010048825.pdf",
+      "observedAt": "2026-11-06T01:27:00Z",
+      "finding": "Danert et al.: borehole costs in sub-Saharan Africa range US$2,000 to 500,000 (US$120 to 1,271 per metre); manual drilling suits under 40 m in alluvial or soft formations; ACF-PAT 201 is limited to unconsolidated sediments; about US$300 equipment-only for a 30 m borehole in Cambodia; contractor borehole in Haiti US$8,500. No reliable days-per-well figure."
+    },
+    {
+      "query": "autonomous drilling rig automation oil gas mining water well industry 2025 robotic pipe handling",
+      "source": "https://drillingcontractor.org/hp-deploys-flexrobotics-on-permian-rig-74310",
+      "observedAt": "2026-11-06T01:27:00Z",
+      "finding": "H&P and NOV deployed FlexRobotics pipe handling on a Permian rig in September 2025, the first Lower-48 rig with an industrial robotics package; Nabors RZR retrofits fully hands-free pipe handling; Canrig sells an electric roughneck. These are oil and gas rigs; no water-well or low-cost application found."
+    },
+    {
+      "query": "Borobotics Grabowski autonomous drilling robot drilling speed metres per day cost borehole 2025 2026",
+      "source": "https://thenextweb.com/news/borobotics-autonomous-robot-worm-geothermal-energy-startup",
+      "observedAt": "2026-11-06T01:32:00Z",
+      "finding": "Grabowski drills to about 250 m (one source says 500 m) for geothermal heat pumps, is slower than diesel rigs, and penetration rate and cost per metre are not disclosed; Borobotics was founded in July 2023 and is early stage, with an Alberta demonstration funded at about 4.4 million."
+    }
+  ]
+}

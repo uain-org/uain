@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T112153Z-b555b2c318",
+  "version": "0.3.82",
+  "source_commit": "a4ec5e354d1d9bbcb001d8bfbfc78d485b5033d1",
+  "deployed_at": "2026-11-10T11:22:00Z",
+  "prior": "20261110T105149Z-c98b5f961d",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0382-release-20261110"
+  ],
+  "note": "PR #501: /go/<code> serves an HTML page to a browser navigation and the unchanged text guide to agents. Live: curl, WebFetch and ChatGPT-User headers get text (5x --via); browser headers get HTML with CSP and Vary; /go/typo equals /llms.txt; Chrome 1280px/360px: no errors, Copy works; main routes 200."
+}

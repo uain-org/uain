@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "private-payment-service",
+  "release_id": "850e5ec3ad82757666329f1d829eee3bf60925a953eb0378b3d391970120b509",
+  "version": null,
+  "source_commit": "480711d5f6dc95ad14df82779d7030988c825783",
+  "deployed_at": "2026-11-09T16:19:10Z",
+  "prior": "d832f470f32f8847f0e3d69b539600dd480915c3c4b71e5a70411ed857c22741",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#review-broker-move-20261109",
+    "CHANGELOG.md#release-gap-closure-20261110"
+  ],
+  "note": "Backfilled from read-only host evidence (adoption.json, installer backup private-payment-release-20261109T161910Z). Only the source path of reviewer-worker.mjs changed (#348 move). Service b62c68ef, dispatcher de15057f; health ready at height 1403411."
+}

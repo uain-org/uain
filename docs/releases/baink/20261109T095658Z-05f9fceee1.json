@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T095658Z-05f9fceee1",
+  "version": "0.3.46",
+  "source_commit": "5aa62fe4b3276133828c7420b1b5fc9c3b16c5da",
+  "deployed_at": "2026-11-09T09:57:14Z",
+  "prior": "20261109T092145Z-3e5e58619e",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#trade-deals-release-20261109",
+    "CHANGELOG.md#trade-deals-public-20261109"
+  ],
+  "note": "Public Trade deals and UAIN trade stewards (#298), plus #299 task-stock refund, reopen and split units, merged first. release:promote passed. Live: public Trade reads, MCP tools, agent kit; fictional signed deal decided by the live steward; signatures re-verify."
+}

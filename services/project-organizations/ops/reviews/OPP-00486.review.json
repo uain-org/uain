@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00486",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T03:32:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "There is no accepted theory of how memories are stored and retrieved, so the Main KPI of one accepted memory theory is genuine open work, and nothing open or discoverable supplies it. The engram literature is openly contested: a 2026 European Journal of Neuroscience paper argues engrams are a hypothetical construct to be treated as multiply realisable causal motifs rather than a stable physical entity; a 2026 preprint calls the engram a knowledge gap and proposes quantum tunnelling in myelin; reviews move storage into synapse turnover and into astrocytes, reported to contribute mainly at retrieval (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22engram%22%20AND%20%22memory%20storage%22%20AND%20%28theory%20OR%20consensus%20OR%20debate%29&format=json&pageSize=5&resultType=core). Consolidation is in the same state: a 2025 Neuron commentary is titled the post-standard-model age, and a 2026 fMRI Koopman analysis sorting theories into standard consolidation, episodic replay and distributed storage found its clearest support for distributed accounts while standard-consolidation effects were small and not significant per subject. A 704-hit search on mechanisms beyond synaptic plasticity found no convergence and no organised debate, with most 2026 abstracts still synapse-centric, and no open-source engram or hippocampal memory model repository exists (https://api.github.com/search/repositories?q=memory+engram+model+simulation+hippocampus&per_page=10&sort=stars). Honest limits: the literature is vast and mostly open, so a task that only reviews it adds nothing, and an accepted theory cannot be produced by fiat; work under this project must be a bounded, falsifiable test discriminating between the named accounts and must carry its own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "engram and memory storage theory debate",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22engram%22%20AND%20%22memory%20storage%22%20AND%20%28theory%20OR%20consensus%20OR%20debate%29&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T03:26:00Z",
+      "finding": "No accepted theory appears. A 2026 Eur J Neurosci paper treats engrams as a hypothetical construct and multiply realisable causal motifs; a 2026 Exp Mol Med review finds the hippocampus still engaged in remote memory against the traditional view; a 2026 J Neurochem review puts weight on engram synapse turnover; a 2026 Cell Commun Signal review adds astrocytes at retrieval; a bioRxiv preprint calls the engram a knowledge gap and proposes quantum tunnelling in myelin."
+    },
+    {
+      "query": "systems consolidation competing models",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22systems%20consolidation%22%20AND%20memory%20AND%20%28controversy%20OR%20%22competing%20models%22%20OR%20%22standard%20model%22%29&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T03:28:00Z",
+      "finding": "A 2025 Neuron commentary is titled 'The post-standard-model age: updating theories of systems consolidation'. A 2026 fMRI Koopman-operator study grouped theories into standard consolidation, episodic replay and distributed long-term storage, found its clearest evidence for distributed accounts, and reported standard-consolidation effects as small and not significant at subject level, framing its own results as provisional."
+    },
+    {
+      "query": "mechanisms of memory storage beyond synaptic plasticity",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22synaptic%20plasticity%22%20AND%20%22memory%20trace%22%20AND%20%28%22alternative%20mechanisms%22%20OR%20%22beyond%20synaptic%22%20OR%20intracellular%29&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T03:29:00Z",
+      "finding": "704 hits; the returned 2025-2026 abstracts stay synapse-centric or integrative (synaptic-tagging framing, astrocytic gliotransmission, engram-cell excitability-vulnerability tradeoff) and none argues for a settled non-synaptic storage mechanism. No convergence, and no organised comparison of candidate mechanisms."
+    },
+    {
+      "query": "open-source engram or hippocampal memory models",
+      "source": "https://api.github.com/search/repositories?q=memory+engram+model+simulation+hippocampus&per_page=10&sort=stars",
+      "observedAt": "2026-11-06T03:31:00Z",
+      "finding": "Zero repositories: there is no open-source engram or memory-storage model, so no open solution supplies the accepted theory this project asks for."
+    }
+  ]
+}

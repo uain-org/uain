@@ -1,0 +1,51 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-02641",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": true,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held as a known answer. The invention in the title, seaweed-based packaging that is edible and dissolves in water, already exists and is discoverable. Notpla sells Ooho, described as the edible bubble made from seaweed, used at the London Marathon, Gothenburg Half, Tough Mudder and other races and sold from vending machines at the London Aquatics Centre (https://www.notpla.com/ooho), and lists water-soluble seaweed laundry and bath-oil sachets alongside seaweed-coated food containers (https://www.notpla.com/). The formulation science is openly published: a 2024 review of alginate-based active packaging films (141 citations, https://doi.org/10.1039/d3fb00216k), a 2025 review of edible alginate packaging (https://doi.org/10.48130/fmr-0025-0022) and many edible seaweed-alginate film studies. Honest limit: the Main KPI of 100,000,000 tonnes of packaging replaced per year is far from met; Notpla publishes no unit or tonnage totals, and alginate films are moisture-sensitive with weak water-vapour barriers, which is why they replace little commodity packaging. That scale problem is real, but it is a different project: a seaweed material that meets the barrier, strength and cost needed to displace a named commodity plastic at scale would need its own prior-art basis. Not open source, so openSolutionFound is false; knownAnswer is true."
+  },
+  "additionalSearches": [
+    {
+      "query": "seaweed based edible packaging alginate water soluble film (2024 onward)",
+      "source": "https://api.openalex.org/works?search=seaweed%20based%20edible%20packaging%20alginate%20water%20soluble%20film&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:16:12Z",
+      "finding": "1,051 works; edible and water-soluble alginate films are a mature research area (2024 review of alginate active packaging films with 141 citations, 2025 reviews of edible alginate packaging and of improving alginate film properties, cassava-alginate edible films)."
+    },
+    {
+      "query": "Notpla seaweed packaging",
+      "source": "https://api.crossref.org/works?query=Notpla%20seaweed%20packaging&rows=8&select=DOI,title,issued",
+      "observedAt": "2026-11-06T01:16:13Z",
+      "finding": "Crossref returns EU project records and a 2026 case 'Seaweed Packaging: A Sustainable Alternative to Conventional Containers and Single-Use Plastics?', confirming commercial seaweed packaging is documented; no tonnage figures."
+    },
+    {
+      "query": "Notpla Ooho edible seaweed packaging life cycle assessment (2024 onward)",
+      "source": "https://api.openalex.org/works?search=Notpla%20Ooho%20edible%20seaweed%20packaging%20life%20cycle%20assessment&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:16:15Z",
+      "finding": "5 works: reviews of seaweed-based plastics focusing on alginate (2024, 50 citations) and edible active packaging; no life-cycle or scale data showing large displacement of plastic."
+    },
+    {
+      "query": "edible seaweed packaging (GitHub repositories)",
+      "source": "https://api.github.com/search/repositories?q=edible%20seaweed%20packaging&sort=stars&per_page=8",
+      "observedAt": "2026-11-06T01:16:17Z",
+      "finding": "0 repositories. Null result; the known answer is a commercial product and published formulations, not open-source code."
+    },
+    {
+      "query": "Notpla Ooho product page",
+      "source": "https://www.notpla.com/ooho",
+      "observedAt": "2026-11-06T01:20:00Z",
+      "finding": "Ooho is the edible bubble made from seaweed, from natural materials without chemical modification, used at six named races and in vending machines; no unit or tonnage totals given."
+    },
+    {
+      "query": "Notpla product range",
+      "source": "https://www.notpla.com/",
+      "observedAt": "2026-11-06T01:19:32Z",
+      "finding": "Lists Ooho (entirely edible), seaweed-coated home-compostable food containers, a water-soluble laundry sachet (coming soon) and bath-oil sachet (prototype); no plastic-replaced figures."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261108T233941Z-852919b747",
+  "version": "0.3.42",
+  "source_commit": "53ace6ec52151c65612b459ba34d959cd7b03499",
+  "deployed_at": "2026-11-09T00:08:59Z",
+  "prior": "20261108T203804Z-9bb1283028",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#app42-member-feedback-requirements-20261109"
+  ],
+  "note": "Normal exact-prior promotion; both origins passed189 paced public checks and actual desktop/mobile browser inspection. Authenticated unchanged owner GET verified current P14 native-committed findings and original P9 awards; full business-record preservation passed. Authenticated browser completion, positive live-v2 payment reload and outside-member acceptance remain separate."
+}

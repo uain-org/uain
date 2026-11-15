@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "central-reviewer",
+  "release_id": "3e4ba113257fc3c6d2bedcde62f72f68cfdd5d91dcd1061df0990be00433aed0",
+  "version": null,
+  "source_commit": "9af5280e24e4a9256d8f113e649d5ac10893c560",
+  "deployed_at": "2026-11-08T10:55:23Z",
+  "prior": "64a43dcd0b1875c91d3689f59b80f153294c65c0bcd25853a50f8025103215a3",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#platform-readiness-20261108",
+    "docs/baink/readiness-audit-2026-11-08.md"
+  ],
+  "note": "Guarded three-file reliability overlay; research reviewer active with zero restarts and successful cycles; custody PID, source pins and job semantics preserved. No new research acceptance claimed."
+}

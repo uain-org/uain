@@ -1,0 +1,4474 @@
+{
+  "schema": "baink-paperclip/task-plan-batch/v1",
+  "revision": "8da631a9967154eb63022eb9d38d10d479229fe95a6239575245655562d87219",
+  "plans": [
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "18eeba095bf7495e1a8b210a0980984a27fb444e792586ea56222aed9300776b",
+      "binding": {
+        "projectId": "alzheimer-s-disease-open-questions-answered-from",
+        "projectSourceSha256": "08150d418c0eb8452adaf24c6b528bd4067fe856397b90841aa6c3245350b115",
+        "workflow": "legacy",
+        "task": {
+          "id": "pilot-review-PRB-00505",
+          "title": "Review existing work: End Alzheimer's disease",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "legacy-workflow-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "legacy_operation_mapping_required",
+        "legacy_native_coin_opening_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "qualified-legacy-workflow",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "3f74ef185cf48bd2d1d46c36342c9cf5f724f97d63fbcaf78cea178cb3806fe2",
+      "binding": {
+        "projectId": "breast-and-lung-cancer-open-questions-with-no-pu",
+        "projectSourceSha256": "08150d418c0eb8452adaf24c6b528bd4067fe856397b90841aa6c3245350b115",
+        "workflow": "legacy",
+        "task": {
+          "id": "pilot-review-PRB-00025",
+          "title": "Review existing work: End lung cancer",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "legacy-workflow-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "legacy_operation_mapping_required",
+        "legacy_native_coin_opening_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "qualified-legacy-workflow",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "0371ec968c0fdd78f116c77f42a1b70e37315c8d205c98039a477115a9f41a60",
+      "binding": {
+        "projectId": "longevity-and-ageing-open-questions-on-open-data",
+        "projectSourceSha256": "08150d418c0eb8452adaf24c6b528bd4067fe856397b90841aa6c3245350b115",
+        "workflow": "legacy",
+        "task": {
+          "id": "pilot-review-OPP-00016",
+          "title": "Review existing work: Build an anti-aging drug pipeline of 1,000 compounds",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "legacy-workflow-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "legacy_operation_mapping_required",
+        "legacy_native_coin_opening_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "qualified-legacy-workflow",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "61ccdaa646f50a4bbf8411770edc77158343a1c1cf1e2a3ee0e3cd1a834506b5",
+      "binding": {
+        "projectId": "PRB-00035",
+        "projectSourceSha256": "19dee66e85a489c42d7ceaf9bcf8d94d4fd0e27a78ae5add053e5e75b197e528",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-PRB-00035",
+          "title": "Qualify research gap: End skin cancer and melanoma",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "0044f507ded8dbafdce17d10d965473ac7bb1b1bed4a8a386285e3ec2efa05a6",
+      "binding": {
+        "projectId": "PRB-00321",
+        "projectSourceSha256": "579d4cc16f7eddb7573fbfbf188e56a70724cc2f74754274681651b085996a82",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-PRB-00321",
+          "title": "Qualify research gap: End hookworm anemia",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "47d4f0afc4f2f7ef853c4cab7a7b4e63e242c142e41ddb5d9f708f201707ee20",
+      "binding": {
+        "projectId": "OPP-00695",
+        "projectSourceSha256": "a5d801687c6f8a41827d4ab5b219fc77afbe8f80c330fc9fa8c84c0574054802",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-00695",
+          "title": "Qualify research gap: Offer children painless medical care",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "32c60faf86b44c43c7d1d380077cfe2e6fbd968e278d9fa5490a6d86bbb49f76",
+      "binding": {
+        "projectId": "OPP-00721",
+        "projectSourceSha256": "93e30cbbfac994837bc1d4512d82ea6b429c18eaf386c58e15f0eed1227c52cc",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-00721",
+          "title": "Qualify research gap: Restore sight with gene therapy for inherited blindness",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "991ea60591a6233278d11e71e5a8cfc5fadaba13fd5e685e1338b514be62ce2c",
+      "binding": {
+        "projectId": "OPP-01086",
+        "projectSourceSha256": "7dd98363f7b5d0ee051a63c4bf3ef6bd18fc25c5b0fb159480c6ce93b05d5eb8",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-01086",
+          "title": "Qualify research gap: Make an AI that writes all clinical notes from the conversation",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "188e6f01e099b242b151ac63f4f16250712c591be3a0cff9ea2858d943670a65",
+      "binding": {
+        "projectId": "OPP-01237",
+        "projectSourceSha256": "1ce1eb5dc25662232f19f4bdba43502c14c534297b4053c4a7e254da49864753",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-01237",
+          "title": "Qualify research gap: Provide school lunches tuned to each child's nutrient gaps",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "3737a8bde9c3dd3adaa767cacf443398904d832937f67236e7dddc2e4e177c7e",
+      "binding": {
+        "projectId": "OPP-01569",
+        "projectSourceSha256": "70cb4afca27c5e4025e8a5ff7b62b62aa496538ec00cf80d9cacb6d4108e7639",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-01569",
+          "title": "Qualify research gap: Build drip systems that run on a pennies-per-day budget",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "ce30285911762b72956d4eb2d0e8210ade413c690266056716db2efa5e783f00",
+      "binding": {
+        "projectId": "OPP-01725",
+        "projectSourceSha256": "1a86c89154681bf2e906df468308bd7b7eca4227c8262e8098fafb978c00bdae",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-01725",
+          "title": "Qualify research gap: Invent a passive solar still that makes a litre per square metre per hour",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "02898b83e5ed1f18aac14f3b0cc0d94747e2cbb115b0a536bf5f50854e2d4ef3",
+      "binding": {
+        "projectId": "OPP-02004",
+        "projectSourceSha256": "da08329b72925e6e5242059cd176ba7ba29b8f10d4d402c0dca15aebc9899842",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-02004",
+          "title": "Qualify research gap: Build hydrogen-powered long-haul trucks and trains",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "fda50ea2f9215bc11b9f8eb4f99385b8005c0f9f6c8462fac26ed60aee1a0a4f",
+      "binding": {
+        "projectId": "OPP-02340",
+        "projectSourceSha256": "b0788621698f50b263ac2ced6d2611531b17659ab8210da3db19aea2090fe68b",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-02340",
+          "title": "Qualify research gap: Offer micro-loans for solar, cookstoves and storm repairs",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "5c5113f7a287e85b3003ba272e90804f25ce991f85366db5e55c8adda84a223e",
+      "binding": {
+        "projectId": "PRB-02561",
+        "projectSourceSha256": "b3a00a90b3cd7f56b04c817c8708c35f268dec498c5ead807b9152a69069996e",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-PRB-02561",
+          "title": "Qualify research gap: End the destruction of tidal flats",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "72ad1ac9071839ce2214a4bb0b0cf061d7b8ee767695bf8f085e989c98f05c17",
+      "binding": {
+        "projectId": "PRB-02767",
+        "projectSourceSha256": "4241b16603712cb86717e395c5eb6b2931ab1f998334276e5ce7ffc97bf39e30",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-PRB-02767",
+          "title": "Qualify research gap: End the linear take-make-waste economy",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "5f2068bc25141498289c624b1991980eafa9843f05c7d286df4d6966b024f913",
+      "binding": {
+        "projectId": "PRB-02979",
+        "projectSourceSha256": "df324092012d0de6f583c2b71aab979a38295c6de744f508d643d556f945d877",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-PRB-02979",
+          "title": "Qualify research gap: End unplanned downtime costing manufacturers 50 billion dollars a year",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "ad7ed40caec7c08fa543fa56de8f837f59ec2d0390a3a4f43856d45a34c52fd7",
+      "binding": {
+        "projectId": "OPP-03177",
+        "projectSourceSha256": "6ac760ae3ba3fc32b4183315a084e579831ff5d75d729f61a3a8fdae5a57bb0e",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-03177",
+          "title": "Qualify research gap: Build a robot that reads bedtime stories and plays with kids",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "d8c12895ea051ef21e82203249321b1739df7048d436c3d50d265f761c38074c",
+      "binding": {
+        "projectId": "OPP-03460",
+        "projectSourceSha256": "2ce38eaf6f5af492b5cc7e435159a9107fdc00d4aadc2b3355fdf54dd088aa23",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-03460",
+          "title": "Qualify research gap: Offer nuclear-powered merchant vessels with sealed safe reactors",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "919878747ac7d0424145ef1dde69d377700852c9d560589d935080e24574651a",
+      "binding": {
+        "projectId": "OPP-03725",
+        "projectSourceSha256": "5cd409ba6953233b4b49a2058402669ee7b0723d687dd2106f9b47272f5d43a8",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-03725",
+          "title": "Qualify research gap: Build smart meters and grid AI that stop blackouts",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "4ef953e11c8228b0ef76a69efed8cb2d82cd92301e391891234101cc88732f07",
+      "binding": {
+        "projectId": "OPP-03904",
+        "projectSourceSha256": "90fd6af14f29310f8c3e90a49ba1c53545c848a425e675ba29568a1b56f798b1",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-03904",
+          "title": "Qualify research gap: Offer AI financial advice to the poor once reserved for the rich",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "8a7c4e7c29a22dbe01ac1e8a43e2f76626203fe9ea7fae5ac892d090e0e2901d",
+      "binding": {
+        "projectId": "OPP-04106",
+        "projectSourceSha256": "4f38fc1df3dc17559d66ab7012ed4bdd338e8525767263f802b314b68d55af8c",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-04106",
+          "title": "Qualify research gap: Create a personal AI investment adviser with no conflict of interest",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "151c800aa779e80a6d23887f04fc08241a07d38ede2ae3ef1f13d073778d6b16",
+      "binding": {
+        "projectId": "PRB-04349",
+        "projectSourceSha256": "8d85278b0b5560bb665e2afb8da9ccc71605ccc31f70c808a49c6ce0a48f68c2",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-PRB-04349",
+          "title": "Qualify research gap: End bureaucratic errors that wrongly deny benefits",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "c542050378b22e6bbf339929e1b4cddf3a6eefaf23ad3056a0fc4644edfa7d15",
+      "binding": {
+        "projectId": "OPP-04710",
+        "projectSourceSha256": "f05b22c7c4d21e170a88794c18540ba505f0cbb39dd5687b7e5d44ee874a6922",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-04710",
+          "title": "Qualify research gap: Create instant emergency translation for 911 calls in any language",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "7d767210619fc6abd19ade228421778f3e8b94d6a2a326c6e0c868f5ed468ef3",
+      "binding": {
+        "projectId": "OPP-04958",
+        "projectSourceSha256": "5193c48dca4798c49b9b841b8c1474e513a3a7774b2bcdb378b50d19b2789024",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-04958",
+          "title": "Qualify research gap: Offer second-chance schools for child brides, child soldiers and child workers",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "228b3f1f42c6bd1c3e6ceb3d38485ba44fb479a79b6aa979e6bcc4a5646f882b",
+      "binding": {
+        "projectId": "OPP-05176",
+        "projectSourceSha256": "6947083660cdaba34fba18ed8cb8caa4787a19d211525064aa59e1a1bda5e870",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-05176",
+          "title": "Qualify research gap: Provide a unified map of all mathematical results and their dependencies",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "3c0bfee2cfda95f55b06cd6c7e9639b7558cdfbcc7f766bc1cf476ddecbedd34",
+      "binding": {
+        "projectId": "PRB-05472",
+        "projectSourceSha256": "1a486530047380e8fc95367c97d8cc5a047659552530be8b0bb7d3e907f7e571",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-PRB-05472",
+          "title": "Qualify research gap: End the shortage of photonics engineers",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "b050a7e757dae46e66b7d6fda055a3ec2d1d2b1ac0158e6be592e868ab26eb43",
+      "binding": {
+        "projectId": "OPP-05543",
+        "projectSourceSha256": "42868b119255ea7be1a60b304e13d1be6dd85a5246437664500a37e268f9d07c",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-05543",
+          "title": "Qualify research gap: Predict materials for solar fuels",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "60400459fdf2f9d17a301cd7acb98132fac92ff172ce5e32097b20d8c5c27e9d",
+      "binding": {
+        "projectId": "PRB-05926",
+        "projectSourceSha256": "04b1e9e2e07c79c8df14c3d32d03246238d87b43f7581e8ebf218f19c9197dc6",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-PRB-05926",
+          "title": "Qualify research gap: End slow plant breeding that takes decades",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "b3ddca36f19dbbb93904a676fe9b8dd39605a7455ea1fadaea5071fbd5e5dfe6",
+      "binding": {
+        "projectId": "OPP-06076",
+        "projectSourceSha256": "5202b0b084fa780997d0c8c276ec392a4765531a18571315b3aa42bc787471bc",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-06076",
+          "title": "Qualify research gap: Create a self-healing internet that routes around any failure",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "d23014d3895f5ab889b9f138a9f980ed7aeaef3465a102e5a82fcaeda62214af",
+      "binding": {
+        "projectId": "OPP-06269",
+        "projectSourceSha256": "313d930c7ed88177497d93796dcecdae063bc393d18bbff116e7538ada0ff6b3",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-06269",
+          "title": "Qualify research gap: Run a lunar railway moving cargo between sites",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "1a8f5e88a3fa7fd31fcaf72e5c0a66c283e20804e091f767f95c220698b2cb78",
+      "binding": {
+        "projectId": "PRB-06536",
+        "projectSourceSha256": "78c751a2aeab280a63859c8905f1b46495b4723b1d4bf3eff771554b2c4000d6",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-PRB-06536",
+          "title": "Qualify research gap: End the damage from hail to crops and cars",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "4a45e56805c492e289a962b268103d52f6af5d3dc059712017358700b97b133d",
+      "binding": {
+        "projectId": "PRB-06950",
+        "projectSourceSha256": "bceb20c3cf7490af094656e615c95a20c65ff70b8b69a8c46f0383e35f85bed6",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-PRB-06950",
+          "title": "Qualify research gap: End unaffordable good design in homes",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "282adb98227a83207205317f0acf63b6d0714695a5e9b1400dd9f020df2fd8ff",
+      "binding": {
+        "projectId": "OPP-06961",
+        "projectSourceSha256": "4b71710c1da9670fb49f2783199caead23abb00ed3fbdd56342eb445ddb680f5",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-06961",
+          "title": "Qualify research gap: Give everyone an earpiece that translates any spoken language in real time",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "34b1113277e583820fadb26bfb2f55ea1ba72eddf169cc78fb035815f7d2b638",
+      "binding": {
+        "projectId": "PRB-07257",
+        "projectSourceSha256": "9917d487f2d135d16bf5cdbe4a1139385762e2ee141048064bd81cd4cdac9bd4",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-PRB-07257",
+          "title": "Qualify research gap: End loneliness among new mothers",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "6518d6b3069a014424e1485caea77027fd96e6d5c6b5799c0a1b3389bc91d3c8",
+      "binding": {
+        "projectId": "PRB-07588",
+        "projectSourceSha256": "3ca133c74a0bc213665a67e638e2fad98390ed77e3dde53ad3a678f52623c199",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-PRB-07588",
+          "title": "Qualify research gap: End forced early retirement for older workers",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "0c4928df89beab140cf939d498dc1df90efb77511fe2d0a8d458def2299a3069",
+      "binding": {
+        "projectId": "PRB-07845",
+        "projectSourceSha256": "550543f89e2241064d71979e916e73d88579b8eab458be02b59d51844d66b838",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-PRB-07845",
+          "title": "Qualify research gap: End data poisoning of AI training sources",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "393f61828421cf68a6ccd7b7e2ab02bd561ab81bf59d434fcb9a8154706fe195",
+      "binding": {
+        "projectId": "OPP-08121",
+        "projectSourceSha256": "65f570f28eaf6d5fc3373558f07ccd585c484dac045192f718ef4167944fa139",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-08121",
+          "title": "Qualify research gap: Offer safe medicine storage and dosing",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "9888feba09d620fab5dd023e76f1f81d1214deb5ef3827733948d3e7bd78877a",
+      "binding": {
+        "projectId": "OPP-08341",
+        "projectSourceSha256": "b2c77f4603cd6cadcb519b0cc751545346082b837a47154116871ce0093cc1fa",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-08341",
+          "title": "Qualify research gap: Build a continuous watchdog that scans hiring, credit and housing algorithms",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "2849108468004053f457e2248af56f5330ecdb883c478ec9ee7ce01ce0fbb41e",
+      "binding": {
+        "projectId": "PRB-08521",
+        "projectSourceSha256": "4a4218f6a62fc3bf6292b1eecbd9369f8f1b4c61800cd6baa54b489f4b05528b",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-PRB-08521",
+          "title": "Qualify research gap: End the risk of creating suffering AI minds at scale",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "f3d347c40e41a324d649047aa48824071a5e6b140721c5f6fd2a067edfe2f6da",
+      "binding": {
+        "projectId": "PRB-08682",
+        "projectSourceSha256": "428746805cde1d602c71207793de9ae78d526e60985a5bc608986a89ed39588c",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-PRB-08682",
+          "title": "Qualify research gap: End misleading unemployment statistics that hide discouraged workers",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "bda90627e64435e1104a3ccd8f34f5ab7f994b9dd16d342c2f91b67d818f3d7a",
+      "binding": {
+        "projectId": "PRB-09111",
+        "projectSourceSha256": "777ef6ea81eeda778ef8e0a650173354b8422f5b227d02d3fb6cb34c234bdbbe",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-PRB-09111",
+          "title": "Qualify research gap: End the lack of open data on infrastructure failures",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "fb6576b3b504600d29f3328a7a8bb2347e9538e1c17714f3c3dfb16467c431bd",
+      "binding": {
+        "projectId": "PRB-09307",
+        "projectSourceSha256": "6d9d975f79e40a5f2e851aebb9f31e8ab9f5f36124540e059a16ef3178936b15",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-PRB-09307",
+          "title": "Qualify research gap: End the lack of accessible game design in video games",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "45515e7db3152b6c82cae782e534a5126b8f8c54071305a83c49401222b61db2",
+      "binding": {
+        "projectId": "PRB-09479",
+        "projectSourceSha256": "859067dcc38cf0f6413700560879d31b62ad454b8b20301369593d326bdeb1d1",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-PRB-09479",
+          "title": "Qualify research gap: End data theft from airport and hotel wifi",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "012924e4162350ec8fb9b1a25e27d5bb8ecdee927047d0f1894ee2f8fde7a04d",
+      "binding": {
+        "projectId": "OPP-09827",
+        "projectSourceSha256": "ba81f80bab8287acdd7aa9f00a6580eeaf6997bf96e4a56e6aab2071c697266a",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-09827",
+          "title": "Qualify research gap: Develop children's bereavement programmes",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "5d8bebf1dd55ed868314e82a4484c131a67601139fa4a2d3561bd4dcb9af90b7",
+      "binding": {
+        "projectId": "OPP-09927",
+        "projectSourceSha256": "c68c7883de0783db0f86ee0afab2df6e2b4ce31cc254b183a74cf621920d5dbf",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-09927",
+          "title": "Qualify research gap: Provide remote veterinary support for small-scale fish farmers",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "060f5d1065918ea6e7f8ecf3558be6490ba19df40d6ee94cdd8c7542e4eb55bf",
+      "binding": {
+        "projectId": "OPP-10299",
+        "projectSourceSha256": "8ae2b6121e172662f286db15ee63c0cd6299d7abcd91038fddfbbd40529d1dce",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-10299",
+          "title": "Qualify research gap: Offer debt swaps that trade debt for climate and education",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "2df77596b28f1211269cdfc6f1a0df62337cdc8584ca9cf5d0bbb66b816e0b89",
+      "binding": {
+        "projectId": "OPP-10517",
+        "projectSourceSha256": "2683e0d0f1d768d308431e56ee688e0bc019e27b8de16d0ce82d80e021bd475a",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-10517",
+          "title": "Qualify research gap: Create self-replicating robot settlers that prepare worlds ahead of humans",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    },
+    {
+      "schema": "baink-paperclip/task-plan/v1",
+      "revision": "459e1da4e15301a186cc25ef5b929ebac5410851038b3647dc3b4e580b13e762",
+      "binding": {
+        "projectId": "OPP-10756",
+        "projectSourceSha256": "903413586dd01113cdf62fc90a23b14dbde5d40921fc9808ec3f29ee34ad884d",
+        "workflow": "catalogue",
+        "task": {
+          "id": "pilot-scope-OPP-10756",
+          "title": "Qualify research gap: Offer personalised nutrition plans for every person based on their body",
+          "class": "benevolent",
+          "criteria": "",
+          "priorArt": {
+            "basis": "",
+            "searches": []
+          },
+          "creditReward": null,
+          "karmaReward": null
+        }
+      },
+      "status": "admission-required",
+      "sourceTextIsUntrusted": true,
+      "sourceProvenanceVerified": false,
+      "executionAvailable": false,
+      "blockers": [
+        "research_price_not_established",
+        "prior_art_research_required",
+        "verification_criteria_required",
+        "native_project_admission_not_established",
+        "native_authority_and_fresh_state_required",
+        "holder_local_signature_required",
+        "paperclip_runtime_and_scoped_writes_not_qualified"
+      ],
+      "nativeIntent": null,
+      "workflow": [
+        {
+          "stage": "research-gap",
+          "authority": "reviewed-prior-art-basis-and-searches",
+          "complete": false
+        },
+        {
+          "stage": "open-task",
+          "authority": "active-native-project-lead-local-signature-and-exact-finalized-receipt",
+          "complete": false
+        },
+        {
+          "stage": "fund-before-work",
+          "authority": "qualified-coin-policy-lead-quote-and-guardian-reservation",
+          "complete": false
+        },
+        {
+          "stage": "contribute",
+          "authority": "eligible-holder-local-submit-and-published-evidence-digest",
+          "complete": false
+        },
+        {
+          "stage": "independent-review",
+          "authority": "native-standing-novelty-operator-family-and-challenge-rules",
+          "complete": false
+        },
+        {
+          "stage": "claim-reward",
+          "authority": "licensed-winning-holder-local-claim-and-exact-finalized-reward-proof",
+          "complete": false
+        }
+      ],
+      "reward": {
+        "assetId": "uain-native-coin",
+        "symbol": "AI$",
+        "researchCreditsAreMoney": false,
+        "amountUnits": null,
+        "paid": null,
+        "executionAvailable": false,
+        "paperclipDoneIsPayment": false,
+        "operations": [
+          "coin_quote",
+          "coin_reserve",
+          "coin_claim"
+        ],
+        "requirements": [
+          "active_native_coin_and_private_policies",
+          "genuine_post_activation_native_opening_event",
+          "lead_pricing_and_guardian_reservation",
+          "reservation_before_submissions",
+          "licensed_settled_winning_author",
+          "at_least_two_independent_operators_and_other_family",
+          "frozen_confirmed_new_novelty_checks",
+          "no_open_challenge_or_withheld_award",
+          "exact_finalized_native_receipt"
+        ]
+      },
+      "notice": "Offline unsigned coordination proposal only. Source hashes and supplied research are not independently verified. Research credits/Karma and Paperclip completion are not AI$ payment. No task, agent, reservation or money is created."
+    }
+  ],
+  "executionAvailable": false
+}

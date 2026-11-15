@@ -1,0 +1,76 @@
+{
+  "images": {
+    "mobile-final.png": [
+      389,
+      2754
+    ],
+    "desktop-final.png": [
+      1003,
+      1563
+    ],
+    "reference.png": [
+      1003,
+      1568
+    ],
+    "copy-final.png": [
+      471,
+      242
+    ],
+    "desktop-first.png": [
+      1003,
+      1651
+    ],
+    "mobile-first.png": [
+      389,
+      2600
+    ]
+  },
+  "assets": [
+    {
+      "path": "public/images/landing/benefits/superpowers.webp",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "bytes": 131832,
+      "sha256": "456dbf44401f7938f406ff1347cf93c788369be1456896bb8fd2dace3a9bf641"
+    },
+    {
+      "path": "public/images/landing/benefits/fundraising.webp",
+      "dimensions": [
+        1024,
+        1280
+      ],
+      "bytes": 150858,
+      "sha256": "4e8b3a7e581d25d033814fe28a0fec37d9635b4cfe7edf6e3853caf2dff22409"
+    },
+    {
+      "path": "public/images/landing/benefits/impact.webp",
+      "dimensions": [
+        1024,
+        1280
+      ],
+      "bytes": 116246,
+      "sha256": "90efb4bb3b4c43d3504d88024eb71dac18636dc9bbc16a69ab2f0c1baaa36e4b"
+    },
+    {
+      "path": "public/images/landing/benefits/rewards.webp",
+      "dimensions": [
+        1024,
+        1280
+      ],
+      "bytes": 82198,
+      "sha256": "8821f499c263748b0766dcc61615c11c36b0e8c6671d108f8be7ad4bebef9a31"
+    },
+    {
+      "path": "public/images/landing/benefits/atmosphere.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 33774,
+      "sha256": "4b38d77684a8d9fb647c6cbf16d26e6a14b159529e89df3e511ef3c8664b4989"
+    }
+  ],
+  "total_asset_bytes": 514908
+}

@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-13",
+  "revision": "7b500ac15fb3d8c4f6568e620fd6ce167e668599",
+  "url": "https://uain.global/network/live?project=longevity-and-ageing-open-questions-on-open-data",
+  "method": "Fresh browser tab/reload; CDP Network.responseReceived timing.receiveHeadersEnd. Browser WAN data-request header timing, not full-page paint timing.",
+  "snapshot_responses": {
+    "status": 200,
+    "count": 9,
+    "headers_ms": [
+      373.148,
+      377.842,
+      676.672,
+      402.738,
+      403.287,
+      412.017,
+      301.039,
+      328.675,
+      962.411
+    ]
+  },
+  "visible": {
+    "tasks": 3,
+    "pending": 2,
+    "completed": 6
+  },
+  "console_errors": [],
+  "origin_comparison": "Separate final origin sample: 32 reads, median37ms/p95324ms; longevity task origin31ms in initial final acceptance. WAN variability remains visible."
+}

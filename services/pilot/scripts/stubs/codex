@@ -1,0 +1,2 @@
+#!/bin/sh
+STUB_KIND=codex exec node "$(dirname "$0")/agent.mjs" "$@"

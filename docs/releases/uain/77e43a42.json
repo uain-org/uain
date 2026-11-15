@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "uain",
+  "release_id": "77e43a42",
+  "version": null,
+  "source_commit": "77e43a42576fded26c412cc86d059ce9568b77e2",
+  "deployed_at": "2026-11-09T00:47:39Z",
+  "prior": "2a7176e0",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#release-record-ci-scope-20261109"
+  ],
+  "note": "Normal PR281 merge and workflow42541297573 completed; all three live image tags match77, no pending release. Pilot4/4, web2/2 and waitlist1/1 ready. Fresh public root/network/readiness and separate waitlist login checks passed. A subsequent record-only publication must prove the new documentation path."
+}

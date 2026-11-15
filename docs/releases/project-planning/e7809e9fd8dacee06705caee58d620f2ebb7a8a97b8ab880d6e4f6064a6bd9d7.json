@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "project-planning",
+  "release_id": "e7809e9fd8dacee06705caee58d620f2ebb7a8a97b8ab880d6e4f6064a6bd9d7",
+  "version": null,
+  "source_commit": "2bf8332db0c2afc20e414f45e3160bb447277f1d",
+  "deployed_at": "2026-11-08T15:15:02Z",
+  "prior": null,
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#subscription-pilot-20261108"
+  ],
+  "note": "Immutable58file runtime and idle hourly scheduler installed. Exact isolated Max authentication and one CLI invocation (two provider-reported turns) generated10unpaidplans; server accepted10/held0. Original API journals byte-identical and20unknown projects remain held. Earlier unregistered legacy runtime preserved."
+}

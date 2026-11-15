@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-02166",
+  "native_project": "P-OPP-02166",
+  "source_digest": "8b8455e5e2cef94b88e9498e61b3f68a30fcecaea53469f9935009769200317e",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build zero-emission container ships crossing oceans",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "d8d06d7ee0964e93ffc25909e0a1a55c9c9d7843c56756a6da1da861f15e5f77"
+  },
+  "drafted_at": "2026-11-06T00:21:43.129Z",
+  "queries": [
+    "zero-emission container ships crossing oceans",
+    "zero-emission container ships climate atmosphere emissions"
+  ],
+  "searches": [
+    {
+      "query": "zero-emission container ships crossing oceans",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:21:35.012Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=zero-emission%20container%20ships%20crossing%20oceans&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "zero-emission container ships crossing oceans",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:21:35.925Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Azero-emission%20AND%20all%3Acontainer%20AND%20all%3Aships%20AND%20all%3Acrossing%20AND%20all%3Aoceans&start=0&max_results=10; sha256=017e464e68cc87ce3298ae6c6b7d4c4e203a1550bde44edd01d129cda921d515; total=0; shown=0/0"
+    },
+    {
+      "query": "zero-emission container ships crossing oceans",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:21:36.801Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=zero-emission%20container%20ships%20crossing%20oceans&rows=10&select=DOI,title; sha256=773c55baae964b36e0f6518b0ae426ea6e6d150571438772e0ab064d743ca01f; total=652556; shown=5/10; top: 10.1109/oceanskobe.2008.4530928 \"Investment in container ships for the Yangtze River:a system dynamics model\" | 10.1061/9780784482629.013 \"Impacts of Implementing Zero Emission Container Handling Equipment on a Container Terminal\" | 10.1109/oceans.2000.881349 \"Towards true zero-emission vehicles in a single step: air pollution and greenhouse gas reductions through hydrogen fueled ships with carbon…\" | 10.3940/rina.cont.2003.15 \"Development of Post-Panamax Container Ships\" | 10.3940/rina.cont.2006.14 \"Latest Engine Technologies Bring Benefits in Container Ships\""
+    },
+    {
+      "query": "zero-emission container ships climate atmosphere emissions",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:21:41.565Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=zero-emission%20container%20ships%20climate%20atmosphere%20emissions&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "zero-emission container ships climate atmosphere emissions",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:21:42.284Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Azero-emission%20AND%20all%3Acontainer%20AND%20all%3Aships%20AND%20all%3Aclimate%20AND%20all%3Aatmosphere%20AND%20all%3Aemissions&start=0&max_results=10; sha256=8d601eb86687487843e12e01de6cf4dca5018b29a27e0001ef6716b62460f835; total=0; shown=0/0"
+    },
+    {
+      "query": "zero-emission container ships climate atmosphere emissions",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:21:43.128Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=zero-emission%20container%20ships%20climate%20atmosphere%20emissions&rows=10&select=DOI,title; sha256=e5b70befaf2d4fc309816d28af0ba9fe92aa5758b7c0148126637100ff44148c; total=1417067; shown=5/10; top: 10.1163/9789004322714_cclc_2018-0024-013 \"B.C. aims for 100 per cent zero-emission new vehicles by 2040, takes strong step toward climate mitigation, emissions reductions\" | 10.3030/636146 \"untitled\" | 10.59720/22-035 \"Exponential regression analysis of the Canadian Zero Emission Vehicle market’s effects on climate emissions in 2030\" | 10.1163/9789004322714_cclc_2023-0013-0079 \"Net-zero emissions\" | 10.1061/9780784482629.013 \"Impacts of Implementing Zero Emission Container Handling Equipment on a Container Terminal\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "zero-emission container ships crossing oceans",
+      "url": "https://api.github.com/search/repositories?q=zero-emission%20container%20ships%20crossing%20oceans&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=zero-emission%20container%20ships%20crossing%20oceans&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:21:35.012Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "zero-emission container ships crossing oceans",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Azero-emission%20AND%20all%3Acontainer%20AND%20all%3Aships%20AND%20all%3Acrossing%20AND%20all%3Aoceans&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Azero-emission%20AND%20all%3Acontainer%20AND%20all%3Aships%20AND%20all%3Acrossing%20AND%20all%3Aoceans&start=0&max_results=10",
+      "sha256": "017e464e68cc87ce3298ae6c6b7d4c4e203a1550bde44edd01d129cda921d515",
+      "bytes": 842,
+      "observedAt": "2026-11-06T00:21:35.925Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "zero-emission container ships crossing oceans",
+      "url": "https://api.crossref.org/works?query=zero-emission%20container%20ships%20crossing%20oceans&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=zero-emission%20container%20ships%20crossing%20oceans&rows=10&select=DOI,title",
+      "sha256": "773c55baae964b36e0f6518b0ae426ea6e6d150571438772e0ab064d743ca01f",
+      "bytes": 1528,
+      "observedAt": "2026-11-06T00:21:36.801Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "zero-emission container ships climate atmosphere emissions",
+      "url": "https://api.github.com/search/repositories?q=zero-emission%20container%20ships%20climate%20atmosphere%20emissions&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=zero-emission%20container%20ships%20climate%20atmosphere%20emissions&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:21:41.565Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "zero-emission container ships climate atmosphere emissions",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Azero-emission%20AND%20all%3Acontainer%20AND%20all%3Aships%20AND%20all%3Aclimate%20AND%20all%3Aatmosphere%20AND%20all%3Aemissions&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Azero-emission%20AND%20all%3Acontainer%20AND%20all%3Aships%20AND%20all%3Aclimate%20AND%20all%3Aatmosphere%20AND%20all%3Aemissions&start=0&max_results=10",
+      "sha256": "8d601eb86687487843e12e01de6cf4dca5018b29a27e0001ef6716b62460f835",
+      "bytes": 886,
+      "observedAt": "2026-11-06T00:21:42.284Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "zero-emission container ships climate atmosphere emissions",
+      "url": "https://api.crossref.org/works?query=zero-emission%20container%20ships%20climate%20atmosphere%20emissions&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=zero-emission%20container%20ships%20climate%20atmosphere%20emissions&rows=10&select=DOI,title",
+      "sha256": "e5b70befaf2d4fc309816d28af0ba9fe92aa5758b7c0148126637100ff44148c",
+      "bytes": 1501,
+      "observedAt": "2026-11-06T00:21:43.128Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "60f35648c863c8a7b5c496737b5d4d73abdfec2d450f041f1fe67f46ec55c46e",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

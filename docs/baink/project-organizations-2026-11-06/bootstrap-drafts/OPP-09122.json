@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-09122",
+  "native_project": "P-OPP-09122",
+  "source_digest": "090cff5c0a2b0e28c9143a9b28b0c9923ce35b8bff53591d6365e28606cfc120",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Let fans watch any match from any seat or from the ball's point of view in 3D",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "39cb9607494387027ebf887351905b56088e621b672448161b324dde60421a83"
+  },
+  "drafted_at": "2026-11-06T00:30:26.988Z",
+  "queries": [
+    "let fans watch match seat ball",
+    "let fans watch sports recreation games"
+  ],
+  "searches": [
+    {
+      "query": "let fans watch match seat ball",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:30:18.756Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=let%20fans%20watch%20match%20seat%20ball&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "let fans watch match seat ball",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:30:23.199Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Alet%20AND%20all%3Afans%20AND%20all%3Awatch%20AND%20all%3Amatch%20AND%20all%3Aseat%20AND%20all%3Aball&start=0&max_results=10; sha256=63c297ef13f7d7bffc50978346d8e2e590f3e4cf1172ce3eac2475c6f8853f7b; total=0; shown=0/0"
+    },
+    {
+      "query": "let fans watch match seat ball",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:30:24.023Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=let%20fans%20watch%20match%20seat%20ball&rows=10&select=DOI,title; sha256=8c36d7d7be4317e97113afe3f7054732380a69569cb9e467945936150d28f5e0; total=237627; shown=5/10; top: 10.1136/bmj.p138 \"Concussion protocol in Iran-England match: to watch the ball or the footballer?\" | 10.55277/researchhub.37woqtcp \"Seagull Revives As Player Gives On Field Cpr After Goalkeeper Accidentally Hits Bird With Ball During Amateur League Match In Istanbul Watc…\" | 10.5810/kentucky/9781985900011.003.0015 \"Let the Horse Lead the Way\" | 10.55277/researchhub.jvdmwyfd.1 \"PSL 2026 Live Match – Watch Free Online (HD Streaming Guide)\" | 10.64628/aa.r69pegr7d \"To watch or not to watch? The Tokyo Games raises difficult questions for fans\""
+    },
+    {
+      "query": "let fans watch sports recreation games",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:30:25.349Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=let%20fans%20watch%20sports%20recreation%20games&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "let fans watch sports recreation games",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:30:26.167Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Alet%20AND%20all%3Afans%20AND%20all%3Awatch%20AND%20all%3Asports%20AND%20all%3Arecreation%20AND%20all%3Agames&start=0&max_results=10; sha256=2d1329d2bef8be9de15447395bf26d6daa87303e5e107aa85a21ea4672836154; total=0; shown=0/0"
+    },
+    {
+      "query": "let fans watch sports recreation games",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:30:26.987Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=let%20fans%20watch%20sports%20recreation%20games&rows=10&select=DOI,title; sha256=2bcb98770f40a13a4093c9eb080467ca25c54163f6334e1a12f1f65e744c2996; total=875561; shown=5/10; top: 10.64628/aa.r69pegr7d \"To watch or not to watch? The Tokyo Games raises difficult questions for fans\" | 10.4324/9780203728376-13 \"The Motives of Sports Fans\" | 10.4324/9780429342189-31 \"Sports Fans Hunt for Women's Games\" | 10.1108/ijsms-02-2021-0053 \"No games to watch: empirical analysis of sport fans’ stress and coping strategies during COVID-19 lockdown\" | 10.64628/aa.tmajjxqne \"Anti-siphoning changes a blow to sports fans who want to watch on free-to-air TV\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "let fans watch match seat ball",
+      "url": "https://api.github.com/search/repositories?q=let%20fans%20watch%20match%20seat%20ball&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=let%20fans%20watch%20match%20seat%20ball&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:30:18.756Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "let fans watch match seat ball",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Alet%20AND%20all%3Afans%20AND%20all%3Awatch%20AND%20all%3Amatch%20AND%20all%3Aseat%20AND%20all%3Aball&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Alet%20AND%20all%3Afans%20AND%20all%3Awatch%20AND%20all%3Amatch%20AND%20all%3Aseat%20AND%20all%3Aball&start=0&max_results=10",
+      "sha256": "63c297ef13f7d7bffc50978346d8e2e590f3e4cf1172ce3eac2475c6f8853f7b",
+      "bytes": 830,
+      "observedAt": "2026-11-06T00:30:23.199Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "let fans watch match seat ball",
+      "url": "https://api.crossref.org/works?query=let%20fans%20watch%20match%20seat%20ball&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=let%20fans%20watch%20match%20seat%20ball&rows=10&select=DOI,title",
+      "sha256": "8c36d7d7be4317e97113afe3f7054732380a69569cb9e467945936150d28f5e0",
+      "bytes": 1407,
+      "observedAt": "2026-11-06T00:30:24.023Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "let fans watch sports recreation games",
+      "url": "https://api.github.com/search/repositories?q=let%20fans%20watch%20sports%20recreation%20games&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=let%20fans%20watch%20sports%20recreation%20games&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:30:25.349Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "let fans watch sports recreation games",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Alet%20AND%20all%3Afans%20AND%20all%3Awatch%20AND%20all%3Asports%20AND%20all%3Arecreation%20AND%20all%3Agames&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Alet%20AND%20all%3Afans%20AND%20all%3Awatch%20AND%20all%3Asports%20AND%20all%3Arecreation%20AND%20all%3Agames&start=0&max_results=10",
+      "sha256": "2d1329d2bef8be9de15447395bf26d6daa87303e5e107aa85a21ea4672836154",
+      "bytes": 846,
+      "observedAt": "2026-11-06T00:30:26.167Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "let fans watch sports recreation games",
+      "url": "https://api.crossref.org/works?query=let%20fans%20watch%20sports%20recreation%20games&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=let%20fans%20watch%20sports%20recreation%20games&rows=10&select=DOI,title",
+      "sha256": "2bcb98770f40a13a4093c9eb080467ca25c54163f6334e1a12f1f65e744c2996",
+      "bytes": 1439,
+      "observedAt": "2026-11-06T00:30:26.987Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "c2ffba754e495c7cba6f7e988c3966776bff8cc71bc5eb10c2fccaa92125759b",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

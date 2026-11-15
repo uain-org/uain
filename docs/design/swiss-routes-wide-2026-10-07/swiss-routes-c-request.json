@@ -1,0 +1,8 @@
+{
+  "model": "black-forest-labs/flux-3-image",
+  "prompt": "Preserve this exact orbital Earth photograph, ultrawide canvas, full Earth at right, empty left 45%, blue atmosphere, warm sunlight, continents and camera position. Add exactly one small cyan network source on SWITZERLAND: the small Alpine land immediately north of northern Italy and east of France, on the northern edge of the white arc of the Alps. Its image position is x=2003,y=440 on the 2934x1258 reference, normalized x=.6827,y=.3498. Switzerland is ABOVE and a little right of Corsica, not further northeast in Germany or Poland. Place the one root here, keep its underlying land recognizable. Six thin elegant cyan luminous arcs spring outward from that same exact Swiss pinpoint toward Britain, Scandinavia, North Africa, South Africa, western Asia and the Atlantic horizon. Lift each arc gently above the globe with a fine glow, like beautiful orbital data trails. Destinations are small faint dots; all arcs have just one common Swiss origin. No new origin over Africa or eastern Europe. Preserve natural photorealism, no geometric grid or mesh. Absolutely no writing, labels, flags, badges, country symbols, logos, watermarks or corner marks. Only the route overlay changes; preserve the composition and colors exactly.",
+  "resolution": "2K",
+  "aspect_ratio": "21:9",
+  "n": 1,
+  "reference_file": "docs/design/earth-wide-2026-10-07/reference.png"
+}

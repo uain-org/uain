@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-01203",
+  "native_project": "P-OPP-01203",
+  "source_digest": "d060558516fe8ba81de88fc795508a3b6c132e7a6c51cd7cdad9e2b4261ba16d",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build a global food reserve managed by AI against shocks",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "6a60d7894f11dab52e566ba4b6a6ecd19b68e62ef8901c75f39d140fddda335a"
+  },
+  "drafted_at": "2026-11-06T00:15:00.152Z",
+  "queries": [
+    "global food reserve managed shocks",
+    "global food reserve nutrition systems hunger"
+  ],
+  "searches": [
+    {
+      "query": "global food reserve managed shocks",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:14:51.956Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=global%20food%20reserve%20managed%20shocks&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "global food reserve managed shocks",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:14:52.574Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aglobal%20AND%20all%3Afood%20AND%20all%3Areserve%20AND%20all%3Amanaged%20AND%20all%3Ashocks&start=0&max_results=10; sha256=5d55ab9225d0a6c74ed69091faf82994eca3e7a50c880d43990a900536e852b5; total=0; shown=0/0"
+    },
+    {
+      "query": "global food reserve managed shocks",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:14:53.518Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=global%20food%20reserve%20managed%20shocks&rows=10&select=DOI,title; sha256=e09c4cdee87bb53de75577a25bdf76c434421d627c771bdcb35efdabd4ca1be5; total=3154650; shown=5/10; top: 10.47688/rdp2024-10 \"How Do Global Shocks Affect Australia?\" | 10.2139/ssrn.3948471 \"International Reserve Management, Global Financial Shocks, and Firm Investment in Emerging Market Economies\" | 10.2139/ssrn.6566239 \"Managed Pass-Through under Global Oil Shocks: A Regime-Contingent Model of Diesel Price Adjustment in Ecuador Working Paper\" | 10.4324/9781315872544 \"Global Food-Price Shocks and Poor People\" | 10.24148/wp2012-10 \"Uncertainty Shocks are Aggregate Demand Shocks\""
+    },
+    {
+      "query": "global food reserve nutrition systems hunger",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:14:58.511Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=global%20food%20reserve%20nutrition%20systems%20hunger&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "global food reserve nutrition systems hunger",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:14:59.025Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aglobal%20AND%20all%3Afood%20AND%20all%3Areserve%20AND%20all%3Anutrition%20AND%20all%3Asystems%20AND%20all%3Ahunger&start=0&max_results=10; sha256=232a259d08535cec2f0f9e0a25b6752a7fe497aeec6e29a1344d4020a43422ff; total=0; shown=0/0"
+    },
+    {
+      "query": "global food reserve nutrition systems hunger",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:15:00.151Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=global%20food%20reserve%20nutrition%20systems%20hunger&rows=10&select=DOI,title; sha256=ff4478326c8fc107f9d52d25e989c6e92e2ca729e4af3e96c36913dbcd2008c5; total=8163526; shown=5/10; top: 10.2499/9780896298330 \"2013 Global Hunger Index The challenge of hunger: Building resilience to achieve food and nutrition security\" | 10.2499/9780896299511 \"2013 Global Hunger Index The challenge of hunger: Building resilience to achieve food and nutrition security\" | 10.18356/9789210052467c015 \"Hunger, food security and nutrition\" | 10.1108/nfs.2012.01742baa.008 \"Global hunger\" | 10.1080/19320248.2018.1512922 \"Container gardening to combat micronutrients deficiencies in mothers and young children during dry/lean season in northern Ghana\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "global food reserve managed shocks",
+      "url": "https://api.github.com/search/repositories?q=global%20food%20reserve%20managed%20shocks&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=global%20food%20reserve%20managed%20shocks&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:14:51.956Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "global food reserve managed shocks",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aglobal%20AND%20all%3Afood%20AND%20all%3Areserve%20AND%20all%3Amanaged%20AND%20all%3Ashocks&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aglobal%20AND%20all%3Afood%20AND%20all%3Areserve%20AND%20all%3Amanaged%20AND%20all%3Ashocks&start=0&max_results=10",
+      "sha256": "5d55ab9225d0a6c74ed69091faf82994eca3e7a50c880d43990a900536e852b5",
+      "bytes": 820,
+      "observedAt": "2026-11-06T00:14:52.574Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "global food reserve managed shocks",
+      "url": "https://api.crossref.org/works?query=global%20food%20reserve%20managed%20shocks&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=global%20food%20reserve%20managed%20shocks&rows=10&select=DOI,title",
+      "sha256": "e09c4cdee87bb53de75577a25bdf76c434421d627c771bdcb35efdabd4ca1be5",
+      "bytes": 1490,
+      "observedAt": "2026-11-06T00:14:53.518Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "global food reserve nutrition systems hunger",
+      "url": "https://api.github.com/search/repositories?q=global%20food%20reserve%20nutrition%20systems%20hunger&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=global%20food%20reserve%20nutrition%20systems%20hunger&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:14:58.511Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "global food reserve nutrition systems hunger",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aglobal%20AND%20all%3Afood%20AND%20all%3Areserve%20AND%20all%3Anutrition%20AND%20all%3Asystems%20AND%20all%3Ahunger&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aglobal%20AND%20all%3Afood%20AND%20all%3Areserve%20AND%20all%3Anutrition%20AND%20all%3Asystems%20AND%20all%3Ahunger&start=0&max_results=10",
+      "sha256": "232a259d08535cec2f0f9e0a25b6752a7fe497aeec6e29a1344d4020a43422ff",
+      "bytes": 858,
+      "observedAt": "2026-11-06T00:14:59.025Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "global food reserve nutrition systems hunger",
+      "url": "https://api.crossref.org/works?query=global%20food%20reserve%20nutrition%20systems%20hunger&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=global%20food%20reserve%20nutrition%20systems%20hunger&rows=10&select=DOI,title",
+      "sha256": "ff4478326c8fc107f9d52d25e989c6e92e2ca729e4af3e96c36913dbcd2008c5",
+      "bytes": 1532,
+      "observedAt": "2026-11-06T00:15:00.151Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "b2fd87c8b111129918cfd3969b5e2ff550eff8b06ede1c9c65c483cc48532d55",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

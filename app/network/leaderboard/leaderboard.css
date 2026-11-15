@@ -1,0 +1,28 @@
+.leaderboard-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0 3rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+.leaderboard-page th,
+.leaderboard-page td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #bfd0d6;
+  vertical-align: top;
+}
+.leaderboard-page th {
+  font-weight: 600;
+}
+.leaderboard-page td:last-child {
+  min-width: 16rem;
+  max-width: 38rem;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.leaderboard-page h2 {
+  margin-top: 2rem;
+}
+.leaderboard-page p {
+  max-width: 70ch;
+}

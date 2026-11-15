@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T032444Z-3d0bff759b",
+  "version": "0.3.71",
+  "source_commit": "22506f271291e26d2d775c9ae27c15528832780a",
+  "deployed_at": "2026-11-10T03:24:44Z",
+  "prior": "20261110T030715Z-1707c95176",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0371-release-20261110",
+    "CHANGELOG.md#kit-0211-min-kit-20261110"
+  ],
+  "note": "PR #446: uain-agent 0.2.11 served (paid tasks read paid N AI$, short step summaries, records_unavailable for an unreadable member record). BAINK_MIN_KIT_VERSION stays 0.2.10."
+}

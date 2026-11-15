@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "organizations",
+  "release_id": "9af5280e24e4a9256d8f113e649d5ac10893c560",
+  "version": null,
+  "source_commit": "9af5280e24e4a9256d8f113e649d5ac10893c560",
+  "deployed_at": "2026-11-08T11:10:25Z",
+  "prior": "738d83e05867f8a2a21fb26c0b7871dfa9331041",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#platform-readiness-20261108"
+  ],
+  "note": "Exact635-file Git-derived source release; locked pointer swap and read-only manager check pass. No service restarts, custody changes, journal restore or new payable task claimed."
+}

@@ -1,0 +1,23 @@
+{
+  "asset": "atmosphere",
+  "tool_mode": "built-in image_gen generation with style reference",
+  "tool": "image_gen.imagegen",
+  "prompt": "Use case: ads-marketing\nAsset type: pale atmospheric raster backdrop for an existing UAIN benefits section, natural wide 1536x1024 canvas.\nInput image: selected full mockup is STYLE REFERENCE ONLY. Extract and faithfully recreate only its soft pale ice-blue page atmosphere and alpine cloud/mountain strip along the bottom. Do not reproduce any cards, typography, objects, tokens, DNA, Earth, buttons or UI from the reference.\nPrimary request: predominantly very pale blue #edf7ff upper 75 percent with faint wispy soft blue cloud texture, barely visible and low contrast. Luminous distant ice-blue alpine mountains and soft cloud banks occupy the bottom quarter, matching the cloudy mountain strip beneath the reference's cards. Broad airy horizontal composition. Light haze fades the mountain tops into the pale backdrop. Soft photographic cinematic natural alpine atmosphere.\nComposition: reserve large quiet upper area. Mountains stay low and pale, nowhere dark enough to impair navy headings or a card grid placed above. Smooth unobtrusive tonal transitions. Edge-to-edge image.\nConstraints: only atmospheric sky/cloud/mountain backdrop. No typography, text, letters, numbers, UI, logo, objects, tokens, planets, cards, borders, frames, badges or watermarks. No dark sky, no intense contrast, no repeated panels.",
+  "reference_path": "/var/folders/hs/hpfl1xnd1jx6q1pwtjdb84p40000gn/T/codex-clipboard-f618db5c-e5a5-4a9f-b524-59e26e1afe41.png",
+  "generated_path": "~/.codex/generated_images/01a11b37-d6b5-7271-bd58-783471e41ffa/exec-f6401d81-fedc-4b2d-a0c0-af28a2d716b5.png",
+  "generated_dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "output_path": "public/images/landing/benefits/atmosphere.webp",
+  "output_dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "encoding": {
+    "format": "WebP",
+    "quality": 84,
+    "method": 6
+  },
+  "inspection_notes": "Viewed generated raster. Pale ice-blue upper field with faint wispy clouds; low-contrast distant alpine mountains and soft white cloud banks confined to lower quarter. Matches selected mock's airy sky and bottom mountain atmosphere. No text, UI, logos, cards, objects, borders or watermarks."
+}

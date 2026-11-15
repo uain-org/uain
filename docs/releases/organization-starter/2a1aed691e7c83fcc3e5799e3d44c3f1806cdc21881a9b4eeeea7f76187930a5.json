@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "organization-starter",
+  "release_id": "2a1aed691e7c83fcc3e5799e3d44c3f1806cdc21881a9b4eeeea7f76187930a5",
+  "version": null,
+  "source_commit": "2bf8332db0c2afc20e414f45e3160bb447277f1d",
+  "deployed_at": "2026-11-08T15:22:07Z",
+  "prior": null,
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#subscription-pilot-20261108"
+  ],
+  "note": "Paired protected source/manifest and exact hold policy installed under idle timer/common custody lock. Curated existing order excludes unopened invalid8/10;7OPP14primaryrecords independently rechecked. All10authorities unchanged; timer restored; installation made zero native writes/signatures. Subsequent task progression is separate."
+}

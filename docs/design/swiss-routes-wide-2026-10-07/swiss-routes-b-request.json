@@ -1,0 +1,9 @@
+{
+  "model": "bytedance-seed/seedream-5-0-flash",
+  "prompt": "Make one precise geographic correction to this image; keep the exact canvas, Earth position, size, lighting, background, colors, atmosphere and route design. The cyan star root is incorrectly north-east of Switzerland. Move the entire single shared root LEFT and slightly DOWN to the Swiss Alps, immediately above the north-western shoulder of the Italian peninsula and at the eastern edge of France. On this 2934 by 1258 image the required hub coordinate is x=2003, y=440, equivalently 68.27% of image width and 34.98% of image height. Move it 75 pixels left and 27 pixels down from the existing cyan star. This coordinate is the middle of Switzerland, on the northern side of the curved white Alps; NOT Germany or eastern Europe. Redraw all routes so they share precisely this one corrected Swiss root, with each route leaving the same small pinpoint. Erase the old root completely, leaving natural geography. Retain six elegant thin cyan lifted arcs and dim destinations, no destination-to-destination connections, no second origin. Absolutely no writing, flags, labels, logos, emblems, watermarks or corner branding.",
+  "resolution": "2K",
+  "aspect_ratio": "21:9",
+  "n": 1,
+  "seed": 710074,
+  "reference_file": "swiss-routes.png"
+}

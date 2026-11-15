@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "description": "Wire examples only; these are not production observations.",
+  "examples": [
+    {
+      "schemaVersion": 1,
+      "product": "uain",
+      "sourceRevision": null,
+      "observedAt": null,
+      "fetchedAt": "2026-10-12T00:00:00.000Z",
+      "state": "unconfigured",
+      "metrics": [],
+      "capabilities": [
+        "overview:read"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "product": "kalki",
+      "sourceRevision": null,
+      "observedAt": null,
+      "fetchedAt": "2026-10-12T00:00:00.000Z",
+      "state": "unconfigured",
+      "metrics": [],
+      "capabilities": [
+        "overview:read"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "product": "ir",
+      "sourceRevision": null,
+      "observedAt": null,
+      "fetchedAt": "2026-10-12T00:00:00.000Z",
+      "state": "unconfigured",
+      "metrics": [],
+      "capabilities": [
+        "overview:read"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "product": "smartmeet",
+      "sourceRevision": null,
+      "observedAt": null,
+      "fetchedAt": "2026-10-12T00:00:00.000Z",
+      "state": "unconfigured",
+      "metrics": [],
+      "capabilities": [
+        "overview:read"
+      ]
+    }
+  ]
+}

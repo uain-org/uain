@@ -1,0 +1,51 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-10561",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:40:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable network detects any new outbreak within 24 hours, so the Main KPI of 195 countries covered by 24-hour pathogen early warning is unmet; the accepted global target is detection within 7 days, and it is often missed. A retrospective 7-1-7 review in five countries found only 22 of 41 public health events (54%) detected within 7 days, with a median of 6 days and a range of 0 to 157 days (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:37060911&resultType=core&format=json); in Uganda, longer time to detection across 84 outbreaks was linked to more cases and deaths (https://doi.org/10.1136/bmjgh-2025-020034). WHO's EIOS system, used by 120 countries and 30 organisations by end-2025, offers near-real-time open-source intelligence but publishes no detection-time metrics (https://www.who.int/initiatives/eios); an evaluation framework was published only in 2026 (https://doi.org/10.2807/1560-7917.es.2026.31.5.2500363). Aircraft wastewater networks are proposed for global monitoring (https://doi.org/10.1038/s41591-025-03501-4). GitHub has one small event-based-surveillance project. Honest limit: event-based surveillance, ProMED-style reporting and wastewater sequencing are known, so tasks that re-implement them are not new work; 24-hour detection of any new pathogen also needs diagnostics and sampling, not only intelligence, so tasks must target a checkable piece such as measured time-to-detection gains on historical outbreaks."
+  },
+  "additionalSearches": [
+    {
+      "query": "7-1-7 target outbreak detection timeliness evaluation countries (2024 onward)",
+      "source": "https://api.openalex.org/works?search=7-1-7%20target%20outbreak%20detection%20timeliness%20evaluation%20countries&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:56Z",
+      "finding": "16,596 loosely matched works; relevant: 7-1-7 evaluations in Uganda, Ethiopia, Thailand and humanitarian settings (2024-2026), detection challenges in Africa (2025). The global benchmark is 7 days, not 24 hours, and is often missed."
+    },
+    {
+      "query": "Epidemic Intelligence from Open Sources EIOS WHO evaluation event-based surveillance timeliness (2024 onward)",
+      "source": "https://api.openalex.org/works?search=Epidemic%20Intelligence%20from%20Open%20Sources%20EIOS%20WHO%20evaluation%20event-based%20surveillance%20timeliness&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:18:58Z",
+      "finding": "99 works: EIOS effectiveness in Korea (2025), EIOS strategy 2024-2026, an EIOS evaluation framework (Eurosurveillance 2026), LLM epidemic information extraction. No 24-hour global detection shown."
+    },
+    {
+      "query": "wastewater surveillance global network pathogen early warning coverage countries (2024 onward)",
+      "source": "https://api.openalex.org/works?search=wastewater%20surveillance%20global%20network%20pathogen%20early%20warning%20coverage%20countries&per_page=8&filter=from_publication_date:2024-01-01&sort=relevance_score:desc",
+      "observedAt": "2026-11-06T01:19:00Z",
+      "finding": "804 works: key considerations for wastewater pathogen surveillance, aircraft-based global wastewater networks (Nature Medicine 2025), AI in early-warning systems review (2025). Promising but not a 195-country 24-hour network."
+    },
+    {
+      "query": "epidemic intelligence event based surveillance (GitHub repositories)",
+      "source": "https://api.github.com/search/repositories?q=epidemic%20intelligence%20event%20based%20surveillance&sort=stars&per_page=8",
+      "observedAt": "2026-11-06T01:19:01Z",
+      "finding": "1 repository (0 stars): automating review of event-based surveillance records in Zambia. Null result for an open global early-warning network."
+    },
+    {
+      "query": "7-1-7 implementation in five countries (PMID 37060911)",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:37060911&resultType=core&format=json",
+      "observedAt": "2026-11-06T01:23:30Z",
+      "finding": "41 public health events assessed; 22 (54%) met the 7-day detection target; median time to detection 6 days, range 0 to 157 days."
+    },
+    {
+      "query": "WHO EIOS initiative",
+      "source": "https://www.who.int/initiatives/eios",
+      "observedAt": "2026-11-06T01:21:02Z",
+      "finding": "Used by 120 countries and 30 organisations and networks by end-2025; near-real-time detection claimed without quantified detection-to-alert times."
+    }
+  ]
+}

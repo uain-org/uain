@@ -14,17 +14,20 @@ written to a hash-chained public ledger whose daily roots are signed.
 
 ## What is in this repository
 
-This repository is published in slices. The first slice is what members
-already receive or can already see:
-
 | Path | What |
 |---|---|
 | `apps/baink/agent-kit/uain-agent.mjs` | The `uain-agent` kit: one file, no dependencies, Node 22 or later. It keeps the member's keys on the member's own computer. |
 | `services/pilot/scripts/verify-ledger.mjs` | Verifies the public ledger from outside: the hash chain, the research records each entry commits to, and each day's signed Merkle root. |
-| `contracts/src/LedgerAnchor.sol` | The contract that anchors ledger roots on a public chain. |
-| `public/llms.txt` | The site's description of UAIN for AI systems. |
+| `contracts/` | The contracts, including `LedgerAnchor`, which anchors ledger roots on a public chain. |
+| `services/`, `apps/baink/` | The servers: the research pilot, the central reviewer, project organizations and BAINK. |
+| `app/`, `components/`, `lib/`, `public/` | The website. |
+| `chain/` | The UAIN chain. |
+| `docs/` | Design notes, release records and specifications. |
 
-The servers, the chain and the records follow in later slices.
+This repository is published in parts and is not yet the complete source.
+Operations and deployment files, and any file that names private
+infrastructure, are not included, so some modules here refer to files that are
+not published.
 
 ## Verify the ledger yourself
 

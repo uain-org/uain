@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00242",
+  "native_project": "P-OPP-00242",
+  "source_digest": "3fc3308f66e219bea69b0461b440ed45aa1200f8719b79809792668ed5a41948",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Create a universal coronavirus vaccine",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "368d3a3adc8ceb7b94d031702a2bf14173f61c48b07b65ea75bc00a69f106781"
+  },
+  "drafted_at": "2026-11-06T00:08:43.184Z",
+  "queries": [
+    "universal coronavirus vaccine",
+    "universal coronavirus vaccine infectious disease pandemics"
+  ],
+  "searches": [
+    {
+      "query": "universal coronavirus vaccine",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:08:34.788Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=universal%20coronavirus%20vaccine&per_page=10; sha256=8d72db07f39021ec9765c6d451b6736040ba8bbdd97cae9f0fb86459906e9764; total=1; shown=1/1; top: lisakmalins/opentope \"An open-source pipeline to discover universal epitopes for vaccines.\""
+    },
+    {
+      "query": "universal coronavirus vaccine",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:08:35.319Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Auniversal%20AND%20all%3Acoronavirus%20AND%20all%3Avaccine&start=0&max_results=10; sha256=a397ee15d8709a96be98ac54f36b0c3cd8c506400c5d8a326af53cae2bb0843a; total=5; shown=5/5; top: arXiv:2003.07778v1 \"Day Level Forecasting for Coronavirus Disease (COVID-19) Spread: Analysis, Modeling and Recommendations\" | arXiv:2112.01318v1 \"Omicron (B.1.1.529): Infectivity, vaccine breakthrough, and antibody resistance\" | arXiv:2003.12614v4 \"How the world's collective attention is being paid to a pandemic: COVID-19 related n-gram time series for 24 languages on Twitter\" | arXiv:2008.08572v1 \"Fast Accurate Point of Care COVID-19 Pandemic Diagnosis Enabled Through Advanced Lab-on-a-Chip Optical Biosensors: Opportunities and Challe…\" | arXiv:2004.04813v2 \"Use of Available Data To Inform The COVID-19 Outbreak in South Africa: A Case Study\""
+    },
+    {
+      "query": "universal coronavirus vaccine",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:08:36.177Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=universal%20coronavirus%20vaccine&rows=10&select=DOI,title; sha256=c584f502b33d0698cea5b9fee6f499f5b4c08bd717a08497a17834725e6f2be0; total=439294; shown=5/10; top: 10.1016/0264-410x9490279-8 \"Universal coronavirus vaccine spike protein cloning and expression for use as a recombinant vaccine\" | 10.59350/r6jcb-9hq48 \"A Universal Coronavirus Vaccine Pushing Forward (NextGen Covid Vax Update 30)\" | 10.59350/k50h1-45r39 \"A Universal Coronavirus Vaccine Pushing Forward (NextGen Covid Vax Update 30)\" | 10.18609/vac.2023.032 \"MVA-vectored universal beta-coronavirus vaccine design &amp development\" | 10.1126/science.abh0447 \"A universal coronavirus vaccine\""
+    },
+    {
+      "query": "universal coronavirus vaccine infectious disease pandemics",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:08:41.257Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=universal%20coronavirus%20vaccine%20infectious%20disease%20pandemics&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "universal coronavirus vaccine infectious disease pandemics",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:08:42.255Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Auniversal%20AND%20all%3Acoronavirus%20AND%20all%3Avaccine%20AND%20all%3Ainfectious%20AND%20all%3Adisease%20AND%20all%3Apandemics&start=0&max_results=10; sha256=2cc414e6df8ea0321ee031555e3184264627dd71000d35341963d1da5fd37d69; total=0; shown=0/0"
+    },
+    {
+      "query": "universal coronavirus vaccine infectious disease pandemics",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:08:43.184Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=universal%20coronavirus%20vaccine%20infectious%20disease%20pandemics&rows=10&select=DOI,title; sha256=7291e6f4dfac2744e3a773bd4b07241d77f84751336015fc039f922e46a99620; total=3293378; shown=5/10; top: 10.4172/2332-0877-c2-061 \"Universal vaccine and artificial pandemics by infectious attenuated live vaccine to save people from dangerous new influenza pandemic\" | 10.2139/ssrn.3924046 \"Universal Digital Inclusion a Safety Net to Battle Pandemics Like Coronavirus\" | 10.4324/9781003223139-5 \"Coronavirus and Vaccine Nationalism\" | 10.1097/01.inf.0000248152.04414.62 \"A Universal Vaccine for Serogroup B Meningococcus\" | 10.64628/ab.rk7xewuxy \"Coronavirus: the road to vaccine roll-out is always bumpy, as 20th-century pandemics show\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "universal coronavirus vaccine",
+      "url": "https://api.github.com/search/repositories?q=universal%20coronavirus%20vaccine&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=universal%20coronavirus%20vaccine&per_page=10",
+      "sha256": "8d72db07f39021ec9765c6d451b6736040ba8bbdd97cae9f0fb86459906e9764",
+      "bytes": 5283,
+      "observedAt": "2026-11-06T00:08:34.788Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "universal coronavirus vaccine",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Auniversal%20AND%20all%3Acoronavirus%20AND%20all%3Avaccine&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Auniversal%20AND%20all%3Acoronavirus%20AND%20all%3Avaccine&start=0&max_results=10",
+      "sha256": "a397ee15d8709a96be98ac54f36b0c3cd8c506400c5d8a326af53cae2bb0843a",
+      "bytes": 13693,
+      "observedAt": "2026-11-06T00:08:35.319Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "universal coronavirus vaccine",
+      "url": "https://api.crossref.org/works?query=universal%20coronavirus%20vaccine&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=universal%20coronavirus%20vaccine&rows=10&select=DOI,title",
+      "sha256": "c584f502b33d0698cea5b9fee6f499f5b4c08bd717a08497a17834725e6f2be0",
+      "bytes": 1380,
+      "observedAt": "2026-11-06T00:08:36.177Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "universal coronavirus vaccine infectious disease pandemics",
+      "url": "https://api.github.com/search/repositories?q=universal%20coronavirus%20vaccine%20infectious%20disease%20pandemics&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=universal%20coronavirus%20vaccine%20infectious%20disease%20pandemics&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:08:41.257Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "universal coronavirus vaccine infectious disease pandemics",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Auniversal%20AND%20all%3Acoronavirus%20AND%20all%3Avaccine%20AND%20all%3Ainfectious%20AND%20all%3Adisease%20AND%20all%3Apandemics&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Auniversal%20AND%20all%3Acoronavirus%20AND%20all%3Avaccine%20AND%20all%3Ainfectious%20AND%20all%3Adisease%20AND%20all%3Apandemics&start=0&max_results=10",
+      "sha256": "2cc414e6df8ea0321ee031555e3184264627dd71000d35341963d1da5fd37d69",
+      "bytes": 886,
+      "observedAt": "2026-11-06T00:08:42.255Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "universal coronavirus vaccine infectious disease pandemics",
+      "url": "https://api.crossref.org/works?query=universal%20coronavirus%20vaccine%20infectious%20disease%20pandemics&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=universal%20coronavirus%20vaccine%20infectious%20disease%20pandemics&rows=10&select=DOI,title",
+      "sha256": "7291e6f4dfac2744e3a773bd4b07241d77f84751336015fc039f922e46a99620",
+      "bytes": 1472,
+      "observedAt": "2026-11-06T00:08:43.184Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "7fb29d916d63cb05a5f05d086e8945550aecfe783501c177506091ec4d31cac1",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-08641",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No AI coach is shown to help people form lasting habits, and none reaches 1,000,000,000 people, so the Main KPI is unmet. The trial evidence for AI habit coaching is thin: a GPT habit coach was piloted with 5 people for five days (https://arxiv.org/pdf/2411.19229), a four-week LLM coach study with 54 people measured enjoyment rather than habit formation (https://arxiv.org/html/2510.05449v1), and a six-month LLM coaching RCT was still awaiting ethics approval (https://anzctr.org.au/ACTRN12625000412437p.aspx). Health and habit apps keep only about 3 to 8 percent of users at day 30 (https://martechvibe.com/?p=32648), and in the founding habit study only 23 percent of participants reached automaticity (https://www.thebehavioralscientist.com/articles/how-long-to-form-a-habit). Existing reach is commercial or small: Noom reports about 45 million users, while open-source Habitica is far smaller (https://sp-edge.com/companies/45510). Honest limit: habit-tracking apps and general chatbots are known answers; only lasting, measured habit change at scale is open."
+  },
+  "additionalSearches": [
+    {
+      "query": "AI habit coaching app randomized controlled trial long-term habit formation outcomes 2025",
+      "source": "https://anzctr.org.au/ACTRN12625000412437p.aspx",
+      "observedAt": "2026-11-06T00:44:24Z",
+      "finding": "No completed RCT of long-term habit formation with an AI coach; 5-person pilot, 54-person 4-week study, a registered 6-month RCT pending ethics."
+    },
+    {
+      "query": "Habitica open source habit tracker users; Noom digital behavior change users millions",
+      "source": "https://sp-edge.com/companies/45510",
+      "observedAt": "2026-11-06T00:44:30Z",
+      "finding": "Noom reported over 45 million users (Sept 2024, self-reported); Habitica is open source with users in the thousands to low millions."
+    },
+    {
+      "query": "habit apps retention day 30 abandonment behavior change maintenance study",
+      "source": "https://martechvibe.com/?p=32648",
+      "observedAt": "2026-11-06T00:44:36Z",
+      "finding": "Industry benchmarks: health and fitness apps retain about 3 to 8 percent of users at day 30; drop-off peaks days 8 to 14."
+    },
+    {
+      "query": "Lally habit formation 66 days median study how long to form a habit 2024 meta-analysis",
+      "source": "https://www.thebehavioralscientist.com/articles/how-long-to-form-a-habit",
+      "observedAt": "2026-11-06T00:44:42Z",
+      "finding": "Lally 2010: median 66 days among well-fitted participants, range 18 to 254; only 23 percent reached the formation threshold."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "uain",
+  "release_id": "621b6ba2",
+  "version": null,
+  "source_commit": "621b6ba27e15ea1fbe31042d29b0073317a9d7a9",
+  "deployed_at": "2026-11-09T00:02:15Z",
+  "prior": "9ae537de",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#feedback-protected-runtime-activation-20261109",
+    "docs/verification/baink-feedback-cli-qualification-2026-11-09.md"
+  ],
+  "note": "Normal PR279 merge and deployment workflow42537105051 succeeded. Live release source/all three image tags match621; pilot4/4, web2/2, waitlist1/1. Public root/network/API readiness and separate waitlist login checks passed. BAINK app42 and author correction remain separate."
+}

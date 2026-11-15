@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01444",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": true,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held: the project's deliverable, a crop that grows in salty desert soil using seawater, is a known answer. Salicornia bigelovii was grown for six years in a coastal desert on full-strength seawater, with seed and biomass yields that matched or exceeded freshwater oilseeds such as soybean and sunflower and seed of 26 to 33 percent oil (Glenn, O'Leary et al., Science 1991, https://katalog.lib.cas.cz/KNAV/EdsRecord/edsair,edsair.doi.dedup.....79f729e6d1cd657e0968b350ee61755a); reviews confirm it is productive on full-strength seawater (Environ Exp Bot vol 92). It has been farmed with seawater-pivot irrigation on 50-ha circles at Ras al-Zawr, Saudi Arabia, and ICBA reported about 3 t/ha seed in the UAE, with Khalifa University scaling a 200-ha pilot (https://www.biosaline.org/news/2018-05-10-6466). Honest limit: the 50,000,000-hectare KPI is unmet because seawater farming is not yet profitable (a Kuwait cost model found negative net farm income), harvest suffers from uneven ripening and shattering, Salicornia is not a staple, and China's seawater rice in fact relies on fresh water to leach salt (https://regional.chinadaily.com.cn/shandong/2018-08/28/c_267410.htm). Creating the crop is therefore a known answer and under the 29 September 2026 rule the project is not opened as new work; a reframed project on profitable seawater agronomy or a seawater-irrigated staple grain would need its own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "Salicornia seawater irrigation desert farming commercial yield hectares ICBA Seawater Farms Eritrea",
+      "source": "https://www.biosaline.org/news/2018-05-10-6466",
+      "observedAt": "2026-11-06T01:15:00Z",
+      "finding": "Salicornia has been grown with seawater pumped from the Arabian Gulf in five 50-ha pivot circles at Ras al-Zawr (4,500 ha target); ICBA reported about 3 t/ha seed under UAE conditions; Khalifa University is scaling to 200 ha; Sonora lysimeters gave 13.6 to 23.1 t dry matter/ha. A 2.5-ha Kuwait trial gave negative net farm income."
+    },
+    {
+      "query": "seawater rice saline-alkali land China hectares salinity tolerance limit full-strength seawater crop",
+      "source": "https://regional.chinadaily.com.cn/shandong/2018-08/28/c_267410.htm",
+      "observedAt": "2026-11-06T01:15:00Z",
+      "finding": "China's so-called seawater rice is a salt-tolerant rice for saline-alkali land (yields of 500 to 691 kg per mu; 400,000 ha assigned in 2021) but fresh irrigation water is used to leach salt; it is not irrigated with full-strength seawater."
+    },
+    {
+      "query": "Salicornia bigelovii SOS-10 cultivar full-strength seawater irrigation coastal desert oilseed domesticated",
+      "source": "https://katalog.lib.cas.cz/KNAV/EdsRecord/edsair,edsair.doi.dedup.....79f729e6d1cd657e0968b350ee61755a",
+      "observedAt": "2026-11-06T01:20:00Z",
+      "finding": "Science 1991 (Glenn, O'Leary et al.): six years of coastal-desert field trials on seawater gave Salicornia seed and biomass yields equal to or above soybean and sunflower, seed 26 to 33 percent oil. A halophyte review reports it productive on full-strength seawater but notes mechanical-harvest losses from uneven ripening and shattering; crop improvement still needed."
+    },
+    {
+      "query": "\"halophyte\" AND seawater AND \"crop yield\" 2023-2026 (Europe PMC)",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22halophyte%22%20AND%20seawater%20AND%20%22crop%20yield%22%20AND%20PUB_YEAR%3A%5B2023%20TO%202026%5D&format=json&pageSize=5&sort=CITED%20desc",
+      "observedAt": "2026-11-06T01:19:00Z",
+      "finding": "Europe PMC returns 30 records 2023-2026, including Genomics-assisted breeding for salinity-smart future crops (Plant Biotechnol J 2025) and quinoa for multi-stress soils; recent work is on improving salt tolerance and halophyte domestication, consistent with seawater crops existing but not being competitive staples."
+    }
+  ]
+}

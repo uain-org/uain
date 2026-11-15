@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-01444",
+  "native_project": "P-OPP-01444",
+  "source_digest": "ab52a6c1619909d037b49c674fb02306ac22420d73efd40951ca3370fd050836",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Create a crop that grows in salty desert soil using seawater",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "ed9c203d58d6e76b908a7e2d5785787f2aaeb23342c34c9a93f84eb9bc4aee4b"
+  },
+  "drafted_at": "2026-11-06T00:16:44.525Z",
+  "queries": [
+    "crop grows salty desert soil seawater",
+    "crop grows salty agriculture land science"
+  ],
+  "searches": [
+    {
+      "query": "crop grows salty desert soil seawater",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:16:35.879Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=crop%20grows%20salty%20desert%20soil%20seawater&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "crop grows salty desert soil seawater",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:16:36.365Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Acrop%20AND%20all%3Agrows%20AND%20all%3Asalty%20AND%20all%3Adesert%20AND%20all%3Asoil%20AND%20all%3Aseawater&start=0&max_results=10; sha256=461a09a9298cca221244562918c1135abb30e3d491b2a0116f8bab8b93542be2; total=0; shown=0/0"
+    },
+    {
+      "query": "crop grows salty desert soil seawater",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:16:37.188Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=crop%20grows%20salty%20desert%20soil%20seawater&rows=10&select=DOI,title; sha256=e2e191bc02efa37837e7306a832e7642fb19953498c7fe91ed2ac19155fca42d; total=1056344; shown=5/10; top: 10.3733/ca.v055n05p4 \"Genetically engineered tomato grows in salty water\" | 10.1061/9780784481899.077 \"Stabilization of Pure Salty Formations of the GOTVAND Dam Lake and Other Salty Drought Desert Regions through Invention of Turk Salty Mortar\" | 10.1626/jcs.78.87 \"Comparison of the Degree of Damage between Rice Plants Sprayed with Seawater and Exposed to Salty Wind Damage by the Typhoon No.15 in 2004\" | 10.4060/cc0530en \"Salty soil adventures\" | 10.20935/al105 \"Salty seawater or a warm little pond: Where did life begin?\""
+    },
+    {
+      "query": "crop grows salty agriculture land science",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:16:42.426Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=crop%20grows%20salty%20agriculture%20land%20science&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "crop grows salty agriculture land science",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:16:43.408Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Acrop%20AND%20all%3Agrows%20AND%20all%3Asalty%20AND%20all%3Aagriculture%20AND%20all%3Aland%20AND%20all%3Ascience&start=0&max_results=10; sha256=01515268c6a879789fc289b77183e07ea67e6f67961f8ff3e9ed294306d07708; total=0; shown=0/0"
+    },
+    {
+      "query": "crop grows salty agriculture land science",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:16:44.525Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=crop%20grows%20salty%20agriculture%20land%20science&rows=10&select=DOI,title; sha256=853a117868596b62d0b3c46ad7b63dfd6ed6cc681b83f20309fb1bfd1890d203; total=16504086; shown=5/10; top: 10.3733/ca.v055n05p4 \"Genetically engineered tomato grows in salty water\" | 10.1626/jcs.61.supplement2_255 \"Soil fertility problems on arable land aiming at sustainable agriculture.\" | 10.2139/ssrn.998600 \"Female Land Rights, Crop Specialization, and Productivity in Paraguayan Agriculture\" | 10.1016/b978-0-444-42747-2.50066-x \"Pleurotus Mushroom Grows Well in Tobacco Medium\" | 10.1626/jcs.66.499 \"Mitigation of Salty Water Damage on Rice Through Sprinkle Water.\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "crop grows salty desert soil seawater",
+      "url": "https://api.github.com/search/repositories?q=crop%20grows%20salty%20desert%20soil%20seawater&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=crop%20grows%20salty%20desert%20soil%20seawater&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:16:35.879Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "crop grows salty desert soil seawater",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Acrop%20AND%20all%3Agrows%20AND%20all%3Asalty%20AND%20all%3Adesert%20AND%20all%3Asoil%20AND%20all%3Aseawater&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Acrop%20AND%20all%3Agrows%20AND%20all%3Asalty%20AND%20all%3Adesert%20AND%20all%3Asoil%20AND%20all%3Aseawater&start=0&max_results=10",
+      "sha256": "461a09a9298cca221244562918c1135abb30e3d491b2a0116f8bab8b93542be2",
+      "bytes": 844,
+      "observedAt": "2026-11-06T00:16:36.365Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "crop grows salty desert soil seawater",
+      "url": "https://api.crossref.org/works?query=crop%20grows%20salty%20desert%20soil%20seawater&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=crop%20grows%20salty%20desert%20soil%20seawater&rows=10&select=DOI,title",
+      "sha256": "e2e191bc02efa37837e7306a832e7642fb19953498c7fe91ed2ac19155fca42d",
+      "bytes": 1371,
+      "observedAt": "2026-11-06T00:16:37.188Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "crop grows salty agriculture land science",
+      "url": "https://api.github.com/search/repositories?q=crop%20grows%20salty%20agriculture%20land%20science&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=crop%20grows%20salty%20agriculture%20land%20science&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:16:42.426Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "crop grows salty agriculture land science",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Acrop%20AND%20all%3Agrows%20AND%20all%3Asalty%20AND%20all%3Aagriculture%20AND%20all%3Aland%20AND%20all%3Ascience&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Acrop%20AND%20all%3Agrows%20AND%20all%3Asalty%20AND%20all%3Aagriculture%20AND%20all%3Aland%20AND%20all%3Ascience&start=0&max_results=10",
+      "sha256": "01515268c6a879789fc289b77183e07ea67e6f67961f8ff3e9ed294306d07708",
+      "bytes": 852,
+      "observedAt": "2026-11-06T00:16:43.408Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "crop grows salty agriculture land science",
+      "url": "https://api.crossref.org/works?query=crop%20grows%20salty%20agriculture%20land%20science&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=crop%20grows%20salty%20agriculture%20land%20science&rows=10&select=DOI,title",
+      "sha256": "853a117868596b62d0b3c46ad7b63dfd6ed6cc681b83f20309fb1bfd1890d203",
+      "bytes": 1320,
+      "observedAt": "2026-11-06T00:16:44.525Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "aff71dbb04d13f8e4835a03cc326c697f44ad1f177d868309584be9234f7ceee",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

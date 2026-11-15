@@ -1,0 +1,17 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "project": "OPP-06001",
+  "source_digest": "c96de8a1ba97756c1ac8f4accb386a67d86dda262df27f90499e4da55f272870",
+  "class": "neutral",
+  "prior_art": {
+    "basis": "Independent review by claude-independent-prior-art-reviewer-20261106: No machine has anywhere near 1,000,000 logical-grade qubits; the largest reported error-corrected counts are about 48 to 50 logical qubits on Quantinuum Helios in 2026 (https://www.sec.gov/Archives/edgar/data/0002110105/000162827926000199/filename1.htm), so the Main KPI is unmet by four orders of magnitude. Google Willow showed below-threshold scaling for a single distance-7 surface-code memory (https://physics.aps.org/articles/v17/176). Public roadmaps stop far short: IBM Starling targets 200 logical qubits by 2029 and Blue Jay 2,000 later (https://thequantuminsider.com/2025/06/10/ibm-offers-roadmap-toward-large-scale-fault-tolerant-quantum-computer/), and Quantinuum Apollo targets hundreds by 2029. Honest limit: this is a hardware and capital-intensive programme led by large companies; open contributions UAIN members can make are mostly in decoders, codes and compilation, where substantial open work (qLDPC codes, real-time decoders) already exists, so each task needs its own prior-art basis. (open solution found: no; known answer: no; 6 project-level searches of api.github.com/search/repositories, export.arxiv.org/api/query, api.crossref.org/works; draft 162de04f8de25f4c8a0e9d72e417f66a1072f57110d4d2ab10fc3878ee762633, source c96de8a1ba97756c1ac8f4accb386a67d86dda262df27f90499e4da55f272870)",
+    "searches": [
+      "api.github.com/search/repositories \"reach quantum computer error-corrected qubits\" url=https://api.github.com/search/repositories?q=reach%20quantum%20computer%20error-corrected%20qubits&per_page=10 sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "export.arxiv.org/api/query \"reach quantum computer error-corrected qubits\" url=https://export.arxiv.org/api/query?search_query=all%3Areach%20AND%20all%3Aquantum%20AND%20all%3Acomputer%20AND%20all%3Aerror-corrected%20AND%20all%3Aqubits&start=0&max_results=10 sha256=1df8af6e62191f510e3adbe2bf28851caa3690c06dbf010f39d1a3643166d9e1",
+      "api.crossref.org/works \"reach quantum computer error-corrected qubits\" url=https://api.crossref.org/works?query=reach%20quantum%20computer%20error-corrected%20qubits&rows=10&select=DOI,title sha256=ff0afe4d7c34d3fe4587e6907b57d7cff81f183f4c4aa77e020206f6029df35a",
+      "api.github.com/search/repositories \"reach quantum computer computing digital infrastructure\" url=https://api.github.com/search/repositories?q=reach%20quantum%20computer%20computing%20digital%20infrastructure&per_page=10 sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "export.arxiv.org/api/query \"reach quantum computer computing digital infrastructure\" url=https://export.arxiv.org/api/query?search_query=all%3Areach%20AND%20all%3Aquantum%20AND%20all%3Acomputer%20AND%20all%3Acomputing%20AND%20all%3Adigital%20AND%20all%3Ainfrastructure&start=0&max_results=10 sha256=ae56355726904a7fd740bd2c93046fd8be137bc3121d12c1348f2e0482afd8b8",
+      "api.crossref.org/works \"reach quantum computer computing digital infrastructure\" url=https://api.crossref.org/works?query=reach%20quantum%20computer%20computing%20digital%20infrastructure&rows=10&select=DOI,title sha256=c4d0260e946623830777b4e28b23cd82e5a58f02a144386a8bba076d69ca3d73"
+    ]
+  }
+}

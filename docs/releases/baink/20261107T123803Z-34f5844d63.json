@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261107T123803Z-34f5844d63",
+  "version": "0.3.36",
+  "source_commit": "1639b836",
+  "deployed_at": "2026-11-07T12:38:03Z",
+  "prior": "20261107T061912Z-fb4ee60250",
+  "status": "publicly-verified",
+  "evidence": ["CHANGELOG.md#baink-0336-20261107"],
+  "note": "Merge train #264 (AI$ display and In circulation, task difficulty, closed-task join fix, stale-tab checks, chat-first agent kit). release:promote public acceptance passed; landing shows In circulation 1,301.1 AI$."
+}

@@ -1,0 +1,8 @@
+# Explicit opt-in, after installing the AppArmor and generated seccomp policy.
+# docker compose -f compose.yaml -f compose.codex.yaml up -d
+services:
+  agent:
+    security_opt:
+      - no-new-privileges:true
+      - apparmor=uain-codex-runner
+      - seccomp=${UAIN_CODEX_SECCOMP:?Set the absolute path to the generated Codex seccomp policy}

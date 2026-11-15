@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-01924",
+  "native_project": "P-OPP-01924",
+  "source_digest": "3975b5f823176e6536b843760a7e3643d4b6ad153588fc964d203efe50185638",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build floating wind farms in deep ocean far from shore",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "a593886e40be45f90bfce4a6ed04b48e378685bf622e70c0f495d00f470173b7"
+  },
+  "drafted_at": "2026-11-06T00:19:45.979Z",
+  "queries": [
+    "floating wind farms deep ocean far",
+    "floating wind farms clean energy power"
+  ],
+  "searches": [
+    {
+      "query": "floating wind farms deep ocean far",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:19:38.002Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=floating%20wind%20farms%20deep%20ocean%20far&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "floating wind farms deep ocean far",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:19:38.787Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Afloating%20AND%20all%3Awind%20AND%20all%3Afarms%20AND%20all%3Adeep%20AND%20all%3Aocean%20AND%20all%3Afar&start=0&max_results=10; sha256=e1d9d8afa91689e05618e2552f0318d8e2c5ee100477a1c0c500c0b7eaf8c163; total=0; shown=0/0"
+    },
+    {
+      "query": "floating wind farms deep ocean far",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:19:39.645Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=floating%20wind%20farms%20deep%20ocean%20far&rows=10&select=DOI,title; sha256=c54c3d61f31dfc846d7852ed85d326be064563015dbf193d441bc2c45d4e601b; total=1631420; shown=5/10; top: 10.1016/j.oceaneng.2024.118678 \"Fault detection and identification for control systems in floating offshore wind farms: A supervised Deep Learning methodology\" | 10.1016/j.ocecoaman.2023.106772 \"Towards understanding environmental and cumulative impacts of floating wind farms: Lessons learned from the fixed-bottom offshore wind farms\" | 10.1016/j.oceaneng.2024.120208 \"Design and analysis of shared anchor layouts for floating wind farms in deep waters\" | 10.1115/omae2026-177051 \"Reference Design of Floating Offshore Wind Farms With Multi-Objective Optimization\" | 10.1016/j.oceaneng.2023.115841 \"Cost and financial evaluation model for the design of floating offshore wind farms\""
+    },
+    {
+      "query": "floating wind farms clean energy power",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:19:44.521Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=floating%20wind%20farms%20clean%20energy%20power&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "floating wind farms clean energy power",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:19:45.024Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Afloating%20AND%20all%3Awind%20AND%20all%3Afarms%20AND%20all%3Aclean%20AND%20all%3Aenergy%20AND%20all%3Apower&start=0&max_results=10; sha256=2162e1137a4fcfd47a36ad782c71d29ca161243d4b9dec06290f9fa118cf73fc; total=0; shown=0/0"
+    },
+    {
+      "query": "floating wind farms clean energy power",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:19:45.978Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=floating%20wind%20farms%20clean%20energy%20power&rows=10&select=DOI,title; sha256=a68b17dacd3dc640bac5e8eace3f2904853dfcd54ad2fdeaac7e5234453e6bdd; total=4948292; shown=5/10; top: 10.1007/978-3-319-27972-5_3 \"Economic Feasibility of Floating Offshore Wind Farms\" | 10.1109/cespe68033.2025.00016 \"Spatiotemporal Wind Power Forecasting across Multiple Wind Farms Using GAT-BiLSTM with Online Adaptation\" | 10.4043/31968-ms \"Harnessing Offshore Wind: Using Mobile Floating Wind Units MOWUs and Energy Storage to Provide Clean Power to Production Installations\" | 10.1007/s40565-014-0052-4 \"Steady-state security in distribution networks with large wind farms\" | 10.1007/s40565-013-0022-2 \"Transient stability risk assessment of power systems incorporating wind farms\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "floating wind farms deep ocean far",
+      "url": "https://api.github.com/search/repositories?q=floating%20wind%20farms%20deep%20ocean%20far&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=floating%20wind%20farms%20deep%20ocean%20far&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:19:38.002Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "floating wind farms deep ocean far",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Afloating%20AND%20all%3Awind%20AND%20all%3Afarms%20AND%20all%3Adeep%20AND%20all%3Aocean%20AND%20all%3Afar&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Afloating%20AND%20all%3Awind%20AND%20all%3Afarms%20AND%20all%3Adeep%20AND%20all%3Aocean%20AND%20all%3Afar&start=0&max_results=10",
+      "sha256": "e1d9d8afa91689e05618e2552f0318d8e2c5ee100477a1c0c500c0b7eaf8c163",
+      "bytes": 838,
+      "observedAt": "2026-11-06T00:19:38.787Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "floating wind farms deep ocean far",
+      "url": "https://api.crossref.org/works?query=floating%20wind%20farms%20deep%20ocean%20far&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=floating%20wind%20farms%20deep%20ocean%20far&rows=10&select=DOI,title",
+      "sha256": "c54c3d61f31dfc846d7852ed85d326be064563015dbf193d441bc2c45d4e601b",
+      "bytes": 1649,
+      "observedAt": "2026-11-06T00:19:39.645Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "floating wind farms clean energy power",
+      "url": "https://api.github.com/search/repositories?q=floating%20wind%20farms%20clean%20energy%20power&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=floating%20wind%20farms%20clean%20energy%20power&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:19:44.521Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "floating wind farms clean energy power",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Afloating%20AND%20all%3Awind%20AND%20all%3Afarms%20AND%20all%3Aclean%20AND%20all%3Aenergy%20AND%20all%3Apower&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Afloating%20AND%20all%3Awind%20AND%20all%3Afarms%20AND%20all%3Aclean%20AND%20all%3Aenergy%20AND%20all%3Apower&start=0&max_results=10",
+      "sha256": "2162e1137a4fcfd47a36ad782c71d29ca161243d4b9dec06290f9fa118cf73fc",
+      "bytes": 846,
+      "observedAt": "2026-11-06T00:19:45.024Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "floating wind farms clean energy power",
+      "url": "https://api.crossref.org/works?query=floating%20wind%20farms%20clean%20energy%20power&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=floating%20wind%20farms%20clean%20energy%20power&rows=10&select=DOI,title",
+      "sha256": "a68b17dacd3dc640bac5e8eace3f2904853dfcd54ad2fdeaac7e5234453e6bdd",
+      "bytes": 1471,
+      "observedAt": "2026-11-06T00:19:45.978Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "09a4b00d6a296b3c54a7c6c6cc92b63b477dddc18e55964b2bf8180f09e4dcc3",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

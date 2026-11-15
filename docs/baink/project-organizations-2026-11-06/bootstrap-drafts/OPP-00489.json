@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00489",
+  "native_project": "P-OPP-00489",
+  "source_digest": "0f6e1d7fb5df89ef461bb19878edadc946a4bcf0349e96d04e30da9b10208f47",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Track brain development from infancy to old age",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "71b7c4cd54d18f74bfec2fa9cc0a469eecfbd00811747e553d948d7f9371cac8"
+  },
+  "drafted_at": "2026-11-06T00:11:31.985Z",
+  "queries": [
+    "track brain development infancy old age",
+    "track brain development neuroscience mental health"
+  ],
+  "searches": [
+    {
+      "query": "track brain development infancy old age",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:11:23.794Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=track%20brain%20development%20infancy%20old%20age&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "track brain development infancy old age",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:11:24.310Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Atrack%20AND%20all%3Abrain%20AND%20all%3Adevelopment%20AND%20all%3Ainfancy%20AND%20all%3Aold%20AND%20all%3Aage&start=0&max_results=10; sha256=9d003b01d025b5ff1c905f1d0deb46619b2926835b730af2ef976ec65206753c; total=0; shown=0/0"
+    },
+    {
+      "query": "track brain development infancy old age",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:11:25.558Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=track%20brain%20development%20infancy%20old%20age&rows=10&select=DOI,title; sha256=598c9fa32a5700ffe45a5dc6ee5746d7ff95a2fb2076f636e1626e678bb7107c; total=7572330; shown=5/10; top: 10.4324/9781315815152-15 \"Light at the End of the Tunnel: Storytelling in Old Age\" | 10.4324/9781315815152-8 \"Introduction Entranced by Story\" | 10.4324/9781315815152-12 \"The Age of Romance: Self and Story in Adolescence\" | 10.4324/9781315815152-9 \"‘Bothe Blysse and Blunder’: How Stories Begin\" | 10.4324/9781315815152-14 \"Remembering, Repeating and Foreshadowing: Midlife and Memory\""
+    },
+    {
+      "query": "track brain development neuroscience mental health",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:11:30.287Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=track%20brain%20development%20neuroscience%20mental%20health&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "track brain development neuroscience mental health",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:11:30.747Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Atrack%20AND%20all%3Abrain%20AND%20all%3Adevelopment%20AND%20all%3Aneuroscience%20AND%20all%3Amental%20AND%20all%3Ahealth&start=0&max_results=10; sha256=0468bcc0e3d4b05daeef81eda48222b55127eab34b0b120c63a8553e1a01828c; total=0; shown=0/0"
+    },
+    {
+      "query": "track brain development neuroscience mental health",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:11:31.985Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=track%20brain%20development%20neuroscience%20mental%20health&rows=10&select=DOI,title; sha256=17dc93fc63a04cb37c6dbc4aaf2f70cf3ba3f188f487729cbfaad27df2cc1e74; total=11794639; shown=5/10; top: 10.1016/j.neuroscience.2020.01.023 \"Maternal Obesity as a Risk Factor for Brain Development and Mental Health in the Offspring\" | 10.1101/2025.04.23.650187 \"Linking Oestradiol Timing and Tempo, Brain Development, and Mental Health in Adolescent Females\" | 10.1016/j.dcn.2019.100690 \"Puberty and functional brain development in humans: Convergence in findings?\" | 10.1016/j.neubiorev.2026.106721 \"The applications of single-cell and spatial transcriptomics in neuroscience and brain disorders\" | 10.1016/j.neubiorev.2024.105581 \"BrainAGE, brain health, and mental disorders: A systematic review\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "track brain development infancy old age",
+      "url": "https://api.github.com/search/repositories?q=track%20brain%20development%20infancy%20old%20age&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=track%20brain%20development%20infancy%20old%20age&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:11:23.794Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "track brain development infancy old age",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Atrack%20AND%20all%3Abrain%20AND%20all%3Adevelopment%20AND%20all%3Ainfancy%20AND%20all%3Aold%20AND%20all%3Aage&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Atrack%20AND%20all%3Abrain%20AND%20all%3Adevelopment%20AND%20all%3Ainfancy%20AND%20all%3Aold%20AND%20all%3Aage&start=0&max_results=10",
+      "sha256": "9d003b01d025b5ff1c905f1d0deb46619b2926835b730af2ef976ec65206753c",
+      "bytes": 848,
+      "observedAt": "2026-11-06T00:11:24.310Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "track brain development infancy old age",
+      "url": "https://api.crossref.org/works?query=track%20brain%20development%20infancy%20old%20age&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=track%20brain%20development%20infancy%20old%20age&rows=10&select=DOI,title",
+      "sha256": "598c9fa32a5700ffe45a5dc6ee5746d7ff95a2fb2076f636e1626e678bb7107c",
+      "bytes": 1283,
+      "observedAt": "2026-11-06T00:11:25.558Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "track brain development neuroscience mental health",
+      "url": "https://api.github.com/search/repositories?q=track%20brain%20development%20neuroscience%20mental%20health&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=track%20brain%20development%20neuroscience%20mental%20health&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:11:30.287Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "track brain development neuroscience mental health",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Atrack%20AND%20all%3Abrain%20AND%20all%3Adevelopment%20AND%20all%3Aneuroscience%20AND%20all%3Amental%20AND%20all%3Ahealth&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Atrack%20AND%20all%3Abrain%20AND%20all%3Adevelopment%20AND%20all%3Aneuroscience%20AND%20all%3Amental%20AND%20all%3Ahealth&start=0&max_results=10",
+      "sha256": "0468bcc0e3d4b05daeef81eda48222b55127eab34b0b120c63a8553e1a01828c",
+      "bytes": 870,
+      "observedAt": "2026-11-06T00:11:30.747Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "track brain development neuroscience mental health",
+      "url": "https://api.crossref.org/works?query=track%20brain%20development%20neuroscience%20mental%20health&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=track%20brain%20development%20neuroscience%20mental%20health&rows=10&select=DOI,title",
+      "sha256": "17dc93fc63a04cb37c6dbc4aaf2f70cf3ba3f188f487729cbfaad27df2cc1e74",
+      "bytes": 1683,
+      "observedAt": "2026-11-06T00:11:31.985Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "50bb0a8627e32d136641484c3d546fa2f0b11ef0e27efe411c5390dbb3ff9ef1",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

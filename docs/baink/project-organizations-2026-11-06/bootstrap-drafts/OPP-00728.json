@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00728",
+  "native_project": "P-OPP-00728",
+  "source_digest": "c18fc391938129832dbdea50c936a720ca603440edb3cf70b736a4fb1d1b9b10",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Give guide robots for the visually impaired",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "1d699c7cedd1e4355d537b3f7b9f6533c3a04459c1a3504602d9ce9a14eee301"
+  },
+  "drafted_at": "2026-11-06T00:12:49.726Z",
+  "queries": [
+    "give guide robots visually impaired",
+    "give guide robots disability accessibility vision"
+  ],
+  "searches": [
+    {
+      "query": "give guide robots visually impaired",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:12:41.944Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=give%20guide%20robots%20visually%20impaired&per_page=10; sha256=7bf2068683b12f04e754c31935831afd7bf5e026f58364ccdd1503bc91641086; total=1; shown=1/1; top: sgandhi04/K9 \"Parks, downtowns, malls, and stores are places that we visit frequently in our day to day lives. These public venues are used for a multitu…\""
+    },
+    {
+      "query": "give guide robots visually impaired",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:12:42.440Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aguide%20AND%20all%3Arobots%20AND%20all%3Avisually%20AND%20all%3Aimpaired&start=0&max_results=10; sha256=eb3c5d2b4ef6d9619850dded38489510e014c0992e86f4776b3fe0a65e32bdd2; total=1; shown=1/1; top: arXiv:2307.06924v3 \"DRAGON: A Dialogue-Based Robot for Assistive Navigation with Visual Language Grounding\""
+    },
+    {
+      "query": "give guide robots visually impaired",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:12:43.292Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=give%20guide%20robots%20visually%20impaired&rows=10&select=DOI,title; sha256=2f2ff734d48fa8fdbe1fdadbdf39c6846755bcafaff5fc23dc4a7eaf90797dd0; total=934371; shown=5/10; top: 10.64628/ab.vnhhsyg9m \"Smart cities could give the visually impaired a new outlook on urban life\" | 10.1023/a:1008990105090 \"Multiobjective Navigation of a Guide Mobile Robot for the Visually Impaired Based on Intention Inference of Obstacles\" | 10.5005/jp/books/12348_18 \"Refraction in Visually Impaired\" | 10.1109/icra55743.2025.11128120 \"Space-Aware Instruction Tuning: Dataset and Benchmark for Guide Dog Robots Assisting the Visually Impaired\" | 10.3030/807995 \"untitled\""
+    },
+    {
+      "query": "give guide robots disability accessibility vision",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:12:48.345Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=give%20guide%20robots%20disability%20accessibility%20vision&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "give guide robots disability accessibility vision",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:12:48.815Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aguide%20AND%20all%3Arobots%20AND%20all%3Adisability%20AND%20all%3Aaccessibility%20AND%20all%3Avision&start=0&max_results=10; sha256=3de752e05e5455a9b092d1f3a05261464e96ffeb40bf4ef1473985ab3b65a057; total=0; shown=0/0"
+    },
+    {
+      "query": "give guide robots disability accessibility vision",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:12:49.725Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=give%20guide%20robots%20disability%20accessibility%20vision&rows=10&select=DOI,title; sha256=1df46fa9729e456df8e373003c6f7a0db2bc1e68a4d7020b9347a068e4ef20d4; total=1547589; shown=5/10; top: 10.4135/9781071973349.n4 \"Disability and Documentation Access\" | 10.1515/9783110792270-023 \"Ability and Disability: Social Robots and Accessibility, Disability Justice, and the Socially Constructed Normal Body\" | 10.4324/9781003222224 \"Disability and Accessibility in the Music Classroom\" | 10.4324/9781003222224-2 \"Contextualizing Disability Studies in the Music Classroom\" | 10.1515/9798880701346-038 \"Disability and Accessibility\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "give guide robots visually impaired",
+      "url": "https://api.github.com/search/repositories?q=give%20guide%20robots%20visually%20impaired&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=give%20guide%20robots%20visually%20impaired&per_page=10",
+      "sha256": "7bf2068683b12f04e754c31935831afd7bf5e026f58364ccdd1503bc91641086",
+      "bytes": 7653,
+      "observedAt": "2026-11-06T00:12:41.944Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "give guide robots visually impaired",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aguide%20AND%20all%3Arobots%20AND%20all%3Avisually%20AND%20all%3Aimpaired&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aguide%20AND%20all%3Arobots%20AND%20all%3Avisually%20AND%20all%3Aimpaired&start=0&max_results=10",
+      "sha256": "eb3c5d2b4ef6d9619850dded38489510e014c0992e86f4776b3fe0a65e32bdd2",
+      "bytes": 3728,
+      "observedAt": "2026-11-06T00:12:42.440Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "give guide robots visually impaired",
+      "url": "https://api.crossref.org/works?query=give%20guide%20robots%20visually%20impaired&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=give%20guide%20robots%20visually%20impaired&rows=10&select=DOI,title",
+      "sha256": "2f2ff734d48fa8fdbe1fdadbdf39c6846755bcafaff5fc23dc4a7eaf90797dd0",
+      "bytes": 1655,
+      "observedAt": "2026-11-06T00:12:43.292Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "give guide robots disability accessibility vision",
+      "url": "https://api.github.com/search/repositories?q=give%20guide%20robots%20disability%20accessibility%20vision&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=give%20guide%20robots%20disability%20accessibility%20vision&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:12:48.345Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "give guide robots disability accessibility vision",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aguide%20AND%20all%3Arobots%20AND%20all%3Adisability%20AND%20all%3Aaccessibility%20AND%20all%3Avision&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Aguide%20AND%20all%3Arobots%20AND%20all%3Adisability%20AND%20all%3Aaccessibility%20AND%20all%3Avision&start=0&max_results=10",
+      "sha256": "3de752e05e5455a9b092d1f3a05261464e96ffeb40bf4ef1473985ab3b65a057",
+      "bytes": 868,
+      "observedAt": "2026-11-06T00:12:48.815Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "give guide robots disability accessibility vision",
+      "url": "https://api.crossref.org/works?query=give%20guide%20robots%20disability%20accessibility%20vision&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=give%20guide%20robots%20disability%20accessibility%20vision&rows=10&select=DOI,title",
+      "sha256": "1df46fa9729e456df8e373003c6f7a0db2bc1e68a4d7020b9347a068e4ef20d4",
+      "bytes": 1140,
+      "observedAt": "2026-11-06T00:12:49.725Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "c809fd9cceb0d35f702a5de1146c8514a3f0a3f6e8b5c8368f2cc7932f51193b",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

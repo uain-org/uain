@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-13",
+  "revision": "8d38c64b056b39f1c6d5d1cc18de09798158fcdb",
+  "url": "https://uain.global/network/live?project=longevity-and-ageing-open-questions-on-open-data",
+  "method": "Fresh in-app browser reload, Chrome DevTools Network.responseReceived timing.receiveHeadersEnd; browser WAN timings, not complete paint/load timings.",
+  "responses": [
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/claims?site_snapshot=1",
+      "status": 200,
+      "headers_ms": 307.39
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data?site_snapshot=1",
+      "status": 200,
+      "headers_ms": 312.102
+    },
+    {
+      "path": "/api/projects/longevity-and-ageing-open-questions-on-open-data/tasks?site_snapshot=1",
+      "status": 200,
+      "headers_ms": 313.006
+    }
+  ],
+  "subsequent_snapshot_headers_ms": [
+    322.446,
+    334.322
+  ],
+  "visible": {
+    "project": "Longevity & ageing",
+    "tasks": 3,
+    "contributions": 6,
+    "settled_tasks": 3
+  },
+  "console_errors": []
+}

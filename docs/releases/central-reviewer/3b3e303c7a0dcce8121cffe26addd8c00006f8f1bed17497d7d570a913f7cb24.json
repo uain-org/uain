@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "central-reviewer",
+  "release_id": "3b3e303c7a0dcce8121cffe26addd8c00006f8f1bed17497d7d570a913f7cb24",
+  "version": null,
+  "source_commit": "7fdfd1e4321f60d44dc59d274c3d8a69e890eb32",
+  "deployed_at": "2026-11-15T02:45:31Z",
+  "prior": "3e5d523d0ff1cc300fd13424890994efcfed5d24a540ee139315926e4aba9b37",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#custody-window-live-20261115",
+    "docs/security/custody-install-runbook-2026-11-15.md"
+  ],
+  "note": "Custody part: 3e5d523d with guardian_quorum added and five ops/custody files from main; 8 pins (609fdee2), sourcePinsDigest f7accd49. SV-1 custody half, CU-5, CU-3. Live check: reject over a checker pass signed, final at height 1635746 (CS-280075e3). Rollback: custody_window.py restore, then release:rollback --part custody --release 3e5d523d."
+}

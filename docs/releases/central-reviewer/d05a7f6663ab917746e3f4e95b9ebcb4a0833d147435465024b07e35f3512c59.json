@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "central-reviewer",
+  "release_id": "d05a7f6663ab917746e3f4e95b9ebcb4a0833d147435465024b07e35f3512c59",
+  "version": null,
+  "source_commit": "bf132f65d9c3af656e49f4587a3d33a008582fbf",
+  "deployed_at": "2026-11-12T10:36:01Z",
+  "prior": "cc2573bd5b8d41f5271fa7ba14568f29961e1cde97df915f9f9527a0aa0372bb",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#capacity-archives-release-20261112",
+    "CHANGELOG.md#capacity-archives-20261112"
+  ],
+  "note": "Worker-only overlay of cc2573bd with 5 files from #542. 113/113 tests on staged bytes (Node 22.22.0). Store rehearsal on clones of live jobs.json: 0 provider/custody calls; +8 days archives 161/161; prior worker reopens. Custody 3e5d523d untouched. No new review reached it 10:36-10:56 UTC. Rollback: release:rollback --part worker."
+}

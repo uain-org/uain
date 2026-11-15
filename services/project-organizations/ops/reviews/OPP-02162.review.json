@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-02162",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:59:45Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "CO2-curing cements exist but at niche scale, far from the Main KPI of 4,000,000,000 tonnes of carbon-absorbing cement per year, which is roughly all cement made worldwide (about 3.8 Gt in 2025, https://www.statista.com/statistics/1087115/). Solidia's low-lime cement cures with captured CO2 and stores up to about 300 kg CO2 per tonne, but only for precast and pavers, with no published 2026 tonnage (https://www.eralberta.ca/projects/details/solidia-concrete-a-sustainable-method-for-cement-production-and-co2-utilization/); CarbonCure injects small CO2 doses into ready-mix; Sublime's first commercial plant (about 30,000 t/yr) was still scaling in 2026 and is near-zero rather than absorbing (https://www.technologyreview.com/2024/10/01/1104396/2024-climate-tech-companies-sublime-systems-low-emissions-cement). Honest limit: all Portland cement re-absorbs CO2 slowly over its life (22.9 Gt cumulative 1930-2021, Huang et al. ESSD 2023, https://essd.copernicus.org/articles/15/4947/2023/essd-15-4947-2023.pdf), and that uptake is contested (https://datadryad.org/stash/dataset/doi:10.5061%2Fdryad.6hdr7sr7n), so tasks must target a cast-in-place, structural-grade cement that absorbs CO2 during cure at net-negative or near-zero life-cycle emissions, with honest carbon accounting and their own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "cement that absorbs CO2 during curing Solidia CarbonCure carbonation curing tonnes 2026",
+      "source": "https://www.eralberta.ca/projects/details/solidia-concrete-a-sustainable-method-for-cement-production-and-co2-utilization/",
+      "observedAt": "2026-11-06T00:54:00Z",
+      "finding": "Solidia CO2-cured cement stores up to about 300 kg CO2 per tonne in precast; CarbonCure injects CO2 into ready-mix; no 2026 global tonnage found."
+    },
+    {
+      "query": "carbon negative cement commercial production 2026 Brimstone Sublime Systems scale tonnes",
+      "source": "https://www.technologyreview.com/2024/10/01/1104396/2024-climate-tech-companies-sublime-systems-low-emissions-cement",
+      "observedAt": "2026-11-06T00:54:15Z",
+      "finding": "Sublime: 250 t/yr pilot, 30,000 t/yr Holyoke plant scaling in 2026; near-zero emissions, not CO2-absorbing; Brimstone without production figures."
+    },
+    {
+      "query": "global cement production 2025 billion tonnes CO2 mineralization share",
+      "source": "https://www.statista.com/statistics/1087115/",
+      "observedAt": "2026-11-06T00:54:30Z",
+      "finding": "Global cement about 3.8 Gt in 2025; the KPI equals essentially all global cement. No figure for share made with CO2 mineralisation."
+    },
+    {
+      "query": "open source cement carbonation model CO2 uptake concrete lifetime IPCC accounting",
+      "source": "https://essd.copernicus.org/articles/15/4947/2023/essd-15-4947-2023.pdf",
+      "observedAt": "2026-11-06T00:54:45Z",
+      "finding": "Huang et al. 2023: cements absorbed 22.9 Gt CO2 1930-2021 through slow carbonation; a Dryad code release argues these benefits are overestimated."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T210242Z-4325d6354a",
+  "version": "0.3.60",
+  "source_commit": "2a7f76895b5251b0b0a744bb45885c755e937f7f",
+  "deployed_at": "2026-11-09T21:02:51Z",
+  "prior": "20261109T195115Z-c24dde99fe",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0360-release-20261109",
+    "CHANGELOG.md#kit-version-gate-20261110"
+  ],
+  "note": "PR #375: minimum uain-agent kit gate (BAINK_MIN_KIT_VERSION=0.2.6 set after release; 0.2.0 GET -> 426 kit_outdated, 0.2.6 and browsers 200), x-uain-agent-latest 0.2.6, kit 0.2.6. Earlier: #363 (0.3.56) and #369 (0.3.59) shipped kit 0.2.3 and 0.2.5."
+}

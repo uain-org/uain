@@ -1,0 +1,191 @@
+{
+ "projectId": "OPP-00002",
+ "at": "2026-11-06T08:37:50.893Z",
+ "policyDigestTaskId": "T-OPP-00002-1-prior-art-survey",
+ "required": 9,
+ "unreadableRequired": 0,
+ "included": 12,
+ "kinds": [
+  "nct",
+  "pubmed",
+  "doi",
+  "github",
+  "wikidata"
+ ],
+ "live": {
+  "verdict": "pass",
+  "findings": [
+   "survey:pass",
+   "included:12",
+   "kinds:doi,github,nct,pubmed,wikidata"
+  ]
+ },
+ "fabricatedDoi": {
+  "verdict": "fail",
+  "notFound": true
+ },
+ "wrongTitle": {
+  "verdict": "fail",
+  "mismatch": true
+ },
+ "status": "PASS",
+ "survey": {
+  "mainKpi": "1,000,000,000 people treated yearly",
+  "asOf": "2026-11-06",
+  "items": [
+   {
+    "kind": "nct",
+    "id": "NCT04733534",
+    "title": "An Open-Label Intervention Trial to Reduce Senescence and Improve Frailty in Adult Survivors of Childhood Cancer",
+    "relation": "adjacent",
+    "note": "QUALIFICATION placeholder: relation not assessed."
+   },
+   {
+    "kind": "pubmed",
+    "id": "37117524",
+    "title": "Senolytic vaccination improves normal and pathological age-related phenotypes and increases lifespan in progeroid mice.",
+    "relation": "adjacent",
+    "note": "QUALIFICATION placeholder: relation not assessed."
+   },
+   {
+    "kind": "doi",
+    "id": "10.1038/s43587-023-00560-5",
+    "title": "Prophylactic and long-lasting efficacy of senolytic CAR T cells against age-related metabolic dysfunction",
+    "relation": "adjacent",
+    "note": "QUALIFICATION placeholder: relation not assessed."
+   },
+   {
+    "kind": "github",
+    "id": "felixjwong/senolyticsai",
+    "title": "felixjwong/senolyticsai",
+    "relation": "adjacent",
+    "note": "QUALIFICATION placeholder: relation not assessed."
+   },
+   {
+    "kind": "pubmed",
+    "id": "33439271",
+    "title": "Senescence under appraisal: hopes and challenges revisited.",
+    "relation": "adjacent",
+    "note": "QUALIFICATION placeholder: relation not assessed."
+   },
+   {
+    "kind": "pubmed",
+    "id": "21479393",
+    "title": "Emerging concepts of how β-amyloid proteins and pro-inflammatory cytokines might collaborate to produce an 'Alzheimer brain' (Review).",
+    "relation": "adjacent",
+    "note": "QUALIFICATION placeholder: relation not assessed."
+   },
+   {
+    "kind": "nct",
+    "id": "NCT06151860",
+    "title": "Acute Effect of Static Stretching and Pilates Stretching on the Muscle Strength",
+    "relation": "adjacent",
+    "note": "QUALIFICATION placeholder: relation not assessed."
+   },
+   {
+    "kind": "nct",
+    "id": "NCT05681923",
+    "title": "Platform for the Prospective Mother-child Study of the Determinants of Neurodevelopmental Disorders",
+    "relation": "adjacent",
+    "note": "QUALIFICATION placeholder: relation not assessed."
+   },
+   {
+    "kind": "nct",
+    "id": "NCT01436162",
+    "title": "Efficacy and Safety Study of SPD489 in Combination With an Antidepressant in the Treatment of Adults With Major Depressive Disorder",
+    "relation": "adjacent",
+    "note": "QUALIFICATION placeholder: relation not assessed."
+   },
+   {
+    "kind": "wikidata",
+    "id": "Q21108745",
+    "title": "LIM zinc finger domain containing 1",
+    "relation": "adjacent",
+    "note": "QUALIFICATION placeholder: relation not assessed."
+   },
+   {
+    "kind": "wikidata",
+    "id": "Q17152451",
+    "title": "PASLI Disease",
+    "relation": "adjacent",
+    "note": "QUALIFICATION placeholder: relation not assessed."
+   },
+   {
+    "kind": "wikidata",
+    "id": "Q108432436",
+    "title": "Senescent Sentences: Ten Scenes",
+    "relation": "adjacent",
+    "note": "QUALIFICATION placeholder: relation not assessed."
+   },
+   {
+    "kind": "doi",
+    "id": "10.1002/bies.201670910",
+    "title": "To clear, or not to clear (senescent cells)? That is the question",
+    "relation": "screened_out",
+    "note": "QUALIFICATION placeholder: screened out."
+   },
+   {
+    "kind": "doi",
+    "id": "10.1038/s41577-020-0388-0",
+    "title": "Driving CARs to clear senescent cells",
+    "relation": "screened_out",
+    "note": "QUALIFICATION placeholder: screened out."
+   },
+   {
+    "kind": "doi",
+    "id": "10.1038/d41573-020-00117-w",
+    "title": "Driving CARs to clear senescent cells",
+    "relation": "screened_out",
+    "note": "QUALIFICATION placeholder: screened out."
+   },
+   {
+    "kind": "doi",
+    "id": "10.64628/aai.rg4gqehsh",
+    "title": "Microwave repairs might annihilate zombie potholes once and for all",
+    "relation": "screened_out",
+    "note": "QUALIFICATION placeholder: screened out."
+   },
+   {
+    "kind": "doi",
+    "id": "10.64628/aa.kv5wegtmu",
+    "title": "Let’s kill the Australian identity card zombie once and for all",
+    "relation": "screened_out",
+    "note": "QUALIFICATION placeholder: screened out."
+   },
+   {
+    "kind": "doi",
+    "id": "10.64063/3049-1681.vol.3.issue4.1",
+    "title": "Hallmarks of Aging 2.0: Decoding the Molecular Drivers of Human Longevity – Senolytics Vs. Senomorphics as Strategies to Eliminate Senescent “Zombie” Cells",
+    "relation": "screened_out",
+    "note": "QUALIFICATION placeholder: screened out."
+   },
+   {
+    "kind": "doi",
+    "id": "10.1007/978-3-319-26239-0_16",
+    "title": "Targeting Senescent Cells to Improve Human Health",
+    "relation": "screened_out",
+    "note": "QUALIFICATION placeholder: screened out."
+   },
+   {
+    "kind": "doi",
+    "id": "10.1007/978-3-030-87532-9_3",
+    "title": "Immunesenescence and Compromised Removal of Senescent Cells: Implications for Health in Old Age",
+    "relation": "screened_out",
+    "note": "QUALIFICATION placeholder: screened out."
+   },
+   {
+    "kind": "doi",
+    "id": "10.21203/rs.3.rs-10938318/v1",
+    "title": "Zombie Capacity That Won't Clear: Behavioral Anchoring and Rigid Supply in Offshore Drilling, 2002–2025",
+    "relation": "screened_out",
+    "note": "QUALIFICATION placeholder: screened out."
+   }
+  ],
+  "conclusion": {
+   "meetsMainKpi": false,
+   "gaps": [
+    "QUALIFICATION placeholder gap: this survey was not assessed by a solver."
+   ]
+  }
+ }
+}

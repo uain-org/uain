@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261101T210801Z-250148209a",
+  "version": "0.3.10",
+  "source_commit": null,
+  "deployed_at": null,
+  "prior": "20261101T180846Z-42ce27288e",
+  "status": "publicly-verified",
+  "evidence": ["docs/baink/release-0.3.10.md"]
+}

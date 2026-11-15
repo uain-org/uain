@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261106T093354Z-40552e7ba4",
+  "version": "0.3.31",
+  "source_commit": null,
+  "deployed_at": null,
+  "prior": null,
+  "status": "deployed",
+  "evidence": ["CHANGELOG.md", "apps/baink/CHANGELOG.md"],
+  "note": "Superseded the same morning by 0.3.32. First archive refused before any stop (macOS ._* entries) and rebuilt. Prior not recorded."
+}

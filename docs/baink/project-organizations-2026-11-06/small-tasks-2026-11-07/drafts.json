@@ -1,0 +1,689 @@
+{
+  "schema": "uain-small-task-drafts-v1",
+  "status": "draft_for_review",
+  "drafted": {
+    "by": "claude-opus-5-5 (Claude Code), drafting agent",
+    "at": "2026-11-07",
+    "request": "Rahul, 7 November 2026: more small tasks an AI system can finish in under an hour, each with a prior-art basis"
+  },
+  "notice": "Drafts only. Nothing here was opened, signed or funded. The searches below were run by the drafting agent and are NOT the trusted prior-art record: before any task opens, the trusted search (createPriorArtSearch, pinned retriever) and an independent assessment must run for it, as the manager stage does.",
+  "projects": [
+    "OPP-00002",
+    "OPP-00003",
+    "OPP-00004",
+    "OPP-00005",
+    "OPP-00006",
+    "OPP-00007",
+    "OPP-00008",
+    "OPP-00009",
+    "OPP-00010",
+    "OPP-00014"
+  ],
+  "drafts": [
+    {
+      "key": "opp-00002-senolytic-outcome-audit",
+      "projectId": "OPP-00002",
+      "estimatedMinutes": 50,
+      "task": {
+        "title": "Senolytic trials completed: registered versus published primary outcomes audit",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.intr=dasatinib+OR+quercetin+OR+fisetin+OR+navitoclax+OR+UBX0101+OR+UBX1325+OR+foselutoclax&query.term=senescence+OR+senescent+OR+senolytic&filter.overallStatus=COMPLETED&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies registeredPrimaryOutcomes verbatim from protocolSection.outcomesModule.primaryOutcomes[].measure and timeFrame, and hasResults exactly as the record reports it. (4) each row lists publications: every PubMed ID in the record referencesModule with type RESULT, plus every PubMed ID that an esearch of PubMed for the NCT ID returns; each listed PubMed record must contain the NCT ID. (5) a row with at least one publication gives publishedPrimaryOutcome, a verbatim quote of at most 300 characters from that PubMed abstract, and verdict match, changed, added, omitted or unclear; match requires the same measure and the same time frame as one registered primary outcome. A row without a publication has verdict no_publication. (6) summary counts each verdict and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Nobody has compared the registered primary outcomes of completed senolytic trials with what their publications report; the general outcome-switching literature never covers this drug class.",
+        "proposed_price": {
+          "solver_amount": "200000000",
+          "reviewer_amount": "50000000",
+          "rationale": {
+            "effort": "About 50 minutes for an AI system: one registry query, reading each returned record and linking each completed trial to its PubMed publications.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, registeredPrimaryOutcomes:[{measure,timeFrame}], hasResults, publications:[pmid], publishedPrimaryOutcome, verdict}], summary:{match,changed,added,omitted,unclear,no_publication}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=dasatinib+OR+quercetin+OR+fisetin+OR+navitoclax+OR+UBX0101+OR+UBX1325+OR+foselutoclax&query.term=senescence+OR+senescent+OR+senolytic&filter.overallStatus=COMPLETED&pageSize=100",
+        "observedTotal": 23,
+        "observedWithResults": 8,
+        "observedAt": "2026-11-06T20:50:00Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "senolytic clinical trials registered primary outcome versus published outcome discrepancy audit",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Only general outcome-switching meta-research (BMC Medicine 2015 review of 27 audits; gastroenterology and oncology audits). No senolytic-specific registry-to-publication comparison found."
+          },
+          {
+            "query": "github senolytic clinical trials dataset ClinicalTrials.gov outcome switching aging trials repository",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Found trial lists (a GitHub Pages aging wiki, the ImmunoAge Atlas, a 2025 abstract counting registered senolytic and fisetin studies) but no outcome-consistency dataset or repository."
+          },
+          {
+            "query": "geroscience aging trials results reporting non-publication meta-research ClinicalTrials.gov audit longevity interventions",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Generic non-publication audits and FDAAA TrialsTracker (results-posting compliance only, no outcome comparison); nothing for senolytics."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=dasatinib+OR+quercetin+OR+fisetin+OR+navitoclax+OR+UBX0101+OR+UBX1325+OR+foselutoclax&query.term=senescence+OR+senescent+OR+senolytic&filter.overallStatus=COMPLETED&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-06T20:50:00Z",
+            "finding": "23 completed studies, 8 with posted results: small enough for under an hour."
+          }
+        ],
+        "nearestPriorArt": "Trial lists (aging wiki, ImmunoAge Atlas) and narrative reviews of senolytic trials; FDAAA TrialsTracker covers results posting for applicable trials, not outcome consistency.",
+        "conclusion": "No open solution found. The listings name trials but never compare registered and published primary outcomes."
+      }
+    },
+    {
+      "key": "opp-00002-senolytic-dosing-census",
+      "projectId": "OPP-00002",
+      "estimatedMinutes": 45,
+      "task": {
+        "title": "Senolytic trial arms: dosing-interval census from the registry",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.intr=dasatinib+OR+quercetin+OR+fisetin+OR+navitoclax+OR+UBX0101+OR+UBX1325+OR+foselutoclax&query.term=senescence+OR+senescent+OR+senolytic&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row gives, per experimental arm, drug names, dosingDaysPerCycle, cycleLengthDays, numberOfCycles and schedule, where schedule is one of single_course, intermittent, continuous or not_stated; numbers are integers taken from the arm or intervention description, or null when the registry does not state them. (4) every category value is taken from the fixed list named in check 3, and each row quotes, verbatim and in at most 300 characters, the registry text that supports its category. (5) summary counts each category and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Reviews quote the hit-and-run regimen of a few published trials, but no machine-readable census of dosing intervals across every registered senolytic arm exists, which a yearly-treatment goal needs first.",
+        "proposed_price": {
+          "solver_amount": "150000000",
+          "reviewer_amount": "40000000",
+          "rationale": {
+            "effort": "About 45 minutes for an AI system: one registry query, reading each returned record and classifying one registry field per trial.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, arms:[{label, drugs, dosingDaysPerCycle, cycleLengthDays, numberOfCycles, schedule, quote}]}], summary:{single_course,intermittent,continuous,not_stated}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=dasatinib+OR+quercetin+OR+fisetin+OR+navitoclax+OR+UBX0101+OR+UBX1325+OR+foselutoclax&query.term=senescence+OR+senescent+OR+senolytic&pageSize=100",
+        "observedTotal": 64,
+        "observedAt": "2026-11-06T20:50:00Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "senolytic trials dosing schedule intermittent \"hit-and-run\" table ClinicalTrials.gov dasatinib quercetin fisetin review",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Individual registry records and reviews describing one or two regimens; commercial pages disagree on dosing. No cross-trial dosing-interval table found."
+          },
+          {
+            "query": "github senolytic clinical trials dataset ClinicalTrials.gov outcome switching aging trials repository",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Trial lists without arm-level dosing fields."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=dasatinib+OR+quercetin+OR+fisetin+OR+navitoclax+OR+UBX0101+OR+UBX1325+OR+foselutoclax&query.term=senescence+OR+senescent+OR+senolytic&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-06T20:50:00Z",
+            "finding": "64 registered studies (23 completed)."
+          }
+        ],
+        "nearestPriorArt": "Narrative reviews quoting the 2-to-3-day monthly dasatinib plus quercetin regimen; registry records themselves.",
+        "conclusion": "No open solution found: no dataset tabulates dosing interval per arm across all registered senolytic studies."
+      }
+    },
+    {
+      "key": "opp-00003-clock-outcome-reporting-audit",
+      "projectId": "OPP-00003",
+      "estimatedMinutes": 55,
+      "task": {
+        "title": "Epigenetic clock outcomes in completed trials: registered versus reported audit",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.outc=%22epigenetic+clock%22+OR+%22DNA+methylation+age%22+OR+GrimAge+OR+PhenoAge+OR+DunedinPACE+OR+%22epigenetic+age%22&filter.overallStatus=COMPLETED&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies clockOutcome verbatim (measure and timeFrame) from the primary or secondary outcome that names the clock, gives role primary or secondary, and hasResults exactly as the record reports it. (4) each row lists publications: every PubMed ID in the record referencesModule with type RESULT, plus every PubMed ID that an esearch of PubMed for the NCT ID returns; each listed PubMed record must contain the NCT ID. (5) each row gives clockReported: posted_results when the posted results include the clock outcome, abstract when a listed PubMed abstract reports a clock value or difference (quote it verbatim, at most 300 characters), both, or none. (6) summary counts each clockReported value and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Reviews list trials that plan to use ageing clocks as endpoints, but none checks whether completed trials ever reported the registered clock outcome, which tells the project how much clock evidence is hidden.",
+        "proposed_price": {
+          "solver_amount": "200000000",
+          "reviewer_amount": "50000000",
+          "rationale": {
+            "effort": "About 55 minutes for an AI system: one registry query, reading each returned record and linking each completed trial to its PubMed publications.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, clockOutcome:{measure,timeFrame}, role, hasResults, publications:[pmid], clockReported, quote}], summary:{posted_results,abstract,both,none}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.outc=%22epigenetic+clock%22+OR+%22DNA+methylation+age%22+OR+GrimAge+OR+PhenoAge+OR+DunedinPACE+OR+%22epigenetic+age%22&filter.overallStatus=COMPLETED&pageSize=100",
+        "observedTotal": 26,
+        "observedWithResults": 4,
+        "observedAt": "2026-11-06T20:50:00Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "clinical trials using epigenetic clock as outcome measure systematic review ClinicalTrials.gov registered",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "A 2024 nutrition-trial systematic review, a 2026 preprint and a 2026 evidence map of 41 human studies, and a 2026 eBioMedicine editorial citing a 2023 review of trials planning clock endpoints. None audits whether registered clock outcomes were reported."
+          },
+          {
+            "query": "2023 review ongoing clinical trials aging clocks primary secondary endpoints list DNA methylation results reported",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "A Nature Medicine benchmark of 111 methylation biomarkers across 51 intervention studies (responsiveness, not registry reporting). No registry reporting audit found."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.outc=%22epigenetic+clock%22+OR+%22DNA+methylation+age%22+OR+GrimAge+OR+PhenoAge+OR+DunedinPACE+OR+%22epigenetic+age%22&filter.overallStatus=COMPLETED&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-06T20:50:00Z",
+            "finding": "26 completed studies, 4 with posted results."
+          }
+        ],
+        "nearestPriorArt": "Lists of trials that plan clock endpoints (2023 review) and the 51-study responsiveness benchmark; both start from published data, not from registered outcomes.",
+        "conclusion": "No open solution found for the registered-versus-reported question. A plain list of clock trials was dropped as already covered (see dropped)."
+      }
+    },
+    {
+      "key": "opp-00004-thymic-outcome-census",
+      "projectId": "OPP-00004",
+      "estimatedMinutes": 45,
+      "task": {
+        "title": "Thymic function outcome measures in completed adult intervention trials: census",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.outc=thymic+OR+TREC+OR+%22recent+thymic+emigrants%22+OR+thymopoiesis+OR+%22thymic+output%22&query.term=AREA%5BStudyType%5DINTERVENTIONAL+AND+AREA%5BMinimumAge%5DRANGE%5B18+years%2C+MAX%5D&filter.overallStatus=COMPLETED&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies every thymus-related registered outcome verbatim (measure and timeFrame), gives role primary or secondary for each, and classifies each into one of trec, rte_flow (CD31 or other recent thymic emigrant phenotype), imaging_volume (CT or MRI thymic size or density), naive_t_count, tcr_diversity or other; hasResults is copied exactly as the record reports it. (4) every category value is taken from the fixed list named in check 3, and each row quotes, verbatim and in at most 300 characters, the registry text that supports its category. (5) summary counts each category and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Reviews describe thymic markers one study at a time; no census shows which markers completed adult intervention trials actually registered, which the project needs to choose a verifiable restoration measure.",
+        "proposed_price": {
+          "solver_amount": "150000000",
+          "reviewer_amount": "40000000",
+          "rationale": {
+            "effort": "About 45 minutes for an AI system: one registry query, reading each returned record and classifying one registry field per trial.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, outcomes:[{measure,timeFrame,role,category,quote}], hasResults}], summary:{trec,rte_flow,imaging_volume,naive_t_count,tcr_diversity,other}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.outc=thymic+OR+TREC+OR+%22recent+thymic+emigrants%22+OR+thymopoiesis+OR+%22thymic+output%22&query.term=AREA%5BStudyType%5DINTERVENTIONAL+AND+AREA%5BMinimumAge%5DRANGE%5B18+years%2C+MAX%5D&filter.overallStatus=COMPLETED&pageSize=100",
+        "observedTotal": 39,
+        "observedAt": "2026-11-06T20:50:00Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "thymic regeneration clinical trials TREC thymic volume outcome adults systematic review registry",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Narrative reviews of thymic recovery strategies, the TRIIM pilot and TRIIM-X registration; no systematic review or registry census of thymic outcome measures."
+          },
+          {
+            "query": "thymic function outcome measures clinical trials review TREC versus CD31 recent thymic emigrants versus CT thymic volume which trials use",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Method reviews and single studies pairing CT, TREC and CD31 RTE; explicitly no survey of which trials use which measure."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.outc=thymic+OR+TREC+OR+%22recent+thymic+emigrants%22+OR+thymopoiesis+OR+%22thymic+output%22&query.term=AREA%5BStudyType%5DINTERVENTIONAL+AND+AREA%5BMinimumAge%5DRANGE%5B18+years%2C+MAX%5D&filter.overallStatus=COMPLETED&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-06T20:50:00Z",
+            "finding": "39 completed adult interventional studies."
+          }
+        ],
+        "nearestPriorArt": "Method reviews of TREC, CD31 RTE and CT thymic volume; individual trial reports.",
+        "conclusion": "No open solution found."
+      }
+    },
+    {
+      "key": "opp-00005-msc-frailty-outcome-audit",
+      "projectId": "OPP-00005",
+      "estimatedMinutes": 40,
+      "task": {
+        "title": "Mesenchymal stem cell frailty and ageing trials: registered versus published primary outcomes",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.intr=mesenchymal+OR+laromestrocel&query.cond=frailty+OR+aging+OR+ageing&filter.overallStatus=COMPLETED&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies registeredPrimaryOutcomes verbatim from protocolSection.outcomesModule.primaryOutcomes[].measure and timeFrame, and hasResults exactly as the record reports it. (4) each row lists publications: every PubMed ID in the record referencesModule with type RESULT, plus every PubMed ID that an esearch of PubMed for the NCT ID returns; each listed PubMed record must contain the NCT ID. (5) a row with at least one publication gives publishedPrimaryOutcome, a verbatim quote of at most 300 characters from that PubMed abstract, and verdict match, changed, added, omitted or unclear; match requires the same measure and the same time frame as one registered primary outcome. A row without a publication has verdict no_publication. (6) summary counts each verdict and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "A 2023 review catalogues the registered stem cell ageing trials, but no one has compared their registered primary outcomes with the published ones, and the field is dominated by small single-sponsor trials where this matters.",
+        "proposed_price": {
+          "solver_amount": "200000000",
+          "reviewer_amount": "50000000",
+          "rationale": {
+            "effort": "About 40 minutes for an AI system: one registry query, reading each returned record and linking each completed trial to its PubMed publications.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, registeredPrimaryOutcomes:[{measure,timeFrame}], hasResults, publications:[pmid], publishedPrimaryOutcome, verdict}], summary:{match,changed,added,omitted,unclear,no_publication}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=mesenchymal+OR+laromestrocel&query.cond=frailty+OR+aging+OR+ageing&filter.overallStatus=COMPLETED&pageSize=100",
+        "observedTotal": 9,
+        "observedAt": "2026-11-06T20:50:00Z",
+        "note": "completed subset of 27 registered studies"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "mesenchymal stem cell aging frailty trials registered outcomes publication comparison selective reporting",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Garay 2023 (Frontiers in Aging) catalogues registered MSC ageing trials and their main outcomes; the phase 2b laromestrocel paper (2026). No registry-to-publication outcome comparison found."
+          },
+          {
+            "query": "geroscience aging trials results reporting non-publication meta-research ClinicalTrials.gov audit longevity interventions",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Generic reporting audits only."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=mesenchymal+OR+laromestrocel&query.cond=frailty+OR+aging+OR+ageing&filter.overallStatus=COMPLETED&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-06T20:50:00Z",
+            "finding": "9 completed studies (27 registered)."
+          }
+        ],
+        "nearestPriorArt": "Garay 2023 registry catalogue of stem cell ageing trials (registered outcomes only, no publication comparison).",
+        "conclusion": "No open solution found for the comparison; the catalogue is an input, not the answer."
+      }
+    },
+    {
+      "key": "opp-00006-alagebrium-reporting-audit",
+      "projectId": "OPP-00006",
+      "estimatedMinutes": 35,
+      "task": {
+        "title": "Alagebrium crosslink breaker trials: results-reporting audit",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.intr=alagebrium+OR+ALT-711&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies overallStatus, whyStopped (or null), primaryCompletionDate and hasResults exactly as the record reports them, lists every PubMed ID in referencesModule with type RESULT plus every PubMed ID an esearch of PubMed for the NCT ID returns (each must contain the NCT ID), and gives reporting as one of posted_and_published, posted_only, published_only or unreported. (4) every category value is taken from the fixed list named in check 3, and each row quotes, verbatim and in at most 300 characters, the registry text that supports its category. (5) summary counts each category and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Alagebrium is the only crosslink breaker taken into many human trials and several stopped early; no source states which of them ever reported results, which decides how much of the matrix-stiffening evidence is missing.",
+        "proposed_price": {
+          "solver_amount": "150000000",
+          "reviewer_amount": "40000000",
+          "rationale": {
+            "effort": "About 35 minutes for an AI system: one registry query, reading each returned record and classifying one registry field per trial.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, overallStatus, whyStopped, primaryCompletionDate, hasResults, publications:[pmid], reporting, quote}], summary:{posted_and_published,posted_only,published_only,unreported}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=alagebrium+OR+ALT-711&pageSize=100",
+        "observedTotal": 13,
+        "observedWithResults": 0,
+        "observedAt": "2026-11-06T20:50:00Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "alagebrium ALT-711 clinical trials results unpublished ClinicalTrials.gov reporting review",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Individual records (BENEFICIAL NCT00516646 and others), news of suspended enrolment and a failed phase IIb; no reporting audit across the trials."
+          },
+          {
+            "query": "geroscience aging trials results reporting non-publication meta-research ClinicalTrials.gov audit longevity interventions",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Generic audits; FDAAA TrialsTracker covers only trials completed after 2017, so it cannot cover these older trials."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=alagebrium+OR+ALT-711&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-06T20:50:00Z",
+            "finding": "13 registered studies, none with posted results."
+          }
+        ],
+        "nearestPriorArt": "Narrative reviews of crosslink breakers; individual registry records.",
+        "conclusion": "No open solution found."
+      }
+    },
+    {
+      "key": "opp-00007-mito-outcome-audit",
+      "projectId": "OPP-00007",
+      "estimatedMinutes": 50,
+      "task": {
+        "title": "Urolithin, elamipretide and MitoQ ageing muscle trials: registered versus published primary outcomes",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.intr=urolithin+OR+elamipretide+OR+MitoQ+OR+mitoquinone&query.cond=aging+OR+ageing+OR+older+OR+sarcopenia+OR+frailty+OR+muscle&filter.overallStatus=COMPLETED&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies registeredPrimaryOutcomes verbatim from protocolSection.outcomesModule.primaryOutcomes[].measure and timeFrame, and hasResults exactly as the record reports it. (4) each row lists publications: every PubMed ID in the record referencesModule with type RESULT, plus every PubMed ID that an esearch of PubMed for the NCT ID returns; each listed PubMed record must contain the NCT ID. (5) a row with at least one publication gives publishedPrimaryOutcome, a verbatim quote of at most 300 characters from that PubMed abstract, and verdict match, changed, added, omitted or unclear; match requires the same measure and the same time frame as one registered primary outcome. A row without a publication has verdict no_publication. (6) summary counts each verdict and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Reviews pool mitochondria-targeted compounds by effect, but no one has checked whether the published primary outcomes of these muscle and ageing trials match what was registered.",
+        "proposed_price": {
+          "solver_amount": "200000000",
+          "reviewer_amount": "50000000",
+          "rationale": {
+            "effort": "About 50 minutes for an AI system: one registry query, reading each returned record and linking each completed trial to its PubMed publications.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, registeredPrimaryOutcomes:[{measure,timeFrame}], hasResults, publications:[pmid], publishedPrimaryOutcome, verdict}], summary:{match,changed,added,omitted,unclear,no_publication}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=urolithin+OR+elamipretide+OR+MitoQ+OR+mitoquinone&query.cond=aging+OR+ageing+OR+older+OR+sarcopenia+OR+frailty+OR+muscle&filter.overallStatus=COMPLETED&pageSize=100",
+        "observedTotal": 15,
+        "observedWithResults": 4,
+        "observedAt": "2026-11-06T20:50:00Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "urolithin A elamipretide MitoQ trials phosphorus MRS PCr recovery outcome systematic review table",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "A systematic review of mitochondria-targeted antioxidants (19 studies, glycaemic and cardiovascular focus), a 2024 urolithin A review, a thesis-level athlete review. No registry-to-publication outcome comparison."
+          },
+          {
+            "query": "geroscience aging trials results reporting non-publication meta-research ClinicalTrials.gov audit longevity interventions",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Generic audits only."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=urolithin+OR+elamipretide+OR+MitoQ+OR+mitoquinone&query.cond=aging+OR+ageing+OR+older+OR+sarcopenia+OR+frailty+OR+muscle&filter.overallStatus=COMPLETED&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-06T20:50:00Z",
+            "finding": "15 completed studies, 4 with posted results."
+          }
+        ],
+        "nearestPriorArt": "Effect-focused systematic reviews of urolithin A and mitochondria-targeted antioxidants.",
+        "conclusion": "No open solution found."
+      }
+    },
+    {
+      "key": "opp-00007-pcr-recovery-census",
+      "projectId": "OPP-00007",
+      "estimatedMinutes": 35,
+      "task": {
+        "title": "Phosphocreatine recovery and ATPmax endpoints in ageing muscle trials: registry census",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.outc=phosphocreatine+OR+%22PCr+recovery%22+OR+ATPmax&query.cond=aging+OR+ageing+OR+older+OR+sarcopenia+OR+frailty&query.term=AREA%5BStudyType%5DINTERVENTIONAL&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies every phosphocreatine, PCr recovery or ATPmax outcome verbatim (measure and timeFrame), gives role primary or secondary, intervention names as registered, and classifies the measure as pcr_recovery_kinetics, atpmax, resting_pcr or other; hasResults and overallStatus are copied exactly as the record reports them. (4) every category value is taken from the fixed list named in check 3, and each row quotes, verbatim and in at most 300 characters, the registry text that supports its category. (5) summary counts each category and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Muscle phosphocreatine recovery is the most direct in vivo readout of mitochondrial repair, yet no review lists which ageing intervention trials registered it and with what time frames.",
+        "proposed_price": {
+          "solver_amount": "150000000",
+          "reviewer_amount": "40000000",
+          "rationale": {
+            "effort": "About 35 minutes for an AI system: one registry query, reading each returned record and classifying one registry field per trial.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, interventions, outcomes:[{measure,timeFrame,role,category,quote}], hasResults, overallStatus}], summary:{pcr_recovery_kinetics,atpmax,resting_pcr,other}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.outc=phosphocreatine+OR+%22PCr+recovery%22+OR+ATPmax&query.cond=aging+OR+ageing+OR+older+OR+sarcopenia+OR+frailty&query.term=AREA%5BStudyType%5DINTERVENTIONAL&pageSize=100",
+        "observedTotal": 15,
+        "observedAt": "2026-11-06T20:50:00Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "urolithin A elamipretide MitoQ trials phosphorus MRS PCr recovery outcome systematic review table",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Only the urolithin A trial reports PCr recovery among these compounds; no systematic table of registered PCr or ATPmax endpoints."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.outc=phosphocreatine+OR+%22PCr+recovery%22+OR+ATPmax&query.cond=aging+OR+ageing+OR+older+OR+sarcopenia+OR+frailty&query.term=AREA%5BStudyType%5DINTERVENTIONAL&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-06T20:50:00Z",
+            "finding": "15 registered interventional studies."
+          }
+        ],
+        "nearestPriorArt": "Individual trial reports (urolithin A in older adults, JAMA Network Open 2022).",
+        "conclusion": "No open solution found."
+      }
+    },
+    {
+      "key": "opp-00008-autophagy-reporting-audit",
+      "projectId": "OPP-00008",
+      "estimatedMinutes": 45,
+      "task": {
+        "title": "Rapamycin, everolimus, spermidine and trehalose ageing trials: results-reporting audit",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.intr=rapamycin+OR+sirolimus+OR+everolimus+OR+spermidine+OR+trehalose&query.cond=aging+OR+ageing+OR+%22healthy+aging%22&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies overallStatus, primaryCompletionDate, hasResults and the primary outcome measures verbatim, lists every PubMed ID in referencesModule with type RESULT plus every PubMed ID an esearch of PubMed for the NCT ID returns (each must contain the NCT ID), and gives reporting as one of posted_and_published, posted_only, published_only, unreported or not_yet_due (primaryCompletionDate after observedAt minus 12 months). (4) every category value is taken from the fixed list named in check 3, and each row quotes, verbatim and in at most 300 characters, the registry text that supports its category. (5) summary counts each category and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Reviews say fewer than a dozen rapamycin ageing trials exist and spermidine and trehalose trials are scattered, but no source states which registered autophagy-inducer ageing trials have reported, which bounds the evidence on clearing aggregates.",
+        "proposed_price": {
+          "solver_amount": "150000000",
+          "reviewer_amount": "40000000",
+          "rationale": {
+            "effort": "About 45 minutes for an AI system: one registry query, reading each returned record and classifying one registry field per trial.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, overallStatus, primaryCompletionDate, hasResults, primaryOutcomes, publications:[pmid], reporting, quote}], summary:{posted_and_published,posted_only,published_only,unreported,not_yet_due}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=rapamycin+OR+sirolimus+OR+everolimus+OR+spermidine+OR+trehalose&query.cond=aging+OR+ageing+OR+%22healthy+aging%22&pageSize=100",
+        "observedTotal": 30,
+        "observedWithResults": 3,
+        "observedAt": "2026-11-06T20:50:00Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "rapamycin everolimus spermidine aging healthy older adults clinical trials review registry results posted table",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Hands et al. 2025 (Aging) reviews rapamycin evidence in healthy adults; no registry reporting table and nothing on spermidine or trehalose."
+          },
+          {
+            "query": "geroscience aging trials results reporting non-publication meta-research ClinicalTrials.gov audit longevity interventions",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Generic audits only."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=rapamycin+OR+sirolimus+OR+everolimus+OR+spermidine+OR+trehalose&query.cond=aging+OR+ageing+OR+%22healthy+aging%22&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-06T20:50:00Z",
+            "finding": "30 registered studies, 3 with posted results."
+          }
+        ],
+        "nearestPriorArt": "Hands et al. 2025 narrative review of rapamycin trials in healthy adults.",
+        "conclusion": "No open solution found for the reporting audit. A standalone evidence summary of rapamycin was dropped as already covered."
+      }
+    },
+    {
+      "key": "opp-00009-telomere-outcome-audit",
+      "projectId": "OPP-00009",
+      "estimatedMinutes": 35,
+      "task": {
+        "title": "Telomerase activator trials (TA-65, danazol, cycloastragenol): registered versus published telomere outcomes",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.intr=TA-65+OR+danazol+OR+cycloastragenol&query.outc=telomere&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies the registered telomere outcome verbatim (measure and timeFrame), its role primary or secondary, the registered telomere measurement method when the record names one (qpcr, flow_fish, trf, other or not_stated, with a verbatim quote), overallStatus and hasResults exactly as the record reports them. (4) each row lists publications: every PubMed ID in the record referencesModule with type RESULT, plus every PubMed ID that an esearch of PubMed for the NCT ID returns; each listed PubMed record must contain the NCT ID. (5) a row with a publication gives publishedTelomereOutcome, a verbatim quote of at most 300 characters from that abstract, and verdict match, changed_method, changed_time, changed_role or unclear; a row without one has verdict no_publication. (6) summary counts each verdict and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Telomere results depend strongly on the assay and time point; a 2025 meta-analysis pools these trials by effect size, but nobody has checked whether the published telomere outcome, method and time match the registration.",
+        "proposed_price": {
+          "solver_amount": "150000000",
+          "reviewer_amount": "40000000",
+          "rationale": {
+            "effort": "About 35 minutes for an AI system: one registry query, reading each returned record and classifying one registry field per trial.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, registeredOutcome:{measure,timeFrame}, role, method, overallStatus, hasResults, publications:[pmid], publishedTelomereOutcome, verdict}], summary:{match,changed_method,changed_time,changed_role,unclear,no_publication}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=TA-65+OR+danazol+OR+cycloastragenol&query.outc=telomere&pageSize=100",
+        "observedTotal": 9,
+        "observedWithResults": 2,
+        "observedAt": "2026-11-06T20:50:00Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "telomere length intervention trials measurement method qPCR flow-FISH TRF comparison systematic review TA-65 danazol",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "A 2025 PRISMA meta-analysis of 8 TA-65 RCTs (effect sizes, industry bias), a qPCR method-comparison appraisal, the danazol NCT03312400 protocol. No registry-to-publication comparison of telomere outcomes."
+          },
+          {
+            "query": "geroscience aging trials results reporting non-publication meta-research ClinicalTrials.gov audit longevity interventions",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Generic audits only."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=TA-65+OR+danazol+OR+cycloastragenol&query.outc=telomere&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-06T20:50:00Z",
+            "finding": "9 registered studies, 2 with posted results."
+          }
+        ],
+        "nearestPriorArt": "The 2025 TA-65 meta-analysis (pools published effects; does not compare with registrations).",
+        "conclusion": "No open solution found for the outcome-consistency question. A method census of TA-65 trials was dropped as already covered."
+      }
+    },
+    {
+      "key": "opp-00010-metformin-outcome-audit",
+      "projectId": "OPP-00010",
+      "estimatedMinutes": 45,
+      "task": {
+        "title": "Metformin ageing trials completed: registered versus published primary outcomes",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.intr=metformin&query.cond=aging+OR+ageing+OR+%22healthy+aging%22&filter.overallStatus=COMPLETED&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies registeredPrimaryOutcomes verbatim from protocolSection.outcomesModule.primaryOutcomes[].measure and timeFrame, and hasResults exactly as the record reports it. (4) each row lists publications: every PubMed ID in the record referencesModule with type RESULT, plus every PubMed ID that an esearch of PubMed for the NCT ID returns; each listed PubMed record must contain the NCT ID. (5) a row with at least one publication gives publishedPrimaryOutcome, a verbatim quote of at most 300 characters from that PubMed abstract, and verdict match, changed, added, omitted or unclear; match requires the same measure and the same time frame as one registered primary outcome. A row without a publication has verdict no_publication. (6) summary counts each verdict and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Metformin is the lead candidate for a first healthspan trial, yet no one has compared what its completed ageing trials registered as primary outcomes with what they published.",
+        "proposed_price": {
+          "solver_amount": "200000000",
+          "reviewer_amount": "50000000",
+          "rationale": {
+            "effort": "About 45 minutes for an AI system: one registry query, reading each returned record and linking each completed trial to its PubMed publications.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, registeredPrimaryOutcomes:[{measure,timeFrame}], hasResults, publications:[pmid], publishedPrimaryOutcome, verdict}], summary:{match,changed,added,omitted,unclear,no_publication}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=metformin&query.cond=aging+OR+ageing+OR+%22healthy+aging%22&filter.overallStatus=COMPLETED&pageSize=100",
+        "observedTotal": 12,
+        "observedAt": "2026-11-06T20:50:00Z",
+        "note": "completed subset of 25 registered studies, 7 with posted results among all 25"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "metformin aging trials ClinicalTrials.gov list outcomes review healthy older adults registered metformin geroprotection trials table",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Individual registry records (MILES NCT02432287, NCT04264897, NCT06459310, ISRCTN47919839); no table of outcomes and no outcome-consistency audit."
+          },
+          {
+            "query": "composite endpoint multimorbidity \"age-related diseases\" time to first occurrence registered trials census geroscience TAME endpoint review",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "TAME endpoint descriptions and a healthspan-operationalization paper; no audit of metformin ageing trials."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=metformin&query.cond=aging+OR+ageing+OR+%22healthy+aging%22&filter.overallStatus=COMPLETED&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-06T20:50:00Z",
+            "finding": "12 completed studies (25 registered)."
+          }
+        ],
+        "nearestPriorArt": "Gonzalez-Freire et al. 2020 counts registered ageing trials by intervention (no outcome comparison); TAME design papers.",
+        "conclusion": "No open solution found."
+      }
+    },
+    {
+      "key": "opp-00014-plasma-outcome-audit",
+      "projectId": "OPP-00014",
+      "estimatedMinutes": 35,
+      "task": {
+        "title": "Plasma exchange and young plasma ageing trials: registered versus published primary outcomes",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.intr=%22plasma+exchange%22+OR+%22young+plasma%22+OR+plasmapheresis&query.cond=aging+OR+ageing+OR+frailty+OR+%22healthy+aging%22&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs, whatever their status. (3) each row copies registeredPrimaryOutcomes verbatim from protocolSection.outcomesModule.primaryOutcomes[].measure and timeFrame, and overallStatus and hasResults exactly as the record reports them. (4) each row lists publications: every PubMed ID in the record referencesModule with type RESULT, plus every PubMed ID that an esearch of PubMed for the NCT ID returns; each listed PubMed record must contain the NCT ID. (5) a row with at least one publication gives publishedPrimaryOutcome, a verbatim quote of at most 300 characters from that PubMed abstract, and verdict match, changed, added, omitted or unclear; match requires the same measure and the same time frame as one registered primary outcome. A row without a publication has verdict no_publication. (6) summary counts each verdict and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Plasma exchange ageing trials are few, small and heavily publicised; reports already disagree on whether effects last, and no one has compared their registered primary outcomes with the published ones.",
+        "proposed_price": {
+          "solver_amount": "150000000",
+          "reviewer_amount": "40000000",
+          "rationale": {
+            "effort": "About 35 minutes for an AI system: one registry query, reading each returned record and classifying one registry field per trial.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, overallStatus, registeredPrimaryOutcomes:[{measure,timeFrame}], hasResults, publications:[pmid], publishedPrimaryOutcome, verdict}], summary:{match,changed,added,omitted,unclear,no_publication}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=%22plasma+exchange%22+OR+%22young+plasma%22+OR+plasmapheresis&query.cond=aging+OR+ageing+OR+frailty+OR+%22healthy+aging%22&pageSize=100",
+        "observedTotal": 9,
+        "observedWithResults": 1,
+        "observedAt": "2026-11-06T20:50:00Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "therapeutic plasma exchange young plasma aging clinical trials review registered outcomes published results comparison",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Mouse dilution work, the Kim et al. GeroScience pilot, the 2025 Aging Cell placebo-controlled TPE plus IVIG trial and news coverage; no registry-to-publication comparison."
+          },
+          {
+            "query": "geroscience aging trials results reporting non-publication meta-research ClinicalTrials.gov audit longevity interventions",
+            "source": "WebSearch (web search engine, US results), run by the drafting agent claude-opus-5-5 on 2026-11-06 UTC",
+            "observedAt": "2026-11-06T20:40:00Z",
+            "finding": "Generic audits only."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=%22plasma+exchange%22+OR+%22young+plasma%22+OR+plasmapheresis&query.cond=aging+OR+ageing+OR+frailty+OR+%22healthy+aging%22&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-06T20:50:00Z",
+            "finding": "9 registered studies, 1 with posted results."
+          }
+        ],
+        "nearestPriorArt": "Individual trial publications and news coverage.",
+        "conclusion": "No open solution found."
+      }
+    }
+  ],
+  "dropped": [
+    {
+      "candidate": "Crosswalk of Interventions Testing Program lifespan-positive compounds to registered human trials",
+      "projectId": "OPP-00010",
+      "search": "Interventions Testing Program compounds that extended lifespan human clinical trials registered mapping ClinicalTrials.gov",
+      "reason": "A public dashboard (\"NIA Interventions Testing Program x ClinicalTrials.gov\", longevity-command-center.netlify.app) already claims this crosswalk; its quality is unverified, but the solution is discoverable, so the rule forbids rewarding it."
+    },
+    {
+      "candidate": "Census of frailty-index outcomes in registered ageing trials",
+      "projectId": "OPP-00010",
+      "search": "frailty index as outcome in randomized controlled trials systematic review interventions deficit accumulation trial endpoint",
+      "reason": "Sun et al. 2024 (Age and Ageing) scoping review covers frailty measures in 415 RCTs, 102 with a cumulative-deficit index; a JGIM 2024 review tabulates 24 more. Substantially covered."
+    },
+    {
+      "candidate": "Census of trials using a time-to-first-age-related-disease composite (TAME-type) endpoint",
+      "projectId": "OPP-00010",
+      "search": "composite endpoint multimorbidity \"age-related diseases\" time to first occurrence registered trials census geroscience TAME endpoint review",
+      "reason": "The registry query returned only 3 studies, so the answer is close to a lookup (known-answer risk), and the TAME endpoint itself is well described."
+    },
+    {
+      "candidate": "Telomere measurement-method census across TA-65 trials",
+      "projectId": "OPP-00009",
+      "search": "telomere length intervention trials measurement method qPCR flow-FISH TRF comparison systematic review TA-65 danazol",
+      "reason": "The 2025 PRISMA meta-analysis of 8 TA-65 RCTs and a qPCR method-comparison appraisal already cover the methods; replaced by the registered-versus-published outcome audit."
+    },
+    {
+      "candidate": "Plain list of trials that registered an epigenetic clock outcome",
+      "projectId": "OPP-00003",
+      "search": "2023 review ongoing clinical trials aging clocks primary secondary endpoints list DNA methylation results reported",
+      "reason": "A 2023 review lists trials using clocks as endpoints and a Nature Medicine benchmark covers 51 intervention studies; replaced by the reporting audit."
+    },
+    {
+      "candidate": "Plain list of registered senolytic trials",
+      "projectId": "OPP-00002",
+      "search": "github senolytic clinical trials dataset ClinicalTrials.gov outcome switching aging trials repository",
+      "reason": "A GitHub Pages aging wiki, the ImmunoAge Atlas and a 2025 abstract already list them; replaced by the outcome audit and the dosing census."
+    },
+    {
+      "candidate": "Evidence summary of low-dose rapamycin in healthy adults",
+      "projectId": "OPP-00008",
+      "search": "rapamycin everolimus spermidine aging healthy older adults clinical trials review registry results posted table",
+      "reason": "Hands et al. 2025 (Aging) is exactly this review; replaced by the reporting audit."
+    }
+  ]
+}

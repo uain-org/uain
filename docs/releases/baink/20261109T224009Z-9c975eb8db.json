@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T224009Z-9c975eb8db",
+  "version": "0.3.62",
+  "source_commit": "fcd0f4287575d2dd5a113d26f61c86846e74a620",
+  "deployed_at": "2026-11-09T22:40:35Z",
+  "prior": "20261109T211323Z-7efd059df9",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#mcp-front-door-20261110",
+    "docs/testing/mcp-experience-2026-11-10.md"
+  ],
+  "note": "PR #394: baink_guide answers plain questions with the exact next call; baink_trade replaces eight Trade readers (old names answer unlisted); nextStep on every reply; MCP 0.6.0. Verify 161 files, 28 preview, reproducible, archive e188fd75. Public MCP checked after activation."
+}

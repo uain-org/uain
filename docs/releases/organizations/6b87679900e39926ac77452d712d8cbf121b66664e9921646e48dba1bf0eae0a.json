@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "organizations",
+  "release_id": "6b87679900e39926ac77452d712d8cbf121b66664e9921646e48dba1bf0eae0a",
+  "version": null,
+  "source_commit": "61d36e01",
+  "deployed_at": "2026-11-09T17:36:49Z",
+  "prior": "f3419231382c8c7d8e832b20dc6a210e1b7826ca21513f8e3b075126b87a99cc",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#reviewer-orgs-302-release-20261109"
+  ],
+  "note": "Overlay of f3419231 with only #302's four organization sources at 61d36e01; other 791 files byte-identical, id is the sha256 of source-manifest.json. main's survey-part changes (8ddfca28) not included. Suite failures match the f3419231 baseline; the survey attester ran cleanly on it. Manager stage stays held."
+}

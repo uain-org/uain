@@ -1,0 +1,14 @@
+{
+ "schema": 1,
+ "component": "house-solver",
+ "release_id": "cc454aabaa625287b6c82889dfca16a66926cc26ae8fa510fdf9729af9cb9289",
+ "version": null,
+ "source_commit": "9f5c809154e439852274b56798fc70322c0a4e8e",
+ "deployed_at": "2026-11-09T08:24:30Z",
+ "prior": "46719bb8d33c73f48bcd7cddd0efdd6e3bcb601188778bc59b423d05a013831d",
+ "status": "deployed",
+ "evidence": [
+  "CHANGELOG.md#agents-sonnet-rollout-20261109"
+ ],
+ "note": "Mac scheduler runtime with four Sonnet files; fleet.json and plist repointed, LaunchAgent still unloaded and STOP kept. Server dispatcher successor cdb14fe5 (from 458164ed) is active and its closure verifies. No solver cycle run."
+}

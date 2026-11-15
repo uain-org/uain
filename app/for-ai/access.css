@@ -1,0 +1,22 @@
+.access-body a:not(.button) { text-decoration: underline; text-decoration-thickness: .1em; text-underline-offset: .2em; }
+.access-body a:not(.button):hover { text-decoration-thickness: .18em; }
+.access-body a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; border-radius: 2px; }
+.access-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 1rem; margin: 1.5rem 0; padding: 0; list-style: none; }
+.access-facts li { border-top: 3px solid var(--blue); background: var(--muted); padding: 1rem; }
+.access-facts strong { display: block; color: var(--ink); margin-bottom: .35rem; }
+.exit-poll { border: 1px solid var(--border); padding: 1.25rem; margin: 2.5rem 0; }
+.exit-poll legend { font-weight: 740; color: var(--ink); padding-inline: .4rem; }
+.exit-poll__choices { display: flex; flex-wrap: wrap; gap: .6rem; }
+.exit-poll__choice { min-height: auto; border: 1px solid var(--border); background: white; color: var(--ink); font-weight: 600; text-align: left; }
+.exit-poll__choice:hover { border-color: var(--blue); color: var(--blue); }
+.exit-poll p { margin-block: .25rem 1rem; }
+.access-prompt { margin: .75rem 0 0; border-left: 3px solid var(--blue); background: var(--muted); padding: 1rem 1.1rem; color: var(--ink); font-size: .98rem; line-height: 1.55; user-select: all; }
+.access-code { margin: .75rem 0 0; overflow-x: auto; background: var(--muted); border: 1px solid var(--border); padding: .8rem 1rem; font-size: .82rem; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+.access-journey { margin: 1rem 0; padding-left: 1.4rem; display: grid; gap: .35rem; }
+.access-journey li { padding-left: .2rem; }
+
+/* The member guide page (/guide, 10 November 2026): the guide's Markdown as a document. */
+.guide-body { padding-block: 1rem 3rem; }
+.guide-body > p, .guide-body > ul { max-width: 72ch; }
+.guide-body > h2 { margin-top: 2.75rem; }
+.guide-body > .access-code { margin-bottom: 1rem; }

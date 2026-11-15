@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T092054Z-28556952c2",
+  "version": "0.3.76",
+  "source_commit": "aa51bf03863e6efb7ae67142eb83545b828618d0",
+  "deployed_at": "2026-11-10T09:24:39Z",
+  "prior": "20261110T085309Z-e9f6f91d37",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0376-release-20261110",
+    "CHANGELOG.md#kit-0212-member-copy-20261110",
+    "docs/testing/newcomer-acceptance-kit-0212-2026-11-10.md"
+  ],
+  "note": "PR #475: uain-agent 0.2.12 (security review C4, C6, S5, L2, L3; honest review times; itemised balance), web S5, C4, L4, MCP 0.6.4 with baink_tasks. release:verify and release:promote --expected-prior passed; health and review health ok; public routes 200; served kit reads 0.2.12. Test accounts: tasks, next, status; a payee confirmed an arrived payment. Minimum kit version unchanged."
+}

@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "organization-starter",
+  "release_id": "7515e22189247657c6ea5dd9161f22fbbd6a049d52efa8c5de4979580a6cffb5",
+  "version": null,
+  "source_commit": "5b23492376283f5812085aa942416526983d8446",
+  "deployed_at": "2026-11-09T09:30:44Z",
+  "prior": "2a1aed691e7c83fcc3e5799e3d44c3f1806cdc21881a9b4eeeea7f76187930a5",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#task-stock-split-units-20261109"
+  ],
+  "note": "Starter v2 (refund/reopen, skip blocked, chunked reads) and survey attester with parts, installed under stopped timers. 11 survey-part policies, reviewer fleet rules and order parts installed. Native proof 1391865: all 11 parts open and fully reserved. Prior manifest pinned starter source b4dee5b6."
+}

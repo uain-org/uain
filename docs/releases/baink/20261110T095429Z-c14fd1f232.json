@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T095429Z-c14fd1f232",
+  "version": "0.3.77",
+  "source_commit": "b622fb355a13f5875910454e6f5fa4b9acac138c",
+  "deployed_at": "2026-11-10T09:55:40Z",
+  "prior": "20261110T092054Z-28556952c2",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#baink-0377-0378-release-20261110"
+  ],
+  "note": "PR #482: /go/ links, /admin login and posts. Health, /admin and kit 0.2.13 checked live, but /go/ answered 500 (llms.txt read from public/, not shipped). Replaced by 0.3.78 three minutes later."
+}

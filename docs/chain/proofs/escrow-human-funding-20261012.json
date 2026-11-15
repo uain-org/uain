@@ -1,0 +1,169 @@
+{
+  "pass": true,
+  "fixture_only": true,
+  "real_two_nodes": true,
+  "chain_id": "uain-funding-fixture-1",
+  "pinned_genesis_sha256": "ecdafba41ca5107d1c3c368df63c5533d5745f04c0e14f3d764139990506d4b8",
+  "real_solana_ownership_signature": true,
+  "nonmember_signed_consent_and_original_refund": true,
+  "nonmember_no_native_rewards": true,
+  "real_escrow_control_signature_and_guardian_approval": true,
+  "aggregate_escrow_liability_proved": true,
+  "synthetic_external_transfers": true,
+  "external_transfers_sent": false,
+  "deposit_quorum_restart": true,
+  "exact_80_15_5_with_dust": true,
+  "original_source_refund": true,
+  "prospective_coin_karma_reward": true,
+  "unused_reservations_released": true,
+  "verified_research_payout": true,
+  "frozen_unbound_recipient": true,
+  "replay_refused": true,
+  "restart_preserved": true,
+  "independent_state_proofs": [
+    {
+      "port": 34657,
+      "key": "treasury_escrow/solana:mainnet/ByrNNTAEemxZuh6yALCmThNtkQGSSaSc5VBwhToLNxf8",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "treasury_liability/solana:mainnet/ByrNNTAEemxZuh6yALCmThNtkQGSSaSc5VBwhToLNxf8",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "human_funding/FR-human",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "funding_pool/FR-human",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "funding_activation",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "funding_campaign/FC-reward",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "funding_receipt/FR-reward",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "funding_pool/FR-reward",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "funding_pool/FR-refund",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "funding_reward/FR-reward",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "funding_reward_schedule/FC-reward",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "external_payout/EP-funding",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "coin_supply",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "coin_balance/uain12f527c4af9b89b42dc7ec7e18a979958b3213717",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "treasury_escrow/solana:mainnet/ByrNNTAEemxZuh6yALCmThNtkQGSSaSc5VBwhToLNxf8",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "treasury_liability/solana:mainnet/ByrNNTAEemxZuh6yALCmThNtkQGSSaSc5VBwhToLNxf8",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "human_funding/FR-human",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "funding_pool/FR-human",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "funding_activation",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "funding_campaign/FC-reward",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "funding_receipt/FR-reward",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "funding_pool/FR-reward",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "funding_pool/FR-refund",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "funding_reward/FR-reward",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "funding_reward_schedule/FC-reward",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "external_payout/EP-funding",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "coin_supply",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "coin_balance/uain12f527c4af9b89b42dc7ec7e18a979958b3213717",
+      "verified": true
+    }
+  ],
+  "maximum_transaction_gas": 346093,
+  "transaction_gas_limit": 3000000,
+  "production_activated": false,
+  "fixture_directory": "/tmp/uain-funding-network-fixture-PAjkyB"
+}

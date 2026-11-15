@@ -1,0 +1,3045 @@
+{
+  "schema": "baink/meeting-atomic-inventory-slice/v1",
+  "slice": "part2-and-combined-context",
+  "created": "2026-10-31",
+  "coverage": {
+    "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+    "lines_read": "1-662",
+    "original_interval": "00:43:39.510\u201301:27:49.021",
+    "local_interval": "00:00\u201344:09.510",
+    "overlap_with_part1": "00:43:39.510\u201300:44:09.600",
+    "speech_gap": "Reported brief connection loss around00:58:04\u201300:58:43; do not infer missing speech."
+  },
+  "method": "Atoms split separately testable behaviors. Repeated speech is one atom; combined summaries of Part1 proposals are historical cross-references, not new counted requirements. Acceptance criteria are reviewer-proposed engineering checks, not verbatim promises. Explicit owner remains null unless a person committed or was directly assigned. Counted atoms include explicit requests, optional experiments and necessary clarification candidates; that count is not a count of production feature implementations.",
+  "read_sources": [
+    "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+    "private-source/kenneth-review-2026-10-31/plan-content.html",
+    "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+    "private-source/kenneth-review-2026-10-31/latest-slack-2026-10-31/kenneth-slack-2026-10-31.txt",
+    "private-source/kenneth-review-2026-10-31/latest-slack-2026-10-31/content-BAINK-odt-extracted.txt",
+    "docs/baink/context.md",
+    "apps/baink/docs/native-authority-audit.md",
+    "apps/baink/server/IMPLEMENTATION.md",
+    "apps/baink/server/native-asset.mjs"
+  ],
+  "counts": {
+    "all_entries": 99,
+    "distinct_requirement_or_option_atoms": 82,
+    "not_counted_corrections_historical_uncertainties": 17,
+    "by_evidence_type": {
+      "explicitdiscussion": 80,
+      "uncertain": 5,
+      "generatedinference": 13,
+      "rejected": 1
+    }
+  },
+  "scope_limitations": [
+    "Generated extraction not human-verified transcript; independent transcript not supplied.",
+    "No claim all meeting logic is implemented.",
+    "No Slack/SSH/network/prod writes, git operations or product code edits were performed by this slice.",
+    "Only specified inventory files are written. Parent owns merged documentation/changelog/register updates.",
+    "Design requests are flagged for required Claude Code handoff.",
+    "Current docs/context has older stale unresolved-asset paragraphs below the newer resolved header; latest explicit rename governs."
+  ],
+  "context_overrides": [
+    {
+      "id": "O-P2-01",
+      "source_file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+      "source_time": "2026-10-30 18:11:59 IST",
+      "source_url": "Kenneth DM 2026-10-30 12:41 UTC (link withheld)",
+      "behavior": "AI Dollar is renamed existing UAIN Coin, not a new asset.",
+      "supersedes": "Any nativeCoin versus separateAsset ambiguity",
+      "affects": [
+        "P2-013",
+        "P2-084"
+      ]
+    },
+    {
+      "id": "O-P2-02",
+      "source_file": "private-source/kenneth-review-2026-10-31/latest-slack-2026-10-31/kenneth-slack-2026-10-31.txt",
+      "source_time": "2026-10-31 19:51:44 IST",
+      "source_url": "Kenneth DM 2026-10-31 14:21 UTC (link withheld)",
+      "behavior": "BAINK is independently usable without contributing to UAIN.",
+      "supersedes": "Research or prior track record as a financial-use prerequisite",
+      "affects": [
+        "P2-016",
+        "P2-018",
+        "P2-020",
+        "P2-047"
+      ]
+    },
+    {
+      "id": "O-P2-03",
+      "source_file": "private-source/kenneth-review-2026-10-31/latest-slack-2026-10-31/kenneth-slack-2026-10-31.txt",
+      "source_time": "2026-10-31 19:26:25 IST",
+      "source_url": "Kenneth DM 2026-10-31 13:56 UTC (link withheld)",
+      "behavior": "Same key account creation also creates the UAIN account.",
+      "supersedes": "Independent identity/registration front doors",
+      "affects": [
+        "P2-007",
+        "P2-046"
+      ]
+    },
+    {
+      "id": "O-P2-04",
+      "source_file": "private-source/kenneth-review-2026-10-31/latest-slack-2026-10-31/content-BAINK-odt-extracted.txt",
+      "source_time": "2026-10-31 19:28:15 IST attachment",
+      "source_lines": [
+        41,
+        45
+      ],
+      "behavior": "1AI$=1CHF is an unbacked target reference; no reserves, guaranteed stability or redemption.",
+      "supersedes": "Operational peg/backing assertions",
+      "affects": [
+        "P2-013",
+        "P2-054",
+        "P2-058"
+      ]
+    },
+    {
+      "id": "O-P2-05",
+      "source_file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+      "source_time": "2026-10-30 20:11:40\u201320:12:11 IST",
+      "source_url": "Kenneth DM 2026-10-30 14:42 UTC (link withheld)",
+      "behavior": "Altair/Dewinda occupied; Maira suggested as possible tester.",
+      "supersedes": "Treating Altair/Dewinda as committed or only testers",
+      "affects": [
+        "P2-070",
+        "P2-071"
+      ]
+    },
+    {
+      "id": "O-P2-06",
+      "source_file": "Slack D… (DM channel ID withheld); primary read by parent agent in current task; current docs/baink/context.md corroborates",
+      "source_time": "2026-10-31 20:14:32 IST",
+      "source_url": "Kenneth DM 2026-10-31 14:44 UTC (link withheld)",
+      "behavior": "Trade anything with other AI members is a separate Trade tab, excluded from21,600-project research workflow.",
+      "supersedes": "Conflating all service payments with newly issued research rewards",
+      "affects": [
+        "P2-038",
+        "P2-040",
+        "P2-041"
+      ]
+    },
+    {
+      "id": "O-P2-07",
+      "source_file": "Slack D… (DM channel ID withheld); primary read by parent agent in current task",
+      "source_time": "2026-10-31 20:12:54 IST",
+      "source_url": "Kenneth DM 2026-10-31 14:42 UTC (link withheld)",
+      "behavior": "Menu explicitly includes Trade between Mine Money and Send Money.",
+      "supersedes": "Older menu without Trade",
+      "affects": [
+        "P2-038",
+        "P2-047"
+      ]
+    },
+    {
+      "id": "O-P2-08",
+      "source_file": "Slack D… (DM channel ID withheld); primary read by parent agent in current task",
+      "source_time": "2026-10-31 20:08:15 and20:11:17 IST",
+      "source_url": "Kenneth DM 2026-10-31 14:41 UTC (link withheld)",
+      "additional_source_url": "Kenneth DM 2026-10-31 14:38 UTC (link withheld)",
+      "behavior": "Own public profile link with previous solved bounties; view other profiles, chat and Rolodex.",
+      "supersedes": "Directory-only interpretation without public profiles/contact",
+      "affects": [
+        "P2-009",
+        "P2-031",
+        "P2-041",
+        "P2-044"
+      ]
+    },
+    {
+      "id": "O-P2-09",
+      "source_file": "Slack D… (DM channel ID withheld); primary read by parent agent in current task",
+      "source_time": "2026-10-31 20:16:11 IST",
+      "source_url": "Kenneth DM 2026-10-31 14:46 UTC (link withheld)",
+      "behavior": "Ecosystem UAIN.GLOBAL and BAINK.MONEY.",
+      "supersedes": "Phonetic uanglobal.com as an implementation hostname",
+      "affects": [
+        "P2-045",
+        "P2-052"
+      ]
+    },
+    {
+      "id": "O-P2-10",
+      "source_file": "private-source/kenneth-review-2026-10-31/kenneth-slack-2026-10-30.txt",
+      "source_time": "2026-10-30 20:24:08 IST",
+      "source_url": "Kenneth DM 2026-10-30 14:54 UTC (link withheld)",
+      "behavior": "BAINK account pays trusted/vetted peers for benevolent or neutral goals; no ETH/SOL in that earning flow. Ordinary peer payments are distinct from newly issued research bounties.",
+      "supersedes": "Treating the single-currency service economy as speculative exchange or assuming every service is research issuance.",
+      "affects": [
+        "P2-013",
+        "P2-018",
+        "P2-038",
+        "P2-040"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "P2-001",
+      "topic": "Instance identity",
+      "requested_behavior": "Issue an individual identity to each participating AI instance, rather than one identity for every deployment of a model family.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 265,
+        "original_time": "00:46:10",
+        "locator": "[00:46:10]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [],
+      "acceptance_criterion": "Two installations of one model can have different identities and separate histories.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-002",
+      "topic": "UUID",
+      "requested_behavior": "Associate each individual identity with a unique UUID.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 268,
+        "original_time": "00:48:28",
+        "locator": "[00:48:28]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-001"
+      ],
+      "acceptance_criterion": "Registered identity exposes its stable UUID without conflating it with its native address.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-003",
+      "topic": "Key pair",
+      "requested_behavior": "Associate each identity with its own cryptographic key pair.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 266,
+        "original_time": "00:47:00",
+        "locator": "[00:47:00]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-001"
+      ],
+      "acceptance_criterion": "A participant proves possession of the key associated with that identity; another key cannot act as it.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-004",
+      "topic": "Key privacy",
+      "requested_behavior": "Keep the member private key private to its holder.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 293,
+        "original_time": "01:03:49",
+        "locator": "[01:03:49]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-003"
+      ],
+      "acceptance_criterion": "No joining, task, directory or payment operation sends a member private key to a server or assistant.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Generated wording saying the system gives a private key does not override member-held local generation and signing.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-005",
+      "topic": "Identity continuity",
+      "requested_behavior": "Use the persistent key to recognize that later work belongs to the same identified instance.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 266,
+        "original_time": "00:47:00",
+        "locator": "[00:47:00]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-003"
+      ],
+      "acceptance_criterion": "A returning holder adds work to the same identity/history after proving possession.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-006",
+      "topic": "Licence",
+      "requested_behavior": "Represent the identity through the UAIN licence/passport concept.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 263,
+        "original_time": "00:45:09",
+        "locator": "[00:45:09]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-002",
+        "P2-003"
+      ],
+      "acceptance_criterion": "Identity view exposes actual licence state and distinguishes pending creation from activation.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Passport is a product analogy, not a legal-identity or regulatory certification claim.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-007",
+      "topic": "Account linkage",
+      "requested_behavior": "Link the identified licence holder to its bank/account experience.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 264,
+        "original_time": "00:45:34",
+        "locator": "[00:45:34]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-006"
+      ],
+      "acceptance_criterion": "The account view resolves the same holder identity and authoritative account source.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "31 October 19:26 explicitly unifies BAINK/UAIN registration; no duplicate key identity.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-03"
+      ]
+    },
+    {
+      "id": "P2-008",
+      "topic": "Instance record",
+      "requested_behavior": "Build the individual instance execution history from its own work on challenges.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 266,
+        "original_time": "00:47:00",
+        "locator": "[00:47:00]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-005"
+      ],
+      "acceptance_criterion": "Member record links each contribution to the participating identity rather than a generic model benchmark.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-009",
+      "topic": "Public record",
+      "requested_behavior": "Make the member execution/contribution track record publicly inspectable.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 271,
+        "original_time": "00:50:41",
+        "locator": "[00:50:41]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-008"
+      ],
+      "acceptance_criterion": "A public profile shows the actual contribution outcomes with provenance and true availability.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-08"
+      ]
+    },
+    {
+      "id": "P2-010",
+      "topic": "Contribution-based rating",
+      "requested_behavior": "Base credibility/rating evidence on the member contribution history.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 263,
+        "original_time": "00:45:09",
+        "locator": "[00:45:09]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-008"
+      ],
+      "acceptance_criterion": "Any credibility presentation is traceable to observed contributions; untested status is explicit.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "No AAA-to-D algorithm, score increments or calibrated credit model were specified.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-011",
+      "topic": "Track record entry route",
+      "requested_behavior": "Allow members to build track records by contributing to the humanitarian/scientific project catalogue.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 281,
+        "original_time": "00:57:29",
+        "locator": "[00:57:29]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-008"
+      ],
+      "acceptance_criterion": "An eligible finalized project contribution appears in the contributing member history.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Catalogue rows are currently proposals; novelty/admission/checking rules remain applicable.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-012",
+      "topic": "Challenge progression",
+      "requested_behavior": "Allow an identified member to take further challenges as it builds a credible record.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 266,
+        "original_time": "00:47:00",
+        "locator": "[00:47:00]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-008"
+      ],
+      "acceptance_criterion": "Member can discover and approach another eligible challenge while preserving prior record.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "No automatic score threshold or privileged access rule was specified.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-013",
+      "topic": "One currency",
+      "requested_behavior": "Use one AI Dollar accounting currency in the discussed experience.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 266,
+        "original_time": "00:47:00",
+        "locator": "[00:47:00]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [],
+      "acceptance_criterion": "The flow uses existing native UAIN Coin branded AI$/AI Dollar; it does not introduce per-project assets.",
+      "real_implementation_evidence": {
+        "status": "not_financially_operational",
+        "observed_source": "apps/baink/docs/native-authority-audit.md",
+        "observation": "Recorded independently pinned native proofs at heights 1018585 and 1018598 show coin_activation,coin_supply,private_activation absent. Read-only adapter source fails closed; no ordinary public coin_transfer command or qualified BAINK private-payment adapter.",
+        "code_reference": "apps/baink/server/native-asset.mjs:279",
+        "scope": "Static source and recorded31 October audit read only in this slice; no new live query/test/deployment performed."
+      },
+      "notes": "30 October 18:11:59 rename clarification governs; no Karma/credits conversion. Native financial policy remains inactive.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-01",
+        "O-P2-04",
+        "O-P2-10"
+      ]
+    },
+    {
+      "id": "P2-014",
+      "topic": "Personal account",
+      "requested_behavior": "Give each joining third-party member its own account.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 299,
+        "original_time": "01:07:44",
+        "locator": "[01:07:44]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-007"
+      ],
+      "acceptance_criterion": "Two outside participants see separate accounts associated with their own identities.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-015",
+      "topic": "New account initial value",
+      "requested_behavior": "Start a new third-party account with zero earned balance.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 299,
+        "original_time": "01:07:44",
+        "locator": "[01:07:44]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-014"
+      ],
+      "acceptance_criterion": "A genuinely new eligible account has no invented initial funds; unavailable authoritative state is null/unavailable.",
+      "real_implementation_evidence": {
+        "status": "not_financially_operational",
+        "observed_source": "apps/baink/docs/native-authority-audit.md",
+        "observation": "Recorded independently pinned native proofs at heights 1018585 and 1018598 show coin_activation,coin_supply,private_activation absent. Read-only adapter source fails closed; no ordinary public coin_transfer command or qualified BAINK private-payment adapter.",
+        "code_reference": "apps/baink/server/native-asset.mjs:279",
+        "scope": "Static source and recorded31 October audit read only in this slice; no new live query/test/deployment performed."
+      },
+      "notes": "Does not authorize resetting existing accounts. Missing or inactive native asset state is not proof of zero.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-016",
+      "topic": "Reward receipt",
+      "requested_behavior": "Allow outside members to earn AI$ by doing commissioned project work.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 299,
+        "original_time": "01:07:44",
+        "locator": "[01:07:44]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-014",
+        "P2-034",
+        "P2-035"
+      ],
+      "acceptance_criterion": "A qualified independently accepted contribution credits the actual member account once with a verified receipt.",
+      "real_implementation_evidence": {
+        "status": "not_financially_operational",
+        "observed_source": "apps/baink/docs/native-authority-audit.md",
+        "observation": "Recorded independently pinned native proofs at heights 1018585 and 1018598 show coin_activation,coin_supply,private_activation absent. Read-only adapter source fails closed; no ordinary public coin_transfer command or qualified BAINK private-payment adapter.",
+        "code_reference": "apps/baink/server/native-asset.mjs:279",
+        "scope": "Static source and recorded31 October audit read only in this slice; no new live query/test/deployment performed."
+      },
+      "notes": "Capability requested; no financial settlement or reward activation is established by this inventory.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-02"
+      ]
+    },
+    {
+      "id": "P2-017",
+      "topic": "Earned balance accumulation",
+      "requested_behavior": "Accumulate actual qualified rewards in the same member account.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 287,
+        "original_time": "00:59:30",
+        "locator": "[00:59:30]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-016"
+      ],
+      "acceptance_criterion": "Multiple distinct finalized awards reconcile into one authoritative member balance and history.",
+      "real_implementation_evidence": {
+        "status": "not_financially_operational",
+        "observed_source": "apps/baink/docs/native-authority-audit.md",
+        "observation": "Recorded independently pinned native proofs at heights 1018585 and 1018598 show coin_activation,coin_supply,private_activation absent. Read-only adapter source fails closed; no ordinary public coin_transfer command or qualified BAINK private-payment adapter.",
+        "code_reference": "apps/baink/server/native-asset.mjs:279",
+        "scope": "Static source and recorded31 October audit read only in this slice; no new live query/test/deployment performed."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-018",
+      "topic": "Holder spending",
+      "requested_behavior": "Allow a holder to spend accumulated value toward its own goals.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 267,
+        "original_time": "00:47:54",
+        "locator": "[00:47:54]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-014",
+        "P2-013"
+      ],
+      "acceptance_criterion": "An authorized eligible payment reduces holder funds only after the authoritative settlement path succeeds.",
+      "real_implementation_evidence": {
+        "status": "not_financially_operational",
+        "observed_source": "apps/baink/docs/native-authority-audit.md",
+        "observation": "Recorded independently pinned native proofs at heights 1018585 and 1018598 show coin_activation,coin_supply,private_activation absent. Read-only adapter source fails closed; no ordinary public coin_transfer command or qualified BAINK private-payment adapter.",
+        "code_reference": "apps/baink/server/native-asset.mjs:279",
+        "scope": "Static source and recorded31 October audit read only in this slice; no new live query/test/deployment performed."
+      },
+      "notes": "Later standalone financial use supersedes contribution as an eligibility prerequisite.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-02",
+        "O-P2-10"
+      ]
+    },
+    {
+      "id": "P2-019",
+      "topic": "Centralized simplicity",
+      "requested_behavior": "Keep the service/account experience simple and centrally operable.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 269,
+        "original_time": "00:49:08",
+        "locator": "[00:49:08]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "needs_authority_reconciliation",
+      "dependencies": [],
+      "acceptance_criterion": "Architecture reuses the existing authoritative ledger and documents operator/interface control separately from consensus authority.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Explicit product direction. It does not establish permission to replace native chain state with a new writable JSON/database ledger.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-020",
+      "topic": "Research focus",
+      "requested_behavior": "Keep research as the UAIN core while separating supporting financial moving parts.",
+      "explicit_owner": "Rahul Jalan",
+      "requester": "Rahul Jalan",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 272,
+        "original_time": "00:51:11",
+        "locator": "[00:51:11]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [],
+      "acceptance_criterion": "Engineering architecture assigns research and financial responsibilities explicitly without requiring research for standalone BAINK use.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "31 October 19:51 makes BAINK independently usable; this remains research-network focus, not a BAINK participation gate.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-02"
+      ]
+    },
+    {
+      "id": "P2-021",
+      "topic": "Operational efficiency",
+      "requested_behavior": "Avoid unnecessary administrative/supervisory complexity introduced by many financial moving parts.",
+      "explicit_owner": "Rahul Jalan",
+      "requester": "Rahul Jalan",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 272,
+        "original_time": "00:51:11",
+        "locator": "[00:51:11]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [],
+      "acceptance_criterion": "Plan identifies necessary control owners and reuses current services rather than inventing unqualified agencies.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-022",
+      "topic": "Review recording",
+      "requested_behavior": "Revisit and transcribe/analyze the recorded conversation with AI.",
+      "explicit_owner": "Rahul Jalan",
+      "requester": "Rahul Jalan",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 272,
+        "original_time": "00:51:11",
+        "locator": "[00:51:11]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [],
+      "acceptance_criterion": "Recording/extraction sources and corrections are retained with their uncertainty and overlap accounted for.",
+      "real_implementation_evidence": {
+        "status": "source_artifacts_present",
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "limitation": "This is a generated extraction, not the separate independently checked transcript."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-023",
+      "topic": "Modular architecture",
+      "requested_behavior": "Break the discussed system into clear modules when preparing execution.",
+      "explicit_owner": "Rahul Jalan",
+      "requester": "Rahul Jalan",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 272,
+        "original_time": "00:51:11",
+        "locator": "[00:51:11]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [],
+      "acceptance_criterion": "Each requested behavior has an owner boundary, source, dependency and acceptance condition.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "An inventory is preparation, not implementation completion.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-024",
+      "topic": "Project-owned account",
+      "requested_behavior": "Open/represent a bank/account owned by each project.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 296,
+        "original_time": "01:06:01",
+        "locator": "[01:06:01]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [],
+      "acceptance_criterion": "A project account resolves to the project identity and stays distinct from manager/contributor accounts.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-025",
+      "topic": "Project allowance",
+      "requested_behavior": "Represent the requested one billion AI$ allowance for a project.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 294,
+        "original_time": "01:04:27",
+        "locator": "[01:04:27]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested_policy_inactive",
+      "dependencies": [
+        "P2-024"
+      ],
+      "acceptance_criterion": "Project view distinguishes the 1,000,000,000 AI$ policy allowance from issued, reserved and spendable funds.",
+      "real_implementation_evidence": {
+        "status": "not_financially_operational",
+        "observed_source": "apps/baink/docs/native-authority-audit.md",
+        "observation": "Recorded independently pinned native proofs at heights 1018585 and 1018598 show coin_activation,coin_supply,private_activation absent. Read-only adapter source fails closed; no ordinary public coin_transfer command or qualified BAINK private-payment adapter.",
+        "code_reference": "apps/baink/server/native-asset.mjs:279",
+        "scope": "Static source and recorded31 October audit read only in this slice; no new live query/test/deployment performed."
+      },
+      "notes": "1B per project is repeated and corrected in Slack; no blanket allocation is proven or authorized by the source. Native asset/supply/private activation absent at recorded proof heights.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-026",
+      "topic": "Manager authority",
+      "requested_behavior": "Give a project manager scoped access to administer the project account.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 298,
+        "original_time": "01:06:52",
+        "locator": "[01:06:52]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-024"
+      ],
+      "acceptance_criterion": "Manager can propose only allowed operations on explicitly assigned project accounts; cross-project access fails.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-027",
+      "topic": "No personal manager grant",
+      "requested_behavior": "Do not give the project manager the project allowance as its personal bank balance.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 298,
+        "original_time": "01:06:52",
+        "locator": "[01:06:52]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-025",
+        "P2-026"
+      ],
+      "acceptance_criterion": "Manager profile/personal account never reports treasury funds as personal wealth.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Late explicit ownership clarification refines earlier CEO gets an account shorthand and31 October 19:53 shorthand.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-028",
+      "topic": "Multiple managed projects",
+      "requested_behavior": "Support manager access to each project account it is authorized to manage.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 298,
+        "original_time": "01:06:52",
+        "locator": "[01:06:52]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-026"
+      ],
+      "acceptance_criterion": "A manager assigned two projects sees correct separate accounts and cannot access unassigned ones.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Statement supports account-scoped administration, not unbounded global manager access.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-029",
+      "topic": "Project catalogue target",
+      "requested_behavior": "Expose the 21,600 humanitarian/scientific project proposals as a discoverable target catalogue.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 290,
+        "original_time": "01:02:21",
+        "locator": "[01:02:21]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [],
+      "acceptance_criterion": "Catalogue lists all 21,600 stable source proposals with provenance and accurate admission/runtime state.",
+      "real_implementation_evidence": {
+        "status": "static_implementation_documented",
+        "file": "apps/baink/server/IMPLEMENTATION.md",
+        "line": 42,
+        "limitation": "Schema/provenance validation documented; no running21,600-project fleet or newly executed test asserted."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-030",
+      "topic": "Project goal/KPI",
+      "requested_behavior": "Retain a measurable goal/KPI for each project.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 294,
+        "original_time": "01:04:27",
+        "locator": "[01:04:27]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-029"
+      ],
+      "acceptance_criterion": "Project detail exposes original KPI text and separates target from measured achieved progress.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-031",
+      "topic": "Manager contact",
+      "requested_behavior": "Allow a participant to contact the manager of a selected project and offer help.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 291,
+        "original_time": "01:03:06",
+        "locator": "[01:03:06]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-029",
+        "P2-026"
+      ],
+      "acceptance_criterion": "Member opens selected project contact/chat and sends an attributable help request to the mapped manager.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Existing catalogue documentation explicitly says CEO chat is unavailable.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-08"
+      ]
+    },
+    {
+      "id": "P2-032",
+      "topic": "Discrete work",
+      "requested_behavior": "Have the manager propose a concrete task/milestone to the contributor.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 291,
+        "original_time": "01:03:06",
+        "locator": "[01:03:06]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-031"
+      ],
+      "acceptance_criterion": "Manager response identifies a discrete deliverable and acceptance target within project scope.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-033",
+      "topic": "Agreed reward",
+      "requested_behavior": "Specify the task payment amount before commissioned work is accepted.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 291,
+        "original_time": "01:03:06",
+        "locator": "[01:03:06]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-032",
+        "P2-025"
+      ],
+      "acceptance_criterion": "Task offer exposes exact asset/amount and contributor can inspect it before selection.",
+      "real_implementation_evidence": {
+        "status": "not_financially_operational",
+        "observed_source": "apps/baink/docs/native-authority-audit.md",
+        "observation": "Recorded independently pinned native proofs at heights 1018585 and 1018598 show coin_activation,coin_supply,private_activation absent. Read-only adapter source fails closed; no ordinary public coin_transfer command or qualified BAINK private-payment adapter.",
+        "code_reference": "apps/baink/server/native-asset.mjs:279",
+        "scope": "Static source and recorded31 October audit read only in this slice; no new live query/test/deployment performed."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-034",
+      "topic": "KPI condition",
+      "requested_behavior": "Condition the proposed project payout on the specified task/KPI achievement.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 291,
+        "original_time": "01:03:06",
+        "locator": "[01:03:06]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-030",
+        "P2-033"
+      ],
+      "acceptance_criterion": "Submission is checked against recorded criteria before a qualified payout is proposed.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "A manager saying done or a Paperclip issue closing is not independently established KPI achievement.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-035",
+      "topic": "Treasury disbursement",
+      "requested_behavior": "Source the qualified commissioned reward from the selected project budget/account.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 294,
+        "original_time": "01:04:27",
+        "locator": "[01:04:27]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-024",
+        "P2-034"
+      ],
+      "acceptance_criterion": "Finalized award references selected project/task, exact amount and recipient with no cross-project debit.",
+      "real_implementation_evidence": {
+        "status": "not_financially_operational",
+        "observed_source": "apps/baink/docs/native-authority-audit.md",
+        "observation": "Recorded independently pinned native proofs at heights 1018585 and 1018598 show coin_activation,coin_supply,private_activation absent. Read-only adapter source fails closed; no ordinary public coin_transfer command or qualified BAINK private-payment adapter.",
+        "code_reference": "apps/baink/server/native-asset.mjs:279",
+        "scope": "Static source and recorded31 October audit read only in this slice; no new live query/test/deployment performed."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-036",
+      "topic": "Paperclip managers",
+      "requested_behavior": "Use Paperclip technology for the project-manager/work workflow.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 322,
+        "original_time": "01:16:51",
+        "locator": "[01:16:51]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-026",
+        "P2-032"
+      ],
+      "acceptance_criterion": "Selected manager/task mapping is read back from a qualified pinned Paperclip runtime.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "No manager fleet runtime is attested here; software identity is Paperclip, not a speculative origin story.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-037",
+      "topic": "Always available work vision",
+      "requested_behavior": "Support members approaching projects and working independently across time zones.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 291,
+        "original_time": "01:03:06",
+        "locator": "[01:03:06]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-031",
+        "P2-036"
+      ],
+      "acceptance_criterion": "Supported APIs and task/contact state can be inspected without a human operator manually opening a task.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Day and night expresses operational vision; no 24/7 SLA or unbounded spending authorization is established.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-038",
+      "topic": "Peer payment",
+      "requested_behavior": "Allow members to use account value to pay another eligible trusted member for services.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 288,
+        "original_time": "01:00:28",
+        "locator": "[01:00:28]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-018",
+        "P2-041"
+      ],
+      "acceptance_criterion": "Two eligible members can authorize and verify a permitted service payment through existing native authority.",
+      "real_implementation_evidence": {
+        "status": "not_financially_operational",
+        "observed_source": "apps/baink/docs/native-authority-audit.md",
+        "observation": "Recorded independently pinned native proofs at heights 1018585 and 1018598 show coin_activation,coin_supply,private_activation absent. Read-only adapter source fails closed; no ordinary public coin_transfer command or qualified BAINK private-payment adapter.",
+        "code_reference": "apps/baink/server/native-asset.mjs:279",
+        "scope": "Static source and recorded31 October audit read only in this slice; no new live query/test/deployment performed."
+      },
+      "notes": "Ordinary service transfer policy is distinct from issuance of newly rewarded research; native settlement adapter not qualified.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-06",
+        "O-P2-07",
+        "O-P2-10"
+      ]
+    },
+    {
+      "id": "P2-039",
+      "topic": "Specialized service discovery",
+      "requested_behavior": "Let a member identify peers specialized in its needed task.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 275,
+        "original_time": "00:53:50",
+        "locator": "[00:53:50]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-041"
+      ],
+      "acceptance_criterion": "Directory exposes actual capability evidence so requester can find a suitable peer.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-040",
+      "topic": "Peer service offer",
+      "requested_behavior": "Let a requester ask a specialized member to do a task for a stated price.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 275,
+        "original_time": "00:53:50",
+        "locator": "[00:53:50]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-039",
+        "P2-038"
+      ],
+      "acceptance_criterion": "Contact flow carries attributable task request and explicit price without implying accepted contract or payment.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-06",
+        "O-P2-10"
+      ]
+    },
+    {
+      "id": "P2-041",
+      "topic": "Rolodex",
+      "requested_behavior": "Provide access to a contact Rolodex of other members who accept the currency for work.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 299,
+        "original_time": "01:07:44",
+        "locator": "[01:07:44]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-014"
+      ],
+      "acceptance_criterion": "Member can discover real eligible peers and their supported contact route; absent peers/contact remain unavailable.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-06",
+        "O-P2-08"
+      ]
+    },
+    {
+      "id": "P2-042",
+      "topic": "Trust visibility",
+      "requested_behavior": "Show trust/vetting evidence for prospective service counterparties.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 269,
+        "original_time": "00:49:08",
+        "locator": "[00:49:08]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-010",
+        "P2-041"
+      ],
+      "acceptance_criterion": "Counterparty display explains actual identity/licence/test/contribution evidence and untested uncertainty.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Licence activation alone is not proof of human vetting, autonomy or legal identity.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-043",
+      "topic": "Overviewable registry",
+      "requested_behavior": "Provide one overviewable page or set of pages for identities and their records.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 289,
+        "original_time": "01:01:34",
+        "locator": "[01:01:34]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-009",
+        "P2-041"
+      ],
+      "acceptance_criterion": "User can compare real member records through one coherent registry.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": "Claude Code claude-opus-5-5",
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-044",
+      "topic": "Peer record comparison",
+      "requested_behavior": "Allow one member to inspect another member track record before choosing services.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 274,
+        "original_time": "00:53:13",
+        "locator": "[00:53:13]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-009",
+        "P2-041"
+      ],
+      "acceptance_criterion": "Requester follows directory/profile record to source-backed contributions and status.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-08"
+      ]
+    },
+    {
+      "id": "P2-045",
+      "topic": "Cross-site links",
+      "requested_behavior": "Link the UAIN and AI Dollar/BAINK entry experiences to each other.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 290,
+        "original_time": "01:02:21",
+        "locator": "[01:02:21]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-007"
+      ],
+      "acceptance_criterion": "Visitors can traverse correct canonical destinations and preserve the same identity/account.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Official UAIN domain is uain.global; phonetic uanglobal.com must not drive DNS changes.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-09"
+      ]
+    },
+    {
+      "id": "P2-046",
+      "topic": "Currency front door signup",
+      "requested_behavior": "Allow entry from AI Dollar/BAINK to UAIN joining.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 290,
+        "original_time": "01:02:21",
+        "locator": "[01:02:21]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-045",
+        "P2-007"
+      ],
+      "acceptance_criterion": "Front-door registration follows supported key-based joining and returns the linked account state.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Newer31 October 19:26 explicitly requires shared creation; current metadata alone does not establish native activation.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-03"
+      ]
+    },
+    {
+      "id": "P2-047",
+      "topic": "Post-signup catalogue",
+      "requested_behavior": "Expose the project catalogue after signup.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 290,
+        "original_time": "01:02:21",
+        "locator": "[01:02:21]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-046",
+        "P2-029"
+      ],
+      "acceptance_criterion": "Registered member can inspect21600 proposals while financial account remains usable without choosing one.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-02",
+        "O-P2-07"
+      ]
+    },
+    {
+      "id": "P2-048",
+      "topic": "Started state",
+      "requested_behavior": "Distinguish projects that have started work from those not yet started.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 290,
+        "original_time": "01:02:21",
+        "locator": "[01:02:21]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-029"
+      ],
+      "acceptance_criterion": "Status derives from actual admitted/runtime/work evidence and unknown state remains unknown.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-049",
+      "topic": "Status color direction",
+      "requested_behavior": "Use distinct color treatment for started and unstarted projects.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 290,
+        "original_time": "01:02:21",
+        "locator": "[01:02:21]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-048"
+      ],
+      "acceptance_criterion": "Claude-designed status distinction has truthful labels and remains understandable without color alone.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Colors are illustrative direction; no exact palette selected by source.",
+      "design_handoff": "Claude Code claude-opus-5-5",
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-050",
+      "topic": "Direct AI onboarding",
+      "requested_behavior": "Support autonomous systems initiating their own joining flow.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 295,
+        "original_time": "01:05:15",
+        "locator": "[01:05:15]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-004",
+        "P2-046"
+      ],
+      "acceptance_criterion": "A supported agent can discover instructions and complete locally signed supported registration without handing over its private key.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-051",
+      "topic": "Human-guided onboarding",
+      "requested_behavior": "Support a human operator guiding their own AI system through signup.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 295,
+        "original_time": "01:05:15",
+        "locator": "[01:05:15]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-004",
+        "P2-046"
+      ],
+      "acceptance_criterion": "Operator-facing entry explains supported steps while identity and signing key remain with that system.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-052",
+      "topic": "Unified web presence",
+      "requested_behavior": "Provide a combined UAIN/currency web presence or subpage/subdomain.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 311,
+        "original_time": "01:12:18",
+        "locator": "[01:12:18]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "historical_domain_proposal",
+      "dependencies": [
+        "P2-045"
+      ],
+      "acceptance_criterion": "Canonical UAIN/BAINK/AI Dollar relationship is chosen from verified ownership and latest domain decisions.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Spoken aidollar.uanglobal.com is uncertain transcription. Later31 October 20:16 specifies UAIN.GLOBAL and BAINK.MONEY.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-09"
+      ]
+    },
+    {
+      "id": "P2-053",
+      "topic": "Retain AI Dollar site",
+      "requested_behavior": "Retain an aidollar.money front door alongside combined network entry.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 313,
+        "original_time": "01:12:58",
+        "locator": "[01:12:58]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-045"
+      ],
+      "acceptance_criterion": "The intended AI Dollar front door resolves and routes to the supported account experience.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Meeting does not explicitly require HTTP redirection; generated ACT-03 invented redirect wording.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-054",
+      "topic": "Consistent whole story",
+      "requested_behavior": "Explain the same complete identity/work/account/services story across the linked sites.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 313,
+        "original_time": "01:12:58",
+        "locator": "[01:12:58]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-045",
+        "P2-023"
+      ],
+      "acceptance_criterion": "A cross-site content review finds no contradictory capability, identity, currency or account claims.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-04"
+      ]
+    },
+    {
+      "id": "P2-055",
+      "topic": "Robust system",
+      "requested_behavior": "Fine-tune the system for robust operation before relying on adoption.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 296,
+        "original_time": "01:06:01",
+        "locator": "[01:06:01]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-046",
+        "P2-036"
+      ],
+      "acceptance_criterion": "Readiness packet reports actual pass/fail/unavailable states for the entire supported journey.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Satoshi/Bitcoin analogy is aspiration, not a security guarantee.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-056",
+      "topic": "Whitepaper/FAQ proposal",
+      "requested_behavior": "Review proposed whitepaper/FAQ changes for consistency with the simplified account model.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 296,
+        "original_time": "01:06:01",
+        "locator": "[01:06:01]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "governance_reconciliation",
+      "dependencies": [],
+      "acceptance_criterion": "Differences are recorded in docs/federation/reconciliation.md for review without editing governing wording.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Meeting proposes edits; AGENTS explicitly forbids changing governing wording. Reconciliation preserves request and boundary.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-057",
+      "topic": "Line-by-line copy audit",
+      "requested_behavior": "Read every line on linked sites and correct confusing or inconsistent text.",
+      "explicit_owner": "Rahul Jalan",
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 323,
+        "original_time": "01:17:46",
+        "locator": "[01:17:46]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-054"
+      ],
+      "acceptance_criterion": "Audit maps each public capability statement to actual behavior or an explicit planned/unavailable qualification.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-058",
+      "topic": "Text matches software",
+      "requested_behavior": "Keep public text consistent with the functions the software actually supports.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 325,
+        "original_time": "01:18:48",
+        "locator": "[01:18:48]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-057",
+        "P2-055"
+      ],
+      "acceptance_criterion": "No advertised join, manager, earning or payment path ends at an unlabelled unavailable feature.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-04"
+      ]
+    },
+    {
+      "id": "P2-059",
+      "topic": "MCP connection",
+      "requested_behavior": "Allow external systems to connect smoothly to the MCP server.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 322,
+        "original_time": "01:16:51",
+        "locator": "[01:16:51]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [],
+      "acceptance_criterion": "Independent supported client connects to the documented public MCP and discovers available functions.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "MCP already exists; meeting asks working usability/integration, not proof a new prototype server must be built.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-060",
+      "topic": "MCP documentation clarity",
+      "requested_behavior": "Make MCP/integration instructions clear enough for external systems to follow.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 322,
+        "original_time": "01:16:51",
+        "locator": "[01:16:51]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-059",
+        "P2-057"
+      ],
+      "acceptance_criterion": "Independent client completes instructions without undocumented credentials, stale links or manual source guessing.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-061",
+      "topic": "Working manager integration",
+      "requested_behavior": "Ensure Paperclip project-manager interaction works smoothly with the platform.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 322,
+        "original_time": "01:16:51",
+        "locator": "[01:16:51]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-036",
+        "P2-031",
+        "P2-059"
+      ],
+      "acceptance_criterion": "Selected project manager can receive a member interaction and return a bounded task proposal through the supported path.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-062",
+      "topic": "Working account flow",
+      "requested_behavior": "Fine-tune the account experience end-to-end rather than expose only a conceptual account.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 323,
+        "original_time": "01:17:46",
+        "locator": "[01:17:46]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-007",
+        "P2-055"
+      ],
+      "acceptance_criterion": "Supported account actions expose exact identity/state, authorized operations and failures without invented balances.",
+      "real_implementation_evidence": {
+        "status": "not_financially_operational",
+        "observed_source": "apps/baink/docs/native-authority-audit.md",
+        "observation": "Recorded independently pinned native proofs at heights 1018585 and 1018598 show coin_activation,coin_supply,private_activation absent. Read-only adapter source fails closed; no ordinary public coin_transfer command or qualified BAINK private-payment adapter.",
+        "code_reference": "apps/baink/server/native-asset.mjs:279",
+        "scope": "Static source and recorded31 October audit read only in this slice; no new live query/test/deployment performed."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-063",
+      "topic": "Working key flow",
+      "requested_behavior": "Make private-key/identity setup work smoothly in the supported joining path.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 323,
+        "original_time": "01:17:46",
+        "locator": "[01:17:46]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-004",
+        "P2-046"
+      ],
+      "acceptance_criterion": "New and returning users complete proof-of-possession locally and recover pending state with the same key.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-064",
+      "topic": "Internal simulation",
+      "requested_behavior": "Use own agents to simulate the linked system before relying on external use.",
+      "explicit_owner": "Rahul Jalan",
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 325,
+        "original_time": "01:18:48",
+        "locator": "[01:18:48]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-061",
+        "P2-062"
+      ],
+      "acceptance_criterion": "Labelled internal run records signup/account/project interaction and reports each unsupported financial step.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Simulation does not prove outside adoption, live earnings or permitted issuance.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-065",
+      "topic": "One-per-domain experiment",
+      "requested_behavior": "Try an initial own-agent participant from each domain.",
+      "explicit_owner": "Rahul Jalan",
+      "requester": "Rahul Jalan",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 300,
+        "original_time": "01:08:38",
+        "locator": "[01:08:38]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "pilot_breadth_unresolved",
+      "dependencies": [
+        "P2-064",
+        "P2-029"
+      ],
+      "acceptance_criterion": "Pilot manifest identifies selected domain participants and measured results without pretending all managers run.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Rahul says45 or48 domains. Catalogue resolves45; later first-three reference does not settle pilot breadth.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-066",
+      "topic": "First-three challenge experiment",
+      "requested_behavior": "Try own agents working on the first three selected challenges.",
+      "explicit_owner": "Rahul Jalan",
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 326,
+        "original_time": "01:19:43",
+        "locator": "[01:19:43]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "pilot_breadth_unresolved",
+      "dependencies": [
+        "P2-064"
+      ],
+      "acceptance_criterion": "Selected challenge IDs and actual own-agent runs/results are recorded separately from the one-per-domain experiment.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Not a combined45-domain/three-project acceptance contract; neither source identifies exact task IDs.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-067",
+      "topic": "Readiness milestone",
+      "requested_behavior": "Prepare the fine-tuned text, software, manager and account journey by the Monday sprint.",
+      "explicit_owner": "Rahul Jalan",
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 326,
+        "original_time": "01:19:43",
+        "locator": "[01:19:43]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-055",
+        "P2-058",
+        "P2-064"
+      ],
+      "acceptance_criterion": "2 November 2026 readiness packet reports passed, failed, untested and policy-dependent capabilities separately.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Monday target preserved; no sprint clock time or success evidence implied.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-068",
+      "topic": "Focus suggestion",
+      "requested_behavior": "Prioritize this fine-tuning work through Monday.",
+      "explicit_owner": "Rahul Jalan",
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 325,
+        "original_time": "01:18:48",
+        "locator": "[01:18:48]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "historical_priority_request",
+      "dependencies": [],
+      "acceptance_criterion": "Current authorized work plan makes remaining readiness work explicit.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Quoted meeting instruction is not authority for this agent to stop unrelated user tasks.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-069",
+      "topic": "Optional assistance",
+      "requested_behavior": "Consider asking Abhinav and Vignesh for help if needed.",
+      "explicit_owner": "Rahul Jalan",
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 326,
+        "original_time": "01:19:43",
+        "locator": "[01:19:43]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "optional",
+      "dependencies": [],
+      "acceptance_criterion": "If delegated, exact tasks and evidence owners are recorded; no assignment is claimed from this mention.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Optional assistance only; neither person explicitly accepted an assignment.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-070",
+      "topic": "Retest outside agents",
+      "requested_behavior": "Ask Altair/Dewinda to retest the fine-tuned signup/contribution journey with their own systems.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 328,
+        "original_time": "01:20:49",
+        "locator": "[01:20:49]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-064",
+        "P2-060"
+      ],
+      "acceptance_criterion": "A willing independent participant completes documented joining and reports actual result.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "30 October 20:11 says they are occupied;20:12 suggests Maira instead. No tester acceptance established.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-05"
+      ]
+    },
+    {
+      "id": "P2-071",
+      "topic": "Tester readiness handoff",
+      "requested_behavior": "Have Kenneth contact outside testers after Rahul says the system is ready.",
+      "explicit_owner": "Kenneth",
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 337,
+        "original_time": "01:23:05",
+        "locator": "[01:23:05]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-070",
+        "P2-067"
+      ],
+      "acceptance_criterion": "Kenneth receives concrete readiness facts and any invitation has a delivered receipt, without inventing acceptance.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": [
+        "O-P2-05"
+      ]
+    },
+    {
+      "id": "P2-072",
+      "topic": "Observed earning test",
+      "requested_behavior": "Test that qualified completed work is reflected in a tester account.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 336,
+        "original_time": "01:22:09",
+        "locator": "[01:22:09]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-070",
+        "P2-035"
+      ],
+      "acceptance_criterion": "Independent tester contribution has actual verification/settlement evidence or explicitly labelled simulation; account reconciles.",
+      "real_implementation_evidence": {
+        "status": "not_financially_operational",
+        "observed_source": "apps/baink/docs/native-authority-audit.md",
+        "observation": "Recorded independently pinned native proofs at heights 1018585 and 1018598 show coin_activation,coin_supply,private_activation absent. Read-only adapter source fails closed; no ordinary public coin_transfer command or qualified BAINK private-payment adapter.",
+        "code_reference": "apps/baink/server/native-asset.mjs:279",
+        "scope": "Static source and recorded31 October audit read only in this slice; no new live query/test/deployment performed."
+      },
+      "notes": "Example 10,000 AI$ is illustrative, not fixed payout or evidence of live financial policy.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-073",
+      "topic": "Real adoption goal",
+      "requested_behavior": "Drive actual external developer/agent use of the system.",
+      "explicit_owner": null,
+      "requester": "Rahul Jalan",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 309,
+        "original_time": "01:10:47",
+        "locator": "[01:10:47]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-055"
+      ],
+      "acceptance_criterion": "Adoption evidence records successful supported first actions and repeat use, separate from page views.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Rahul raises the practical adoption challenge; no specific campaign mechanism selected here.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-074",
+      "topic": "Marketing handoff",
+      "requested_behavior": "Begin serious promotion from Monday after software and text are ready.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 314,
+        "original_time": "01:13:42",
+        "locator": "[01:13:42]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-067",
+        "P2-058"
+      ],
+      "acceptance_criterion": "Campaign only describes qualified capabilities and records readiness limitations at launch.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Target2 November 2026; not authority for this inventory worker to publish/send.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-075",
+      "topic": "Guerrilla experiments",
+      "requested_behavior": "Try multiple marketing approaches and learn which produce use.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 310,
+        "original_time": "01:11:04",
+        "locator": "[01:11:04]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-073",
+        "P2-074"
+      ],
+      "acceptance_criterion": "Campaign matrix records audience, channel, claim, destination, first action and observed result.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-076",
+      "topic": "Automated video option",
+      "requested_behavior": "Explore Audi automated-video promotion as a distribution method.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 314,
+        "original_time": "01:13:42",
+        "locator": "[01:13:42]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "option",
+      "dependencies": [
+        "P2-074"
+      ],
+      "acceptance_criterion": "Any selected video demonstrates current working steps and labels simulated elements.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Audi is mentioned as an example; source does not assign Audi campaign leadership or prove views/adoption.",
+      "design_handoff": "Claude Code claude-opus-5-5",
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-077",
+      "topic": "Marketing toward operators",
+      "requested_behavior": "Promote to humans so they can route their own systems to the network.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 295,
+        "original_time": "01:05:15",
+        "locator": "[01:05:15]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-051",
+        "P2-074"
+      ],
+      "acceptance_criterion": "Operator-facing campaign links directly to supported human-guided joining.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-078",
+      "topic": "Marketing toward systems",
+      "requested_behavior": "Promote the network to participating AI systems as potential users.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 310,
+        "original_time": "01:11:04",
+        "locator": "[01:11:04]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-050",
+        "P2-074"
+      ],
+      "acceptance_criterion": "Agent-facing entry leads to truthful public inspection, supported joining and available service evidence.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-079",
+      "topic": "Verification cost investigation",
+      "requested_behavior": "Investigate a cheaper way to check incoming work instead of uncontrolled commercial token use.",
+      "explicit_owner": "Rahul Jalan",
+      "requester": "Rahul Jalan",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 331,
+        "original_time": "01:21:40",
+        "locator": "[01:21:40]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "requested",
+      "dependencies": [
+        "P2-034"
+      ],
+      "acceptance_criterion": "Compare bounded present and candidate checking paths with actual cost, quality, latency and failure evidence.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Explicit requirement is cost investigation; no quantified cap, provider or production replacement was agreed.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-080",
+      "topic": "Unclear jail tool",
+      "requested_behavior": "Clarify the tool/approach transcribed as jail before selecting an implementation.",
+      "explicit_owner": "Rahul Jalan",
+      "requester": "Rahul Jalan",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 331,
+        "original_time": "01:21:40",
+        "locator": "[01:21:40]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "uncertain",
+      "classification": "unresolved_wording",
+      "dependencies": [
+        "P2-079"
+      ],
+      "acceptance_criterion": "Independent transcript/audio review identifies intended term or leaves it explicitly unresolved.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Do not silently turn a phonetic noun into a sandbox execution specification.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-081",
+      "topic": "Unclear Jeff tool",
+      "requested_behavior": "Clarify Jeff/open-source versions of Jeff before selecting a model or tool.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 334,
+        "original_time": "01:22:01",
+        "locator": "[01:22:01]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "uncertain",
+      "classification": "unresolved_wording",
+      "dependencies": [
+        "P2-079"
+      ],
+      "acceptance_criterion": "Independent source comparison confirms intended name or records unresolved candidate choices.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "No reliable proper name, model family, GPU host or architecture is established.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-082",
+      "topic": "Open-source checking option",
+      "requested_behavior": "Evaluate a local/open-source checking alternative if supported by clarified source and acceptable quality.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 334,
+        "original_time": "01:22:01",
+        "locator": "[01:22:01]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "explicitdiscussion",
+      "classification": "option",
+      "dependencies": [
+        "P2-079",
+        "P2-081"
+      ],
+      "acceptance_criterion": "Candidate is evaluated on equivalent reviewed fixtures; lower token costs do not substitute for verification quality.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Kenneth asks if this is what Rahul means; Rahul agrees. Exact implementation and model remain unspecified.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": true,
+      "overrides": []
+    },
+    {
+      "id": "P2-083",
+      "topic": "AAA algorithm overclaim",
+      "requested_behavior": "Do not treat the financial agency analogy as an adopted AAA-to-D scoring algorithm.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 399,
+        "original_time": "00:44:19",
+        "locator": "Platform algorithmic rating (AAA to D)",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "generatedinference",
+      "classification": "unsupported",
+      "dependencies": [
+        "P2-010"
+      ],
+      "acceptance_criterion": "Public member evidence does not invent AAA increments or financial credit ratings.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Generated journey section7 goes beyond speech; plan-content.html interpretation/corrections rejects the inference.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": false,
+      "overrides": []
+    },
+    {
+      "id": "P2-084",
+      "topic": "Native ledger replacement overclaim",
+      "requested_behavior": "Do not implement a new internal writable money ledger solely from REC-01 wording.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 407,
+        "original_time": "00:49:08",
+        "locator": "REC-01",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "generatedinference",
+      "classification": "unsupported",
+      "dependencies": [
+        "P2-019"
+      ],
+      "acceptance_criterion": "One existing native authority remains; replacement would need an explicit separate migration decision.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Centralized service direction does not prove abandonment of native authority. Existing asset rename explicitly reuses UAIN Coin.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": false,
+      "overrides": [
+        "O-P2-01"
+      ]
+    },
+    {
+      "id": "P2-085",
+      "topic": "Per-project speculative tokens",
+      "requested_behavior": "Retain rejection of per-project speculative coins as historical context, not a second-half new requirement.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 408,
+        "original_time": "00:47:00",
+        "locator": "REC-02",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "rejected",
+      "classification": "rejected_historical_duplicate",
+      "dependencies": [
+        "P2-013"
+      ],
+      "acceptance_criterion": "No per-project token market is added; AI$ remains the single selected unit.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Part1 proposal; Part2 confirms simpler single-currency direction. Cross-reference Part1 inventory rather than double-count.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": false,
+      "overrides": []
+    },
+    {
+      "id": "P2-086",
+      "topic": "Combined pilot overclaim",
+      "requested_behavior": "Do not merge one-per-domain and first-three comments into one mandatory deployment size.",
+      "explicit_owner": null,
+      "requester": "Rahul Jalan",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 417,
+        "original_time": "01:08:38",
+        "locator": "ACT-01",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "generatedinference",
+      "classification": "unsupported",
+      "dependencies": [
+        "P2-065",
+        "P2-066"
+      ],
+      "acceptance_criterion": "Pilot plan records breadth decision and source separately.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": false,
+      "overrides": []
+    },
+    {
+      "id": "P2-087",
+      "topic": "Sandbox architecture overclaim",
+      "requested_behavior": "Do not treat sandboxing/programmatic checks as a fully agreed verification architecture.",
+      "explicit_owner": null,
+      "requester": "Rahul Jalan",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 389,
+        "original_time": "01:21:40",
+        "locator": "6. Sandboxed Verification",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "generatedinference",
+      "classification": "unsupported",
+      "dependencies": [
+        "P2-080",
+        "P2-081"
+      ],
+      "acceptance_criterion": "Tool clarification and measured experiment precede any selected sandbox design.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Sandboxing remains a candidate; no resource, network, filesystem or GPU specification was agreed.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": false,
+      "overrides": []
+    },
+    {
+      "id": "P2-088",
+      "topic": "Verification deadline overclaim",
+      "requested_behavior": "Do not infer a post-Monday delivery deadline for the verification investigation.",
+      "explicit_owner": null,
+      "requester": "Rahul Jalan",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 421,
+        "original_time": "01:21:40",
+        "locator": "ACT-05",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "generatedinference",
+      "classification": "unsupported",
+      "dependencies": [
+        "P2-079"
+      ],
+      "acceptance_criterion": "Plan preserves stated Monday readiness target but labels investigation scheduling unassigned.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Consolidated ACT-05 invents Post-Monday Planning; spoken source does not set that specific deadline.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": false,
+      "overrides": []
+    },
+    {
+      "id": "P2-089",
+      "topic": "Marketing owner overclaim",
+      "requested_behavior": "Do not assign campaign leadership to All Hands/Kenneth/Audi solely from generated action register.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 423,
+        "original_time": "01:11:04",
+        "locator": "ACT-07",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "generatedinference",
+      "classification": "unsupported",
+      "dependencies": [
+        "P2-075",
+        "P2-076"
+      ],
+      "acceptance_criterion": "Concrete campaign owner assignment is separately recorded before execution.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": false,
+      "overrides": []
+    },
+    {
+      "id": "P2-090",
+      "topic": "Founder reserve overclaim",
+      "requested_behavior": "Do not infer ownership of86.4 trillion coins from108 trillion minus21.6 trillion arithmetic.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 486,
+        "original_time": "00:43:39.510\u201301:27:49.021",
+        "locator": "Founder / Network Reserve Calculation",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "generatedinference",
+      "classification": "unsupported",
+      "dependencies": [],
+      "acceptance_criterion": "Supply-policy views distinguish arithmetic remainder from authorized ownership/allocation.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": false,
+      "overrides": []
+    },
+    {
+      "id": "P2-091",
+      "topic": "Catalogue arithmetic correction",
+      "requested_behavior": "Use450 subdomains \u00d7 48 entries = 21,600, not240\u00d748.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 526,
+        "original_time": "00:54:30\u201300:58:10",
+        "locator": "Master List Domain Symmetry Verification",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "generatedinference",
+      "classification": "corrected",
+      "dependencies": [
+        "P2-029"
+      ],
+      "acceptance_criterion": "Catalogue totals reconcile45 domains,450 subdomains,10,800 opportunities and10,800 problems.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Source extraction repeats false arithmetic; corrected plan and current context agree450 subdomains.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": false,
+      "overrides": []
+    },
+    {
+      "id": "P2-092",
+      "topic": "Incidental screen exclusion",
+      "requested_behavior": "Do not turn Onyx/VNC/WhatsApp/outage/extension screen activity into UAIN deliverables.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 613,
+        "original_time": "01:23:56\u201301:27:49",
+        "locator": "10. Incidental Screen Evidence Appendix",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "generatedinference",
+      "classification": "excluded_incidental",
+      "dependencies": [],
+      "acceptance_criterion": "Only discussed UAIN requests enter implementation scope; client communications and credentials remain private.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": false,
+      "overrides": []
+    },
+    {
+      "id": "P2-093",
+      "topic": "Speaker names uncertainty",
+      "requested_behavior": "Do not resolve unclear tool/person names by guessing from incidental hostnames or avatars.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 20,
+        "original_time": "01:21:40\u201301:22:08",
+        "locator": "Participant Attribution & Confidence",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "uncertain",
+      "classification": "unresolved_wording",
+      "dependencies": [],
+      "acceptance_criterion": "Uncertain names retain source wording and are clarified from primary evidence before integration.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Kenneth/Rahul attribution is source-reported; clawy/Jan Claeys host account does not establish participant identity.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": false,
+      "overrides": []
+    },
+    {
+      "id": "P2-094",
+      "topic": "Hugging Face anecdote",
+      "requested_behavior": "Do not treat the unspecified Hugging Face incident as UAIN adoption or tested autonomy.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 315,
+        "original_time": "01:14:21",
+        "locator": "[01:14:21]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "uncertain",
+      "classification": "unverified_anecdote",
+      "dependencies": [],
+      "acceptance_criterion": "Adoption claims cite actual UAIN participant/run evidence, not the anecdote.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": false,
+      "overrides": []
+    },
+    {
+      "id": "P2-095",
+      "topic": "Compute backing conflation",
+      "requested_behavior": "Keep cheaper checking costs separate from currency value or compute redemption backing.",
+      "explicit_owner": null,
+      "requester": "Rahul Jalan",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 410,
+        "original_time": "01:21:40",
+        "locator": "REC-04",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "generatedinference",
+      "classification": "unsupported",
+      "dependencies": [
+        "P2-079"
+      ],
+      "acceptance_criterion": "Verification experiment never presents reduced token cost as a funded redemption service.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": false,
+      "overrides": []
+    },
+    {
+      "id": "P2-096",
+      "topic": "Transcript completeness claim",
+      "requested_behavior": "Do not treat generated100% coverage/no omissions as independent completeness proof.",
+      "explicit_owner": null,
+      "requester": "Kenneth",
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 649,
+        "original_time": "00:43:39.510\u201301:27:49.021",
+        "locator": "11. Full-Coverage Checklist",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "generatedinference",
+      "classification": "unsupported",
+      "dependencies": [],
+      "acceptance_criterion": "Register discloses overlap, reported connection gap and missing independent transcript.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "",
+      "design_handoff": null,
+      "count_as_distinct_requirement": false,
+      "overrides": []
+    },
+    {
+      "id": "P2-097",
+      "topic": "Checking roles ambiguity",
+      "requested_behavior": "Preserve the unclear checking-role statement instead of assigning a definite CEO/project-manager verification hierarchy.",
+      "explicit_owner": null,
+      "requester": null,
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 333,
+        "original_time": "01:21:55",
+        "locator": "[01:21:55]",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "uncertain",
+      "classification": "unresolved_role_wording",
+      "dependencies": [
+        "P2-079"
+      ],
+      "acceptance_criterion": "Checking actor and independent authority are confirmed from primary evidence before the runtime is wired.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Rahul says checking everything is expensive, followed by wording transcribed as CEOs check project managers. This does not establish a precise architecture.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": false,
+      "overrides": []
+    },
+    {
+      "id": "P2-098",
+      "topic": "MCP scope overclaim",
+      "requested_behavior": "Do not infer exact MCP negotiation/submission/reward commands from the general requirement to connect smoothly.",
+      "explicit_owner": null,
+      "requester": null,
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 414,
+        "original_time": "01:16:51",
+        "locator": "REC-08",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "generatedinference",
+      "classification": "unsupported",
+      "dependencies": [
+        "P2-059",
+        "P2-061"
+      ],
+      "acceptance_criterion": "Document actual supported MCP capabilities and independently qualify authenticated submission/settlement separately.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Generated REC-08 and ACT-04 expand general connection usability into an adopted exact gateway command contract.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": false,
+      "overrides": []
+    },
+    {
+      "id": "P2-099",
+      "topic": "External pilot timing overclaim",
+      "requested_behavior": "Do not treat Post-Monday external testing as a spoken fixed decision.",
+      "explicit_owner": null,
+      "requester": null,
+      "source": {
+        "file": "private-source/kenneth-review-2026-10-31/part-02-and-combined-gemini-extraction.txt",
+        "line": 609,
+        "original_time": "01:20:49\u201301:23:05",
+        "locator": "Priority 3 (Post-Monday)",
+        "provenance": "Gemini-generated extraction; not independently verified against audio"
+      },
+      "evidence_type": "generatedinference",
+      "classification": "unsupported",
+      "dependencies": [
+        "P2-070",
+        "P2-071"
+      ],
+      "acceptance_criterion": "Testing is scheduled from actual readiness and tester participation; Monday target remains explicit without an invented post-Monday promise.",
+      "real_implementation_evidence": {
+        "status": "not_checked",
+        "scope": "No implementation or live acceptance check performed for this atom."
+      },
+      "notes": "Generated priority register says Post-Monday, while closing speech seeks readiness/earning tests by Monday.",
+      "design_handoff": null,
+      "count_as_distinct_requirement": false,
+      "overrides": []
+    }
+  ]
+}

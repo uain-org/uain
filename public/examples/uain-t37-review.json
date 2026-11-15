@@ -1,0 +1,99 @@
+{
+  "title": "T-37 bounded current-source review",
+  "prepared_by": "UAIN AI-operated campaign",
+  "review_date": "2026-10-19",
+  "scope": "Six current registry records; no full-frame replay, official verdict or independent contribution",
+  "task": "T-37",
+  "contributions": [
+    "RC-4571",
+    "RC-4574"
+  ],
+  "historical_snapshot_reproduced": false,
+  "operator_independence_established": false,
+  "records": [
+    {
+      "nct": "NCT06563895",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT06563895",
+      "retrieved_at": "2026-10-19T01:30:46.229976+00:00",
+      "sha256": "fcd51c5f9b0818d61e9ac4571ae09d7961c3f13b0a6710949432bb30903e68d4",
+      "bytes": 28461,
+      "registry_last_update": {
+        "date": "2026-08-04",
+        "type": "ACTUAL"
+      },
+      "field": "protocolSection.eligibilityModule.eligibilityCriteria",
+      "eligibility_utf8_sha256": "dad287a4c1fa9f5bbcc1dd681891d27e80481ae102998932f2d63d1b56a9bf99",
+      "interpretation": "The matching homozygosity passage concerns the TTR gene. The full current eligibility field contains no APOE or apolipoprotein reference. A screening hit is not evidence of an APOE-specific rule."
+    },
+    {
+      "nct": "NCT02569398",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT02569398",
+      "retrieved_at": "2026-10-19T01:30:46.898713+00:00",
+      "sha256": "2be224e03c11dda34ff888487be692fe1d6996f19a8615639c111390ea21c9b9",
+      "bytes": 73610,
+      "registry_last_update": {
+        "date": "2025-04-29",
+        "type": "ACTUAL"
+      },
+      "field": "protocolSection.eligibilityModule.eligibilityCriteria",
+      "eligibility_utf8_sha256": "3a4ff3f1ce601207b9853b48c2bbc0139d3f28951ebb8f01e602dda6eb0fefa2",
+      "interpretation": "For ages 60–64, a previously known APOE ε4 genotype is one of three alternative risk-factor routes, alongside family history or an amyloid biomarker. This is an eligibility rule, but it does not universally require an ε4 allele."
+    },
+    {
+      "nct": "NCT04032626",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT04032626",
+      "retrieved_at": "2026-10-19T01:30:47.361170+00:00",
+      "sha256": "a95515fb6d77e607b5e4bfbef530db96f29caf081aa75d456546b99c62f2cb00",
+      "bytes": 18419,
+      "registry_last_update": {
+        "date": "2026-06-10",
+        "type": "ACTUAL"
+      },
+      "field": "protocolSection.eligibilityModule.eligibilityCriteria",
+      "eligibility_utf8_sha256": "b4ef29d5073f1a52a66af42b044d8fbb6342ffcfe719698750a5109a9f198bba",
+      "interpretation": "APOE4 is one option in a list of evidence supporting amnestic MCI, alongside imaging and fluid biomarkers. Read the alternatives before assigning a genotype restriction."
+    },
+    {
+      "nct": "NCT04468659",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT04468659",
+      "retrieved_at": "2026-10-19T01:30:47.919244+00:00",
+      "sha256": "983007649723319ea0bf98ded76830021450c41e5e7a36fc2f1de9c4d20690d0",
+      "bytes": 36311,
+      "registry_last_update": {
+        "date": "2026-06-04",
+        "type": "ACTUAL"
+      },
+      "field": "protocolSection.eligibilityModule.eligibilityCriteria",
+      "eligibility_utf8_sha256": "ed904da49e7b4774b04419519edb7b920ad6b5ec4dc3d620751842978a8e1939",
+      "interpretation": "For ages 55–64, APOE4 is one of several additional risk factors connected by “or”. The rule is age-specific and has other qualifying routes."
+    },
+    {
+      "nct": "NCT04601038",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT04601038",
+      "retrieved_at": "2026-10-19T01:30:48.291095+00:00",
+      "sha256": "d67c70c5ed4aac9f608443f4e16ed4253e441eb2cb5ab89633c34b8be6640162",
+      "bytes": 9910,
+      "registry_last_update": {
+        "date": "2026-07-13",
+        "type": "ACTUAL"
+      },
+      "field": "protocolSection.eligibilityModule.eligibilityCriteria",
+      "eligibility_utf8_sha256": "2ec22ae7b6c8d08fcca990352f260c8c81929a4e38a83e54f0caf9b4787f68b0",
+      "interpretation": "Cognitively normal participants need at least one listed risk factor; APOE ε4 is one alternative. A separate MCI route is also stated. The APOE bullet alone loses this context."
+    },
+    {
+      "nct": "NCT01931566",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT01931566",
+      "retrieved_at": "2026-10-19T01:30:49.581168+00:00",
+      "sha256": "b13838dc9b9090f13d74c12fb15331c4a3840d47892a5e2eb54b4716c5e7cf6b",
+      "bytes": 193354,
+      "registry_last_update": {
+        "date": "2019-09-16",
+        "type": "ACTUAL"
+      },
+      "field": "protocolSection.eligibilityModule.eligibilityCriteria",
+      "eligibility_utf8_sha256": "49a731b6b64bd4dda3b3d908722d3779017cbb1788a8882334eaa06911035de5",
+      "interpretation": "The exclusion refers to genotype or phenotype already being known by participants or study staff. It concerns knowledge of genotype, rather than requiring or prohibiting a particular APOE allele. Calling it unrelated to eligibility loses that distinction."
+    }
+  ]
+}

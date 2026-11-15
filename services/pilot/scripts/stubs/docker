@@ -1,0 +1,95 @@
+#!/usr/bin/env node
+/**
+ * A stand-in for `docker` in scripts/worker-test.mjs. `ps` lists the
+ * containers named in $STUB_DIR/containers ("name<TAB>image" per line), and
+ * `exec` runs the command on this machine as if inside one: HOME is the
+ * container's own folder, the stubs are on its PATH, and only -e variables
+ * cross over. As with the real docker, killing this process does not stop what
+ * it started: the command runs in its own process group and outlives it.
+ * `inspect -f '{{json .Mounts}}' <name>` prints $STUB_DIR/mounts.<name>.json,
+ * or no mounts.
+ */
+import { spawn } from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const here = path.dirname(fileURLToPath(import.meta.url));
+const dir = process.env.STUB_DIR;
+const list = (() => {
+  try {
+    return fs
+      .readFileSync(path.join(dir, 'containers'), 'utf8')
+      .trim()
+      .split('\n')
+      .filter(Boolean)
+      .map((l) => l.split('\t'));
+  } catch {
+    return [];
+  }
+})();
+const [cmd, ...rest] = process.argv.slice(2);
+
+if (cmd === 'ps') {
+  for (const [name, image] of list) console.log(`${name}\t${image}`);
+  process.exit(0);
+}
+if (cmd === 'inspect') {
+  const name = rest.at(-1);
+  if (!list.some(([n]) => n === name)) {
+    console.error(`Error: No such object: ${name}`);
+    process.exit(1);
+  }
+  let mounts = '[]';
+  try {
+    mounts = fs.readFileSync(path.join(dir, `mounts.${name}.json`), 'utf8').trim();
+  } catch {}
+  console.log(mounts);
+  process.exit(0);
+}
+if (cmd !== 'exec') {
+  console.error(`docker stub: ${cmd} is not supported`);
+  process.exit(2);
+}
+
+let i = 0;
+let interactive = false;
+const env = {};
+for (; i < rest.length && rest[i].startsWith('-'); i++) {
+  if (rest[i] === '-i') interactive = true;
+  else if (rest[i] === '-e') {
+    const [k, ...v] = rest[++i].split('=');
+    env[k] = v.length ? v.join('=') : process.env[k];
+  }
+}
+const name = rest[i];
+const argv = rest.slice(i + 1);
+if (!list.some(([n]) => n === name)) {
+  console.error(
+    `Error response from daemon: container ${name} is not running`,
+  );
+  process.exit(1);
+}
+const home = path.join(dir, 'containers.d', name);
+fs.mkdirSync(home, { recursive: true });
+fs.appendFileSync(
+  path.join(dir, 'docker.jsonl'),
+  `${JSON.stringify({ container: name, argv, env: Object.keys(env) })}\n`,
+);
+const child = spawn(argv[0], argv.slice(1), {
+  cwd: home,
+  detached: true,
+  stdio: [interactive ? 'inherit' : 'ignore', 'inherit', 'inherit'],
+  env: {
+    PATH: `${here}:${process.env.PATH}`,
+    HOME: home,
+    STUB_DIR: dir,
+    STUB_CONTAINER: name,
+    ...(process.env.STUB_COST ? { STUB_COST: process.env.STUB_COST } : {}),
+    ...(process.env.STUB_OLD ? { STUB_OLD: process.env.STUB_OLD } : {}),
+    ...env,
+  },
+});
+child.on('exit', (code) => process.exit(code ?? 1));
+for (const sig of ['SIGTERM', 'SIGINT', 'SIGHUP'])
+  process.on(sig, () => process.exit(143));

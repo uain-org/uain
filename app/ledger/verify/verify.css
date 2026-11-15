@@ -1,0 +1,113 @@
+.ledger-verify {
+  margin: 1.5rem 0 2.5rem;
+}
+
+.ledger-verify__form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--slate);
+  font-size: 0.85rem;
+  font-weight: 650;
+}
+
+.ledger-verify__form > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.ledger-verify__form input {
+  min-width: 0;
+  width: 12rem;
+  min-height: 46px;
+  padding: 0 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--background);
+  color: var(--ink);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+}
+
+.ledger-verify__form input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.ledger-verify__error {
+  margin-top: 1rem;
+  color: #a33a2b;
+}
+
+.ledger-verify__entry {
+  margin: 1.4rem 0 0.8rem;
+  color: var(--slate);
+}
+
+.ledger-verify__entry span {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--ink);
+}
+
+.ledger-verify__steps {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ledger-verify__steps li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--ice);
+}
+
+.ledger-verify__steps li > svg {
+  margin-top: 0.15rem;
+}
+
+.ledger-verify__steps li[data-status='pass'] > svg {
+  color: #15966e;
+}
+
+.ledger-verify__steps li[data-status='fail'] {
+  border-color: #d9a39b;
+  background: #fbf1ef;
+}
+
+.ledger-verify__steps li[data-status='fail'] > svg {
+  color: #a33a2b;
+}
+
+.ledger-verify__steps li[data-status='absent'] > svg,
+.ledger-verify__steps li[data-status='skipped'] > svg {
+  color: var(--slate);
+}
+
+.ledger-verify__steps p {
+  margin: 0.25rem 0 0;
+  color: var(--slate);
+  overflow-wrap: anywhere;
+}
+
+.ledger-verify__steps a {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+}
+
+#verify pre {
+  overflow-x: auto;
+  padding: 1rem;
+  border-radius: 8px;
+  background: var(--navy-dark);
+  color: #e9f3f8;
+  font-size: 0.8rem;
+  line-height: 1.55;
+}

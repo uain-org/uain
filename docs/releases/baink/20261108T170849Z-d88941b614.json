@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261108T170849Z-d88941b614",
+  "version": "0.3.40",
+  "source_commit": "b3d66fd69feecc01029a3a48484ba2af455b2b1e",
+  "deployed_at": "2026-11-08T17:10:49Z",
+  "prior": "20261108T164129Z-6374872732",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#proved-submission-history-20261108",
+    "docs/baink/release-0.3.40.md"
+  ],
+  "note": "Normal exact-prior promotion: production/preview healthy, all 56 public asset hashes match and independent browser release header agrees. Unsigned submission detail refuses with 401. Real authenticated own-submission acceptance remains unclaimed; no financial action or key/grant change."
+}

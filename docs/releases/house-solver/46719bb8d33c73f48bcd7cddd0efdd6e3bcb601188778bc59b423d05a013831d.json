@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "house-solver",
+  "release_id": "46719bb8d33c73f48bcd7cddd0efdd6e3bcb601188778bc59b423d05a013831d",
+  "version": null,
+  "source_commit": "0e5e968cf2d15cc560fa06cb5f5c711f854419ed",
+  "deployed_at": "2026-11-09T03:41:14Z",
+  "prior": "458164edc84878ce6712696434112b0d448737bff2db4d024a3dd10539059407",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#opp10-stock-admission-template-20261109"
+  ],
+  "note": "Exact canonical nine-file runtime completed one guarded OPP10 solver/refuter/join/submission cycle. Ordinary verifier passed; native central review finalized needs_evidence with full feedback verified and both awards absent. Prior records/runtime retained, STOP restored and LaunchAgent unloaded. Author correction, positive live-v2 payment reload and outside-member acceptance remain separate."
+}

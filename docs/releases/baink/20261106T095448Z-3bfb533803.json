@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261106T095448Z-3bfb533803",
+  "version": "0.3.32",
+  "source_commit": null,
+  "deployed_at": null,
+  "prior": "20261106T093354Z-40552e7ba4",
+  "status": "publicly-verified",
+  "evidence": ["CHANGELOG.md", "apps/baink/CHANGELOG.md"],
+  "note": "Live health, X-BAINK-Release header and survey template route checked from baink.money."
+}

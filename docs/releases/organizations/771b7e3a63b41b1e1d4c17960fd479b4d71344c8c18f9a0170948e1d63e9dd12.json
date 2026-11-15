@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "organizations",
+  "release_id": "771b7e3a63b41b1e1d4c17960fd479b4d71344c8c18f9a0170948e1d63e9dd12",
+  "version": null,
+  "source_commit": "9a8aa4548731c37f376919ec799125a97549379f",
+  "deployed_at": "2026-11-08T18:42:40Z",
+  "prior": "24ead69173a1a222cb6af24fcbaca0ca16b29061",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#organizations-js-compatible-activation-20261109"
+  ],
+  "note": "JS-only immutable794-file closure retaining all635old paths. Idle/unknown/batch/source-pin guards, protected manager/starter native reads and production-venv attester source check passed before prior timers resumed. Journal/config hashes unchanged; no provider selection, Python replacement, milestone arming or scheduler expansion."
+}

@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T014950Z-7f5b6fe589",
+  "version": "0.3.67",
+  "source_commit": "94bcedfb0150c6d62ce434f7a7154092eae9c161",
+  "deployed_at": "2026-11-10T01:50:04Z",
+  "prior": "20261110T011623Z-5b16759020",
+  "status": "publicly-verified",
+  "evidence": ["CHANGELOG.md#baink-0367-release-20261110"],
+  "note": "From main 94bcedfb: includes #423 (MCP front door round 2: default public names in the start answer, kit steps carry via, receiving setup and never-pay-twice in the pay answer, empty proposal search hint; MCP 0.6.1). release:promote passed; production and preview health ok; served kit 0.2.9; BAINK_SERVER_SEND_ALLOW_ALL=1 and BAINK_MIN_KIT_VERSION=0.2.6 kept."
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-07201",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "General chatbots already answer parents' questions instantly at night, but no validated AI parenting guide reaches 130,000,000 new parents, so the Main KPI is unmet. Surveys show heavy but uneven use: one 2026 US hospital survey reports 81 percent of parents use AI for parenting tasks, while YouGov finds only 37 percent of parents think asking AI for parenting advice is a good idea (https://www.mactech.com/2026/06/04/survey-81-of-parents-use-ai-to-help-with-parenting-tasks/, https://yougov.com/en-us/articles/54872-parents-of-children-under-18-are-more-likely-to-say-parents-should-let-their-children-use-ai-tools). A 2026 Johns Hopkins evaluation of ChatGPT, Gemini and Claude on infant safe-sleep questions found accuracy dropped on nuanced cases such as caregiver exhaustion or a sick infant (https://firstcandle.org/?p=7733). Deployed guided programmes are small: UNICEF ParentText enrolled about 20,000 caregivers (https://www.spi.ox.ac.uk/parenttext-optimisation-evaluation-south-africa). About 132 million babies are born yearly (https://statisticstimes.com/demographics/world-death-and-birth-rate.php). Honest limit: instant answers are a known answer; only guideline-accurate, safety-escalating advice and reach to low-income and offline parents are open work."
+  },
+  "additionalSearches": [
+    {
+      "query": "new parents using ChatGPT AI chatbot for parenting advice survey percentage 2025",
+      "source": "https://yougov.com/en-us/articles/54872-parents-of-children-under-18-are-more-likely-to-say-parents-should-let-their-children-use-ai-tools",
+      "observedAt": "2026-11-06T00:42:00Z",
+      "finding": "YouGov 2026: 37 percent of US parents say asking AI for parenting advice is a good idea, 40 percent a bad idea; a hospital survey reports 81 percent use AI for tasks."
+    },
+    {
+      "query": "AI parenting assistant app baby night questions pediatric validated accuracy study chatbot",
+      "source": "https://firstcandle.org/?p=7733",
+      "observedAt": "2026-11-06T00:42:06Z",
+      "finding": "Johns Hopkins 2026: general chatbots did well on simple safe-sleep questions but lost accuracy on nuanced cases; no validated dedicated parenting app found."
+    },
+    {
+      "query": "number of births per year worldwide 2025 UN 130 million",
+      "source": "https://statisticstimes.com/demographics/world-death-and-birth-rate.php",
+      "observedAt": "2026-11-06T00:42:12Z",
+      "finding": "UN WPP 2024: about 132.4 million births in 2025."
+    },
+    {
+      "query": "WHO UNICEF digital parenting chatbot low income countries text message infant care program scale",
+      "source": "https://www.spi.ox.ac.uk/parenttext-optimisation-evaluation-south-africa",
+      "observedAt": "2026-11-06T00:42:18Z",
+      "finding": "UNICEF ParentText chatbot RCT enrolled over 20,000 caregivers of children aged 2-17 in South Africa; scale far below the KPI."
+    }
+  ]
+}

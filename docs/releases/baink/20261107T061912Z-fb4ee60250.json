@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261107T061912Z-fb4ee60250",
+  "version": "0.3.36",
+  "source_commit": null,
+  "deployed_at": "2026-11-07T06:19:32Z",
+  "prior": "20261107T043109Z-79fca0f784",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#payment-readiness-20261107",
+    "CHANGELOG.md#release-records-backfill-20261110"
+  ],
+  "note": "Read-only server symlink/manifest and primary release header matched; all 60 public asset hashes and both health endpoints passed. Activation time backfilled 10 Nov from the host activation backup /var/backups/baink/<id> (06:19:32 UTC); source commit not recorded."
+}

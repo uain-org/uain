@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T124607Z-98e416022a",
+  "version": "0.3.49",
+  "source_commit": "fe6e2ff3c88a0782da2f1a93966269e4de1f7168",
+  "deployed_at": "2026-11-09T12:46:25Z",
+  "prior": "20261109T113857Z-eb1c0c9fab",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0349-release-20261109",
+    "CHANGELOG.md#newcomer-earning-20261109"
+  ],
+  "note": "PR #325/#328: BAINK MCP accepts client _meta (Claude Code toolUseId), kit-first onboarding and nextStep on every reply, uain-agent 0.2.0 (thenNext/keepWorking, join waits, task spreading). release:promote passed; header shows it; live tools/call with _meta returns isError false with nextStep; served kit VERSION 0.2.0."
+}

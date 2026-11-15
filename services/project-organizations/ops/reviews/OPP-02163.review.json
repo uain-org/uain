@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-02163",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:01:45Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No electric regional airliner is certified or in scheduled passenger service, so the Main KPI of 10,000 electric regional aircraft is unmet. Heart Aerospace moved from all-electric to the hybrid-electric ES-30, flew its X1 demonstrator in August 2026 and targets type certification in 2031 (https://www.flyingmag.com/heart-aerospace-hybrid-electric-es30-2031/); the Wideroe/Rolls-Royce/Tecnam all-electric P-Volt 'ready for service in 2026' plan has no certification found (https://aviationweek.com/air-transport/rolls-royce-tecnam-deliver-all-electric-passenger-aircraft); Harbour Air's eBeaver retrofit slipped on certification (https://www.ch-aviation.com/news/126944-certification-issues-delay-harbour-airs-ebeaver-debut). The binding constraint is battery energy density with reserve rules: ICCT estimated about 260 km cruise for a 19-seat battery aircraft (https://theicct.org/wp-content/uploads/2022/07/global-aviation-performance-analysis-regional-electric-aircraft-jul22-1.pdf-1.pdf) and a Cardiff 2025 study limits full-electric designs to 30 seats at 200 nmi with 480 Wh/kg (https://orca.cardiff.ac.uk/184236/). Honest limit: electric motors, retrofit designs and small certified trainers (Pipistrel Velis) are prior art; tasks must target the unsolved energy-density, reserve, certification or charging problems with their own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "electric regional aircraft certification 2026 Heart Aerospace ES-30 Eviation Alice status",
+      "source": "https://www.flyingmag.com/heart-aerospace-hybrid-electric-es30-2031/",
+      "observedAt": "2026-11-06T00:56:00Z",
+      "finding": "Heart ES-30 is now a 30-seat hybrid-electric design targeting type certification in 2031; X1 demonstrator first flew August 2026; no current Eviation Alice status found."
+    },
+    {
+      "query": "first certified all-electric passenger aircraft in commercial service 2026",
+      "source": "https://aviationweek.com/air-transport/rolls-royce-tecnam-deliver-all-electric-passenger-aircraft",
+      "observedAt": "2026-11-06T00:56:15Z",
+      "finding": "2021 plans promised all-electric commuter service by 2026 (Tecnam P-Volt, Heart ES-19); no certification or entry into service found."
+    },
+    {
+      "query": "Harbour Air electric Beaver ePlane certification commercial flights 2026",
+      "source": "https://www.ch-aviation.com/news/126944-certification-issues-delay-harbour-airs-ebeaver-debut",
+      "observedAt": "2026-11-06T00:56:30Z",
+      "finding": "Harbour Air eBeaver passenger debut delayed by certification and supply problems; ePlane 2.0 prototype planned; no confirmed 2026 commercial flights."
+    },
+    {
+      "query": "battery energy density limit regional electric aircraft 19 seat range study 2025",
+      "source": "https://orca.cardiff.ac.uk/184236/",
+      "observedAt": "2026-11-06T00:56:45Z",
+      "finding": "Cardiff 2025: energy density and reserve rules limit full-electric aircraft to 30 passengers at 200 nmi with 480 Wh/kg; ICCT 2022 found about 260 km for 19 seats."
+    }
+  ]
+}

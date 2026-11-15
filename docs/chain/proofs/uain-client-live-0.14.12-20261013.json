@@ -1,0 +1,92 @@
+{
+  "observed_at_utc": "2026-10-13T12:54:36.174Z",
+  "origin": "https://uain.global/worker/",
+  "version": "0.14.12",
+  "signed_at": "2026-10-13T12:13:29.142Z",
+  "manifest_sha256": "cac49a1c572680c341e3bf980c1b9fdae52f21eb05048f2c82fef92ccff81ed2",
+  "signature_valid": true,
+  "all16files_match": true,
+  "files": [
+    {
+      "name": "coin-boundary.mjs",
+      "bytes": 4628,
+      "sha256": "ed413ff9c7a34ef90164a4bad451df007e41c06a180571e699d60bd8b0edefc8"
+    },
+    {
+      "name": "evidence-document.mjs",
+      "bytes": 2471,
+      "sha256": "24c3f111064b6f12cb121edd5f3329c44312bda795675a09a9388d0d5e5c56ce"
+    },
+    {
+      "name": "external-wallets.mjs",
+      "bytes": 11579,
+      "sha256": "351c84b7a7569404f5bccf4cb1afe4f9a1b3b13539a17290cb92dac86d4bc3ff"
+    },
+    {
+      "name": "federation-workflow.mjs",
+      "bytes": 7465,
+      "sha256": "f1dc7ab69cc5d5605d952b4d94b92da143c0df5d5e3c7e00ff6ad594a9ab515a"
+    },
+    {
+      "name": "follow.mjs",
+      "bytes": 6529,
+      "sha256": "5401550293b3427f5e38c53d3cf06073a8e067868ba8645336df24228afac907"
+    },
+    {
+      "name": "install.sh",
+      "bytes": 4998,
+      "sha256": "2f95d9b8ed6cb9e35a4c6ad903b93aae0436f3d43b64bf7914081b096c0fd7ab"
+    },
+    {
+      "name": "native-bridge.mjs",
+      "bytes": 45251,
+      "sha256": "256063a1d734b5f88a7af83be1c8eeaf3bc931933a8139b85cf14c6d096c63b8"
+    },
+    {
+      "name": "native-cli.mjs",
+      "bytes": 16040,
+      "sha256": "67f89e34b56f87583f0753def3d014a35a89c76335d3bd54fbf1910c7df5a36d"
+    },
+    {
+      "name": "private-cli.mjs",
+      "bytes": 13914,
+      "sha256": "479d03b91291edace3a1788ab897ead12c44904267608fb4a99647732c3d091e"
+    },
+    {
+      "name": "private-review.mjs",
+      "bytes": 10393,
+      "sha256": "f2358b999dfcf2b72f224498a3a3cb06fc775e68dee015f878301cf5606efeb2"
+    },
+    {
+      "name": "private-state.mjs",
+      "bytes": 8094,
+      "sha256": "44de394a3c67c6f5f55d2302f935fe5e27a6f6608e990c68dc766f7278a6127c"
+    },
+    {
+      "name": "private-workflow.mjs",
+      "bytes": 22205,
+      "sha256": "673ef37fb85e396d3f9e45fba728093cc901a7e473d6f65e77ec5b342e65625f"
+    },
+    {
+      "name": "signing.mjs",
+      "bytes": 2695,
+      "sha256": "16a79b453e42e18cdc4afddd19d9dc8ed1295e482cb742bee0b9a881c8df78dc"
+    },
+    {
+      "name": "uain-key.mjs",
+      "bytes": 10974,
+      "sha256": "55c7832b307d905be9aeab1bf968a3370e79ebf27e04b807cf09a092ead781da"
+    },
+    {
+      "name": "uain-worker.mjs",
+      "bytes": 130185,
+      "sha256": "31959ae29d5285cf1fecad56de4c424de5c17646640f935d528a8969e5d68017"
+    },
+    {
+      "name": "wallet-crypto.mjs",
+      "bytes": 95724,
+      "sha256": "083e68f9e4c856c3d62d64e8272776cf8b29e87bdf134d71df694473b1dbfcfe"
+    }
+  ],
+  "read_only": true
+}

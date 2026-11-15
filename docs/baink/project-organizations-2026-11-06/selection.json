@@ -1,0 +1,1449 @@
+{
+  "schema": "uain-project-organization-selection-v1",
+  "observedAt": "2026-11-05T20:12:17.776319+00:00",
+  "count": 120,
+  "selection": "All active coordination projects at observation; fixed scope, not future active additions",
+  "authority": "BAINK coordination; not native admission",
+  "projects": [
+    {
+      "id": "OPP-00002",
+      "sourceDigest": "ab52007dbccd5b9833d4734c0277af54944afcc95deba1475d2a77569523c9d9",
+      "kpi": {
+        "statement": "1,000,000,000 people treated yearly",
+        "threshold": 1000000000,
+        "unit": "people treated yearly",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "7085949c2e232356228eaeed2ba6a5c1dea1aeef4f48c3361d1ab64229969b8b"
+    },
+    {
+      "id": "OPP-00003",
+      "sourceDigest": "7f4e662215a379bd3794399b087fbd48f1824ec379f928a210fe24671c73dcc2",
+      "kpi": {
+        "statement": "100,000,000 people with epigenetic resets",
+        "threshold": 100000000,
+        "unit": "people with epigenetic resets",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "7fa07cf4d9360195950e55017aded0b865f649c7a52f938fe7b86decae934911"
+    },
+    {
+      "id": "OPP-00004",
+      "sourceDigest": "0662af13a37c88dea39d6b62056975fbd936d2919a4b0648be0a6bfd73b9e3ae",
+      "kpi": {
+        "statement": "500,000,000 older adults with a restored thymus",
+        "threshold": 500000000,
+        "unit": "older adults with a restored thymus",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "36cb1414ce5f7965ed8af059522e7850e9ae287e5c78cc5ddfdd8245f72a855b"
+    },
+    {
+      "id": "OPP-00005",
+      "sourceDigest": "099e188b09f3232a1dad5b8e5494fc774150bfa5333671ee6d1479642af6da72",
+      "kpi": {
+        "statement": "300,000,000 people with replenished stem cells",
+        "threshold": 300000000,
+        "unit": "people with replenished stem cells",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "c74ecc5201a3c877d431a17aedf6bfb4b28c5b74fef2bd283664b7bbf53e9f05"
+    },
+    {
+      "id": "OPP-00006",
+      "sourceDigest": "98cb84b85818c7ef9bb58f1a0c633fc869d526856bca4adf58ac923ea5458bb0",
+      "kpi": {
+        "statement": "200,000,000 people treated",
+        "threshold": 200000000,
+        "unit": "people treated",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "06c7e5333f9d0fa4327933e0f089a38e2dfae243850c546efcfc6c571e1c3e07"
+    },
+    {
+      "id": "OPP-00007",
+      "sourceDigest": "b73c103efadb850fbeeccdfe7deb55004f378daa76589c52ffbb16b845344e81",
+      "kpi": {
+        "statement": "1,000,000,000 people with repaired mitochondria",
+        "threshold": 1000000000,
+        "unit": "people with repaired mitochondria",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "a5b68d42aa54acbeb2cdfcc50a5b571e75df227786c4977a992f03e0ef94b243"
+    },
+    {
+      "id": "OPP-00008",
+      "sourceDigest": "464b5b9866766b454cf6dff52bb3b81339f3a14aabcf3c8eb3bdde433f059201",
+      "kpi": {
+        "statement": "500,000,000 people cleared of aggregates",
+        "threshold": 500000000,
+        "unit": "people cleared of aggregates",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "70f8c98a8e1212000eb49f87db16edd17a76b4c481244d74c3c19347c68f65e5"
+    },
+    {
+      "id": "OPP-00009",
+      "sourceDigest": "7a992f8f478ce5a599d8630e5f704c13dab7f759abbc844efa0c3d4b4ec8601b",
+      "kpi": {
+        "statement": "300,000,000 people with safely lengthened telomeres",
+        "threshold": 300000000,
+        "unit": "people with safely lengthened telomeres",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "0f38ece7a5cc3016d1a0355cf37a928bd5899a95590d2a5abb6aba498703a3a0"
+    },
+    {
+      "id": "OPP-00010",
+      "sourceDigest": "cd13820b3ab1b52aaf6e358cb4600f3c174cdf575e1f4bd1b32500f0d7236070",
+      "kpi": {
+        "statement": "150 average healthy years",
+        "threshold": 150,
+        "unit": "average healthy years",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "864a6c43f636eef62bce503a6593c4e4c6fec1f221dfefc8f86daa440002ac6f"
+    },
+    {
+      "id": "OPP-00011",
+      "sourceDigest": "c71460be3100dc2e9cbb21a390db64d41a2463a82f1e4ab8b1bd83f8b1a93bfc",
+      "kpi": {
+        "statement": "8,000,000,000 people with an age dashboard",
+        "threshold": 8000000000,
+        "unit": "people with an age dashboard",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "4fb7f32a0fc6c1c5a75252c7e9a4bf91cdd4fede0bdb970def01fc02c3060bc4"
+    },
+    {
+      "id": "OPP-00013",
+      "sourceDigest": "0b204fe65bc97146b80683a90fed03faf029d61354bd2444a53a734974c93fd2",
+      "kpi": {
+        "statement": "1,000,000,000 older adults regaining strength",
+        "threshold": 1000000000,
+        "unit": "older adults regaining strength",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "d51fe704dbf1e495a4553d0fe7f0c202126fc364d753ed64073bfefcf6db607b"
+    },
+    {
+      "id": "OPP-00014",
+      "sourceDigest": "f83021040dcdc655f3997ff05a7e8a92d339ab7052924a300a79e0145923bc8a",
+      "kpi": {
+        "statement": "100,000,000 people treated",
+        "threshold": 100000000,
+        "unit": "people treated",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "6ccb7ae21d8f8e95fae762014bc70c69a9508d8e4c1412964d7f120d42c963f4"
+    },
+    {
+      "id": "OPP-00242",
+      "sourceDigest": "3fc3308f66e219bea69b0461b440ed45aa1200f8719b79809792668ed5a41948",
+      "kpi": {
+        "statement": "8,000,000,000 people protected",
+        "threshold": 8000000000,
+        "unit": "people protected",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "ed52c49ccc47c581835e19471f4a53ce3a6ed02a1c852770014be4a30e20862c"
+    },
+    {
+      "id": "OPP-00243",
+      "sourceDigest": "160fff8fcd7e47dfd203c2e922a46e4aba4578f8415ff5d2184929c1cc9c7e34",
+      "kpi": {
+        "statement": "130,000,000 children per year vaccinated",
+        "threshold": 130000000,
+        "unit": "children per year vaccinated",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "6636092d08317e034e2c53c625bced664bd2185c405335f03314c61d6a9fefcd"
+    },
+    {
+      "id": "OPP-00244",
+      "sourceDigest": "b87c2acdc7f7d3e7a18680a66ddd1a04e04df6629804b56fc4b667b2e5156ee6",
+      "kpi": {
+        "statement": "8,000,000,000 people with free vaccines",
+        "threshold": 8000000000,
+        "unit": "people with free vaccines",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "5dd80de1c46c5aa0e4dcb13a5e0223e7133a16491f0a9069eea39918cf86451e"
+    },
+    {
+      "id": "OPP-00245",
+      "sourceDigest": "732bd4c2da005b3f8486ad45d17d7c189ec2902456ff4ee0d6f927517edf5db2",
+      "kpi": {
+        "statement": "200,000 pharmacies with vaccine printers",
+        "threshold": 200000,
+        "unit": "pharmacies with vaccine printers",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "0316b913552299873ce0a5676612ee62e2bf1513f64da5ca0fb847c4f44499a6"
+    },
+    {
+      "id": "OPP-00246",
+      "sourceDigest": "114323c7d3eb01396d2c6138e5c9d07ff17dab1a8780e2fc5e8f1a27e353229d",
+      "kpi": {
+        "statement": "5,000,000,000 patch doses",
+        "threshold": 5000000000,
+        "unit": "patch doses",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "5475bc1e5fb9bcb1f1c95ed490abe6ab4220ff98dc77a38fc4b9b43b6ff5a00d"
+    },
+    {
+      "id": "OPP-00248",
+      "sourceDigest": "e09c12926b2c535a60cead554d96c8ae54e945cb7c920e6752b54cb692380837",
+      "kpi": {
+        "statement": "1,000,000,000 people with tailored vaccines",
+        "threshold": 1000000000,
+        "unit": "people with tailored vaccines",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "e808a5a0f352976bcd703b91c1bfa0cab25f18a9692b612c4b234433464dbe01"
+    },
+    {
+      "id": "OPP-00249",
+      "sourceDigest": "7a14e1462ae5149ee7ef2fb10ffced472b77d7ee9f1c849352cc828525d18928",
+      "kpi": {
+        "statement": "1,000,000,000 single-dose vaccine doses delivered per year",
+        "threshold": 1000000000,
+        "unit": "single-dose vaccine doses delivered per year",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "486b10744baedc8d538127dab3336f43f7617e4a0e0481bc846af6c1ad6ce0a2"
+    },
+    {
+      "id": "OPP-00482",
+      "sourceDigest": "ba6575013df5037f26f8a25f1fee5e04f32c0cfe01eb4c1cfaab52fe0828bf7c",
+      "kpi": {
+        "statement": "1 whole-brain simulation",
+        "threshold": 1,
+        "unit": "whole-brain simulation",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "46d68cae902f35cf4df7458b2abaf8fd3f953e66b8b347b7a506e686a5b7c656"
+    },
+    {
+      "id": "OPP-00483",
+      "sourceDigest": "0ebae29997c90b27087cefeb0a8e6b91fba919ab9a57c8b16d8479eeadf1f846",
+      "kpi": {
+        "statement": "3,000 cell types catalogued",
+        "threshold": 3000,
+        "unit": "cell types catalogued",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "d7345fcd901b0cf39f23ea6871d2a6702331761389575f89e561e966ecb8e474"
+    },
+    {
+      "id": "OPP-00484",
+      "sourceDigest": "c15cabc6913dc00c93ba2ea8bb51b6569a4b189a1244fe8ae49bd31fefa78862",
+      "kpi": {
+        "statement": "1 non-invasive cell-level recorder",
+        "threshold": 1,
+        "unit": "non-invasive cell-level recorder",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "81c596d479589f2251c6b0e0ac16dee0d998a880ee072ef65896cab37e51603c"
+    },
+    {
+      "id": "OPP-00485",
+      "sourceDigest": "d588568e8761a3847c47af00c97887717c09208a53d861e38ae30a600141a6d0",
+      "kpi": {
+        "statement": "8,000,000,000 people able to use speech decoding",
+        "threshold": 8000000000,
+        "unit": "people able to use speech decoding",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "8b6bc23957e54db1e640caf703ca47ba6b9c6831072c99cfec1c8f7657fe8f38"
+    },
+    {
+      "id": "OPP-00486",
+      "sourceDigest": "88d2798657f683b4b7b5512d2e2a7b89bcc2bc225d203954ac4cbca08d40c01e",
+      "kpi": {
+        "statement": "1 accepted memory theory",
+        "threshold": 1,
+        "unit": "accepted memory theory",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "6fbb0c1e3be1062c802b86dd4154de40a6c458cf7892e229c7874770c665590d"
+    },
+    {
+      "id": "OPP-00488",
+      "sourceDigest": "0000f7f707b49475d3eb6968c962ccccf2152c67fc6ce04f21dcdc2d7aea2025",
+      "kpi": {
+        "statement": "1 portable high-res brain imager",
+        "threshold": 1,
+        "unit": "portable high-res brain imager",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "f86bea1a7cdde7e41b023135f8bd87508e8d74fdfe997b420472301ede3690eb"
+    },
+    {
+      "id": "OPP-00489",
+      "sourceDigest": "0f6e1d7fb5df89ef461bb19878edadc946a4bcf0349e96d04e30da9b10208f47",
+      "kpi": {
+        "statement": "130,000,000 children tracked",
+        "threshold": 130000000,
+        "unit": "children tracked",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "e803adaa9213b9b472c29a54bb1598ee2b67bfec1560fc880c3eb754476de958"
+    },
+    {
+      "id": "OPP-00722",
+      "sourceDigest": "9fa8916804569c6c1bdaa35d0032759e479bb688c297c5a4902c9d1e0f436dfb",
+      "kpi": {
+        "statement": "43,000,000 patients with chips",
+        "threshold": 43000000,
+        "unit": "patients with chips",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "6e4717b67005daff1669e3439eef8b064011ccf86a326547e081b25ee958f090"
+    },
+    {
+      "id": "OPP-00723",
+      "sourceDigest": "a2a50eb10531dab9f2f53794d62aebaecd83aa2bdfbf91e36d3f664e7605b83e",
+      "kpi": {
+        "statement": "43,000,000 blind and low-vision people using describing smart glasses",
+        "threshold": 43000000,
+        "unit": "blind and low-vision people using describing smart glasses",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "64876bf5b1d9b2de014563d058d196d3a4fb9b5ccd9e82518b9f44a6573217ba"
+    },
+    {
+      "id": "OPP-00724",
+      "sourceDigest": "e963ffeb837e5f1131f23ee20eadc971429b16c14c774a4fb047ab330834e4f7",
+      "kpi": {
+        "statement": "12,000,000 patients treated",
+        "threshold": 12000000,
+        "unit": "patients treated",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "90679fe92d49aa1e0487ddddf4283b16eec476bbd4affc6c674c96a043ec01fb"
+    },
+    {
+      "id": "OPP-00725",
+      "sourceDigest": "63c41fb0557d6ea77ace4f929a50ed53a71dcb5ddb97bbde82a681effe48e0e4",
+      "kpi": {
+        "statement": "76,000,000 patients protected",
+        "threshold": 76000000,
+        "unit": "patients protected",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "c58bfb8bfb75dc50f4bebcb82309bfecf9ca6a88ead69f8ba9384b6cb328eeb7"
+    },
+    {
+      "id": "OPP-00726",
+      "sourceDigest": "9b9abaa2b1da5c648a40eebb5888c181cf768c39032a2acecc3d8ec489933fc8",
+      "kpi": {
+        "statement": "196,000,000 patients cured",
+        "threshold": 196000000,
+        "unit": "patients cured",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "f1e803aa0ab6b48ea0c95e9c123f3f8699833ab7b776797f48d8a06859dd8bcd"
+    },
+    {
+      "id": "OPP-00728",
+      "sourceDigest": "c18fc391938129832dbdea50c936a720ca603440edb3cf70b736a4fb1d1b9b10",
+      "kpi": {
+        "statement": "43,000,000 blind people with a guide robot",
+        "threshold": 43000000,
+        "unit": "blind people with a guide robot",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "85031086ea80bfe037800448f2d85fdf9dbb552d7e974f6304d73253b9208a24"
+    },
+    {
+      "id": "OPP-00729",
+      "sourceDigest": "18834a7dabfbe3435b17176368de396d1c5f185649d54de0962537287165529f",
+      "kpi": {
+        "statement": "43,000,000 blind people using tactile image displays",
+        "threshold": 43000000,
+        "unit": "blind people using tactile image displays",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "773193a7098af2062375b8abc0c176bdbc91cf959adfd475b0e59286b2540753"
+    },
+    {
+      "id": "OPP-00962",
+      "sourceDigest": "7eea88d4fe2312d24b49b998877d5607c8eac7a708b364bd1dfea5e388b6d12a",
+      "kpi": {
+        "statement": "8,000,000 AI primary-care assistants",
+        "threshold": 8000000,
+        "unit": "AI primary-care assistants",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "ca96d3031af5b60faf2ab00d9186bcddde3962de5f8311bb9440a6273f69deaf"
+    },
+    {
+      "id": "OPP-00963",
+      "sourceDigest": "8b8745226a69d3cad337c1b09492cf0031dd94c5bab6f4c24d51d871bbe50573",
+      "kpi": {
+        "statement": "1,000,000 village health pods",
+        "threshold": 1000000,
+        "unit": "village health pods",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "7c3479333a3cfb14117f6060761232f0536087ffc1459d9481e571708a14494b"
+    },
+    {
+      "id": "OPP-00964",
+      "sourceDigest": "3dc0a31d59ee029ae5b87bfc9f32444840450489504d9818b6c95f3470d2a82f",
+      "kpi": {
+        "statement": "8,000,000,000 people checked yearly",
+        "threshold": 8000000000,
+        "unit": "people checked yearly",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "e68cdefc27416000be447c1ed497812ea81c6453c40dafee39c35feeba5d7934"
+    },
+    {
+      "id": "OPP-00965",
+      "sourceDigest": "22a801c06477e313833eb9eb5e85716d4703b50089e4c5e09847339bcb5c010f",
+      "kpi": {
+        "statement": "2,000,000,000 households with first-aid and diagnostic kits",
+        "threshold": 2000000000,
+        "unit": "households with first-aid and diagnostic kits",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "b112b31e5ccb8935e651604f97a1661448f62fc110c93fff68b97dfa1e849480"
+    },
+    {
+      "id": "OPP-00966",
+      "sourceDigest": "186566c536818e9b70004999415139928c9f0d75c8d1f2fed9177f14c92565d7",
+      "kpi": {
+        "statement": "7,000 languages with smartphone care",
+        "threshold": 7000,
+        "unit": "languages with smartphone care",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "2d4f8081394f11f0e66d0e0f9f75d4eae252176535f9869b51f687e6a827a5cb"
+    },
+    {
+      "id": "OPP-00968",
+      "sourceDigest": "2762da191ad69f1b1c34017f21de3eba73e12359b2608aa9c0188d7d68f71d6d",
+      "kpi": {
+        "statement": "1,000,000 autonomous clinics",
+        "threshold": 1000000,
+        "unit": "autonomous clinics",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "4139242d035fe4c8d1ae053085cec1b874c7355d97bcf3f346bcc88af777dca2"
+    },
+    {
+      "id": "OPP-00969",
+      "sourceDigest": "880700f70853f0498eb334d3fd638341dacb35376f5836f2c7be2933d63e393b",
+      "kpi": {
+        "statement": "130,000,000 births per year with midwife-led care",
+        "threshold": 130000000,
+        "unit": "births per year with midwife-led care",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "83aedcb8d06e0469b598299a28e0aed2fcaddf86bee071a23a72f4d0a60e8ad7"
+    },
+    {
+      "id": "OPP-01202",
+      "sourceDigest": "4957b0eafc593e192cc1837e47a8f98f2693e5f1ac70af662d7a60a68b38f40e",
+      "kpi": {
+        "statement": "50,000,000 people reached per year",
+        "threshold": 50000000,
+        "unit": "people reached per year",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "30408bb2f4822d9f23694d1af4698f7884117d778406c464b9d9f52a741f140d"
+    },
+    {
+      "id": "OPP-01203",
+      "sourceDigest": "d060558516fe8ba81de88fc795508a3b6c132e7a6c51cd7cdad9e2b4261ba16d",
+      "kpi": {
+        "statement": "1 global AI-managed food reserve",
+        "threshold": 1,
+        "unit": "global AI-managed food reserve",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "b69c28fdf18e90214539e158c5478ee1ab022394cb9fd7c53dc133f0198a1c83"
+    },
+    {
+      "id": "OPP-01204",
+      "sourceDigest": "085fdb7e8bc7426fa015fdbbe2bc8cafd0ac6be700c454646caf9d512a92d17f",
+      "kpi": {
+        "statement": "1,000,000,000 emergency meals stockpiled",
+        "threshold": 1000000000,
+        "unit": "emergency meals stockpiled",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "9f0b0e92b626d5d1425b2def4a76f6c86fe10bbadc5243613ce987bb09dc8c43"
+    },
+    {
+      "id": "OPP-01205",
+      "sourceDigest": "0d6e2776879c100744fb3b429b18d56a48ab61f79ef02f74889382f55afadc8f",
+      "kpi": {
+        "statement": "8,100,000,000 people with guaranteed food",
+        "threshold": 8100000000,
+        "unit": "people with guaranteed food",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "c7865a5516ba4e4634ecd12d5641baddd0be87b031a2deae00014e586d980c35"
+    },
+    {
+      "id": "OPP-01206",
+      "sourceDigest": "977c71643ed9726774d555d4a4a9c772b57b45d9402b0cc2fac81d69f8a883cd",
+      "kpi": {
+        "statement": "600,000,000 farms monitored",
+        "threshold": 600000000,
+        "unit": "farms monitored",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "5c9deaf16039798a6be91beecba9548304271769d4e189469232da2941b30dd9"
+    },
+    {
+      "id": "OPP-01208",
+      "sourceDigest": "e004de95775102a8e55d0bca59148e71653161384410276c34401d8d55d4ab1d",
+      "kpi": {
+        "statement": "500,000,000 people matched to food",
+        "threshold": 500000000,
+        "unit": "people matched to food",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "605cc8a9977b7a0a194d4f5ca9d03a6036463a77bb68b7ef92789a3e67cee18c"
+    },
+    {
+      "id": "OPP-01209",
+      "sourceDigest": "0b987f60132671b031c5edd90395ad0367aa7512f186fb611ed2eb5c3d4382be",
+      "kpi": {
+        "statement": "1,000,000,000 people growing drought-proof crops",
+        "threshold": 1000000000,
+        "unit": "people growing drought-proof crops",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "24b2f808cf42b21387f9d59782091a9f19101e5241b86bea3c1863163eacd772"
+    },
+    {
+      "id": "OPP-01442",
+      "sourceDigest": "1e56f62923643fef2503732df4457408a16bc4b130728b7558600a7fad80431b",
+      "kpi": {
+        "statement": "600,000,000 tonnes extra grain per year",
+        "threshold": 600000000,
+        "unit": "tonnes extra grain per year",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "d8f9477bab575cea2e1fd843492f98e1d5369c521a5cc4de673c35370d79dfb0"
+    },
+    {
+      "id": "OPP-01443",
+      "sourceDigest": "f0a33ac386a6e2d39ff43b504eb31f41878407a5b95d2c59ada45e1891bd4024",
+      "kpi": {
+        "statement": "300,000,000 hectares of perennial grain",
+        "threshold": 300000000,
+        "unit": "hectares of perennial grain",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "c7a4460c07aa8bab9c08b2e9a0159f01674e8e5806886fdcfa84bdc630a09540"
+    },
+    {
+      "id": "OPP-01444",
+      "sourceDigest": "ab52a6c1619909d037b49c674fb02306ac22420d73efd40951ca3370fd050836",
+      "kpi": {
+        "statement": "50,000,000 hectares of new farmland",
+        "threshold": 50000000,
+        "unit": "hectares of new farmland",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "19fb3412677a6c4ece2541de8c974bb866b19126c7b78172f598feb699fda416"
+    },
+    {
+      "id": "OPP-01445",
+      "sourceDigest": "af0944a54fcf414c4be8354589e4504d79018ec675a1b046418190dfff1166d0",
+      "kpi": {
+        "statement": "500,000,000 farmers with a field-tuned variety",
+        "threshold": 500000000,
+        "unit": "farmers with a field-tuned variety",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "922014413b970bf1ed963830529775f2ef01aa5c95851d1879d933fe21e6f802"
+    },
+    {
+      "id": "OPP-01446",
+      "sourceDigest": "5d45615f06a14003f552a71b656f87a79c9cfae8980a2836fbf60b392ed855d4",
+      "kpi": {
+        "statement": "1,000 tonnes of food grown off Earth per year",
+        "threshold": 1000,
+        "unit": "tonnes of food grown off Earth per year",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "c120d603ff8d1d829c76e91d13f74507b8604121f9cc851a54485845331cb49f"
+    },
+    {
+      "id": "OPP-01448",
+      "sourceDigest": "91492d199fe40a76d945cccb9d108535271454a9f50bf10baf6f2018bac4bdc1",
+      "kpi": {
+        "statement": "150,000,000 hectares of rice",
+        "threshold": 150000000,
+        "unit": "hectares of rice",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "090f8c4864506791175e39c14a5d1012cfe4ac12f1cd1001d03ae662af9c1c36"
+    },
+    {
+      "id": "OPP-01449",
+      "sourceDigest": "0bc6ebec9067309bb544804e5396f4e31f6acc6e490b0c417de50a8319fc2c99",
+      "kpi": {
+        "statement": "100,000,000 hectares planted",
+        "threshold": 100000000,
+        "unit": "hectares planted",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "10c4b031384a146c025d32174fa9b9817ab8987d91575df1d7450569b2c9cad8"
+    },
+    {
+      "id": "OPP-01682",
+      "sourceDigest": "e40625029971bb6454a92309a122550cc522ba2fd301fb24122c19ecc2a712b1",
+      "kpi": {
+        "statement": "1,500,000,000 people using off-grid toilets",
+        "threshold": 1500000000,
+        "unit": "people using off-grid toilets",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "e95288184618f03bcd1ab342b15b0af840aa0d2c182e0aee36f6025b545e54ca"
+    },
+    {
+      "id": "OPP-01683",
+      "sourceDigest": "2e341f1603ad3a0517d38edc87d884a2d756e4ab5db1a026783c2abbd7319b58",
+      "kpi": {
+        "statement": "2,000,000,000 people with handwashing access",
+        "threshold": 2000000000,
+        "unit": "people with handwashing access",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "d8abfb9e1671ca362da8986b6545a5b997e1108c095937b5ba8529c3d31c7f18"
+    },
+    {
+      "id": "OPP-01684",
+      "sourceDigest": "a83b47c8747e3f941b253bb01cc02b7b5c5320a772d969d334f01ce132df649c",
+      "kpi": {
+        "statement": "4,500,000,000 city residents with safe tap water",
+        "threshold": 4500000000,
+        "unit": "city residents with safe tap water",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "102f0f0659a948af9c283b3fa223ee9315ff70e03fc33a0980610da2ca27bf10"
+    },
+    {
+      "id": "OPP-01685",
+      "sourceDigest": "49d676a3000a7a09729a52287cbfd9764f45c7ab14e6b43f2767222e1774744a",
+      "kpi": {
+        "statement": "50,000,000 wells drilled by robots",
+        "threshold": 50000000,
+        "unit": "wells drilled by robots",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "776c47024b7ba2b384a443a94a2abd75aaeb1528aaf549d990c254cbcb9b16aa"
+    },
+    {
+      "id": "OPP-01686",
+      "sourceDigest": "5bcdc5707bbae2e1035d5f102a51438f466339ec2016d64398320622be35603c",
+      "kpi": {
+        "statement": "200,000,000 people served by air water",
+        "threshold": 200000000,
+        "unit": "people served by air water",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "f0ab212b97d10b427207304058d2ac88a01dc3e2cd0f12841ccde37062e0d49f"
+    },
+    {
+      "id": "OPP-01688",
+      "sourceDigest": "b8d2c28139e39c352d3d7f241d4125d2241e48176c8a33e353aebdb0f9a282d7",
+      "kpi": {
+        "statement": "5,000,000 handpumps monitored",
+        "threshold": 5000000,
+        "unit": "handpumps monitored",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "f7a440046d8d258070d9128e927c4eb3b71090935e30b741e60c2eb0042da6a5"
+    },
+    {
+      "id": "OPP-01689",
+      "sourceDigest": "1d281efeb385aad5a3e34b9a51de5ace3e84aa79b1a6d58f916e5b20db66950f",
+      "kpi": {
+        "statement": "2,000,000 facilities supplied",
+        "threshold": 2000000,
+        "unit": "facilities supplied",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "6b469a189ba34563070abae9601d307fb82cfd5c1d75cd1bee9105e2fc22ae9b"
+    },
+    {
+      "id": "OPP-01922",
+      "sourceDigest": "6a4b89ebb59c47ab311abe61dbc39a4a61df33ebc5ded0c459cd6b80082ea99d",
+      "kpi": {
+        "statement": "500,000,000 square metres of printed solar installed per year",
+        "threshold": 500000000,
+        "unit": "square metres of printed solar installed per year",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "662a36d87d2911a706f2417d0652dad0b3295685df8a6c88f678ad68eac2642e"
+    },
+    {
+      "id": "OPP-01923",
+      "sourceDigest": "63230e50e5c8504731df16da72aacbeb526e1ca35f14b3810294f63a61e09adb",
+      "kpi": {
+        "statement": "200,000,000 buildings with solar skins",
+        "threshold": 200000000,
+        "unit": "buildings with solar skins",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "6e2b6069f3cb1ba0af7e14748beba25e63397400dcdea952cb325523c5ede7bf"
+    },
+    {
+      "id": "OPP-01924",
+      "sourceDigest": "3975b5f823176e6536b843760a7e3643d4b6ad153588fc964d203efe50185638",
+      "kpi": {
+        "statement": "500,000 megawatts of floating wind capacity",
+        "threshold": 500000,
+        "unit": "megawatts of floating wind capacity",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "a3e631c6c8031c6d92746ab4a266ac2d52ac847d51bb35e190e464b40000f217"
+    },
+    {
+      "id": "OPP-01925",
+      "sourceDigest": "f7732619376b7fe63641931493f292962847e4dd6cebcb5b14bc37a7508d14c6",
+      "kpi": {
+        "statement": "100,000 megawatts of airborne wind capacity",
+        "threshold": 100000,
+        "unit": "megawatts of airborne wind capacity",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "6b0c8748f087796c4c824ad1460d0f5395e2260126eb9ca84858865d312e11b5"
+    },
+    {
+      "id": "OPP-01926",
+      "sourceDigest": "1057b99f7bce38eba7e38d3fa37a14b00cd4f6599f695aaf61bdfb055fbc4cbc",
+      "kpi": {
+        "statement": "300,000 megawatts of desert solar with no water cleaning",
+        "threshold": 300000,
+        "unit": "megawatts of desert solar with no water cleaning",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "085af3603b56fb61ccd8b444dcca783a461a828657a8709f414229845539f3c8"
+    },
+    {
+      "id": "OPP-01928",
+      "sourceDigest": "705572e612fa44ae4506bcba0dd97d33bb43f387de4714958f8d18ad44d743ef",
+      "kpi": {
+        "statement": "1,000,000 turbines upgraded with AI blade control",
+        "threshold": 1000000,
+        "unit": "turbines upgraded with AI blade control",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "904b175a4df07187555ee333db33f4c752edb115ed7a654fd7fcc8cffd442e59"
+    },
+    {
+      "id": "OPP-01929",
+      "sourceDigest": "4ff66bd6ec2ca6fb28f5287a2b6982e8edfb9b6e13a74100517dda72069d846c",
+      "kpi": {
+        "statement": "1,000,000 megawatts of solar installed by robots per year",
+        "threshold": 1000000,
+        "unit": "megawatts of solar installed by robots per year",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "8171890eceae0947cdad6b2e4f10b1115b2d2c1659813ebdd964f105cba33f57"
+    },
+    {
+      "id": "OPP-02162",
+      "sourceDigest": "4656b8e31a0c21dbcac9287278a411d0380f47693320c0174346bd39eb7a0161",
+      "kpi": {
+        "statement": "4,000,000,000 tonnes of carbon-absorbing cement per year",
+        "threshold": 4000000000,
+        "unit": "tonnes of carbon-absorbing cement per year",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "d143ecf86852bfb4cdc1daa5b2b5115c0773b5eca61b8e4dd04db75cbd87d9e4"
+    },
+    {
+      "id": "OPP-02163",
+      "sourceDigest": "350aa1a4fd864d12ef2e80ec373ebcce23d7150a613c0a9a711ea1e6c051bacf",
+      "kpi": {
+        "statement": "10,000 electric regional aircraft",
+        "threshold": 10000,
+        "unit": "electric regional aircraft",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "efabd198b740bc3e1cfa85dd01fb83270b24f1a4dce5ebce367f80cc26f12371"
+    },
+    {
+      "id": "OPP-02164",
+      "sourceDigest": "ff8fbe7fce6e5d6c1e7857049fa7b2b2a26017b9e9cd8ad5df7255050aefb412",
+      "kpi": {
+        "statement": "10,000,000 carbon-negative buildings",
+        "threshold": 10000000,
+        "unit": "carbon-negative buildings",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "13adcd10df702eb84d2f142b4d0b6544aa09355dddb6b78b89b437a826f34573"
+    },
+    {
+      "id": "OPP-02165",
+      "sourceDigest": "237803ae1d0bab9142328ba21978ff9db9402075d6b43b280422fee2a33ae000",
+      "kpi": {
+        "statement": "8,000,000,000 people with carbon wallets",
+        "threshold": 8000000000,
+        "unit": "people with carbon wallets",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "f017778e96656bbe7503121fd3aaafeb5415850509929ee09b63186a9c6c2bc7"
+    },
+    {
+      "id": "OPP-02166",
+      "sourceDigest": "8b8455e5e2cef94b88e9498e61b3f68a30fcecaea53469f9935009769200317e",
+      "kpi": {
+        "statement": "10,000 zero-emission ships",
+        "threshold": 10000,
+        "unit": "zero-emission ships",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "61455511ca011d6eb2e82233b5a3f02c8c1cb70269a20b1acb4647573855dd41"
+    },
+    {
+      "id": "OPP-02168",
+      "sourceDigest": "4ec499ffd93907d3886963c84ac67730eec32a4558b00516874d09ced5aae4d1",
+      "kpi": {
+        "statement": "150,000,000 hectares of low-methane rice",
+        "threshold": 150000000,
+        "unit": "hectares of low-methane rice",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "ce3c6992d16ad52cf1f8132825306e1a408c0e7cb9eaf856ce967aafa942ff4d"
+    },
+    {
+      "id": "OPP-02169",
+      "sourceDigest": "5b1bb3556087b5123215e9c592149829fc076470a08784bda8fe1395af4d7592",
+      "kpi": {
+        "statement": "500,000 kilometres of electrified road",
+        "threshold": 500000,
+        "unit": "kilometres of electrified road",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "b84f05f8f533cfd0e10528fef9cacedebcb57357c19288f31a86fa8cf86c1bd5"
+    },
+    {
+      "id": "OPP-02401",
+      "sourceDigest": "cca9fee876bc69f85c4944f608d6e4813981b8ddf27e46aeb6227ab6dafe1e3f",
+      "kpi": {
+        "statement": "44,000 species banked",
+        "threshold": 44000,
+        "unit": "species banked",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "52fabed87c1d04d6ceef23d548147a267f3058d4a607c7ed18b328347117c7e7"
+    },
+    {
+      "id": "OPP-02402",
+      "sourceDigest": "9c6f0337ff9414a85b65c4f3415db7f2796c657452bca9967abfcb91bd6f625b",
+      "kpi": {
+        "statement": "1,000 mammoths living in the wild",
+        "threshold": 1000,
+        "unit": "mammoths living in the wild",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "4b180a3a4c720867996e9fe96ab950262713bc796a011622eb9d0c56fa868961"
+    },
+    {
+      "id": "OPP-02641",
+      "sourceDigest": "6ae93f4719ccd07de23f6414281ab18c193effaf76479a9961d481420789902f",
+      "kpi": {
+        "statement": "100,000,000 tonnes of packaging replaced per year",
+        "threshold": 100000000,
+        "unit": "tonnes of packaging replaced per year",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "7144a8cdd51cd908fdbd2b06b4776454b0e2e3401f7a59e28be17f691a3a46c1"
+    },
+    {
+      "id": "OPP-02642",
+      "sourceDigest": "b31394c927ddf39f0becad1c646c5fe20a1fb6a1ca9d98bb8243377dc4c3c220",
+      "kpi": {
+        "statement": "100,000,000 tonnes of plastic digested per year",
+        "threshold": 100000000,
+        "unit": "tonnes of plastic digested per year",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "68c885c27ad7139417a019fc5f08ce8ba82a6c08594cf3a32001995a6598602e"
+    },
+    {
+      "id": "OPP-02881",
+      "sourceDigest": "aac8ee5826eac366d8295f851e94fa112d68a61ad0827bc0d63f752dbec6574d",
+      "kpi": {
+        "statement": "1 working superconductor",
+        "threshold": 1,
+        "unit": "working superconductor",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "18d4daedd9ab15d58c389903a511376ab5bc00ca47c87b1bcf05a8e17b727842"
+    },
+    {
+      "id": "OPP-03121",
+      "sourceDigest": "85c288d060f400e45a7e6db98f28a4f771eb261d3ac324a54a11636ab2af25ec",
+      "kpi": {
+        "statement": "1,000,000,000 home humanoid robots",
+        "threshold": 1000000000,
+        "unit": "home humanoid robots",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "c011dd16116a900b11085ba1aa6bb642c5369221ff5e92b7af6f9a9f3e2a1766"
+    },
+    {
+      "id": "OPP-03361",
+      "sourceDigest": "1c0d29a198c2085fc48221660d1a60f8e84c0f46c30185d0a0dc84870ef4a397",
+      "kpi": {
+        "statement": "9,000 cities with robotaxi service",
+        "threshold": 9000,
+        "unit": "cities with robotaxi service",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "692f7c11a592a0f7d6db0d8fab6b98d8dcf4c10ed5abc69c285aa3e4f4f209f5"
+    },
+    {
+      "id": "OPP-03601",
+      "sourceDigest": "e490aa2a66a98d1d725950ee308e977de8344a7b1db023e784bb7f679cf18b4e",
+      "kpi": {
+        "statement": "2,000,000,000 people newly housed",
+        "threshold": 2000000000,
+        "unit": "people newly housed",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "295f6ec731b0bf3123a1dd6b7e257d8c239c7822d18cbab18b964b539a28984b"
+    },
+    {
+      "id": "OPP-03602",
+      "sourceDigest": "982057e94e7dd3bef372fd32c6ff44aa618167d142b4e732b99089f478c34ef6",
+      "kpi": {
+        "statement": "500,000,000 households in fair rent-to-own homes",
+        "threshold": 500000000,
+        "unit": "households in fair rent-to-own homes",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "5edb003f37fdc6ff8776197941356e93e37c5f13129fe9181f3099927d211656"
+    },
+    {
+      "id": "OPP-03841",
+      "sourceDigest": "80af39759638d342045389f565a60c36890654b160d9923c048d444763834031",
+      "kpi": {
+        "statement": "700,000,000 people lifted above the poverty line",
+        "threshold": 700000000,
+        "unit": "people lifted above the poverty line",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "80a4522d8a581d3920fb7bdac2bc867c39e9cf2962e500cdbda31f639656e650"
+    },
+    {
+      "id": "OPP-03842",
+      "sourceDigest": "d566df40cbe2043d67082f718f9337cdc477ec87028045a2fe6d80a288cc073f",
+      "kpi": {
+        "statement": "2,000,000,000 people with safe water at home",
+        "threshold": 2000000000,
+        "unit": "people with safe water at home",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "6756452d2ef7a0e66a106d0cf781c90cc48bf65ed4c6cfb122a1b2a623ee9f6a"
+    },
+    {
+      "id": "OPP-04081",
+      "sourceDigest": "b83a3766a82737199851149bbe4db3e83633f5c7294fe9d899ac5740bf4228a8",
+      "kpi": {
+        "statement": "8,100,000,000 people with instant free payments",
+        "threshold": 8100000000,
+        "unit": "people with instant free payments",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "7bc3faa05482b18bf46aa24ede19d45f319ce86012a0568e634e712c5e15c648"
+    },
+    {
+      "id": "OPP-04321",
+      "sourceDigest": "b22ce5e568e525b5b7e81ec48173acbbf1ef6fed90326035d8928006daf5a798",
+      "kpi": {
+        "statement": "5,000,000,000 eligible voters with a neutral AI explainer",
+        "threshold": 5000000000,
+        "unit": "eligible voters with a neutral AI explainer",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "eeae67f80abc0f3cda652db512b609521cb68c4373752f70aa36d6d682e417c2"
+    },
+    {
+      "id": "OPP-04561",
+      "sourceDigest": "0c07adf887b24653b6a51b1dd9e95ef10961bb3f5468f4e7adb76b1dd7b5293b",
+      "kpi": {
+        "statement": "50 conflict-prone countries monitored",
+        "threshold": 50,
+        "unit": "conflict-prone countries monitored",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "57e089e3588c8856596c89c0ad7a2716b0764812f66cb890b93ddaa7189135fc"
+    },
+    {
+      "id": "OPP-04801",
+      "sourceDigest": "e436ebbe4d1a5809e9804e835f2c45daa50d6f3f0511525fcc708eb3dc94a66e",
+      "kpi": {
+        "statement": "150,000,000 toddlers with an AI storytelling companion",
+        "threshold": 150000000,
+        "unit": "toddlers with an AI storytelling companion",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "37d2c58c95ea597676465fb1e2add0b0f06fb707aaa4d64bbec925be43963984"
+    },
+    {
+      "id": "OPP-04802",
+      "sourceDigest": "55aa8d5012f8aca4f94c7714ecd0465c355c25a53dd25e48c7eba733f7138a1b",
+      "kpi": {
+        "statement": "500,000 villages with a quality pre-school",
+        "threshold": 500000,
+        "unit": "villages with a quality pre-school",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "ade097fa3f6c956e45c8825bf3522e289c8fe07819893088dedb2ce78351a1b5"
+    },
+    {
+      "id": "OPP-05041",
+      "sourceDigest": "9e412460ba5585d8b2000e495df647cf4a9062f2cd6f9a5c24ac8c6d11f73f56",
+      "kpi": {
+        "statement": "1 Nobel-worthy discoveries made autonomously",
+        "threshold": 1,
+        "unit": "Nobel-worthy discoveries made autonomously",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "d6fb86a95bf621c931b1b35934dc5251f300cbd30a6eabefa84ad31f8f3c8d20"
+    },
+    {
+      "id": "OPP-05281",
+      "sourceDigest": "f966a2c8fd9713f635ea00694dfde01f1ba0297509cab39b37b9f06944b93b18",
+      "kpi": {
+        "statement": "1 accepted quantum gravity theories",
+        "threshold": 1,
+        "unit": "accepted quantum gravity theories",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "2ec91b25bd576768b08bc04ae6466f7bf685af92b2728043e17e79856ac1e81c"
+    },
+    {
+      "id": "OPP-05521",
+      "sourceDigest": "acc8f5fcc53a93f9e35a4e265b041e799e7b99fd5ca5c7e1734b4460009c1401",
+      "kpi": {
+        "statement": "1,000,000,000 molecules designed",
+        "threshold": 1000000000,
+        "unit": "molecules designed",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "04d29b07a5b6dc6564d2da2ddeafc8c8711d1b125db16b7f9dc5d662a7a72593"
+    },
+    {
+      "id": "OPP-05761",
+      "sourceDigest": "29fe108c45e4a2ca9cfb1480067c4cebac51302fc25c43874edd82f5027632f2",
+      "kpi": {
+        "statement": "2,000,000 species with a reference genome",
+        "threshold": 2000000,
+        "unit": "species with a reference genome",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "a886a85a73b6437f0375cb0722c0ed0f2c3be90bf544375ce717bc3c583a6984"
+    },
+    {
+      "id": "OPP-06001",
+      "sourceDigest": "c96de8a1ba97756c1ac8f4accb386a67d86dda262df27f90499e4da55f272870",
+      "kpi": {
+        "statement": "1,000,000 logical-grade qubits in one machine",
+        "threshold": 1000000,
+        "unit": "logical-grade qubits in one machine",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "c818188fade4679018931ff2d8b46db4b326af8a403b830ee53c633aebde9abc"
+    },
+    {
+      "id": "OPP-06241",
+      "sourceDigest": "2a2c036a6598a78656e94e12390cb6db9b3101c347be68623aad09a28a4b9e79",
+      "kpi": {
+        "statement": "1 working space elevators",
+        "threshold": 1,
+        "unit": "working space elevators",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "be6d8b4bb2c3a8704507223ea5ff75556746449dbd4a0fecaa33ec50f6dcc228"
+    },
+    {
+      "id": "OPP-06481",
+      "sourceDigest": "10662c5f4b46007ba2adae10b190cb062f019ec20323f3c78eebcabebdb153c0",
+      "kpi": {
+        "statement": "1 reliable earthquake forecast systems",
+        "threshold": 1,
+        "unit": "reliable earthquake forecast systems",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "7a3b6a542e4b68c1c44b9e44a78a1c424044ed9f104daa3fe5ee1331045ddd28"
+    },
+    {
+      "id": "OPP-06721",
+      "sourceDigest": "9383e9b1c82cb214ee05c2829e205da68e393300b28c7182c6c5744a0b9aebc7",
+      "kpi": {
+        "statement": "1,000,000,000 people able to generate buildable home plans",
+        "threshold": 1000000000,
+        "unit": "people able to generate buildable home plans",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "2e2be279bcbf25ad36544a61d58c17aba717ffae4915e189ff0a10502d36bc81"
+    },
+    {
+      "id": "OPP-06722",
+      "sourceDigest": "bbbbbb03a290f55c6ce823ce70d19d9324fb408508c6daa214e715eca758579b",
+      "kpi": {
+        "statement": "1,000,000 buildings grown from living materials",
+        "threshold": 1000000,
+        "unit": "buildings grown from living materials",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "fd3f5a4014bcffc1a5654050051c44f92e485b7d797f1bbd774cca4ef190cf4b"
+    },
+    {
+      "id": "OPP-06961",
+      "sourceDigest": "bb2653b17efa8b7b535a6aa0750b63a63beaab19cb6287006d69f4dc5f232459",
+      "kpi": {
+        "statement": "8,000,000,000 people with real-time translation",
+        "threshold": 8000000000,
+        "unit": "people with real-time translation",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "f6e83a501d6bef9a8b72168ffe2d497c5a6c8a2a29c6a13b9a3c8039d58fe86f"
+    },
+    {
+      "id": "OPP-06962",
+      "sourceDigest": "5f228f53f17bad10f6eeed3d9088b2b4c0e2eb16ee6dcf04c437f2ecf2574f4a",
+      "kpi": {
+        "statement": "2,000,000,000 wearers of live-subtitle glasses",
+        "threshold": 2000000000,
+        "unit": "wearers of live-subtitle glasses",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "a7e5993038b87404204028ac9a6651c2e41aa32b55ca31162af3556dea7aac0c"
+    },
+    {
+      "id": "OPP-07201",
+      "sourceDigest": "8bd927a5bae7b58d398b367db225ed5900747311be3a2a953f318f9d7f163d22",
+      "kpi": {
+        "statement": "130,000,000 new parents with an AI parenting guide",
+        "threshold": 130000000,
+        "unit": "new parents with an AI parenting guide",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "b769ab1c2a7efcd68dc30d5a78f9f6c631b046fd536e948c3c9a4de5c259c925"
+    },
+    {
+      "id": "OPP-07441",
+      "sourceDigest": "e310a720bfc62800f147e9ef8bd05ed889484d38a9657f3749580fe2bc14e6c6",
+      "kpi": {
+        "statement": "1,000,000,000 workers with career navigation",
+        "threshold": 1000000000,
+        "unit": "workers with career navigation",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "24ff920082013a4ba7d80a538bee499d43587e60c4f092bda41b706e2a636998"
+    },
+    {
+      "id": "OPP-07681",
+      "sourceDigest": "bdca06a4f0cefbd1147c0de9d78c035da43a6b68fd749bfdb46503628882260b",
+      "kpi": {
+        "statement": "100,000,000 organisations with self-patching networks",
+        "threshold": 100000000,
+        "unit": "organisations with self-patching networks",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "c0186ee4c3938c6c247e68ceffd5c9233c5400864e8e83f1a32f37081d40eda5"
+    },
+    {
+      "id": "OPP-07921",
+      "sourceDigest": "a13a2008aa4661519869a7cbc84ab9c45023d3ceae2f866aa379a2844c711e0b",
+      "kpi": {
+        "statement": "500,000,000 households with a home robot",
+        "threshold": 500000000,
+        "unit": "households with a home robot",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "5946b5e10ffa31f5562d89a96c819e941a9a27e01d98dbde4c640bdc37dab867"
+    },
+    {
+      "id": "OPP-08161",
+      "sourceDigest": "79c8d370cd33f795fad7e11c0b0f0f6237bd30784e1090fd124fcafadf6b8d60",
+      "kpi": {
+        "statement": "1,000,000,000 people with a secure legal identity",
+        "threshold": 1000000000,
+        "unit": "people with a secure legal identity",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "a8040f64bb7e6fe58f8b9860581c8afd782d4165220679b3e6c2bab9077a7421"
+    },
+    {
+      "id": "OPP-08401",
+      "sourceDigest": "09de8252cdf04445bf1ee1363e71a10dc29faade8313e3b9f01cdbd529c3edee",
+      "kpi": {
+        "statement": "1 frontier models fully interpreted",
+        "threshold": 1,
+        "unit": "frontier models fully interpreted",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "ce5707354bbc2f6b616cc275bc7184d83368d51cbb5bd3ae800e28787c1d8110"
+    },
+    {
+      "id": "OPP-08641",
+      "sourceDigest": "3862c63133db7628531389b83f5310bf9a8298df1d014434be2f4c17903412b1",
+      "kpi": {
+        "statement": "1,000,000,000 people with a habit coach",
+        "threshold": 1000000000,
+        "unit": "people with a habit coach",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "fa96e487ea0cc9e1cf70036d1d67728460bc6fdcfb9fb159b5ed6c0c8f55aa95"
+    },
+    {
+      "id": "OPP-08642",
+      "sourceDigest": "0a54ad321be69a43f455f64435b0e66adb21015a4cb46a83edf057143e770fee",
+      "kpi": {
+        "statement": "1 complete decision model built",
+        "threshold": 1,
+        "unit": "complete decision model built",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "da178d8691d365abb70e64be659b188afdbcce73f8034aeb09683b6cea6cb838"
+    },
+    {
+      "id": "OPP-08881",
+      "sourceDigest": "22337ea6a5088ee2e6a0e19a84039267df94ae2eb2e175f696c4ee3ea0561f7d",
+      "kpi": {
+        "statement": "1,000 bridges built",
+        "threshold": 1000,
+        "unit": "bridges built",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "3170b709b12fad57ea79a9e56505b2bd021a2e7730c8edf5a93069db17f33a3d"
+    },
+    {
+      "id": "OPP-09121",
+      "sourceDigest": "72d489d5b41f2b9ad21e0fe99de43615216709d41eb4b5e904033a083d9163c7",
+      "kpi": {
+        "statement": "2,000,000,000 viewers with a personal AI commentator",
+        "threshold": 2000000000,
+        "unit": "viewers with a personal AI commentator",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "c895a00b34ecc993c3534a67a5f98e6cb773e98b32f6003f462a936882af125a"
+    },
+    {
+      "id": "OPP-09122",
+      "sourceDigest": "090cff5c0a2b0e28c9143a9b28b0c9923ce35b8bff53591d6365e28606cfc120",
+      "kpi": {
+        "statement": "1,000,000,000 fans using free-viewpoint replay",
+        "threshold": 1000000000,
+        "unit": "fans using free-viewpoint replay",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "b3b96f9add6699949537902cf9076e9254d85d51535ada4aa49c8c4b2868004c"
+    },
+    {
+      "id": "OPP-09361",
+      "sourceDigest": "cd2282e149ff1fb313f36e40e1e03cfe1e7f95aafe5c9ef9ba1ad2cef5ad1064",
+      "kpi": {
+        "statement": "1,000,000,000 trips planned with crowd-spreading",
+        "threshold": 1000000000,
+        "unit": "trips planned with crowd-spreading",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "48a32c5996a63fadeccb30b974fa559180b82c1fc32ddcd5c7120d9df0771f49"
+    },
+    {
+      "id": "OPP-09601",
+      "sourceDigest": "5f28ac0c9775a9f5d0310f242f147b1ead77eacb017fba3fd2de9d9ef1c1c60e",
+      "kpi": {
+        "statement": "2,000,000,000 believers with access",
+        "threshold": 2000000000,
+        "unit": "believers with access",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "32524c318ada18d7dfc5bf1af0ada5bc05fb0d4ee37513ecdcecf8119cc522ee"
+    },
+    {
+      "id": "OPP-09841",
+      "sourceDigest": "8c095f72bfd83625c15b03688ceca201f5c419353f8619ac8b7bd51e09acbfd6",
+      "kpi": {
+        "statement": "300,000,000 pets monitored",
+        "threshold": 300000000,
+        "unit": "pets monitored",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "9c8ebdedba54e04d1be26325c21053af7a8732456676cc1b3d32ec9babd6c6d7"
+    },
+    {
+      "id": "OPP-10081",
+      "sourceDigest": "6d0c89f3bf90ed9bdef651fb1b752011e9cb1246cec668849d5c6c010746a4ab",
+      "kpi": {
+        "statement": "1,000,000,000 donors with an AI giving advisor",
+        "threshold": 1000000000,
+        "unit": "donors with an AI giving advisor",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "6f24f079fe0011e58c01431a33f8308c7a7a7eb26146f637a0e85ed37d9f7afb"
+    },
+    {
+      "id": "OPP-10082",
+      "sourceDigest": "b73f460010bb7e1080894d96f2497812457db2489905e4bfa7a372f5f383441d",
+      "kpi": {
+        "statement": "500,000,000 donations traced to outcomes",
+        "threshold": 500000000,
+        "unit": "donations traced to outcomes",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "14d0ae089c7e2139f225e25e3786550388a10ea3a95b99bc1f87f2c0bdfb5260"
+    },
+    {
+      "id": "OPP-10321",
+      "sourceDigest": "548df2a19db5a486f09114a93db86fe9c116c4b20dcfb812813e0d72cf505228",
+      "kpi": {
+        "statement": "300,000,000 older people with robotic care",
+        "threshold": 300000000,
+        "unit": "older people with robotic care",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "0bd1b9ea3c3fae5261013c917aa4df162a93e4928972d3482ff5a7d5e88a1b4a"
+    },
+    {
+      "id": "OPP-10561",
+      "sourceDigest": "a760addc1df6bb6f008810feaeded1b55ff16d3ccc37001a3c2162d9b750c4f7",
+      "kpi": {
+        "statement": "195 countries covered by 24-hour pathogen early warning",
+        "threshold": 195,
+        "unit": "countries covered by 24-hour pathogen early warning",
+        "comparator": null,
+        "qualification": "Ambitious source-proposal target; not a measured result."
+      },
+      "modelPlanDigest": "47aea0f5753bba00b11542fe3af0cd430df2e4baf2e4175297251d010d080670"
+    }
+  ]
+}

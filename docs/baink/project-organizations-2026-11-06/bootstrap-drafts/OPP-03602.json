@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-03602",
+  "native_project": "P-OPP-03602",
+  "source_digest": "982057e94e7dd3bef372fd32c6ff44aa618167d142b4e732b99089f478c34ef6",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Offer a rent-to-own home with a payment never above a quarter of income",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "b0521d15b1496b4f9ad6e4dddfdd870408730ecffba163e1a2c9f778d02100dd"
+  },
+  "drafted_at": "2026-11-06T00:24:06.170Z",
+  "queries": [
+    "offer rent-to-own home payment never quarter",
+    "offer rent-to-own home housing construction cities"
+  ],
+  "searches": [
+    {
+      "query": "offer rent-to-own home payment never quarter",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:23:58.065Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=offer%20rent-to-own%20home%20payment%20never%20quarter&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "offer rent-to-own home payment never quarter",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:23:58.681Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Arent-to-own%20AND%20all%3Ahome%20AND%20all%3Apayment%20AND%20all%3Anever%20AND%20all%3Aquarter&start=0&max_results=10; sha256=4026fa36881748905993a7e16733bf5a61aee0fb03e97af98b2af0976941a4d1; total=0; shown=0/0"
+    },
+    {
+      "query": "offer rent-to-own home payment never quarter",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:23:59.604Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=offer%20rent-to-own%20home%20payment%20never%20quarter&rows=10&select=DOI,title; sha256=817997af2362488f13112b2f4e046bbc24842c807ec60c6d45a787bb3cb134ee; total=532704; shown=5/10; top: 10.2139/ssrn.7672478 \"Behavior-Contingent Repricing of Rent-to-Own Housing Contracts: Learning Idiosyncratic Risk from Payment Conduct\" | 10.2139/ssrn.7672941 \"Behavior-contingent Repricing of Rent-to-Own Housing Contracts: Learning Idiosyncratic Risk from Payment Conduct\" | 10.2139/ssrn.4793165 \"Managing Payment Flexibility in Rent-to-Own Contracts for Off-Grid Energy Products\" | 10.15396/eres2008_205 \"RENT, OWN OR REVERSE YOUR HOME?\" | 10.2139/ssrn.6901339 \"Rent-to-Own Housing and the Home Ownership and Equity Protection Act Blind Spot: Modernizing Federal Consumer Finance Protections for Selle…\""
+    },
+    {
+      "query": "offer rent-to-own home housing construction cities",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:24:04.620Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=offer%20rent-to-own%20home%20housing%20construction%20cities&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "offer rent-to-own home housing construction cities",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:24:05.133Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Arent-to-own%20AND%20all%3Ahome%20AND%20all%3Ahousing%20AND%20all%3Aconstruction%20AND%20all%3Acities&start=0&max_results=10; sha256=c2f86c7ceeae11033ea104f7ef6af464ee5b8b83ca5c40d6aa0c765927e75f5b; total=0; shown=0/0"
+    },
+    {
+      "query": "offer rent-to-own home housing construction cities",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:24:06.169Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=offer%20rent-to-own%20home%20housing%20construction%20cities&rows=10&select=DOI,title; sha256=291853c788f0763e0a34243d41ee7ea69b54670efd9325510ad45e5f3dc4cd90; total=1509453; shown=5/10; top: 10.1016/j.cities.2023.104272 \"Is opposing new housing construction egalitarian? Rent as power\" | 10.2139/ssrn.6901339 \"Rent-to-Own Housing and the Home Ownership and Equity Protection Act Blind Spot: Modernizing Federal Consumer Finance Protections for Selle…\" | 10.32347/2707-501x.2022.491.131-147 \"Methodology of imputed rent: rethinking of the own housing costs\" | 10.2139/ssrn.2576485 \"Rent-to-Own Housing Contracts Under Financial Constraints\" | 10.2139/ssrn.2312174 \"Rent-to-Own Housing Contracts: Features, Valuation and Heuristics\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "offer rent-to-own home payment never quarter",
+      "url": "https://api.github.com/search/repositories?q=offer%20rent-to-own%20home%20payment%20never%20quarter&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=offer%20rent-to-own%20home%20payment%20never%20quarter&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:23:58.065Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "offer rent-to-own home payment never quarter",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Arent-to-own%20AND%20all%3Ahome%20AND%20all%3Apayment%20AND%20all%3Anever%20AND%20all%3Aquarter&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Arent-to-own%20AND%20all%3Ahome%20AND%20all%3Apayment%20AND%20all%3Anever%20AND%20all%3Aquarter&start=0&max_results=10",
+      "sha256": "4026fa36881748905993a7e16733bf5a61aee0fb03e97af98b2af0976941a4d1",
+      "bytes": 858,
+      "observedAt": "2026-11-06T00:23:58.681Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "offer rent-to-own home payment never quarter",
+      "url": "https://api.crossref.org/works?query=offer%20rent-to-own%20home%20payment%20never%20quarter&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=offer%20rent-to-own%20home%20payment%20never%20quarter&rows=10&select=DOI,title",
+      "sha256": "817997af2362488f13112b2f4e046bbc24842c807ec60c6d45a787bb3cb134ee",
+      "bytes": 1693,
+      "observedAt": "2026-11-06T00:23:59.604Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "offer rent-to-own home housing construction cities",
+      "url": "https://api.github.com/search/repositories?q=offer%20rent-to-own%20home%20housing%20construction%20cities&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=offer%20rent-to-own%20home%20housing%20construction%20cities&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:24:04.620Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "offer rent-to-own home housing construction cities",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Arent-to-own%20AND%20all%3Ahome%20AND%20all%3Ahousing%20AND%20all%3Aconstruction%20AND%20all%3Acities&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Aoffer%20AND%20all%3Arent-to-own%20AND%20all%3Ahome%20AND%20all%3Ahousing%20AND%20all%3Aconstruction%20AND%20all%3Acities&start=0&max_results=10",
+      "sha256": "c2f86c7ceeae11033ea104f7ef6af464ee5b8b83ca5c40d6aa0c765927e75f5b",
+      "bytes": 870,
+      "observedAt": "2026-11-06T00:24:05.133Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "offer rent-to-own home housing construction cities",
+      "url": "https://api.crossref.org/works?query=offer%20rent-to-own%20home%20housing%20construction%20cities&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=offer%20rent-to-own%20home%20housing%20construction%20cities&rows=10&select=DOI,title",
+      "sha256": "291853c788f0763e0a34243d41ee7ea69b54670efd9325510ad45e5f3dc4cd90",
+      "bytes": 1385,
+      "observedAt": "2026-11-06T00:24:06.169Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "d0ccfd7d4283a1e8a38f0197cc30ce07aa2d12a286dd1a6124db9ed7760892e7",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

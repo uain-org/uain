@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-09361",
+  "native_project": "P-OPP-09361",
+  "source_digest": "cd2282e149ff1fb313f36e40e1e03cfe1e7f95aafe5c9ef9ba1ad2cef5ad1064",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build a trip planner that spreads visitors across all seasons and places to protect hotspots",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "12fc59678c28a9a78ef7e2ccf7a267483c2a9da6bb4a472c3285c97571b29fdf"
+  },
+  "drafted_at": "2026-11-06T00:30:41.938Z",
+  "queries": [
+    "trip planner spreads visitors seasons places",
+    "trip planner spreads tourism hospitality retail"
+  ],
+  "searches": [
+    {
+      "query": "trip planner spreads visitors seasons places",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:30:31.801Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=trip%20planner%20spreads%20visitors%20seasons%20places&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "trip planner spreads visitors seasons places",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:30:32.356Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Atrip%20AND%20all%3Aplanner%20AND%20all%3Aspreads%20AND%20all%3Avisitors%20AND%20all%3Aseasons%20AND%20all%3Aplaces&start=0&max_results=10; sha256=3369702688fe1bb0110a40e74a1eda01d68201708ff12c800d21927ab1931d4c; total=0; shown=0/0"
+    },
+    {
+      "query": "trip planner spreads visitors seasons places",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:30:33.179Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=trip%20planner%20spreads%20visitors%20seasons%20places&rows=10&select=DOI,title; sha256=65f23cf1427c1e7c43293f5c2ee248328b710e1c3973050f0b903b1d1f2df8ad; total=123646; shown=5/10; top: 10.1007/springerreference_57952 \"Trip Planner\" | 10.55248/gengpi.6.0825.3145 \"AI Trip Planner\" | 10.1080/07293682.2009.9995303 \"Healthy spaces and places: A national guide to designing places for active living\" | 10.2139/ssrn.6594378 \"AI-Based Intelligent Trip Planner Using Large Language Models\" | 10.1007/978-0-387-30162-4_433 \"Trip Planner\""
+    },
+    {
+      "query": "trip planner spreads tourism hospitality retail",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:30:38.251Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=trip%20planner%20spreads%20tourism%20hospitality%20retail&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "trip planner spreads tourism hospitality retail",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:30:38.865Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Atrip%20AND%20all%3Aplanner%20AND%20all%3Aspreads%20AND%20all%3Atourism%20AND%20all%3Ahospitality%20AND%20all%3Aretail&start=0&max_results=10; sha256=aae094bc29117d95a35136a9a292f51932f0d3ddd953068df4305586617c252f; total=0; shown=0/0"
+    },
+    {
+      "query": "trip planner spreads tourism hospitality retail",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:30:41.938Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=trip%20planner%20spreads%20tourism%20hospitality%20retail&rows=10&select=DOI,title; sha256=5e3dd1532680a8ce2993e05eb1c4600a78e99f103e2ed17c1154892caf986984; total=442529; shown=5/10; top: 10.3390/tourhosp5020021 \"The Great Canadian (Electric) Road Trip: Evaluating EV Use in National Park Tourism\" | 10.1007/springerreference_57952 \"Trip Planner\" | 10.3390/tourhosp7090301 \"Expression of Concern: Zakaria et al. (2021). Expenditure Patterns of Foreign Resident Visitors and Foreign Tourist Visitors at a Day-Trip…\" | 10.1109/ism.2016.0044 \"E-Tourism: Mobile Dynamic Trip Planner\" | 10.3390/tourhosp7010020 \"ChatGPT as a Real-Time Travel Companion: During-Trip Support and Tourist Satisfaction\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "trip planner spreads visitors seasons places",
+      "url": "https://api.github.com/search/repositories?q=trip%20planner%20spreads%20visitors%20seasons%20places&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=trip%20planner%20spreads%20visitors%20seasons%20places&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:30:31.801Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "trip planner spreads visitors seasons places",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Atrip%20AND%20all%3Aplanner%20AND%20all%3Aspreads%20AND%20all%3Avisitors%20AND%20all%3Aseasons%20AND%20all%3Aplaces&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Atrip%20AND%20all%3Aplanner%20AND%20all%3Aspreads%20AND%20all%3Avisitors%20AND%20all%3Aseasons%20AND%20all%3Aplaces&start=0&max_results=10",
+      "sha256": "3369702688fe1bb0110a40e74a1eda01d68201708ff12c800d21927ab1931d4c",
+      "bytes": 858,
+      "observedAt": "2026-11-06T00:30:32.356Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "trip planner spreads visitors seasons places",
+      "url": "https://api.crossref.org/works?query=trip%20planner%20spreads%20visitors%20seasons%20places&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=trip%20planner%20spreads%20visitors%20seasons%20places&rows=10&select=DOI,title",
+      "sha256": "65f23cf1427c1e7c43293f5c2ee248328b710e1c3973050f0b903b1d1f2df8ad",
+      "bytes": 1156,
+      "observedAt": "2026-11-06T00:30:33.179Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "trip planner spreads tourism hospitality retail",
+      "url": "https://api.github.com/search/repositories?q=trip%20planner%20spreads%20tourism%20hospitality%20retail&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=trip%20planner%20spreads%20tourism%20hospitality%20retail&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:30:38.251Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "trip planner spreads tourism hospitality retail",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Atrip%20AND%20all%3Aplanner%20AND%20all%3Aspreads%20AND%20all%3Atourism%20AND%20all%3Ahospitality%20AND%20all%3Aretail&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Atrip%20AND%20all%3Aplanner%20AND%20all%3Aspreads%20AND%20all%3Atourism%20AND%20all%3Ahospitality%20AND%20all%3Aretail&start=0&max_results=10",
+      "sha256": "aae094bc29117d95a35136a9a292f51932f0d3ddd953068df4305586617c252f",
+      "bytes": 864,
+      "observedAt": "2026-11-06T00:30:38.865Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "trip planner spreads tourism hospitality retail",
+      "url": "https://api.crossref.org/works?query=trip%20planner%20spreads%20tourism%20hospitality%20retail&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=trip%20planner%20spreads%20tourism%20hospitality%20retail&rows=10&select=DOI,title",
+      "sha256": "5e3dd1532680a8ce2993e05eb1c4600a78e99f103e2ed17c1154892caf986984",
+      "bytes": 1660,
+      "observedAt": "2026-11-06T00:30:41.938Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "bf0b793c45ebdfa6ce08a04b0ba734a6d4c0b9f8c92febb8520e521574f4e3f9",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

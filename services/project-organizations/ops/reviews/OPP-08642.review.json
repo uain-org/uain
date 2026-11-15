@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-08642",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "neutral",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No validated model explains how every human decision is made, so the Main KPI of 1 complete decision model is unmet. The strongest predictive candidate, Centaur (Nature 2025), was fine-tuned on Psych-101, about 10 million choices from 60,000 people in 160 experiments, and predicts held-out behaviour well (https://pubmed.ncbi.nlm.nih.gov/40604288/); critics found it keeps choosing original-dataset answers under altered instructions, consistent with overfitting rather than a model of cognition (https://www.eurekalert.org/news-releases/1116367, https://arxiv.org/pdf/2510.03311). Classic theories replicate only as tendencies: prospect theory patterns held in 19 countries with smaller effects and heterogeneity (https://research.vu.nl/en/publications/replicating-patterns-of-prospect-theory-for-decision-under-risk/). Neural mapping covers one mouse task: the International Brain Laboratory recorded 620,000 neurons across nearly the whole brain (https://pni.princeton.edu/news/2025/first-brain-wide-map-decision-making-charted-mice). Honest limit: complete is not testable as stated, data are mostly from Western samples, and Centaur and Psych-101 are open baselines, so retraining them is known work."
+  },
+  "additionalSearches": [
+    {
+      "query": "Centaur foundation model human cognition Psych-101 predicts human decisions Nature 2025",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/40604288/",
+      "observedAt": "2026-11-06T00:44:48Z",
+      "finding": "Centaur (Llama 3.1 70B on Psych-101: 160 experiments, 60,000+ people, 10M+ choices) predicts held-out behaviour better than cognitive models; authors call for external validation."
+    },
+    {
+      "query": "unified theory of human decision making no consensus prospect theory replication choices13k large-scale dataset",
+      "source": "https://research.vu.nl/en/publications/replicating-patterns-of-prospect-theory-for-decision-under-risk/",
+      "observedAt": "2026-11-06T00:44:54Z",
+      "finding": "Prospect theory replicated in 4,098 people across 19 countries with smaller effects and notable heterogeneity; tendencies, not a complete model."
+    },
+    {
+      "query": "Centaur criticism does not explain cognition out of distribution failures 2025",
+      "source": "https://www.eurekalert.org/news-releases/1116367",
+      "observedAt": "2026-11-06T00:45:00Z",
+      "finding": "Zhejiang critique: under misleading or removed instructions Centaur still chose original answers, suggesting overfitting; other critiques say prediction is not explanation."
+    },
+    {
+      "query": "neural basis of decision making complete model brain international brain laboratory brain-wide map decision 2025",
+      "source": "https://pni.princeton.edu/news/2025/first-brain-wide-map-decision-making-charted-mice",
+      "observedAt": "2026-11-06T00:45:06Z",
+      "finding": "IBL (Nature 2025) mapped 620,000 neurons in 139 mice for one visual decision task; decision signals are brain-wide; an integrated model is still future work."
+    }
+  ]
+}

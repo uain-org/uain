@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-07921",
+  "native_project": "P-OPP-07921",
+  "source_digest": "a13a2008aa4661519869a7cbc84ab9c45023d3ceae2f866aa379a2844c711e0b",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build a home robot that cooks, cleans and tidies like a human helper",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "bfd079747353bb94891b992c1097fb57a2d008e02b244a52f0d6bcb215859ad6"
+  },
+  "drafted_at": "2026-11-06T00:28:52.020Z",
+  "queries": [
+    "home robot cooks cleans tidies like",
+    "home robot cooks daily life consumer"
+  ],
+  "searches": [
+    {
+      "query": "home robot cooks cleans tidies like",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:28:44.148Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=home%20robot%20cooks%20cleans%20tidies%20like&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "home robot cooks cleans tidies like",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:28:44.790Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Ahome%20AND%20all%3Arobot%20AND%20all%3Acooks%20AND%20all%3Acleans%20AND%20all%3Atidies%20AND%20all%3Alike&start=0&max_results=10; sha256=c4813eba1da189e0998d8e137715f3d2cd3373da2ea8fd20d709dc8080f72a2e; total=0; shown=0/0"
+    },
+    {
+      "query": "home robot cooks cleans tidies like",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:28:45.640Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=home%20robot%20cooks%20cleans%20tidies%20like&rows=10&select=DOI,title; sha256=ee1f1164eb0aa16899d5791a8de81d0d880ac725b37093ba2a3ad1ecfee3d9ea; total=1170492; shown=5/10; top: 10.1108/ir.2009.04936aad.001 \"Robot cleans gutters of debris\" | 10.5040/9781474252584.ch-007 \"The Traditional Cook: “Like My Mom Used to Make”\" | 10.1108/ir.1998.04925aaf.009 \"Robotic arm cleans nuclear waste\" | 10.1108/01439910510614637 \"Robot cleans glass roof of Louvre pyramid\" | 10.5006/mp2009_48_1-17 \"Autonomous robot cleans ship hulls and inspects for corrosion\""
+    },
+    {
+      "query": "home robot cooks daily life consumer",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:28:50.602Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=home%20robot%20cooks%20daily%20life%20consumer&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "home robot cooks daily life consumer",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:28:51.227Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Ahome%20AND%20all%3Arobot%20AND%20all%3Acooks%20AND%20all%3Adaily%20AND%20all%3Alife%20AND%20all%3Aconsumer&start=0&max_results=10; sha256=d450a68787fd69e6640b04268bcaf280fb8db01ce055dc7eb501997b5e49af41; total=0; shown=0/0"
+    },
+    {
+      "query": "home robot cooks daily life consumer",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:28:52.020Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=home%20robot%20cooks%20daily%20life%20consumer&rows=10&select=DOI,title; sha256=01ab8cc25b0901bf70fbc2c3c9f0a1207bebff99d04266fe647dbae6f3f689b1; total=2682127; shown=5/10; top: 10.2307/j.ctv5jxnf0.7 \"From Grandma’s Recipe Box:\" | 10.1299/jsmermd.2005.189_1 \"2P1-N-052 Robust Mobile Robot Map Building Using Sonar and Vision : Evolving the navigation abilities of the ApriAlpha home robot(Home Robo…\" | 10.59962/9780774850094-008 \"6 “I Don’t Have a Home, I Live in My Office”: Transformations in the Spaces of Daily Life\" | 10.4135/978144627305014557465 \"Home Movies: Capturing Children's Daily Life\" | 10.5040/9798400637445.ch-003 \"Family, Home, and Leisure\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "home robot cooks cleans tidies like",
+      "url": "https://api.github.com/search/repositories?q=home%20robot%20cooks%20cleans%20tidies%20like&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=home%20robot%20cooks%20cleans%20tidies%20like&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:28:44.148Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "home robot cooks cleans tidies like",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Ahome%20AND%20all%3Arobot%20AND%20all%3Acooks%20AND%20all%3Acleans%20AND%20all%3Atidies%20AND%20all%3Alike&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Ahome%20AND%20all%3Arobot%20AND%20all%3Acooks%20AND%20all%3Acleans%20AND%20all%3Atidies%20AND%20all%3Alike&start=0&max_results=10",
+      "sha256": "c4813eba1da189e0998d8e137715f3d2cd3373da2ea8fd20d709dc8080f72a2e",
+      "bytes": 840,
+      "observedAt": "2026-11-06T00:28:44.790Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "home robot cooks cleans tidies like",
+      "url": "https://api.crossref.org/works?query=home%20robot%20cooks%20cleans%20tidies%20like&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=home%20robot%20cooks%20cleans%20tidies%20like&rows=10&select=DOI,title",
+      "sha256": "ee1f1164eb0aa16899d5791a8de81d0d880ac725b37093ba2a3ad1ecfee3d9ea",
+      "bytes": 1104,
+      "observedAt": "2026-11-06T00:28:45.640Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "home robot cooks daily life consumer",
+      "url": "https://api.github.com/search/repositories?q=home%20robot%20cooks%20daily%20life%20consumer&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=home%20robot%20cooks%20daily%20life%20consumer&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:28:50.602Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "home robot cooks daily life consumer",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Ahome%20AND%20all%3Arobot%20AND%20all%3Acooks%20AND%20all%3Adaily%20AND%20all%3Alife%20AND%20all%3Aconsumer&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Ahome%20AND%20all%3Arobot%20AND%20all%3Acooks%20AND%20all%3Adaily%20AND%20all%3Alife%20AND%20all%3Aconsumer&start=0&max_results=10",
+      "sha256": "d450a68787fd69e6640b04268bcaf280fb8db01ce055dc7eb501997b5e49af41",
+      "bytes": 842,
+      "observedAt": "2026-11-06T00:28:51.227Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "home robot cooks daily life consumer",
+      "url": "https://api.crossref.org/works?query=home%20robot%20cooks%20daily%20life%20consumer&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=home%20robot%20cooks%20daily%20life%20consumer&rows=10&select=DOI,title",
+      "sha256": "01ab8cc25b0901bf70fbc2c3c9f0a1207bebff99d04266fe647dbae6f3f689b1",
+      "bytes": 1342,
+      "observedAt": "2026-11-06T00:28:52.020Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "7085e3013186447fba2b5de442838d22cf15da1dd29ddf9d32cd41c3872292cf",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

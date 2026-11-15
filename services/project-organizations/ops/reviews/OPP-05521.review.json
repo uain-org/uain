@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-05521",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "neutral",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No open or discoverable AI reliably designs any molecule with a requested property; open tools generate property-scored candidates whose properties are predicted, not met. REINVENT 4 (Apache 2.0) does reinforcement-learning inverse design for small molecules (https://pmc.ncbi.nlm.nih.gov/articles/pmid/38383444). Reviews in 2025 to 2026 name limited synthesizability and property-prediction accuracy as the unsolved gap (https://pubs.rsc.org/en/content/articlepdf/2026/sc/d5sc05225d, https://pmc.ncbi.nlm.nih.gov/articles/PMC12323263), and reported inverse-design success rates are computational, e.g. 7.1 to 38.9 percent first-principles-validated for crystals (https://oar.a-star.edu.sg/communities-collections/articles/18130). Enumerated make-on-demand space already exceeds 83 billion molecules but is reaction-rule enumeration, not property design (https://www.biosolveit.de/2025/09/23/enamines-real-space-september-2025-update-now-83-billion/). Honest limit: the KPI count of 1,000,000,000 molecules designed is trivially reachable by raw generation with existing open tools, so it is only meaningful if counted as molecules whose requested property is confirmed; generation-only tasks are known answers and need their own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "REINVENT 4 open source generative molecular design property optimization",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/pmid/38383444",
+      "observedAt": "2026-11-06T00:38:24Z",
+      "finding": "REINVENT 4 is open source (Apache 2.0) and performs de novo design and molecule optimisation toward desired properties via reinforcement learning."
+    },
+    {
+      "query": "generative AI molecule design synthesizability gap property prediction accuracy limitations review 2025",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12323263",
+      "observedAt": "2026-11-06T00:38:30Z",
+      "finding": "Reviews list prediction accuracy, validity and synthesizability as persistent challenges; a large share of generated molecules are hard or impossible to make."
+    },
+    {
+      "query": "billions of molecules generated AI virtual library Enamine REAL space size 2025",
+      "source": "https://www.biosolveit.de/2025/09/23/enamines-real-space-september-2025-update-now-83-billion/",
+      "observedAt": "2026-11-06T00:38:36Z",
+      "finding": "Enamine REAL Space reached over 83 billion make-on-demand molecules in September 2025, built from reaction protocols, not AI property design."
+    },
+    {
+      "query": "inverse molecular design any target property experimentally validated success rate generative model",
+      "source": "https://oar.a-star.edu.sg/communities-collections/articles/18130",
+      "observedAt": "2026-11-06T00:38:42Z",
+      "finding": "Reported inverse-design success rates are computational (DFT); 7.1 to 38.9 percent for targeted crystals; no wet-lab success rate for arbitrary properties found."
+    }
+  ]
+}

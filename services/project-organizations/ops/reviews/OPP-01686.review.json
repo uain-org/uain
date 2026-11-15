@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-01686",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:35:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": true,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Held: the project's deliverable, water harvested from air for villages without another source, is a known and deployed answer. SOURCE Global's solar hydropanels supply off-grid communities, for example 200 panels producing about 160 gallons a day on the Warm Springs Reservation, Oregon, an indigenous community in Palawan, Philippines (more than 40,000 litres a year) and rural and tribal Arizona programmes for over 3,000 people (https://www.fhwa.dot.gov/ipd/project_profiles/or_warm_springs.aspx; https://www.rappler.com/technology/innovations/source-hydropanels-conservation-international-bintat-karis-palawan/). CloudFisher fog nets on Mount Boutmezguida supply about 18 litres a day each to roughly 1,000 villagers in Morocco through Dar Si Hmad (https://www.wipo.int/en/web/wipo-magazine/articles/pioneering-fog-harvesting-technology-helps-relieve-water-shortages-in-arid-regions-40409), and Yaghi's MOF harvester has been field-tested in the Mojave at 0.7 L per kg per day (https://www.sciencedaily.com/releases/2019/08/190827170603.htm). Honest limit: the 200,000,000-person KPI is unmet because hydropanels yield only 2 to 5 L per panel per day at roughly US$0.12 to 0.30 per litre, fog nets need fog, and MOF output falls to about 0.2 L/kg/day at 7 percent humidity, with no village-scale MOF plant confirmed. Those are cost and arid-yield problems; harvesting air water for a village is a known answer, so under the 29 September 2026 rule the project is not opened as new work. A reframed project on low-cost sorbent harvesters for very low humidity would need its own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "SOURCE Global hydropanels villages deployed liters per day cost atmospheric water",
+      "source": "https://www.fhwa.dot.gov/ipd/project_profiles/or_warm_springs.aspx",
+      "observedAt": "2026-11-06T01:27:00Z",
+      "finding": "Hydropanels make about 2 to 5 L per panel per day off-grid; Warm Springs Reservation has 200 donated panels making 160 gallons a day; Palawan indigenous community over 40,000 L a year; Arizona programme for over 3,000 people. Costs about US$2,000 per panel plus installation or US$0.12 to 0.30 per litre; viable mainly for philanthropic programmes."
+    },
+    {
+      "query": "fog collection CloudFisher Dar Si Hmad Morocco village water supply liters per day",
+      "source": "https://www.wipo.int/en/web/wipo-magazine/articles/pioneering-fog-harvesting-technology-helps-relieve-water-shortages-in-arid-regions-40409",
+      "observedAt": "2026-11-06T01:32:00Z",
+      "finding": "CloudFisher on Mount Boutmezguida: about 36,000 to 37,400 L per foggy day from 1,600 square metres of mesh, supplying about 18 L per person per day to roughly 1,000 to 1,200 villagers; yields 1.6 to 22 L per square metre depending on site; water meets WHO standards. Works only where fog occurs."
+    },
+    {
+      "query": "metal-organic framework water harvester desert low humidity liters per kg per day 2025 2026 village scale WaHa",
+      "source": "https://www.sciencedaily.com/releases/2019/08/190827170603.htm",
+      "observedAt": "2026-11-06T01:32:00Z",
+      "finding": "Yaghi MOF harvester: 1.3 L per kg MOF per day (ACS Central Science 2019), 0.7 L/kg/day in Mojave field tests and 0.2 L/kg/day at 7 percent RH; Water Harvesting Inc. planned 7 to 10 L/day units; a 20,000 L/day village harvester was an aspirational 2019 projection with no confirmed deployment."
+    },
+    {
+      "query": "\"atmospheric water harvesting\" AND (sorbent OR MOF) AND \"field\" 2024-2026 (Europe PMC)",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22atmospheric%20water%20harvesting%22%20AND%20%28sorbent%20OR%20MOF%29%20AND%20%22field%22%20AND%20PUB_YEAR%3A%5B2024%20TO%202026%5D&format=json&pageSize=5&sort=CITED%20desc",
+      "observedAt": "2026-11-06T01:19:51Z",
+      "finding": "Europe PMC returns 100 records 2024-2026, including Chemistries and materials for atmospheric water harvesting (Chem Soc Rev 2024) and sorption-based AWH progress (Sci Bull 2024); active materials research on yield and energy, consistent with the device class existing and cost-yield being the open gap."
+    }
+  ]
+}

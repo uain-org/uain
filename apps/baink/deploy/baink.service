@@ -1,0 +1,30 @@
+[Unit]
+Description=BAINK account and request service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=baink
+Group=baink
+WorkingDirectory=/opt/baink/current
+EnvironmentFile=/etc/baink.env
+ExecStart=/usr/bin/node --max-old-space-size=192 /opt/baink/current/server/index.mjs
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=180
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/baink
+MemoryMax=320M
+MemorySwapMax=0
+CPUQuota=100%
+TasksMax=32
+LimitNOFILE=1024
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+[Install]
+WantedBy=multi-user.target

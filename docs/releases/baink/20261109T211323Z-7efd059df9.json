@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261109T211323Z-7efd059df9",
+  "version": "0.3.61",
+  "source_commit": null,
+  "deployed_at": "2026-11-09T21:13:40Z",
+  "prior": null,
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#claimable-awards-pay-copy-20261110",
+    "CHANGELOG.md#release-records-backfill-20261110"
+  ],
+  "note": "Recorded by the release-records session, which did not release it: host current link and activation backup (21:13:40 UTC), manifest 0.3.61; public x-baink-release on baink.money and baink.money/api/health ok checked about 22:10 UTC 9 Nov. Prior and source commit are not in the manifest; the releasing session may complete them."
+}

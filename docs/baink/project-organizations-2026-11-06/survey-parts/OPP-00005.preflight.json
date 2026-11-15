@@ -1,0 +1,61 @@
+{
+ "schema": "uain-survey-preflight-v1",
+ "projectId": "OPP-00005",
+ "checkedAt": "2026-11-09T07:59:48Z",
+ "records": [
+  {
+   "kind": "doi",
+   "id": "10.1615/tfec2021.bbe.032415",
+   "status": "resolved",
+   "title": "Novel Freezing Strategies to Retain the Stem Cell Reserves of Adipose Tissues"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1016/j.cryobiol.2020.07.005",
+   "status": "resolved",
+   "title": "Non-toxic freezing media to retain the stem cell reserves in adipose tissues"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1007/978-1-4419-1075-2_9",
+   "status": "resolved",
+   "title": "Telomere Dysfunction and Senescence in Stem Cell and Tissues Aging"
+  },
+  {
+   "kind": "doi",
+   "id": "10.18632/aging.205400",
+   "status": "resolved",
+   "title": "Systemic changes induced by autologous stem cell ovarian transplant in plasma proteome of women with impaired ovarian reserves"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1007/978-3-7091-1232-8_1",
+   "status": "resolved",
+   "title": "Stem Cell Aging: An Overview"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1016/j.stemcr.2025.102506",
+   "status": "resolved",
+   "title": "Cell competition eliminates aneuploid human pluripotent stem cells"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1038/s41467-022-28347-z",
+   "status": "resolved",
+   "title": "Enhanced germline stem cell longevity in Drosophila diapause"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1016/j.stem.2023.09.006",
+   "status": "resolved",
+   "title": "Human embryo models made from pluripotent stem cells are not synthetic; they aren’t embryos, either"
+  },
+  {
+   "kind": "doi",
+   "id": "10.1007/978-3-7091-1232-8_16",
+   "status": "resolved",
+   "title": "Closing the Circle: Stem Cell Rejuvenation and Longevity"
+  }
+ ]
+}

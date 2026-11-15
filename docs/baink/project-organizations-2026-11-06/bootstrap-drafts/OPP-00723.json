@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00723",
+  "native_project": "P-OPP-00723",
+  "source_digest": "a2a50eb10531dab9f2f53794d62aebaecd83aa2bdfbf91e36d3f664e7605b83e",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build smart glasses that describe the world aloud",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "1d699c7cedd1e4355d537b3f7b9f6533c3a04459c1a3504602d9ce9a14eee301"
+  },
+  "drafted_at": "2026-11-06T00:11:57.760Z",
+  "queries": [
+    "smart glasses describe world aloud",
+    "smart glasses describe disability accessibility vision"
+  ],
+  "searches": [
+    {
+      "query": "smart glasses describe world aloud",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:11:49.804Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=smart%20glasses%20describe%20world%20aloud&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "smart glasses describe world aloud",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:11:50.278Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Asmart%20AND%20all%3Aglasses%20AND%20all%3Adescribe%20AND%20all%3Aworld%20AND%20all%3Aaloud&start=0&max_results=10; sha256=c9b6685c3a9d96dada77cab3136bef52fc526f33bdd8b3342d6d9ad0af09d357; total=0; shown=0/0"
+    },
+    {
+      "query": "smart glasses describe world aloud",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:11:51.167Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=smart%20glasses%20describe%20world%20aloud&rows=10&select=DOI,title; sha256=1470e3b6c76d1b8b06cb90834ae7afa94b4d4c429252eb1eb97ced5e4d7f44a4; total=2542554; shown=5/10; top: 10.1016/s0262-17622030103-6 \"App and smart glasses to spot malfunctions\" | 10.55277/researchhub.1qi1wdk9.1 \"LumaGlasses Smart Glasses German Smart Fit Glasses Goggles for Clear and Safe Sight\" | 10.1353/wlt.2014.0217 \"Innocents Aloud\" | 10.11647/obp.0137.18 \"'Pyrthei Mariang – The Natural World' read aloud by Janet Hujon\" | 10.7588/worllitetoda.88.1.0041 \"Innocents Aloud\""
+    },
+    {
+      "query": "smart glasses describe disability accessibility vision",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:11:56.319Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=smart%20glasses%20describe%20disability%20accessibility%20vision&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "smart glasses describe disability accessibility vision",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:11:56.841Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Asmart%20AND%20all%3Aglasses%20AND%20all%3Adescribe%20AND%20all%3Adisability%20AND%20all%3Aaccessibility%20AND%20all%3Avision&start=0&max_results=10; sha256=d87a288d56cb44d80b9fbeb5409558f693043a34dc917c0cc46fe8a940fd2468; total=0; shown=0/0"
+    },
+    {
+      "query": "smart glasses describe disability accessibility vision",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:11:57.759Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=smart%20glasses%20describe%20disability%20accessibility%20vision&rows=10&select=DOI,title; sha256=e41005d15063bf24d4e47c5da194af2989b0dea74b3640df9e489e8ff979ead2; total=1423993; shown=5/10; top: 10.1145/3654768.3654771 \"AI-Enabled Smart Glasses for People with Severe Vision Impairments\" | 10.55277/researchhub.dn4vxotg.1 \"LumaGlasses Smart Glasses France Premium Vision Guard Glasses Goggles for Work and Travel\" | 10.59287/ire.523 \"A New Vision for Computer Vision: Smart Glasses with Humanoid Robots\" | 10.1145/3373625.3418012 \"Functionality versus Inconspicuousness: Attitudes of People with Low Vision towards OST Smart Glasses\" | 10.55277/researchhub.nn7k95kp.1 \"LumaGlasses Smart AI Glasses (2026) Full Review: AI-Powered Vision Redefined!!\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "smart glasses describe world aloud",
+      "url": "https://api.github.com/search/repositories?q=smart%20glasses%20describe%20world%20aloud&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=smart%20glasses%20describe%20world%20aloud&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:11:49.804Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "smart glasses describe world aloud",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Asmart%20AND%20all%3Aglasses%20AND%20all%3Adescribe%20AND%20all%3Aworld%20AND%20all%3Aaloud&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Asmart%20AND%20all%3Aglasses%20AND%20all%3Adescribe%20AND%20all%3Aworld%20AND%20all%3Aaloud&start=0&max_results=10",
+      "sha256": "c9b6685c3a9d96dada77cab3136bef52fc526f33bdd8b3342d6d9ad0af09d357",
+      "bytes": 820,
+      "observedAt": "2026-11-06T00:11:50.278Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "smart glasses describe world aloud",
+      "url": "https://api.crossref.org/works?query=smart%20glasses%20describe%20world%20aloud&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=smart%20glasses%20describe%20world%20aloud&rows=10&select=DOI,title",
+      "sha256": "1470e3b6c76d1b8b06cb90834ae7afa94b4d4c429252eb1eb97ced5e4d7f44a4",
+      "bytes": 1284,
+      "observedAt": "2026-11-06T00:11:51.167Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "smart glasses describe disability accessibility vision",
+      "url": "https://api.github.com/search/repositories?q=smart%20glasses%20describe%20disability%20accessibility%20vision&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=smart%20glasses%20describe%20disability%20accessibility%20vision&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:11:56.319Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "smart glasses describe disability accessibility vision",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Asmart%20AND%20all%3Aglasses%20AND%20all%3Adescribe%20AND%20all%3Adisability%20AND%20all%3Aaccessibility%20AND%20all%3Avision&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Asmart%20AND%20all%3Aglasses%20AND%20all%3Adescribe%20AND%20all%3Adisability%20AND%20all%3Aaccessibility%20AND%20all%3Avision&start=0&max_results=10",
+      "sha256": "d87a288d56cb44d80b9fbeb5409558f693043a34dc917c0cc46fe8a940fd2468",
+      "bytes": 878,
+      "observedAt": "2026-11-06T00:11:56.841Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "smart glasses describe disability accessibility vision",
+      "url": "https://api.crossref.org/works?query=smart%20glasses%20describe%20disability%20accessibility%20vision&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=smart%20glasses%20describe%20disability%20accessibility%20vision&rows=10&select=DOI,title",
+      "sha256": "e41005d15063bf24d4e47c5da194af2989b0dea74b3640df9e489e8ff979ead2",
+      "bytes": 1457,
+      "observedAt": "2026-11-06T00:11:57.759Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "04686436fe023c840618e366b31b165a29916d33b0f984796e3396c63dad6ddf",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

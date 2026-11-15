@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-03121",
+  "native_project": "P-OPP-03121",
+  "source_digest": "85c288d060f400e45a7e6db98f28a4f771eb261d3ac324a54a11636ab2af25ec",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Build a humanoid robot that can do any household chore",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "9d012f4c051cc423627f12c2dbaadddd35d66171a71a13fcf81fae45c1394377"
+  },
+  "drafted_at": "2026-11-06T00:23:26.872Z",
+  "queries": [
+    "humanoid robot household chore",
+    "humanoid robot household robotics automation work"
+  ],
+  "searches": [
+    {
+      "query": "humanoid robot household chore",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:23:19.074Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=humanoid%20robot%20household%20chore&per_page=10; sha256=84ab20aa86bfc7f15f29d75e46be2313f01cd1ccbce5341d25644c9555d1231d; total=1; shown=1/1; top: api-evangelist/noril1 \"Nori — independent third-party profile of a public API surface, by API Evangelist. Nori (Nori Robotics) is a Y Combinator (Summer 2026) har…\""
+    },
+    {
+      "query": "humanoid robot household chore",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:23:19.559Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Ahumanoid%20AND%20all%3Arobot%20AND%20all%3Ahousehold%20AND%20all%3Achore&start=0&max_results=10; sha256=1b7cb950b997cdb4da12d25719a0a58d0e9119ba3714059c844c0adf0602c656; total=2; shown=2/2; top: arXiv:1706.05340v1 \"Robotic Ironing with 3D Perception and Force/Torque Feedback in Household Environments\" | arXiv:2406.14655v1 \"HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation\""
+    },
+    {
+      "query": "humanoid robot household chore",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:23:20.334Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=humanoid%20robot%20household%20chore&rows=10&select=DOI,title; sha256=e1c0f836e92754c5a445f374e0f881dfc5d5c0f9a6b823e3c5ba2216c65d765f; total=385926; shown=5/10; top: 10.2307/jj.30347457.7 \"Introduction:\" | 10.1109/ichr.2008.4755997 \"Compliant interaction in household environments by the Armar-III humanoid robot\" | 10.1109/humanoids.2014.7041419 \"Active learning of affordances for robot use of household objects\" | 10.7717/peerj-cs.797/fig-1 \"Figure 1: Roban humanoid robot.\" | 10.3724/sp.j.1218.2011.00084 \"Open Humanoid Robot Simulator Based on ODE\""
+    },
+    {
+      "query": "humanoid robot household robotics automation work",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:23:25.522Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=humanoid%20robot%20household%20robotics%20automation%20work&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "humanoid robot household robotics automation work",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:23:25.981Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Ahumanoid%20AND%20all%3Arobot%20AND%20all%3Ahousehold%20AND%20all%3Arobotics%20AND%20all%3Aautomation%20AND%20all%3Awork&start=0&max_results=10; sha256=26db8065233153629875a5f42d998958f3fd1211ef54c78c529598d071bb20cd; total=0; shown=0/0"
+    },
+    {
+      "query": "humanoid robot household robotics automation work",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:23:26.871Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=humanoid%20robot%20household%20robotics%20automation%20work&rows=10&select=DOI,title; sha256=5913170288e45f33c4c0d96c8bf8974a7758035e50a6184287505850637b1581; total=1864831; shown=5/10; top: 10.5772/5521 \"Humanoid Robot Balancing\" | 10.4172/2168-9695.1000189 \"Defining Virtual Humanoid Robotics with Modeling\" | 10.5220/0005542603040309 \"Human-like Humanoid Robot Posture Control\" | 10.5220/0005051904020409 \"Complex Motion Planning for NAO Humanoid Robot\" | 10.1109/robot.2009.5152578 \"Humanoid robot LOLA\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "humanoid robot household chore",
+      "url": "https://api.github.com/search/repositories?q=humanoid%20robot%20household%20chore&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=humanoid%20robot%20household%20chore&per_page=10",
+      "sha256": "84ab20aa86bfc7f15f29d75e46be2313f01cd1ccbce5341d25644c9555d1231d",
+      "bytes": 5724,
+      "observedAt": "2026-11-06T00:23:19.074Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "humanoid robot household chore",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Ahumanoid%20AND%20all%3Arobot%20AND%20all%3Ahousehold%20AND%20all%3Achore&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Ahumanoid%20AND%20all%3Arobot%20AND%20all%3Ahousehold%20AND%20all%3Achore&start=0&max_results=10",
+      "sha256": "1b7cb950b997cdb4da12d25719a0a58d0e9119ba3714059c844c0adf0602c656",
+      "bytes": 5696,
+      "observedAt": "2026-11-06T00:23:19.559Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "humanoid robot household chore",
+      "url": "https://api.crossref.org/works?query=humanoid%20robot%20household%20chore&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=humanoid%20robot%20household%20chore&rows=10&select=DOI,title",
+      "sha256": "e1c0f836e92754c5a445f374e0f881dfc5d5c0f9a6b823e3c5ba2216c65d765f",
+      "bytes": 1212,
+      "observedAt": "2026-11-06T00:23:20.334Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "humanoid robot household robotics automation work",
+      "url": "https://api.github.com/search/repositories?q=humanoid%20robot%20household%20robotics%20automation%20work&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=humanoid%20robot%20household%20robotics%20automation%20work&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:23:25.522Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "humanoid robot household robotics automation work",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Ahumanoid%20AND%20all%3Arobot%20AND%20all%3Ahousehold%20AND%20all%3Arobotics%20AND%20all%3Aautomation%20AND%20all%3Awork&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Ahumanoid%20AND%20all%3Arobot%20AND%20all%3Ahousehold%20AND%20all%3Arobotics%20AND%20all%3Aautomation%20AND%20all%3Awork&start=0&max_results=10",
+      "sha256": "26db8065233153629875a5f42d998958f3fd1211ef54c78c529598d071bb20cd",
+      "bytes": 868,
+      "observedAt": "2026-11-06T00:23:25.981Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "humanoid robot household robotics automation work",
+      "url": "https://api.crossref.org/works?query=humanoid%20robot%20household%20robotics%20automation%20work&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=humanoid%20robot%20household%20robotics%20automation%20work&rows=10&select=DOI,title",
+      "sha256": "5913170288e45f33c4c0d96c8bf8974a7758035e50a6184287505850637b1581",
+      "bytes": 1201,
+      "observedAt": "2026-11-06T00:23:26.871Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "02c8475a4278e80d6a52089009d0a2cf570100bd8dba506038c556c8bd85b033",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

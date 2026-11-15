@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-07",
+  "image": {
+    "model": "bytedance-seed/seedream-4.5",
+    "prompt": "Photorealistic orbital photography of planet Earth, native ultrawide 21:9 composition. This is an unlabelled natural space photograph. A complete Earth globe is positioned on the right, center at 75 percent of canvas width, with a slim margin above and below and space around the right edge. Europe, the Mediterranean and Africa face the viewer with geographically accurate coastlines and natural cloud cover. Earth fills 80 percent of canvas height. The left 45 percent is entirely empty, uninterrupted dark midnight-blue space. Restrained blue atmospheric rim and soft sunrise lighting from the far right. Calm, refined photographic realism, balanced exposure, believable clouds and oceans. Absolutely no letters or text anywhere. Absolutely no flags, emblems, national symbols, icons, labels, logos, watermark, badges, graphics, routes, particles or artificial lens flares. The left area and all four corners are completely empty. Only a natural Earth globe and space are present.",
+    "resolution": "2K",
+    "aspect_ratio": "21:9",
+    "n": 1,
+    "seed": 8241
+  },
+  "image_costs_usd": [
+    0.04,
+    0.04
+  ],
+  "selected_reference_sha256": "6f62d5ff4db6deae188740f8052065b596e53a653aa27a554e968c4398023a78",
+  "video": {
+    "model": "minimax/hailuo-3",
+    "prompt": "Animate this exact ultrawide Earth composition as a calm cinematic website hero film. Keep the camera locked and the framing, globe size, globe position and recognizable geography stable throughout. Preserve the left 42% as quiet empty midnight blue space for HTML copy. Only extraordinarily subtle natural cloud drift and gentle atmosphere movement are visible; the planet does not rotate perceptibly. Keep the sunrise lighting and restrained blue rim consistent. Return naturally to the supplied final reference without a fade to black, flash, zoom or abrupt movement, so the film can loop gracefully. Photorealistic orbital photography, refined and credible, no visual spectacle. Silent. No added typography, logos, watermarks, corner badges, UI, route lines, network graphics, artificial particles, flares or new objects. Keep all four corners, especially the bottom-right corner, completely clean.\n",
+    "duration": 8,
+    "resolution": "2K",
+    "aspect_ratio": "21:9",
+    "generate_audio": false,
+    "provider": {
+      "order": [
+        "minimax"
+      ],
+      "allow_fallbacks": false,
+      "options": {
+        "minimax": {
+          "parameters": {
+            "aigc_watermark": false
+          }
+        }
+      }
+    },
+    "reference_file": "reference.png",
+    "frame_types": [
+      "first_frame",
+      "last_frame"
+    ]
+  },
+  "video_job_id": "gen-vid-1791363724-ZNlwe2WWMQyXVbORZhqB",
+  "video_status": "completed",
+  "video_usage": {
+    "cost": 1.0296,
+    "is_byok": false
+  },
+  "source_video_sha256": "8784b2fa0ab653ef52a0a2045473989d4801aa0656d259497a06a9688ffc05d3",
+  "reported_total_cost_usd": 1.1096,
+  "exports": {
+    "video_path": "public/videos/uain-earth-wide-2026-10.mp4",
+    "video_sha256": "dcc95de8b01d61877eaf0ae1ead396fdcb0b85f2b41b8fe1173350b22fb69b67",
+    "poster_path": "public/images/landing/earth-wide-2026-10.webp",
+    "poster_sha256": "a0acca8fa490017b77778860f3a169777e77307100836b5acddb96dfff692dbe",
+    "width": 2560,
+    "height": 1086,
+    "duration_seconds": 16,
+    "fps": 30,
+    "audio_streams": 0,
+    "first_last_decoded_sha256": "46675e380c804d2b95f9647cbe4ff6514e03209de4817cec9f8ea1822ab4646a"
+  }
+}

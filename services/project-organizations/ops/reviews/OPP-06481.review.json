@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-06481",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T00:55:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No reliable system forecasts earthquakes days ahead with location and size, so the Main KPI of 1 reliable earthquake forecast system is unmet. The USGS states that no scientist has ever predicted a major earthquake and that only long-term probabilities can be calculated (https://www.usgs.gov/faqs/can-you-predict-earthquakes). Operational tools are probabilistic aftershock forecasts issued after a mainshock (https://earthquake.usgs.gov/data/oaf/schedule.php) and seconds-scale ShakeAlert warnings. The best prospective result found, a UT Austin AI that called 70 percent of quakes a week ahead within about 200 miles in a seven-month China trial, had eight false alarms and its authors say it is not close to global use (https://news.utexas.edu/2023/10/05/ai-driven-earthquake-forecasting-shows-promise-in-trials/). Honest limit: open testing infrastructure already exists (pyCSEP and a decade of prospective next-day forecasts, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12391313/); a task must beat those benchmarks prospectively, and deterministic prediction may be physically impossible."
+  },
+  "additionalSearches": [
+    {
+      "query": "deterministic earthquake prediction not possible USGS statement short-term forecast",
+      "source": "https://www.usgs.gov/faqs/can-you-predict-earthquakes",
+      "observedAt": "2026-11-06T00:40:00Z",
+      "finding": "USGS: neither the USGS nor any scientist has predicted a major earthquake; only probabilities over years can be given."
+    },
+    {
+      "query": "USGS operational aftershock forecasting OAF probabilistic forecast",
+      "source": "https://earthquake.usgs.gov/data/oaf/schedule.php",
+      "observedAt": "2026-11-06T00:40:06Z",
+      "finding": "USGS publishes automated probabilistic aftershock forecasts starting about 30 minutes after a mainshock; forecasts, not predictions of new mainshocks."
+    },
+    {
+      "query": "machine learning earthquake prediction days ahead location magnitude trial 2023 China UT Austin AI 70%",
+      "source": "https://news.utexas.edu/2023/10/05/ai-driven-earthquake-forecasting-shows-promise-in-trials/",
+      "observedAt": "2026-11-06T00:40:12Z",
+      "finding": "UT Austin AI predicted 70 percent of quakes a week ahead in a 7-month China trial, 1 miss and 8 false warnings; not generalised."
+    },
+    {
+      "query": "CSEP Collaboratory Study of Earthquake Predictability forecast testing results open source pyCSEP",
+      "source": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12391313/",
+      "observedAt": "2026-11-06T00:40:18Z",
+      "finding": "CSEP ran 25 next-day models prospectively for 10 years in California; data on Zenodo and pyCSEP is open source for testing forecasts."
+    }
+  ]
+}

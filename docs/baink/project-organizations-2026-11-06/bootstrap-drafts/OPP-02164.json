@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-02164",
+  "native_project": "P-OPP-02164",
+  "source_digest": "ff8fbe7fce6e5d6c1e7857049fa7b2b2a26017b9e9cd8ad5df7255050aefb412",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Create carbon-negative buildings from timber and hempcrete",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "d8d06d7ee0964e93ffc25909e0a1a55c9c9d7843c56756a6da1da861f15e5f77"
+  },
+  "drafted_at": "2026-11-06T00:21:16.813Z",
+  "queries": [
+    "carbon-negative buildings timber hempcrete",
+    "carbon-negative buildings timber climate atmosphere emissions"
+  ],
+  "searches": [
+    {
+      "query": "carbon-negative buildings timber hempcrete",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:21:09.001Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=carbon-negative%20buildings%20timber%20hempcrete&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "carbon-negative buildings timber hempcrete",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:21:09.457Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Acarbon-negative%20AND%20all%3Abuildings%20AND%20all%3Atimber%20AND%20all%3Ahempcrete&start=0&max_results=10; sha256=7a719efa8dd64f588f375d86bb3c179115878109a7dc22dc91922f9037ce94c1; total=0; shown=0/0"
+    },
+    {
+      "query": "carbon-negative buildings timber hempcrete",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:21:10.332Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=carbon-negative%20buildings%20timber%20hempcrete&rows=10&select=DOI,title; sha256=7f8408f5acc511fe8205ae93ead1eb0e00f8ad26d2086d95d9b8a06d6d7647a3; total=1656854; shown=5/10; top: 10.26686/wgtn.19556428 \"Green Meets Machine - Robotic Fabrication of Carbon-Negative Hempcrete\" | 10.5703/1288284318088 \"Hempcrete as low carbon solution for thermal retrofitting of buildings\" | 10.56452/2021sp-8-045 \"HEMPCRETE – Carbon Negative Concrete\" | 10.54499/ui/bd/153681/2022 \"untitled\" | 10.1007/978-3-032-04645-1_37 \"Hempcrete—A Carbon Negative Material: From Its Performance to Application in Buildings\""
+    },
+    {
+      "query": "carbon-negative buildings timber climate atmosphere emissions",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:21:15.516Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=carbon-negative%20buildings%20timber%20climate%20atmosphere%20emissions&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "carbon-negative buildings timber climate atmosphere emissions",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:21:16.016Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Acarbon-negative%20AND%20all%3Abuildings%20AND%20all%3Atimber%20AND%20all%3Aclimate%20AND%20all%3Aatmosphere%20AND%20all%3Aemissions&start=0&max_results=10; sha256=5c8d879b0e9afd60b7d64467c51826003d246b8c2946258df96e8e1632e99687; total=0; shown=0/0"
+    },
+    {
+      "query": "carbon-negative buildings timber climate atmosphere emissions",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:21:16.812Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=carbon-negative%20buildings%20timber%20climate%20atmosphere%20emissions&rows=10&select=DOI,title; sha256=241b78f50d0d2d1dc46250ce80ca25d4ec2474f1900a0374cc71bab8cb88d37b; total=2497911; shown=5/10; top: 10.21552/cclr/2023/4/7 \"Removing CO2 from the Atmosphere to Enable Net Negative Emissions – A Behavioural Law and Economics Perspective\" | 10.3390/buildings13071722 \"Life Cycle Assessment from Cradle-to-Handover Approach to Greenhouse Gas Emissions Mitigation: Carbon Storage in Timber Buildings\" | 10.20944/preprints202305.2061.v1 \"Carbon Storage in Timber Buildings: LCA from Cradle-To-Handover Approach for GHG Emissions Mitigation\" | 10.4324/9781003342342-22 \"Designing for negative operational emissions\" | 10.3389/fclim.2021.603239 \"Revisiting “Additional Carbon”: Tracking Atmosphere–Ecosystem Carbon Exchange to Establish Mitigation and Negative Emissions From Bio-Based…\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "carbon-negative buildings timber hempcrete",
+      "url": "https://api.github.com/search/repositories?q=carbon-negative%20buildings%20timber%20hempcrete&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=carbon-negative%20buildings%20timber%20hempcrete&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:21:09.001Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "carbon-negative buildings timber hempcrete",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Acarbon-negative%20AND%20all%3Abuildings%20AND%20all%3Atimber%20AND%20all%3Ahempcrete&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Acarbon-negative%20AND%20all%3Abuildings%20AND%20all%3Atimber%20AND%20all%3Ahempcrete&start=0&max_results=10",
+      "sha256": "7a719efa8dd64f588f375d86bb3c179115878109a7dc22dc91922f9037ce94c1",
+      "bytes": 818,
+      "observedAt": "2026-11-06T00:21:09.457Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "carbon-negative buildings timber hempcrete",
+      "url": "https://api.crossref.org/works?query=carbon-negative%20buildings%20timber%20hempcrete&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=carbon-negative%20buildings%20timber%20hempcrete&rows=10&select=DOI,title",
+      "sha256": "7f8408f5acc511fe8205ae93ead1eb0e00f8ad26d2086d95d9b8a06d6d7647a3",
+      "bytes": 1508,
+      "observedAt": "2026-11-06T00:21:10.332Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "carbon-negative buildings timber climate atmosphere emissions",
+      "url": "https://api.github.com/search/repositories?q=carbon-negative%20buildings%20timber%20climate%20atmosphere%20emissions&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=carbon-negative%20buildings%20timber%20climate%20atmosphere%20emissions&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:21:15.516Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "carbon-negative buildings timber climate atmosphere emissions",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Acarbon-negative%20AND%20all%3Abuildings%20AND%20all%3Atimber%20AND%20all%3Aclimate%20AND%20all%3Aatmosphere%20AND%20all%3Aemissions&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Acarbon-negative%20AND%20all%3Abuildings%20AND%20all%3Atimber%20AND%20all%3Aclimate%20AND%20all%3Aatmosphere%20AND%20all%3Aemissions&start=0&max_results=10",
+      "sha256": "5c8d879b0e9afd60b7d64467c51826003d246b8c2946258df96e8e1632e99687",
+      "bytes": 892,
+      "observedAt": "2026-11-06T00:21:16.016Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "carbon-negative buildings timber climate atmosphere emissions",
+      "url": "https://api.crossref.org/works?query=carbon-negative%20buildings%20timber%20climate%20atmosphere%20emissions&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=carbon-negative%20buildings%20timber%20climate%20atmosphere%20emissions&rows=10&select=DOI,title",
+      "sha256": "241b78f50d0d2d1dc46250ce80ca25d4ec2474f1900a0374cc71bab8cb88d37b",
+      "bytes": 1832,
+      "observedAt": "2026-11-06T00:21:16.812Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "eb5f01e85c49c9fe4349372b540f216747eab8095289b91a43322b5656557213",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

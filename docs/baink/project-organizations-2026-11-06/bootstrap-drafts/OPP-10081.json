@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-10081",
+  "native_project": "P-OPP-10081",
+  "source_digest": "6d0c89f3bf90ed9bdef651fb1b752011e9cb1246cec668849d5c6c010746a4ab",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Give every donor a personal AI giving advisor matched to their values",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "5c078b77815fc1939f06327c672c0b62d1101794f7c5a8a115bda2784b172a16"
+  },
+  "drafted_at": "2026-11-06T00:31:18.960Z",
+  "queries": [
+    "give donor personal giving advisor matched",
+    "give donor personal philanthropy civil society"
+  ],
+  "searches": [
+    {
+      "query": "give donor personal giving advisor matched",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:31:10.842Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=give%20donor%20personal%20giving%20advisor%20matched&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "give donor personal giving advisor matched",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:31:11.429Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Adonor%20AND%20all%3Apersonal%20AND%20all%3Agiving%20AND%20all%3Aadvisor%20AND%20all%3Amatched&start=0&max_results=10; sha256=38e99eec8f81d06b2fe42561ebd8a73290e57e07b9464a0a9d8ccf21e622a7aa; total=0; shown=0/0"
+    },
+    {
+      "query": "give donor personal giving advisor matched",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:31:12.657Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=give%20donor%20personal%20giving%20advisor%20matched&rows=10&select=DOI,title; sha256=f8584c85f9385accf31a94c2251c640519695e650244ff8f892f2c6979fc209f; total=576958; shown=5/10; top: 10.1002/nba.30563 \"Social Donor Giving Behavior\" | 10.1002/nba.31009 \"U.S. professionals increasingly using workplace giving platforms to give to charity\" | 10.1002/nba.30126 \"Experts: Focus on target donor segments to boost giving levels\" | 10.1002/nba.33039 \"BBB Wise Giving Alliance launches new AI‐driven donor tool\" | 10.15173/mjc.v11i0.1416 \"The Give and Take of Donor Relations: Investigating the Role Communicators Play in Successful Donor Giving Relationships\""
+    },
+    {
+      "query": "give donor personal philanthropy civil society",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:31:17.369Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=give%20donor%20personal%20philanthropy%20civil%20society&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "give donor personal philanthropy civil society",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:31:17.982Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Adonor%20AND%20all%3Apersonal%20AND%20all%3Aphilanthropy%20AND%20all%3Acivil%20AND%20all%3Asociety&start=0&max_results=10; sha256=1e0eaa583798acbbe2fc70e8dce8dec17651692007dc00b8a96b8b206d177d6b; total=0; shown=0/0"
+    },
+    {
+      "query": "give donor personal philanthropy civil society",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:31:18.960Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=give%20donor%20personal%20philanthropy%20civil%20society&rows=10&select=DOI,title; sha256=5f570f334807ae9e8fe72278f531ff60488d1d1c8c02f123ff57dbe04e7b1928; total=5881048; shown=5/10; top: 10.2307/j.ctv1xx9h9x.12 \"Philanthropy, Civil Society, and the Commons\" | 10.18060/21407 \"Exploring the Giving Practices in American Mosques: Why Do Muslims Give So Little to Their Mosques?\" | 10.1093/oxfordhb/9780195398571.013.0035 \"Civil Society and Institutional Philanthropy\" | 10.1093/oxfordhb/9780195398571.013.0036 \"Civil Society and Grassroots Philanthropy\" | 10.1515/9781782046752-008 \"6: The Slow Decline of Philanthropy and Civil Society\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "give donor personal giving advisor matched",
+      "url": "https://api.github.com/search/repositories?q=give%20donor%20personal%20giving%20advisor%20matched&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=give%20donor%20personal%20giving%20advisor%20matched&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:31:10.842Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "give donor personal giving advisor matched",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Adonor%20AND%20all%3Apersonal%20AND%20all%3Agiving%20AND%20all%3Aadvisor%20AND%20all%3Amatched&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Adonor%20AND%20all%3Apersonal%20AND%20all%3Agiving%20AND%20all%3Aadvisor%20AND%20all%3Amatched&start=0&max_results=10",
+      "sha256": "38e99eec8f81d06b2fe42561ebd8a73290e57e07b9464a0a9d8ccf21e622a7aa",
+      "bytes": 854,
+      "observedAt": "2026-11-06T00:31:11.429Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "give donor personal giving advisor matched",
+      "url": "https://api.crossref.org/works?query=give%20donor%20personal%20giving%20advisor%20matched&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=give%20donor%20personal%20giving%20advisor%20matched&rows=10&select=DOI,title",
+      "sha256": "f8584c85f9385accf31a94c2251c640519695e650244ff8f892f2c6979fc209f",
+      "bytes": 1373,
+      "observedAt": "2026-11-06T00:31:12.657Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "give donor personal philanthropy civil society",
+      "url": "https://api.github.com/search/repositories?q=give%20donor%20personal%20philanthropy%20civil%20society&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=give%20donor%20personal%20philanthropy%20civil%20society&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:31:17.369Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "give donor personal philanthropy civil society",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Adonor%20AND%20all%3Apersonal%20AND%20all%3Aphilanthropy%20AND%20all%3Acivil%20AND%20all%3Asociety&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Adonor%20AND%20all%3Apersonal%20AND%20all%3Aphilanthropy%20AND%20all%3Acivil%20AND%20all%3Asociety&start=0&max_results=10",
+      "sha256": "1e0eaa583798acbbe2fc70e8dce8dec17651692007dc00b8a96b8b206d177d6b",
+      "bytes": 862,
+      "observedAt": "2026-11-06T00:31:17.982Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "give donor personal philanthropy civil society",
+      "url": "https://api.crossref.org/works?query=give%20donor%20personal%20philanthropy%20civil%20society&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=give%20donor%20personal%20philanthropy%20civil%20society&rows=10&select=DOI,title",
+      "sha256": "5f570f334807ae9e8fe72278f531ff60488d1d1c8c02f123ff57dbe04e7b1928",
+      "bytes": 1284,
+      "observedAt": "2026-11-06T00:31:18.960Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "2193f16117530134a0335902020192ec9cec0341c10fd559f3bf42af0114cf77",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

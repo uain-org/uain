@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "central-reviewer",
+  "release_id": "3e5d523d0ff1cc300fd13424890994efcfed5d24a540ee139315926e4aba9b37",
+  "version": null,
+  "source_commit": "0b72a3888e41c6007c7a699b7cee3f7f2490ff0a",
+  "deployed_at": "2026-11-10T14:20:58Z",
+  "prior": "361dd3cd20a87a3a100c1ff52623d9f25ec77a61a2d8834cf716ea2c629f4588",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#review-reasons-custody-install-20261110"
+  ],
+  "note": "Custody server part only: 361dd3cd with central_reviewer_server.py from #510 (signed checker reasons in readiness). Pins re-set in one step with the survey attester. First live rule-decided rejection CS-2b06b7b7 finalized 14:26:56Z with the failed rule named, no model call. Rollback: repin.py restore and release:rollback --part custody."
+}

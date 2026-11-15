@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "component": "uain",
+  "release_id": "a305b80f",
+  "source_commit": "a305b80f9c384ef1236515505f03b6f1321b81c3",
+  "deployed_at": "2026-11-09T03:18:40Z",
+  "prior": "e882c433",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#opp10-stock-admission-template-20261109"
+  ],
+  "note": "Normal main workflow42554725753 passed; live source and all three image tags match, no pending release. Five post-activation public checks passed. Protected correction custody, manager activation and authenticated end-to-end browser acceptance remain separate."
+}

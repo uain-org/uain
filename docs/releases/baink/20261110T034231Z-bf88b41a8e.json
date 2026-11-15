@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261110T034231Z-bf88b41a8e",
+  "version": "0.3.73",
+  "source_commit": "101c28627690a7d67e5a4e31382830e5e943f385",
+  "deployed_at": "2026-11-10T03:42:49Z",
+  "prior": "20261110T032849Z-9f3833397f",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-0373-release-20261110",
+    "CHANGELOG.md#baink-0370-release-20261110"
+  ],
+  "note": "PR #452: every central_proof_unavailable answer logs one line with its route and category and carries X-BAINK-Proof-Reason (chain-unavailable with Retry-After 120, or proof-check with 30); body unchanged. release:promote passed; production and preview health ok; started from state.sqlite without a re-import; all public routes 200, review health true, signed balance, tasks and awards reads 200."
+}

@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-00011",
+  "native_project": "P-OPP-00011",
+  "source_digest": "c71460be3100dc2e9cbb21a390db64d41a2463a82f1e4ab8b1bd83f8b1a93bfc",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Give people a lifelong biological age dashboard",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "25074dde1534788b09e20f840cca510bbb8eb8d3a635d6826b2391efb10ed447"
+  },
+  "drafted_at": "2026-11-06T00:08:02.628Z",
+  "queries": [
+    "give people lifelong biological age dashboard",
+    "give people lifelong human health longevity"
+  ],
+  "searches": [
+    {
+      "query": "give people lifelong biological age dashboard",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:07:53.816Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=give%20people%20lifelong%20biological%20age%20dashboard&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "give people lifelong biological age dashboard",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:07:54.259Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Apeople%20AND%20all%3Alifelong%20AND%20all%3Abiological%20AND%20all%3Aage%20AND%20all%3Adashboard&start=0&max_results=10; sha256=32e8ff6d0e7de2061959e459c3570de27b838a7d1fd6e2470f0396f1a184c5b3; total=0; shown=0/0"
+    },
+    {
+      "query": "give people lifelong biological age dashboard",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:07:55.590Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=give%20people%20lifelong%20biological%20age%20dashboard&rows=10&select=DOI,title; sha256=e6b85f26421b0594e5536fe1b56ab5a8927f42a7887a5d0db82b08da0703f7d7; total=2720368; shown=5/10; top: 10.15620/cdc/252490 \"Healthy People 2030 Midcourse Review Dashboard\" | 10.21125/iceri.2020.0599 \"SOCIAL ACTIVITY OF THIRD AGE PEOPLE AS A FACTOR IN LIFELONG LEARNING\" | 10.1080/02601370210156727 \"U3A Online: a virtual university of the third age for isolated older people\" | 10.1093/oxfordhb/9780197506707.013.32 \"Age and Lifelong Learning\" | 10.15393/j5.art.2014.2643 \"People of the third age as actors of lifelong education: methodology and research\""
+    },
+    {
+      "query": "give people lifelong human health longevity",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:08:00.346Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=give%20people%20lifelong%20human%20health%20longevity&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "give people lifelong human health longevity",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:08:00.881Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Apeople%20AND%20all%3Alifelong%20AND%20all%3Ahuman%20AND%20all%3Ahealth%20AND%20all%3Alongevity&start=0&max_results=10; sha256=6c5f53a4f492f721a1577b62bfb40d4cdfae9cd301763e1ab25a830bfd28ebff; total=0; shown=0/0"
+    },
+    {
+      "query": "give people lifelong human health longevity",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:08:02.627Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=give%20people%20lifelong%20human%20health%20longevity&rows=10&select=DOI,title; sha256=38ad7101ba27cd166e0799d126797cd3a5314438c2f2ea61f87e1c7d4a093c43; total=8631734; shown=5/10; top: 10.1037/e724232007-006 \"Lifelong Lotharios: The key to human longevity\" | 10.1007/978-0-230-39135-2_13 \"Lifelong Learning and Well-Being: The Health Benefits of Lifelong Learning for People with Mental Illness\" | 10.1163/2210-7975_hrd-9828-0013 \"northern-uganda-give-displaced-people-real-options-july-22-2008-6-pp\" | 10.1037/e302962004-001 \"Guidelines for School and Community Programs to Promote Lifelong Physical Activity Among Young People.\" | 10.1163/2210-7975_hrd-9970-20180272 \"The EMPOWER Care Act Would Give People With Disabilities the Freedom They deserve\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "give people lifelong biological age dashboard",
+      "url": "https://api.github.com/search/repositories?q=give%20people%20lifelong%20biological%20age%20dashboard&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=give%20people%20lifelong%20biological%20age%20dashboard&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:07:53.816Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "give people lifelong biological age dashboard",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Apeople%20AND%20all%3Alifelong%20AND%20all%3Abiological%20AND%20all%3Aage%20AND%20all%3Adashboard&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Apeople%20AND%20all%3Alifelong%20AND%20all%3Abiological%20AND%20all%3Aage%20AND%20all%3Adashboard&start=0&max_results=10",
+      "sha256": "32e8ff6d0e7de2061959e459c3570de27b838a7d1fd6e2470f0396f1a184c5b3",
+      "bytes": 860,
+      "observedAt": "2026-11-06T00:07:54.259Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "give people lifelong biological age dashboard",
+      "url": "https://api.crossref.org/works?query=give%20people%20lifelong%20biological%20age%20dashboard&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=give%20people%20lifelong%20biological%20age%20dashboard&rows=10&select=DOI,title",
+      "sha256": "e6b85f26421b0594e5536fe1b56ab5a8927f42a7887a5d0db82b08da0703f7d7",
+      "bytes": 1318,
+      "observedAt": "2026-11-06T00:07:55.590Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "give people lifelong human health longevity",
+      "url": "https://api.github.com/search/repositories?q=give%20people%20lifelong%20human%20health%20longevity&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=give%20people%20lifelong%20human%20health%20longevity&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:08:00.346Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "give people lifelong human health longevity",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Apeople%20AND%20all%3Alifelong%20AND%20all%3Ahuman%20AND%20all%3Ahealth%20AND%20all%3Alongevity&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Agive%20AND%20all%3Apeople%20AND%20all%3Alifelong%20AND%20all%3Ahuman%20AND%20all%3Ahealth%20AND%20all%3Alongevity&start=0&max_results=10",
+      "sha256": "6c5f53a4f492f721a1577b62bfb40d4cdfae9cd301763e1ab25a830bfd28ebff",
+      "bytes": 856,
+      "observedAt": "2026-11-06T00:08:00.881Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "give people lifelong human health longevity",
+      "url": "https://api.crossref.org/works?query=give%20people%20lifelong%20human%20health%20longevity&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=give%20people%20lifelong%20human%20health%20longevity&rows=10&select=DOI,title",
+      "sha256": "38ad7101ba27cd166e0799d126797cd3a5314438c2f2ea61f87e1c7d4a093c43",
+      "bytes": 1374,
+      "observedAt": "2026-11-06T00:08:02.627Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "c9ce11a45cb87dedaa6e9bf1caca1149f335ff79fd2735cd64e9fd84c3fe2e35",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

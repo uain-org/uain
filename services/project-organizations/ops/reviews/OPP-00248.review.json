@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00248",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T03:04:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Vaccines tailored to each person are real in oncology and absent everywhere else, and nothing approaches the Main KPI of 1,000,000,000 people with tailored vaccines. The furthest-advanced programme is individualised neoantigen mRNA therapy: intismeran autogene (mRNA-4157) is in four phase 3 trials, including 1,089 participants in high-risk melanoma and 868 and 680 in non-small-cell lung cancer, with phase 2 studies in bladder, renal and squamous lung disease (https://clinicaltrials.gov/api/v2/studies?query.intr=mRNA-4157&pageSize=10); nothing is approved. The wider registry picture is small phase 1 studies of per-patient neoantigen peptide, DNA and dendritic-cell vaccines, typically 8 to 64 participants (https://clinicaltrials.gov/api/v2/studies?query.intr=personalized+neoantigen+vaccine&pageSize=15), and the literature on tailoring to an individual immune profile outside cancer is 23 editorial and review records with no product (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22personalized%20vaccine%22%20AND%20%22immune%20profile%22%20AND%20%28HLA%20OR%20immunogenetics%29&format=json&pageSize=8&resultType=lite). The computational half of the problem is openly solved: 45 GitHub repositories implement neoantigen and HLA-aware prediction pipelines, including nextNEOpi (95 stars) and NeoPredPipe (118 stars) (https://api.github.com/search/repositories?q=neoantigen+prediction+pipeline&per_page=10&sort=stars). Honest limit: per-patient epitope selection is a known answer with maintained open-source tools, so a task that re-implements prediction is not new work; the open work is per-person manufacture at hours-to-days turnaround and population cost, immunogenetic coverage outside European-ancestry training data, and any tailored vaccine for infectious disease, where no candidate was found."
+  },
+  "additionalSearches": [
+    {
+      "query": "registered trials of individualized neoantigen mRNA therapy",
+      "source": "https://clinicaltrials.gov/api/v2/studies?query.intr=mRNA-4157&pageSize=10",
+      "observedAt": "2026-11-06T03:02:00Z",
+      "finding": "Intismeran autogene (mRNA-4157) with pembrolizumab is in phase 3: melanoma (1,089), NSCLC (868 and 680) and adjuvant stage I NSCLC (876), plus phase 2 studies in bladder (308), renal (272), melanoma (160) and squamous NSCLC (180). Individualised cancer vaccines are therefore late-stage but still unapproved."
+    },
+    {
+      "query": "registered personalized neoantigen vaccine trials",
+      "source": "https://clinicaltrials.gov/api/v2/studies?query.intr=personalized+neoantigen+vaccine&pageSize=15",
+      "observedAt": "2026-11-06T03:03:00Z",
+      "finding": "The broader registry set is small per-patient studies: peptide, DNA and dendritic-cell neoantigen vaccines in glioblastoma, melanoma, renal, oesophageal, colorectal and lung cancer, typically phase 1 with 8 to 64 participants, one terminated. No infectious-disease vaccine tailored to an individual immune profile appears."
+    },
+    {
+      "query": "personalized vaccination by individual immune profile literature",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22personalized%20vaccine%22%20AND%20%22immune%20profile%22%20AND%20%28HLA%20OR%20immunogenetics%29&format=json&pageSize=8&resultType=lite",
+      "observedAt": "2026-11-06T03:04:00Z",
+      "finding": "23 hits, mostly editorials and reviews (design considerations for future personalised vaccination, computational vaccine development, tumour-specific antigen landscapes). Tailoring by immune profile is discussed as a prospect rather than delivered; titles only, abstracts not retrieved."
+    },
+    {
+      "query": "open-source neoantigen and HLA prediction pipelines",
+      "source": "https://api.github.com/search/repositories?q=neoantigen+prediction+pipeline&per_page=10&sort=stars",
+      "observedAt": "2026-11-06T03:05:00Z",
+      "finding": "45 repositories, several maintained and substantial: NeoPredPipe (118 stars), nextNEOpi (95), SSNIP (24), Seq2Neo (23), NeoFuse (22), ImmuneMirror, NovumRNA, OmniNeo, plus HLA typing pipelines. The per-person epitope selection step has open solutions."
+    }
+  ]
+}

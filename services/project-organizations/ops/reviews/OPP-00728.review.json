@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00728",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T04:12:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "No deployed guide robot was found, so the Main KPI of 43,000,000 blind people with a guide robot is open work. The 2025-2026 literature is research prototypes with tiny evaluations: GuideNav, a vision-only robotic navigation assistant, demonstrates kilometre-scale teach-and-repeat route following across five outdoor environments but was assessed with three guide dog handlers and one trainer; a blind-guiding and shopping robot was tested in a single 1,600 square metre market; a tactile-paving and crossing segmentation network runs at 59.2 frames per second on an embedded guide robot; and an acceptance study found self-efficacy lower in uncontrolled real-life use than in controlled scenarios, with technical, user and organisational barriers to everyday use (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%22robotic%20guide%20dog%22%20OR%20%22guide%20robot%22%29%20AND%20%28blind%20OR%20%22visually%20impaired%22%29&format=json&pageSize=5&resultType=core). No abstract describes a commercial product. Open source is three unstarred student projects (https://api.github.com/search/repositories?q=guide+robot+blind+navigation&per_page=10&sort=stars), and the nearest deployed assistive technology is wearable rather than robotic: a 2026 survey found 10.2 percent wearable use among 254 workers with visual impairments, nearly all smart glasses, while an IoT scoping review found smart canes the most common device at 38 percent. Honest limits: component navigation (vision-only route following, obstacle avoidance, crossing detection) is published and partly open, so a task that only re-implements navigation is a known answer; commercial self-guiding mobility devices were not covered by these searches and a task must re-check them; and the open work is reliability, handover of control, cost and durable user trust, none of which any source demonstrates."
+  },
+  "additionalSearches": [
+    {
+      "query": "guide robots for blind people",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%22robotic%20guide%20dog%22%20OR%20%22guide%20robot%22%29%20AND%20%28blind%20OR%20%22visually%20impaired%22%29&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T04:02:00Z",
+      "finding": "All five records are research prototypes: GuideNav (vision-only, kilometre-scale route following in five outdoor environments, user study of 3 guide dog handlers and 1 trainer), a farmers-market blind-guiding and shopping-arm robot tested in one 1,600 square metre market, a tactile-paving and zebra-crossing segmentation network at 59.2 fps on embedded guide-robot hardware, a review of obstacle avoidance for assistive robots, and an acceptance study reporting lower self-efficacy in real-life use and organisational barriers. None describes a commercial or deployed guide robot."
+    },
+    {
+      "query": "open-source guide robot navigation projects",
+      "source": "https://api.github.com/search/repositories?q=guide+robot+blind+navigation&per_page=10&sort=stars",
+      "observedAt": "2026-11-06T04:04:00Z",
+      "finding": "Three repositories, all 0 stars: an assistive airport navigation robot concept, an Arduino ultrasonic obstacle robot, and generic automated-guided-vehicle guidelines. No maintained open-source guide robot platform."
+    },
+    {
+      "query": "deployed assistive mobility technology for blind users",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22smart%20glasses%22%20AND%20%28blind%20OR%20%22low%20vision%22%29%20AND%20%28%22scene%20description%22%20OR%20%22image%20captioning%22%20OR%20assistive%29&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T04:06:00Z",
+      "finding": "The assistive technology that actually reaches users is wearable, not robotic: a 2026 JVIB survey of 254 workers with visual impairments found 10.2 percent wearable use, nearly all smart glasses, and a 2026 IoT scoping review of 18 studies found smart canes the most common assistive device at 38 percent, with no mention of guide robots."
+    },
+    {
+      "query": "tactile and assistive device availability as a comparison for deployed guide robots",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%22Dot%20Pad%22%20OR%20%22Monarch%22%20OR%20%22Graphiti%22%29%20AND%20%28tactile%20OR%20braille%29%20AND%20blind&format=json&pageSize=5&resultType=lite",
+      "observedAt": "2026-11-06T04:09:00Z",
+      "finding": "Comparison search for what a shipped assistive product looks like in the literature: named commercial devices such as Monarch appear by name in 37 records with user studies. No equivalent named, commercially available guide robot appears in any of this reviewer's searches, which supports the finding that guide robots remain research prototypes."
+    }
+  ]
+}

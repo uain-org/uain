@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-00962",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T04:22:00Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Deploying one primary-care AI assistant per 1,000 people, 8,000,000 assistants, is not achieved and the evidence that any such assistant is safe to rely on is missing, so this is open work. The strongest result is simulated: multimodal AMIE beat primary care physicians on 29 of 32 axes across 105 simulated telehealth consultations in a randomised blinded exploratory study (Nature Medicine 2026). A 2026 systematic review of six studies found AI-assisted teleconsultation gave physicians with an LLM no significant benefit (adjusted difference 2 percentage points, CI -4 to 8), did not reduce unnecessary referrals, produced more confirmatory testing and lower trust in one experiment, and rested on low or very low certainty evidence; a 2026 review notes few cleared AI devices are peer-reviewed, prospective randomised trials are scarce, and uncertainty calibration and automation bias remain weak (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%22large%20language%20model%22%20OR%20AMIE%29%20AND%20%22primary%20care%22%20AND%20%28diagnosis%20OR%20consultation%29%20AND%20%28trial%20OR%20evaluation%29&format=json&pageSize=5&resultType=core). Deployed triage tools are weaker than the frontier models that beat them on vignettes, and musculoskeletal tools report sensitivity from 39 to 91 percent. Honest limits: assistant-shaped software is abundant and open, 140 repositories of clinical LLM assistants plus benchmark harnesses, so building another wrapper is a known answer; and no AI assistant deployed in frontline or community care in a low- or middle-income country reports patient outcomes, which is the only work worth rewarding here."
+  },
+  "additionalSearches": [
+    {
+      "query": "AI and LLM systems in primary care diagnosis",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%22large%20language%20model%22%20OR%20AMIE%29%20AND%20%22primary%20care%22%20AND%20%28diagnosis%20OR%20consultation%29%20AND%20%28trial%20OR%20evaluation%29&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T04:11:00Z",
+      "finding": "Multimodal AMIE outperformed primary care physicians on 29 of 32 axes in 105 simulated telehealth consultations (Nature Medicine 2026, exploratory). A 2026 systematic review of six studies found no significant benefit when physicians used an LLM (2 percentage points, CI -4 to 8), no reduction in unnecessary referrals, more confirmatory testing and lower trust in one experiment, with low or very low certainty. A 2026 state-of-clinical-AI review cites scarce prospective randomised trials, poor uncertainty calibration and automation bias. None tested an AI acting as a primary-care clinician in real practice."
+    },
+    {
+      "query": "deployed symptom checker accuracy and safety",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22symptom%20checker%22%20AND%20%28accuracy%20OR%20safety%29%20AND%20%28triage%20OR%20%22primary%20care%22%29&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T04:13:00Z",
+      "finding": "A 2026 preprint found a government-backed symptom checker with 2.4 million uses in FY2024-25 reached 48.9 percent triage accuracy and 46.7 percent emergency sensitivity with two critical misses, while frontier LLMs reached 73.3-86.7 percent with none. A 2026 scoping review of 34 studies and 37,509 patients found musculoskeletal triage tools with sensitivity 39-91 percent and specificity 23-80 percent, most performing poorly; one 91 percent accuracy study is developer-affiliated."
+    },
+    {
+      "query": "open-source clinical LLM assistants",
+      "source": "https://api.github.com/search/repositories?q=medical+llm+clinical+assistant&per_page=10&sort=stars",
+      "observedAt": "2026-11-06T04:15:00Z",
+      "finding": "140 repositories, top-starred at 10: healthcare agent orchestrators with specialist subagents, fine-tuned Llama and Mistral medical dialogue assistants, RAG diagnostic assistants over MIMIC-IV, ward-round and voice record assistants. Assistant-shaped software is openly available, though none is clinically validated."
+    },
+    {
+      "query": "AI assistants in frontline care in low- and middle-income countries",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22artificial%20intelligence%22%20AND%20%22community%20health%20worker%22%20AND%20%28%22low-income%22%20OR%20%22low-%20and%20middle-income%22%29%20AND%20deployment&format=json&pageSize=5&resultType=core",
+      "observedAt": "2026-11-06T04:17:00Z",
+      "finding": "159 hits whose returned sample contains no AI assistant deployed at scale in community primary care and no patient outcomes: reviews and frameworks on AI for chronic disease in Sub-Saharan Africa, adverse pregnancy prediction (AUC 0.73-0.97 with eight bias mechanisms and no prospective impact trials), and a nurse-led framework its authors call conceptual and unvalidated."
+    }
+  ]
+}

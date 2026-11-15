@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261107T043109Z-79fca0f784",
+  "version": "0.3.35",
+  "source_commit": null,
+  "deployed_at": "2026-11-07T04:37:42Z",
+  "prior": "20261106T134404Z-b90569bb58",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#release-records-backfill-20261110",
+    "CHANGELOG.md"
+  ],
+  "note": "Backfilled 10 Nov from the host, read-only: retained release folder and activation backup /var/backups/baink/<id> both dated 04:37:42 UTC; manifest version 0.3.35, prior b90569bb58. CHANGELOG 7 Nov (holder7 and BAINK 0.3.35) records 143/28 file hash checks. No public check after activation is cited; source commit not in the manifest."
+}

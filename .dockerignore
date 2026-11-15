@@ -1,0 +1,14 @@
+.git
+.github
+node_modules
+dist
+.next
+.env*
+*.log
+# Disposable database, local signing keys and dependency trees never enter images.
+work
+services/*/.data
+services/*/node_modules
+services/*/dist
+contracts/node_modules
+contracts/build

@@ -1,0 +1,124 @@
+{
+  "schema": "uain-project-organization-bootstrap-draft-v1",
+  "status": "assessment_required",
+  "project": "OPP-06721",
+  "native_project": "P-OPP-06721",
+  "source_digest": "9383e9b1c82cb214ee05c2829e205da68e393300b28c7182c6c5744a0b9aebc7",
+  "source_revision": "6ff9fe288d7a6820f04c2df52fe8c2836b4f99b2",
+  "title": "Let anyone describe a dream home and get buildable plans in minutes",
+  "producer": {
+    "kind": "trusted_search",
+    "id": "uain-trusted-prior-art-search-v1",
+    "drafter": "uain-project-organization-bootstrap-drafter-v1",
+    "sources": [
+      "github_repositories",
+      "arxiv",
+      "crossref_works"
+    ],
+    "criteriaDigest": "ae94673baacf87714f62fe364ccf6ae94048b50c96cae3857536c979002c8d41"
+  },
+  "drafted_at": "2026-11-06T00:27:21.702Z",
+  "queries": [
+    "let anyone describe dream home get",
+    "let anyone describe arts culture creativity"
+  ],
+  "searches": [
+    {
+      "query": "let anyone describe dream home get",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:27:13.243Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=let%20anyone%20describe%20dream%20home%20get&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "let anyone describe dream home get",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:27:13.859Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Alet%20AND%20all%3Aanyone%20AND%20all%3Adescribe%20AND%20all%3Adream%20AND%20all%3Ahome%20AND%20all%3Aget&start=0&max_results=10; sha256=f0c2598911ce7e8d75533fe481ccb5a0510f432a6e26f6a790bbf9b688cfa5b1; total=0; shown=0/0"
+    },
+    {
+      "query": "let anyone describe dream home get",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:27:14.808Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=let%20anyone%20describe%20dream%20home%20get&rows=10&select=DOI,title; sha256=f8d66792366f42ebf4a168bd82a94ee9db024e9e7cc287a5ad933c171c78d48d; total=505991; shown=5/10; top: 10.5040/9781472506733.00000006 \"If You Don't Let Us Dream, We Won't Let You Sleep\" | 10.1353/apa.2023.a913466 \"Let Me Know When You Get Home Safe\" | 10.1093/oso/9780195369021.003.0009 \"Don’t Let Anyone Else Do Your Job\" | 10.7748/ns.25.2.27.s31 \"Dream on\" | 10.5949/upo9781846313783.010 \"Nowhere Anyone Would Like To Get To\""
+    },
+    {
+      "query": "let anyone describe arts culture creativity",
+      "source": "api.github.com/search/repositories",
+      "observedAt": "2026-11-06T00:27:19.630Z",
+      "resultSummary": "url=https://api.github.com/search/repositories?q=let%20anyone%20describe%20arts%20culture%20creativity&per_page=10; sha256=4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f; total=0; shown=0/0"
+    },
+    {
+      "query": "let anyone describe arts culture creativity",
+      "source": "export.arxiv.org/api/query",
+      "observedAt": "2026-11-06T00:27:20.842Z",
+      "resultSummary": "url=https://export.arxiv.org/api/query?search_query=all%3Alet%20AND%20all%3Aanyone%20AND%20all%3Adescribe%20AND%20all%3Aarts%20AND%20all%3Aculture%20AND%20all%3Acreativity&start=0&max_results=10; sha256=ab15717a0bb84cb4cbbae8b92ca773d16b84d35a3323517867ac09ca53c055ec; total=0; shown=0/0"
+    },
+    {
+      "query": "let anyone describe arts culture creativity",
+      "source": "api.crossref.org/works",
+      "observedAt": "2026-11-06T00:27:21.702Z",
+      "resultSummary": "url=https://api.crossref.org/works?query=let%20anyone%20describe%20arts%20culture%20creativity&rows=10&select=DOI,title; sha256=502173d8819d8412d01c8d59235a7f3855d49c1901bd6aba904a7318f302096c; total=1724433; shown=5/10; top: 10.1037/aca0000883.supp \"Supplemental Material for Let Creativity Flow: Are Flow States Linked to Enhanced Creative Performance?\" | 10.1037/aca0000883 \"Let creativity flow: Are flow states linked to enhanced creative performance?\" | 10.1093/oso/9780195369021.003.0009 \"Don’t Let Anyone Else Do Your Job\" | 10.4324/9781315231594-28 \"Culture, Creativity and Death\" | 10.1037/a0038506 \"Time to let go? No automatic aesthetic preference for the golden ratio in art pictures.\""
+    }
+  ],
+  "retrievals": [
+    {
+      "source": "github_repositories",
+      "query": "let anyone describe dream home get",
+      "url": "https://api.github.com/search/repositories?q=let%20anyone%20describe%20dream%20home%20get&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=let%20anyone%20describe%20dream%20home%20get&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:27:13.243Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "let anyone describe dream home get",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Alet%20AND%20all%3Aanyone%20AND%20all%3Adescribe%20AND%20all%3Adream%20AND%20all%3Ahome%20AND%20all%3Aget&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Alet%20AND%20all%3Aanyone%20AND%20all%3Adescribe%20AND%20all%3Adream%20AND%20all%3Ahome%20AND%20all%3Aget&start=0&max_results=10",
+      "sha256": "f0c2598911ce7e8d75533fe481ccb5a0510f432a6e26f6a790bbf9b688cfa5b1",
+      "bytes": 838,
+      "observedAt": "2026-11-06T00:27:13.859Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "let anyone describe dream home get",
+      "url": "https://api.crossref.org/works?query=let%20anyone%20describe%20dream%20home%20get&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=let%20anyone%20describe%20dream%20home%20get&rows=10&select=DOI,title",
+      "sha256": "f8d66792366f42ebf4a168bd82a94ee9db024e9e7cc287a5ad933c171c78d48d",
+      "bytes": 1138,
+      "observedAt": "2026-11-06T00:27:14.808Z"
+    },
+    {
+      "source": "github_repositories",
+      "query": "let anyone describe arts culture creativity",
+      "url": "https://api.github.com/search/repositories?q=let%20anyone%20describe%20arts%20culture%20creativity&per_page=10",
+      "finalUrl": "https://api.github.com/search/repositories?q=let%20anyone%20describe%20arts%20culture%20creativity&per_page=10",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "observedAt": "2026-11-06T00:27:19.630Z"
+    },
+    {
+      "source": "arxiv",
+      "query": "let anyone describe arts culture creativity",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Alet%20AND%20all%3Aanyone%20AND%20all%3Adescribe%20AND%20all%3Aarts%20AND%20all%3Aculture%20AND%20all%3Acreativity&start=0&max_results=10",
+      "finalUrl": "https://export.arxiv.org/api/query?search_query=all%3Alet%20AND%20all%3Aanyone%20AND%20all%3Adescribe%20AND%20all%3Aarts%20AND%20all%3Aculture%20AND%20all%3Acreativity&start=0&max_results=10",
+      "sha256": "ab15717a0bb84cb4cbbae8b92ca773d16b84d35a3323517867ac09ca53c055ec",
+      "bytes": 856,
+      "observedAt": "2026-11-06T00:27:20.842Z"
+    },
+    {
+      "source": "crossref_works",
+      "query": "let anyone describe arts culture creativity",
+      "url": "https://api.crossref.org/works?query=let%20anyone%20describe%20arts%20culture%20creativity&rows=10&select=DOI,title",
+      "finalUrl": "https://api.crossref.org/works?query=let%20anyone%20describe%20arts%20culture%20creativity&rows=10&select=DOI,title",
+      "sha256": "502173d8819d8412d01c8d59235a7f3855d49c1901bd6aba904a7318f302096c",
+      "bytes": 1318,
+      "observedAt": "2026-11-06T00:27:21.702Z"
+    }
+  ],
+  "failures": [],
+  "searches_digest": "9555da551c02df60d74faf7173f3cebffe22de0a0f62d570a0776f4e1511712e",
+  "class": null,
+  "assessment": null,
+  "note": "DRAFT. Searches only; no class, no assessment and no novelty claim. An independent reviewer (not this drafting step and not the proposing model) must read the searches, set class (benevolent or neutral) and the explicit assessment {openSolutionFound, knownAnswer, reviewer, rationale}; promoteDraft() in services/project-organizations/src/bootstrap-record.mjs then builds the reviewed bootstrap record bootstrap.mjs accepts. Until then the project holds as prior_art_review_required."
+}

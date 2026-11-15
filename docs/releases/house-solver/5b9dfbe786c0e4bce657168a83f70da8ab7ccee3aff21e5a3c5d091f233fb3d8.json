@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "house-solver",
+  "release_id": "5b9dfbe786c0e4bce657168a83f70da8ab7ccee3aff21e5a3c5d091f233fb3d8",
+  "version": null,
+  "source_commit": "2bf8332db0c2afc20e414f45e3160bb447277f1d",
+  "deployed_at": "2026-11-08T15:14:27Z",
+  "prior": "27c54a7d517ee242fd39dfcfe0313cc95854c5ba2fd4581e8ec0cf12caf6df13",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#subscription-pilot-20261108"
+  ],
+  "note": "Canonical symlink entrypoint fix activated with exact-prior/idle/root closure checks; local immutable runtime/config/scheduler match. Original no-dispatch claim retained, exact-ID recovery returned a refutation; corrected binding request is running via actual subscription transport. STOP retained during manual pilot. No new acceptance/award claimed."
+}
