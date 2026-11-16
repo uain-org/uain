@@ -42,7 +42,7 @@ test('next tells a payee to confirm a payment that has arrived, before tasks or 
   ] }, '/api/native/central/tasks': { tasks: [{ id: 'T-open', project: 'P-one', solver_amount: '1000000', state: 'open', claimable: true, why_not: null }], more: false } });
   const r = await kit.ops.next(o);
   assert.equal(r.stage, 'payment_arrived');
-  assert.equal(r.next.tool, 'baink_agent_payment_received');
+  assert.equal(r.next.tool, 'uain_agent_payment_received');
   assert.deepEqual(r.next.args, { send: sendId });
   assert.equal(r.next.cli, `uain-agent received ${sendId}`);
   assert.match(r.next.why, /3 AI\$/); assert.match(r.next.why, /Confirm you received it/);
@@ -124,13 +124,13 @@ test('the backup passphrase never travels as an MCP argument: the kit makes one 
   const made = await kit.initIdentity(o);
   const call = (name, args) => kit.handleMcp(o, { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name, arguments: args } }).then((r) => ({ data: JSON.parse(r.result.content[0].text), text: r.result.content[0].text, isError: r.result.isError === true }));
   const tools = Object.fromEntries(kit.MCP_TOOLS.map((x) => [x.name, x]));
-  for (const name of ['baink_agent_backup', 'baink_agent_restore']) assert.ok(!Object.hasOwn(tools[name].inputSchema.properties, 'passphrase'), `${name} takes no passphrase argument`);
+  for (const name of ['uain_agent_backup', 'uain_agent_restore']) assert.ok(!Object.hasOwn(tools[name].inputSchema.properties, 'passphrase'), `${name} takes no passphrase argument`);
   // A passphrase put in the call is refused; no backup is written.
-  const refused = await call('baink_agent_backup', { passphrase: 'typed into the chat by mistake', confirm: true });
+  const refused = await call('uain_agent_backup', { passphrase: 'typed into the chat by mistake', confirm: true });
   assert.equal(refused.data.error, 'backup_passphrase_in_chat'); assert.ok(refused.isError); assert.ok(!refused.text.includes('typed into the chat'));
   const before = process.env.UAIN_AGENT_BACKUP_PASSPHRASE; delete process.env.UAIN_AGENT_BACKUP_PASSPHRASE;
   t.after(() => { if (before !== undefined) process.env.UAIN_AGENT_BACKUP_PASSPHRASE = before; });
-  const ok = await call('baink_agent_backup', { confirm: true });
+  const ok = await call('uain_agent_backup', { confirm: true });
   assert.equal(ok.data.backedUp, true); assert.equal(ok.data.address, made.address);
   const secret = (await readFile(ok.data.passphraseFile, 'utf8')).trim();
   assert.ok(secret.length >= 32); assert.equal((await stat(ok.data.passphraseFile)).mode & 0o777, 0o600);
@@ -138,10 +138,10 @@ test('the backup passphrase never travels as an MCP argument: the kit makes one 
   assert.match(ok.data.note, /Move that file somewhere else/);
   // The pair restores the identity: the passphrase is read from its file.
   const restoredTo = { home: o.home, as: 'elsewhere' };
-  const restored = await kit.handleMcp(restoredTo, { jsonrpc: '2.0', id: 2, method: 'tools/call', params: { name: 'baink_agent_restore', arguments: { file: ok.data.file, passphraseFile: ok.data.passphraseFile, confirm: true } } });
+  const restored = await kit.handleMcp(restoredTo, { jsonrpc: '2.0', id: 2, method: 'tools/call', params: { name: 'uain_agent_restore', arguments: { file: ok.data.file, passphraseFile: ok.data.passphraseFile, confirm: true } } });
   assert.equal(JSON.parse(restored.result.content[0].text).address, made.address);
   // Without a passphrase source a restore says what to do, in plain words.
-  const none = await kit.handleMcp({ home: o.home, as: 'third' }, { jsonrpc: '2.0', id: 3, method: 'tools/call', params: { name: 'baink_agent_restore', arguments: { file: ok.data.file, confirm: true } } });
+  const none = await kit.handleMcp({ home: o.home, as: 'third' }, { jsonrpc: '2.0', id: 3, method: 'tools/call', params: { name: 'uain_agent_restore', arguments: { file: ok.data.file, confirm: true } } });
   const noneData = JSON.parse(none.result.content[0].text);
   assert.equal(noneData.error, 'backup_passphrase_required'); assert.match(noneData.next, /Never ask them to type the passphrase into the chat/);
 });
@@ -199,7 +199,7 @@ test('membership is one plain line at every stage, and enrol ends with it', asyn
   o.fetch = ((inner) => async (url, init) => (new URL(url).pathname === '/api/account' && !account.account ? json({ error: { code: 'account_missing', message: 'no account' } }, 404) : inner(url, init)))(o.fetch);
   assert.match((await kit.ops.status(o)).membershipNote, /^Not a member yet: this key has no BAINK profile/);
   account = { account: { native: { memberStatus: 'missing' } } };
-  assert.equal((await kit.ops.status(o)).membershipNote, 'Not a member yet. Enrol with baink_agent_enrol.');
+  assert.equal((await kit.ops.status(o)).membershipNote, 'Not a member yet. Enrol with uain_agent_enrol.');
   await writeFile(join(o.home, 'default', 'journal.json'), JSON.stringify({ version: 1, ids: {}, steps: { e: { intent: 'e', kind: 'enrol', operation: 'enrol', target: 'x', status: 'finalized', relayed: true } } }), { mode: 0o600 });
   assert.match((await kit.ops.status(o)).membershipNote, /^Your enrolment was sent; the membership is not active yet\. Check again in two minutes/);
   account = { account: { native: { memberStatus: 'unknown' } } };
@@ -207,7 +207,7 @@ test('membership is one plain line at every stage, and enrol ends with it', asyn
   account = { account: { native: { memberStatus: 'active' } } };
   assert.equal((await kit.ops.status(o)).membershipNote, 'Your UAIN membership is active.');
   // The enrol tool and the kit's own words never say "guardian", "licence pending" or "finalized: false".
-  const enrol = kit.MCP_TOOLS.find((x) => x.name === 'baink_agent_enrol');
+  const enrol = kit.MCP_TOOLS.find((x) => x.name === 'uain_agent_enrol');
   assert.match(enrol.description, /one line whether the membership is active/);
   assert.doesNotMatch(enrol.description + kit.MCP_INSTRUCTIONS, /guardian/i);
 });

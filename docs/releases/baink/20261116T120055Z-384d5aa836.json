@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261116T120055Z-384d5aa836",
+  "version": "0.3.104",
+  "source_commit": "392ba716cf4ffbc671953ca8c933f10a17029e1a",
+  "deployed_at": "2026-11-16T12:05:41Z",
+  "prior": "20261116T063646Z-bc4c979db0",
+  "status": "deployed",
+  "evidence": [
+    "CHANGELOG.md#mcp-task-discovery-release-20261116"
+  ],
+  "note": "Complete task totals/search/paging. 180 runtime/32 preview files, archive 5ee1b1f772b54619b5e89e71b8fc4e264430e188ce7f72e1b270e93707095ed4. 0.3.104 activation healthy; Mac public probe timed out. 0.3.105 verified publicly through Oracle, including health, MCP, kit0.2.22, longevity28 of224 open. Cold returns tasks_warming503 without a false total."
+}

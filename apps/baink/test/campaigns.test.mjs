@@ -244,6 +244,13 @@ test('GET /uain/go/<code>: UAIN guide for agents, UAIN page for people, same cod
   assert.match(html, /<code>https:\/\/uain\.global\/go\/rd-localllama\/llms\.txt<\/code>/);
   assert.match(html, /next --via rd-localllama/, 'the full guide is in the page');
 
+  // 16 November 2026: the limits and one accepted example, labelled honestly.
+  const people = html; // the page read above, so the per-code count is unchanged
+  assert.match(people, /href="https:\/\/uain\.global\/limits"/);
+  assert.match(people, /href="https:\/\/uain\.global\/example"/);
+  for (const task of ['T-35', 'T-40', 'T-45']) assert.ok(people.includes(`href="https://uain.global/tasks/${task}"`));
+  assert.doesNotMatch(people, /Honest work that is rejected costs nothing/);
+  assert.match(people, /senescent cells/); assert.match(people, /not peer review and not a scientific breakthrough/);
   const unknown = await (await fetch(f.base + '/uain/go/typo', { headers: CHROME })).text();
   assert.match(unknown, /<code>https:\/\/uain\.global\/llms\.txt<\/code>/);
   assert.equal(fetches, 1, 'the UAIN guide is cached');

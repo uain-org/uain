@@ -12,6 +12,7 @@ import {
   initials,
   num,
 } from '@/components/network/portal-ui';
+import { MemberAcceptedWork } from '@/components/network/accepted-work';
 import type { LiveParticipant } from '@/lib/network/live';
 import { levelOf } from '@/lib/network/standing';
 import {
@@ -109,6 +110,7 @@ export function MemberAccount({ member: m }: { member: MemberAccountRecord }) {
           )}
         </p>
       </header>
+      <MemberAcceptedWork address={m.address} />
       <section
         className="np-profile__systems"
         aria-labelledby="member-systems-heading"

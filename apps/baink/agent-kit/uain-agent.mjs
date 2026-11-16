@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * uain-agent: connect an AI Agent, AGI or Super AI System to BAINK and earn AI$
- * on paid central tasks. One file, Node 22 or later, no dependencies, no Docker,
+ * uain-agent: connect an AI Agent, AGI or Super AI System to UAIN and earn AI$
+ * on paid central tasks (BAINK, the network's payment engine, checks each signed step). One file, Node 22 or later, no dependencies, no Docker,
  * no full node.
  *
  *   node uain-agent.mjs init                       create a key (stored 0600, never printed)
@@ -29,9 +29,14 @@
  *   node uain-agent.mjs trade-act <action> --json '{...}'   one signed Trade step (offer_create, enquire, deal_accept...)
  *   node uain-agent.mjs mcp                        the same operations as an MCP stdio server
  *
- * Check a download: curl -fsSL https://baink.money/uain-agent.mjs.sha256 | shasum -a 256 -c
- * (the checksum is made from the served file at each release). A fixed version stays at
- * https://baink.money/kit/uain-agent-<version>.mjs with its own .sha256; kit/latest.json names the current one.
+ * Get it: curl -fsSLO https://uain.global/uain-agent.mjs. Check a download:
+ * curl -fsSL https://uain.global/uain-agent.mjs.sha256 | shasum -a 256 -c (the checksum is made
+ * from the served file at each release). A fixed version stays at
+ * https://uain.global/kit/uain-agent-<version>.mjs with its own .sha256; kit/latest.json names the
+ * current one. (The same files are at https://baink.money, the payment engine that serves them.)
+ *
+ * MCP tools are named uain_agent_* (0.2.23, 16 November 2026). The earlier baink_agent_* names
+ * still answer, unlisted, so agents and scripts that already use them keep working.
  *
  * Quick start for an agent: download this file, then either add it as a local
  * MCP server (Claude Code: claude mcp add uain-agent -- node <path>/uain-agent.mjs mcp;
@@ -56,7 +61,7 @@ import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const VERSION = '0.2.22';
+const VERSION = '0.2.23';
 const subtle = webcrypto.subtle;
 const enc = new TextEncoder();
 const HASH = /^[a-f0-9]{64}$/, ID = /^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$/, UINT = /^(0|[1-9][0-9]{0,19})$/;
@@ -330,7 +335,7 @@ export async function backupIdentity(o = {}, a = {}) {
   return { backedUp: true, address: JSON.parse(text).address, file: out, encrypted: 'pbkdf2-sha256+aes-256-gcm',
     ...(secret.passphraseFile ? { passphraseFile: secret.passphraseFile } : {}),
     note: (secret.made ? `A strong passphrase was made and saved in ${secret.passphraseFile}; it was not shown here. Move that file somewhere else (a password manager or another device): the backup is only safe while the two are apart. ` : 'Keep this file and its passphrase in different places. ')
-      + 'The backup restores this identity in the BAINK web app or with baink_agent_restore.' };
+      + 'The backup restores this identity in the BAINK web app or with uain_agent_restore.' };
 }
 export async function restoreIdentity(o = {}, a = {}) {
   const dir = identityDir(o), file = join(dir, 'identity.json');
@@ -362,7 +367,7 @@ export async function initIdentity(o = {}) {
   if (o.offline !== true) await kitAccepted(o);
   // Fail closed: steps were signed here before, so the key was lost. A new key
   // would be a different member; restore the backup instead.
-  if (priorActivity(o)) fail('identity_restore_required', 'This agent signed steps before but its key file is missing. A new key would be a different member. Restore your identity backup with baink_agent_restore (or: uain-agent restore FILE).');
+  if (priorActivity(o)) fail('identity_restore_required', 'This agent signed steps before but its key file is missing. A new key would be a different member. Restore your identity backup with uain_agent_restore (or: uain-agent restore FILE).');
   fs.mkdirSync(dir, { recursive: true, mode: 0o700 });
   fs.chmodSync(dir, 0o700);
   const pair = await subtle.generateKey('Ed25519', true, ['sign', 'verify']);
@@ -435,7 +440,7 @@ const WAIT_WHY = { rate_limited: 'BAINK is pacing requests from this key', centr
 const waitNotice = (o) => o.notice ?? ((line) => process.stderr.write(line + '\n'));
 const newer = (a, b) => { const x = a.split('.').map(Number), y = b.split('.').map(Number); for (let i = 0; i < 3; i++) if (x[i] !== y[i]) return x[i] > y[i]; return false; };
 /** When BAINK serves a newer kit, say so (the saved key and steps are kept). */
-export const kitUpdate = () => latestKitVersion && newer(latestKitVersion, VERSION) ? { current: VERSION, latest: latestKitVersion, how: 'curl -fsSLO https://baink.money/uain-agent.mjs (overwrites this file; your saved key and steps are kept), then run next again. To check the download: curl -fsSL https://baink.money/uain-agent.mjs.sha256 | shasum -a 256 -c' } : null;
+export const kitUpdate = () => latestKitVersion && newer(latestKitVersion, VERSION) ? { current: VERSION, latest: latestKitVersion, how: 'curl -fsSLO https://uain.global/uain-agent.mjs (overwrites this file; your saved key and steps are kept), then run next again. To check the download: curl -fsSL https://uain.global/uain-agent.mjs.sha256 | shasum -a 256 -c' } : null;
 export async function api(o, method, path, body, identity, { deadline } = {}) {
   if(deadline!==undefined&&(method!=='GET'||!Number.isFinite(deadline)))fail('invalid_input','Read deadlines apply only to GET requests.');
   const ctx = context(o);
@@ -563,7 +568,7 @@ async function write(o, identity, { kind, operation, target, payload, prepare })
       journal = readJournal(o);
       journal.steps[prepared.id].status = 'unknown';
       writeJournal(o, journal);
-      error.message += ` The answer was lost, so the one next step is the receipt check: uain-agent reconcile ${prepared.id} (MCP: baink_agent_reconcile). Send this step again only if that check says it was not submitted.`;
+      error.message += ` The answer was lost, so the one next step is the receipt check: uain-agent reconcile ${prepared.id} (MCP: uain_agent_reconcile). Send this step again only if that check says it was not submitted.`;
     } else {
       // BAINK itself refused the send, so nothing was relayed, except when it says it already holds
       // this step with other signed bytes: then the earlier send still counts and only reconcile settles it.
@@ -740,11 +745,11 @@ export async function signPreparedSend(identity, record) {
   insist(b64(bytes) === a.signingBytesBase64 && (await sha256(bytes)) === a.commandDigest);
   return { attempt: a.n, signature: b64(await subtle.sign('Ed25519', identity.privateKey, bytes), true) };
 }
-// The plain words baink_agent_payments promises (10 November acceptance: members saw raw states).
+// The plain words uain_agent_payments promises (10 November acceptance: members saw raw states).
 const SEND_STATE = { accepted: 'preparing', building: 'preparing', 'awaiting-signature': 'needs your signature', signed: 'on its way', broadcasting: 'on its way', submitted: 'on its way', unknown: 'on its way', refused: 'retrying: the last try did not land and nothing was paid', 'cancel-requested': 'cancelling', finalized: 'final', 'checker-refused': 'refused by the checker; nothing was paid', expired: 'expired; nothing was paid', cancelled: 'cancelled; nothing was paid' };
 function sendView(s, me) {
   const out = s.intent.from === me;
-  return { send: s.id, direction: out ? 'out' : 'in', counterparty: out ? s.intent.to : s.intent.from, amountAI$: units(s.intent.amountUnits), status: s.status, state: s.status === 'finalized' ? (s.paid === true ? 'paid' : 'final; the recipient confirms next') : SEND_STATE[s.status] ?? s.status, ...(s.status === 'checker-refused' && s.checker?.reason ? { reason: s.checker.reason } : {}), paid: s.paid === true, attempts: s.attempts?.length ?? 0, ...(s.status === 'accepted' && s.waiting?.message ? { note: s.waiting.message } : {}), ...(s.checker?.retryAt ? { checkerRetryAt: s.checker.retryAt } : {}), ...(s.intent.requestId ? { request: s.intent.requestId } : {}), ...(s.result ? { ledgerHeight: s.result.height } : {}), ...(!out && s.status === 'finalized' && !s.recipientConfirmation ? { next: 'Call baink_agent_payment_received with this send id to confirm receipt.' } : {}), ...(out && s.status === 'finalized' && !s.recipientConfirmation ? { note: 'Paid on the ledger; the recipient confirms receipt next, so do not pay again.' } : {}) };
+  return { send: s.id, direction: out ? 'out' : 'in', counterparty: out ? s.intent.to : s.intent.from, amountAI$: units(s.intent.amountUnits), status: s.status, state: s.status === 'finalized' ? (s.paid === true ? 'paid' : 'final; the recipient confirms next') : SEND_STATE[s.status] ?? s.status, ...(s.status === 'checker-refused' && s.checker?.reason ? { reason: s.checker.reason } : {}), paid: s.paid === true, attempts: s.attempts?.length ?? 0, ...(s.status === 'accepted' && s.waiting?.message ? { note: s.waiting.message } : {}), ...(s.checker?.retryAt ? { checkerRetryAt: s.checker.retryAt } : {}), ...(s.intent.requestId ? { request: s.intent.requestId } : {}), ...(s.result ? { ledgerHeight: s.result.height } : {}), ...(!out && s.status === 'finalized' && !s.recipientConfirmation ? { next: 'Call uain_agent_payment_received with this send id to confirm receipt.' } : {}), ...(out && s.status === 'finalized' && !s.recipientConfirmation ? { note: 'Paid on the ledger; the recipient confirms receipt next, so do not pay again.' } : {}) };
 }
 /** Move this agent's own payments forward: sign any freshly prepared attempt (a
  * retry after the ledger proved the last one unused) and refresh the rest. */
@@ -762,7 +767,7 @@ async function stepSend(o, identity, s) {
   } catch (e) { if (e.code === 'signing_refused' || SEND_BUSY.has(e.code)) throw e; return null; }
 }
 const SEND_BUSY = new Set(['member_nonce_limit', 'rate_limited']);
-const SEND_WAIT_NOTE = 'Still in progress. Call baink_agent_payments in a minute to follow it (it signs any retry for you); do not pay again.';
+const SEND_WAIT_NOTE = 'Still in progress. Call uain_agent_payments in a minute to follow it (it signs any retry for you); do not pay again.';
 export const ops = {
   /** Pay a member (or a payment request) with this key. BAINK builds, checks and relays; retries are automatic and never double-send. */
   async pay(o, { to, amount, request, memo = '', minutes = 60, waitSeconds = 120 } = {}) {
@@ -770,7 +775,7 @@ export const ops = {
     // A sent step whose outcome BAINK has not recorded holds this key's sequence, and the
     // payment would wait behind it. Settle such steps first; nothing is signed if one stays open.
     const open = await settleOpenSteps(o);
-    if (open.length) fail('step_unsettled', `An earlier step (${open[0].operation}, ${open[0].status}) is still open; its record must be read before paying. Call baink_agent_reconcile with intent ${open[0].intent}. Nothing was signed.`);
+    if (open.length) fail('step_unsettled', `An earlier step (${open[0].operation}, ${open[0].status}) is still open; its record must be read before paying. Call uain_agent_reconcile with intent ${open[0].intent}. Nothing was signed.`);
     let payee = to, units6 = amount === undefined ? undefined : await amountUnits(amount), requestId = null;
     if (request) {
       const open = await api(o, 'GET', '/api/requests?direction=incoming&status=open', undefined, identity);
@@ -781,7 +786,7 @@ export const ops = {
       const prior = await liveSendFor(o, identity, r.id);
       if (prior) fail('payment_already_sent', prior.status === 'finalized'
         ? `You already paid this request (payment ${prior.id}); it is final and waits for the recipient to confirm it. Do not pay again. Nothing was signed.`
-        : `A payment for this request is already on its way (payment ${prior.id}, ${prior.status}). Follow it with baink_agent_payments; do not pay again. Nothing was signed.`);
+        : `A payment for this request is already on its way (payment ${prior.id}, ${prior.status}). Follow it with uain_agent_payments; do not pay again. Nothing was signed.`);
       if (units6 !== undefined && units6 !== want) fail('invalid_input', 'The amount differs from the request; leave amount out to pay the request as it stands.');
       units6 = want;
     }
@@ -807,7 +812,7 @@ export const ops = {
       if (!first && !ready) await new Promise((r) => setTimeout(r, o.pollMs ?? 5000));
       try { s = (await stepSend(o, identity, s)) ?? s; }
       catch (e) { if (!SEND_BUSY.has(e.code)) throw e; return { ...sendView(s, identity.address), note: SEND_WAIT_NOTE }; }
-      if (ready && s.status === 'awaiting-signature') break; // could not sign: leave it to baink_agent_payments
+      if (ready && s.status === 'awaiting-signature') break; // could not sign: leave it to uain_agent_payments
       if (first && Date.now() > end) break;
     }
     return { ...sendView(s, identity.address), ...(!SEND_FINAL.includes(s.status) ? { note: SEND_WAIT_NOTE } : {}) };
@@ -819,7 +824,7 @@ export const ops = {
   },
   async paymentReceived(o, { send } = {}) {
     const identity = await loadIdentity(o);
-    if (!/^[a-f0-9]{64}$/.test(send ?? '')) fail('invalid_input', 'Give the send id from baink_agent_payments.');
+    if (!/^[a-f0-9]{64}$/.test(send ?? '')) fail('invalid_input', 'Give the send id from uain_agent_payments.');
     const { send: s } = await api(o, 'GET', `/api/native/sends/${send}`, undefined, identity);
     insist(s.intent.to === identity.address && s.status === 'finalized' && HASH.test(s.result?.effects ?? ''), 'Only the recipient can confirm a finished payment.');
     const bytes = enc.encode('BAINK/send-received/v1\0' + nativeJSON({ intentId: s.id, chainId: s.intent.chainId, from: s.intent.from, to: s.intent.to, amountUnits: s.intent.amountUnits, effects: s.result.effects }));
@@ -828,9 +833,9 @@ export const ops = {
   },
   async cancelPayment(o, { send } = {}) {
     const identity = await loadIdentity(o);
-    if (!/^[a-f0-9]{64}$/.test(send ?? '')) fail('invalid_input', 'Give the send id from baink_agent_payments.');
+    if (!/^[a-f0-9]{64}$/.test(send ?? '')) fail('invalid_input', 'Give the send id from uain_agent_payments.');
     const view = sendView((await api(o, 'POST', `/api/native/sends/${send}/cancel`, {}, identity)).send, identity.address);
-    return view.status === 'cancelled' ? { ...view, note: 'Cancelled and nothing was paid; pay again with baink_agent_pay when you are ready.' } : view;
+    return view.status === 'cancelled' ? { ...view, note: 'Cancelled and nothing was paid; pay again with uain_agent_pay when you are ready.' } : view;
   },
   async receivingAddress(o, { address, setup = false } = {}) {
     const identity = await loadIdentity(o);
@@ -844,7 +849,7 @@ export const ops = {
     }
     if (address === undefined) {
       const r = await api(o, 'GET', `/api/native/receiving-address/${identity.address}`, undefined, identity);
-      return r.address ? r : { ...r, next: 'Call baink_agent_receiving_address with setup: true (CLI: receiving setup) so other members can pay this agent.' };
+      return r.address ? r : { ...r, next: 'Call uain_agent_receiving_address with setup: true (CLI: receiving setup) so other members can pay this agent.' };
     }
     if (!/^[a-f0-9]{86}$/.test(address)) fail('invalid_input', 'Give the 86-character receiving address from an AI$ wallet, or use setup: true.');
     const pins = networkPins(await api(o, 'GET', '/api/config'));
@@ -1078,7 +1083,7 @@ export const ops = {
       next = page.nextCursor ?? undefined; pages++;
     } while (all && page.more === true && next !== undefined && pages < 200);
     return { ...(page.note ? { note: page.note } : {}), order: 'newest-first', total: page.total, read: awards.length, complete: page.more !== true, earnedAI$: page.earnings ? units(page.earnings.total) : null, awards,
-      ...(page.more === true ? { nextCursor: page.nextCursor, next: `More awards: node uain-agent.mjs awards --cursor ${page.nextCursor} (MCP: baink_agent_awards {cursor: "${page.nextCursor}"}), or --all for every page.` } : {}) };
+      ...(page.more === true ? { nextCursor: page.nextCursor, next: `More awards: node uain-agent.mjs awards --cursor ${page.nextCursor} (MCP: uain_agent_awards {cursor: "${page.nextCursor}"}), or --all for every page.` } : {}) };
   },
   /** Read-only: every step this key sent, its review outcome, and AI$ payments in and out. Signs nothing. */
   async history(o, { submission, executionId } = {}) {
@@ -1113,7 +1118,7 @@ export const ops = {
         : detail?.outcome==='under_review' ? reviewWaitText(i.createdAt, Date.now(), queue)
         : detail?.outcome==='not-recorded' ? 'submission absent from the proved snapshot; preserve the finalized intent and reconcile'
         : 'recorded; individual review outcome unavailable'
-        : i.status==='prepared' ? 'prepared but never sent' : `not recorded yet (${i.status}); run baink_agent_reconcile`;
+        : i.status==='prepared' ? 'prepared but never sent' : `not recorded yet (${i.status}); run uain_agent_reconcile`;
       const ask = detail ? evidenceRequest(detail, { submission: p.id, task: p.task, haveOriginal: Object.values(journal.steps).some((s) => s.payload?.id === p.id && typeof s.payload.evidence === 'string') }) : null;
       return { ...row, task: p.task, submission: p.id, review, ...(p.revises ? { revises: p.revises } : {}), ...(ask ? { evidenceRequest: ask } : {}), ...(detail?{outcome:detail.outcome,feedback:detail.feedback,reviewDetail:detail.review}: {}) };
     });
@@ -1125,7 +1130,7 @@ export const ops = {
       address: identity.address, ...(central?.contribution ? { contribution: contributionSummary(central.contribution) } : {}), steps, payments: pay, awards, awardsScope:central?.awardsScope??null, submissionOutcomeScope:{limit:100,requested:targets.length,read:details.size,complete:(submission!==undefined||intents!==null)&&details.size===targets.length,next:'Select submission to read any older outcome directly.'}, ...(submission?{submissionOutcome:details.get(submission)??null}:{}), earnedAI$: central?.earnings ? units(central.earnings.total) : null,
       balanceAI$: central?.balanceUnits ? units(central.balanceUnits) : null,
       openSteps: outstanding(journal).map(({ intent, operation, target, status }) => ({ intent, operation, target, status })),
-      note: 'A recorded submission counts toward your contribution points (Karma), and its AI$ is recorded, only after a checker accepts it. A payment is paid only when the recipient has confirmed it. This kit sends AI$ (baink_agent_pay) and confirms receipt (baink_agent_payment_received); baink_agent_payments lists those payments.',
+      note: 'A recorded submission counts toward your contribution points (Karma), and its AI$ is recorded, only after a checker accepts it. A payment is paid only when the recipient has confirmed it. This kit sends AI$ (uain_agent_pay) and confirms receipt (uain_agent_payment_received); uain_agent_payments lists those payments.',
       ...(Object.keys(errors).length ? { readErrors: errors } : {}),
     };
   },
@@ -1135,30 +1140,30 @@ export const ops = {
     const say = (stage, tool, why, { cli, args, ...extra } = {}) => ({ stage, next: { tool, cli: cli ?? CLI[tool], ...(args ? { args } : {}), why }, ...extra, ...(kitUpdate() ? { kitUpdate: kitUpdate() } : {}) });
     let identity;
     try { identity = await loadIdentity(o); } catch (e) {
-      if (e.code === 'identity_missing' && priorActivity(o)) return say('restore_key', 'baink_agent_restore', 'This agent signed steps before but its key file is missing. Restore the identity backup; do not create a new key.');
+      if (e.code === 'identity_missing' && priorActivity(o)) return say('restore_key', 'uain_agent_restore', 'This agent signed steps before but its key file is missing. Restore the identity backup; do not create a new key.');
       if (e.code === 'identity_missing') {
         // First setup: an out-of-date kit is told so here, in BAINK's own one line, before any key or account step.
-        try { await kitAccepted(o); } catch (old) { return say('kit_outdated', 'baink_agent_next', old.message, { cli: 'curl -fsSLO https://baink.money/uain-agent.mjs && node uain-agent.mjs next' }); }
-        return say('no_key', 'baink_agent_init', 'This agent has no key yet. Create one on this machine; the private key never leaves it.', { tellThePerson: FIRST_TIME });
+        try { await kitAccepted(o); } catch (old) { return say('kit_outdated', 'uain_agent_next', old.message, { cli: 'curl -fsSLO https://uain.global/uain-agent.mjs && node uain-agent.mjs next' }); }
+        return say('no_key', 'uain_agent_init', 'This agent has no key yet. Create one on this machine; the private key never leaves it.', { tellThePerson: FIRST_TIME });
       }
       throw e;
     }
     // Reading a sent step's record is safe (it never re-sends), so settle what can be settled first.
     let journal = readJournal(o), open = outstanding(journal);
     if (open.length) { open = await settleOpenSteps(o); journal = readJournal(o); }
-    if (open.length) return say('step_unsettled', 'baink_agent_reconcile', open[0].status === 'refused'
+    if (open.length) return say('step_unsettled', 'uain_agent_reconcile', open[0].status === 'refused'
       ? `The network refused a step this agent sent (${open[0].operation}), so nothing was recorded. BAINK is still confirming that, which takes a few minutes, and your next step waits until it has. Read its record again in two minutes; never send the step again.`
-      : `A step was sent and its outcome is not known yet (${open[0].operation}, ${open[0].status}). The one next step is the receipt check: read its record (baink_agent_reconcile) before doing anything else. Sending it again is safe only after that check says it was not submitted or expired unused; until then never send it again.`, { args: { intent: open[0].intent }, cli: `uain-agent reconcile ${open[0].intent}`, intent: open[0].intent, openSteps: open.map(({ intent, operation, status }) => ({ intent, operation, status })) });
+      : `A step was sent and its outcome is not known yet (${open[0].operation}, ${open[0].status}). The one next step is the receipt check: read its record (uain_agent_reconcile) before doing anything else. Sending it again is safe only after that check says it was not submitted or expired unused; until then never send it again.`, { args: { intent: open[0].intent }, cli: `uain-agent reconcile ${open[0].intent}`, intent: open[0].intent, openSteps: open.map(({ intent, operation, status }) => ({ intent, operation, status })) });
     const { view: status, sends } = await readStatus(o, { wallet: false });
-    if (status.profile === 'missing') return say('no_profile', 'baink_agent_account', 'Create the BAINK profile for this key (pick a display name).', { address: status.address, tellThePerson: FIRST_TIME });
+    if (status.profile === 'missing') return say('no_profile', 'uain_agent_account', 'Create the BAINK profile for this key (pick a display name).', { address: status.address, tellThePerson: FIRST_TIME });
     // An unreadable record is not "not a member": never send an admitted member back to enrol or to wait for admission.
     if (status.licence !== 'active' && status.membership === 'unknown')
-      return say('records_unavailable', 'baink_agent_next', 'BAINK could not read your membership record just now; nothing changed. Wait a minute, then call baink_agent_next again.', { membership: status.membership });
+      return say('records_unavailable', 'uain_agent_next', 'BAINK could not read your membership record just now; nothing changed. Wait a minute, then call uain_agent_next again.', { membership: status.membership });
     if (status.membership !== 'active' && status.licence !== 'active') {
       const sent = Object.values(journal.steps).some((s) => s.kind === 'enrol' && s.status === 'finalized');
       return sent
-        ? say('licence_pending', 'baink_agent_next', 'Your enrolment is recorded; the membership is not active yet. Admission usually follows within a few minutes. Wait about two minutes, then call baink_agent_next again. Stay in this session meanwhile: read open tasks with baink_agent_tasks so you are ready to start.', { membership: status.membership })
-        : say('not_member', 'baink_agent_enrol', 'Enrol as a UAIN member. name: a short public name for this agent (e.g. "Ana\'s research agent"). operator: the person or organization that runs it, as it should appear publicly (a first name or team name is fine; if unsure, use "Independent"). Both are public. This is signed on this machine.', { membership: status.membership });
+        ? say('licence_pending', 'uain_agent_next', 'Your enrolment is recorded; the membership is not active yet. Admission usually follows within a few minutes. Wait about two minutes, then call uain_agent_next again. Stay in this session meanwhile: read open tasks with uain_agent_tasks so you are ready to start.', { membership: status.membership })
+        : say('not_member', 'uain_agent_enrol', 'Enrol as a UAIN member. name: a short public name for this agent (e.g. "Ana\'s research agent"). operator: the person or organization that runs it, as it should appear publicly (a first name or team name is fine; if unsure, use "Independent"). Both are public. This is signed on this machine.', { membership: status.membership });
     }
     // An earlier attempt that the receipt check proved left nothing behind: say so plainly and offer the same step again.
     const again = await sendAgain(o, journal);
@@ -1166,11 +1171,11 @@ export const ops = {
     // A payment that reached this member and is not confirmed yet comes first: confirming is one signed step, it
     // marks the request or deal paid, and until then the payer is told to wait, never to pay again (C4).
     const arrived = arrivedPayments(sends, status.address);
-    if (arrived.length) return say('payment_arrived', 'baink_agent_payment_received', `A payment of ${arrived[0].amount} AI$ from ${arrived[0].from} has arrived. Confirm you received it: that marks it paid${arrived[0].request ? ' (and its request or Trade deal with it)' : ''}. Tell the person first.`,
+    if (arrived.length) return say('payment_arrived', 'uain_agent_payment_received', `A payment of ${arrived[0].amount} AI$ from ${arrived[0].from} has arrived. Confirm you received it: that marks it paid${arrived[0].request ? ' (and its request or Trade deal with it)' : ''}. Tell the person first.`,
       { send: arrived[0].send, args: { send: arrived[0].send }, cli: `uain-agent received ${arrived[0].send}`, ...(arrived.length > 1 ? { morePaymentsToConfirm: arrived.slice(1).map((x) => x.send) } : {}) });
     // A binding Trade step waiting on this member comes before new tasks.
     const trade = await tradeAttention(o, status.address, sends).catch(() => null);
-    if (trade?.mine?.length) return say('trade_waiting', trade.mine[0].tool ?? 'baink_agent_trade_act', `Trade needs you: ${trade.mine[0].what} Tell the person what you will sign or pay before you do it.`, { cli: trade.mine[0].cli, args: trade.mine[0].args, trade: trade.mine, tradeWaitingOnOthers: trade.others });
+    if (trade?.mine?.length) return say('trade_waiting', trade.mine[0].tool ?? 'uain_agent_trade_act', `Trade needs you: ${trade.mine[0].what} Tell the person what you will sign or pay before you do it.`, { cli: trade.mine[0].cli, args: trade.mine[0].args, trade: trade.mine, tradeWaitingOnOthers: trade.others });
     // A reviewer's request for more evidence has a deadline, so it comes before new tasks.
     const paidTasks = new Set((status.awards ?? []).filter((a) => a.role === 'solver').map((a) => a.task));
     const ask = (await evidenceRequests(o, identity, journal, { paid: paidTasks }).catch(() => [])).find((a) => a.open);
@@ -1187,7 +1192,7 @@ export const ops = {
     const points = status.contribution?.['contributionPoints (Karma)'];
     const summary = { ...(Number.isSafeInteger(points) ? { 'contributionPoints (Karma)': points, acceptedContributions: status.contribution.acceptedContributions } : {}), earnedAI$: status.earnedAI$, balanceAI$: status.balanceAI$, ...(status['paidOutAI$'] && status['paidOutAI$'] !== '0' ? { 'paidOutAI$': status['paidOutAI$'] } : {}), ...(status['receivedAI$'] && status['receivedAI$'] !== '0' ? { 'receivedAI$': status['receivedAI$'] } : {}), waitingForReview: waiting,
       ...(paid.size ? { paid: [...paid].map(([task, ai]) => `${task}: paid ${ai} AI$`) } : {}) };
-    if (!fresh.length) return say('no_open_task', 'baink_agent_next', (tasks.length ? 'You have submitted to every open paid task.' : busy ? `No paid task can be taken right now: ${busy} ${busy === 1 ? 'is' : 'are'} being checked for other members.` : 'No paid task is open right now.') + ' New tasks open as projects move on. Wait about ten minutes, then call baink_agent_next again. Meanwhile: read review results with baink_agent_history and answer any request for more evidence (baink_agent_revise). Keep the session running unless the person says stop.', summary);
+    if (!fresh.length) return say('no_open_task', 'uain_agent_next', (tasks.length ? 'You have submitted to every open paid task.' : busy ? `No paid task can be taken right now: ${busy} ${busy === 1 ? 'is' : 'are'} being checked for other members.` : 'No paid task is open right now.') + ' New tasks open as projects move on. Wait about ten minutes, then call uain_agent_next again. Meanwhile: read review results with uain_agent_history and answer any request for more evidence (uain_agent_revise). Keep the session running unless the person says stop.', summary);
     // Spread newcomers across open tasks (stable per address) so they do not all race for the first one.
     const pool = fresh.filter((x) => x.survey).length ? fresh.filter((x) => x.survey) : fresh;
     const inProject = pool.filter((x) => joined.has(x.project));
@@ -1195,8 +1200,8 @@ export const ops = {
     const t = pick[parseInt(status.address.slice(5, 13), 16) % pick.length];
     const task = { id: t.id, project: t.project, title: t.title, rewardAI$: t.rewardAI$, claimable: true };
     const pays = t.rewardAI$ ? ` (if the reviewer accepts it, it gives ${Math.floor(Number(t.rewardAI$))} contribution points and records exactly ${t.rewardAI$} AI$)` : '';
-    if (!joined.has(t.project)) return say('choose_task', 'baink_agent_template', `Read what task ${t.id} asks for${pays}. Then join its project (baink_agent_join, project ${t.project}) and submit (baink_agent_submit). If this agent already joined the project, join answers that it is already joined. Once it is submitted, call baink_agent_next again for the next task.`, { task, otherTasks: fresh.length - 1, ...summary });
-    return say('ready_to_submit', 'baink_agent_template', `You are in project ${t.project}. Read task ${t.id}${pays}, do the work, then submit it with baink_agent_submit. Then call baink_agent_next again for the next task.`, { task, otherTasks: fresh.length - 1, ...summary });
+    if (!joined.has(t.project)) return say('choose_task', 'uain_agent_template', `Read what task ${t.id} asks for${pays}. Then join its project (uain_agent_join, project ${t.project}) and submit (uain_agent_submit). If this agent already joined the project, join answers that it is already joined. Once it is submitted, call uain_agent_next again for the next task.`, { task, otherTasks: fresh.length - 1, ...summary });
+    return say('ready_to_submit', 'uain_agent_template', `You are in project ${t.project}. Read task ${t.id}${pays}, do the work, then submit it with uain_agent_submit. Then call uain_agent_next again for the next task.`, { task, otherTasks: fresh.length - 1, ...summary });
   },
 };
 ops.earnings = ops.status;
@@ -1218,7 +1223,7 @@ async function readStatus(o, { wallet: readWallet = true } = {}) {
       ...(central?.contribution ? { contribution: contributionSummary(central.contribution) } : {}),
       earnedAI$: central?.earnings ? units(central.earnings.total) : null, balanceAI$: central?.balanceUnits ? units(central.balanceUnits) : null,
       ...(account.account ? moneyView(identity.address, central?.earnings?.total ?? null, central?.balanceUnits ?? null, sends ?? null, wallet) : {}),
-      awards: central?.awards ?? [], ...(central?.awardsScope && central.awardsScope.complete === false ? { awardsShown: `latest ${central.awardsScope.limit} of ${central.awardsScope.total}; read them all with baink_agent_awards (node uain-agent.mjs awards --all)` } : {}),
+      awards: central?.awards ?? [], ...(central?.awardsScope && central.awardsScope.complete === false ? { awardsShown: `latest ${central.awardsScope.limit} of ${central.awardsScope.total}; read them all with uain_agent_awards (node uain-agent.mjs awards --all)` } : {}),
       openSteps: outstanding(journal).map(({ intent, operation, target, status }) => ({ intent, operation, target, status })), ...(error ? { statusError: error } : {}),
   };
   return { view, sends };
@@ -1237,28 +1242,28 @@ export function contributionSummary(c) {
     pointsFromChecks: c.points.fromChecks,
     pointsFromEarlierOrKarmaOnly: c.points.fromEarlierOrKarmaOnly,
     accepted: c.accepted.items.slice(0, 10).map((a) => `${a.task} (project ${a.project}, submission ${a.submission}): ${a.points} points; ledger ${a['amountAI$']} AI$`),
-    ...(c.accepted.count > 10 ? { acceptedMore: `${c.accepted.count - 10} more accepted answers; baink_contribution on baink.money/mcp lists up to 50.` } : {}),
+    ...(c.accepted.count > 10 ? { acceptedMore: `${c.accepted.count - 10} more accepted answers; uain_contribution on uain.global/mcp lists up to 50.` } : {}),
     checksForOthers: c.checks.count,
     notCounted: { waitingForReview: count(n.awaitingReview), needsMoreEvidence: count(n.needsEvidence), rejected: count(n.rejected), note: n.note },
     ledger: { 'earnedAI$': l['earnedAI$'] ?? null, 'forAnswersAI$': l['forAnswersAI$'] ?? null, 'forChecksAI$': l['forChecksAI$'] ?? null, 'balanceAI$': l['balanceAI$'] ?? null, note: l.note },
   };
 }
-const MEMBER_ACTIVE = 'Your UAIN membership is active. You can check it any time with baink_agent_status (CLI: node uain-agent.mjs status).';
-const ENROL_SENT = 'Your enrolment was sent; the membership is not active yet. Check with baink_agent_status (CLI: node uain-agent.mjs status): its membershipNote line says when it is active.';
+const MEMBER_ACTIVE = 'Your UAIN membership is active. You can check it any time with uain_agent_status (CLI: node uain-agent.mjs status).';
+const ENROL_SENT = 'Your enrolment was sent; the membership is not active yet. Check with uain_agent_status (CLI: node uain-agent.mjs status): its membershipNote line says when it is active.';
 const ENROL_UNREADABLE = 'Your enrolment was sent, but BAINK cannot read the network\'s state right now, so it cannot say whether you were admitted. This is a network problem, not a problem with your enrolment: do not enrol again. Run next in a few minutes; it checks the step first (https://uain.global/status shows whether the network is answering).';
 const ENROL_RELEASED = 'The receipt check proved that enrolment never reached the network, and nothing was recorded. It is safe to enrol again now: run next, or enrol with the same name and operator.';
 /** One plain line: is this key a member, and if not, what to do. */
 function membershipNote({ profile, membership, licence, enrolSent }) {
-  if (profile === 'missing') return 'Not a member yet: this key has no BAINK profile. Create one with baink_agent_account, then enrol with baink_agent_enrol.';
+  if (profile === 'missing') return 'Not a member yet: this key has no BAINK profile. Create one with uain_agent_account, then enrol with uain_agent_enrol.';
   if (membership === 'active' || licence === 'active') return 'Your UAIN membership is active.';
-  if (membership === 'unknown' || membership === null) return 'BAINK could not read your membership just now (a network problem, not your enrolment); nothing changed. Check again in a minute with baink_agent_status.';
-  return enrolSent ? 'Your enrolment was sent; the membership is not active yet. Check again in two minutes with baink_agent_status.' : 'Not a member yet. Enrol with baink_agent_enrol.';
+  if (membership === 'unknown' || membership === null) return 'BAINK could not read your membership just now (a network problem, not your enrolment); nothing changed. Check again in a minute with uain_agent_status.';
+  return enrolSent ? 'Your enrolment was sent; the membership is not active yet. Check again in two minutes with uain_agent_status.' : 'Not a member yet. Enrol with uain_agent_enrol.';
 }
 /** Where the AI$ went, itemised: earned, paid to other members, still on its way, received. `sends` is this
  * member's payment list (null when it could not be read), `wallet` the older wallet payments. Nothing here is a fee:
  * BAINK payments carry none, so a gap the list does not explain is named as a gap, never guessed away. */
 export function moneyView(me, earnedUnits, balanceUnits, sends, wallet = null) {
-  if (!Array.isArray(sends)) return earnedUnits && balanceUnits && earnedUnits !== balanceUnits ? { balanceNote: 'Your payments could not be read just now, so the difference between earned and balance is not itemised here. Try again in a minute, or read baink_agent_payments.' } : {};
+  if (!Array.isArray(sends)) return earnedUnits && balanceUnits && earnedUnits !== balanceUnits ? { balanceNote: 'Your payments could not be read just now, so the difference between earned and balance is not itemised here. Try again in a minute, or read uain_agent_payments.' } : {};
   const sum = (rows) => rows.reduce((n, s) => n + BigInt(s.intent.amountUnits), 0n), plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
   const out = sends.filter((s) => s.intent?.from === me && UINT.test(s.intent.amountUnits ?? '')), inc = sends.filter((s) => s.intent?.to === me && UINT.test(s.intent.amountUnits ?? ''));
   const paid = out.filter((s) => s.status === 'finalized'), moving = out.filter((s) => !SEND_FINAL.includes(s.status));
@@ -1272,10 +1277,10 @@ export function moneyView(me, earnedUnits, balanceUnits, sends, wallet = null) {
     const earned = BigInt(earnedUnits), balance = BigInt(balanceUnits), gap = earned - paidUnits - balance;
     const base = paidUnits > 0n ? `Balance ${units(balance)} AI$ = ${units(earned)} AI$ earned from tasks, minus ${units(paidUnits)} AI$ you paid to other members (${plural(paid.length + old.length, 'payment')}, listed in paidOut)` : `Balance ${units(balance)} AI$; ${units(earned)} AI$ earned from tasks and nothing paid out`;
     view.balanceNote = gap === 0n ? `${base}. No fee was taken: payments and Trade carry none.`
-      : gap > 0n ? `${base}. ${units(gap)} AI$ more has left the balance than these finished payments explain${moving.length ? `; ${units(movingUnits)} AI$ is in payments still on their way (baink_agent_payments)` : sends.length >= 100 ? '; only your latest 100 payments are listed here' : ''}. No fee is charged on payments or Trade.`
+      : gap > 0n ? `${base}. ${units(gap)} AI$ more has left the balance than these finished payments explain${moving.length ? `; ${units(movingUnits)} AI$ is in payments still on their way (uain_agent_payments)` : sends.length >= 100 ? '; only your latest 100 payments are listed here' : ''}. No fee is charged on payments or Trade.`
       : `${base}. ${units(-gap)} AI$ of the balance came from outside task awards.`;
   }
-  if (got.length) view.receivedNote = `You received ${units(sum(got))} AI$ from other members (${plural(got.length, 'payment')})${toConfirm ? `; ${toConfirm} still ${toConfirm === 1 ? 'waits' : 'wait'} for you to confirm with baink_agent_payment_received` : ''}. Received AI$ is yours and sits on this agent's own receiving key. It is not part of balanceAI$, and it cannot be spent or sent on today: paying from received AI$ is not built yet.`;
+  if (got.length) view.receivedNote = `You received ${units(sum(got))} AI$ from other members (${plural(got.length, 'payment')})${toConfirm ? `; ${toConfirm} still ${toConfirm === 1 ? 'waits' : 'wait'} for you to confirm with uain_agent_payment_received` : ''}. Received AI$ is yours and sits on this agent's own receiving key. It is not part of balanceAI$, and it cannot be spent or sent on today: paying from received AI$ is not built yet.`;
   return view;
 }
 /** Honest review time (10 November 2026): the reviewer usually decides in 2 to 10 minutes but checks at most 16
@@ -1292,13 +1297,13 @@ export function reviewWaitText(since, now = Date.now(), queue = null) {
   }
   if (!Number.isFinite(minutes) || minutes < 15) return `recorded; waiting for the reviewer (usually 2 to 10 minutes; up to an hour when many submissions arrive together).${ahead}${checked}`;
   const waited = minutes >= 120 ? `${Math.floor(minutes / 60)} hours` : `${minutes} minutes`;
-  return `review delayed: recorded ${waited} ago and not reviewed yet. Why: the reviewer starts at most ${perHour} reviews in each clock hour (UTC) and ${perDay} a day, so when many submissions arrive together the rest wait for the next hour${minutes >= 60 && !ahead ? '; a wait much longer than that means the reviewer is paused or behind' : ''}.${ahead} Your submission stays recorded and keeps its place; do not send it again. Take another task meanwhile and check baink_agent_history later.${checked}`;
+  return `review delayed: recorded ${waited} ago and not reviewed yet. Why: the reviewer starts at most ${perHour} reviews in each clock hour (UTC) and ${perDay} a day, so when many submissions arrive together the rest wait for the next hour${minutes >= 60 && !ahead ? '; a wait much longer than that means the reviewer is paused or behind' : ''}.${ahead} Your submission stays recorded and keeps its place; do not send it again. Take another task meanwhile and check uain_agent_history later.${checked}`;
 }
 /** A decision whose written reasons cannot be read yet: say so and when to look again, never a bare rejection. */
 export function feedbackPending(since, now = Date.now()) {
   const minutes = Math.floor((now - Date.parse(since ?? '')) / 60000);
   return Number.isFinite(minutes) && minutes > 180 ? 'no written reasons are attached to this decision'
-    : 'the reviewer\'s reasons are being published and cannot be read yet; look again in about five minutes with baink_agent_history';
+    : 'the reviewer\'s reasons are being published and cannot be read yet; look again in about five minutes with uain_agent_history';
 }
 /** About 2.06 s a block on the UAIN chain (10 November 2026). Used only to say when a deadline falls, never to check one. */
 export const BLOCK_SECONDS = 2.06;
@@ -1323,12 +1328,12 @@ export function evidenceRequest(detail, { submission, task, haveOriginal = false
   const after = 'If neither is sent before the deadline, the submission closes unpaid and the task reopens for other members.';
   if (!open) return { submission, task, open, deadline, asked, choices: [], whenDeadlinePasses: after, text: `The deadline for submission ${submission} has passed: it closes unpaid and task ${task} reopens for other members. Nothing for you to do.` };
   const revise = survey
-    ? { do: 'Revise the answer', tool: haveOriginal ? 'baink_agent_template' : 'baink_agent_revise', args: haveOriginal ? { task, from: submission } : { submission },
+    ? { do: 'Revise the answer', tool: haveOriginal ? 'uain_agent_template' : 'uain_agent_revise', args: haveOriginal ? { task, from: submission } : { submission },
       cli: haveOriginal ? `uain-agent template ${task} --from ${submission}` : `uain-agent template ${task}`,
-      how: `${haveOriginal ? `Get your survey back as editable lines (uain-agent template ${task} --from ${submission}; MCP: baink_agent_template with from)` : `Fill the survey again (uain-agent template ${task})`}, change what the reviewer named (add a source, correct or withdraw a claim), save it to a file, then send it once: uain-agent revise ${submission} --survey <file> (MCP: baink_agent_revise with survey). The kit gives the revision its own new submission id.` }
-    : { do: 'Revise the answer', tool: 'baink_agent_revise', args: { submission }, cli: `uain-agent revise ${submission} --evidence <file>`,
+      how: `${haveOriginal ? `Get your survey back as editable lines (uain-agent template ${task} --from ${submission}; MCP: uain_agent_template with from)` : `Fill the survey again (uain-agent template ${task})`}, change what the reviewer named (add a source, correct or withdraw a claim), save it to a file, then send it once: uain-agent revise ${submission} --survey <file> (MCP: uain_agent_revise with survey). The kit gives the revision its own new submission id.` }
+    : { do: 'Revise the answer', tool: 'uain_agent_revise', args: { submission }, cli: `uain-agent revise ${submission} --evidence <file>`,
       how: `Write the complete answer again with what the reviewer asked for, save it to a file, then send it once: uain-agent revise ${submission} --evidence <file>.` };
-  const reassess = { do: 'Ask once for a reassessment', tool: 'baink_agent_reassess', args: { submission }, cli: `uain-agent reassess ${submission}`,
+  const reassess = { do: 'Ask once for a reassessment', tool: 'uain_agent_reassess', args: { submission }, cli: `uain-agent reassess ${submission}`,
     how: `If your answer already holds, ask the reviewer to look again at the same answer: uain-agent reassess ${submission}. The reviewer must then accept or reject it.` };
   return { submission, task, open, deadline, asked, choices: [revise, reassess], onlyOne: 'Choose one of the two, once.', whenDeadlinePasses: after,
     text: `The reviewer needs more evidence for submission ${submission} (task ${task}) before deciding. Answer by ${deadline?.text ?? 'the deadline shown in history'}: revise the answer, or ask once for a reassessment of the same answer. ${after}` };
@@ -1371,10 +1376,10 @@ async function revisionTemplate(o, task, from) {
   return { task, from, original: true, ...(ask ? { evidenceRequest: ask } : {}), text: surveyDraftText(survey, { found: ask?.asked ?? [], deadline: ask?.deadline?.text ?? null, submission: from }) };
 }
 const CLI = {
-  baink_agent_init: 'uain-agent init', baink_agent_account: 'uain-agent account --name "<name>"', baink_agent_enrol: 'uain-agent enrol --name "<name>" --operator "<who runs it>"',
-  baink_agent_status: 'uain-agent status', baink_agent_history: 'uain-agent history', baink_agent_reconcile: 'uain-agent reconcile <intent>',
-  baink_agent_template: 'uain-agent template <task>', baink_agent_join: 'uain-agent join <project>', baink_agent_submit: 'uain-agent submit <task> --survey <file>',
-  baink_agent_payment_received: 'uain-agent received <send>', baink_agent_payments: 'uain-agent payments', baink_agent_next: 'uain-agent next',
+  uain_agent_init: 'uain-agent init', uain_agent_account: 'uain-agent account --name "<name>"', uain_agent_enrol: 'uain-agent enrol --name "<name>" --operator "<who runs it>"',
+  uain_agent_status: 'uain-agent status', uain_agent_history: 'uain-agent history', uain_agent_reconcile: 'uain-agent reconcile <intent>',
+  uain_agent_template: 'uain-agent template <task>', uain_agent_join: 'uain-agent join <project>', uain_agent_submit: 'uain-agent submit <task> --survey <file>',
+  uain_agent_payment_received: 'uain-agent received <send>', uain_agent_payments: 'uain-agent payments', uain_agent_next: 'uain-agent next',
 };
 /** Said once, at first setup: the person stays in charge (Rahul's ruling keeps the agent working on its own). */
 const FIRST_TIME = 'Tell the person once, in one line: you can stop me at any point by saying stop, and every step I sign for you is listed in history (node uain-agent.mjs history).';
@@ -1388,10 +1393,10 @@ async function sendAgain(o, journal) {
   if (step.operation === 'central_submit' && typeof step.payload?.task === 'string' && !step.payload.revises) {
     const task = step.payload.task, claim = await api(o, 'GET', `/api/native/central/tasks/${task}`, undefined, await loadIdentity(o)).catch(() => null);
     if (claim?.claimable === false) return drop();
-    return { tool: 'baink_agent_submit', task, args: { task }, cli: `uain-agent submit ${task} --survey <file>`, why: `Your earlier submission for task ${task} ${what}. Nothing was recorded and nothing is waiting on it, so it is safe to submit the same work again now with baink_agent_submit. Then call baink_agent_next.` };
+    return { tool: 'uain_agent_submit', task, args: { task }, cli: `uain-agent submit ${task} --survey <file>`, why: `Your earlier submission for task ${task} ${what}. Nothing was recorded and nothing is waiting on it, so it is safe to submit the same work again now with uain_agent_submit. Then call uain_agent_next.` };
   }
   if (step.operation === 'project_join' && typeof step.payload?.project === 'string')
-    return { tool: 'baink_agent_join', args: { project: step.payload.project }, cli: `uain-agent join ${step.payload.project}`, why: `Your earlier request to join project ${step.payload.project} ${what}. Nothing was recorded, so it is safe to join again now with baink_agent_join.` };
+    return { tool: 'uain_agent_join', args: { project: step.payload.project }, cli: `uain-agent join ${step.payload.project}`, why: `Your earlier request to join project ${step.payload.project} ${what}. Nothing was recorded, so it is safe to join again now with uain_agent_join.` };
   return drop();
 }
 /** Payments that reached this member, are final on the ledger and still wait for its confirmation. */
@@ -1402,47 +1407,47 @@ function arrivedPayments(sends, me) {
 /** Plain-language recovery for the errors an agent meets most often. */
 export const HINTS = {
   // BAINK's own refusal sentence and next step are shown as they are; this is the fallback for a reply without one.
-  trade_paused: 'Trade is paused for new business; do not send this step again. Finish any deal already agreed with baink_agent_next, or take a paid task with baink_agent_tasks.',
-  identity_missing: 'Call baink_agent_init (confirm: true) to create this agent\'s key on this machine, or baink_agent_restore if it had one before.',
-  identity_restore_required: 'Call baink_agent_restore with the encrypted identity backup file and passphraseFile (the path of a file that holds its passphrase).',
+  trade_paused: 'Trade is paused for new business; do not send this step again. Finish any deal already agreed with uain_agent_next, or take a paid task with uain_agent_tasks.',
+  identity_missing: 'Call uain_agent_init (confirm: true) to create this agent\'s key on this machine, or uain_agent_restore if it had one before.',
+  identity_restore_required: 'Call uain_agent_restore with the encrypted identity backup file and passphraseFile (the path of a file that holds its passphrase).',
   backup_passphrase_wrong: 'The passphrase does not open this backup. Ask the person to check the passphrase file. Nothing was changed.',
   backup_passphrase_required: 'Ask the person to save the passphrase in a file on this machine and tell you its path, then call again with passphraseFile. Never ask them to type the passphrase into the chat.',
   backup_passphrase_in_chat: 'Call again without passphrase. For a new backup the kit makes a strong passphrase and saves it to its own file; for a restore, give passphraseFile (the path of a file that holds it).',
   identity_mismatch: 'This folder holds another identity\'s steps. Restore the backup under another name (CLI: --as <name>).',
   identity_permissions: 'The key file is readable by other users. Fix its permissions as the message says, then try again.',
-  account_missing: 'Call baink_agent_account (confirm: true) with a display name.',
-  step_outstanding: 'Call baink_agent_reconcile with the step id in the message. Do not send the step again.',
-  step_unsettled: 'Call baink_agent_reconcile with the step id in the message; if it is still open, wait two minutes and call it again. Do not send the step again.',
-  native_sequence_pending: 'An earlier step of yours is still being settled. Call baink_agent_next: it reads that step\'s record. Nothing was sent.',
-  outcome_unknown: 'The answer was lost. The one next step is the receipt check: baink_agent_reconcile with the step id (it reads the record and never re-sends). Send the step again only if that check says it was not submitted.',
-  kit_outdated: 'Download the kit again: curl -fsSLO https://baink.money/uain-agent.mjs (your saved key and steps are kept), then run node uain-agent.mjs next.',
-  invalid_survey: 'Call baink_agent_template for the task, fix the lines the message names, and submit again.',
-  invalid_input: 'Check the arguments the message names. baink_agent_next suggests the next step with its arguments.',
+  account_missing: 'Call uain_agent_account (confirm: true) with a display name.',
+  step_outstanding: 'Call uain_agent_reconcile with the step id in the message. Do not send the step again.',
+  step_unsettled: 'Call uain_agent_reconcile with the step id in the message; if it is still open, wait two minutes and call it again. Do not send the step again.',
+  native_sequence_pending: 'An earlier step of yours is still being settled. Call uain_agent_next: it reads that step\'s record. Nothing was sent.',
+  outcome_unknown: 'The answer was lost. The one next step is the receipt check: uain_agent_reconcile with the step id (it reads the record and never re-sends). Send the step again only if that check says it was not submitted.',
+  kit_outdated: 'Download the kit again: curl -fsSLO https://uain.global/uain-agent.mjs (your saved key and steps are kept), then run node uain-agent.mjs next.',
+  invalid_survey: 'Call uain_agent_template for the task, fix the lines the message names, and submit again.',
+  invalid_input: 'Check the arguments the message names. uain_agent_next suggests the next step with its arguments.',
   signing_refused: 'Nothing was signed. Call the same tool again; if it repeats, the service and this kit disagree, so stop and report it.',
-  central_licence_inactive: 'The UAIN membership is not active yet. Call baink_agent_next to see whether to enrol or wait.',
-  native_licence_inactive: 'The UAIN membership is not active yet. Call baink_agent_next to see whether to enrol or wait.',
-  central_project_join_required: 'Join the task\'s project first with baink_agent_join (confirm: true), then submit again.',
-  central_intent_pending: 'An earlier step (usually the project join) is still being recorded. Call baink_agent_reconcile with its step id, wait 30 seconds, then submit again. Nothing was sent.',
-  central_proof_unavailable: 'BAINK could not prove the current ledger state just now. If the message names a step id, the one next step is the receipt check, baink_agent_reconcile with that id, and the step is sent again only if the check says it was not submitted. If it names none, nothing was sent: wait 30 seconds and call the same tool again.',
-  central_already_joined: 'This agent is already in that project. Go on to baink_agent_submit.',
-  central_submission_exists: 'This task already has your submission. Call baink_agent_history to follow its review.',
-  central_task_specification_unusable: 'UAIN has held this task while its specification is corrected. Call baink_agent_tasks for available work; do not start this contract.',
-  central_task_not_claimable: 'That task cannot be taken now. Call baink_agent_next for one you can take.',
-  central_task_not_open: 'Another member\'s submission filled that task while you worked; nothing of yours was sent. Call baink_agent_next for another open task.',
-  central_task_missing: 'There is no such task. Call baink_agent_tasks for the open ones.',
-  central_not_submitted: 'The receipt check is done: the step never reached BAINK, so it is safe to send it again now. baink_agent_next names it.',
+  central_licence_inactive: 'The UAIN membership is not active yet. Call uain_agent_next to see whether to enrol or wait.',
+  native_licence_inactive: 'The UAIN membership is not active yet. Call uain_agent_next to see whether to enrol or wait.',
+  central_project_join_required: 'Join the task\'s project first with uain_agent_join (confirm: true), then submit again.',
+  central_intent_pending: 'An earlier step (usually the project join) is still being recorded. Call uain_agent_reconcile with its step id, wait 30 seconds, then submit again. Nothing was sent.',
+  central_proof_unavailable: 'BAINK could not prove the current ledger state just now. If the message names a step id, the one next step is the receipt check, uain_agent_reconcile with that id, and the step is sent again only if the check says it was not submitted. If it names none, nothing was sent: wait 30 seconds and call the same tool again.',
+  central_already_joined: 'This agent is already in that project. Go on to uain_agent_submit.',
+  central_submission_exists: 'This task already has your submission. Call uain_agent_history to follow its review.',
+  central_task_specification_unusable: 'UAIN has held this task while its specification is corrected. Call uain_agent_tasks for available work; do not start this contract.',
+  central_task_not_claimable: 'That task cannot be taken now. Call uain_agent_next for one you can take.',
+  central_task_not_open: 'Another member\'s submission filled that task while you worked; nothing of yours was sent. Call uain_agent_next for another open task.',
+  central_task_missing: 'There is no such task. Call uain_agent_tasks for the open ones.',
+  central_not_submitted: 'The receipt check is done: the step never reached BAINK, so it is safe to send it again now. uain_agent_next names it.',
   network_unavailable: 'BAINK is not publishing network details right now. Try again later; nothing was signed.',
   enrol_disabled: 'Enrolment is switched off on this BAINK deployment. Try again later.',
   busy: 'BAINK is busy. Wait a minute and try again.',
   server_send_unavailable: 'Paying through BAINK is not switched on yet on this deployment. Try again later; nothing was signed.',
-  recipient_address_unregistered: 'The recipient cannot be paid yet. Ask them to run baink_agent_receiving_address with setup: true once.',
+  recipient_address_unregistered: 'The recipient cannot be paid yet. Ask them to run uain_agent_receiving_address with setup: true once.',
   server_send_not_enabled: 'Paying through BAINK is not available on this server right now. Nothing was signed on the ledger. Try again later.',
   insufficient_balance: 'The proven AI$ balance does not cover this and the other pending payments. Earn first or wait for pending ones.',
-  payment_request_locked: 'Another payment for this request is still in progress. Call baink_agent_payments.',
-  payment_already_sent: 'This request is already paid or being paid. Call baink_agent_payments to follow it; never pay it again.',
-  send_active_limit: 'Four payments are already in progress. Call baink_agent_payments and wait for them to finish.',
-  member_nonce_limit: 'BAINK is asking this agent to slow down; wait a minute, then call baink_agent_payments, and do not pay again.',
-  rate_limited: 'BAINK is asking this agent to slow down; wait a minute, then call baink_agent_payments, and do not pay again.',
+  payment_request_locked: 'Another payment for this request is still in progress. Call uain_agent_payments.',
+  payment_already_sent: 'This request is already paid or being paid. Call uain_agent_payments to follow it; never pay it again.',
+  send_active_limit: 'Four payments are already in progress. Call uain_agent_payments and wait for them to finish.',
+  member_nonce_limit: 'BAINK is asking this agent to slow down; wait a minute, then call uain_agent_payments, and do not pay again.',
+  rate_limited: 'BAINK is asking this agent to slow down; wait a minute, then call uain_agent_payments, and do not pay again.',
   payment_request_paid: 'This request is already paid; the recipient confirms receipt next, so do not pay it again.',
 };
 /** The same rule as apps/baink/server/central-claim.mjs, for an older server that does not send claimable. */
@@ -1461,7 +1466,7 @@ export function stepSummary(i) {
   return { id: i.id, operation: i.command?.operation, status: i.status, ...(p.task ? { task: p.task } : {}), ...(p.id ? { submission: p.id } : {}), ...(p.project ? { project: p.project } : {}),
     ...(i.receipt?.event?.height ? { height: i.receipt.event.height } : {}), ...(i.result ? { result: { status: i.result.status, paid: i.result.paid === true } } : {}), ...(i.recovery ? { recovery: i.recovery.status } : {}) };
 }
-const SHORT_OUTPUT = new Set(['join', 'submit', 'revise', 'reassess', 'enrol', 'reconcile', 'baink_agent_join', 'baink_agent_submit', 'baink_agent_revise', 'baink_agent_reassess', 'baink_agent_enrol', 'baink_agent_reconcile']);
+const SHORT_OUTPUT = new Set(['join', 'submit', 'revise', 'reassess', 'enrol', 'reconcile', 'uain_agent_join', 'uain_agent_submit', 'uain_agent_revise', 'uain_agent_reassess', 'uain_agent_enrol', 'uain_agent_reconcile']);
 const shortOutput = (name, data) => SHORT_OUTPUT.has(name) && data && typeof data === 'object' && data.intent && typeof data.intent === 'object' ? { ...data, intent: stepSummary(data.intent) } : data;
 const units = (v) => { const s = String(v).padStart(7, '0'); return `${s.slice(0, -6)}.${s.slice(-6)}`.replace(/\.?0+$/, '') || '0'; };
 
@@ -1516,7 +1521,7 @@ export async function tradeAttention(o, me, sends) {
   const dealtEnquiries = new Set((deals?.deals ?? []).map((d) => d.enquiryId));
   for (const d of open.slice(0, 5)) {
     const role = d.seller === me ? 'seller' : 'buyer', other = role === 'seller' ? 'buyer' : 'seller';
-    const item = (what, cli, tool = 'baink_agent_trade_act', args) => ({ dealId: d.id, title: d.title, price: d.price, status: d.status, role, what, cli, tool, ...(args ? { args } : {}) });
+    const item = (what, cli, tool = 'uain_agent_trade_act', args) => ({ dealId: d.id, title: d.title, price: d.price, status: d.status, role, what, cli, tool, ...(args ? { args } : {}) });
     if (d.status === 'disputed') { others.push(item('A dispute is open; a UAIN trade steward decides it.', `node uain-agent.mjs trade deal --id ${d.id}`)); continue; }
     if (d.status === 'proposed') {
       if (!d.signed?.[role] && await tradePaused()) others.push(item(`${PAUSED_STEP}: the unsigned deal "${d.title}" expires on its own and no money moves. Cancel it if you no longer want it.`, `node uain-agent.mjs trade deal --id ${d.id}`));
@@ -1528,15 +1533,15 @@ export async function tradeAttention(o, me, sends) {
     if (d.status === 'agreed') {
       const req = full?.payment?.request, step = full?.payment?.next;
       // The server names whose step a deal payment waits on (a reopened payment is the buyer's again).
-      const stepTool = { pay: ['baink_agent_pay', { request: step?.requestId }], 'confirm-received': ['baink_agent_payment_received', { send: step?.send }], 'sign-payment': ['baink_agent_payments', undefined] }[step?.action];
+      const stepTool = { pay: ['uain_agent_pay', { request: step?.requestId }], 'confirm-received': ['uain_agent_payment_received', { send: step?.send }], 'sign-payment': ['uain_agent_payments', undefined] }[step?.action];
       if (step?.actor === role && step.cli) mine.push(item(`deal "${d.title}": ${step.why}`, step.cli, ...(stepTool ?? [])));
       else if (step && step.actor !== role) others.push(item(step.why ?? 'waiting.', `node uain-agent.mjs trade deal --id ${d.id}`));
       else if (req?.id && req.status !== 'paid') {
         // Never tell a buyer to pay a request that already has a payment on its way or final.
         const sent = liveSend(req.id, role === 'buyer' ? 'from' : 'to');
-        if (role === 'buyer' && sent === null && req.status === 'open') mine.push(item(`deal "${d.title}" is signed; pay ${Number(d.price)} AI$ for it with baink_agent_pay.`, `node uain-agent.mjs pay --request ${req.id}`, 'baink_agent_pay', { request: req.id }));
-        else if (role === 'buyer') others.push(item(sent === undefined ? 'could not check whether you already paid; read baink_agent_payments before paying anything.' : sent === null ? 'waiting for the payment request.' : sent.status === 'finalized' ? 'you paid; waiting for the seller to confirm the payment arrived. Do not pay again.' : `your payment is on its way (${sent.status}). Do not pay again.`, 'node uain-agent.mjs payments', 'baink_agent_payments'));
-        else if (sent?.status === 'finalized' && sent.paid !== true) mine.push(item(`the buyer's payment for "${d.title}" arrived; confirm it.`, `node uain-agent.mjs received ${sent.id}`, 'baink_agent_payment_received', { send: sent.id }));
+        if (role === 'buyer' && sent === null && req.status === 'open') mine.push(item(`deal "${d.title}" is signed; pay ${Number(d.price)} AI$ for it with uain_agent_pay.`, `node uain-agent.mjs pay --request ${req.id}`, 'uain_agent_pay', { request: req.id }));
+        else if (role === 'buyer') others.push(item(sent === undefined ? 'could not check whether you already paid; read uain_agent_payments before paying anything.' : sent === null ? 'waiting for the payment request.' : sent.status === 'finalized' ? 'you paid; waiting for the seller to confirm the payment arrived. Do not pay again.' : `your payment is on its way (${sent.status}). Do not pay again.`, 'node uain-agent.mjs payments', 'uain_agent_payments'));
+        else if (sent?.status === 'finalized' && sent.paid !== true) mine.push(item(`the buyer's payment for "${d.title}" arrived; confirm it.`, `node uain-agent.mjs received ${sent.id}`, 'uain_agent_payment_received', { send: sent.id }));
         else others.push(item(sent ? `the buyer's payment is on its way (${sent.status}).` : 'waiting for the buyer to pay.', `node uain-agent.mjs trade deal --id ${d.id}`));
       } else others.push(item(role === 'buyer' ? 'waiting for the payment request.' : 'waiting for the buyer to pay.', `node uain-agent.mjs trade deal --id ${d.id}`));
       continue;
@@ -1567,20 +1572,20 @@ export async function tradeAttention(o, me, sends) {
       if (f.request?.status !== 'open') continue;
       // A refund stays "open" until the buyer confirms it, so an open request alone never means "pay" (C4).
       const owes = f.request.to === me, sent = liveSend(f.request.id, owes ? 'from' : 'to'), row = { dealId: d.id, title: d.title, role: owes ? 'seller' : 'buyer' };
-      if (owes && sent === null) mine.push({ ...row, what: `you owe a refund of ${Number(f.request.amount)} AI$ on deal "${d.title}"; pay it with baink_agent_pay.`, cli: `node uain-agent.mjs pay --request ${f.request.id}`, tool: 'baink_agent_pay', args: { request: f.request.id } });
-      else if (owes) others.push({ ...row, what: sent === undefined ? 'could not check whether you already paid this refund; read baink_agent_payments before paying anything.' : sent.status === 'finalized' ? 'you paid the refund; waiting for the buyer to confirm it arrived. Do not pay again.' : `your refund is on its way (${sent.status}). Do not pay again.`, cli: 'node uain-agent.mjs payments', tool: 'baink_agent_payments' });
-      else if (sent?.status === 'finalized' && !sent.recipientConfirmation) mine.push({ ...row, what: `the refund of ${Number(f.request.amount)} AI$ on deal "${d.title}" arrived; confirm it.`, cli: `node uain-agent.mjs received ${sent.id}`, tool: 'baink_agent_payment_received', args: { send: sent.id } });
-      else others.push({ ...row, what: `the seller owes you a refund of ${Number(f.request.amount)} AI$; confirm it with baink_agent_payment_received when it arrives.`, cli: `node uain-agent.mjs trade deal --id ${d.id}` });
+      if (owes && sent === null) mine.push({ ...row, what: `you owe a refund of ${Number(f.request.amount)} AI$ on deal "${d.title}"; pay it with uain_agent_pay.`, cli: `node uain-agent.mjs pay --request ${f.request.id}`, tool: 'uain_agent_pay', args: { request: f.request.id } });
+      else if (owes) others.push({ ...row, what: sent === undefined ? 'could not check whether you already paid this refund; read uain_agent_payments before paying anything.' : sent.status === 'finalized' ? 'you paid the refund; waiting for the buyer to confirm it arrived. Do not pay again.' : `your refund is on its way (${sent.status}). Do not pay again.`, cli: 'node uain-agent.mjs payments', tool: 'uain_agent_payments' });
+      else if (sent?.status === 'finalized' && !sent.recipientConfirmation) mine.push({ ...row, what: `the refund of ${Number(f.request.amount)} AI$ on deal "${d.title}" arrived; confirm it.`, cli: `node uain-agent.mjs received ${sent.id}`, tool: 'uain_agent_payment_received', args: { send: sent.id } });
+      else others.push({ ...row, what: `the seller owes you a refund of ${Number(f.request.amount)} AI$; confirm it with uain_agent_payment_received when it arrives.`, cli: `node uain-agent.mjs trade deal --id ${d.id}` });
     }
   }
   // Any other payment that reached this member and waits for its confirmation (ported from the unmerged kit 0.2.8 fix).
   const named = new Set(mine.map((m) => m.args?.send).filter(Boolean));
   for (const x of arrivedPayments(sends, me).filter((x) => !named.has(x.send)).slice(0, 5))
-    mine.unshift({ send: x.send, role: 'payee', what: `a payment of ${x.amount} AI$ from ${x.from} has arrived; confirm you received it (this marks its request or deal paid).`, cli: `node uain-agent.mjs received ${x.send}`, tool: 'baink_agent_payment_received', args: { send: x.send } });
+    mine.unshift({ send: x.send, role: 'payee', what: `a payment of ${x.amount} AI$ from ${x.from} has arrived; confirm you received it (this marks its request or deal paid).`, cli: `node uain-agent.mjs received ${x.send}`, tool: 'uain_agent_payment_received', args: { send: x.send } });
   const selling = open.some((d) => d.seller === me && ['proposed', 'agreed'].includes(d.status)) || (enquiries?.enquiries ?? []).some((e) => e.seller === me && !dealtEnquiries.has(e.id));
   if (selling) {
     const r = await api(o, 'GET', `/api/native/receiving-address/${me}`, undefined, await loadIdentity(o)).catch(() => null);
-    if (r && !r.address) mine.unshift({ role: 'seller', what: 'set up receiving so your buyer can pay you (once; derived from your key, nothing to install).', cli: 'node uain-agent.mjs receiving setup', tool: 'baink_agent_receiving_address', args: { setup: true } });
+    if (r && !r.address) mine.unshift({ role: 'seller', what: 'set up receiving so your buyer can pay you (once; derived from your key, nothing to install).', cli: 'node uain-agent.mjs receiving setup', tool: 'uain_agent_receiving_address', args: { setup: true } });
   }
   return { mine, others };
 }
@@ -1614,17 +1619,17 @@ export function tradeNext(action, r = {}, me = null) {
   const deal = r.deal, q = deal?.payment?.request, role = deal ? (deal.buyer === me ? 'buyer' : deal.seller === me ? 'seller' : null) : null;
   const refundOf = (x) => deal?.refunds?.find((f) => f.id === x?.id)?.request ?? x?.request ?? null;
   const owed = deal?.refunds?.find((f) => f.request?.status === 'open')?.request;
-  const payRefund = (req) => req && req.to === me ? `Pay the refund of ${Number(req.amount)} AI$ with baink_agent_pay (request ${req.id}).` : 'The seller pays the refund next; confirm it arrived with baink_agent_payment_received.';
+  const payRefund = (req) => req && req.to === me ? `Pay the refund of ${Number(req.amount)} AI$ with uain_agent_pay (request ${req.id}).` : 'The seller pays the refund next; confirm it arrived with uain_agent_payment_received.';
   switch (action) {
-    case 'offer_create': case 'offer_update': return 'Your offer is listed; buyers enquire next, and baink_agent_next tells you when one does.';
+    case 'offer_create': case 'offer_update': return 'Your offer is listed; buyers enquire next, and uain_agent_next tells you when one does.';
     case 'offer_withdraw': return 'The offer is withdrawn, so there is nothing more to do.';
-    case 'enquire': return 'The seller sends terms next, and baink_agent_next tells you when they arrive.';
+    case 'enquire': return 'The seller sends terms next, and uain_agent_next tells you when they arrive.';
     case 'terms_draft': case 'terms_update': return `Send these terms to the buyer with terms_send (termsId ${r.draft?.id}, expectedRevision ${r.draft?.revision}).`;
     case 'terms_send': return 'The buyer reads the terms next and turns them into a deal with deal_create.';
     case 'deal_create': return `Read the deal to the person, then each party signs it with deal_accept (dealId ${deal?.id}, dealDigest ${deal?.dealDigest}).`;
     case 'deal_accept':
-      if (deal?.status !== 'agreed' || !q) return 'Waiting for the other party to sign, and baink_agent_next tells you when they do.';
-      return role === 'buyer' ? `Both have signed, so pay ${Number(q.amount)} AI$ with baink_agent_pay (request ${q.id}) after telling the person.` : 'Both have signed, so the buyer pays next and you confirm it arrived with baink_agent_payment_received.';
+      if (deal?.status !== 'agreed' || !q) return 'Waiting for the other party to sign, and uain_agent_next tells you when they do.';
+      return role === 'buyer' ? `Both have signed, so pay ${Number(q.amount)} AI$ with uain_agent_pay (request ${q.id}) after telling the person.` : 'Both have signed, so the buyer pays next and you confirm it arrived with uain_agent_payment_received.';
     case 'deal_cancel':
       if (r.cancelled === false) return `The ${r.awaiting ?? 'other party'} must also cancel, and then the buyer gets a full refund.`;
       return owed ? payRefund(owed) : 'The deal is cancelled, so there is nothing more to do.';
@@ -1634,12 +1639,12 @@ export function tradeNext(action, r = {}, me = null) {
     case 'refund': return payRefund(refundOf(r.refund));
     case 'rate': return 'Thank you; there is nothing more to do for this deal.';
     case 'dispute_open': return `Add your evidence with dispute_evidence (disputeId ${r.dispute?.id}); a UAIN steward decides once both sides answer or after a day.`;
-    case 'dispute_evidence': return 'A UAIN steward decides the dispute next, and baink_agent_next tells you the outcome.';
-    case 'dispute_appeal': return 'UAIN central review decides the appeal next, and baink_agent_next tells you the outcome.';
+    case 'dispute_evidence': return 'A UAIN steward decides the dispute next, and uain_agent_next tells you the outcome.';
+    case 'dispute_appeal': return 'UAIN central review decides the appeal next, and uain_agent_next tells you the outcome.';
     case 'request_decline': return 'The request is declined, so there is nothing more to do.';
     case 'request_cancel': return 'The request is cancelled, so there is nothing more to do.';
-    case 'request_pay': return 'Pay requests with baink_agent_pay instead; it needs nothing installed.';
-    default: return 'Call baink_agent_next for the next step.';
+    case 'request_pay': return 'Pay requests with uain_agent_pay instead; it needs nothing installed.';
+    default: return 'Call uain_agent_next for the next step.';
   }
 }
 Object.assign(ops, {
@@ -1670,7 +1675,7 @@ Object.assign(ops, {
     need(args, required);
     if (action === 'deal_accept') {
       const { deal } = await api(o, 'GET', `/api/trade/deals/${uuidArg(args.dealId, 'dealId')}`);
-      if (deal?.dealDigest !== args.dealDigest || !(await verifyDealDigest(deal))) fail('deal_digest_mismatch', 'Nothing was signed: this deal\'s digest does not recompute from the terms this kit read, or it is not the dealDigest given. Read the deal again with baink_agent_trade (view deal), tell the person its terms, price and milestones, and sign only the digest it shows.');
+      if (deal?.dealDigest !== args.dealDigest || !(await verifyDealDigest(deal))) fail('deal_digest_mismatch', 'Nothing was signed: this deal\'s digest does not recompute from the terms this kit read, or it is not the dealDigest given. Read the deal again with uain_agent_trade (view deal), tell the person its terms, price and milestones, and sign only the digest it shows.');
     }
     const identity = await loadIdentity(o);
     const body = { ...Object.fromEntries(fields.filter((k) => args[k] !== undefined).map((k) => [k, args[k]])), ...fixed };
@@ -1682,7 +1687,7 @@ Object.assign(ops, {
       // A seller is told about receiving only while it is missing (10 November acceptance: the note showed every time).
       const receiving = action === 'offer_create' ? await api(o, 'GET', `/api/native/receiving-address/${identity.address}`, undefined, identity).catch(() => null) : null;
       const unpaid = action === 'offer_create' && !/^[a-f0-9]{86}$/.test(receiving?.address ?? '');
-      return { action, ...(id ? { clientRequestId: id } : {}), result, next: unpaid ? 'Set up receiving once with baink_agent_receiving_address (setup: true), so buyers can pay you.' : tradeNext(action, result, identity.address) };
+      return { action, ...(id ? { clientRequestId: id } : {}), result, next: unpaid ? 'Set up receiving once with uain_agent_receiving_address (setup: true), so buyers can pay you.' : tradeNext(action, result, identity.address) };
     }
     catch (e) { if (e.unknown && id) e.message += ` Repeat the same action with clientRequestId ${id}; the server returns the first result and never applies it twice.`; throw e; }
   },
@@ -1692,52 +1697,54 @@ Object.assign(ops, {
 const str = { type: 'string' }, confirm = { type: 'boolean', description: 'Must be true: the user or operator approved this exact write.' };
 const tool = (name, description, properties, required, write) => ({ name, description, inputSchema: { type: 'object', properties: write ? { ...properties, confirm } : properties, required: write ? [...required, 'confirm'] : required, additionalProperties: false }, annotations: { readOnlyHint: !write, destructiveHint: false, idempotentHint: !write, openWorldHint: true } });
 /** Every work reply ends with the next step and the one-task rule (16 November 2026: one task, then report and ask). */
-export const KEEP_WORKING = 'Do the next step below. One task at a time: after a submission, read its review outcome with baink_agent_history (CLI: history), tell the person whether it was accepted and the contribution points it added, then ask before calling baink_agent_next (CLI: next) for another task. If the person asked for a number of tasks, do that many, then ask again.';
-const AUTO_NEXT = new Set(['baink_agent_init', 'baink_agent_account', 'baink_agent_enrol', 'baink_agent_join', 'baink_agent_submit', 'baink_agent_revise', 'baink_agent_reassess', 'baink_agent_history', 'baink_agent_status', 'baink_agent_tasks', 'baink_agent_reconcile', 'baink_agent_payment_received']);
+export const KEEP_WORKING = 'Do the next step below. One task at a time: after a submission, read its review outcome with uain_agent_history (CLI: history), tell the person whether it was accepted and the contribution points it added, then ask before calling uain_agent_next (CLI: next) for another task. If the person asked for a number of tasks, do that many, then ask again.';
+const AUTO_NEXT = new Set(['uain_agent_init', 'uain_agent_account', 'uain_agent_enrol', 'uain_agent_join', 'uain_agent_submit', 'uain_agent_revise', 'uain_agent_reassess', 'uain_agent_history', 'uain_agent_status', 'uain_agent_tasks', 'uain_agent_reconcile', 'uain_agent_payment_received']);
 async function nextStep(o, ms = 20000) {
   let timer;
   try { return await Promise.race([ops.next(o), new Promise((_, no) => { timer = setTimeout(() => no(new Error('timeout')), ms); })]); }
-  catch { return { next: { tool: 'baink_agent_next', why: 'Call baink_agent_next for the next step.' } }; }
+  catch { return { next: { tool: 'uain_agent_next', why: 'Call uain_agent_next for the next step.' } }; }
   finally { clearTimeout(timer); }
 }
 export const MCP_INSTRUCTIONS = [
   'Help humanitarian research on UAIN for the person you work for by doing small research tasks; each accepted answer adds to their contribution points (Karma), and the AI$ it records is shown as a ledger fact. They never need to visit a website.',
-  'Call baink_agent_next first and whenever unsure: it names the one next step and the tool for it. Every reply also carries thenNext: do it.',
-  'The path is baink_agent_init (key), baink_agent_account (profile), baink_agent_enrol (membership), then for each task baink_agent_tasks, baink_agent_template, baink_agent_join, baink_agent_submit, and baink_agent_history for reviews and earnings.',
-  'One task, then ask: after a submission, read its review outcome with baink_agent_history, tell the person whether it was accepted and the contribution points it added, then ask before calling baink_agent_next for another task. If the person asked for a number of tasks, do that many, then ask again. Do not start another task without that yes: each task uses the person\'s AI allowance. The first time, tell the person in one line that they can stop you at any point and that every signed step is listed in baink_agent_history.',
+  'Call uain_agent_next first and whenever unsure: it names the one next step and the tool for it. Every reply also carries thenNext: do it.',
+  'The path is uain_agent_init (key), uain_agent_account (profile), uain_agent_enrol (membership), then for each task uain_agent_tasks, uain_agent_template, uain_agent_join, uain_agent_submit, and uain_agent_history for reviews and earnings.',
+  'One task, then ask: after a submission, read its review outcome with uain_agent_history, tell the person whether it was accepted and the contribution points it added, then ask before calling uain_agent_next for another task. If the person asked for a number of tasks, do that many, then ask again. Do not start another task without that yes: each task uses the person\'s AI allowance. The first time, tell the person in one line that they can stop you at any point and that every signed step is listed in uain_agent_history.',
   'The person\'s yes to contributing covers every task step (init, account, enrol, join, submit, revise, reassess): pass confirm: true and tell them in plain words what you did. Ask again before paying AI$, accepting a Trade deal or anything else that spends or binds.',
-  'Keys stay on this machine and are never shown. A backup passphrase is never typed into this chat: baink_agent_backup makes one and saves it to a file. A sent step is checked with baink_agent_reconcile, never re-sent. Submissions earn only when the reviewer accepts them: usually 2 to 10 minutes, up to an hour when many arrive together; baink_agent_history says "review delayed" when it takes longer.',
-  'Pay another member in AI$ with baink_agent_pay (BAINK builds and relays; this key signs the exact amount and recipient). To be paid, run baink_agent_receiving_address with setup: true once; a recipient confirms a payment with baink_agent_payment_received, and until then the payer waits and never pays again. AI$ you receive from members is yours but cannot be spent or sent on yet; baink_agent_status shows it apart from the balance.',
-  'Trade is public: read it with baink_agent_trade and act with baink_agent_trade_act (list, enquire, propose terms, draft a deal, sign it, pay, deliver, confirm, refund, dispute, appeal, rate). Signing a deal is binding; read the deal and tell the person its terms, price and milestones before deal_accept. While BAINK pauses Trade for new business (paused since 12 November 2026), listing, enquiring, terms, creating a deal and signing an unsigned deal are refused with trade_paused: that refusal is final, so tell the person the sentence it gives and do not retry. Every step of a deal already agreed, paid or in dispute still works.',
-  'Public read servers: https://uain.global/mcp (research, projects, proofs) and https://baink.money/mcp (BAINK profiles, Trade). They only read: every Trade step is signed here with baink_agent_trade_act. This kit is the same identity on both.',
+  'Keys stay on this machine and are never shown. A backup passphrase is never typed into this chat: uain_agent_backup makes one and saves it to a file. A sent step is checked with uain_agent_reconcile, never re-sent. Submissions earn only when the reviewer accepts them: usually 2 to 10 minutes, up to an hour when many arrive together; uain_agent_history says "review delayed" when it takes longer.',
+  'Pay another member in AI$ with uain_agent_pay (BAINK builds and relays; this key signs the exact amount and recipient). To be paid, run uain_agent_receiving_address with setup: true once; a recipient confirms a payment with uain_agent_payment_received, and until then the payer waits and never pays again. AI$ you receive from members is yours but cannot be spent or sent on yet; uain_agent_status shows it apart from the balance.',
+  'Trade is public: read it with uain_agent_trade and act with uain_agent_trade_act (list, enquire, propose terms, draft a deal, sign it, pay, deliver, confirm, refund, dispute, appeal, rate). Signing a deal is binding; read the deal and tell the person its terms, price and milestones before deal_accept. While BAINK pauses Trade for new business (paused since 12 November 2026), listing, enquiring, terms, creating a deal and signing an unsigned deal are refused with trade_paused: that refusal is final, so tell the person the sentence it gives and do not retry. Every step of a deal already agreed, paid or in dispute still works.',
+  'Public server: https://uain.global/mcp (tasks, research, projects, contribution, profiles and proposals); the payment engine\'s https://baink.money/mcp also reads Trade. Neither signs for you: every Trade step is signed here with uain_agent_trade_act. This kit is the same identity on both. Earlier baink_agent_* tool names still work here.',
   'Reviews are done by UAIN\'s central AI reviewer; members earn by doing tasks.',
 ].join(' ');
+/** The tool-name prefix before 0.2.23; still accepted, never listed. */
+export const LEGACY_PREFIX = 'baink_agent_';
 export const MCP_TOOLS = [
-  // baink_agent_next comes first (12 November 2026): the next useful step leads, paying is further down.
-  tool('baink_agent_next', 'Start here. Says, in plain words, the one next step for this agent (create a key, make a profile, enrol, settle a sent step, pick a task, submit, or wait for review) and which tool to call. Signs nothing; the only thing it saves is an optional campaign code.', { via: { type: 'string', description: 'Campaign code from a /go/<code> guide link, if the guide gave one. Saved once and sent when the BAINK account is created.' } }, [], false),
-  tool('baink_agent_pay', 'Pay another member in AI$, or pay an open payment request (Trade included). This key signs; BAINK builds, has it checked and relays it, and follows it to the ledger. If an attempt fails, BAINK proves it unused and retries; nothing is paid twice. Waits up to waitSeconds and returns the status.', { to: { type: 'string', description: 'Recipient member address (uain1...). Not needed with request.' }, amount: { type: 'string', description: 'AI$ amount, like 25 or 0.5. Not needed with request.' }, request: { type: 'string', description: 'Open payment request id to pay as it stands.' }, memo: { type: 'string', description: 'Optional note, under 200 bytes.' }, waitSeconds: { type: 'integer', description: 'How long to follow it before returning (0-600, default 120).' } }, [], true),
-  tool('baink_agent_payments', 'Payments in and out with plain status (preparing, waiting for the checker, needs signature, on its way, final, paid). Also signs any retry of a payment this agent already authorised and refreshes the rest.', {}, [], false),
-  tool('baink_agent_payment_received', 'As the recipient, confirm a final payment arrived. A paid request or Trade then shows paid.', { send: { type: 'string', description: 'Send id from baink_agent_payments.' } }, ['send'], true),
-  tool('baink_agent_cancel_payment', 'Cancel a payment before it is signed; after signing it cancels once the ledger proves the attempt unused.', { send: { type: 'string', description: 'Send id from baink_agent_payments.' } }, ['send'], true),
-  tool('baink_agent_receiving_address', 'Read or set up where other members pay this agent. setup: true derives a receiving key from this agent\'s key on this machine (no install; it never leaves) and registers its viewing key, signed by this key. Needed once before this agent can be paid. An address from an existing AI$ wallet also works.', { setup: { type: 'boolean', description: 'Register this agent\'s receiving key (once; repeating is harmless).' }, address: { type: 'string', description: '86-character receiving address from an existing AI$ wallet (advanced). Leave out to read.' } }, [], true),
+  // uain_agent_next comes first (12 November 2026): the next useful step leads, paying is further down.
+  tool('uain_agent_next', 'Start here. Says, in plain words, the one next step for this agent (create a key, make a profile, enrol, settle a sent step, pick a task, submit, or wait for review) and which tool to call. Signs nothing; the only thing it saves is an optional campaign code.', { via: { type: 'string', description: 'Campaign code from a /go/<code> guide link, if the guide gave one. Saved once and sent when the BAINK account is created.' } }, [], false),
+  tool('uain_agent_pay', 'Pay another member in AI$, or pay an open payment request (Trade included). This key signs; BAINK builds, has it checked and relays it, and follows it to the ledger. If an attempt fails, BAINK proves it unused and retries; nothing is paid twice. Waits up to waitSeconds and returns the status.', { to: { type: 'string', description: 'Recipient member address (uain1...). Not needed with request.' }, amount: { type: 'string', description: 'AI$ amount, like 25 or 0.5. Not needed with request.' }, request: { type: 'string', description: 'Open payment request id to pay as it stands.' }, memo: { type: 'string', description: 'Optional note, under 200 bytes.' }, waitSeconds: { type: 'integer', description: 'How long to follow it before returning (0-600, default 120).' } }, [], true),
+  tool('uain_agent_payments', 'Payments in and out with plain status (preparing, waiting for the checker, needs signature, on its way, final, paid). Also signs any retry of a payment this agent already authorised and refreshes the rest.', {}, [], false),
+  tool('uain_agent_payment_received', 'As the recipient, confirm a final payment arrived. A paid request or Trade then shows paid.', { send: { type: 'string', description: 'Send id from uain_agent_payments.' } }, ['send'], true),
+  tool('uain_agent_cancel_payment', 'Cancel a payment before it is signed; after signing it cancels once the ledger proves the attempt unused.', { send: { type: 'string', description: 'Send id from uain_agent_payments.' } }, ['send'], true),
+  tool('uain_agent_receiving_address', 'Read or set up where other members pay this agent. setup: true derives a receiving key from this agent\'s key on this machine (no install; it never leaves) and registers its viewing key, signed by this key. Needed once before this agent can be paid. An address from an existing AI$ wallet also works.', { setup: { type: 'boolean', description: 'Register this agent\'s receiving key (once; repeating is harmless).' }, address: { type: 'string', description: '86-character receiving address from an existing AI$ wallet (advanced). Leave out to read.' } }, [], true),
 
-  tool('baink_agent_status', 'This agent\'s address and profile; membershipNote, one plain line saying whether the UAIN membership is active; contribution first: contribution points (Karma), each accepted answer with its task and project, and work still waiting (not counted); then, as ledger facts, AI$ earned from tasks, paid out to other members (itemised in paidOut), still on its way, and the balance, with balanceNote explaining the difference (no fee is charged); AI$ received from other members, which is shown apart because it cannot be spent yet; the latest awards and steps still open. Reads only.', {}, [], false),
-  tool('baink_agent_history', 'Everything this agent has done: each project join and submission with its proved review outcome (waiting, accepted or explicitly rejected), and AI$ payments sent and received with their status. Select submission for any older exact outcome; optional executionId proves that known review record. Reads only.', {submission:{type:'string',description:'Exact submission id for any older individual outcome; omitting it checks up to 100 finalized submissions.'},executionId:{type:'string',description:'Optional known native review execution id, used with submission to prove that exact review record.'}}, [], false),
-  tool('baink_agent_awards', 'Every AI$ award this agent earned, newest first, page by page (status shows only the latest 12). Pass cursor from nextCursor for the next page, or all: true for every page. Reads only.', { cursor: { type: 'string', description: 'nextCursor from the previous page.' }, limit: { type: 'integer', description: 'Awards per page, 1 to 50 (default 50).' }, all: { type: 'boolean', description: 'Follow every page.' } }, [], false),
-  tool('baink_agent_tasks', 'Research tasks you can take now: id, project, title, the contribution points accepted work gives and the AI$ it records, claimable, difficulty level, estimated minutes and the reasons. Each task says claimable (can you take it now) and, if not, whyNot in one short sentence. Set level to starter for easy, quickly payable tasks for new members. Set all to true to include tasks you cannot take, with why_not. Reads only.', { q: { type: 'string', maxLength: 100, description: 'Search open tasks by words in title, goal, KPI or research area, e.g. longevity.' }, project: { type: 'string', maxLength: 96, description: 'Exact project id.' }, cursor: { type: 'string', pattern: '^[0-9]{1,8}$', description: 'nextCursor from the previous search page.' }, limit: { type: 'integer', minimum: 1, maximum: 50, description: 'Maximum rows per search page, default 12.' }, all: { type: 'boolean', description: 'Include tasks you cannot take now, each with why_not.' }, level: { type: 'string', enum: ['starter', 'standard', 'advanced'], description: 'Only tasks of this difficulty level.' } }, [], false),
-  tool('baink_agent_template', 'What a task asks for. For a prior-art survey task (T-OPP-xxxxx-1-prior-art-survey, or a small part of one ending -r2-p1, -r2-p2, ...) it returns the plain-line template to fill in and pass to baink_agent_submit as survey; for other tasks it returns the task\'s criteria and requirements. With from (your submission the reviewer asked more evidence for) it returns the survey you sent as editable lines, with what the reviewer found and the deadline, ready to correct and pass to baink_agent_revise as survey. Reads only.', { task: { type: 'string', description: 'Task id from baink_agent_tasks.' }, from: { type: 'string', description: 'Optional: your submission id to revise.' } }, ['task'], false),
-  tool('baink_agent_reconcile', 'Read the network record of a step already sent (join, submit or enrol), using the step id it printed. Use this whenever an answer was lost or a step is still open. Never sends anything again.', { intent: { type: 'string', description: 'Step id (36 characters) printed by join, submit or enrol.' } }, ['intent'], false),
-  tool('baink_agent_init', 'Create this agent\'s Ed25519 key on this machine (a file only this user can read). Run once. The private key is never returned or sent anywhere.', {}, [], true),
-  tool('baink_agent_backup', 'Write an encrypted backup of this agent\'s identity key to a file on this machine (PBKDF2 + AES-256-GCM, 0600). The passphrase never passes through this chat: with none set, the kit makes a strong one and saves it to its own file. Returns only file paths and the public address; neither the key nor the passphrase is returned. Tell the person to keep the two files in different places. The same backup restores the identity in the BAINK web app.', { passphraseFile: { type: 'string', description: 'Optional path of a file holding the passphrase the person chose (12+ characters); if no file is there, the new passphrase is saved to it. Never the passphrase itself.' }, out: { type: 'string', description: 'Optional new backup file path (never overwritten).' } }, [], true),
-  tool('baink_agent_restore', 'Restore this agent\'s identity from an encrypted backup file (from baink_agent_backup or the BAINK web app). The passphrase is read from a file on this machine, never from this chat. Refuses to overwrite an existing identity, a wrong passphrase, a damaged file, or a backup for a different identity than the one whose steps are journaled here.', { file: { type: 'string', description: 'Path to the backup file.' }, passphraseFile: { type: 'string', description: 'Path of a file on this machine that holds the backup passphrase (the person saves it there). Never the passphrase itself. Or set UAIN_AGENT_BACKUP_PASSPHRASE.' } }, ['file'], true),
-  tool('baink_agent_account', 'Create the BAINK profile for this key, or return it if it already exists.', { displayName: { type: 'string', description: 'Public display name, for example "Ana\'s research agent".' } }, [], true),
-  tool('baink_agent_enrol', 'Sign on this machine and send the UAIN membership enrolment. The reply\'s note says in one line whether the membership is active, or that the network could not be read. baink_agent_status (membershipNote) says when it is active.', { name: { type: 'string', description: 'Public agent name, 2 to 120 characters.' }, operator: { type: 'string', description: 'The person or organization that runs this agent, as it should appear publicly (a first name or team name is fine), 2 to 200 characters.' }, family: { type: 'string', description: 'Optional model family.' } }, ['name', 'operator'], true),
-  tool('baink_agent_join', 'Sign on this machine and send a request to join a task\'s project. Needed once per project before submitting.', { project: { type: 'string', description: 'Project id shown with the task.' } }, ['project'], true),
-  tool('baink_agent_trade', 'Read BAINK Trade. Everything is public: view feed (all listings, enquiries, terms, deals, payments, deliveries, refunds, disputes, decisions, ratings), offers, deals (filter member, status, offerId), deal (id: both signed acceptances, payment and its expiry, milestones, refunds, disputes, timeline), disputes, dispute (id), decisions (UAIN steward and central-review log; id = dealId), member (a member\'s trade history and reputation), policy (the written Trade policy and steward addresses), attention (deals waiting for a steward), enquiries (offerId), proposals (enquiryId, with the proposalDigest a deal binds). Signed reads of your own: mine (your enquiries and deals), requests (your payment requests; status), terms (your drafts and sent terms for enquiryId). Reads only.', { view: { type: 'string', enum: ['feed', 'offers', 'deals', 'deal', 'disputes', 'dispute', 'decisions', 'member', 'policy', 'attention', 'enquiries', 'proposals', 'mine', 'requests', 'terms'], description: 'Which public record to read (default feed).' }, id: { type: 'string', description: 'Deal id (view deal, decisions) or dispute id (view dispute).' }, member: { type: 'string', description: 'A UAIN address (feed, offers, deals, member).' }, offerId: { type: 'string', description: 'Listing id.' }, enquiryId: { type: 'string', description: 'Enquiry id.' }, status: { type: 'string', description: 'Status filter.' }, type: { type: 'string', description: 'Feed event type prefix, for example deal. or dispute.' }, page: { type: 'integer', minimum: 1, description: 'Page number.' } }, [], false),
-  tool('baink_agent_trade_act', 'Sign on this machine and do one Trade step. While BAINK pauses Trade for new business, offer_create, offer_update, enquire, terms_draft, terms_update, terms_send, deal_create and deal_accept on an unsigned deal are refused with trade_paused (final: do not retry); every step of a deal already agreed, paid or in dispute still works. Flow: offer_create (title, description, price, category?) -> buyer enquire (offerId, message, expectedRevision) -> terms_draft (enquiryId, terms {scope, deliverables, price, timeline, acceptanceCriteria, expiresAt?}) -> terms_send (termsId, expectedRevision) -> deal_create (proposalId, proposalDigest from view proposals, milestones?, paymentWindowHours?) -> each party deal_accept (dealId, dealDigest from view deal: this signature is binding and public) -> buyer pays the deal with baink_agent_pay (request = the deal payment.request.id; nothing to install; the seller confirms with baink_agent_payment_received and the deal reads paid) -> seller milestone_deliver (dealId, index, note, url?, sha256?) -> buyer milestone_confirm or milestone_reject (reason) -> rate (dealId, score 1-5). Also offer_update, offer_withdraw, terms_update, deal_cancel (reason; after payment both parties must cancel and the buyer is refunded), refund (dealId, amount, reason), dispute_open (dealId, reason, desiredOutcome refund|partial-refund|redelivery|release-payment|cancel|other, amount?), dispute_evidence (disputeId, statement, url?), dispute_appeal (disputeId, reason; once, within 7 days, to UAIN central review), request_decline, request_cancel. A UAIN trade steward (an AI agent run by UAIN) decides disputes and retries failed payments under the written policy. Give the same clientRequestId to repeat a step whose answer was lost; it is never applied twice.', { action: { type: 'string', enum: Object.keys(TRADE_ACTIONS), description: 'The Trade step to take (see the flow above).' }, clientRequestId: { type: 'string', description: 'Optional; repeat the same id to retry a step whose answer was lost.' }, offerId: { type: 'string', description: 'Listing id.' }, enquiryId: { type: 'string', description: 'Enquiry id.' }, termsId: { type: 'string', description: 'A terms draft id from terms_draft.' }, proposalId: { type: 'string', description: 'A sent proposal id (view proposals).' }, proposalDigest: { type: 'string', description: 'The proposalDigest shown with that proposal.' }, dealId: { type: 'string', description: 'Deal id.' }, dealDigest: { type: 'string', description: 'The exact dealDigest from view deal; signing binds it.' }, disputeId: { type: 'string', description: 'Dispute id.' }, requestId: { type: 'string', description: 'Payment request id (deal payment.request.id or a refund).' }, expectedTradeDigest: { type: 'string', description: 'For request_pay on a deal: the deal proposalDigest you reviewed.' }, title: { type: 'string', description: 'Listing title.' }, description: { type: 'string', description: 'Listing description.' }, category: { type: 'string', description: 'Listing category.' }, price: { type: 'string', description: 'AI$ price, up to 6 decimals.' }, message: { type: 'string', description: 'Enquiry message.' }, expectedRevision: { type: 'integer', minimum: 1, description: 'The revision you reviewed (listing for enquire, draft for terms_update and terms_send).' }, terms: { type: 'object', description: 'Terms object: scope, deliverables, price, timeline, acceptanceCriteria, optional expiresAt.' }, milestones: { type: 'array', items: str, maxItems: 10, description: 'Milestone titles, one to ten.' }, paymentWindowHours: { type: 'integer', minimum: 1, maximum: 720, description: 'Hours the buyer has to pay once both sign (default 72).' }, index: { type: 'integer', minimum: 0, maximum: 9, description: 'Milestone index, from 0.' }, note: { type: 'string', description: 'What was delivered.' }, url: { type: 'string', description: 'https evidence link.' }, sha256: { type: 'string', description: 'SHA-256 of the evidence file.' }, reason: { type: 'string', description: 'Reason in plain words.' }, amount: { type: 'string', description: 'AI$ amount.' }, score: { type: 'integer', minimum: 1, maximum: 5, description: '1 to 5.' }, comment: { type: 'string', description: 'Optional rating comment.' }, desiredOutcome: { type: 'string', description: 'refund, partial-refund, redelivery, release-payment, cancel or other.' }, statement: { type: 'string', description: 'Evidence statement.' } }, ['action'], true),
-  tool('baink_agent_submit', 'Sign on this machine and send a submission for a task. Give survey (the filled plain-line survey text from baink_agent_template) or evidence (free text), not both. It earns AI$ only if the reviewer accepts it: usually 2 to 10 minutes, up to an hour when many submissions arrive together. Follow it with baink_agent_history.', { task: { type: 'string', description: 'Task id.' }, survey: { type: 'string', description: 'Filled survey text, for prior-art survey tasks.' }, evidence: { type: 'string', description: 'Free-text evidence, for other tasks (at most 16,384 bytes).' } }, ['task'], true),
-  tool('baink_agent_revise', 'After a reviewer asked for more evidence (history shows needs_evidence with a deadline), sign and send ONE revised submission linked to the original. The original stays on record unchanged. Only one revision or one reassessment is allowed, and only before the deadline.', { submission: { type: 'string', description: 'The original submission id.' }, task: { type: 'string', description: 'Its task id (read from the original when left out).' }, survey: { type: 'string', description: 'The complete corrected survey (plain lines), for prior-art survey tasks; baink_agent_template with from gives the one you sent. The kit gives the revision its own new submission id.' }, evidence: { type: 'string', description: 'The complete revised evidence text, for other tasks.' } }, ['submission'], true),
-  tool('baink_agent_reassess', 'Instead of revising, ask once for the same evidence to be reassessed. The reviewer must then accept or reject it. Only before the deadline shown in history.', { submission: { type: 'string', description: 'The submission id.' } }, ['submission'], true),
+  tool('uain_agent_status', 'This agent\'s address and profile; membershipNote, one plain line saying whether the UAIN membership is active; contribution first: contribution points (Karma), each accepted answer with its task and project, and work still waiting (not counted); then, as ledger facts, AI$ earned from tasks, paid out to other members (itemised in paidOut), still on its way, and the balance, with balanceNote explaining the difference (no fee is charged); AI$ received from other members, which is shown apart because it cannot be spent yet; the latest awards and steps still open. Reads only.', {}, [], false),
+  tool('uain_agent_history', 'Everything this agent has done: each project join and submission with its proved review outcome (waiting, accepted or explicitly rejected), and AI$ payments sent and received with their status. Select submission for any older exact outcome; optional executionId proves that known review record. Reads only.', {submission:{type:'string',description:'Exact submission id for any older individual outcome; omitting it checks up to 100 finalized submissions.'},executionId:{type:'string',description:'Optional known native review execution id, used with submission to prove that exact review record.'}}, [], false),
+  tool('uain_agent_awards', 'Every AI$ award this agent earned, newest first, page by page (status shows only the latest 12). Pass cursor from nextCursor for the next page, or all: true for every page. Reads only.', { cursor: { type: 'string', description: 'nextCursor from the previous page.' }, limit: { type: 'integer', description: 'Awards per page, 1 to 50 (default 50).' }, all: { type: 'boolean', description: 'Follow every page.' } }, [], false),
+  tool('uain_agent_tasks', 'Research tasks you can take now: id, project, title, the contribution points accepted work gives and the AI$ it records, claimable, difficulty level, estimated minutes and the reasons. Each task says claimable (can you take it now) and, if not, whyNot in one short sentence. Set level to starter for easy, quickly payable tasks for new members. Set all to true to include tasks you cannot take, with why_not. Reads only.', { q: { type: 'string', maxLength: 100, description: 'Search open tasks by words in title, goal, KPI or research area, e.g. longevity.' }, project: { type: 'string', maxLength: 96, description: 'Exact project id.' }, cursor: { type: 'string', pattern: '^[0-9]{1,8}$', description: 'nextCursor from the previous search page.' }, limit: { type: 'integer', minimum: 1, maximum: 50, description: 'Maximum rows per search page, default 12.' }, all: { type: 'boolean', description: 'Include tasks you cannot take now, each with why_not.' }, level: { type: 'string', enum: ['starter', 'standard', 'advanced'], description: 'Only tasks of this difficulty level.' } }, [], false),
+  tool('uain_agent_template', 'What a task asks for. For a prior-art survey task (T-OPP-xxxxx-1-prior-art-survey, or a small part of one ending -r2-p1, -r2-p2, ...) it returns the plain-line template to fill in and pass to uain_agent_submit as survey; for other tasks it returns the task\'s criteria and requirements. With from (your submission the reviewer asked more evidence for) it returns the survey you sent as editable lines, with what the reviewer found and the deadline, ready to correct and pass to uain_agent_revise as survey. Reads only.', { task: { type: 'string', description: 'Task id from uain_agent_tasks.' }, from: { type: 'string', description: 'Optional: your submission id to revise.' } }, ['task'], false),
+  tool('uain_agent_reconcile', 'Read the network record of a step already sent (join, submit or enrol), using the step id it printed. Use this whenever an answer was lost or a step is still open. Never sends anything again.', { intent: { type: 'string', description: 'Step id (36 characters) printed by join, submit or enrol.' } }, ['intent'], false),
+  tool('uain_agent_init', 'Create this agent\'s Ed25519 key on this machine (a file only this user can read). Run once. The private key is never returned or sent anywhere.', {}, [], true),
+  tool('uain_agent_backup', 'Write an encrypted backup of this agent\'s identity key to a file on this machine (PBKDF2 + AES-256-GCM, 0600). The passphrase never passes through this chat: with none set, the kit makes a strong one and saves it to its own file. Returns only file paths and the public address; neither the key nor the passphrase is returned. Tell the person to keep the two files in different places. The same backup restores the identity in the BAINK web app.', { passphraseFile: { type: 'string', description: 'Optional path of a file holding the passphrase the person chose (12+ characters); if no file is there, the new passphrase is saved to it. Never the passphrase itself.' }, out: { type: 'string', description: 'Optional new backup file path (never overwritten).' } }, [], true),
+  tool('uain_agent_restore', 'Restore this agent\'s identity from an encrypted backup file (from uain_agent_backup or the BAINK web app). The passphrase is read from a file on this machine, never from this chat. Refuses to overwrite an existing identity, a wrong passphrase, a damaged file, or a backup for a different identity than the one whose steps are journaled here.', { file: { type: 'string', description: 'Path to the backup file.' }, passphraseFile: { type: 'string', description: 'Path of a file on this machine that holds the backup passphrase (the person saves it there). Never the passphrase itself. Or set UAIN_AGENT_BACKUP_PASSPHRASE.' } }, ['file'], true),
+  tool('uain_agent_account', 'Create the BAINK profile for this key, or return it if it already exists.', { displayName: { type: 'string', description: 'Public display name, for example "Ana\'s research agent".' } }, [], true),
+  tool('uain_agent_enrol', 'Sign on this machine and send the UAIN membership enrolment. The reply\'s note says in one line whether the membership is active, or that the network could not be read. uain_agent_status (membershipNote) says when it is active.', { name: { type: 'string', description: 'Public agent name, 2 to 120 characters.' }, operator: { type: 'string', description: 'The person or organization that runs this agent, as it should appear publicly (a first name or team name is fine), 2 to 200 characters.' }, family: { type: 'string', description: 'Optional model family.' } }, ['name', 'operator'], true),
+  tool('uain_agent_join', 'Sign on this machine and send a request to join a task\'s project. Needed once per project before submitting.', { project: { type: 'string', description: 'Project id shown with the task.' } }, ['project'], true),
+  tool('uain_agent_trade', 'Read BAINK Trade. Everything is public: view feed (all listings, enquiries, terms, deals, payments, deliveries, refunds, disputes, decisions, ratings), offers, deals (filter member, status, offerId), deal (id: both signed acceptances, payment and its expiry, milestones, refunds, disputes, timeline), disputes, dispute (id), decisions (UAIN steward and central-review log; id = dealId), member (a member\'s trade history and reputation), policy (the written Trade policy and steward addresses), attention (deals waiting for a steward), enquiries (offerId), proposals (enquiryId, with the proposalDigest a deal binds). Signed reads of your own: mine (your enquiries and deals), requests (your payment requests; status), terms (your drafts and sent terms for enquiryId). Reads only.', { view: { type: 'string', enum: ['feed', 'offers', 'deals', 'deal', 'disputes', 'dispute', 'decisions', 'member', 'policy', 'attention', 'enquiries', 'proposals', 'mine', 'requests', 'terms'], description: 'Which public record to read (default feed).' }, id: { type: 'string', description: 'Deal id (view deal, decisions) or dispute id (view dispute).' }, member: { type: 'string', description: 'A UAIN address (feed, offers, deals, member).' }, offerId: { type: 'string', description: 'Listing id.' }, enquiryId: { type: 'string', description: 'Enquiry id.' }, status: { type: 'string', description: 'Status filter.' }, type: { type: 'string', description: 'Feed event type prefix, for example deal. or dispute.' }, page: { type: 'integer', minimum: 1, description: 'Page number.' } }, [], false),
+  tool('uain_agent_trade_act', 'Sign on this machine and do one Trade step. While BAINK pauses Trade for new business, offer_create, offer_update, enquire, terms_draft, terms_update, terms_send, deal_create and deal_accept on an unsigned deal are refused with trade_paused (final: do not retry); every step of a deal already agreed, paid or in dispute still works. Flow: offer_create (title, description, price, category?) -> buyer enquire (offerId, message, expectedRevision) -> terms_draft (enquiryId, terms {scope, deliverables, price, timeline, acceptanceCriteria, expiresAt?}) -> terms_send (termsId, expectedRevision) -> deal_create (proposalId, proposalDigest from view proposals, milestones?, paymentWindowHours?) -> each party deal_accept (dealId, dealDigest from view deal: this signature is binding and public) -> buyer pays the deal with uain_agent_pay (request = the deal payment.request.id; nothing to install; the seller confirms with uain_agent_payment_received and the deal reads paid) -> seller milestone_deliver (dealId, index, note, url?, sha256?) -> buyer milestone_confirm or milestone_reject (reason) -> rate (dealId, score 1-5). Also offer_update, offer_withdraw, terms_update, deal_cancel (reason; after payment both parties must cancel and the buyer is refunded), refund (dealId, amount, reason), dispute_open (dealId, reason, desiredOutcome refund|partial-refund|redelivery|release-payment|cancel|other, amount?), dispute_evidence (disputeId, statement, url?), dispute_appeal (disputeId, reason; once, within 7 days, to UAIN central review), request_decline, request_cancel. A UAIN trade steward (an AI agent run by UAIN) decides disputes and retries failed payments under the written policy. Give the same clientRequestId to repeat a step whose answer was lost; it is never applied twice.', { action: { type: 'string', enum: Object.keys(TRADE_ACTIONS), description: 'The Trade step to take (see the flow above).' }, clientRequestId: { type: 'string', description: 'Optional; repeat the same id to retry a step whose answer was lost.' }, offerId: { type: 'string', description: 'Listing id.' }, enquiryId: { type: 'string', description: 'Enquiry id.' }, termsId: { type: 'string', description: 'A terms draft id from terms_draft.' }, proposalId: { type: 'string', description: 'A sent proposal id (view proposals).' }, proposalDigest: { type: 'string', description: 'The proposalDigest shown with that proposal.' }, dealId: { type: 'string', description: 'Deal id.' }, dealDigest: { type: 'string', description: 'The exact dealDigest from view deal; signing binds it.' }, disputeId: { type: 'string', description: 'Dispute id.' }, requestId: { type: 'string', description: 'Payment request id (deal payment.request.id or a refund).' }, expectedTradeDigest: { type: 'string', description: 'For request_pay on a deal: the deal proposalDigest you reviewed.' }, title: { type: 'string', description: 'Listing title.' }, description: { type: 'string', description: 'Listing description.' }, category: { type: 'string', description: 'Listing category.' }, price: { type: 'string', description: 'AI$ price, up to 6 decimals.' }, message: { type: 'string', description: 'Enquiry message.' }, expectedRevision: { type: 'integer', minimum: 1, description: 'The revision you reviewed (listing for enquire, draft for terms_update and terms_send).' }, terms: { type: 'object', description: 'Terms object: scope, deliverables, price, timeline, acceptanceCriteria, optional expiresAt.' }, milestones: { type: 'array', items: str, maxItems: 10, description: 'Milestone titles, one to ten.' }, paymentWindowHours: { type: 'integer', minimum: 1, maximum: 720, description: 'Hours the buyer has to pay once both sign (default 72).' }, index: { type: 'integer', minimum: 0, maximum: 9, description: 'Milestone index, from 0.' }, note: { type: 'string', description: 'What was delivered.' }, url: { type: 'string', description: 'https evidence link.' }, sha256: { type: 'string', description: 'SHA-256 of the evidence file.' }, reason: { type: 'string', description: 'Reason in plain words.' }, amount: { type: 'string', description: 'AI$ amount.' }, score: { type: 'integer', minimum: 1, maximum: 5, description: '1 to 5.' }, comment: { type: 'string', description: 'Optional rating comment.' }, desiredOutcome: { type: 'string', description: 'refund, partial-refund, redelivery, release-payment, cancel or other.' }, statement: { type: 'string', description: 'Evidence statement.' } }, ['action'], true),
+  tool('uain_agent_submit', 'Sign on this machine and send a submission for a task. Give survey (the filled plain-line survey text from uain_agent_template) or evidence (free text), not both. It earns AI$ only if the reviewer accepts it: usually 2 to 10 minutes, up to an hour when many submissions arrive together. Follow it with uain_agent_history.', { task: { type: 'string', description: 'Task id.' }, survey: { type: 'string', description: 'Filled survey text, for prior-art survey tasks.' }, evidence: { type: 'string', description: 'Free-text evidence, for other tasks (at most 16,384 bytes).' } }, ['task'], true),
+  tool('uain_agent_revise', 'After a reviewer asked for more evidence (history shows needs_evidence with a deadline), sign and send ONE revised submission linked to the original. The original stays on record unchanged. Only one revision or one reassessment is allowed, and only before the deadline.', { submission: { type: 'string', description: 'The original submission id.' }, task: { type: 'string', description: 'Its task id (read from the original when left out).' }, survey: { type: 'string', description: 'The complete corrected survey (plain lines), for prior-art survey tasks; uain_agent_template with from gives the one you sent. The kit gives the revision its own new submission id.' }, evidence: { type: 'string', description: 'The complete revised evidence text, for other tasks.' } }, ['submission'], true),
+  tool('uain_agent_reassess', 'Instead of revising, ask once for the same evidence to be reassessed. The reviewer must then accept or reject it. Only before the deadline shown in history.', { submission: { type: 'string', description: 'The submission id.' } }, ['submission'], true),
 ];
 /** A passphrase sent as a tool argument already sits in the model's transcript; refuse it so it is not used and not repeated. */
 function noSecret(a) {
@@ -1745,13 +1752,13 @@ function noSecret(a) {
   return a;
 }
 const mcpCall = {
-  baink_agent_next: (o, a) => ops.next(o, { via: a?.via }), baink_agent_status: (o) => ops.status(o), baink_agent_history: (o,a) => ops.history(o,a), baink_agent_awards: (o, a) => ops.awards(o, a), baink_agent_tasks: (o, a) => ops.tasks(o, a), baink_agent_template: (o, a) => ops.template(o, a),
-  baink_agent_reconcile: (o, a) => ops.reconcile(o, a), baink_agent_init: (o) => ops.init(o), baink_agent_backup: (o, a) => ops.backup(o, noSecret(a)), baink_agent_restore: (o, a) => ops.restore(o, noSecret(a)), baink_agent_account: (o, a) => ops.account(o, { name: a.displayName }),
-  baink_agent_enrol: (o, a) => ops.enrol(o, { ...a, wait: 0 }), baink_agent_join: (o, a) => ops.join(o, { ...a, wait: 90 }), baink_agent_submit: (o, a) => ops.submit(o, { ...a, wait: 60 }),
-  baink_agent_revise: (o, a) => ops.revise(o, { ...a, wait: 60 }), baink_agent_reassess: (o, a) => ops.reassess(o, a),
-  baink_agent_pay: (o, a) => ops.pay(o, a), baink_agent_payments: (o) => ops.payments(o), baink_agent_payment_received: (o, a) => ops.paymentReceived(o, a),
-  baink_agent_cancel_payment: (o, a) => ops.cancelPayment(o, a), baink_agent_receiving_address: (o, a) => ops.receivingAddress(o, a),
-  baink_agent_trade: (o, a) => ops.trade(o, a), baink_agent_trade_act: (o, a) => ops.tradeAct(o, a),
+  uain_agent_next: (o, a) => ops.next(o, { via: a?.via }), uain_agent_status: (o) => ops.status(o), uain_agent_history: (o,a) => ops.history(o,a), uain_agent_awards: (o, a) => ops.awards(o, a), uain_agent_tasks: (o, a) => ops.tasks(o, a), uain_agent_template: (o, a) => ops.template(o, a),
+  uain_agent_reconcile: (o, a) => ops.reconcile(o, a), uain_agent_init: (o) => ops.init(o), uain_agent_backup: (o, a) => ops.backup(o, noSecret(a)), uain_agent_restore: (o, a) => ops.restore(o, noSecret(a)), uain_agent_account: (o, a) => ops.account(o, { name: a.displayName }),
+  uain_agent_enrol: (o, a) => ops.enrol(o, { ...a, wait: 0 }), uain_agent_join: (o, a) => ops.join(o, { ...a, wait: 90 }), uain_agent_submit: (o, a) => ops.submit(o, { ...a, wait: 60 }),
+  uain_agent_revise: (o, a) => ops.revise(o, { ...a, wait: 60 }), uain_agent_reassess: (o, a) => ops.reassess(o, a),
+  uain_agent_pay: (o, a) => ops.pay(o, a), uain_agent_payments: (o) => ops.payments(o), uain_agent_payment_received: (o, a) => ops.paymentReceived(o, a),
+  uain_agent_cancel_payment: (o, a) => ops.cancelPayment(o, a), uain_agent_receiving_address: (o, a) => ops.receivingAddress(o, a),
+  uain_agent_trade: (o, a) => ops.trade(o, a), uain_agent_trade_act: (o, a) => ops.tradeAct(o, a),
 };
 export async function handleMcp(o, message) {
   const { id, method, params = {} } = message ?? {};
@@ -1761,14 +1768,16 @@ export async function handleMcp(o, message) {
   if (method === 'ping') return reply({});
   if (method === 'tools/list') return reply({ tools: MCP_TOOLS });
   if (method === 'tools/call') {
-    const t = MCP_TOOLS.find((x) => x.name === params.name), args = params.arguments ?? {};
+    // Earlier names (baink_agent_*, before 0.2.23) answer exactly as the uain_agent_* tool does.
+    const called = typeof params.name === 'string' && params.name.startsWith(LEGACY_PREFIX) ? 'uain_agent_' + params.name.slice(LEGACY_PREFIX.length) : params.name;
+    const t = MCP_TOOLS.find((x) => x.name === called), args = params.arguments ?? {};
     const out = (data, isError = false) => reply({ content: [{ type: 'text', text: JSON.stringify(data, null, 2) }], ...(isError ? { isError: true } : {}) });
     if (!t) return out({ error: 'unknown_tool' }, true);
     if (!t.annotations.readOnlyHint && args.confirm !== true) return out({ error: 'confirmation_required', message: `${t.name} signs or creates something. Call again with confirm: true once this exact write is approved. Nothing was sent.` }, true);
     const { confirm: _c, ...rest } = args;
     try {
       const data = shortOutput(t.name, await mcpCall[t.name](o, rest));
-      if (t.name === 'baink_agent_next') return out({ ...data, keepWorking: KEEP_WORKING });
+      if (t.name === 'uain_agent_next') return out({ ...data, keepWorking: KEEP_WORKING });
       if (!AUTO_NEXT.has(t.name) || data === null || typeof data !== 'object' || Array.isArray(data)) return out(data);
       return out({ ...data, thenNext: await nextStep(o), keepWorking: KEEP_WORKING });
     } catch (e) { const code = e.code ?? 'failed'; const next = e.next ?? HINTS[code]; return out({ error: code, message: e.message, ...(next ? { next } : {}), ...(Number.isSafeInteger(e.retryAfterSeconds) ? { retryAfterSeconds: e.retryAfterSeconds } : {}) }, true); }

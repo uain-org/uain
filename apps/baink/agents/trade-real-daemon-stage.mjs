@@ -28,6 +28,15 @@ import * as kit from '../agent-kit/uain-agent.mjs';
 import { createTradeSteward } from './trade-steward.mjs';
 import { signedEnvelope } from '../../../chain/client/signing.mjs';
 
+// The kit lists only uain_agent_* tools but still answers the earlier baink_agent_* names:
+// look the annotations up under the listed name, then call with the name given.
+function toolFor(name) {
+  const listed = typeof name === 'string' && name.startsWith(kit.LEGACY_PREFIX) ? 'uain_agent_' + name.slice(kit.LEGACY_PREFIX.length) : name;
+  const tool = kit.MCP_TOOLS.find((x) => x.name === listed);
+  if (!tool) throw Error(`unknown kit tool: ${name}`);
+  return tool;
+}
+
 const ENABLED = process.env.UAIN_TRADE_REAL_DAEMON === '1';
 const TOOLS = process.env.UAIN_TRADE_TOOLS ?? '';
 const EVIDENCE = process.env.UAIN_TRADE_EVIDENCE ?? '';
@@ -171,7 +180,7 @@ test('Trade deal layer on the pinned native daemon: sign, pay, deliver, refund, 
   const messages = [];
   const slowdowns = [];
   async function call(as, name, args = {}) {
-    const write = !kit.MCP_TOOLS.find((x) => x.name === name).annotations.readOnlyHint;
+    const write = !toolFor(name).annotations.readOnlyHint;
     let reply, data;
     for (let i = 0; ; i++) {
       reply = await kit.handleMcp(o(as), { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name, arguments: write ? { ...args, confirm: true } : args } });

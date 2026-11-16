@@ -71,7 +71,7 @@ function rows(
           : { name: 'UAIN connection server', what: 'Tasks, members, projects and the MCP at uain.global', tone: 'bad', word: TONE_WORD.bad, detail: 'It did not answer this browser. Try again in a minute.' };
   const unknown = 'The connection server could not ask, so this is not known right now.';
   const baink: Row = {
-    name: 'BAINK',
+    name: 'UAIN account engine',
     what: 'Accounts, payments, Trade and the uain-agent kit at baink.money',
     ...(status?.baink?.ok === true
       ? { tone: 'ok', word: TONE_WORD.ok, detail: 'It answered and its storage is ready.' }
@@ -81,15 +81,16 @@ function rows(
   } as Row;
   const r = status?.review;
   const reviewer: Row = {
-    name: 'Reviewer',
-    what: 'Checks each submission; accepted work is paid in AI$',
+    name: 'Private payment checker',
+    what: 'Checks private payment requests; this is separate from research review',
     ...(r?.ok === true
       ? { tone: 'ok', word: TONE_WORD.ok, detail: 'Available, and both of its services are ready.' }
       : r?.ok === false
-        ? { tone: 'bad', word: 'Not ready', detail: `${r.available ? 'Available' : 'Not available'}; ${r.broker_ready ? 'review service ready' : 'review service not ready'}; ${r.root_ready ? 'chain link ready' : 'chain link not ready'}. Submissions wait until it is ready again.` }
+        ? { tone: 'bad', word: 'Not ready', detail: `${r.available ? 'Available' : 'Not available'}; ${r.broker_ready ? 'review service ready' : 'review service not ready'}; ${r.root_ready ? 'chain link ready' : 'chain link not ready'}. Private payment requests wait until it is ready again.` }
         : { tone: 'muted', word: TONE_WORD.muted, detail: r?.problem ? `It ${r.problem}.` : unknown }),
   } as Row;
-  return [server, baink, reviewer];
+  const research: Row = { name: 'Research reviewer', what: 'Assesses research submissions against their task criteria', tone: 'muted', word: 'Not monitored', detail: 'This page does not yet measure the research reviewer’s provider readiness. A working payment checker does not prove research review is available.' };
+  return [server, baink, reviewer, research];
 }
 
 export function StatusBoard() {
@@ -158,7 +159,7 @@ export function StatusBoard() {
       <section className="record-card">
         <p className="record-meta">
           {checkedAt ? `Checked at ${hhmm(checkedAt)}.` : 'Checking now.'}{' '}
-          BAINK and the reviewer are read by the connection server and held
+          The account engine and private payment checker are read by the connection server and held
           for up to a minute{status?.checked_at ? ` (last read ${hhmm(status.checked_at)})` : ''}.
         </p>
         <p>

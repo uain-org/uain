@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261116T132318Z-4595a744f4",
+  "version": "0.3.106",
+  "source_commit": "49077279b91b7c6af4fa2667fffcf1425b982bc4",
+  "deployed_at": "2026-11-16T14:26:53Z",
+  "prior": "20261116T121606Z-516532d3eb",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#newcomer-release-20261116",
+    "CHANGELOG.md#cause-record-links-20261116",
+    "apps/baink/CHANGELOG.md"
+  ],
+  "note": "Activated with exact prior lock, backup and rollback available, env unchanged; archive 23754d9db9d09450603708ceeea33bbe0fd13a5b0ab1ffc8f0dbaf9b8b61e5da. 180 runtime/32 preview files. Production/preview health and headers passed; public smoke ~14:29 UTC passed; source commit is the staged one."
+}

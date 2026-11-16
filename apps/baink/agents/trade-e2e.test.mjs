@@ -15,6 +15,15 @@ import { verifySignedRequest } from '../server/trade-deals.mjs';
 import * as kit from '../agent-kit/uain-agent.mjs';
 import { createTradeSteward, policyDecision, validateDecision, decisionPrompt, claudeDecider } from './trade-steward.mjs';
 
+// The kit lists only uain_agent_* tools but still answers the earlier baink_agent_* names:
+// look the annotations up under the listed name, then call with the name given.
+function toolFor(name) {
+  const listed = typeof name === 'string' && name.startsWith(kit.LEGACY_PREFIX) ? 'uain_agent_' + name.slice(kit.LEGACY_PREFIX.length) : name;
+  const tool = kit.MCP_TOOLS.find((x) => x.name === listed);
+  if (!tool) throw Error(`unknown kit tool: ${name}`);
+  return tool;
+}
+
 const DAY = 86_400_000;
 const TRADERS = 24;
 
@@ -37,7 +46,7 @@ async function network(t) {
   // Each agent runs on its own host: a distinct client address behind the local proxy.
   const o = (as) => ({ home, as, url, fetch: (u, init) => fetch(u, { ...init, headers: { ...init.headers, 'X-Real-IP': `10.0.${names.indexOf(as) >> 8}.${names.indexOf(as) & 255}` } }) });
   async function call(as, name, args = {}) {
-    const write = !kit.MCP_TOOLS.find((x) => x.name === name).annotations.readOnlyHint;
+    const write = !toolFor(name).annotations.readOnlyHint;
     const reply = await kit.handleMcp(o(as), { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name, arguments: write ? { ...args, confirm: true } : args } });
     const data = JSON.parse(reply.result.content[0].text);
     if (reply.result.isError) throw Object.assign(Error(data.message ?? data.error), { code: data.error, data });

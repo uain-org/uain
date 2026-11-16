@@ -1,5 +1,5 @@
 // One contract for MCP describe/resource/prompt and the public machine guide.
-export const MCP_VERSION = '0.6.14';
+export const MCP_VERSION = '0.6.15';
 // Fixed peer metadata is a routing hint, never authority to forward credentials.
 export const MCP_CONNECTIONS = {
   version: 1,
@@ -23,17 +23,18 @@ export const MCP_CONNECTIONS = {
       id: 'uain', endpoint: 'https://uain.global/mcp',
       transport: 'streamable-http', guide: 'https://uain.global/llms.txt',
       authority: 'independently proved native state and finalized receipts',
-      capabilities: ['research-discovery', 'native-state', 'signed-native-submission', 'native-receipts'],
-      authentication: {publicReads: 'none', privateOperations: 'holder-local typed native-command signatures'},
-      remoteScope: 'public reads and locally signed public native envelopes',
+      capabilities: ['research-discovery', 'native-state', 'signed-native-submission', 'native-receipts', 'member-earning-relay'],
+      authentication: {publicReads: 'none', privateOperations: 'holder-local typed native-command signatures; earning steps keep their https://baink.money signature audience'},
+      remoteScope: 'public reads, locally signed public native envelopes, and the signer and signed earning steps (uain_signer, uain_member_request) passed on unchanged to https://baink.money/mcp; no payments or Trade',
+      engineTools: {endpoint: 'https://baink.money/mcp', signatureAudience: 'https://baink.money', calledOnlyByAMemberToolCall: true, tools: {uain_signer: 'baink_signer', uain_member_request: 'baink_member_request', uain_contribution: 'baink_contribution', uain_proposals: 'baink_proposals', uain_profiles: 'baink_profiles'}},
     },
   ],
   holderConnection: {
     transport: 'sandbox or stdio', authentication: 'the member key, held by the member\'s own AI, signs each write; only signatures leave it',
     installationRequired: false, availability: 'nothing to install: an AI that can run code uses the signer in its own sandbox; the one-file kit is optional',
     modes: [
-      {id: 'sandbox', installationRequired: false, when: 'the AI can run code in a sandbox', signer: 'https://baink.money/uain_signer.py (MCP: baink_signer)', send: 'baink_member_request on https://baink.money/mcp', covers: ['key', 'profile', 'enrol', 'tasks', 'join', 'submit', 'review result'], notCovered: ['payments', 'Trade']},
-      {id: 'kit', installationRequired: false, optional: true, transport: 'stdio', when: 'the AI can run commands on the person\'s computer and the key should live in a file there', download: 'curl -fsSLO https://baink.money/uain-agent.mjs', shell: 'node uain-agent.mjs next', mcp: 'claude mcp add uain-agent -- node <path>/uain-agent.mjs mcp', covers: ['everything, including payments and Trade']},
+      {id: 'sandbox', installationRequired: false, when: 'the AI can run code in a sandbox', signer: 'https://uain.global/uain_signer.py (MCP: uain_signer on https://uain.global/mcp, or baink_signer on https://baink.money/mcp)', send: 'uain_member_request on https://uain.global/mcp (or baink_member_request on https://baink.money/mcp); signatures are bound to https://baink.money either way', covers: ['key', 'profile', 'enrol', 'tasks', 'join', 'submit', 'review result'], notCovered: ['payments', 'Trade']},
+      {id: 'kit', installationRequired: false, optional: true, transport: 'stdio', when: 'the AI can run commands on the person\'s computer and the key should live in a file there', download: 'curl -fsSLO https://uain.global/uain-agent.mjs', shell: 'node uain-agent.mjs next', mcp: 'claude mcp add uain-agent -- node <path>/uain-agent.mjs mcp', covers: ['everything, including payments and Trade']},
       {id: 'chat-only', installationRequired: false, when: 'the AI cannot run code', covers: ['reading tasks, projects, profiles and Trade'], next: 'continue in a chat whose AI can run code'},
     ],
     sameHolderIdentity: true, approvalRequiredForWrites: true,
@@ -41,7 +42,7 @@ export const MCP_CONNECTIONS = {
   },
   routing: [
     {service: 'baink', capabilities: ['profiles', 'peer-trade', 'payment-workflows'], discoveryTool: 'baink_connections'},
-    {service: 'uain', capabilities: ['research-discovery', 'native-state', 'signed-native-submission', 'native-receipts'], discoveryTool: 'uain_connections'},
+    {service: 'uain', capabilities: ['research-discovery', 'native-state', 'signed-native-submission', 'native-receipts', 'member-earning-relay'], discoveryTool: 'uain_connections'},
   ],
   security: {
     credentialForwardingAllowed: false, automaticPeerCalls: false,
@@ -96,7 +97,7 @@ export const ONBOARDING = {
   },
   earn: {
     kit: 'https://baink.money/uain-agent.mjs',
-    download: 'curl -fsSLO https://baink.money/uain-agent.mjs',
+    download: 'curl -fsSLO https://uain.global/uain-agent.mjs',
     requires: 'Node 22 or later; no Docker, no full node, no browser.',
     start: 'node uain-agent.mjs next',
     asMcpTools: {claudeCode: 'claude mcp add uain-agent -- node <path>/uain-agent.mjs mcp', codex: 'codex mcp add uain-agent -- node <path>/uain-agent.mjs mcp'},

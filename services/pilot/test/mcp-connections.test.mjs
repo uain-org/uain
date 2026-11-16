@@ -48,7 +48,20 @@ test('native UAIN MCP has a plain-language start-here guide that grants nothing 
   assert.match(text,/never sent again/i);
   assert.match(text,/no cash payout/i);
   assert.ok(data.topics.length>=15);
-  assert.equal(data.nextStep.tool,'baink_signer','11 Nov 2026 (P0-2): nothing to install first');
+  assert.equal(data.nextStep.tool,'uain_signer','11 Nov 2026 (P0-2): nothing to install first; 16 Nov: on this server');
+  assert.equal(data.nextStep.server,'https://uain.global/mcp');
+  // 16 Nov 2026 (Rahul: "Use UAIN throughout"): the first screen names one server, UAIN, and its files.
+  const first=JSON.stringify({about:data.about,journey:data.journey,thisServer:data.thisServer,signer:data.signer,kit:data.kit,rules:data.rules,nextStep:data.nextStep});
+  assert.doesNotMatch(first.replace(/baink_agent_[a-z_*]*/g,''),/BAINK|baink\.money|AI Dollar Network/i,'the first screen does not lead with the money brand (the kit\'s own tool names aside)');
+  assert.doesNotMatch(first.replace(/baink_agent_[a-z_*]*/g,''),/baink_/,'only the kit\'s own tool names keep their old prefix');
+  assert.match(first,/https:\/\/uain\.global\/uain-agent\.mjs/);assert.match(first,/https:\/\/uain\.global\/uain_signer\.py/);
+  assert.match(first,/uain_member_request/);
+  assert.match(JSON.stringify(data.limits),/Testing phase, not launched/,'testing status is disclosed');
+  assert.match(first,/One task, then ask/,'consent before each next task');
+  // 16 Nov 2026: kit tools are uain_agent_* (kit 0.2.23); an older kit's prefix is named once, as a note.
+  assert.match(first,/uain_agent_\* tools then appear/);
+  assert.deepEqual(data.seeAlso,{limits:'https://uain.global/limits',example:'https://uain.global/example',exampleNote:data.seeAlso.exampleNote});
+  assert.match(data.seeAlso.exampleNote,/senescent cells/);assert.match(data.seeAlso.exampleNote,/not peer review and not a scientific breakthrough/);
   assert.ok(!/light wallet|holder-local wallet|docker holder/i.test(text),'no install route is offered for paying');
   assert.ok(!/AI agents/i.test(text.replace(/AI Agents, AGI, Super AI Systems/g,'')),'public copy names AI Agents, AGI, Super AI Systems');
   assert.ok(Buffer.byteLength(text)<8000);
@@ -58,22 +71,22 @@ test('uain_guide answers the questions newcomers ask with a short answer and the
   const tool=fixture().get('uain_guide');
   const ask=async(input)=>JSON.parse((await tool.callback(input)).content[0].text);
   for(const[question,topic,next]of[
-    ['What is this and how do I start?','start','baink_signer'],
+    ['What is this and how do I start?','start','uain_signer'],
     ['Find me something I can do right now','find','uain_find_tasks'],
-    ['Help me research this task and submit it','research','baink_agent_template'],
+    ['Help me research this task and submit it','research','uain_agent_template'],
     ['I have an idea for a new project or discovery','idea','uain_search_research'],
-    ['How much have I earned and how do I pay someone?','earned','baink_agent_status'],
-    ['Something was rejected, what now?','rejected','baink_agent_history'],
-    ['my submission needs more evidence','rejected','baink_agent_history'],
-    ['Can I cash out AI$?','value','baink_agent_status'],
+    ['How much have I earned and how do I pay someone?','earned','uain_agent_status'],
+    ['Something was rejected, what now?','rejected','uain_agent_history'],
+    ['my submission needs more evidence','rejected','uain_agent_history'],
+    ['Can I cash out AI$?','value','uain_agent_status'],
     ['I want to build a tool for a task','implement','uain_find_tasks'],
     ['Can I earn by checking other members\' work?','check-work','uain_find_tasks'],
     // 10 Nov MCP check: submission questions went to "research" (how to submit) instead of the outcome.
-    ['What happened to my submission CS-9c1e0418-fdf7-45b5-b3ea-0e19812c8c67?','review','baink_agent_history'],
-    ['What happened to my submission?','review','baink_agent_history'],
-    ['Something I submitted, where is it?','review','baink_agent_history'],
-    ['My submission was rejected, what now?','rejected','baink_agent_history'],
-    ['How do I submit a task?','research','baink_agent_template'],
+    ['What happened to my submission CS-9c1e0418-fdf7-45b5-b3ea-0e19812c8c67?','review','uain_agent_history'],
+    ['What happened to my submission?','review','uain_agent_history'],
+    ['Something I submitted, where is it?','review','uain_agent_history'],
+    ['My submission was rejected, what now?','rejected','uain_agent_history'],
+    ['How do I submit a task?','research','uain_agent_template'],
   ]){
     const r=await ask({question});
     assert.equal(r.topic,topic,question);
@@ -82,8 +95,21 @@ test('uain_guide answers the questions newcomers ask with a short answer and the
     assert.ok(!/\b(shield|attested|custody|fence|holder|intent|epoch)\b/i.test(r.answer),question+': plain words');
   }
   assert.equal((await ask({question:'How much have I earned and how do I pay someone?'})).alsoAnswered.topic,'pay');
+  // Answers name the UAIN tools this server offers; the payment engine's server keeps its own names.
+  assert.match((await ask({topic:'earned'})).answer,/uain_contribution/);
+  assert.match((await ask({topic:'idea'})).answer,/uain_proposals/);
+  assert.match((await ask({topic:'trade'})).answer,/baink_trade on baink\.money\/mcp/,'Trade reads stay where they are');
+  const {guideAnswer}=await import('../../../apps/baink/server/guide-answers.mjs');
+  const engine=guideAnswer('baink',{});
+  assert.equal(engine.nextStep.tool,'baink_signer','baink.money/mcp keeps its own names');
+  assert.match(engine.about,/BAINK/);
+  assert.equal(engine.seeAlso,undefined,'the payment engine\'s guide is unchanged');
+  assert.equal(guideAnswer('baink',{topic:'review'}).nextStep.tool,'baink_agent_history','baink.money keeps the kit names every kit version knows');
+  const review=await ask({topic:'review'});
+  assert.equal(review.nextStep.tool,'uain_agent_history');assert.match(review.nextStep.via,/kits before 0\.2\.23 use the prefix baink_agent_ instead/);
+  assert.equal((await ask({topic:'limits'})).seeAlso.limits,'https://uain.global/limits');assert.match(JSON.stringify(engine.journey),/https:\/\/baink\.money\/mcp/);
   const none=await ask({question:'xyzzy plugh'});
-  assert.equal(none.match,'none');assert.ok(none.related.length>=3);assert.equal(none.nextStep.tool,'baink_signer');
+  assert.equal(none.match,'none');assert.ok(none.related.length>=3);assert.equal(none.nextStep.tool,'uain_signer');
   assert.equal((await ask({topic:'limits'})).topic,'limits');
   assert.match((await ask({question:'What can I earn here?'})).answer,/20 AI\$ for each record it covers/,'the earn answer says exactly how a task amount is set');
   assert.match((await ask({question:'I am ChatGPT in a browser chat and cannot run commands'})).answer,/OpenAI dots or Grok Bot/,'a chat-only assistant is pointed to an agent that can run commands');

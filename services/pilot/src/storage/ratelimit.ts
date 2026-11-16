@@ -81,6 +81,16 @@ export const RATE_LIMITS = {
     limit: envInt('UAIN_RATE_PUBLICATIONS_PER_MIN', 120),
     windowMs: 60_000,
   },
+  // Engine tool calls (16 November 2026, engine-tools.ts): uain_signer,
+  // uain_member_request, uain_contribution, uain_proposals, uain_profiles and
+  // their old baink_* names, each passed on to baink.money/mcp. Per address.
+  // BAINK sees every one from this server's own address, so one caller must
+  // not use up the budget BAINK gives uain.global as a whole (120 MCP calls a
+  // minute). One member's whole earning flow is a few calls a minute.
+  engine: {
+    limit: envInt('UAIN_RATE_ENGINE_CALLS_PER_MIN', 30),
+    windowMs: 60_000,
+  },
 };
 
 export type RateBucket = keyof typeof RATE_LIMITS;

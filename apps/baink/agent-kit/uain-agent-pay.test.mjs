@@ -88,18 +88,18 @@ async function fixture(t, { dropFirst = false } = {}) {
 test('an agent pays another agent over MCP; the recipient confirms; one debit', async (t) => {
   const f = await fixture(t);
   const address = randomBytes(43).toString('hex');
-  const reg = await kit.handleMcp(f.o2, { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'baink_agent_receiving_address', arguments: { address, confirm: true } } });
+  const reg = await kit.handleMcp(f.o2, { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'uain_agent_receiving_address', arguments: { address, confirm: true } } });
   assert.ok(!reg.result.isError, reg.result.content[0].text);
-  const unconfirmed = await kit.handleMcp(f.o1, { jsonrpc: '2.0', id: 2, method: 'tools/call', params: { name: 'baink_agent_pay', arguments: { to: f.payee.address, amount: '12.5' } } });
+  const unconfirmed = await kit.handleMcp(f.o1, { jsonrpc: '2.0', id: 2, method: 'tools/call', params: { name: 'uain_agent_pay', arguments: { to: f.payee.address, amount: '12.5' } } });
   assert.equal(JSON.parse(unconfirmed.result.content[0].text).error, 'confirmation_required');
-  const paid = await kit.handleMcp(f.o1, { jsonrpc: '2.0', id: 3, method: 'tools/call', params: { name: 'baink_agent_pay', arguments: { to: f.payee.address, amount: '12.5', memo: 'for the survey', waitSeconds: 20, confirm: true } } });
+  const paid = await kit.handleMcp(f.o1, { jsonrpc: '2.0', id: 3, method: 'tools/call', params: { name: 'uain_agent_pay', arguments: { to: f.payee.address, amount: '12.5', memo: 'for the survey', waitSeconds: 20, confirm: true } } });
   const out = JSON.parse(paid.result.content[0].text);
   assert.equal(out.status, 'finalized', paid.result.content[0].text);
   assert.match(out.note, /do not pay again/, 'a finalized payment the recipient has not confirmed yet says so plainly');
   assert.equal(f.records['coin_balance/' + f.payer.address], '37500000');
   const seen = await kit.ops.payments(f.o2);
   assert.equal(seen.payments[0].direction, 'in'); assert.match(seen.payments[0].next, /payment_received/);
-  const confirmed = await kit.handleMcp(f.o2, { jsonrpc: '2.0', id: 4, method: 'tools/call', params: { name: 'baink_agent_payment_received', arguments: { send: out.send, confirm: true } } });
+  const confirmed = await kit.handleMcp(f.o2, { jsonrpc: '2.0', id: 4, method: 'tools/call', params: { name: 'uain_agent_payment_received', arguments: { send: out.send, confirm: true } } });
   assert.equal(JSON.parse(confirmed.result.content[0].text).paid, true);
   // Paying the same again is a new intent (new nonce), never a replay of the first.
   assert.equal(f.broadcasts, 1);
@@ -143,7 +143,7 @@ test('no install: the payee sets up receiving over MCP, keeps its key, and is pa
   const before = await kit.ops.receivingAddress(f.o2, {});
   assert.equal(before.address, null); assert.match(before.next, /setup: true/);
   await assert.rejects(kit.ops.pay(f.o1, { to: f.payee.address, amount: '1' }), (e) => e.code === 'recipient_address_unregistered');
-  const reg = await kit.handleMcp(f.o2, { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'baink_agent_receiving_address', arguments: { setup: true, confirm: true } } });
+  const reg = await kit.handleMcp(f.o2, { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'uain_agent_receiving_address', arguments: { setup: true, confirm: true } } });
   const out = JSON.parse(reg.result.content[0].text);
   assert.ok(!reg.result.isError, reg.result.content[0].text);
   assert.equal(out.kind, 'key'); assert.match(out.address, /^[a-f0-9]{86}$/);
@@ -197,5 +197,5 @@ test('pay follows one payment with one signed call per poll, and a nonce-limit a
   assert.match(busy.note, /do not pay again/);
   f.o1.fetch = base;
   const later = (await kit.ops.payments(f.o1)).payments.find((p) => p.send === busy.send);
-  assert.ok(later, 'the payment is still followed by baink_agent_payments');
+  assert.ok(later, 'the payment is still followed by uain_agent_payments');
 });

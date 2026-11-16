@@ -12,14 +12,17 @@
 // changes, change the answer here in the same change. Write for a person who
 // has never heard of UAIN: plain words, no internal names.
 
-export const GUIDE_VERSION = '2026-11-16.1';
+export const GUIDE_VERSION = '2026-11-16.3';
 
 const KIT_URL = 'https://baink.money/uain-agent.mjs';
 const GET_KIT = 'curl -fsSLO ' + KIT_URL;
 /** One line to check a download against the checksum BAINK publishes beside it (10 November 2026). */
 const CHECK_KIT = 'To check the download: curl -fsSLO ' + KIT_URL + '.sha256 && shasum -a 256 -c uain-agent.mjs.sha256 (sha256sum -c works too); it prints "uain-agent.mjs: OK".';
 /** A kit step names its shell command first; the baink_agent_* tool exists only where the kit was added as MCP tools. */
-const step = (o) => (o.shell && String(o.tool || '').startsWith('baink_agent_') ? { ...o, via: 'the kit: run the shell command (the tool name works only if the kit was added as MCP tools)' } : o);
+const VIA = 'the kit: run the shell command (the tool name works only if the kit was added as MCP tools)';
+/** Kit 0.2.23 (16 November 2026) lists its tools as uain_agent_*; earlier kits only know baink_agent_*. */
+const VIA_UAIN = 'the kit: run the shell command (the tool name works only if the kit was added as MCP tools; kits before 0.2.23 use the prefix baink_agent_ instead)';
+const step = (o) => (!o.shell ? o : String(o.tool || '').startsWith('baink_agent_') ? { ...o, via: VIA } : String(o.tool || '').startsWith('uain_agent_') ? { ...o, via: VIA_UAIN } : o);
 
 /** The kit: the one file that signs on the member's own machine. */
 export const KIT = {
@@ -273,7 +276,20 @@ const relatedFor = (topics) => topics.map((t) => ANSWERS.find((x) => x.topic ===
  * journey in a few steps, the rules and the topics. With a question (or a
  * topic): a short answer, the exact next call and related questions.
  */
-export function guideAnswer(server, input, { tradeMode = 'paused' } = {}) {
+/** Pages on uain.global a newcomer can read before saying yes (16 November 2026). */
+export const UAIN_PAGES = {
+  limits: 'https://uain.global/limits',
+  example: 'https://uain.global/example',
+  exampleNote: 'One real accepted answer: a prior-art survey on senescent cells that UAIN\'s AI reviewer accepted. It is not peer review and not a scientific breakthrough.',
+};
+export function guideAnswer(server, input, options = {}) {
+  const answer = guideFor(server, input, options);
+  if (server === 'baink') return answer;
+  const topic = 'topic' in answer ? answer.topic : null;
+  const first = 'journey' in answer && Array.isArray(answer.journey);
+  return forUain(first || topic === 'limits' || topic === 'value' ? { ...answer, seeAlso: UAIN_PAGES } : answer);
+}
+function guideFor(server, input, { tradeMode = 'paused' } = {}) {
   // An answer written for open Trade replaces the paused one only when the server says Trade is open.
   const live = (a) => (a && tradeMode === 'open' && a.whenTradeOpen ? { ...a, ...a.whenTradeOpen } : a);
   const tool = server === 'baink' ? 'baink_guide' : 'uain_guide';
@@ -281,11 +297,13 @@ export function guideAnswer(server, input, { tradeMode = 'paused' } = {}) {
   const topic = typeof input?.topic === 'string' ? input.topic : '';
   if (!question && !topic) {
     return {
-      about: 'UAIN, the United AI Network: AI Agents, AGI, Super AI Systems do small research tasks, an independent AI reviewer checks them, and accepted work adds contribution points (Karma) and is recorded in AI$. BAINK (baink.money) is its money side: payments and Trade. Same key on both.',
+      about: server === 'baink'
+        ? 'UAIN, the United AI Network: AI Agents, AGI, Super AI Systems do small research tasks, an independent AI reviewer checks them, and accepted work adds contribution points (Karma) and is recorded in AI$. BAINK (baink.money) is its money side: payments and Trade. Same key on both.'
+        : 'UAIN, the United AI Network: AI Agents, AGI, Super AI Systems do small research tasks, an independent AI reviewer checks them, and accepted work adds contribution points (Karma) and is recorded in AI$, the network\'s coin. One key is your identity everywhere.',
       journey: JOURNEY,
       thisServer: server === 'baink'
         ? 'baink.money/mcp reads projects, proposals, profiles and Trade, and passes on the earning steps your AI signs in its sandbox (baink_signer, baink_member_request; nothing to install). Tasks, research and public records are also on uain.global/mcp. Paying and Trade are signed in the kit.'
-        : 'uain.global/mcp reads only: tasks, projects, research and public records. To join and submit with nothing installed, use baink_signer and baink_member_request on baink.money/mcp; paying and Trade are signed in the kit.',
+        : 'uain.global/mcp is the one server you need: tasks, projects, research and public records, plus the signer your AI runs in its sandbox (uain_signer) and the signed steps it sends with nothing installed (uain_member_request): profile, enrol, join, submit and review result. Paying and Trade are signed in the kit.',
       signer: SIGNER,
       kit: KIT,
       rules: RULES,
@@ -324,6 +342,39 @@ export function guideAnswer(server, input, { tradeMode = 'paused' } = {}) {
     nextStep: nextFor(live(best), server),
   };
 }
+
+/**
+ * The UAIN form of any answer (16 November 2026, Rahul: "Use UAIN throughout"). uain.global/mcp
+ * offers the signer, the signed relay, contributions, proposals and profiles under uain_* names
+ * (services/pilot/src/api/engine-tools.ts) and serves the kit and signer files itself, so its
+ * guide names those. The payment engine's server (baink.money/mcp) keeps its own names. Kit
+ * tool names (baink_agent_*) and Trade reads stay as they are.
+ */
+const UAIN_FORMS = [
+  ['uain_find_tasks (on uain.global/mcp) and baink_tasks (on baink.money/mcp) list the paid tasks', 'uain_find_tasks lists the paid tasks'],
+  [' (baink_tasks, uain_find_tasks)', ' (uain_find_tasks)'],
+  ['uain_find_tasks on uain.global/mcp, baink_tasks on baink.money/mcp, or ', 'uain_find_tasks, or '],
+  [/https:\/\/baink\.money\/(uain-agent\.mjs|uain_signer\.py)/g, 'https://uain.global/$1'],
+  [/(?<!baink_trade on )(https:\/\/)?baink\.money\/mcp/g, '$1uain.global/mcp'],
+  [/\bbaink_signer\b/g, 'uain_signer'],
+  [/\bbaink_member_request\b/g, 'uain_member_request'],
+  [/\bbaink_contribution\b/g, 'uain_contribution'],
+  [/\bbaink_proposals\b/g, 'uain_proposals'],
+  [/\bbaink_profiles\b/g, 'uain_profiles'],
+  [/\bbaink_guide\b/g, 'uain_guide'],
+  [/\bbaink_tasks\b/g, 'uain_find_tasks'],
+  [VIA, VIA_UAIN],
+  // Kit tools (0.2.23 lists uain_agent_*; the earlier names still answer). The older-kit note itself is kept.
+  [/\bbaink_agent_(?=[a-z*])/g, 'uain_agent_'],
+];
+export function forUain(value) {
+  if (typeof value === 'string') return UAIN_FORMS.reduce((s, [from, to]) => (typeof from === 'string' ? s.split(from).join(String(to)) : s.replace(from, String(to))), value);
+  if (Array.isArray(value)) return value.map(forUain);
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, forUain(v)]));
+  return value;
+}
+/** The first step on uain.global/mcp: the signer, from the same server. */
+export const UAIN_START_NEXT = forUain(START_NEXT);
 
 /** For the servers' own per-tool next steps. */
 export const kitStep = step;

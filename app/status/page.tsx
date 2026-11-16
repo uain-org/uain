@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
@@ -8,7 +9,7 @@ import '../record-pages.css';
 export const metadata: Metadata = pageMetadata({
   title: 'Status — United AI Network',
   description:
-    'What is working right now: the UAIN connection server, BAINK, and the reviewer that checks submissions.',
+    'Availability of UAIN services, with private payment checking distinguished from research review.',
   alternates: { canonical: '/status' },
 });
 
@@ -34,6 +35,11 @@ export default function StatusPage() {
             </div>
           </header>
           <StatusBoard />
+          <p>
+            <Link href="/limits">
+              Read the known limits before contributing.
+            </Link>
+          </p>
         </div>
       </main>
       <SiteFooter />

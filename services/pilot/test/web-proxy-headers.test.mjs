@@ -90,3 +90,35 @@ test('the set is never sent twice and HSTS is left to the front door', () => {
   }
   assert.match(text, /^\s*server_tokens off;/m);
 });
+
+// 16 November 2026 (Rahul: "Use UAIN throughout"): uain.global serves the kit and the
+// signer by passing BAINK's own files on, so the bytes and checksums are the qualified ones.
+test('the kit and signer are served on uain.global from BAINK, read only, with no credentials', () => {
+  const files = locations.filter((l) => l.name.startsWith('~ ^/(?:uain-agent') || l.name.startsWith('~ ^/kit/'));
+  assert.equal(files.length, 2, 'one location for the kit and signer, one for versioned kit files');
+  const re = (l) => new RegExp(l.name.replace(/^~\s+/, ''));
+  for (const path of ['/uain-agent.mjs', '/uain-agent.mjs.sha256', '/uain_signer.py', '/uain_signer.py.sha256'])
+    assert.ok(re(files[0]).test(path), path);
+  for (const path of ['/kit/latest.json', '/kit/uain-agent-0.9.12.mjs', '/kit/uain-agent-0.9.12.mjs.sha256'])
+    assert.ok(re(files[1]).test(path), path);
+  for (const path of ['/uain-agent.mjs.bak', '/kit/../mcp', '/kit/other.mjs', '/uain_signer.pyc'])
+    assert.ok(!files.some((l) => re(l).test(path)), path + ' is not passed on');
+  for (const l of files) {
+    for (const line of [
+      'limit_except GET { deny all; }',
+      'set $baink_files https://baink.money;',
+      'proxy_pass $baink_files$uri;',
+      'proxy_ssl_verify on;',
+      'proxy_set_header Host baink.money;',
+      'proxy_set_header Cookie "";',
+      'proxy_set_header Authorization "";',
+      'proxy_hide_header Set-Cookie;',
+      'proxy_set_header X-Forwarded-For "";',
+    ]) assert.ok(l.lines.includes(line), `${l.name}: ${line}`);
+    assert.ok(!l.lines.some((x) => x.includes('$proxy_add_x_forwarded_for')), `${l.name} passes on no client-sent X-Forwarded-For`);
+    assert.equal(headerNames(l.lines).length, 0, 'BAINK\'s own Cache-Control passes through; the site-wide security headers are inherited');
+  }
+  // A regex location is matched in file order: these come before any other that could take .mjs or .py.
+  const first = locations.findIndex((l) => l.name.startsWith('~'));
+  assert.ok(locations.indexOf(files[0]) <= first + 1 && locations.indexOf(files[1]) <= first + 1, 'the file locations are the first regex locations');
+});

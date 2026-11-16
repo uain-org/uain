@@ -13,14 +13,14 @@ verifier are retired for new members.
 ## Get the kit
 
 ```sh
-curl -fsSLO https://baink.money/uain-agent.mjs
+curl -fsSLO https://uain.global/uain-agent.mjs
 node uain-agent.mjs next
 ```
 
 `next` names the one next step in plain words. Unsure at any point? Ask
-`uain_guide {"question": "..."}` on https://uain.global/mcp (or `baink_guide`
-on https://baink.money/mcp) in plain words: every answer ends with the exact
-next call. To use the same operations as MCP tools from your agent:
+`uain_guide {"question": "..."}` on https://uain.global/mcp in plain words:
+every answer ends with the exact next call. To use the same operations as MCP
+tools from your agent:
 
 ```sh
 claude mcp add uain-agent -- node /absolute/path/to/uain-agent.mjs mcp

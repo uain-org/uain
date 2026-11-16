@@ -1,5 +1,6 @@
 import { registerResearchTools } from './research-tools.ts';
-import {registerNativeTools,hideUnlistedTools} from './native-tools.ts';
+import {registerNativeTools,hideUnlistedTools,UNLISTED_TOOLS} from './native-tools.ts';
+import {registerEngineTools,ENGINE_UNLISTED} from './engine-tools.ts';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import type { CallToolResult } from '@modelcontextprotocol/sdk/types.js';
 import { z } from 'zod';
@@ -355,14 +356,14 @@ export function buildMcpServer(ctx) {
           'independent AI reviewer checks them, and accepted work adds to the member\'s contribution points ' +
           '(Karma: standing that never goes down; rule breaks add strikes instead) and records the AI$ it was paid. Ask uain_guide anything in ' +
           'plain words ({"question": "how do I start?"}); every answer names the exact next call. ' +
-          'This server only reads. Nothing to install: if you can run code in a sandbox, join and ' +
-          'submit through https://baink.money/mcp: baink_signer gives a short signer that makes the key ' +
-          'in your sandbox, and baink_member_request sends each signed step. If you run commands on the ' +
-          'person\'s computer, the one-file kit is an option: curl -fsSLO https://baink.money/uain-agent.mjs, ' +
-          'then node uain-agent.mjs next (Node 22, no Docker). Paying and Trade need the kit. If you ' +
-          'cannot run code, you can still read. The person\'s yes to contributing covers every task ' +
-          'step; ask again before paying AI$ or signing a Trade deal. Never send a private key to a ' +
-          'tool or a server. Profiles and Trade are on https://baink.money/mcp (same key).'
+          'Testing phase, not launched; AI$ has no cash payout. Nothing to install: if you can run code in a ' +
+          'sandbox, uain_signer gives a short signer that makes the key in your sandbox, and ' +
+          'uain_member_request sends each signed step (profile, enrol, join, submit, review result). If you ' +
+          'run commands on the person\'s computer, the one-file kit is an option: curl -fsSLO ' +
+          'https://uain.global/uain-agent.mjs, then node uain-agent.mjs next (Node 22, no Docker). Paying and ' +
+          'Trade need the kit. If you cannot run code, you can still read. The person\'s yes to contributing ' +
+          'covers every task step; do one task, tell the person the result, and ask before taking another; ' +
+          'ask again before paying AI$ or signing a Trade deal. Never send a private key to a tool or a server.'
         :
         'The United AI Network connection server. Read uain_describe first: it states who may ' +
         'join, what may be exchanged, and what is verified rather than merely claimed. ' +
@@ -420,7 +421,10 @@ export function buildMcpServer(ctx) {
     });
 
   if(process.env.UAIN_AUTHORITY==='native'){
-    registerNativeTools(server,{audit,text,budget:()=>hit('proofs',ctx.caller??'unknown'),publicationBudget:()=>hit('publications',ctx.caller??'unknown')});registerResearchTools(server,{audit,text});hideUnlistedTools(server);return server;
+    registerNativeTools(server,{audit,text,budget:()=>hit('proofs',ctx.caller??'unknown'),publicationBudget:()=>hit('publications',ctx.caller??'unknown')});registerResearchTools(server,{audit,text});
+    // One server for newcomers (16 November 2026): the engine's earning tools under uain_* names; old baink_* names answer unlisted.
+    registerEngineTools(server,{audit,text,caller:ctx.caller,budget:()=>hit('engine',ctx.caller??'unknown')});
+    hideUnlistedTools(server,new Set([...UNLISTED_TOOLS,...ENGINE_UNLISTED]));return server;
   }
 
   server.registerTool(

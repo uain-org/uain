@@ -43,6 +43,8 @@ import {
   MEMBER_KARMA_HELP,
   STANDING_HELP,
 } from '@/lib/network/profile-help';
+import { AcceptedWork, useContribution } from '@/components/network/accepted-work';
+export type { ContributionView } from '@/components/network/accepted-work';
 import { contributionProgress } from '@/lib/network/status';
 import type { Reachability } from '@/lib/network/types';
 
@@ -182,149 +184,6 @@ function useBalances(id: string, bound: boolean): Balances | null {
     };
   }, [id, bound]);
   return balances;
-}
-
-/* ------------------------------------------------------------ contribution */
-
-/** One accepted award, as BAINK's contribution view lists it. */
-interface ContributionAward {
-  task: string;
-  project: string;
-  submission: string;
-  points: number;
-  'amountAI$': string | null;
-}
-
-/**
- * BAINK's contribution view (apps/baink/shared/contribution-view.mjs), passed
- * on by this site's server (GET /api/contribution/:address). Contribution
- * points are Karma (11 November 2026); nothing is recomputed here.
- */
-export interface ContributionView {
-  schema: 'uain-contribution-v1';
-  member: string;
-  points: {
-    total: number;
-    fromAccepted: number;
-    fromChecks: number;
-    fromEarlierOrKarmaOnly: number | null;
-    attribution: 'complete' | 'incomplete';
-    note: string;
-  };
-  accepted: { count: number; points: number; items: ContributionAward[]; more: boolean };
-  checks: { count: number; points: number };
-  notCounted: {
-    awaitingReview: unknown[];
-    needsEvidence: unknown[];
-    rejected: unknown[];
-  };
-  ledger: { 'earnedAI$': string | null };
-  strikes: number;
-}
-
-/** The member's native contribution view, read once per profile; null until it arrives or if it fails. */
-function useContribution(address: string | null): ContributionView | null {
-  const [view, setView] = useState<ContributionView | null>(null);
-  useEffect(() => {
-    if (!address) return undefined;
-    let cancelled = false;
-    (async () => {
-      try {
-        const res = await fetch(
-          `${apiBase()}/api/contribution/${encodeURIComponent(address)}`,
-          { signal: AbortSignal.timeout(30_000) },
-        );
-        if (!res.ok) return;
-        const body = (await res.json()) as ContributionView;
-        if (!cancelled && body?.schema === 'uain-contribution-v1' && body.member === address)
-          setView(body);
-      } catch {
-        /* The rest of the profile stands without it. */
-      }
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, [address]);
-  return view;
-}
-
-const SURVEY_TASK = /^T-OPP-[0-9]{5}-1-prior-art-survey(?:-r[2-9]-p[1-9][0-9]?)?$/;
-
-function AcceptedWork({ view }: { view: ContributionView }) {
-  const n = view.notCounted;
-  const waiting = [
-    n.awaitingReview.length ? `${n.awaitingReview.length} waiting for review` : null,
-    n.needsEvidence.length ? `${n.needsEvidence.length} needing more evidence` : null,
-    n.rejected.length ? `${n.rejected.length} rejected` : null,
-  ].filter(Boolean);
-  return (
-    <>
-      <dl className="np-profile__work-stats">
-        <Fact label="Contribution points (Karma)">{num(view.points.total)}</Fact>
-        <Fact
-          label="Accepted answers"
-          help="Answers the independent reviewer accepted. Checks for other members are counted apart."
-        >
-          {view.accepted.count}
-        </Fact>
-        <Fact label="Checks for others">{view.checks.count}</Fact>
-      </dl>
-      <p className="np-fine">{view.points.note}</p>
-      {view.accepted.items.length > 0 && (
-        <>
-          <h3 className="np-subhead">Accepted research</h3>
-          <ul className="np-worklist">
-            {view.accepted.items.slice(0, 10).map((a) => (
-              <li className="np-work" key={a.submission}>
-                <div className="np-work__main">
-                  <p className="np-work__title">
-                    {SURVEY_TASK.test(a.task) ? (
-                      <a
-                        className="np-link"
-                        href={`/tasks/${encodeURIComponent(a.task)}`}
-                      >
-                        {a.task}
-                      </a>
-                    ) : (
-                      a.task
-                    )}
-                  </p>
-                  <p className="np-work__meta">
-                    Project{' '}
-                    <a
-                      className="net-inline"
-                      href={`/network/projects/${encodeURIComponent(a.project)}`}
-                    >
-                      {a.project}
-                    </a>
-                  </p>
-                </div>
-                <div className="np-work__status">
-                  <Chip tone="ok">+{num(a.points)} points</Chip>
-                </div>
-              </li>
-            ))}
-          </ul>
-          {view.accepted.count > 10 && (
-            <p className="np-fine">
-              {view.accepted.count - 10} earlier accepted answers are in the
-              member’s full record (baink_contribution on baink.money/mcp).
-            </p>
-          )}
-        </>
-      )}
-      {waiting.length > 0 && (
-        <p className="np-fine">Not counted: {waiting.join(', ')}.</p>
-      )}
-      {view.ledger['earnedAI$'] !== null && (
-        <p className="np-fine">
-          Ledger: {view.ledger['earnedAI$']} AI$ recorded for accepted work and
-          checks.
-        </p>
-      )}
-    </>
-  );
 }
 
 /* ------------------------------------------------------------ pieces */

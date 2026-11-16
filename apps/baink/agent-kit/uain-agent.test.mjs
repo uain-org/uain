@@ -195,7 +195,7 @@ test('end to end on the real server: signed account, tasks, template, join, surv
   assert.deepEqual((await kit.ops.tasks(o, { level: 'starter' })).tasks, []);
   assert.deepEqual((await kit.ops.tasks(o, { level: 'standard' })).tasks.map((x) => x.id), [TASK]);
   await assert.rejects(kit.ops.tasks(o, { level: 'easy' }), (e) => e.code === 'invalid_input');
-  const listed = (await kit.handleMcp(o, { jsonrpc: '2.0', id: 9, method: 'tools/call', params: { name: 'baink_agent_tasks', arguments: { level: 'starter' } } })).result;
+  const listed = (await kit.handleMcp(o, { jsonrpc: '2.0', id: 9, method: 'tools/call', params: { name: 'uain_agent_tasks', arguments: { level: 'starter' } } })).result;
   assert.ok(!listed.isError);
   assert.deepEqual(JSON.parse(listed.content[0].text).tasks, []);
   const { text } = await kit.ops.template(o, { task: TASK });
@@ -205,7 +205,7 @@ test('end to end on the real server: signed account, tasks, template, join, surv
   const before = f.sent.length, first = await kit.ops.next(o);
   assert.equal(first.stage, 'choose_task', JSON.stringify(first));
   assert.equal(first.task.id, TASK);
-  assert.equal(first.next.tool, 'baink_agent_template');
+  assert.equal(first.next.tool, 'uain_agent_template');
   assert.equal(f.sent.length, before);
 
   const joined = await kit.ops.join(o, { project: PROJECT });
@@ -264,7 +264,7 @@ test('end to end on the real server: signed account, tasks, template, join, surv
   const after = await kit.ops.next(o);
   assert.equal(after.stage, 'no_open_task', JSON.stringify(after));
   assert.deepEqual(after.waitingForReview, [TASK]);
-  assert.equal(after.next.tool, 'baink_agent_next', 'a finished agent is told to come back, not to stop');
+  assert.equal(after.next.tool, 'uain_agent_next', 'a finished agent is told to come back, not to stop');
   assert.match(after.next.why, /Keep the session running/);
   assert.equal(f.sent.length, 2, 'history and next sign and send nothing');
 });
@@ -276,7 +276,7 @@ test('MCP lists the tools and every write tool refuses without confirm: true, se
   assert.equal(init.result.protocolVersion, '2025-06-18');
   const { tools } = (await kit.handleMcp(o, { jsonrpc: '2.0', id: 2, method: 'tools/list' })).result;
   const writes = tools.filter((x) => !x.annotations.readOnlyHint).map((x) => x.name);
-  assert.deepEqual(writes.sort(), ['baink_agent_account', 'baink_agent_backup', 'baink_agent_cancel_payment', 'baink_agent_enrol', 'baink_agent_init', 'baink_agent_join', 'baink_agent_pay', 'baink_agent_payment_received', 'baink_agent_reassess', 'baink_agent_receiving_address', 'baink_agent_restore', 'baink_agent_revise', 'baink_agent_submit', 'baink_agent_trade_act']);
+  assert.deepEqual(writes.sort(), ['uain_agent_account', 'uain_agent_backup', 'uain_agent_cancel_payment', 'uain_agent_enrol', 'uain_agent_init', 'uain_agent_join', 'uain_agent_pay', 'uain_agent_payment_received', 'uain_agent_reassess', 'uain_agent_receiving_address', 'uain_agent_restore', 'uain_agent_revise', 'uain_agent_submit', 'uain_agent_trade_act']);
   for (const name of writes) {
     const r = (await kit.handleMcp(o, { jsonrpc: '2.0', id: 3, method: 'tools/call', params: { name, arguments: { task: TASK, project: PROJECT, survey: 'x', name: 'A', operator: 'B' } } })).result;
     assert.equal(r.isError, true);
@@ -284,26 +284,26 @@ test('MCP lists the tools and every write tool refuses without confirm: true, se
   }
   assert.equal(calls, 0);
   // The plain-language reads exist, every tool explains itself, and "next" works before any key exists.
-  for (const name of ['baink_agent_next', 'baink_agent_history', 'baink_agent_status']) assert.ok(tools.some((x) => x.name === name && x.annotations.readOnlyHint), name);
+  for (const name of ['uain_agent_next', 'uain_agent_history', 'uain_agent_status']) assert.ok(tools.some((x) => x.name === name && x.annotations.readOnlyHint), name);
   for (const x of tools) {
     assert.ok(x.description.length > 40, x.name);
     for (const [k, v] of Object.entries(x.inputSchema.properties)) assert.ok(v.description, `${x.name}.${k} has a description`);
   }
-  assert.match(init.result.instructions, /baink_agent_next/);
-  const fresh = JSON.parse((await kit.handleMcp(o, { jsonrpc: '2.0', id: 5, method: 'tools/call', params: { name: 'baink_agent_next', arguments: {} } })).result.content[0].text);
+  assert.match(init.result.instructions, /uain_agent_next/);
+  const fresh = JSON.parse((await kit.handleMcp(o, { jsonrpc: '2.0', id: 5, method: 'tools/call', params: { name: 'uain_agent_next', arguments: {} } })).result.content[0].text);
   assert.equal(fresh.stage, 'no_key');
-  assert.equal(fresh.next.tool, 'baink_agent_init');
-  const missing = (await kit.handleMcp(o, { jsonrpc: '2.0', id: 6, method: 'tools/call', params: { name: 'baink_agent_history', arguments: {} } })).result;
+  assert.equal(fresh.next.tool, 'uain_agent_init');
+  const missing = (await kit.handleMcp(o, { jsonrpc: '2.0', id: 6, method: 'tools/call', params: { name: 'uain_agent_history', arguments: {} } })).result;
   assert.equal(missing.isError, true);
   assert.equal(JSON.parse(missing.content[0].text).error, 'identity_missing');
-  assert.match(JSON.parse(missing.content[0].text).next, /baink_agent_init/);
+  assert.match(JSON.parse(missing.content[0].text).next, /uain_agent_init/);
   assert.equal(calls, 1, 'first setup asks BAINK once whether this kit is still accepted; with no answer it goes on');
-  const made = (await kit.handleMcp(o, { jsonrpc: '2.0', id: 4, method: 'tools/call', params: { name: 'baink_agent_init', arguments: { confirm: true } } })).result;
+  const made = (await kit.handleMcp(o, { jsonrpc: '2.0', id: 4, method: 'tools/call', params: { name: 'uain_agent_init', arguments: { confirm: true } } })).result;
   assert.ok(!made.isError && JSON.parse(made.content[0].text).address.startsWith('uain1'));
   // Every work reply carries the next step and the one-task line, even when the next read fails.
   const madeBody = JSON.parse(made.content[0].text);
   assert.equal(madeBody.keepWorking, kit.KEEP_WORKING);
-  assert.equal(madeBody.thenNext.next.tool, 'baink_agent_next');
+  assert.equal(madeBody.thenNext.next.tool, 'uain_agent_next');
   assert.match(init.result.instructions, /One task, then ask/);
   assert.match(init.result.instructions, /uain\.global\/mcp/);
   assert.match(init.result.instructions, /baink\.money\/mcp/);
@@ -324,7 +324,7 @@ test('the CLI serves MCP over stdio and init prints no private key', async (t) =
   const send = (m) => child.stdin.write(JSON.stringify(m) + '\n');
   send({ jsonrpc: '2.0', id: 1, method: 'initialize', params: { protocolVersion: '2025-11-25', capabilities: {}, clientInfo: { name: 't', version: '1' } } });
   send({ jsonrpc: '2.0', method: 'notifications/initialized' });
-  send({ jsonrpc: '2.0', id: 2, method: 'tools/call', params: { name: 'baink_agent_join', arguments: { project: PROJECT } } });
+  send({ jsonrpc: '2.0', id: 2, method: 'tools/call', params: { name: 'uain_agent_join', arguments: { project: PROJECT } } });
   for (let n = 0; lines.length < 2 && n < 200; n++) await new Promise((r) => setTimeout(r, 50));
   const [init, call] = lines.map((l) => JSON.parse(l));
   assert.equal(init.result.serverInfo.name, 'uain-agent');
@@ -399,18 +399,18 @@ test('encrypted identity backup restores across the agent kit and the web app, a
   await writeFile(join(o.home, 'default', 'journal.json'), JSON.stringify({ version: 1, steps: { a: { sent: true } }, ids: {} }), { mode: 0o600 });
   await rm(made.file);
   await assert.rejects(kit.initIdentity(o), (e) => e.code === 'identity_restore_required');
-  const next = await kit.handleMcp(o, { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'baink_agent_next', arguments: {} } });
-  assert.match(next.result.content[0].text, /baink_agent_restore/);
+  const next = await kit.handleMcp(o, { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'uain_agent_next', arguments: {} } });
+  assert.match(next.result.content[0].text, /uain_agent_restore/);
   const wrongFile = join(o.home, 'wrong-pass.txt'), passFile = join(o.home, 'pass.txt');
   await writeFile(wrongFile, 'not the right passphrase\n', { mode: 0o600 }); await writeFile(passFile, PASS + '\n', { mode: 0o600 });
-  const wrong = await kit.handleMcp(o, { jsonrpc: '2.0', id: 2, method: 'tools/call', params: { name: 'baink_agent_restore', arguments: { file: backup.file, passphraseFile: wrongFile, confirm: true } } });
+  const wrong = await kit.handleMcp(o, { jsonrpc: '2.0', id: 2, method: 'tools/call', params: { name: 'uain_agent_restore', arguments: { file: backup.file, passphraseFile: wrongFile, confirm: true } } });
   assert.equal(JSON.parse(wrong.result.content[0].text).error, 'backup_passphrase_wrong');
   const webFile = join(o.home, 'web.backup.json'); await writeFile(webFile, webText, { mode: 0o600 });
   // A passphrase typed into a tool call is refused and nothing is restored (security review L3).
-  const typed = await kit.handleMcp(o, { jsonrpc: '2.0', id: 3, method: 'tools/call', params: { name: 'baink_agent_restore', arguments: { file: webFile, passphrase: PASS, confirm: true } } });
+  const typed = await kit.handleMcp(o, { jsonrpc: '2.0', id: 3, method: 'tools/call', params: { name: 'uain_agent_restore', arguments: { file: webFile, passphrase: PASS, confirm: true } } });
   assert.equal(JSON.parse(typed.result.content[0].text).error, 'backup_passphrase_in_chat'); assert.ok(!typed.result.content[0].text.includes(PASS));
   await assert.rejects(kit.loadIdentity(o), (e) => e.code === 'identity_missing');
-  const ok = await kit.handleMcp(o, { jsonrpc: '2.0', id: 3, method: 'tools/call', params: { name: 'baink_agent_restore', arguments: { file: webFile, passphraseFile: passFile, confirm: true } } });
+  const ok = await kit.handleMcp(o, { jsonrpc: '2.0', id: 3, method: 'tools/call', params: { name: 'uain_agent_restore', arguments: { file: webFile, passphraseFile: passFile, confirm: true } } });
   const restored = JSON.parse(ok.result.content[0].text);
   assert.equal(restored.address, made.address); assert.ok(!ok.result.content[0].text.includes('private_key'));
   assert.equal((await kit.loadIdentity(o)).address, made.address);
@@ -499,7 +499,7 @@ test('the kit notices when BAINK serves a newer kit and says how to update', asy
   await kit.api(o, 'GET', '/api/config');
   const u = kit.kitUpdate();
   assert.equal(u.latest, '99.0.0');
-  assert.match(u.how, /curl -fsSLO https:\/\/baink\.money\/uain-agent\.mjs/);
+  assert.match(u.how, /curl -fsSLO https:\/\/uain\.global\/uain-agent\.mjs/);
   o.fetch = async () => new Response(JSON.stringify({ ok: true }), { status: 200, headers: { 'content-type': 'application/json', 'x-uain-agent-latest': '0.0.1' } });
   await kit.api(o, 'GET', '/api/config');
   assert.equal(kit.kitUpdate(), null, 'an older served kit is never offered');
@@ -618,7 +618,7 @@ test('a step the network refused after BAINK relayed it stays open until reconci
   assert.deepEqual(status.openSteps, []);
   // next says plainly that the earlier attempt expired unused and offers the same step again.
   const offer = await kit.ops.next(o);
-  assert.equal(offer.stage, 'send_again'); assert.equal(offer.next.tool, 'baink_agent_join'); assert.deepEqual(offer.next.args, { project: PROJECT });
+  assert.equal(offer.stage, 'send_again'); assert.equal(offer.next.tool, 'uain_agent_join'); assert.deepEqual(offer.next.args, { project: PROJECT });
   assert.match(offer.next.why, /expired unused: .* safe to join again now/);
   // The member can now join again with a fresh step.
   fx.chain.code = 0;
@@ -657,4 +657,36 @@ test('the open paid tasks are readable with no key: GET /api/public/tasks and th
   // It agrees with what the kit lists for a member (the same proved page).
   await kit.ops.account({ ...o, url: fx.url }, { name: 'Public list agent' });
   assert.deepEqual((await kit.ops.tasks({ ...o, url: fx.url })).tasks.map((x) => [x.id, x.claimable]), list.tasks.map((x) => [x.id, x.canTakeNow]));
+});
+
+// 0.2.23 (16 November 2026, "Use UAIN throughout"): tools are listed as uain_agent_*; the earlier
+// baink_agent_* names still answer the same way, unlisted, so agents already set up keep working.
+test('MCP lists only uain_agent_* names and still answers every earlier baink_agent_* name', async (t) => {
+  let calls = 0;
+  const o = { home: await home(t), url: 'http://127.0.0.1:9', fetch: async () => { calls++; throw Error('no network in this test'); } };
+  const { tools } = (await kit.handleMcp(o, { jsonrpc: '2.0', id: 1, method: 'tools/list' })).result;
+  assert.ok(tools.length > 20);
+  assert.ok(tools.every((x) => x.name.startsWith('uain_agent_')), 'only UAIN names are listed');
+  assert.equal(kit.LEGACY_PREFIX, 'baink_agent_');
+  const call = async (name, args = {}) => (await kit.handleMcp(o, { jsonrpc: '2.0', id: 2, method: 'tools/call', params: { name, arguments: args } })).result;
+  // Every listed tool has its earlier name, refused or answered exactly as the new one.
+  for (const x of tools.filter((x) => !x.annotations.readOnlyHint)) {
+    const old = await call(x.name.replace('uain_agent_', 'baink_agent_'));
+    assert.equal(old.isError, true); assert.equal(JSON.parse(old.content[0].text).error, 'confirmation_required', x.name);
+  }
+  assert.equal(calls, 0, 'a write without confirm sends nothing under either name');
+  const fresh = JSON.parse((await call('baink_agent_next')).content[0].text);
+  assert.equal(fresh.stage, 'no_key'); assert.equal(fresh.next.tool, 'uain_agent_init');
+  const made = await call('baink_agent_init', { confirm: true });
+  assert.ok(!made.isError && JSON.parse(made.content[0].text).address.startsWith('uain1'), 'an earlier name still writes');
+  assert.equal(JSON.parse((await call('baink_agent_nothing')).content[0].text).error, 'unknown_tool');
+  assert.match(kit.MCP_INSTRUCTIONS, /uain_agent_next/); assert.match(kit.MCP_INSTRUCTIONS, /baink_agent_\* tool names still work/);
+});
+
+test('the kit is fetched from uain.global but still signs for and talks to the payment engine', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const src = await readFile(new URL('./uain-agent.mjs', import.meta.url), 'utf8');
+  assert.match(src, /process\.env\.UAIN_AGENT_URL \?\? 'https:\/\/baink\.money'/, 'backend origin, and so the signature audience, unchanged');
+  assert.doesNotMatch(src, /curl -fsSLO? https:\/\/baink\.money/, 'every download line names uain.global');
+  assert.doesNotMatch(src, /'baink_agent_[a-z_]+'/, 'no tool or step names an earlier tool name');
 });

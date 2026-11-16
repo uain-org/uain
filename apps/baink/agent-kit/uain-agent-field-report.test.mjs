@@ -126,9 +126,9 @@ test('an out-of-date kit is told so at first setup, before a key or an account e
   assert.deepEqual(calls, ['GET /api/health'], 'one public read; no account step');
   const next = await kit.ops.next(o);
   assert.equal(next.stage, 'kit_outdated'); assert.equal(next.next.why, line);
-  assert.match(next.next.cli, /curl -fsSLO https:\/\/baink\.money\/uain-agent\.mjs/);
+  assert.match(next.next.cli, /curl -fsSLO https:\/\/uain\.global\/uain-agent\.mjs/);
   assert.match(kit.HINTS.kit_outdated, /your saved key and steps are kept/);
-  const mcp = await kit.handleMcp(o, { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'baink_agent_init', arguments: { confirm: true } } });
+  const mcp = await kit.handleMcp(o, { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'uain_agent_init', arguments: { confirm: true } } });
   const answer = JSON.parse(mcp.result.content[0].text);
   assert.equal(answer.error, 'kit_outdated'); assert.equal(answer.message, line); assert.match(answer.next, /curl -fsSLO/);
   // With no answer at all (offline) the key is still made locally: only BAINK's own "out of date" stops setup.
@@ -163,13 +163,13 @@ test('after a lost submit, next names the receipt check, and says when sending a
   stub(o, { [`/api/native/central/intents/${id}/reconcile`]: () => reconcile(), [`/api/native/central/tasks/${TASK}`]: () => ({ claimable, why_not: claimable ? null : 'won' }) });
   // The check cannot be made yet: it is the one next action, and sending again is not offered.
   let r = await kit.ops.next(o);
-  assert.equal(r.stage, 'step_unsettled'); assert.equal(r.next.tool, 'baink_agent_reconcile'); assert.deepEqual(r.next.args, { intent: id });
+  assert.equal(r.stage, 'step_unsettled'); assert.equal(r.next.tool, 'uain_agent_reconcile'); assert.deepEqual(r.next.args, { intent: id });
   assert.equal(r.next.cli, `uain-agent reconcile ${id}`);
   assert.match(r.next.why, /The one next step is the receipt check/); assert.match(r.next.why, /safe only after that check says it was not submitted or expired unused/);
   // The check answers "not submitted": now, and only now, the same submission is offered again.
   reconcile = () => json({ error: { code: 'central_not_submitted', message: 'This step was not submitted.' } }, 409);
   r = await kit.ops.next(o);
-  assert.equal(r.stage, 'send_again'); assert.equal(r.next.tool, 'baink_agent_submit'); assert.deepEqual(r.next.args, { task: TASK });
+  assert.equal(r.stage, 'send_again'); assert.equal(r.next.tool, 'uain_agent_submit'); assert.deepEqual(r.next.args, { task: TASK });
   assert.match(r.next.why, /never reached BAINK \(the receipt check says so\)\. Nothing was recorded .* safe to submit the same work again now/);
   // The second tester's report: a step that expired during an outage is proved unused, and the task can be sent again.
   await lost('accepted');
@@ -184,7 +184,7 @@ test('after a lost submit, next names the receipt check, and says when sending a
   assert.notEqual(r.stage, 'send_again'); assert.notEqual(r.stage, 'step_unsettled');
   assert.equal(JSON.parse(await readFile(file, 'utf8')).steps[id].retry, undefined);
   // The error a member sees at the moment of the loss names the same check.
-  assert.match(kit.HINTS.central_proof_unavailable, /the one next step is the receipt check, baink_agent_reconcile .* sent again only if the check says it was not submitted/);
+  assert.match(kit.HINTS.central_proof_unavailable, /the one next step is the receipt check, uain_agent_reconcile .* sent again only if the check says it was not submitted/);
   assert.match(kit.HINTS.central_proof_unavailable, /If it names none, nothing was sent/);
 });
 
@@ -205,7 +205,7 @@ test('history says why a review waits, how many are ahead of it and when that wa
   assert.match(kit.reviewWaitText(ago(90), now, { status: 'unavailable', limits }), /a wait much longer than that means the reviewer is paused or behind/);
   for (const text of [late, kit.reviewWaitText(ago(10), now, long)]) assert.doesNotMatch(text, /within \d+ minutes|will be reviewed|by \d\d:\d\d/);
   // A decision whose reasons cannot be read yet says so, and when to look again.
-  assert.equal(kit.feedbackPending(ago(20), now), 'the reviewer\'s reasons are being published and cannot be read yet; look again in about five minutes with baink_agent_history');
+  assert.equal(kit.feedbackPending(ago(20), now), 'the reviewer\'s reasons are being published and cannot be read yet; look again in about five minutes with uain_agent_history');
   assert.equal(kit.feedbackPending(ago(600), now), 'no written reasons are attached to this decision');
 });
 
@@ -224,7 +224,7 @@ test('history reads the public queue once, only when something waits, and shows 
   let h = await kit.ops.history(o);
   const [waiting, rejected] = [h.steps.find((s) => s.submission === 'CS-1'), h.steps.find((s) => s.submission === 'CS-2')];
   assert.match(waiting.review, /^review delayed: recorded 40 minutes ago/); assert.match(waiting.review, /At most 2 reviews are ahead of yours; up to 16 start in each clock hour/); assert.match(waiting.review, /Checked \d\d:\d\d UTC\.$/);
-  assert.equal(rejected.review, 'rejected by the checker; the reviewer\'s reasons are being published and cannot be read yet; look again in about five minutes with baink_agent_history');
+  assert.equal(rejected.review, 'rejected by the checker; the reviewer\'s reasons are being published and cannot be read yet; look again in about five minutes with uain_agent_history');
   assert.equal(calls.filter((c) => c === 'GET /api/public/review-queue').length, 1);
   // Nothing waiting: the queue is not read at all.
   outcomes = { 1: 'rejected', 2: 'rejected' }; calls.length = 0;
@@ -271,10 +271,10 @@ test('the first setup tells the person once that they can stop at any point and 
   const first = await kit.ops.next(o);
   assert.equal(first.stage, 'no_key');
   assert.match(first.tellThePerson, /you can stop me at any point by saying stop, and every step I sign for you is listed in history/);
-  assert.match(kit.MCP_INSTRUCTIONS, /The first time, tell the person in one line that they can stop you at any point and that every signed step is listed in baink_agent_history\./);
+  assert.match(kit.MCP_INSTRUCTIONS, /The first time, tell the person in one line that they can stop you at any point and that every signed step is listed in uain_agent_history\./);
   // One yes still covers the task steps; since 16 November 2026 the agent does one task, reports, and asks before another.
   assert.match(kit.MCP_INSTRUCTIONS, /covers every task step/);
-  assert.match(kit.KEEP_WORKING, /ask before calling baink_agent_next/); assert.match(kit.KEEP_WORKING, /contribution points/);
+  assert.match(kit.KEEP_WORKING, /ask before calling uain_agent_next/); assert.match(kit.KEEP_WORKING, /contribution points/);
   assert.doesNotMatch(kit.KEEP_WORKING + kit.MCP_INSTRUCTIONS, /until none are left|until no task is left/);
 });
 

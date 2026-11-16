@@ -73,7 +73,7 @@ test('next leads to the request: what the reviewer asked, the deadline, both cho
   const { o } = await member(t);
   const r = await kit.ops.next(o);
   assert.equal(r.stage, 'needs_evidence');
-  assert.equal(r.next.tool, 'baink_agent_template'); assert.deepEqual(r.next.args, { task: TASK, from: ORIGINAL });
+  assert.equal(r.next.tool, 'uain_agent_template'); assert.deepEqual(r.next.args, { task: TASK, from: ORIGINAL });
   assert.equal(r.next.cli, `uain-agent template ${TASK} --from ${ORIGINAL}`);
   assert.match(r.next.why, /^The reviewer needs more evidence for submission CS-1111.* Answer by [A-Z][a-z]+day \d+ November, about \d\d:\d\d UTC \(in about \d+ hours\): revise the answer, or ask once for a reassessment of the same answer\./);
   assert.match(r.next.why, /If neither is sent before the deadline, the submission closes unpaid and the task reopens for other members\./);
@@ -93,7 +93,7 @@ test('status and history carry the same request', async (t) => {
   const h = await kit.ops.history(o);
   const step = h.steps.find((x) => x.submission === ORIGINAL);
   assert.match(step.review, /^The reviewer needs more evidence/);
-  assert.deepEqual(step.evidenceRequest.choices.map((c) => c.tool), ['baink_agent_template', 'baink_agent_reassess']);
+  assert.deepEqual(step.evidenceRequest.choices.map((c) => c.tool), ['uain_agent_template', 'uain_agent_reassess']);
 });
 
 test('template --from gives the survey as sent, as editable lines that parse back to the same survey', async (t) => {
@@ -147,7 +147,7 @@ test('a submission the reviewer decided is cached and never read again by next',
 
 test('the CLI and MCP take the survey for a revision', async () => {
   const tools = (await kit.handleMcp({}, { jsonrpc: '2.0', id: 1, method: 'tools/list' })).result.tools;
-  const revise = tools.find((x) => x.name === 'baink_agent_revise'), template = tools.find((x) => x.name === 'baink_agent_template');
+  const revise = tools.find((x) => x.name === 'uain_agent_revise'), template = tools.find((x) => x.name === 'uain_agent_template');
   assert.deepEqual(revise.inputSchema.required, ['submission', 'confirm']);
   assert.ok(revise.inputSchema.properties.survey); assert.ok(template.inputSchema.properties.from);
 });

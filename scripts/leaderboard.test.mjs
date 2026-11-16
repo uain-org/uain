@@ -49,3 +49,38 @@ test('accepted work carries Karma from BAINK awardPoints and the real time', asy
   assert.equal(read.newest, '2026-11-15T10:30:29.748Z');
   await assert.rejects(readAccepted('', 20, async () => Response.json({ accepted: [] })));
 });
+
+test('leaderboard member profile exposes accepted work instead of only enrolled systems', async () => {
+  const { build } = await import('esbuild');
+  const { mkdtemp, writeFile, rm } = await import('node:fs/promises');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const { createRequire } = await import('node:module');
+  const dir = await mkdtemp(join(tmpdir(), 'uain-member-work-'));
+  try {
+    const output = await build({
+      stdin: { contents: `import {createElement} from 'react'; import {renderToStaticMarkup} from 'react-dom/server'; import {MemberAccount} from './components/network/member-account'; import * as work from './components/network/accepted-work'; const {AcceptedWork} = work; export const readMemberContribution = work.readMemberContribution; export const renderMember = member => renderToStaticMarkup(createElement(MemberAccount, {member})); export const renderAccepted = view => renderToStaticMarkup(createElement(AcceptedWork, {view, limit:50}));`, resolveDir: new URL('..', import.meta.url).pathname, loader: 'tsx' },
+      absWorkingDir: new URL('..', import.meta.url).pathname,
+      bundle: true, platform: 'node', format: 'cjs', jsx: 'automatic', write: false,
+    });
+    const path = join(dir, 'render.cjs');
+    await writeFile(path, output.outputFiles[0].text);
+    const { renderMember, renderAccepted, readMemberContribution } = createRequire(import.meta.url)(path);
+    const html = renderMember({ address: addr('b'), name: 'Fixture member', about: null, public_key: null, karma: 360, created_at: '2026-11-01T00:00:00Z', licence: { status: 'active' }, agents: [] });
+    assert.match(html, /Accepted research/);
+    assert.match(html, /Reading accepted work/);
+    assert.doesNotMatch(html, /No accepted research yet/);
+    const items = Array.from({ length: 36 }, (_, n) => ({ task: `T-fixture-${n}`, project: 'P-fixture', submission: `S-fixture-${n}`, points: 10, 'amountAI$': '10' }));
+    const view = { schema: 'uain-contribution-v1', member: addr('b'), points: { total: 360, note: 'FIXTURE points' }, accepted: { count: 36, points: 360, items, more: false }, checks: { count: 0, points: 0 }, notCounted: { awaitingReview: [], needsEvidence: [], rejected: [] }, ledger: { 'earnedAI$': null } };
+    const accepted = renderAccepted(view);
+    assert.equal((accepted.match(/href="\/tasks\//g) ?? []).length, 36);
+    assert.match(accepted, /T-fixture-35/);
+    assert.doesNotMatch(accepted, /baink_contribution|baink.money/);
+    const empty = { ...view, accepted: { count: 0, points: 0, items: [], more: false } };
+    assert.equal((await readMemberContribution(addr('b'), { fetcher: async () => Response.json(empty) })).accepted.count, 0);
+    for (const response of [new Response('{}', { status: 503 }), new Response('{}', { status: 404 }), Response.json({ ...view, member: addr('a') }), Response.json({ ...view, schema: 'wrong' })])
+      await assert.rejects(readMemberContribution(addr('b'), { fetcher: async () => response }));
+    const capped = renderAccepted({ ...view, accepted: { ...view.accepted, count: 70, items: Array.from({ length: 50 }, (_, n) => ({ ...items[0], task: `T-fixture-${n}`, submission: `S-${n}` })), more: true } });
+    assert.match(capped, /Showing 50 of 70 accepted answers/);
+  } finally { await rm(dir, { recursive: true, force: true }); }
+});

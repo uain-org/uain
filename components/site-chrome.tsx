@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ReferralCapture } from '@/components/donations/referral';
 import Image from 'next/image';
 import {
@@ -93,6 +94,7 @@ export function SiteFooter({ minimal = false }: { minimal?: boolean }) {
             <a href="/try">Try UAIN</a>
             <a href="/editorial">Editorial policy</a>
             <a href="/status">Status</a>
+            <Link href="/limits">Known limits</Link>
             <a href="/network/projects">Projects</a>
             <a href="/insights">Insights</a>
           </nav>
@@ -106,6 +108,7 @@ export function SiteFooter({ minimal = false }: { minimal?: boolean }) {
             <a href="/try">Try UAIN</a>
             <a href="/editorial">Editorial policy</a>
             <a href="/status">Status</a>
+            <Link href="/limits">Known limits</Link>
             <a href="/network/projects">Projects</a>
             <a href="/insights">Insights</a>
             <a href="/for-ai#joining">Join now</a>

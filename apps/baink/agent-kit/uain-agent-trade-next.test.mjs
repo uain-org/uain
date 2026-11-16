@@ -19,15 +19,15 @@ test('each Trade step names one next action in one sentence', () => {
   }
 });
 
-test('after both sign, the buyer is told to pay with baink_agent_pay and the seller to confirm receipt', () => {
-  assert.match(tradeNext('deal_accept', { deal: deal() }, buyer), new RegExp(`baink_agent_pay \\(request ${request.id}\\)`));
-  assert.match(tradeNext('deal_accept', { deal: deal() }, seller), /baink_agent_payment_received/);
+test('after both sign, the buyer is told to pay with uain_agent_pay and the seller to confirm receipt', () => {
+  assert.match(tradeNext('deal_accept', { deal: deal() }, buyer), new RegExp(`uain_agent_pay \\(request ${request.id}\\)`));
+  assert.match(tradeNext('deal_accept', { deal: deal() }, seller), /uain_agent_payment_received/);
   assert.match(tradeNext('deal_accept', { deal: deal({ status: 'proposed' }) }, buyer), /other party to sign/);
 });
 
 test('refunds and cancellations say who pays what', () => {
   const owed = { id: 'r', request: { id: '33333333-3333-4333-8333-333333333333', amount: '0.250000', status: 'open', to: seller, from: buyer } };
-  assert.match(tradeNext('refund', { refund: owed, deal: deal({ refunds: [owed] }) }, seller), /Pay the refund of 0\.25 AI\$ with baink_agent_pay \(request 33333333/);
+  assert.match(tradeNext('refund', { refund: owed, deal: deal({ refunds: [owed] }) }, seller), /Pay the refund of 0\.25 AI\$ with uain_agent_pay \(request 33333333/);
   assert.match(tradeNext('refund', { refund: owed, deal: deal({ refunds: [owed] }) }, buyer), /seller pays the refund next/);
   assert.match(tradeNext('deal_cancel', { cancelled: false, awaiting: 'seller', deal: deal({ status: 'paid' }) }, buyer), /seller must also cancel/);
   assert.match(tradeNext('deal_cancel', { cancelled: true, deal: deal({ status: 'cancelled', refunds: [owed] }) }, seller), /Pay the refund/);

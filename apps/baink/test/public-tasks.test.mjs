@@ -12,7 +12,9 @@ test('cold callers share one flight and stale refresh retains last complete prov
  const refreshing=await Promise.all(Array.from({length:10},()=>service.list()));assert.ok(refreshing.every(r=>r.totalOpen===1&&r.cachedAt===first.cachedAt));assert.equal(calls,2);release();
 });
 
-test('cold deadline reports warming, never zero total, and repeated calls share a load',async()=>{
+test('cold deadline reports warming, never zero total, and repeated calls share a load',async(t)=>{
+ // The 7.5 s warming timer is unref'd on purpose (a live HTTP request keeps production's loop alive); this fake flight holds no handle, so mock the clock and pass the deadline deliberately.
+ t.mock.timers.enable({apis:['setTimeout']});
  let calls=0,release;const gate=new Promise(r=>release=r);const service=createPublicTasks({centralEarning:{tasks:async()=>{calls++;await gate;return {authority:'native',verified:true,total:'0',tasks:[]};}}});
- const [a,b]=await Promise.all([service.list(),service.list({q:'longevity'})]);assert.equal(a.warming,true);assert.equal(b.warming,true);assert.equal(a.totalOpen,undefined);assert.equal(calls,1);release();await new Promise(r=>setImmediate(r));assert.equal((await service.list()).totalOpen,0);
+ const pending=Promise.all([service.list(),service.list({q:'longevity'})]);await new Promise(r=>setImmediate(r));t.mock.timers.tick(7500);const [a,b]=await pending;assert.equal(a.warming,true);assert.equal(b.warming,true);assert.equal(a.totalOpen,undefined);assert.equal(calls,1);release();await new Promise(r=>setImmediate(r));assert.equal((await service.list()).totalOpen,0);
 });
