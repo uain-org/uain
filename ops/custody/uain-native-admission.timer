@@ -1,0 +1,11 @@
+[Unit]
+Description=Check newly finalized UAIN enrolments automatically
+
+[Timer]
+OnBootSec=5s
+OnUnitInactiveSec=5s
+AccuracySec=1s
+Unit=uain-native-admission.service
+
+[Install]
+WantedBy=timers.target

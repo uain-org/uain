@@ -1,0 +1,667 @@
+{
+  "schema": "uain-dev-components-v1",
+  "description": "Declarative component and dependency map for shadow impact classification (plan P2). It never suppresses the current gates: deploy.yml and pr-checks.yml still run their full suites until repository policy is amended.",
+  "mode": "shadow",
+  "currentGates": "Since 9 November 2026: the pre-push npm run check (ops/check.sh) runs the scoped suites on uain-app-1; deploy.yml only scopes, builds and rolls out; the nightly e2e.yml reruns the routine suites.",
+  "checks": {
+    "docs-validation": {
+      "command": "Links, format and secret scan of the changed documents",
+      "evidence": "Documentation validation; no runtime deployment"
+    },
+    "docs-data": {
+      "command": "node -e 'JSON.parse(require(\"fs\").readFileSync(process.argv[1]))' <file> for each changed docs JSON record",
+      "evidence": "Machine-readable record parses; consumers are mapped separately"
+    },
+    "docs-executable": {
+      "command": "node --check / python3 -m py_compile on changed docs scripts",
+      "evidence": "Docs build scripts parse; they are inputs, not prose"
+    },
+    "policy-review": {
+      "command": "Human review of the governing policy change against docs/federation and CLAUDE.md",
+      "evidence": "Reviewed policy amendment recorded in CHANGELOG.md"
+    },
+    "lint": {
+      "command": "npm run lint",
+      "evidence": "oxlint clean"
+    },
+    "dev-tools": {
+      "command": "node --test ops/dev/*.test.mjs",
+      "evidence": "Component map and timing tools pass"
+    },
+    "site-build": {
+      "command": "ops/remote-test/run.sh --suite site",
+      "suite": "site",
+      "evidence": "Typecheck and site build (includes pilot build and the frozen client release check)"
+    },
+    "pilot-suite": {
+      "command": "ops/remote-test/run.sh --suite pilot",
+      "suite": "pilot",
+      "evidence": "Connection server suite, both database threads, three shards each"
+    },
+    "pilot-research": {
+      "command": "ops/remote-test/run.sh --suite pilot (research job: sudo uain-ci-run <workspace> research <thread>)",
+      "suite": "research",
+      "evidence": "Research vectors and retrieval contract, both threads"
+    },
+    "pilot-reset": {
+      "command": "sudo uain-ci-run <workspace> reset <thread>",
+      "suite": "reset",
+      "evidence": "Complete schema reset and archive restore, both threads"
+    },
+    "admin-contract": {
+      "command": "node --test services/pilot/test/admin-*.test.mjs (after npm run build:pilot)",
+      "evidence": "Admin wire contract consumed by the separate super-admin repository"
+    },
+    "waitlist-tests": {
+      "command": "npm --prefix apps/waitlist-dashboard test",
+      "evidence": "Waitlist dashboard tests"
+    },
+    "baink-tests": {
+      "command": "npm --prefix apps/baink test && npm --prefix apps/baink run build",
+      "evidence": "BAINK suite and root and /baink/ preview builds"
+    },
+    "baink-deploy": {
+      "command": "python3 -m unittest discover -s apps/baink/deploy -p 'test_*.py'",
+      "evidence": "BAINK packaging, activation and routing installers"
+    },
+    "qualification-tests": {
+      "command": "node --test ops/qualification/*.test.mjs",
+      "evidence": "Qualification harnesses that import BAINK and chain client modules"
+    },
+    "holder-tests": {
+      "command": "node --test apps/baink/review-broker/*.test.mjs",
+      "evidence": "Private payment reviewer and review broker (moved out of the retired Docker holder)"
+    },
+    "reviewer-tests": {
+      "command": "node --test apps/baink/review-service/*.test.mjs services/central-reviewer/test/*.test.mjs && python3 -m unittest discover -s ops/custody -p 'test_central_reviewer*.py'",
+      "evidence": "Independent review and root custody boundaries"
+    },
+    "organizations-tests": {
+      "command": "npm run test:organizations",
+      "evidence": "Project organizations, fund manager and custody organization tests"
+    },
+    "custody-python": {
+      "command": "python3 -m unittest discover -s ops/custody -p 'test_*.py'",
+      "evidence": "Custody, treasury and privileged execution helpers"
+    },
+    "codec-contract": {
+      "command": "node --test chain/client/*.test.mjs apps/baink/integrations/*.test.mjs apps/baink/web/native-*.test.mjs",
+      "evidence": "Wallet, holder and native codecs agree across chain client, BAINK web and holder"
+    },
+    "central-policy-cross": {
+      "command": "cd chain && go test ./federation -run 'Central|CrossPolicy'; node --test apps/baink/test/funding-policy.test.mjs services/fund-manager/test/*.test.mjs; python3 -m unittest discover -s ops/custody -p 'test_central_*.py'",
+      "evidence": "Central earning/funding policy identical across Go, JavaScript and Python"
+    },
+    "native-chain": {
+      "command": "ops/remote-test/run.sh --suite native-chain (chain.yml native-chain job)",
+      "suite": "native-chain",
+      "evidence": "Native race, persistence, gas, signatures and two-node smoke"
+    },
+    "private-exchange": {
+      "command": "chain.yml private-exchange job (sudo uain-ci-run <workspace> private-exchange)",
+      "suite": "private-exchange",
+      "evidence": "Pinned Orchard proofs, Rust private tools and private network smoke"
+    },
+    "worker-signing-gate": {
+      "command": "npm run check:worker in the web image build and services/pilot/test/worker-manifest.test.mjs: the frozen final release in public/worker/ verifies against manifest.sig",
+      "evidence": "The retired client's final signed release (0.15.0) is served byte-identical; no further release can be signed"
+    },
+    "contracts-tests": {
+      "command": "npm --prefix contracts test",
+      "evidence": "Contract tests (no credentials)"
+    },
+    "press-tests": {
+      "command": "node --test press/press.test.mjs",
+      "evidence": "Press list tests"
+    },
+    "research-experiments": {
+      "command": "python3 -m unittest discover -s research/covering-29-7-3 -p 'test_*.py'",
+      "evidence": "Covering-design verifier unit tests (exploratory research code)"
+    },
+    "operations-tests": {
+      "command": "sudo uain-ci-run <workspace> others",
+      "suite": "others",
+      "evidence": "Press, contracts and operations suite"
+    },
+    "runner-tests": {
+      "command": "node --test runner/test/*.test.mjs",
+      "evidence": "Agent runner tests"
+    },
+    "ci-harness": {
+      "command": "python3 -m unittest discover -s ops/ci -p 'test_*.py' and sandbox rehearsal of the changed workflow or helper",
+      "evidence": "Trusted workflow/helper review and failure injection"
+    },
+    "reverse-proxy": {
+      "command": "python3 -m unittest discover -s apps/baink/deploy -p 'test_*routing.py'; bash ops/ci/verify-seo-routing.sh; nginx -t on the target host",
+      "evidence": "Common reverse-proxy configuration for every routed service"
+    }
+  },
+  "prose": {
+    "globs": [
+      "**/*.md",
+      "**/*.pdf",
+      "**/*.pptx",
+      "docs/**/*.png",
+      "docs/**/*.jpg",
+      "docs/**/*.txt",
+      "docs/**/*.log",
+      "docs/**/*.html"
+    ],
+    "checks": ["docs-validation"],
+    "dataGlobs": ["docs/**/*.json"],
+    "dataChecks": ["docs-validation", "docs-data"],
+    "executableGlobs": [
+      "docs/**/*.mjs",
+      "docs/**/*.js",
+      "docs/**/*.cjs",
+      "docs/**/*.ts",
+      "docs/**/*.py",
+      "docs/**/*.sh"
+    ],
+    "executableChecks": ["docs-executable"]
+  },
+  "executableDocs": [
+    {
+      "paths": ["docs/valuation/**"],
+      "consumers": ["pilot"],
+      "reason": "services/pilot/test/valuation.test.mjs and scripts/value-challenge.mjs read docs/valuation inputs"
+    },
+    {
+      "paths": [
+        "docs/baink/project-organizations-2026-11-06/kpi-amendments.json",
+        "docs/baink/project-organizations-2026-11-06/bootstrap-reviewed/**"
+      ],
+      "consumers": ["organizations"],
+      "reason": "services/project-organizations tests read the reviewed bootstrap directory and KPI amendments"
+    }
+  ],
+  "policy": [
+    {
+      "paths": [
+        "CLAUDE.md",
+        "AGENTS.md",
+        "apps/baink/CLAUDE.md",
+        "apps/baink/AGENTS.md",
+        "docs-crucial/**",
+        "docs/smartmeet-executive-reporting.md"
+      ],
+      "governs": "*",
+      "reason": "Repository-wide agent and release rules"
+    },
+    {
+      "paths": ["docs/federation/**"],
+      "governs": ["pilot", "native-chain", "baink-app", "organizations", "web"],
+      "reason": "White paper and FAQ govern (decided 29 September 2026)"
+    },
+    {
+      "paths": [
+        "docs/baink/fund-manager-specification-*.md",
+        "docs/baink/project-organizations-*/decisions.md"
+      ],
+      "governs": ["organizations", "baink-app"],
+      "reason": "Fund Manager and project-organization decisions"
+    },
+    {
+      "paths": ["docs/key-custody.md", "docs/recovery-financial.md"],
+      "governs": ["holder", "reviewer", "operations"],
+      "reason": "Custody and financial recovery procedure"
+    }
+  ],
+  "components": {
+    "web": {
+      "description": "UAIN website (Vinext); image web",
+      "sources": [
+        "app/**",
+        "components/**",
+        "lib/**",
+        "public/**",
+        "scripts/**",
+        "vite.config.ts",
+        "next.config.ts",
+        "tsconfig.json",
+        "components.json",
+        "Dockerfile",
+        ".dockerignore"
+      ],
+      "exclude": ["public/worker/**", "**/*.md"],
+      "lockfiles": [],
+      "buildInputs": ["services/pilot/src/**"],
+      "runtimeOutputs": ["dist/client/**", "dist/server/**"],
+      "checks": ["site-build", "lint"],
+      "releaseTarget": "web",
+      "doctor": ["node", "deps:.", "deps:services/pilot"]
+    },
+    "pilot": {
+      "description": "Connection server (TypeScript, PostgreSQL); image pilot",
+      "sources": [
+        "services/pilot/**",
+        "services/retrieval/**",
+        "research/reference/**"
+      ],
+      "exclude": [
+        "services/pilot/package-lock.json",
+        "services/pilot/package.json",
+        "**/*.md"
+      ],
+      "lockfiles": [],
+      "buildInputs": ["ops/chain/native-rpc-transport.mjs"],
+      "runtimeOutputs": ["services/pilot/dist/**"],
+      "checks": ["pilot-suite", "pilot-research", "pilot-reset", "site-build"],
+      "releaseTarget": "pilot",
+      "doctor": ["node", "deps:services/pilot", "postgres", "python3"]
+    },
+    "waitlist": {
+      "description": "Waitlist dashboard; image waitlist",
+      "sources": ["apps/waitlist-dashboard/**"],
+      "exclude": ["**/*.md"],
+      "lockfiles": ["apps/waitlist-dashboard/package-lock.json"],
+      "buildInputs": [],
+      "runtimeOutputs": [],
+      "checks": ["waitlist-tests"],
+      "releaseTarget": "waitlist",
+      "doctor": ["node", "deps:apps/waitlist-dashboard", "postgres"]
+    },
+    "baink-app": {
+      "description": "BAINK application: server, web, catalogue, integrations, BAINK ops and deploy packaging",
+      "sources": ["apps/baink/**"],
+      "exclude": [
+        "apps/baink/review-broker/**",
+        "apps/baink/review-service/**",
+        "**/*.md"
+      ],
+      "lockfiles": ["apps/baink/package-lock.json"],
+      "buildInputs": [
+        "apps/baink/package.json",
+        "apps/baink/vite.config.js",
+        "apps/baink/index.html"
+      ],
+      "runtimeOutputs": ["apps/baink/dist/**", "output/baink-*/**"],
+      "checks": ["baink-tests", "baink-deploy"],
+      "releaseTarget": "baink-app",
+      "disabledFeatures": [
+        {
+          "id": "native-project-pilot",
+          "flag": "BAINK_NATIVE_PROJECT_PILOT_ENABLED",
+          "default": "disabled",
+          "paths": [
+            "apps/baink/server/native-project-pilot.mjs",
+            "apps/baink/server/native-project-access.mjs",
+            "apps/baink/web/NativeProjectPilot.jsx",
+            "apps/baink/web/native-project-pilot*.js",
+            "apps/baink/web/native-project-pilot*.test.mjs"
+          ],
+          "reason": "Additive native project pilot ships disabled by default; a source change never enables it"
+        }
+      ],
+      "doctor": ["node", "deps:apps/baink"]
+    },
+    "holder": {
+      "description": "Private payment reviewer and review broker (apps/baink/review-broker; the Docker holder was retired 9 Nov 2026)",
+      "sources": [
+        "apps/baink/review-broker/**",
+        "ops/custody/holder_release.py",
+        "ops/custody/test_holder_release.py"
+      ],
+      "exclude": ["**/*.md"],
+      "lockfiles": [],
+      "buildInputs": [],
+      "runtimeOutputs": ["chain/private-exchange/pins/*.release.json"],
+      "checks": ["holder-tests", "codec-contract"],
+      "releaseTarget": "holder",
+      "doctor": ["node", "deps:apps/baink", "flock"]
+    },
+    "reviewer": {
+      "description": "Independent review service, central reviewer and review custody",
+      "sources": [
+        "apps/baink/review-service/**",
+        "services/central-reviewer/**",
+        "ops/custody/central_reviewer*.py",
+        "ops/custody/test_central_reviewer*.py",
+        "ops/custody/public_review_dispatch.py",
+        "ops/custody/test_public_review_dispatch.py"
+      ],
+      "exclude": ["**/*.md"],
+      "lockfiles": [],
+      "buildInputs": [],
+      "runtimeOutputs": [],
+      "checks": ["reviewer-tests"],
+      "releaseTarget": "reviewer",
+      "doctor": ["node", "python3", "flock"]
+    },
+    "organizations": {
+      "description": "Project organizations, fund manager, starter and survey attester",
+      "sources": [
+        "services/project-organizations/**",
+        "services/fund-manager/**",
+        "ops/custody/project_organizations.py",
+        "ops/custody/test_project_organizations.py",
+        "ops/custody/organization_starter.py",
+        "ops/custody/survey_attester.py",
+        "ops/custody/fleet_attestation.py",
+        "ops/custody/test_fleet_attestation.py",
+        "ops/custody/central_fund_manager.py",
+        "ops/custody/test_central_fund_manager.py",
+        "ops/custody/uain-organization-starter.*",
+        "ops/custody/uain-survey-attester.*"
+      ],
+      "exclude": ["**/*.md"],
+      "lockfiles": [],
+      "buildInputs": [],
+      "runtimeOutputs": [],
+      "checks": ["organizations-tests"],
+      "releaseTarget": "organizations",
+      "doctor": ["node", "python3"]
+    },
+    "native-chain": {
+      "description": "Go native chain, chain client and native operations",
+      "sources": [
+        "chain/**",
+        "ops/chain/**",
+        "ops/custody/treasury.py",
+        "ops/custody/test_treasury.py",
+        "ops/custody/native_*.py",
+        "ops/custody/test_native_*.py"
+      ],
+      "exclude": [
+        "chain/private-exchange/**",
+        "chain/private-dividend/**",
+        "chain/package-lock.json",
+        "chain/package.json",
+        "chain/go.mod",
+        "chain/go.sum",
+        "**/*.md"
+      ],
+      "lockfiles": [],
+      "buildInputs": [],
+      "runtimeOutputs": ["chain/bin/**"],
+      "checks": ["native-chain"],
+      "releaseTarget": "native-chain",
+      "doctor": ["node", "deps:chain", "go", "python3"]
+    },
+    "private-exchange": {
+      "description": "Rust private proving tools and Orchard-tagged private network",
+      "sources": [
+        "chain/private-exchange/**",
+        "chain/private-dividend/**",
+        "chain/privateexchange/**",
+        "chain/privatedividend/**",
+        "chain/privatewallet/**",
+        "chain/privatetransport/**",
+        "chain/client/private-*.mjs",
+        "chain/client/coin-boundary*.mjs",
+        "chain/scripts/private-*.mjs",
+        "chain/scripts/coin-*.mjs",
+        "chain/scripts/external-funding-network-smoke.mjs",
+        "ops/remote-test/private-exchange.sh"
+      ],
+      "exclude": ["**/*.md"],
+      "lockfiles": [
+        "chain/private-exchange/Cargo.lock",
+        "chain/private-dividend/Cargo.lock"
+      ],
+      "buildInputs": [],
+      "runtimeOutputs": [
+        "chain/private-exchange/target/**",
+        "chain/private-dividend/target/**"
+      ],
+      "checks": ["private-exchange"],
+      "releaseTarget": "private-exchange",
+      "doctor": ["go", "rustc"]
+    },
+    "worker": {
+      "description": "Final signed release (0.15.0) of the retired UAIN Client, frozen in public/worker/",
+      "sources": [
+        "public/worker/**",
+        "ops/ci-scope/verify-worker-bundle.mjs"
+      ],
+      "exclude": [],
+      "lockfiles": [],
+      "buildInputs": [],
+      "runtimeOutputs": [
+        "public/worker/manifest.json",
+        "public/worker/manifest.sig",
+        "dist/client/worker/**"
+      ],
+      "checks": ["worker-signing-gate", "site-build"],
+      "releaseTarget": "worker",
+      "doctor": ["node"]
+    },
+    "operations": {
+      "description": "Operations, CI harness, deployment manifests, runner and installed helpers",
+      "sources": [
+        "ops/**",
+        "deploy/**",
+        "runner/**",
+        "compose*.yaml",
+        ".github/**",
+        ".gitignore",
+        ".gitattributes",
+        ".mcp.json",
+        ".claude/**"
+      ],
+      "exclude": ["ops/chain/**", "ops/dev/**", "**/*.md"],
+      "lockfiles": ["runner/package-lock.json"],
+      "buildInputs": [],
+      "runtimeOutputs": [],
+      "checks": ["operations-tests", "custody-python"],
+      "releaseTarget": "operations",
+      "doctor": ["node", "docker", "flock", "ssh-remote"],
+      "fallbackOnly": true
+    },
+    "contracts": {
+      "description": "LedgerAnchor (deployed 5 October 2026) and the draft token that must not be deployed",
+      "sources": ["contracts/**"],
+      "exclude": ["**/*.md"],
+      "lockfiles": ["contracts/package-lock.json"],
+      "buildInputs": [],
+      "runtimeOutputs": ["contracts/build/**", "contracts/dist/**"],
+      "checks": ["contracts-tests"],
+      "releaseTarget": null,
+      "doctor": ["node", "deps:contracts"]
+    },
+    "press": {
+      "description": "Press list and tooling",
+      "sources": ["press/**"],
+      "exclude": ["**/*.md"],
+      "lockfiles": [],
+      "buildInputs": [],
+      "runtimeOutputs": ["press/out/**"],
+      "checks": ["press-tests"],
+      "releaseTarget": null,
+      "doctor": ["node"]
+    },
+    "research-experiments": {
+      "description": "Exploratory research code outside the network (research/covering-29-7-3): not a bounty, accepted result or AI$ income. The WDBC reference pack (research/reference) belongs to the pilot, whose wdbc-reference test and scripts/reproduce-wdbc.mjs pin its bytes.",
+      "sources": ["research/**"],
+      "exclude": ["research/reference/**", "**/*.md"],
+      "lockfiles": [],
+      "buildInputs": [],
+      "runtimeOutputs": [],
+      "checks": ["research-experiments"],
+      "releaseTarget": null,
+      "doctor": ["python3"]
+    },
+    "docs": {
+      "description": "Prose, records and governing documents; publication only",
+      "sources": ["docs/**"],
+      "exclude": [],
+      "lockfiles": [],
+      "buildInputs": [],
+      "runtimeOutputs": [],
+      "checks": ["docs-validation"],
+      "releaseTarget": null,
+      "doctor": ["node"],
+      "fallbackOnly": true
+    }
+  },
+  "contracts": [
+    {
+      "id": "native-codecs",
+      "description": "BAINK wallet, holder and native codecs imported from chain/client by holder, BAINK web/server, review service and qualification",
+      "paths": [
+        "chain/client/**",
+        "apps/baink/integrations/native-research-codec.mjs"
+      ],
+      "consumers": ["holder", "baink-app", "reviewer", "native-chain"],
+      "checks": ["codec-contract", "qualification-tests"]
+    },
+    {
+      "id": "baink-qualification-imports",
+      "description": "BAINK modules imported by ops/qualification and ops/agents harnesses",
+      "paths": [
+        "apps/baink/server/native-enrol.mjs",
+        "apps/baink/server/trade-payment.mjs",
+        "apps/baink/server/native-financial-command.mjs",
+        "apps/baink/server/central-earning-command.mjs",
+        "apps/baink/web/central-earning.js",
+        "apps/baink/web/identity.js",
+        "apps/baink/web/native-financial.js"
+      ],
+      "consumers": ["operations"],
+      "releaseConsumers": [],
+      "checks": ["qualification-tests"],
+      "includeConsumerChecks": false
+    },
+    {
+      "id": "central-policy",
+      "description": "Central earning and funding policy duplicated across Go, JavaScript and Python",
+      "paths": [
+        "chain/federation/central_*.go",
+        "chain/federation/budgets.go",
+        "apps/baink/server/funding-policy.mjs",
+        "apps/baink/server/central-earning*.mjs",
+        "apps/baink/server/central-budget.mjs",
+        "services/fund-manager/src/**",
+        "ops/custody/central_*.py",
+        "ops/custody/project_organizations.py"
+      ],
+      "consumers": ["native-chain", "baink-app", "reviewer", "organizations"],
+      "checks": ["central-policy-cross"],
+      "includeConsumerChecks": false,
+      "releaseConsumers": []
+    },
+    {
+      "id": "private-payment-source-pins",
+      "description": "Source files pinned by ops/custody/private_payment_service.py",
+      "paths": [
+        "apps/baink/review-broker/reviewer-worker.mjs",
+        "apps/baink/server/native-payments.mjs",
+        "apps/baink/server/native-financial-command.mjs"
+      ],
+      "consumers": ["holder", "baink-app", "operations"],
+      "checks": ["custody-python", "holder-tests"]
+    },
+    {
+      "id": "survey-templates",
+      "description": "apps/baink/server/survey-templates.json is generated by services/project-organizations/ops/survey-templates.mjs",
+      "paths": [
+        "services/project-organizations/ops/survey-templates.mjs",
+        "apps/baink/server/survey-templates.json"
+      ],
+      "consumers": ["organizations", "baink-app"],
+      "checks": ["organizations-tests", "baink-tests"]
+    },
+    {
+      "id": "organizations-compute-budget",
+      "description": "BAINK project manager worker imports the organizations compute budget",
+      "paths": ["services/project-organizations/src/compute-budget.mjs"],
+      "consumers": ["baink-app", "organizations"],
+      "checks": ["baink-tests"]
+    },
+    {
+      "id": "fund-round-golden",
+      "description": "Golden vectors for the later funding rounds: the manager stage (JavaScript) writes fund batches and the root driver ops/custody/manager_stage.py (Python) re-derives their digests",
+      "paths": ["fixtures/contracts/fund-round.json"],
+      "consumers": ["organizations", "operations"],
+      "checks": ["organizations-tests", "custody-python"]
+    },
+    {
+      "id": "admin-wire",
+      "description": "Admin wire contract consumed by the separate super-admin repository (deployed outside this repository)",
+      "paths": [
+        "services/pilot/src/admin/**",
+        "services/pilot/test/admin-*.test.mjs",
+        "docs/admin-connection.md",
+        "ADMIN_HANDOFF.md"
+      ],
+      "consumers": ["pilot"],
+      "checks": ["admin-contract"],
+      "external": "Separate super-admin repository; do not assume this repository controls its deployment",
+      "releaseConsumers": []
+    },
+    {
+      "id": "reverse-proxy",
+      "description": "Common reverse-proxy and front-door configuration",
+      "paths": [
+        "ops/nginx/**",
+        "deploy/k8s/production/front-door*.conf",
+        "deploy/k8s/staging/front-door.conf",
+        "apps/baink/deploy/*.conf",
+        "apps/baink/deploy/install-*-routing.py",
+        "apps/baink/deploy/fix-payment-list-routing.py",
+        "apps/baink/deploy/nginx-fixture-isolation.py"
+      ],
+      "consumers": ["web", "pilot", "waitlist", "baink-app"],
+      "checks": ["reverse-proxy"]
+    },
+    {
+      "id": "pilot-native-rpc",
+      "description": "ops/chain/native-rpc-transport.mjs is copied into the pilot image",
+      "paths": ["ops/chain/native-rpc-transport.mjs"],
+      "consumers": ["pilot", "native-chain"],
+      "checks": ["pilot-suite"]
+    },
+    {
+      "id": "root-dependencies",
+      "description": "Root package manifest and lockfile: website build and the repository-wide linter",
+      "paths": [
+        "package.json",
+        "package-lock.json",
+        ".oxlintrc.json",
+        ".oxfmtrc.json"
+      ],
+      "consumers": ["web", "worker"],
+      "checks": ["lint", "dev-tools"]
+    },
+    {
+      "id": "pilot-dependencies",
+      "description": "Pilot lockfile: installed by the pilot image and the site build (build:pilot)",
+      "paths": [
+        "services/pilot/package.json",
+        "services/pilot/package-lock.json"
+      ],
+      "consumers": ["pilot", "web"],
+      "checks": []
+    },
+    {
+      "id": "chain-dependencies",
+      "description": "Chain Go module and Node lockfile: both the native-chain and the Orchard-tagged private-exchange builds compile every Go package",
+      "paths": [
+        "chain/go.mod",
+        "chain/go.sum",
+        "chain/package.json",
+        "chain/package-lock.json",
+        "chain/**/*.go"
+      ],
+      "consumers": ["native-chain", "private-exchange"],
+      "checks": []
+    },
+    {
+      "id": "ci-harness",
+      "description": "Workflows and the CI launcher/container suite run every suite; a change re-qualifies all of them",
+      "paths": [".github/workflows/**", "ops/ci/**", "ops/remote-test/run.sh"],
+      "consumers": ["operations"],
+      "checks": ["ci-harness"],
+      "selectsAllChecks": true
+    },
+    {
+      "id": "dev-tools",
+      "description": "This component map and the development tools",
+      "paths": ["ops/dev/**"],
+      "consumers": ["operations"],
+      "releaseConsumers": [],
+      "checks": ["dev-tools"],
+      "includeConsumerChecks": false
+    }
+  ]
+}

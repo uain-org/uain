@@ -1,0 +1,13 @@
+[Unit]
+Description=UAIN exact public research encrypted offsite backup and restore check
+After=network-online.target docker.service k3s.service
+Wants=network-online.target
+[Service]
+Type=oneshot
+UMask=0077
+ExecStart=/usr/local/sbin/uain-evidence-backup /opt/uain-evidence-operations/src
+TimeoutStartSec=90min
+MemoryMax=4G
+CPUQuota=200%
+TasksMax=256
+Nice=10

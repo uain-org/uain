@@ -1,0 +1,28 @@
+services:
+  agent:
+    build: .
+    image: ${UAIN_RUNNER_IMAGE:-uain-agent-runner:local}
+    env_file: .env
+    read_only: true
+    init: false
+    mem_limit: ${UAIN_MEMORY_LIMIT:-4g}
+    cpus: ${UAIN_CPUS:-2}
+    pids_limit: 256
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,size=1g,mode=1777
+      - /home/uain/.uain-running:rw,nosuid,nodev,size=1m,uid=10001,gid=10001,mode=0700
+    volumes:
+      - member:/home/uain/.uain
+      - claude-auth:/home/uain/.claude
+      - codex-auth:/home/uain/.codex
+    restart: unless-stopped
+    stop_grace_period: 10s
+    logging:
+      driver: json-file
+      options: {max-size: 10m, max-file: '3'}
+volumes:
+  member: {}
+  claude-auth: {}
+  codex-auth: {}

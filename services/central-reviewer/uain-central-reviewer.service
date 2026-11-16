@@ -1,0 +1,37 @@
+# Operator installs an exact reviewed release path in ExecStart; never use a writable checkout.
+[Unit]
+Description=UAIN bounded central research reviewer
+After=network-online.target uain-central-reviewer-custody.service
+Requires=uain-central-reviewer-custody.service
+Wants=network-online.target
+ConditionPathExists=/etc/uain-central-reviewer/runtime.json
+
+[Service]
+Type=simple
+User=uain-central-reviewer
+Group=uain-central-reviewer
+UMask=0077
+WorkingDirectory=/var/lib/uain-central-reviewer
+# Replace REVIEWED_RELEASE with the manifest digest before installation.
+ExecStart=/opt/uain-central-reviewer/releases/REVIEWED_RELEASE/services/central-reviewer/runtime/bin/node /opt/uain-central-reviewer/releases/REVIEWED_RELEASE/services/central-reviewer/src/main.mjs
+Environment=HOME=/var/lib/uain-central-reviewer
+Restart=on-failure
+RestartSec=30
+TimeoutStopSec=180
+KillMode=control-group
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=tmpfs
+# Dedicated server-local provider credential: worker UID owner0400; original auth remains untouched.
+BindReadOnlyPaths=/etc/uain-central-reviewer/provider-auth.json
+PrivateTmp=true
+PrivateDevices=true
+ReadWritePaths=/var/lib/uain-central-reviewer
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK
+MemoryMax=2G
+CPUQuota=100%
+TasksMax=128
+LimitNOFILE=256
+
+[Install]
+WantedBy=multi-user.target

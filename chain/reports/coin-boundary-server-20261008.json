@@ -1,0 +1,662 @@
+{
+  "checked_at": "2026-10-08T17:29:49.995922+00:00",
+  "logs_sha256": {
+    "full_initial": "4470d4242c16666679ebdf512006165fdf639cce58c32e8cbb65e6b2ce9049b5",
+    "corrected_final": "d0bec88bdb9b54a473dba954ae7b73d05d7fb8a9ad073c3d268db5baf502bf65",
+    "upgrade": "c0e479c963b67e9a29e6fa682d1ea6ab2455e62573fad87a5e822424b46a0c63",
+    "sdk_focus": "6ae2e38defbb824042df160e984b1d7b6fe3f8817057f2210aa96821c87f4c20",
+    "wallet_network_initial_success": "ef42efc2f0fdd2c93ead657d571b72978dba9e56282bb9ca1572e95023db742d"
+  },
+  "binaries_sha256": {
+    "daemon": "17c306b983d076e44d7ec63b9ce3b439ccf17e82a10937c3d1d3d42e1f28a13a",
+    "state_reader": "ec68f1ed60b50f9c1be5a87f83ffd35b3178ffeebb9cc9c5b1f938e092ccae3a",
+    "proof_verifier": "406d4d1b08c68643be1a64b7250b771ee06dddf0ed47b18acab3d14fe3d882ff",
+    "coin_wallet": "79d65173a9cad8ab16b26073736c6acee9f5f746eb8f608e7c44a816e9a50b96",
+    "private_wallet": "4de2ec3f855e84a9326c2e4cb35d292abdc6420b05c01f48fcd4110e2169dd26",
+    "rust_verifier": "c53def47fcb3546761730c8d5c369a2508e1c3b427ae257d7a50ea09b3e34c18"
+  },
+  "units": {
+    "uain-coin-boundary-full-20261008": {
+      "Result": "exit-code",
+      "ExecMainStatus": "1",
+      "ActiveState": "failed"
+    },
+    "uain-coin-boundary-final-20261008": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ActiveState": "inactive"
+    },
+    "uain-coin-boundary-upgrade-20261008": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ActiveState": "inactive"
+    }
+  },
+  "final_two_node_receipt": {
+    "pass": true,
+    "fixture_only": true,
+    "real_two_nodes": true,
+    "chain_id": "uain-coin-fixture-1",
+    "pinned_genesis_sha256": "4ab13c2ec47625f9200888e680f90567e1c509cc49f5b9753ea032e47b4aa7b8",
+    "prospective_signed_bounty_issuance": true,
+    "minted_units": "5000000",
+    "cap_units": "108000000000000000000",
+    "private_pool_units": "44",
+    "entry_units": "70",
+    "private_payment_units": "26",
+    "exit_units": "26",
+    "encrypted_checker_transport": true,
+    "pinned_reader_to_wallet_to_consensus": true,
+    "authenticated_absent_recipient_balance": true,
+    "copied_snapshot_refused": true,
+    "early_claim_refused": true,
+    "replay_refused_before_and_after_restart": true,
+    "restart_preserved": true,
+    "independent_state_proofs": [
+      {
+        "port": 34657,
+        "key": "coin_activation",
+        "verified": true
+      },
+      {
+        "port": 34657,
+        "key": "coin_supply",
+        "verified": true
+      },
+      {
+        "port": 34657,
+        "key": "coin_balance/uain169557ff55b4868e7beb7e9888a040b4b6b172e70",
+        "verified": true
+      },
+      {
+        "port": 34657,
+        "key": "coin_quote/T-coin",
+        "verified": true
+      },
+      {
+        "port": 34657,
+        "key": "coin_reservation/T-coin",
+        "verified": true
+      },
+      {
+        "port": 34657,
+        "key": "coin_reward/RC-coin",
+        "verified": true
+      },
+      {
+        "port": 34667,
+        "key": "coin_activation",
+        "verified": true
+      },
+      {
+        "port": 34667,
+        "key": "coin_supply",
+        "verified": true
+      },
+      {
+        "port": 34667,
+        "key": "coin_balance/uain169557ff55b4868e7beb7e9888a040b4b6b172e70",
+        "verified": true
+      },
+      {
+        "port": 34667,
+        "key": "coin_quote/T-coin",
+        "verified": true
+      },
+      {
+        "port": 34667,
+        "key": "coin_reservation/T-coin",
+        "verified": true
+      },
+      {
+        "port": 34667,
+        "key": "coin_reward/RC-coin",
+        "verified": true
+      },
+      {
+        "port": 34657,
+        "key": "coin_activation",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34657,
+        "key": "coin_supply",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34657,
+        "key": "coin_balance/uain169557ff55b4868e7beb7e9888a040b4b6b172e70",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34657,
+        "key": "coin_quote/T-coin",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34657,
+        "key": "coin_reservation/T-coin",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34657,
+        "key": "coin_reward/RC-coin",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34657,
+        "key": "coin_balance/uain11179b41a36cd9154cdee2f78a8b821fb519a749b",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34657,
+        "key": "private_boundary/183e6a07fab1c60f8cfa0bc9c12ccdfde3d0ed5ae91ea5f4ce81b0870f15b767",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34657,
+        "key": "private_payment/703b651cc27307f0ff2e1c1db1b97d0a45e7a27c2593d8d646bced75302fb087",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34657,
+        "key": "private_boundary/f0375702f9e961dfaecf5771f27ee7fb3d38de2239a73347a930fc5b7b2156f6",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34657,
+        "key": "private_frontier",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34667,
+        "key": "coin_activation",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34667,
+        "key": "coin_supply",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34667,
+        "key": "coin_balance/uain169557ff55b4868e7beb7e9888a040b4b6b172e70",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34667,
+        "key": "coin_quote/T-coin",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34667,
+        "key": "coin_reservation/T-coin",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34667,
+        "key": "coin_reward/RC-coin",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34667,
+        "key": "coin_balance/uain11179b41a36cd9154cdee2f78a8b821fb519a749b",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34667,
+        "key": "private_boundary/183e6a07fab1c60f8cfa0bc9c12ccdfde3d0ed5ae91ea5f4ce81b0870f15b767",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34667,
+        "key": "private_payment/703b651cc27307f0ff2e1c1db1b97d0a45e7a27c2593d8d646bced75302fb087",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34667,
+        "key": "private_boundary/f0375702f9e961dfaecf5771f27ee7fb3d38de2239a73347a930fc5b7b2156f6",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      },
+      {
+        "port": 34667,
+        "key": "private_frontier",
+        "verified": true,
+        "phase": "backed-private-exchange"
+      }
+    ],
+    "production_activated": false,
+    "production_coin_mint": false,
+    "fixture_directory": "/tmp/uain-coin-boundary-network-fixture-fQjl5g"
+  },
+  "upgrade_receipt": null,
+  "date": "2026-10-08",
+  "source_pr": 195,
+  "source_candidate": "78198b65fece95821f2d027452b72a79b60c6190",
+  "source_base": "1ce5389d2de944b9e59f004d721d38d896cffd7b",
+  "source_files_sha256": [
+    {
+      "path": "app/app.go",
+      "sha256": "42eafbf3381d42602f8cf8573f274c6e91be680eb563e7d6a41e3256d2564c14"
+    },
+    {
+      "path": "app/app_test.go",
+      "sha256": "508869d4b642a38e4b526300d4972795d67324c2cb095835140f70625c964be5"
+    },
+    {
+      "path": "app/coin_orchard_test.go",
+      "sha256": "b1739a97a8bb3c27008606dc5895da7eeca5dc49f39a16dd122c02fd63b85b47"
+    },
+    {
+      "path": "app/coin_state_orchard_test.go",
+      "sha256": "f13d7e67df54ac92867ea6453da6c0efac2b776f2a3bd948a4fde7100e91687e"
+    },
+    {
+      "path": "app/compact_test.go",
+      "sha256": "ff149a6155a92ee2828deebfccfcb7883d42781445647de89ca654447b2d461c"
+    },
+    {
+      "path": "app/instances_test.go",
+      "sha256": "95a10672218b3cfa3f4bb87a4f467a0ffdc7685687ff0bb9127d7403c0a55403"
+    },
+    {
+      "path": "app/operator_census_test.go",
+      "sha256": "b702a3c8a31cf2c5b4c54c391cfdc3ac7424a322c4cfe00aa04b31ebbd32dff1"
+    },
+    {
+      "path": "app/operators_test.go",
+      "sha256": "3a6ef209299585f2e3f6b1c202904fcf7d1d40f8170b5008a23781fb7d889a72"
+    },
+    {
+      "path": "app/participation_test.go",
+      "sha256": "1571a54a3a15508cdbe968eb848a608102962aaa8af7272284a0727b0d238236"
+    },
+    {
+      "path": "app/private_exchange_orchard_test.go",
+      "sha256": "2974fdb00f218891477cd83031e62c36f4f2a848c85c42f5f705a0d5f2720969"
+    },
+    {
+      "path": "app/private_state_orchard_test.go",
+      "sha256": "166f149b4a0852a014f13fc9c4acb1e2be6ffed57475ced0950eb5c949f4305f"
+    },
+    {
+      "path": "app/proposals.go",
+      "sha256": "6712e75de5b08314742358432788efc350e3384bbadf23fe9d9717a1a5d7fd1d"
+    },
+    {
+      "path": "app/proposals_test.go",
+      "sha256": "81ef5386500a36e53ce6f20894d4e5d6051983ee4a76f34ddb8b1649fe48a887"
+    },
+    {
+      "path": "app/research_standing_test.go",
+      "sha256": "f4c56c8165417c3b08cebb759968bd1f808e63dc7500ad71ce16b1c3edf0b1d2"
+    },
+    {
+      "path": "client/coin-boundary.mjs",
+      "sha256": "ed413ff9c7a34ef90164a4bad451df007e41c06a180571e699d60bd8b0edefc8"
+    },
+    {
+      "path": "client/coin-boundary.test.mjs",
+      "sha256": "a4ee09bceec85cda266c14e9c3f0b3e9169641032e97bd2bbe09baa1463cb6be"
+    },
+    {
+      "path": "client/operator-observation.mjs",
+      "sha256": "ef09da8e2d5cdb911a28197f74b413cd1ff869d9f9f1105696a4a421bfaf805c"
+    },
+    {
+      "path": "client/operator-observation.test.mjs",
+      "sha256": "accdbeef025f1b26d7e46944caa5a391e4301e94c6c1b3050d77b10d9d2ae7f9"
+    },
+    {
+      "path": "client/private-review.mjs",
+      "sha256": "adb83f4c14c6641a5f71dc50faf348d2e41f5c22f06a8620ccb742896f4e5423"
+    },
+    {
+      "path": "client/private-review.test.mjs",
+      "sha256": "804e61a56b7bbed64cb2eb1bcf6c93dce33434250ffc9a4b4d38a24a92feeb9f"
+    },
+    {
+      "path": "client/private-state.mjs",
+      "sha256": "02c9ec1082ccd9b9d9dd8cf4886372c758cc66aac0a0553d97f9e20c2f8d1c77"
+    },
+    {
+      "path": "client/private-state.test.mjs",
+      "sha256": "83af61d9725ef331998dafb7010d8c9d39ec3a115e746a257fba24e03c87299a"
+    },
+    {
+      "path": "client/signing.mjs",
+      "sha256": "16a79b453e42e18cdc4afddd19d9dc8ed1295e482cb742bee0b9a881c8df78dc"
+    },
+    {
+      "path": "client/signing.test.mjs",
+      "sha256": "fa11aadfd01f57698f0c0e69a3b7adeb43098c3f87fac00ad3d129378ff9e0ab"
+    },
+    {
+      "path": "cmd/uain-private-state/main.go",
+      "sha256": "4ebcc5eebc81765c22631cf2d34b4cce276f615eb3063af753b56208aad06930"
+    },
+    {
+      "path": "cmd/uain-proof/main.go",
+      "sha256": "fd3cf2483b4e43092a2e4dd7121d981db2fcfaf819d8aef859d11587e2cfdbbc"
+    },
+    {
+      "path": "cmd/uaind/main.go",
+      "sha256": "e8632923d43227d5bab5c7ab7ff88dfbf81bbe313a23f98942f943b5a120e099"
+    },
+    {
+      "path": "cmd/uaind/main_test.go",
+      "sha256": "fdc9c03d1abbb4d90f8534389ec6fa8a40a56fea90511b75b1aa48646b912e66"
+    },
+    {
+      "path": "coin/ledger.go",
+      "sha256": "89676d3ae7f46f7c15181e5bfe5574301cb0ab009a4498c44e6392221ec5f9cb"
+    },
+    {
+      "path": "coin/ledger_test.go",
+      "sha256": "8ec4e37bcfb0322fa8c877bc3443b185a938a514722d6807cd14e90f3e967f69"
+    },
+    {
+      "path": "federation/account_metadata.go",
+      "sha256": "85545e206fa122022ccf406d8e8e5cfccc6ea5eb260633c4e673692acb9cb841"
+    },
+    {
+      "path": "federation/account_metadata_test.go",
+      "sha256": "33f49b4854dd1010b30fe2c1206e50c92187c2124cdc64e81323a4c7f124de85"
+    },
+    {
+      "path": "federation/accounting_test.go",
+      "sha256": "03a462a199432b2cb4d6d838c8a7be850d0bc6ce95aab43bc8aaedb5e1d1744b"
+    },
+    {
+      "path": "federation/authorization.go",
+      "sha256": "f1d71636d85f863c808c13708aea8e912e2431e687825b3a2637dba40033bbe9"
+    },
+    {
+      "path": "federation/budgets.go",
+      "sha256": "22a925dc67a229b9be7d850013c0a3da51e5471332e8b91bd5590b4e95d70173"
+    },
+    {
+      "path": "federation/coin.go",
+      "sha256": "321a08322757106a93f364ac3db5d0cadce8d40a9ba5ee47281da198700b97ce"
+    },
+    {
+      "path": "federation/coin_boundary.go",
+      "sha256": "71957a083be7de5555ae8ebc86b175b1603448e5288da2eacf01532699d635ed"
+    },
+    {
+      "path": "federation/coin_boundary_test.go",
+      "sha256": "340f982b1428f21b5ad88d9dfc043298db54084fe0665ddacd0a531bbb830cbb"
+    },
+    {
+      "path": "federation/coin_orchard_test.go",
+      "sha256": "e773be5c4d6b0cb05066c65ddd3fede1676089436c82a3a1a561d700e1aa447f"
+    },
+    {
+      "path": "federation/coin_test.go",
+      "sha256": "01718ab0829a398b2945e192f2e0a671263bc4610aa16e81a9baa2196df6df67"
+    },
+    {
+      "path": "federation/compact.go",
+      "sha256": "0a1ea9b18db800e25796066238cbe6f74ff115240162acf8c0013077f927c453"
+    },
+    {
+      "path": "federation/compact_test.go",
+      "sha256": "3b70fc66e1f1f47139ff7b326060f9e0c97944b714eca40d82cb46b7bed988d9"
+    },
+    {
+      "path": "federation/credits.go",
+      "sha256": "85192fc300dbeeb07fdd83dc8c203b53d82a09a17467848a8a5813e432afc205"
+    },
+    {
+      "path": "federation/instances.go",
+      "sha256": "7617f7fa21d6a743b514a5d892639ea27651a6145ee5ea9836f907816c2bc026"
+    },
+    {
+      "path": "federation/instances_test.go",
+      "sha256": "0705b9c895b067807bed7be68734109497e0be29260ddbaf2bf2e6ccd6ec68e4"
+    },
+    {
+      "path": "federation/keeper.go",
+      "sha256": "ff2d30169d96a47c5bb58cd9d7a6b357e9d04de04025183b2efd3e921d867f32"
+    },
+    {
+      "path": "federation/keeper_test.go",
+      "sha256": "8b6a398f612a4247ae03255732176460a761f362dd0f5cc692ddcd721c4bcc8c"
+    },
+    {
+      "path": "federation/kpi.go",
+      "sha256": "9b3503db15881fac967d386c44242af08f6e5487fd53480d09fcc4114ab87cf0"
+    },
+    {
+      "path": "federation/kpi_test.go",
+      "sha256": "3277cbc1c93a55c21cf801755cffc1a192fa2f5ab64b7eec5bfad2a8115a3abe"
+    },
+    {
+      "path": "federation/operator_census.go",
+      "sha256": "810d8ff7bdbd68bb8ba9f16f4fad0e70fe3dadfeeb8a1f987e7e86741c75466d"
+    },
+    {
+      "path": "federation/operator_census_test.go",
+      "sha256": "c46cc6150aa2637d1b40a1e3e9af7d803300930f18364866524806cceea8d820"
+    },
+    {
+      "path": "federation/operator_rewards.go",
+      "sha256": "d8ea9a135af23bbae240ebe891141eca443b2bada93ecf099863399b5ebfa8bb"
+    },
+    {
+      "path": "federation/operator_rewards_test.go",
+      "sha256": "e9e3f5569a51ed2bf4eb176a3e88e727db69b01d8674840455afc8abb282159a"
+    },
+    {
+      "path": "federation/operators.go",
+      "sha256": "d9a357502ce64df3e3c498f1c483ae65f94b93e5381a805e47146f303d38c99f"
+    },
+    {
+      "path": "federation/operators_test.go",
+      "sha256": "be053bddb6cd54836e2012531104c2bf8faf3fd9245a90cfbdcb7f34f8054b81"
+    },
+    {
+      "path": "federation/participation.go",
+      "sha256": "c3677cd5ab97ab06a8735e034326daedd6c323e79ac89b344e99157d8334c6e1"
+    },
+    {
+      "path": "federation/participation_test.go",
+      "sha256": "c2f73e8315f44b5b2f021820d4e8d2c13f19f3f7c2abaaec7e6c197902500de0"
+    },
+    {
+      "path": "federation/prior_art.go",
+      "sha256": "508978b168b4689e71919792d595754a04add369377459b034e8da391cd9025a"
+    },
+    {
+      "path": "federation/private_exchange.go",
+      "sha256": "797a306a0e3dc01dc4ed3dfb7a30a6d43f801cd5d80caa4764c6dfed586996c0"
+    },
+    {
+      "path": "federation/private_exchange_orchard_test.go",
+      "sha256": "30f5a7a4b356334dfb3eeeb83d9525ab90cb59c7c8576836a83923e9e1ce872d"
+    },
+    {
+      "path": "federation/private_exchange_test.go",
+      "sha256": "91721b5bd6bd0f868bc9bf61b1c4d4a94a15c6bef2fc5bd0c9b024429d31c66c"
+    },
+    {
+      "path": "federation/read_cache.go",
+      "sha256": "8aebe1ed19c8aca3cb35343868c09201852928087c647754008c34239372ee7f"
+    },
+    {
+      "path": "federation/settlement.go",
+      "sha256": "a61a1eef34e39dbcd16be70d00d6ffbb5b3d5690b0baa33bcd65117b63d9a195"
+    },
+    {
+      "path": "federation/store.go",
+      "sha256": "783da232f414b66ab8e767592742d46877a259a5805dc68220df141fedaa6e91"
+    },
+    {
+      "path": "federation/types.go",
+      "sha256": "b4a826cc41f4b2e8ab21b1f11ad9a0ddedd60bbae5ec0b2465df47e74e813127"
+    },
+    {
+      "path": "go.mod",
+      "sha256": "4c711e65b2176e848b50bb2a8db896e948cb8044cae5a001e8059594b32ddd44"
+    },
+    {
+      "path": "go.sum",
+      "sha256": "f7086c989ec3605cdf2c37b4193756a64f2abf093265b5fa1bc599f9a3f83ff6"
+    },
+    {
+      "path": "private-exchange/Cargo.lock",
+      "sha256": "c7b81283bf373c82e3be91564c81a4b155ca85dd950596caf4f3684ebe83802b"
+    },
+    {
+      "path": "private-exchange/Cargo.toml",
+      "sha256": "bb71b2fb01240d0177c79e9e8b81eb26f0bf35fed92637cb74daa853edb08dab"
+    },
+    {
+      "path": "private-exchange/src/lib.rs",
+      "sha256": "62e7849a9006da652fab6fc73735550bdfe6483fac30ea85e8a7b9ac345d68e5"
+    },
+    {
+      "path": "private-exchange/src/wallet_units.rs",
+      "sha256": "bd9f7a96ca35f2d73d59b9e7d5520beda247bd0a2053fd6bf48c12a4efc0446d"
+    },
+    {
+      "path": "private-exchange/tests/coin_boundaries.rs",
+      "sha256": "b7bc785a4d84e0a757cfcb03831e1e8af37f51ceba88d69092499d810655375b"
+    },
+    {
+      "path": "private-exchange/tests/exchange.rs",
+      "sha256": "4e0080373f542f3ba798baabffc32da3bd2fc006e4e68edbab45d8fb28b42105"
+    },
+    {
+      "path": "privateexchange/adapter.go",
+      "sha256": "dbbfa30f2248b0acf4d75cd781324f2575d69da4dc5eb5766fbb89be17f1a96d"
+    },
+    {
+      "path": "privateexchange/orchard.go",
+      "sha256": "35094ea491c4c422c207eb978e8ebd1f56aad4c5f46573a8648267dd00e5f124"
+    },
+    {
+      "path": "privateexchange/unavailable.go",
+      "sha256": "13ace78df7fdc919797b159dbce386a32290237ad3784a4359d54ed6aadd3dad"
+    },
+    {
+      "path": "privatewallet/state.go",
+      "sha256": "12ee11732cc2570e6ab573ea6b2b9332dae13e6894ff2cf7a446794470d75f86"
+    },
+    {
+      "path": "privatewallet/state_test.go",
+      "sha256": "0a7b604cf3188afcd4f6e75f50ea99f4abfbd2923c598bb3fdfaa9c850c75b23"
+    },
+    {
+      "path": "proof/compose.go",
+      "sha256": "6a559ea792279c4549ff6e7d98bdc9964d71a7e9cf5f0dfab2983284eb8f3ebf"
+    },
+    {
+      "path": "proof/verify.go",
+      "sha256": "1f078d20dc5b6c3cc8c1baac93d7753af3c08e09b6d2e72c37b52433a12d8b21"
+    },
+    {
+      "path": "scripts/coin-boundary-network-smoke.mjs",
+      "sha256": "f480e0da0068bf3db4daa2337bafd0613e9c5bf1eb492d3648534e663ed83ff0"
+    },
+    {
+      "path": "scripts/coin-network-smoke.mjs",
+      "sha256": "98a93d62c9a51462fdf0e21ee6b871a9b84dac45bcaa69aba711c1e4cebed7e2"
+    },
+    {
+      "path": "scripts/coin-wallet-flow.mjs",
+      "sha256": "17badc051352fcc2da3e1223e823e38acf64658aff9d75b2ee90fdae650d829b"
+    },
+    {
+      "path": "scripts/export-public-snapshot.mjs",
+      "sha256": "2aa2f96b2bec42f58170b97eb9943a1b3f16ef02657081ca8a7ed8743fef88e4"
+    },
+    {
+      "path": "scripts/private-exchange-smoke.mjs",
+      "sha256": "43636143fe2ef2dad675bea8abd3a3973dd7709383f7e9008a2895d287378682"
+    },
+    {
+      "path": "scripts/private-state-network-smoke.mjs",
+      "sha256": "17234789a423415b92b6d086d5839d31b01956de641c8c7583a99c7d7641a126"
+    },
+    {
+      "path": "scripts/private-state-smoke.mjs",
+      "sha256": "8738f97e404f5f5626f7e8f226f8183999925c815ab7d24986fcad689bcb5c3f"
+    },
+    {
+      "path": "scripts/smoke.mjs",
+      "sha256": "a688441d14df3876b3c5fbbf6cbc150514df094003bb32ab9c3491eb808d8097"
+    },
+    {
+      "path": "types/tx.pb.go",
+      "sha256": "6e321afab769b4244b208df71781bc19420a0102c2ccb7a7083f99d7372fa54a"
+    },
+    {
+      "path": "types/tx_grpc.pb.go",
+      "sha256": "718a893b1130c4d5b7a9a177fbc6819f38562b7a735979a4f062b1aef3700801"
+    }
+  ],
+  "all_90_source_files_match_published_candidate": true,
+  "resource_limits": {
+    "memory_max_bytes": 6442450944,
+    "cpu_quota_percent": 200,
+    "tasks_max": 512
+  },
+  "default_race_suite_passed": true,
+  "full_tagged_initial_suite": "one existing client diagnostic-regex failure; all other packages passed",
+  "correction": "preserve distinct-member reader refusal wording",
+  "corrected_affected_sdk_and_wallet_tests_passed": true,
+  "tagged_vet_and_build_passed": true,
+  "backend_site_candidate_ci": {
+    "run": 37815595635,
+    "result": "success"
+  },
+  "old_installed_binary_sha256": "46d51026c0d06b6e602114a124b718fecd220e8f10610735003a5d70ecdf2055",
+  "old_installed_version": "0.3.3",
+  "candidate_version": "0.3.5",
+  "fresh_and_old_to_candidate_upgrade": "pass; 23 matched records and persisted state/census invalidation in each fixture",
+  "measured_sdk_gas": {
+    "coin_shield": 2315050,
+    "coin_exit": 2320737,
+    "legacy_private_payment": 2305784,
+    "verified_state_client_payment": 2300936
+  },
+  "production_policy_activated": false,
+  "production_coin_mint": false,
+  "production_private_payment": false,
+  "production_reset": false,
+  "genuine_member_or_spending_keys_read": false,
+  "full_exact_candidate_ci": {
+    "run": 37815595270,
+    "result": "success",
+    "native_default_full_race": "success",
+    "private_full_rust_tagged_race_vet_and_networks": "success"
+  },
+  "source_merge": "2006cb1d760fe875bb02d56a32b63590fb57f6e0",
+  "main_ci": {
+    "native_private": 37817975059,
+    "deployment": 37817975518,
+    "all_results": "success"
+  }
+}

@@ -1,0 +1,408 @@
+{
+  "schema": "baink-paperclip/private-runtime-qualification/v1",
+  "completedAt": "2026-10-31T19:31:23.697207+00:00",
+  "host": "uain-app-1",
+  "sourceRevision": "dce383c733bb1ca31cd34d7dbb82bda597ad7418",
+  "measuredImageId": "sha256:371b5766f14f38a3dcb1a11008f86a87a83c13985e6d2cb0afd075dc1ae37126",
+  "archiveSha256": "79de2a0dc63823e0d85964a3a938de26198789cdb8417ffc28bf739fb35d5b01",
+  "imageBuildInfoCommitVerified": true,
+  "imageBuildInfoContainsVersion": false,
+  "fixtureOnly": true,
+  "productionActivation": false,
+  "canonicalOrigin": "http://127.0.0.1:3101",
+  "initialApiQualification": {
+    "status": "passed",
+    "checks": 51,
+    "checksPerformed": [
+      "aligned-health",
+      "bootstrap-machine-signup",
+      "bootstrap-machine-signin",
+      "bootstrap-session-identity",
+      "first-admin-claim",
+      "viewer-machine-signup",
+      "viewer-machine-signin",
+      "viewer-session-identity",
+      "first-admin-confirm",
+      "companyId-create",
+      "companyId-known-existing-read",
+      "companyId-zero-agents",
+      "companyId-zero-routines",
+      "deniedCompanyId-create",
+      "deniedCompanyId-known-existing-read",
+      "deniedCompanyId-zero-agents",
+      "deniedCompanyId-zero-routines",
+      "viewer-invite-create",
+      "viewer-before-membership",
+      "viewer-invite-accept",
+      "viewer-membership-confirm",
+      "owner-viewer-grant-inventory",
+      "existing-cancer-evidence-mirror-create",
+      "project-identical-retry",
+      "project-changed-intent-conflict",
+      "project-receipt-only-recovery",
+      "project-missing-receipt-no-create",
+      "owner-known-private-project-read",
+      "viewer-known-private-acl-denied-before-grant",
+      "owner-explicit-private-read-acl",
+      "viewer-private-read-after-grant",
+      "viewer-project-write-denied",
+      "owner-other-company-known-existing",
+      "viewer-known-other-company-denied",
+      "viewer-permission-admin-denied",
+      "anonymous-private-company-denied",
+      "viewer-board-challenge-create",
+      "viewer-board-challenge-approve",
+      "viewer-board-key-identity",
+      "viewer-board-key-project-read",
+      "viewer-board-key-write-denied",
+      "final-zero-agents",
+      "final-zero-routines",
+      "final-zero-project-issues",
+      "final-single-evidence-mirror",
+      "owner-metadata-update",
+      "owner-private-acl-list",
+      "owner-private-acl-revoke",
+      "viewer-bearer-denied-after-acl-revoke",
+      "owner-private-acl-regrant",
+      "viewer-bearer-read-after-regrant"
+    ]
+  },
+  "lifecycleQualification": {
+    "status": "passed",
+    "events": [
+      {
+        "event": "first-graceful-stop",
+        "at": "2026-10-31T19:12:36.891740+00:00",
+        "exitCode": 0,
+        "oomKilled": false
+      },
+      {
+        "event": "restart-ready",
+        "at": "2026-10-31T19:12:51.868706+00:00",
+        "readinessSeconds": 14.33,
+        "imageUnchanged": true
+      },
+      {
+        "event": "restart-loopback-ready",
+        "at": "2026-10-31T19:20:49.896984+00:00",
+        "readinessSeconds": 0.05,
+        "previousProbeWasStartupRace": true
+      },
+      {
+        "event": "restart-api-passed",
+        "at": "2026-10-31T19:20:50.501238+00:00",
+        "checks": 10,
+        "projectIdentityPreserved": true,
+        "sessionsPreserved": true,
+        "viewerKeyPreserved": true,
+        "zeroAgents": true,
+        "zeroRoutines": true,
+        "zeroIssues": true
+      },
+      {
+        "event": "snapshot-graceful-stop",
+        "at": "2026-10-31T19:20:50.887084+00:00",
+        "exitCode": 0,
+        "oomKilled": false
+      },
+      {
+        "event": "stopped-snapshot-created",
+        "at": "2026-10-31T19:20:51.436095+00:00",
+        "sha256": "3dce2ebd3400e0d876afdd657bc5f3da7c3a7584090ce319a10a4d7fb4f1c34d",
+        "bytes": 95375360
+      },
+      {
+        "event": "restore-api-passed",
+        "at": "2026-10-31T19:24:41.050319+00:00",
+        "checks": 10,
+        "projectIdentityPreserved": true,
+        "sessionsPreserved": true,
+        "viewerKeyPreserved": true,
+        "zeroAgents": true,
+        "zeroRoutines": true,
+        "zeroIssues": true
+      },
+      {
+        "event": "restore-loopback-ready",
+        "at": "2026-10-31T19:24:41.052657+00:00",
+        "imageUnchanged": true,
+        "publishedPortsAbsent": true,
+        "setupCorrections": [
+          "RFC1918 bridge may use 192.168",
+          "internal probe must use configured loopback Host",
+          "superseded readiness-only poll overwrote report; verified again"
+        ]
+      },
+      {
+        "event": "canonical-api-passed",
+        "at": "2026-10-31T19:29:55.125017+00:00",
+        "checks": 10,
+        "projectIdentityPreserved": true,
+        "sessionsPreserved": true,
+        "viewerKeyPreserved": true,
+        "zeroAgents": true,
+        "zeroRoutines": true,
+        "zeroIssues": true
+      }
+    ],
+    "secretsPrinted": false,
+    "restoredFromStoppedSnapshot": true,
+    "completedAt": "2026-10-31T19:31:23.697207+00:00",
+    "statusReconciliation": {
+      "basis": [
+        "restart-api-passed",
+        "restore-api-passed",
+        "canonical-api-passed"
+      ],
+      "reason": "The final canonical API helper wrote its running checkpoint before successful checks; completed checks and the passed canonical report establish completion."
+    }
+  },
+  "canonicalApiQualification": {
+    "status": "passed",
+    "checks": 10,
+    "origin": "http://127.0.0.1:3101",
+    "sameOwnerSession": true,
+    "sameViewerKey": true,
+    "samePrivateProject": true,
+    "zeroAgents": true,
+    "zeroRoutines": true,
+    "zeroIssues": true,
+    "secretsPrinted": false
+  },
+  "profiles": [
+    {
+      "evidenceFile": "runtime-profile-2g.json",
+      "imageId": "sha256:371b5766f14f38a3dcb1a11008f86a87a83c13985e6d2cb0afd075dc1ae37126",
+      "startedAt": "2026-10-31T18:53:27.041890+00:00",
+      "observationSeconds": 62.12,
+      "wholeContainerMemoryPeakBytes": 951091200,
+      "sampledMemoryCurrentPeakBytes": 846331904,
+      "hostAvailableMemoryMinimumBytes": 39738384384,
+      "containerMemoryEventsDelta": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "hostSwapInPages": 0,
+      "hostSwapOutPages": 0,
+      "hostOomKillDelta": 0,
+      "effectiveLimits": {
+        "memoryMax": "2147483648",
+        "swapMax": "0",
+        "cpuMax": "100000 100000",
+        "pidsMax": "256"
+      },
+      "temporaryRelayAccounting": [
+        "MemoryCurrent=4952064",
+        "MemoryPeak=5124096",
+        "CPUQuotaPerSecUSec=100ms",
+        "MemoryMax=67108864",
+        "MemorySwapMax=0"
+      ]
+    },
+    {
+      "evidenceFile": "runtime-profile-2g-full.json",
+      "imageId": "sha256:371b5766f14f38a3dcb1a11008f86a87a83c13985e6d2cb0afd075dc1ae37126",
+      "observationSeconds": 62.05,
+      "concurrentReaders": 4,
+      "successfulRequests": 1076,
+      "readErrors": [],
+      "wholeContainerMemoryPeakBytes": 833179648,
+      "sampledMemoryCurrentPeakBytes": 828149760,
+      "hostAvailableMemoryMinimumBytes": 40028401664,
+      "containerMemoryEventsDelta": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "hostSwapInPages": 0,
+      "hostSwapOutPages": 0,
+      "hostOomKillDelta": 0,
+      "latencyMs": {
+        "median": 19.4,
+        "p95": 49.43,
+        "max": 1840.57
+      },
+      "effectiveLimits": {
+        "memoryMax": "2147483648",
+        "swapMax": "0",
+        "cpuMax": "100000 100000",
+        "pidsMax": "256"
+      },
+      "temporaryRelayAccounting": [
+        "MemoryCurrent=5898240",
+        "MemoryPeak=7421952",
+        "MemoryMax=67108864",
+        "MemorySwapMax=0"
+      ],
+      "providerRunsCreated": 0,
+      "nativeWrites": 0,
+      "secretsPrinted": false
+    },
+    {
+      "evidenceFile": "runtime-profile-2g-restored-inspected-relay.json",
+      "imageId": "sha256:371b5766f14f38a3dcb1a11008f86a87a83c13985e6d2cb0afd075dc1ae37126",
+      "observationSeconds": 62.07,
+      "concurrentReaders": 4,
+      "successfulRequests": 1054,
+      "readErrors": [],
+      "wholeContainerMemoryPeakBytes": 801742848,
+      "sampledMemoryCurrentPeakBytes": 796479488,
+      "hostAvailableMemoryMinimumBytes": 39886888960,
+      "containerMemoryEventsDelta": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "hostSwapInPages": 0,
+      "hostSwapOutPages": 0,
+      "hostOomKillDelta": 0,
+      "latencyMs": {
+        "median": 20.62,
+        "p95": 55.15,
+        "max": 1478.42
+      },
+      "effectiveLimits": {
+        "memoryMax": "2147483648",
+        "swapMax": "0",
+        "cpuMax": "100000 100000",
+        "pidsMax": "256"
+      },
+      "temporaryRelayAccounting": [
+        "MemoryCurrent=9347072",
+        "MemoryPeak=11141120",
+        "MemoryMax=67108864",
+        "MemorySwapMax=0"
+      ],
+      "providerRunsCreated": 0,
+      "nativeWrites": 0,
+      "secretsPrinted": false
+    },
+    {
+      "evidenceFile": "runtime-profile-2g-final-relay.json",
+      "imageId": "sha256:371b5766f14f38a3dcb1a11008f86a87a83c13985e6d2cb0afd075dc1ae37126",
+      "observationSeconds": 62.05,
+      "concurrentReaders": 4,
+      "successfulRequests": 1035,
+      "readErrors": [],
+      "wholeContainerMemoryPeakBytes": 801742848,
+      "sampledMemoryCurrentPeakBytes": 797798400,
+      "hostAvailableMemoryMinimumBytes": 39799455744,
+      "containerMemoryEventsDelta": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "hostSwapInPages": 0,
+      "hostSwapOutPages": 0,
+      "hostOomKillDelta": 0,
+      "latencyMs": {
+        "median": 18.05,
+        "p95": 54.17,
+        "max": 1791.44
+      },
+      "effectiveLimits": {
+        "memoryMax": "2147483648",
+        "swapMax": "0",
+        "cpuMax": "100000 100000",
+        "pidsMax": "256"
+      },
+      "temporaryRelayAccounting": [
+        "MemoryCurrent=9506816",
+        "MemoryPeak=11087872",
+        "MemoryMax=67108864",
+        "MemorySwapMax=0"
+      ],
+      "providerRunsCreated": 0,
+      "nativeWrites": 0,
+      "secretsPrinted": false
+    },
+    {
+      "evidenceFile": "runtime-profile-canonical-final-relay.json",
+      "imageId": "sha256:371b5766f14f38a3dcb1a11008f86a87a83c13985e6d2cb0afd075dc1ae37126",
+      "observationSeconds": 62.04,
+      "concurrentReaders": 4,
+      "successfulRequests": 1078,
+      "readErrors": [],
+      "wholeContainerMemoryPeakBytes": 853471232,
+      "sampledMemoryCurrentPeakBytes": 852463616,
+      "hostAvailableMemoryMinimumBytes": 39513825280,
+      "containerMemoryEventsDelta": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "hostSwapInPages": 0,
+      "hostSwapOutPages": 0,
+      "hostOomKillDelta": 0,
+      "latencyMs": {
+        "median": 20.2,
+        "p95": 50.59,
+        "max": 1369.36
+      },
+      "effectiveLimits": {
+        "memoryMax": "2147483648",
+        "swapMax": "0",
+        "cpuMax": "100000 100000",
+        "pidsMax": "256"
+      },
+      "temporaryRelayAccounting": [
+        "MemoryCurrent=9666560",
+        "MemoryPeak=10969088",
+        "MemoryMax=67108864",
+        "MemorySwapMax=0"
+      ],
+      "providerRunsCreated": 0,
+      "nativeWrites": 0,
+      "secretsPrinted": false
+    }
+  ],
+  "finalRelay": {
+    "sourceSha256": "52e6e47204be8e9de3acef581d4b73d5c51a85c0c4061b8bbc9e7f341d628b5c",
+    "accounting": [
+      "MemoryCurrent=9273344",
+      "MemoryPeak=10969088",
+      "CPUUsageNSec=2826635000",
+      "CPUQuotaPerSecUSec=100ms",
+      "MemoryMax=67108864",
+      "MemorySwapMax=0",
+      "TasksMax=32"
+    ],
+    "maxConnections": 16,
+    "stressTestConcurrentReaders": 4,
+    "preAndPostConnectIdentityCheck": true,
+    "maxInspectBytes": 262144
+  },
+  "fixtureFinalState": {
+    "containerRunning": false,
+    "gracefulExitCode": 0,
+    "oomKilled": false,
+    "relayStopped": true,
+    "privateStateRetained": true
+  },
+  "zeroExecution": {
+    "agents": 0,
+    "routines": 0,
+    "issues": 0,
+    "providerRuns": 0,
+    "nativeWrites": 0,
+    "rewards": 0,
+    "payments": 0
+  },
+  "secretsIncluded": false
+}

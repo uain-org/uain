@@ -1,0 +1,6 @@
+#!/bin/sh
+# Same custody lock as every existing private-key consumer. Never run from an
+# Actions runner: prepare deliberately requires the drained runner stopped.
+exec /usr/bin/flock --exclusive --wait 120 /run/lock/uain-custody.lock \
+  /usr/bin/flock --exclusive --wait 120 /run/lock/uain-reset.lock \
+  /opt/uain-custody/venv/bin/python -I -B /opt/uain-reset/custody_entry.py "$@"

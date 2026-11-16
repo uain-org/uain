@@ -1,0 +1,94 @@
+{
+  "available": 15,
+  "bundle": {
+    "bytes": 3382302720,
+    "objects": 15,
+    "plan_sha256": "a6cf35737c1c69797e0ccad2238f4c24ba086d7564dfcc0700699d6e58314e12",
+    "sha256": "e70ee1e787b973f9ad21c6e4a290d944b539ffd950111cbf861723725a6125a8",
+    "source_manifest_digest": "81911e155693a80350a65b58735a0405ccf074f4fed66d5b592ca72f9c0a8de6",
+    "source_records_root": "a693086e8c4b800f2b119f5f9cd71da5746c23750ff259c3802821f97c70a160"
+  },
+  "bytes": 3382232254,
+  "commitment": {
+    "objects": [
+      {
+        "bytes": 755201909,
+        "sha256": "013134d22a2a0c2dd0cb683192d0c109da1aec83ba54d94a837a8b71bcbc4a1f"
+      },
+      {
+        "bytes": 20795,
+        "sha256": "0352de5335ae3bf72250dd136d1b0df87a6b72f653df34c2560cce17c0e7d928"
+      },
+      {
+        "bytes": 48796,
+        "sha256": "12c08f92de4cb464894bb739a1926720213c1b6850533f773d8e2baa0a437d1c"
+      },
+      {
+        "bytes": 428678699,
+        "sha256": "3d8f3ec6dbf2db7ff834b79b508622ec0b226f3518003fe96ecf5a4fcf167e3b"
+      },
+      {
+        "bytes": 1153185413,
+        "sha256": "518e6c045d2a91c694c74d4cba099b86e64829f6053ba42684d2ec3ebf0bd3a6"
+      },
+      {
+        "bytes": 1647447,
+        "sha256": "5ebfc624a8d693be22bf1f0830b4fdc5810119384c60f98044aa168494eeba71"
+      },
+      {
+        "bytes": 27964,
+        "sha256": "64e3aa4b355b8cc6165cce53a6471862b60046296b98adf8b91a50150667bcf8"
+      },
+      {
+        "bytes": 95546041,
+        "sha256": "68d8abdb7fc48f570869b02dfaa74b9fecaece7fcc5f301ddca40ec1ce12da00"
+      },
+      {
+        "bytes": 55147,
+        "sha256": "74cee4af83870a285c7aa3ccc26f8dd1aa9b7213662b21c0c1c2fee312c5a41b"
+      },
+      {
+        "bytes": 511626945,
+        "sha256": "83a48fd9dcaa0b9a874b18c63143a4ede93f05505b215b0bd8790130a0d7a954"
+      },
+      {
+        "bytes": 355626,
+        "sha256": "8c2bc9cba581819b2df5a63e741a360d92efef7d819f553a06e2d946ae60a90b"
+      },
+      {
+        "bytes": 15302140,
+        "sha256": "977ad252878d25a6cf486a9054448feff0e308e83e2fe5d6e8b6ec31c45491d4"
+      },
+      {
+        "bytes": 559182,
+        "sha256": "a4cac376131b41aa10b60a075b11c80264bfa860a5509d22cde259c5e85867f8"
+      },
+      {
+        "bytes": 645696,
+        "sha256": "b7a0c1385e6cef30132b56aff61f1261d11e3f490490b355c430d32ee0dbdcfa"
+      },
+      {
+        "bytes": 419330454,
+        "sha256": "d155149181308f8e16b6a4677cde3e5af1ddef68ada1947486ae8c0bcb231452"
+      }
+    ],
+    "plan_sha256": "a6cf35737c1c69797e0ccad2238f4c24ba086d7564dfcc0700699d6e58314e12"
+  },
+  "encrypted": {
+    "ciphertext_bytes": 3382302762,
+    "ciphertext_sha256": "b614de0cd0380b3102c2e54e36ac4b577b4311f79a74e0939003831d50c12480",
+    "plaintext_bytes": 3382302720,
+    "plaintext_sha256": "e70ee1e787b973f9ad21c6e4a290d944b539ffd950111cbf861723725a6125a8"
+  },
+  "historical_unhosted_labels": 117,
+  "kind": "uain-public-evidence-backup-v1",
+  "local_restore_verified": true,
+  "missing": [
+    "228c656172002cb8a8752ddbcb95c8b74611fc3e510ce25b68c480620ef11bea",
+    "a5a341181e36d1e65680bc48b5449b8f886d923b73bb14427f5b51f153f7b77b"
+  ],
+  "name": "uain-evidence-bc5f8aaf56d80cb138638b8476f7e4c1646a7cb42f3343130b1d69c136e054d2",
+  "offsite_restore_verified": true,
+  "offsite_verified": true,
+  "version": 1
+}

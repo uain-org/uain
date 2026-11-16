@@ -1,0 +1,39 @@
+{
+  "schema": "uain-project-organization-bootstrap-review-v1",
+  "projectId": "OPP-02164",
+  "reviewer": "claude-independent-prior-art-reviewer-20261106",
+  "reviewedAt": "2026-11-06T01:03:45Z",
+  "class": "benevolent",
+  "assessment": {
+    "openSolutionFound": false,
+    "knownAnswer": false,
+    "reviewer": "claude-independent-prior-art-reviewer-20261106",
+    "rationale": "Timber and hempcrete buildings exist, but no verified registry of whole-life carbon-negative buildings exists and nothing approaches the Main KPI of 10,000,000 carbon-negative buildings. Carbon-negative claims are project-level press claims (Pierre Chevet hempcrete sports hall, France, https://reccessary.com/en/news/Built-of-hemp-Frances-Pierre-Chevet-sports-hall-may-become-a-carbon-sink); published whole-life LCAs of hemp and timber buildings are net-positive or only 'temporal net-zero' when biogenic carbon is counted (UK hemp case 497 kgCO2e/m2 A-D; Australian timber office net-zero for about 19 years, https://opus.cloud1.lib.uts.edu.au/handle/10453/183818), and hempcrete's sign depends on mix design (https://doaj.org/article/c9bde890d1ac4e28aebf11630c96141f). Codes are only starting to allow it: hemp-lime entered the 2024 IRC as Appendix BL, adopted in few jurisdictions (https://www.hempbuildmag.com/home/irc-2027-hempcrete). Open accounting tools exist (Building Transparency EC3, A1-A3 only, https://www.buildingtransparency.org/tools/). Honest limit: hempcrete, CLT and open EPD data are prior art; tasks must target verified whole-life (A-D, with honest biogenic and end-of-life accounting) carbon-negative designs that are code-approvable and buildable at scale, with their own prior-art basis."
+  },
+  "additionalSearches": [
+    {
+      "query": "hempcrete mass timber carbon negative building certified number of buildings worldwide",
+      "source": "https://reccessary.com/en/news/Built-of-hemp-Frances-Pierre-Chevet-sports-hall-may-become-a-carbon-sink",
+      "observedAt": "2026-11-06T00:58:00Z",
+      "finding": "No worldwide count of certified carbon-negative buildings; individual claims such as the Pierre Chevet hempcrete sports hall; hempcrete negativity depends on hemp-lime ratio."
+    },
+    {
+      "query": "whole life carbon negative building verified embodied carbon life cycle assessment timber hemp case study",
+      "source": "https://opus.cloud1.lib.uts.edu.au/handle/10453/183818",
+      "observedAt": "2026-11-06T00:58:15Z",
+      "finding": "Published LCAs: UK hempcrete case net-positive (497 kgCO2e/m2 A-D); Australian timber office reaches net-zero embodied carbon only temporarily (about 19 years) with biogenic carbon."
+    },
+    {
+      "query": "open source embodied carbon calculator building EC3 One Click LCA open data",
+      "source": "https://www.buildingtransparency.org/tools/",
+      "observedAt": "2026-11-06T00:58:30Z",
+      "finding": "EC3 is a free open-access EPD database and calculator, A1-A3 scope; accounting prior art, not carbon-negative buildings."
+    },
+    {
+      "query": "hempcrete building code approval IRC appendix BL hemp-lime construction market size 2026",
+      "source": "https://www.hempbuildmag.com/home/irc-2027-hempcrete",
+      "observedAt": "2026-11-06T00:58:45Z",
+      "finding": "Hemp-lime in 2024 IRC Appendix BL (non-structural infill, low seismic zones), adopted in few jurisdictions; fire-rated assemblies approved for 2027 IRC; market about USD 1.5 billion."
+    }
+  ]
+}

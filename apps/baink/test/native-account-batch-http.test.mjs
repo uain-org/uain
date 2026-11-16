@@ -1,0 +1,43 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {mkdtemp,writeFile,rm} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {createHash} from 'node:crypto';
+import {request as nodeRequest} from 'node:http';
+import {createBainkServer} from '../server/app.mjs';
+import {member,signed,audience} from './http-fixture.mjs';
+const hash=value=>createHash('sha256').update(value).digest('hex');
+const delay=(ms,signal)=>new Promise((resolve,reject)=>{const abort=()=>{clearTimeout(timer);reject(Error('fixture aborted'));};const timer=setTimeout(()=>{signal?.removeEventListener('abort',abort);resolve();},ms);signal?.addEventListener('abort',abort,{once:true});if(signal?.aborted)abort();});
+test('authenticated profile proof responses survive a bounded queue beyond10seconds without extending other route timeouts',{timeout:90000},async t=>{
+ const dir=await mkdtemp(join(tmpdir(),'native-batch-http-'));let app;t.after(async()=>{if(app){app.server.closeAllConnections();await app.close();}await rm(dir,{recursive:true,force:true});});
+ const people=Array.from({length:200},()=>member()),genesis=JSON.stringify({chain_id:'isolated-batch-http'}),binary=join(dir,'reader'),genesisFile=join(dir,'genesis.json');
+ await writeFile(binary,'synthetic pinned transport fixture',{mode:0o700});await writeFile(genesisFile,genesis,{mode:0o600});
+ const config={binary,binaryHash:hash('synthetic pinned transport fixture'),genesis:genesisFile,genesisHash:hash(genesis),chainId:'isolated-batch-http',rpc:'http://127.0.0.1:1',timeoutMs:8000,maxAgeSeconds:120};
+ const initialState={version:1,accounts:Object.fromEntries(people.map(p=>[p.address,{address:p.address,publicKey:p.publicKey,displayName:'Fictional fixture',createdAt:'2026-01-01T00:00:00Z',updatedAt:'2026-01-01T00:00:00Z'}])),requests:{},nonces:{},history:[],nativeIntents:{}};
+ await writeFile(join(dir,'state.json'),JSON.stringify(initialState),{mode:0o600});
+ let batchCalls=0;const transport={profile:{chainId:config.chainId,genesisSha256:config.genesisHash,verifierSha256:config.binaryHash,maxAgeSeconds:120},prepare:async()=>{},close:async()=>{},read:async()=>{throw Error('synthetic single-reader refusal');},async readBatch(members,{signal}){
+  batchCalls++;await delay(5500,signal);return Buffer.from(JSON.stringify({schema:'baink-native-public-state-batch-v1',requestDigest:hash(JSON.stringify({members})),results:members.map(id=>({member:id,mode:'absence',state:{chain_id:config.chainId,height:'100',header_time:new Date().toISOString(),app_hash:'a'.repeat(64),event_count:'0',records:{legacy_import:null,coin_activation:null,coin_supply:null,private_activation:null,['member/'+id]:null,['coin_balance/'+id]:null}}}))}));
+ }};
+ app=await createBainkServer({dataDir:dir,publicOrigin:audience,projectsSource:null,catalogueDir:null,trustProxy:true,nativeConfig:config,nativeStateTransport:transport,nativeAccountBatchingEnabled:true});
+ const observations=[];app.server.on('request',(req,res)=>{const row={path:req.url,method:req.method,signed:Boolean(req.headers['x-baink-public-key']),initial:req.socket.timeout,extended:[],status:null};res.once('finish',()=>row.status=res.statusCode);observations.push(row);const set=res.setTimeout;res.setTimeout=function(ms,...args){row.extended.push(ms);return set.call(this,ms,...args);};});
+ await new Promise(resolve=>app.server.listen(0,'127.0.0.1',resolve));const base='http://127.0.0.1:'+app.server.address().port;
+ async function request(who,method,path,body={},ip='203.0.113.1') {try{const r=await fetch(base+path,{method,headers:{Origin:audience,'Content-Type':'application/json','X-Real-IP':ip,...(who?signed(who,method,path,body):{})},...(method==='GET'?{}:{body:JSON.stringify(body)})});return{status:r.status,body:await r.json()};}catch(error){return{status:0,error:error.name};}}
+ const rawRequest=path=>new Promise((resolve,reject)=>{const req=nodeRequest({hostname:'127.0.0.1',port:app.server.address().port,method:'GET',path,headers:{Host:'baink.example',Origin:audience,'X-Real-IP':'203.0.113.250',...signed(people[0],'GET',path,{})}},res=>{let text='';res.on('data',data=>text+=data);res.on('end',()=>{let body;try{body=JSON.parse(text);}catch{}resolve({status:res.statusCode,body});});});req.on('error',reject);req.end();});
+ assert.equal((await request(null,'GET','/api/account')).status,401);
+ assert.equal((await request(people[0],'GET','/api/native/payments')).status,200);
+ assert.equal((await request(people[0],'PATCH','/api/account',{displayName:'x'.repeat(81)})).status,400);
+ assert.ok(observations.every(row=>row.initial===10000&&row.extended.length===0),'unsigned, financial and invalid profile input keep global10second timeout');
+ const start=Date.now(),rows=Array(people.length);let next=2;
+ const untilBatches=async count=>{const deadline=Date.now()+5000;while(batchCalls<count){assert.ok(Date.now()<deadline,'first proof batch dispatched');await delay(2);}};
+ const initialA=request(people[0],'GET','/api/account',{},'198.51.100.1').then(row=>{rows[0]=row;});await untilBatches(1);
+ const initialB=request(people[1],'PATCH','/api/account',{displayName:'Mixed proof update'},'198.51.100.2').then(row=>{rows[1]=row;});await untilBatches(2);
+ let workspaceError;const protectedWorkspace=(async()=>{while(observations.filter(r=>r.path==='/api/account'&&['GET','PATCH'].includes(r.method)&&r.signed&&r.status===null).length<48)await delay(2);const refused=await request(people[0],'GET','/api/account',{},'203.0.113.250');assert.equal(refused.status,503);assert.equal(refused.body.error.code,'busy');const blockedPatch=await request(people[0],'PATCH','/api/account',{displayName:'Must not persist'},'203.0.113.250');assert.equal(blockedPatch.status,503);assert.equal((await request(people[0],'GET','/api/account/metadata')).body.account.displayName,'Fictional fixture');for(const target of [audience+'/api/account','/api/account#alternate']){const alternate=await rawRequest(target);assert.equal(alternate.status,503,'same routed account endpoint reserves capacity: '+target);}assert.equal((await request(null,'GET','/api/health')).status,200,'native account readers reserve workspace capacity');const fresh=await request(member(),'POST','/api/account',{displayName:'Metadata-only signup'},'203.0.113.251');assert.equal(fresh.status,201);assert.equal(fresh.body.nativeStatus,'not-requested');assert.equal(fresh.body.account.balance,null);assert.equal(fresh.body.account.nativeRegistration,'unavailable');})().catch(error=>{workspaceError=error;});
+ await Promise.all([initialA,initialB,...Array.from({length:46},async()=>{for(;;){const i=next++;if(i>=people.length)return;rows[i]=await request(people[i],'GET','/api/account',{},'198.51.100.'+(i+1));}})]);
+ assert.equal(rows.filter(row=>row.status===200&&row.body.account.native.verified===true&&row.body.account.native.status==='member_missing'&&row.body.account.balance===null).length,200,JSON.stringify(rows.filter(row=>row.status!==200||!row.body?.account?.native?.verified).slice(0,5)));
+ await protectedWorkspace;if(workspaceError)throw workspaceError;
+ assert.ok(Date.now()-start>10000,'actual queued HTTP response outlives original10second timeout');
+ assert.ok(batchCalls>=7&&batchCalls<20,'bounded aggregate reads, not200 independent proof jobs');
+ assert.ok(observations.filter(row=>row.path==='/api/account'&&['GET','PATCH'].includes(row.method)&&row.status===200).every(row=>row.extended.length===1&&row.extended[0]===28000),'only authenticated full account reads get28seconds');assert.ok(observations.filter(row=>row.path!=='/api/account'||!['GET','PATCH'].includes(row.method)||row.status!==200).every(row=>row.extended.length===0),'other routes retain their timeout');
+ assert.equal(app.server.requestTimeout,15000);assert.equal(app.server.headersTimeout,10000);assert.equal(app.server.timeout,10000);
+});

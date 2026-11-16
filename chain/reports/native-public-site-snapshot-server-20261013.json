@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-13",
+  "scope": "Isolated PostgreSQL HTTP qualification of explicit dated public-website snapshots. No production mutation or chain policy changes.",
+  "result": {
+    "exit_code": 0,
+    "tests": 13,
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0,
+    "duration_ms": 21668.350166
+  },
+  "red": {
+    "log": "/opt/uain-test/uain-fast-catchup-20261013/logs/site-snapshot-red.log",
+    "expected_failure": "Verified public catalogue lacked site_snapshot metadata before implementation"
+  },
+  "green": {
+    "log": "/opt/uain-test/uain-fast-catchup-20261013/logs/site-snapshot-green-final2.log",
+    "blocked_proof_http_ms": 7,
+    "assertions": [
+      "A background proof process is confirmed started and blocked before timing the HTTP request",
+      "A dated verified website snapshot returns HTTP200 in under500ms while fresh proof is blocked",
+      "The snapshot request starts zero additional proof processes",
+      "The new head remains unprojected and strict HTTP returns503",
+      "Explicit /api/native/public remains strict even with site_snapshot=1",
+      "Snapshot metadata identifies verification time, pending refresh and authoritative:false",
+      "Every prewarmed public list, stats, map and project subresource returns a verified snapshot",
+      "25-row project task subresource retains complete rows and returns page2 with count25 and5rows",
+      "Expired snapshots refuse, and a same-generation completed strict recovery warm repopulates them",
+      "Changed verifier pin and SQL archive restoration immediately invalidate the snapshot",
+      "Missing and archived strict project subresources preserve404",
+      "Task discovery and individual task details cannot use dated snapshots",
+      "Actual PostgreSQL acquisition, advisory-lock contention, SQL cancellation and cleanup regressions remain green"
+    ]
+  },
+  "retention": {
+    "max_age_ms": 120000,
+    "max_entries": 256,
+    "max_json_bytes": 33554432,
+    "fences": [
+      "Exact current verifier/genesis/RPC pins",
+      "Current nonretired SQL epoch and matching chain identity",
+      "Fresh SQL archive visibility version on each delivery"
+    ],
+    "verification_time": "Completed strict proof build, verified strict cache read, or successful background re-verification of the identical generation. HTTP snapshot delivery never renews verification time.",
+    "refresh": "Existing single-flight five-second background warm, with no request-triggered chain proof work. Cold replicas prewarm all public catalogue paths, each current project, and its tasks/claims/members before readiness."
+  },
+  "strict_detail_optimization": "Individual task and contribution details skip broad all-record warming. Record resolution, native checkpoint, metadata/body commitments and closure checks remain independently proved.",
+  "command": "npm run build && node --test --test-concurrency=1 test/native-public-site-snapshot-cache.test.mjs test/native-public-site-snapshot.test.mjs test/native-public-performance.test.mjs test/native-public-catch-up.test.mjs test/native-state-cancellation.test.mjs test/native-catch-up-locks.test.mjs",
+  "runtime": {
+    "image": "node:22-bookworm-slim",
+    "cpus": 2,
+    "memory": "3g",
+    "pids_limit": 256,
+    "capabilities": "ALL dropped",
+    "security": "no-new-privileges",
+    "database": "Shared test-only PostgreSQL localhost55433; tests create and remove their own isolated databases"
+  },
+  "limitations": [
+    "Snapshots are explicitly dated website presentation and can be up to120seconds old. They are not current authority for commands, receipts, balances, membership profiles or task discovery.",
+    "Production-sized fresh proof rebuild work remains in the background. This fixture proves that such proof work is absent from the opted-in HTTP critical path; production browser/load acceptance is separate.",
+    "Snapshot misses, expiry, changed pins, retired epochs and archive visibility changes fail quickly with503 rather than inventing content."
+  ],
+  "source_sha256": {
+    "services/pilot/src/api/native-public-read-routes.ts": "537adeb19c7ae3dd5b203ce51778c8574c6cd2b379033e09edfd27c5be1be473",
+    "services/pilot/src/native/public-site-snapshot.ts": "d1ca2444588bfdb22a339acf3e5af83db11e08ef55aa8ea4cd91491349d97fb9",
+    "services/pilot/test/native-public-site-snapshot.test.mjs": "3a5cc4e94f622b691fc345f5bc3011b52f184abb27c1e9b93a0dd4f20c3a6aab",
+    "services/pilot/test/native-public-site-snapshot-cache.test.mjs": "fa51d5ec0272e3cf202e111c77a8c5f237afb5be6fca477ea9e41cd22062753d"
+  },
+  "installed_native_e2e": {
+    "log": "/opt/uain-test/uain-fast-catchup-20261013/logs/site-snapshot-native-e2e.log",
+    "result": {
+      "exit_code": 0,
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "duration_ms": 67241.788768
+    },
+    "post_worker_finality_publication_to_exact_public_body_ms": 3529,
+    "timing_note": "Starts after installed worker native run has completed receipt finality and publication; not the first chain receipt timestamp. No explicit projector call occurs after the new submit before HTTP200.",
+    "genesis_sha256": "112a58b0e38f3b5db28cd6333a53e5cdde9ce319bbdaa7fc099e83a2c711aea2",
+    "submission_event": "5",
+    "evidence_digest": "4b004e4f06dfb17a6200fbc5a1b7d55201f21167788d2310d78c11c71cb3a618",
+    "daemon_sha256": "715a3a6b19c7a844111ba6fe3fd63da97ad8145c386e2b076383fd348a3b5160",
+    "verifier_sha256": "136698192e9e38323a552f1e2da2eea5b9b90e3d6e7de11116d72ee28c826860",
+    "assertions": [
+      "Actual installed client local MCP signed command succeeds",
+      "Receipt finality and exact evidence publication succeed",
+      "New strict contribution detail independently proves exact submitted body and exact finalized event cursor",
+      "Duplicate native command intent remains idempotent",
+      "Contribution attribution and retrieval survive native node restart",
+      "No member private keys exported"
+    ],
+    "runtime": "Capped node22 container; existing trusted native daemon and verifier mounted read-only; isolated capped ephemeral pgvector localhost55435 removed after test",
+    "note": "Existing post-close rate-limit pooled-query warning logged without test failure; no runtime changes were made for it."
+  }
+}

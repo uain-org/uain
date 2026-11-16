@@ -1,0 +1,104 @@
+name: Publish ledger root
+
+# Once a day, copy yesterday's signed ledger root out of the server and into
+# this repository, on a branch of its own.
+#
+# Why: the server signs its own roots, so on its own a signature proves only
+# that the server said something. A copy committed here is independent and
+# timestamped by git and GitHub. Once a root is published, the operator cannot
+# rewrite that day's history without the rewrite disagreeing with a copy it
+# does not control. Anchoring the same roots on Base Sepolia (Phase 1) adds a
+# second copy that nobody on the team can edit at all.
+
+on:
+  schedule:
+    - cron: '20 0 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: Day to publish (YYYY-MM-DD). Defaults to yesterday, UTC.
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ledger-roots
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    # Production only from main (a scheduled run is on main).
+    if: github.ref == 'refs/heads/main'
+    runs-on: [self-hosted, linux, x64, uain-production]
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with: { persist-credentials: false }
+      - name: Verify public signed root in a credential-free sandbox
+        env:
+          INPUT_DATE: ${{ inputs.date }}
+        run: |
+          set -euo pipefail
+          DATE="${INPUT_DATE:-$(date -u -d yesterday +%F)}"
+          # The trusted launcher validates the exact completed UTC date, exports
+          # one bounded regular JSON file and re-verifies its signature against
+          # the independently fixed ledger public key. No token enters Docker.
+          sudo /usr/local/sbin/uain-ci-run "$GITHUB_WORKSPACE" ledger-publication "$DATE" > "$RUNNER_TEMP/verified-ledger-root.json"
+          printf '%s\n' "$DATE" > "$RUNNER_TEMP/verified-ledger-date"
+
+      - name: Commit to the ledger-roots branch
+        env:
+          INPUT_DATE: ${{ inputs.date }}
+          REPO: ${{ github.repository }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          DATE="$(cat "$RUNNER_TEMP/verified-ledger-date")"
+          ROOTS_DIR="$(mktemp -d "$RUNNER_TEMP/ledger-roots.XXXXXX")"
+          trap 'rm -rf "$ROOTS_DIR"' EXIT
+          # The token reaches git only through the environment, never its argv,
+          # the clone's config or the remote URL (printf is a shell builtin).
+          export GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=http.https://github.com/.extraheader GIT_CONFIG_VALUE_0
+          GIT_CONFIG_VALUE_0="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$TOKEN" | base64 | tr -d '\n')"
+          export GIT_TERMINAL_PROMPT=0
+          URL="https://github.com/${REPO}.git"
+          if git ls-remote --exit-code --heads "$URL" ledger-roots >/dev/null; then
+            git clone --quiet --depth 1 --branch ledger-roots "$URL" "$ROOTS_DIR"
+          else
+            git init --quiet "$ROOTS_DIR"
+            git -C "$ROOTS_DIR" checkout --quiet --orphan ledger-roots
+            git -C "$ROOTS_DIR" remote add origin "$URL"
+            printf '%s\n' \
+              '# UAIN ledger roots' '' \
+              'One signed Merkle root per UTC day, copied from https://uain.global/api/ledger/roots.' \
+              'Verify with services/pilot/scripts/verify-ledger.mjs on main; see docs/ledger.md.' \
+              > "$ROOTS_DIR/README.md"
+          fi
+          [[ ! -L "$ROOTS_DIR/roots" ]] || exit 1
+          mkdir -p "$ROOTS_DIR/roots"
+          # Existing daily files are immutable. Only this exact verified date
+          # may be added; no npm, repository code or anchor send runs with TOKEN.
+          TARGET="$ROOTS_DIR/roots/$DATE.json"
+          [[ ! -L "$TARGET" ]] || exit 1
+          if [[ -e "$TARGET" ]]; then
+            cmp "$TARGET" "$RUNNER_TEMP/verified-ledger-root.json" || { echo 'Published root differs; refusing replacement' >&2; exit 1; }
+          else
+            cp "$RUNNER_TEMP/verified-ledger-root.json" "$TARGET"
+          fi
+          printf '%s\n' '-----BEGIN PUBLIC KEY-----' 'MCowBQYDK2VwAyEAje31vIyrita/VWJVnmVgQkPJjGmH0od88CqK+irV3M8=' '-----END PUBLIC KEY-----' > "$RUNNER_TEMP/ledger-public.pem"
+          [[ ! -L "$ROOTS_DIR/ledger-public.pem" ]] || exit 1
+          if [[ -e "$ROOTS_DIR/ledger-public.pem" ]]; then
+            cmp "$ROOTS_DIR/ledger-public.pem" "$RUNNER_TEMP/ledger-public.pem" || { echo 'Published ledger pin differs' >&2; exit 1; }
+          else
+            cp "$RUNNER_TEMP/ledger-public.pem" "$ROOTS_DIR/ledger-public.pem"
+          fi
+          git -C "$ROOTS_DIR" config user.name "uain-ledger-bot"
+          git -C "$ROOTS_DIR" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C "$ROOTS_DIR" add -A
+          if git -C "$ROOTS_DIR" diff --cached --quiet; then
+            echo "$DATE already published and unchanged"; exit 0
+          fi
+          git -C "$ROOTS_DIR" commit --quiet -m "Ledger root for $DATE"
+          git -C "$ROOTS_DIR" push --quiet origin ledger-roots

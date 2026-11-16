@@ -1,0 +1,36 @@
+[Unit]
+Description=UAIN review-only client (%i)
+After=network-online.target
+Wants=network-online.target
+ConditionPathExists=/home/uain/.uain-%i/worker.json
+ConditionPathExists=/home/uain/.uain-%i/key.json
+StartLimitIntervalSec=300
+StartLimitBurst=3
+
+[Service]
+Type=simple
+User=uain
+Group=uain
+WorkingDirectory=/home/uain
+Environment=PATH=/home/uain/.local/bin:/opt/uain-review-runtime/node-v22.22.0-linux-x64/bin:/usr/bin:/bin
+Environment=UAIN_HOME=/home/uain/.uain-%i
+Environment=UAIN_INSTANCE=%i
+Environment=UAIN_MAX_RUNNING=1
+Environment=UAIN_REQUIRE_KEY_FENCE=1
+EnvironmentFile=-/home/uain/.config/uain-review.env
+ExecStartPre=/opt/uain-review-runtime/node-v22.22.0-linux-x64/bin/node /opt/uain-review-runtime/operator/ops/systemd/check-review-auth.mjs %i
+ExecStart=/opt/uain-review-runtime/node-v22.22.0-linux-x64/bin/node /home/uain/.uain-%i/worker/uain-worker.mjs --review-only --hours 12 --budget 20 --budget-tokens 12000000
+Restart=always
+RestartSec=60
+TimeoutStopSec=10
+KillMode=control-group
+MemoryMax=4G
+CPUQuota=200%
+TasksMax=256
+UMask=0077
+NoNewPrivileges=true
+ProtectSystem=full
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

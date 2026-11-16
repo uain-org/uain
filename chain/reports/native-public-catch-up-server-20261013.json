@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-13",
+  "scope": "Isolated server native public catch-up qualification. No production writes, production native commands, live licence changes or consensus changes.",
+  "result": {
+    "exit_code": 0,
+    "tests": 12,
+    "passed": 12,
+    "failed": 0,
+    "skipped": 0,
+    "duration_ms": 72675.756131
+  },
+  "causal_red": {
+    "log": "/opt/uain-test/uain-fast-catchup-20261013/logs/post-command-red-confirmed-baseline.log",
+    "assertions": "Same valid empty-reset genesis and test establishes public HTTP 200 with exact old contribution body before new commands. Prior checkpoint implementation fails to expose new finalized contribution within the 8-second retry window without scheduled projection.",
+    "duration_ms": 72952.55317,
+    "expected_failure": "new finalized research did not become publicly readable without the scheduled projector",
+    "note": "Earlier RED logs without the explicit readable baseline are not causal acceptance evidence."
+  },
+  "green": {
+    "log": "/opt/uain-test/uain-fast-catchup-20261013/logs/final-green.log",
+    "observed_public_visibility_ms": 3066,
+    "timing_basis": "Measured after installed worker returned from native run with finalized receipt and HTTP publication completed, until first HTTP 200 containing the exact new body. This is not elapsed time from initial chain inclusion or the first receipt.",
+    "assertions": [
+      "Before-command public baseline is HTTP 200 with exact prior body",
+      "No explicit syncNativeProjection call after the signed installed-worker submit and before public HTTP 200",
+      "New public contribution detail equals the submitted body",
+      "Public finalized_events equals freshly independently proved native event_count",
+      "Installed local MCP signing, duplicate intent idempotence, exact evidence attribution and restart retrieval succeed",
+      "No member private keys are exported to the test output"
+    ]
+  },
+  "qualification": {
+    "genesis_sha256": "2ee201ca08ab80c39b7a1f29b13403a432fdae07b325517d46eb41aa5fd104c1",
+    "submission_event": "5",
+    "evidence_digest": "4b004e4f06dfb17a6200fbc5a1b7d55201f21167788d2310d78c11c71cb3a618",
+    "daemon_sha256": "715a3a6b19c7a844111ba6fe3fd63da97ad8145c386e2b076383fd348a3b5160",
+    "verifier_sha256": "136698192e9e38323a552f1e2da2eea5b9b90e3d6e7de11116d72ee28c826860"
+  },
+  "bounded_work": {
+    "http_catch_up_wait_ms": 1500,
+    "proof_and_active_sql_abort_ms": 8000,
+    "dedicated_pool_max": 1,
+    "dedicated_pool_connection_timeout_ms": 1000,
+    "event_limit": 32,
+    "credit_journal_limit": 32,
+    "karma_journal_limit": 32,
+    "cooldown_ms": 2000,
+    "sql_statement_timeout_ms": 2000,
+    "sql_lock_timeout_ms": 1000,
+    "notes": [
+      "Single-flight per process; advisory locks are nonblocking across processes",
+      "Nonblocking SQL clients are disconnected on release; no session timeout settings leak into the normal pool",
+      "Legacy archive adoption/bootstrap batches defer to the scheduled projector",
+      "Connection establishment is bounded independently by the dedicated pool timeout; aborted acquisitions do no subsequent SQL work",
+      "Existing fresh independently proved checkpoints, epoch pins and stale-refusal rules remain mandatory"
+    ]
+  },
+  "actual_pg_checks": {
+    "dedicated_pool_acquisition_test_ms": 80.023791,
+    "lock_cancellation_cleanup_test_ms": 373.443522,
+    "assertions": [
+      "Saturated max-1 catch-up pool acquisition rejects within its configured timeout and removes its queued entry",
+      "Actual event and reward advisory-lock contention returns busy without proof work",
+      "An actual native_epochs INSERT waiting on an ACCESS EXCLUSIVE table lock is interrupted by cancellation",
+      "Disconnected session advisory lock is released within bounded polling",
+      "Normal pool statement_timeout matches its saved baseline",
+      "Legacy migration finish defers without advancing the event cursor"
+    ]
+  },
+  "command": "npm run build && node --test --test-concurrency=1 test/native-public-catch-up.test.mjs test/native-state-cancellation.test.mjs test/native-catch-up-locks.test.mjs test/native-public-performance.test.mjs test/native-client-e2e.test.mjs",
+  "runtime": {
+    "image": "node:22-bookworm-slim",
+    "cpus": 2,
+    "memory": "4g",
+    "pids_limit": 256,
+    "capabilities": "ALL dropped",
+    "security": "no-new-privileges",
+    "network": "host; only isolated localhost native RPC and test-only PostgreSQL used",
+    "tmpfs": "/tmp:rw,nosuid,nodev,exec,size=512m",
+    "database": "Ephemeral pgvector 0.8.7 pg17 on 127.0.0.1:55435, removed after qualification",
+    "trusted_binaries": "Existing daemon and verifier mounted read-only at their original absolute paths"
+  },
+  "limitations": [
+    "This is a small isolated research fixture, not a production-sized cache rebuild benchmark.",
+    "Public proof-cache generations still invalidate on any event or reward-count change. Immutable original source/cache records survive within the same epoch, but mutable overlay proofs rebuild for the new generation.",
+    "A production-sized catalogue/statistics warm-up can therefore still dominate post-command readiness and must be measured separately before claiming consistently instant loading.",
+    "The scheduled projector remains fallback for larger backlogs, migration/bootstrap batches, document projection and search indexing."
+  ],
+  "source_sha256": {
+    "services/pilot/src/native/public-catch-up.ts": "501ef674676b31bf1072b2eb8af98fcd89c66f41e8e55a3512c195982b451709",
+    "services/pilot/src/native/projection.ts": "1ab7c817415377346c987335b397625596b18bb6ac76d7901dc921a507029098",
+    "services/pilot/src/native/journals.ts": "c88a0315f5e991d34d7ce029255a6e0d2825c4f36ca76515df2839a594528344",
+    "services/pilot/src/api/native-routes.ts": "7f9e082dc21e7f3e307de9b8ef9a7545d0effa6cc9707ea9c9cca73cc0950ee2",
+    "services/pilot/src/api/native-public-read-routes.ts": "93b30b055746cb52b76180cacd41668a01f6294ac964dad122bdc1d9ef377e9d",
+    "services/pilot/src/storage/store.ts": "f2a7e2ad5e2b81be4647ce1279d03ff309493f169c3ea6750296f8053e0177d9",
+    "services/pilot/test/native-public-catch-up.test.mjs": "336f47add0cfe58aaf0ce482d769e60cd5e39a607be9678cb3702de6e35be4b3",
+    "services/pilot/test/native-state-cancellation.test.mjs": "3c82d452c399266608ca26371d5e3c714d107fba4ea4d14a2da23349b1c74109",
+    "services/pilot/test/native-catch-up-locks.test.mjs": "c5a942fa0b73f0e11e4a335735ab92f0503deb300c6ee36b9040d97f8963f9f5",
+    "services/pilot/test/native-client-e2e.test.mjs": "8bc30b29d7489c399619012df60a10f7ec251913565691a7c59a87f158817d48",
+    "services/pilot/test/native-public-performance.test.mjs": "51883af2fbaca3f53276ee3a9b87567ce0dc0ae3ddf9b2a1cfd461d0c71a153a"
+  }
+}

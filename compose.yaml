@@ -1,0 +1,194 @@
+# Local and legacy Compose setup (the Compose mode of ops/backup/*.sh and
+# ops/DOCKER.md still use it).
+# Production runs on k3s (deploy/k8s/production/, docs/production-host.md). The
+# comments below that name the shared front door (aga-platform-frontend-1) and
+# /opt/uain-ingress describe the retired Compose production, which uain.global
+# left on 1 October 2026; ops/ingress was removed on 15 November 2026.
+name: uain-universa
+
+services:
+  web:
+    image: uain-universa:${UAIN_IMAGE_TAG:-latest}
+    build: .
+    # Not reachable from the internet (closed 30 September 2026). The front
+    # door (aga-platform-frontend-1) reaches it as host.docker.internal:4100,
+    # which is 172.17.0.1, the host on the default Docker bridge, as for the
+    # waitlist; the deploy's checks and ops/loadtest use 127.0.0.1. Published
+    # on 0.0.0.0 before, it let a caller skip the front door and put its own
+    # first X-Forwarded-For entry where the pilot, trusting two proxy hops,
+    # reads the client's address: the rate limits could be dodged.
+    ports:
+      - '127.0.0.1:4100:8080'
+      - '172.17.0.1:4100:8080'
+    restart: unless-stopped
+    # nginx proxies /mcp and /api to the pilot, so it must be reachable first.
+    depends_on:
+      pilot:
+        condition: service_healthy
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+
+  pilot:
+    image: uain-pilot:${UAIN_IMAGE_TAG:-latest}
+    build:
+      context: .
+      dockerfile: services/pilot/Dockerfile
+    restart: unless-stopped
+    # Several copies, one process each: Node runs a process on one CPU thread,
+    # so copies are how the server uses the machine. Any copy answers any
+    # request (MCP has no sessions, rate limits are counted in PostgreSQL, the
+    # ledger stream comes from PostgreSQL notifications), so nginx spreads
+    # requests across them by the service name alone.
+    deploy:
+      replicas: 4
+    # Not published. The only way in is through nginx in the web container.
+    expose:
+      - '8787'
+    depends_on:
+      db:
+        condition: service_healthy
+    # Still mounted after the move to PostgreSQL: it holds the ledger's
+    # signing key and the log salt, and pilot.sqlite, the store as it was
+    # before the move, which the server copies in once and then leaves alone.
+    volumes:
+      - pilot-data:/var/lib/uain-pilot
+    environment:
+      DATABASE_URL: postgres://uain:${UAIN_PG_PASSWORD:?set UAIN_PG_PASSWORD}@db:5432/uain
+      UAIN_SYNAPSE_SHARED_SECRET: ${UAIN_SYNAPSE_SHARED_SECRET:-}
+      # Client -> shared front door -> web nginx -> pilot. Both proxies append
+      # to X-Forwarded-For, so the client is the second entry from the right.
+      # Assumes the front door sets X-Forwarded-For; confirm in
+      # /opt/uain-ingress/uain.conf before relying on the rate limits.
+      UAIN_TRUSTED_PROXY_HOPS: '2'
+      # The server signed proofs must name (docs/identity.md). Pinned, so a
+      # caller reaching the web container with a Host of its choosing cannot
+      # make a proof made for a look-alike pass here.
+      UAIN_PUBLIC_ORIGIN: 'https://uain.global'
+      # The image refuses to start without an authority (audit E-7, 15 November
+      # 2026); this compose file runs pilot mode, as it did by default.
+      UAIN_AUTHORITY: pilot
+      # Prometheus reads each copy here, on this project's network only
+      # (compose.monitoring.yaml). Not exposed and not proxied by nginx.
+      UAIN_METRICS_PORT: '9464'
+      # A Slack message for each new waitlist registration. Empty: none.
+      UAIN_SLACK_WAITLIST_WEBHOOK: ${UAIN_SLACK_WAITLIST_WEBHOOK:-}
+      # File storage: the `uain` bucket on DigitalOcean Spaces. Nothing
+      # stores files there yet; without the keys it stays off.
+      UAIN_STORAGE_ENDPOINT: 'https://nyc3.digitaloceanspaces.com'
+      UAIN_STORAGE_BUCKET: 'uain'
+      UAIN_STORAGE_ACCESS_KEY_ID: ${UAIN_STORAGE_ACCESS_KEY_ID:-}
+      UAIN_STORAGE_SECRET_ACCESS_KEY: ${UAIN_STORAGE_SECRET_ACCESS_KEY:-}
+      # Public JSON-RPC nodes for the read-only wallet balances on profiles
+      # (docs/identity.md). Empty: the keyless public defaults, Ethereum
+      # mainnet and Solana mainnet-beta.
+      UAIN_ETHEREUM_RPC_URL: ${UAIN_ETHEREUM_RPC_URL:-}
+      UAIN_SOLANA_RPC_URL: ${UAIN_SOLANA_RPC_URL:-}
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+
+  # The private dashboard of the waitlist, https://waitlist.uain.global
+  # (apps/waitlist-dashboard/README.md). It holds people's contact details, so
+  # it is not on the public interface at all.
+  waitlist:
+    image: uain-waitlist:${UAIN_IMAGE_TAG:-latest}
+    build: apps/waitlist-dashboard
+    restart: unless-stopped
+    # Published on 172.17.0.1 only: the host's own address on the default
+    # Docker bridge (docker0), not reachable from the internet. The shared TLS
+    # front door (aga-platform-frontend-1) reaches it as
+    # host.docker.internal:4200, which resolves to that address, and serves it
+    # as waitlist.uain.global (the removed ops/ingress/ vhost). From
+    # outside, TLS through the front door is the only way in.
+    ports:
+      - '172.17.0.1:4200:8080'
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      # A role that may SELECT from the waitlist table and do nothing else
+      # (apps/waitlist-dashboard/sql/readonly-role.sql). Until all three
+      # secrets exist the app starts "not configured": /healthz answers, so
+      # the deploy passes, and every page is 503.
+      DATABASE_URL: postgres://waitlist_reader:${UAIN_WAITLIST_DB_PASSWORD:-}@db:5432/uain
+      WAITLIST_ADMIN_PASSWORD_HASH: ${UAIN_WAITLIST_ADMIN_PASSWORD_HASH:-}
+      WAITLIST_SESSION_SECRET: ${UAIN_WAITLIST_SESSION_SECRET:-}
+      # The front door is the one proxy in front, and appends the client's
+      # address to X-Forwarded-For; the sign-in rate limit counts by it.
+      WAITLIST_TRUSTED_PROXY_HOPS: '1'
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,noexec,nosuid,nodev
+    mem_limit: 512m
+    pids_limit: 128
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+
+  # The store. Reachable only from this project's containers: no port is
+  # published. Text sorts byte by byte (locale C), as it did in SQLite.
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: uain
+      POSTGRES_DB: uain
+      POSTGRES_PASSWORD: ${UAIN_PG_PASSWORD:?set UAIN_PG_PASSWORD}
+      POSTGRES_INITDB_ARGS: --locale=C --encoding=UTF8
+    command:
+      - postgres
+      - -c
+      - shared_buffers=2GB
+      - -c
+      - effective_cache_size=8GB
+      - -c
+      - work_mem=16MB
+      - -c
+      - maintenance_work_mem=256MB
+      # Room for more pilot copies than run today. A copy holds up to 33
+      # connections with the defaults: 20 for reads (UAIN_PG_POOL), 12 for the
+      # writer thread (UAIN_WRITER_POOL) and one for LISTEN.
+      - -c
+      - max_connections=300
+    shm_size: 1g
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U uain -d uain']
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+
+volumes:
+  # Survives image rebuilds and container replacement. Holds the ledger's
+  # signing key, the log salt, and the SQLite store from before PostgreSQL.
+  pilot-data:
+  # The store: every member, project, check and ledger entry. Losing it would
+  # erase the record the network exists to keep.
+  pg-data:

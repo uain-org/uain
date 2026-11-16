@@ -1,0 +1,94 @@
+name: Catch up ledger anchors
+
+on:
+  schedule:
+    - cron: '40 0 * * *'
+  workflow_dispatch:
+    inputs:
+      send:
+        description: Submit the verified oldest outstanding days to Base Sepolia (and the Solana devnet mirror, when enabled)
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ledger-anchor-base-sepolia
+  cancel-in-progress: false
+
+jobs:
+  catchup:
+    # Production only from main (a scheduled run is on main).
+    if: vars.LEDGER_ANCHOR_AUTOMATION == 'enabled' && github.ref == 'refs/heads/main'
+    # An ephemeral hosted runner must not discard a journal after an uncertain
+    # write. The operator provisions this dedicated Linux runner and a durable
+    # absolute journal path before enabling the job.
+    runs-on: [self-hosted, linux, uain-anchorer]
+    timeout-minutes: 25
+    env:
+      UAIN_API: https://uain.global
+      LEDGER_PUBLIC_KEY_FILE: ${{ vars.LEDGER_PUBLIC_KEY_FILE }}
+      LEDGER_OWNER_ADDRESS: ${{ vars.LEDGER_OWNER_ADDRESS }}
+      LEDGER_ANCHOR_ADDRESS: ${{ vars.LEDGER_ANCHOR_ADDRESS }}
+      ANCHORER_ADDRESS: ${{ vars.ANCHORER_ADDRESS }}
+      LEDGER_ANCHOR_START_DATE: ${{ vars.LEDGER_ANCHOR_START_DATE }}
+      ANCHOR_JOURNAL: ${{ vars.ANCHOR_JOURNAL }}
+      ANCHOR_MAX_GAS: ${{ vars.ANCHOR_MAX_GAS }}
+      ANCHOR_MAX_FEE_WEI: ${{ vars.ANCHOR_MAX_FEE_WEI }}
+      ANCHOR_PRIORITY_FEE_WEI: ${{ vars.ANCHOR_PRIORITY_FEE_WEI }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with: { persist-credentials: false }
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version: '22.13.0'
+      - run: npm ci --ignore-scripts --prefix contracts && npm run build --prefix contracts
+      # The RPC URL and the anchorer key reach only this step, never `npm ci`
+      # or the build above, so no dependency install script can read them.
+      # --ignore-scripts: no install script runs at all, so none can append to
+      # $GITHUB_ENV and reach this step that way (the lockfile has none).
+      - name: Run a bounded chronological batch with a persistent journal
+        env:
+          BASE_SEPOLIA_RPC: ${{ secrets.BASE_SEPOLIA_RPC }}
+          ANCHORER_PRIVATE_KEY: ${{ secrets.ANCHORER_PRIVATE_KEY }}
+          REQUEST_SEND: ${{ inputs.send }}
+          EVENT_NAME: ${{ github.event_name }}
+          SCHEDULE_SEND: ${{ vars.LEDGER_ANCHOR_SCHEDULE_SEND }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$ANCHOR_JOURNAL" = /* ]] || { echo 'An absolute persistent ANCHOR_JOURNAL is required' >&2; exit 1; }
+          args=(catchup --limit 7)
+          if [[ "$REQUEST_SEND" = true || ( "$EVENT_NAME" = schedule && "$SCHEDULE_SEND" = enabled ) ]]; then
+            args+=(--send)
+          fi
+          node contracts/scripts/operations.mjs "${args[@]}"
+      # The same signed days, one memo each, on Solana devnet: an independent
+      # public timestamp. Off unless LEDGER_SOLANA_AUTOMATION is enabled. Its
+      # journal must persist too: a send whose outcome is unknown is settled by
+      # `solana-recover`, never by sending again.
+      - name: Mirror the same days on Solana devnet
+        if: vars.LEDGER_SOLANA_AUTOMATION == 'enabled'
+        env:
+          SOLANA_RPC: ${{ vars.SOLANA_RPC }}
+          SOLANA_MIRROR_ADDRESS: ${{ vars.SOLANA_MIRROR_ADDRESS }}
+          SOLANA_JOURNAL: ${{ vars.SOLANA_JOURNAL }}
+          SOLANA_MIRROR_KEY: ${{ secrets.SOLANA_MIRROR_KEY }}
+          REQUEST_SEND: ${{ inputs.send }}
+          EVENT_NAME: ${{ github.event_name }}
+          SCHEDULE_SEND: ${{ vars.LEDGER_ANCHOR_SCHEDULE_SEND }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$SOLANA_JOURNAL" = /* ]] || { echo 'An absolute persistent SOLANA_JOURNAL is required' >&2; exit 1; }
+          args=(solana-mirror --limit 7)
+          if [[ "$REQUEST_SEND" = true || ( "$EVENT_NAME" = schedule && "$SCHEDULE_SEND" = enabled ) ]]; then
+            umask 077
+            key="$(mktemp)"
+            trap 'rm -f "$key"' EXIT
+            printf '%s' "$SOLANA_MIRROR_KEY" > "$key"
+            export SOLANA_MIRROR_KEY_FILE="$key"
+            args+=(--send)
+          fi
+          node contracts/scripts/operations.mjs "${args[@]}"

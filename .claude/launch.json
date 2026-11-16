@@ -1,0 +1,53 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "aidollar-site",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "4173",
+        "--directory",
+        "../aimoney/site"
+      ],
+      "port": 4173
+    },
+    {
+      "name": "baink-web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "apps/baink",
+        "run",
+        "dev"
+      ],
+      "port": 5178
+    },
+    {
+      "name": "five-designs",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "4180",
+        "--directory",
+        "../aimoney/concepts"
+      ],
+      "port": 4180
+    },
+    {
+      "name": "baink-local-v2",
+      "runtimeExecutable": "env",
+      "runtimeArgs": [
+        "BAINK_PORT=8799",
+        "BAINK_STATIC_DIR=apps/baink/dist",
+        "BAINK_DATA_DIR=/tmp/baink-local-v2-data",
+        "BAINK_PUBLIC_ORIGIN=http://localhost:8799",
+        "node",
+        "apps/baink/server/index.mjs"
+      ],
+      "port": 8799
+    }
+  ]
+}

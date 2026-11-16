@@ -1,0 +1,7 @@
+#!/bin/sh
+# One backup run at a time, and a fence, restore or promotion still finds a run
+# in flight. The custody lock is no longer held for the whole run (10 November
+# 2026): entry.py takes it only to read the archive key, and the capture helper
+# takes it again only while the node is stopped.
+exec flock --exclusive --wait 120 /run/lock/uain-node-backup-run.lock \
+  /opt/uain-custody/venv/bin/python /opt/uain-node-backup/entry.py "$@"

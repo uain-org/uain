@@ -1,0 +1,117 @@
+{
+  "date": "2026-10-08",
+  "server": "uain-app-1",
+  "production_activated": false,
+  "fixture_assets_only": true,
+  "trust_model": "Independently pinned public genesis with fixed validators; recent signed header and same-height SDK IAVL proofs. Disposable SDK RPC fixture, not production adoption.",
+  "resources": {
+    "memory_max": "6GiB",
+    "cpu_quota": "200%",
+    "tasks_max": 512
+  },
+  "qualification": {
+    "uain-private-state-sdk-20261008": {
+      "result": "success",
+      "exit_code": 0,
+      "scope": "Full Orchard-tagged app/privatewallet race suite before adding the coupled client payment; corrected wallet-root rejection, real wallet/checker smoke, native reader build/vet.",
+      "log_sha256": "4e3052a57f4a94bfc14304bd673e45300502ba5c3634e2b5835a774ffaab88e3"
+    },
+    "uain-private-state-flow4-20261008": {
+      "result": "success",
+      "exit_code": 0,
+      "scope": "Final reader/checker agreement integration: 3 Node tests, native reader build, targeted SDK real-proof/persistence/payment and note-page race tests, reader vet.",
+      "log_sha256": "340c06b449b3b5478571de8ff53ac9835c0e78c181e88e9d3405903e516b8600"
+    }
+  },
+  "wallet_rust_tests": {
+    "scope": "Pinned Rust release build and 2 real-proof/decryption exchange tests completed successfully in uain-private-state-20261008; that initial wrapper later failed a too-specific generic-error assertion, corrected before successful SDK qualification.",
+    "whole_initial_unit_passed": false
+  },
+  "corrected_fixture_failures": [
+    "Wrong-root refusal intentionally returns a generic wallet error; assert exit 1, no public output and no packet instead of internal reason.",
+    "RPC fixture uses typed Comet result encoding and CanonicalCommit field, not an unregistered interface map."
+  ],
+  "executables": {
+    "uain-private-state": "62144aa4eec5a9c2ba9dae270a1e076b27019f959c8a2dcc827c73e061ca024e",
+    "uain-private-wallet": "5f081fcc121c6f2b136a258691997aab0d45114b2f370fd904097ef7cd3a5ad9"
+  },
+  "coupled_payment": {
+    "initial_notes": 4,
+    "final_notes": 6,
+    "gas_used": 2300936,
+    "gas_limit": 3000000,
+    "frontier_inclusion_proof": true,
+    "replay_refused": true
+  },
+  "rejection_checks": [
+    "unverified/serialized snapshot authority",
+    "substituted binary/genesis pins",
+    "stale or forged signed header",
+    "wrong proof key/height/licence revision",
+    "missing/changed/truncated note page",
+    "duplicate/noncanonical/oversized note entries",
+    "trading-party relay or extra identity",
+    "wrong wallet witness root",
+    "different approval chain/revision",
+    "changed private agreement terms or salt"
+  ],
+  "limits": {
+    "notes": 1048576,
+    "note_page": 1000,
+    "source_payments": 16,
+    "snapshot_max_age_seconds": 600
+  },
+  "still_open": [
+    "real Coin issuance and shielding/exit",
+    "incremental witnesses above the full-sync limit",
+    "production reviewer/member/anonymous-relay adoption",
+    "independent integration review",
+    "production policy activation"
+  ],
+  "source_manifest": [
+    {
+      "path": "chain/app/private_state_orchard_test.go",
+      "sha256": "166f149b4a0852a014f13fc9c4acb1e2be6ffed57475ced0950eb5c949f4305f"
+    },
+    {
+      "path": "chain/app/private_exchange_orchard_test.go",
+      "sha256": "2974fdb00f218891477cd83031e62c36f4f2a848c85c42f5f705a0d5f2720969"
+    },
+    {
+      "path": "chain/privatewallet/state.go",
+      "sha256": "c69378721cff73c31ecae7647668f9b477fd288afd454047fac9b7a83cb37089"
+    },
+    {
+      "path": "chain/privatewallet/state_test.go",
+      "sha256": "0a7b604cf3188afcd4f6e75f50ea99f4abfbd2923c598bb3fdfaa9c850c75b23"
+    },
+    {
+      "path": "chain/cmd/uain-private-state/main.go",
+      "sha256": "4ebcc5eebc81765c22631cf2d34b4cce276f615eb3063af753b56208aad06930"
+    },
+    {
+      "path": "chain/client/private-state.mjs",
+      "sha256": "bc20ba70041152cc5c483ea80e71a75045a11aba3a98ef7727930072252fdb36"
+    },
+    {
+      "path": "chain/client/private-state.test.mjs",
+      "sha256": "83af61d9725ef331998dafb7010d8c9d39ec3a115e746a257fba24e03c87299a"
+    },
+    {
+      "path": "chain/client/private-review.mjs",
+      "sha256": "adb83f4c14c6641a5f71dc50faf348d2e41f5c22f06a8620ccb742896f4e5423"
+    },
+    {
+      "path": "chain/scripts/private-state-smoke.mjs",
+      "sha256": "8738f97e404f5f5626f7e8f226f8183999925c815ab7d24986fcad689bcb5c3f"
+    },
+    {
+      "path": "chain/scripts/private-exchange-smoke.mjs",
+      "sha256": "43636143fe2ef2dad675bea8abd3a3973dd7709383f7e9008a2895d287378682"
+    },
+    {
+      "path": "chain/private-exchange/src/bin/uain-private-wallet.rs",
+      "sha256": "bfc424ce361fd83b29097e7db482bb869596b516d1ce15e5ee8e41515dfd0cbb"
+    }
+  ]
+}

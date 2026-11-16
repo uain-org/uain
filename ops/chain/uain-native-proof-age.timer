@@ -1,0 +1,11 @@
+[Unit]
+Description=Every 15 s, publish the UAIN native proof age
+
+[Timer]
+OnBootSec=30s
+OnUnitActiveSec=15s
+AccuracySec=1s
+Unit=uain-native-proof-age.service
+
+[Install]
+WantedBy=timers.target

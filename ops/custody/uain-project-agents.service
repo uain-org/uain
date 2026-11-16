@@ -1,0 +1,17 @@
+[Unit]
+Description=UAIN project agents: each project organization's two Sonnet agents (project manager and task assessor) wake on project activity and keep three small units open
+After=network-online.target
+# Activation is explicit: without the root-owned config the unit does not start.
+ConditionPathExists=/etc/uain-custody/project-agents/config.json
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/opt/uain-project-agents/current
+# The driver signs nothing; it reads native state through the fleet custody CLI's read-only
+# status, runs each model execution in the isolated house-solver unit (systemd-run, uid
+# uain-house-solver, no custody paths) and writes new survey-part revisions root-only.
+ExecStart=/opt/uain-review-runtime/node-v22.22.0-linux-x64/bin/node /opt/uain-project-agents/current/services/project-organizations/ops/project-agents.mjs tick
+TimeoutStartSec=3600
+NoNewPrivileges=yes
+PrivateTmp=yes

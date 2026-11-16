@@ -1,0 +1,50 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata: { name: native-projection, namespace: uain }
+spec:
+  schedule: '* * * * *'
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 2
+  jobTemplate:
+    spec:
+      activeDeadlineSeconds: 300
+      backoffLimit: 0
+      template:
+        spec:
+          restartPolicy: Never
+          # It reads the local RPC socket and PostgreSQL, never the Kubernetes API
+          # (security review IN-10, 13 November 2026), like the pilot pod.
+          automountServiceAccountToken: false
+          securityContext: { runAsNonRoot: true, runAsUser: 1000, runAsGroup: 1000, seccompProfile: { type: RuntimeDefault } }
+          containers:
+            - name: native-projection
+              image: 10.98.0.1:5000/uain/pilot:IMAGE_TAG
+              # Start the keyless bridge in this same bounded job container.
+              # A separate sidecar would keep the completed Job alive forever.
+              command: [node, native-rpc-transport.mjs, projection]
+              envFrom:
+                - secretRef: { name: uain-env }
+                - secretRef: { name: uain-retrieval, optional: true }
+                - configMapRef: { name: uain-native-config }
+              env:
+                - { name: DATABASE_URL, value: 'postgres://uain:$(UAIN_PG_PASSWORD)@10.98.0.2:5432/uain' }
+                - { name: UAIN_PG_POOL, value: '3' }
+                - { name: UAIN_AUTHORITY, value: native }
+              resources:
+                requests: { cpu: 100m, memory: 128Mi }
+                limits: { cpu: '1', memory: 768Mi }
+              securityContext:
+                allowPrivilegeEscalation: false
+                capabilities: { drop: [ALL] }
+              volumeMounts:
+                - { name: native-public, mountPath: /opt/uain-native/public, readOnly: true }
+                - { name: native-publications, mountPath: /var/lib/uain-native/publications }
+                - { name: native-rpc-socket, mountPath: /run/uain-native-rpc, readOnly: true }
+          volumes:
+            - name: native-public
+              hostPath: { path: /opt/uain-chain/public-runtime, type: Directory }
+            - name: native-publications
+              hostPath: { path: /var/lib/uain-native/publications, type: Directory }
+            - name: native-rpc-socket
+              hostPath: { path: /run/uain-native-rpc, type: Directory }

@@ -1,0 +1,58 @@
+{
+  "schema": "baink-holder-note-source-tool-release-v1",
+  "tool": "uain-note-source",
+  "platform": "linux-amd64",
+  "rustToolchain": "1.89.0",
+  "sha256": "fe175eeef2b27ce945f2367d67154393ac3559c671089b9cfad2f85d8ac65c78",
+  "bytes": 980608,
+  "qualifiedDate": "2026-11-04",
+  "qualified": true,
+  "productionInstalled": false,
+  "replacesExistingWallet": false,
+  "replacesExistingNoteInspector": false,
+  "existingNoteInspectorSha256": "d252631b28e98b20937e9572481d7afc437e1f9bc8355a72ca0da8c6f8b64147",
+  "sourceSha256": {
+    "chain/private-exchange/src/bin/uain-note-source.rs": "0501968d86a69722c9c5ed3860471a14be4d5995cb4fefb416594057ce1d5218",
+    "chain/private-exchange/tests/note_source.rs": "8aa8e9d743a373706a8cc45c8c3c41bd84f7012810426ceea667d5b790c87958",
+    "chain/private-exchange/src/wallet_files.rs": "6622f296e8d9cc79076005bc51f1ff2e6b140e63810b89a332d23a1008fee5fa",
+    "chain/private-exchange/Cargo.lock": "4194d7d7b23044e859cd5a2a3de0cab866f22f7d49a9a08f3c65b42b0ac845ca",
+    "chain/private-exchange/Cargo.toml": "f6bcf49fd726659adbce34dc92f0ff835edfed3e2209500f163f458da5050fdd",
+    "chain/private-exchange/src/lib.rs": "62e7849a9006da652fab6fc73735550bdfe6483fac30ea85e8a7b9ac345d68e5"
+  },
+  "checks": {
+    "rustReleaseTests": 8,
+    "actualOwnedExternalAndInternalDecryption": true,
+    "wrongWalletNoOwnedOutputs": true,
+    "effectsAndCanonicalBoundedInputRequired": true,
+    "realForeignOwnedFictionalKeyRefused": true,
+    "symlinkRefused": true,
+    "existingBinariesUnchanged": true
+  },
+  "outputContract": {
+    "positionScope": "bundle-action",
+    "fields": [
+      "address",
+      "amount",
+      "position",
+      "commitment",
+      "nullifier"
+    ],
+    "commitment": "Orchard extracted note commitment cmx; match uniquely in authenticated native commitments to obtain global position",
+    "nullifier": "Orchard note nullifier derived with the local full viewing key; it is not an unspent proof"
+  },
+  "authority": {
+    "chainRecordAuthenticated": false,
+    "globalPositionVerified": false,
+    "unspentVerified": false,
+    "transactionInclusionVerified": false
+  },
+  "artifact": "/opt/uain-test/holder-addresses-20261104/qualified/fe175eeef2b27ce945f2367d67154393ac3559c671089b9cfad2f85d8ac65c78/uain-note-source",
+  "requalified": {
+    "date": "2026-11-10",
+    "reason": "The test helper tolerates the tool closing its input early (BrokenPipe) when it refuses a key before reading it; only the test file changed, the tool source is unchanged.",
+    "testSourceBefore": "6a33b20efe6dd3cd2ea13e16e4c271a83221656b4ab3bb3cd3bd8b2900f60e30",
+    "testSourceAfter": "8aa8e9d743a373706a8cc45c8c3c41bd84f7012810426ceea667d5b790c87958",
+    "binarySha256Unchanged": "fe175eeef2b27ce945f2367d67154393ac3559c671089b9cfad2f85d8ac65c78",
+    "evidence": "Release builds of uain-note-source from clean exports of origin/main 31ca587f and of the fix commit 2d86bbc3, at the same path on uain-app-1 with Rust 1.89.0 and --locked, both reproduced the pinned sha256; tests/note_inspect.rs and tests/note_source.rs pass on both."
+  }
+}

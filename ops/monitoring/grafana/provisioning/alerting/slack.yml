@@ -1,0 +1,29 @@
+# Where alerts go: one Slack channel, through the incoming webhook in the
+# secret UAIN_SLACK_ALERTS_WEBHOOK (passed to Grafana by compose.monitoring.yaml).
+# One message per alert name, a reminder every four hours while it lasts,
+# and one when it ends.
+apiVersion: 1
+
+contactPoints:
+  - orgId: 1
+    name: slack
+    receivers:
+      - uid: uain-slack
+        type: slack
+        settings:
+          url: $UAIN_SLACK_ALERTS_WEBHOOK
+          title: |-
+            {{ if eq .Status "firing" }}:red_circle:{{ else }}:large_green_circle:{{ end }} UAIN: {{ .CommonLabels.alertname }} ({{ .Status }})
+          text: |-
+            {{ range .Alerts }}*{{ .Annotations.summary }}*
+            {{ .Annotations.description }}
+            {{ end }}
+        disableResolveMessage: false
+
+policies:
+  - orgId: 1
+    receiver: slack
+    group_by: [alertname]
+    group_wait: 30s
+    group_interval: 5m
+    repeat_interval: 4h

@@ -1,0 +1,29 @@
+{
+  "pass": true,
+  "fixture_only": true,
+  "real_two_nodes": true,
+  "pinned_genesis_sha256": "dda5a33efe3f544fc09477852e9ba412da2bd3c151845f4cde8e3fce08bc74bf",
+  "reader_sha256": "62144aa4eec5a9c2ba9dae270a1e076b27019f959c8a2dcc827c73e061ca024e",
+  "empty_pool_root": "ae2935f1dfd8a24aed7c70df7de3a668eb7a49b1319880dde2bbd9031ae5d82f",
+  "notes": "0",
+  "inactive_policy_refused": true,
+  "appointed_reviewer_verified": true,
+  "replica_root_matches": true,
+  "restart_preserved": true,
+  "revoked_reviewer_refused_on_both": true,
+  "production_activated": false,
+  "coin_mint": false,
+  "date": "2026-10-08",
+  "server": "uain-app-1",
+  "unit": "uain-private-state-network-20261008",
+  "result": "success",
+  "exit_code": 0,
+  "daemon_sha256": "46d51026c0d06b6e602114a124b718fecd220e8f10610735003a5d70ecdf2055",
+  "resources": {
+    "memory_max": "6GiB",
+    "cpu_quota": "200%",
+    "tasks_max": 512
+  },
+  "script_sha256": "17234789a423415b92b6d086d5839d31b01956de641c8c7583a99c7d7641a126",
+  "scope": "Two disposable real Comet/SDK processes, fixed-validator genesis pin, genuine RPC/header/state verification, empty pool only. Nonempty real-proof wallet/payment acceptance is recorded separately in private-state-server-20261008.json."
+}

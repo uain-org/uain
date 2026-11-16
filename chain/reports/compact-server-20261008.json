@@ -1,0 +1,285 @@
+{
+  "status": "server-pipeline-passed-for-pinned-preproposal-source",
+  "recorded_at": "2026-10-08T06:37:02.398511+00:00",
+  "base_commit": "3bd85206a0ac8896d18955aa4f00d65fdbd9c85c",
+  "working_tree_changes": true,
+  "host": "uain-app-1",
+  "unit": "native-chain-iFaVStGC.service",
+  "logs": "/opt/uain-test/native-chain-iFaVStGC/checks.log",
+  "exit_status_file": "/opt/uain-test/native-chain-iFaVStGC/exit-code",
+  "limits": {
+    "memory_gib": 6,
+    "cpu_quota_percent": 400,
+    "tasks": 512,
+    "runtime_seconds": 3600
+  },
+  "source_manifest_sha256": "f8b291138f989fd9ac032c8000918ed54593d5a2348d8beb35072a638db0733f",
+  "source_manifest": [
+    {
+      "path": "app/app.go",
+      "sha256": "0279ed9c8092f7fec8e8bf45e27a9c1691ffb27ba0906a5f1811b7e285945fa9"
+    },
+    {
+      "path": "app/app_test.go",
+      "sha256": "508869d4b642a38e4b526300d4972795d67324c2cb095835140f70625c964be5"
+    },
+    {
+      "path": "app/compact_test.go",
+      "sha256": "2ff82ff2073cbc10e760c1af0d1ffd43c0f248c7f5c0b054c80248e854c89309"
+    },
+    {
+      "path": "app/instances_test.go",
+      "sha256": "95a10672218b3cfa3f4bb87a4f467a0ffdc7685687ff0bb9127d7403c0a55403"
+    },
+    {
+      "path": "app/operators_test.go",
+      "sha256": "3a6ef209299585f2e3f6b1c202904fcf7d1d40f8170b5008a23781fb7d889a72"
+    },
+    {
+      "path": "app/participation_test.go",
+      "sha256": "1571a54a3a15508cdbe968eb848a608102962aaa8af7272284a0727b0d238236"
+    },
+    {
+      "path": "client/operator-observation.mjs",
+      "sha256": "ef09da8e2d5cdb911a28197f74b413cd1ff869d9f9f1105696a4a421bfaf805c"
+    },
+    {
+      "path": "client/operator-observation.test.mjs",
+      "sha256": "accdbeef025f1b26d7e46944caa5a391e4301e94c6c1b3050d77b10d9d2ae7f9"
+    },
+    {
+      "path": "client/signing.mjs",
+      "sha256": "16a79b453e42e18cdc4afddd19d9dc8ed1295e482cb742bee0b9a881c8df78dc"
+    },
+    {
+      "path": "client/signing.test.mjs",
+      "sha256": "fa11aadfd01f57698f0c0e69a3b7adeb43098c3f87fac00ad3d129378ff9e0ab"
+    },
+    {
+      "path": "cmd/uain-proof/main.go",
+      "sha256": "fd3cf2483b4e43092a2e4dd7121d981db2fcfaf819d8aef859d11587e2cfdbbc"
+    },
+    {
+      "path": "cmd/uaind/main.go",
+      "sha256": "e8632923d43227d5bab5c7ab7ff88dfbf81bbe313a23f98942f943b5a120e099"
+    },
+    {
+      "path": "cmd/uaind/main_test.go",
+      "sha256": "fdc9c03d1abbb4d90f8534389ec6fa8a40a56fea90511b75b1aa48646b912e66"
+    },
+    {
+      "path": "federation/account_metadata.go",
+      "sha256": "85545e206fa122022ccf406d8e8e5cfccc6ea5eb260633c4e673692acb9cb841"
+    },
+    {
+      "path": "federation/account_metadata_test.go",
+      "sha256": "33f49b4854dd1010b30fe2c1206e50c92187c2124cdc64e81323a4c7f124de85"
+    },
+    {
+      "path": "federation/accounting_test.go",
+      "sha256": "03a462a199432b2cb4d6d838c8a7be850d0bc6ce95aab43bc8aaedb5e1d1744b"
+    },
+    {
+      "path": "federation/authorization.go",
+      "sha256": "f1d71636d85f863c808c13708aea8e912e2431e687825b3a2637dba40033bbe9"
+    },
+    {
+      "path": "federation/budgets.go",
+      "sha256": "22a925dc67a229b9be7d850013c0a3da51e5471332e8b91bd5590b4e95d70173"
+    },
+    {
+      "path": "federation/compact.go",
+      "sha256": "0a1ea9b18db800e25796066238cbe6f74ff115240162acf8c0013077f927c453"
+    },
+    {
+      "path": "federation/compact_test.go",
+      "sha256": "3b70fc66e1f1f47139ff7b326060f9e0c97944b714eca40d82cb46b7bed988d9"
+    },
+    {
+      "path": "federation/credits.go",
+      "sha256": "85192fc300dbeeb07fdd83dc8c203b53d82a09a17467848a8a5813e432afc205"
+    },
+    {
+      "path": "federation/instances.go",
+      "sha256": "7617f7fa21d6a743b514a5d892639ea27651a6145ee5ea9836f907816c2bc026"
+    },
+    {
+      "path": "federation/instances_test.go",
+      "sha256": "0705b9c895b067807bed7be68734109497e0be29260ddbaf2bf2e6ccd6ec68e4"
+    },
+    {
+      "path": "federation/keeper.go",
+      "sha256": "e56c803406af36f64c2fd51b03be49ce99684ac18810daa1fa6ba6bef531f237"
+    },
+    {
+      "path": "federation/keeper_test.go",
+      "sha256": "8b6a398f612a4247ae03255732176460a761f362dd0f5cc692ddcd721c4bcc8c"
+    },
+    {
+      "path": "federation/kpi.go",
+      "sha256": "9b3503db15881fac967d386c44242af08f6e5487fd53480d09fcc4114ab87cf0"
+    },
+    {
+      "path": "federation/kpi_test.go",
+      "sha256": "3277cbc1c93a55c21cf801755cffc1a192fa2f5ab64b7eec5bfad2a8115a3abe"
+    },
+    {
+      "path": "federation/operators.go",
+      "sha256": "8f48f1ff61296ad2f6c1dbb95300b62de8f3c2b8f9d1938ae4b9b1ee53bcd906"
+    },
+    {
+      "path": "federation/operators_test.go",
+      "sha256": "be053bddb6cd54836e2012531104c2bf8faf3fd9245a90cfbdcb7f34f8054b81"
+    },
+    {
+      "path": "federation/participation.go",
+      "sha256": "c3677cd5ab97ab06a8735e034326daedd6c323e79ac89b344e99157d8334c6e1"
+    },
+    {
+      "path": "federation/participation_test.go",
+      "sha256": "c2f73e8315f44b5b2f021820d4e8d2c13f19f3f7c2abaaec7e6c197902500de0"
+    },
+    {
+      "path": "federation/prior_art.go",
+      "sha256": "508978b168b4689e71919792d595754a04add369377459b034e8da391cd9025a"
+    },
+    {
+      "path": "federation/read_cache.go",
+      "sha256": "4649badd08524c912a034921fafff14f46ad45a7ed1555b79f8f4db9db0332d7"
+    },
+    {
+      "path": "federation/settlement.go",
+      "sha256": "822f9f0f3c0d81859e31759e518b26bdd394e2d21e00a538760a2e0d572b23c0"
+    },
+    {
+      "path": "federation/store.go",
+      "sha256": "281a608e7b1098f1fe8c24e170f32afb5285b656fa87c31f853c7342618a2e85"
+    },
+    {
+      "path": "federation/types.go",
+      "sha256": "05f07a214167eb0a1740144e9ea4d08a33dcbb321ae41c96312da52179d555bb"
+    },
+    {
+      "path": "go.mod",
+      "sha256": "4c711e65b2176e848b50bb2a8db896e948cb8044cae5a001e8059594b32ddd44"
+    },
+    {
+      "path": "go.sum",
+      "sha256": "f7086c989ec3605cdf2c37b4193756a64f2abf093265b5fa1bc599f9a3f83ff6"
+    },
+    {
+      "path": "proof/compose.go",
+      "sha256": "defd77cefed5358bc5f6a7d3219f0cc26e9e5f27e9bb7681bcdc6b37afd2f959"
+    },
+    {
+      "path": "proof/verify.go",
+      "sha256": "1f078d20dc5b6c3cc8c1baac93d7753af3c08e09b6d2e72c37b52433a12d8b21"
+    },
+    {
+      "path": "proto/uain/federation/v1/tx.proto",
+      "sha256": "a422b24138135c1c3cc2456760f66078b5b65f24eab5c8679bfbc33588044d7f"
+    },
+    {
+      "path": "scripts/export-public-snapshot.mjs",
+      "sha256": "2aa2f96b2bec42f58170b97eb9943a1b3f16ef02657081ca8a7ed8743fef88e4"
+    },
+    {
+      "path": "scripts/smoke.mjs",
+      "sha256": "cacd580c439532b7f1bae01f8d097b49444812cd6611b4cffab534b542bdb653"
+    },
+    {
+      "path": "types/tx.pb.go",
+      "sha256": "6e321afab769b4244b208df71781bc19420a0102c2ccb7a7083f99d7372fa54a"
+    },
+    {
+      "path": "types/tx_grpc.pb.go",
+      "sha256": "718a893b1130c4d5b7a9a177fbc6819f38562b7a735979a4f062b1aef3700801"
+    }
+  ],
+  "production_readiness": {
+    "url": "https://uain.global/api/ready",
+    "ok": true
+  },
+  "qualification_complete": false,
+  "live_shadow_version": "0.2.1",
+  "live_policy_activation": false,
+  "checks": {
+    "go_race": "pass",
+    "go_vet": "pass",
+    "client_tests": "5/5",
+    "ops_python_tests": "3/3",
+    "daemon_and_proof_builds": "pass",
+    "two_node_rehearsals": [
+      {
+        "pass": true,
+        "chain": "uain-smoke-1",
+        "height": 4,
+        "app_hash": "7968E616A360F9412EBEF39BFD80BE38E3E7D055FF2C28DC810629E1A64BA552",
+        "replay_rejected": true,
+        "fullnode_state_matches": true,
+        "state_proof_present": true,
+        "restart_preserved_state": true,
+        "upgrade_from": null,
+        "resumed_nodes_agree": true,
+        "instance_height": 9,
+        "instance_app_hash": "3749897704DF0B5C39D1415FD6BEB9A5C9492F4D49B5F38CA9EB56D5238B0165",
+        "instance_state_matches": true,
+        "instance_restart_preserved": true,
+        "credit_height": 17,
+        "credit_app_hash": "6F6BB8696ADAC20412D3A5E2BED2D6A7FB37CBF714B35822F749E5AB0354674E",
+        "credit_state_matches": true,
+        "credit_restart_preserved": true,
+        "membership_height": 28,
+        "membership_app_hash": "54FDED47BBA73B24859EEBF5CF6CA09D25180E5EEB85DCA9F5BFCCBF5CFB33A6",
+        "membership_state_matches": true,
+        "membership_restart_preserved": true,
+        "outsider_challenge_rejected": true,
+        "compact_height": 44,
+        "compact_app_hash": "9AD5BA1EE1FFC84BB1A1205D23607AFEC3655539BDD9D49BF929470CDBC40E6C",
+        "compact_records_checked": 18,
+        "compact_restart_preserved": true,
+        "fixture_directory": "/tmp/uain-chain-smoke-alTHQk"
+      },
+      {
+        "pass": true,
+        "chain": "uain-smoke-1",
+        "height": 4,
+        "app_hash": "BEA4D7A1A1EE81CFDF645039FEE2D39D9CEE2A2DEC3EABFD55F3ED1E7910EBCD",
+        "replay_rejected": true,
+        "fullnode_state_matches": true,
+        "state_proof_present": true,
+        "restart_preserved_state": true,
+        "upgrade_from": "/opt/uain-chain/releases/8d37d5608076296a125fd0606b5863c3b71c72a57f966eaeeeb24647ce73bc5d/uaind",
+        "resumed_nodes_agree": true,
+        "instance_height": 9,
+        "instance_app_hash": "059A4D2DCEE30B8621E3EF7EF7CDB45FDA0150AFFFA3C5D187F575C7A665D1BF",
+        "instance_state_matches": true,
+        "instance_restart_preserved": true,
+        "credit_height": 17,
+        "credit_app_hash": "995D6D69CDAE7EAE59F367DEF22338C5617B8AF521D27BE4B1CA170F40A014C7",
+        "credit_state_matches": true,
+        "credit_restart_preserved": true,
+        "membership_height": 28,
+        "membership_app_hash": "9E0E3E954D2336F77ADF1BEA03E2C8F55C8A1A754835E8206EFB6805B4C74473",
+        "membership_state_matches": true,
+        "membership_restart_preserved": true,
+        "outsider_challenge_rejected": true,
+        "compact_height": 44,
+        "compact_app_hash": "6AEE778858B0453621C656E456BF6CF5E279426D535BB3DDAB59811EE5393BE3",
+        "compact_records_checked": 18,
+        "compact_restart_preserved": true,
+        "fixture_directory": "/tmp/uain-chain-smoke-xGnJjj"
+      }
+    ],
+    "exit_code": 0
+  },
+  "maximum_actor_fixture_gas": {
+    "resolve_kpi": 2922885,
+    "verify": 2348731,
+    "decide_prior_art": 2167981,
+    "limit": 3000000
+  },
+  "observed_memory_peak_bytes": 3979325440,
+  "tested_daemon_sha256": "162bc9a3f408c8d119c95d6afc05bea76e8240a61369c9ed8f0aa7152b1d3fe2",
+  "new_proposal_source_tested": false
+}

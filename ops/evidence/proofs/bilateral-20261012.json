@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-12",
+  "kind": "uain-public-artifact-bilateral-receipt-v1",
+  "source_manifest_digest": "81911e155693a80350a65b58735a0405ccf074f4fed66d5b592ca72f9c0a8de6",
+  "source_records_root": "a693086e8c4b800f2b119f5f9cd71da5746c23750ff259c3802821f97c70a160",
+  "reviewed_source_plan_sha256": "c6ccfd9884151e6c6c7735f6d7f1a7d2dfc248771187755f12f5d943e4bcea46",
+  "bundle_sha256": "e70ee1e787b973f9ad21c6e4a290d944b539ffd950111cbf861723725a6125a8",
+  "bundle_bytes": 3382302720,
+  "bundle_plan_sha256": "a6cf35737c1c69797e0ccad2238f4c24ba086d7564dfcc0700699d6e58314e12",
+  "verified_objects": 15,
+  "verified_bytes": 3382232254,
+  "historical_unhosted_labels": 117,
+  "unavailable_original_sha256": [
+    "228c656172002cb8a8752ddbcb95c8b74611fc3e510ce25b68c480620ef11bea",
+    "a5a341181e36d1e65680bc48b5449b8f886d923b73bb14427f5b51f153f7b77b"
+  ],
+  "app": {
+    "root": "/var/lib/uain-evidence/legacy-20261012-81911e155",
+    "exact_hash_size_verified": true,
+    "log": "/opt/uain-test/integration-artifacts-20261012/promote15.log"
+  },
+  "database": {
+    "root": "/var/lib/uain-evidence/legacy-20261012-81911e155-complete15",
+    "archive_sha_verified": true,
+    "plan_sha_verified": true,
+    "all_available_blob_hash_sizes_verified": true,
+    "log": "/opt/uain-test/evidence-20261012/restore15.log",
+    "exit": 0
+  },
+  "operator_hosts": 2,
+  "independent_operators": false,
+  "offsite_restore_verified": false,
+  "historical_rewards_changed": false
+}

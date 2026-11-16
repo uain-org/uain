@@ -1,0 +1,152 @@
+{
+  "pass": true,
+  "fixture_only": true,
+  "real_two_nodes": true,
+  "chain_id": "uain-coin-fixture-1",
+  "pinned_genesis_sha256": "5bc7706c5ebdb390e544136b26f348643a42d40002469ab2fdf8de0d89b91843",
+  "prospective_signed_bounty_issuance": true,
+  "minted_units": "5000000",
+  "cap_units": "108000000000000000000",
+  "private_pool_units": "0",
+  "early_claim_refused": true,
+  "replay_refused_before_and_after_restart": true,
+  "restart_preserved": true,
+  "independent_state_proofs": [
+    {
+      "port": 33657,
+      "key": "coin_activation",
+      "verified": true
+    },
+    {
+      "port": 33657,
+      "key": "coin_supply",
+      "verified": true
+    },
+    {
+      "port": 33657,
+      "key": "coin_balance/uain14bc94926eee43de9f12b90a00b603ed570f04e5d",
+      "verified": true
+    },
+    {
+      "port": 33657,
+      "key": "coin_quote/T-coin",
+      "verified": true
+    },
+    {
+      "port": 33657,
+      "key": "coin_reservation/T-coin",
+      "verified": true
+    },
+    {
+      "port": 33657,
+      "key": "coin_reward/RC-coin",
+      "verified": true
+    },
+    {
+      "port": 33667,
+      "key": "coin_activation",
+      "verified": true
+    },
+    {
+      "port": 33667,
+      "key": "coin_supply",
+      "verified": true
+    },
+    {
+      "port": 33667,
+      "key": "coin_balance/uain14bc94926eee43de9f12b90a00b603ed570f04e5d",
+      "verified": true
+    },
+    {
+      "port": 33667,
+      "key": "coin_quote/T-coin",
+      "verified": true
+    },
+    {
+      "port": 33667,
+      "key": "coin_reservation/T-coin",
+      "verified": true
+    },
+    {
+      "port": 33667,
+      "key": "coin_reward/RC-coin",
+      "verified": true
+    }
+  ],
+  "production_activated": false,
+  "production_coin_mint": false,
+  "date": "2026-10-08",
+  "server": "uain-app-1",
+  "unit": "uain-coin-final-20261008",
+  "result": "success",
+  "exit_code": 0,
+  "version": "0.3.4",
+  "candidate_precision": 6,
+  "units_per_coin": "1000000",
+  "log_sha256": "bc28b482127432613bc490239cb0788e632c26da97b720c9cb868d3f67634ffa",
+  "daemon_sha256": "e4d89543983dd8f53f3a8792e1b6bc03dcb391723d39b4cde27d6a80ebde3ec3",
+  "public_proof_verifier_sha256": "359f4f51a830da858ce93aa3be78af7310ae8a29e0a839794115a6e450caca56",
+  "resources": {
+    "memory_max": "6GiB",
+    "cpu_quota": "200%",
+    "tasks_max": 512
+  },
+  "signed_coin_operations": [
+    "activate_coin",
+    "coin_quote",
+    "coin_reserve",
+    "coin_claim",
+    "coin_release"
+  ],
+  "default_unlinked_activation_refused": true,
+  "cap_exhaustion_rollback_proven": true,
+  "sdk_inclusion_and_absence_proofs": true,
+  "sdk_restart_and_replay_refusal": true,
+  "known_revoked_expired_incomplete_and_weak_work_refused": true,
+  "future_kpi_success_mint": true,
+  "unstarted_reservation_release_and_pending_winner_protection": true,
+  "private_and_coin_same_height_prospective_activation": true,
+  "private_proof_bridge_integrated": false,
+  "full_regression_ci_required": true,
+  "scope": "Coin-focused tagged race tests, vet, native build, genuine two-node signed bounty issuance, independently pinned genesis/header/state proofs, restart and replay. All keys/work are disposable fixtures; production policies remain inactive.",
+  "fixture_coin_claim_gas": 94419,
+  "transaction_gas_limit": 3000000,
+  "source_manifest": [
+    {
+      "path": "chain/coin/ledger.go",
+      "sha256": "89676d3ae7f46f7c15181e5bfe5574301cb0ab009a4498c44e6392221ec5f9cb"
+    },
+    {
+      "path": "chain/coin/ledger_test.go",
+      "sha256": "8ec4e37bcfb0322fa8c877bc3443b185a938a514722d6807cd14e90f3e967f69"
+    },
+    {
+      "path": "chain/app/app.go",
+      "sha256": "75c9d06719c9fd467cc2b0c5d3b0d136f9f04db397456c597ecaa2040cf722f8"
+    },
+    {
+      "path": "chain/app/coin_orchard_test.go",
+      "sha256": "442df0cefcc0e646c44c7826d8957c9a9cd6751fa3ab477f03035037cb1a1401"
+    },
+    {
+      "path": "chain/federation/keeper.go",
+      "sha256": "13861f18b7069bd8af8eae863e7ab950d6038f1a137a745670d3d2cc1a9136c5"
+    },
+    {
+      "path": "chain/federation/coin.go",
+      "sha256": "321a08322757106a93f364ac3db5d0cadce8d40a9ba5ee47281da198700b97ce"
+    },
+    {
+      "path": "chain/federation/coin_test.go",
+      "sha256": "2a31a62bad55a20f008ae84b849042d5a6c138b7159df7a68f704b293c14e784"
+    },
+    {
+      "path": "chain/federation/coin_orchard_test.go",
+      "sha256": "e773be5c4d6b0cb05066c65ddd3fede1676089436c82a3a1a561d700e1aa447f"
+    },
+    {
+      "path": "chain/scripts/coin-network-smoke.mjs",
+      "sha256": "98a93d62c9a51462fdf0e21ee6b871a9b84dac45bcaa69aba711c1e4cebed7e2"
+    }
+  ]
+}

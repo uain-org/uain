@@ -1,0 +1,76 @@
+{
+  "schema": "uain-server-qualification-v1",
+  "date": "2026-10-12",
+  "host": "uain-app-1",
+  "stage": "/opt/uain-test/operations-reserve-20261012",
+  "service": "uain-operations-qualified-20261012",
+  "limits": {
+    "cpu_quota": "200%",
+    "memory_max": "3G",
+    "tasks_max": 256,
+    "runtime_max_seconds": 3600
+  },
+  "local_build_or_tests": false,
+  "go": "1.27.1",
+  "qualified_exit": 0,
+  "service_after_completion": "inactive",
+  "qualified_log_sha256": "9e498237a91d6f5b3ec28df331d26700bbc1bd079c58c705afe3039207391328",
+  "commands": [
+    "go test -race -p 2 -count=1 ./federation",
+    "go test -race -p 2 -count=1 ./app -run \"TestSDKOperations|TestSDKExternalFunding|TestSDKFundingObserverRotation\" -v",
+    "go vet -p 2 ./..."
+  ],
+  "results": {
+    "federation_race_seconds": 38.347,
+    "sdk_race_seconds": 6.143,
+    "vet": "PASS"
+  },
+  "production_actions": [],
+  "governing_texts_changed": false,
+  "historical_record_bytes_rewritten": false,
+  "scope": "Exact external operations-reserve payment intents and two-observer finality",
+  "red": [
+    {
+      "log": "red.log",
+      "exit": 1,
+      "sha256": "dd9ecaddd95002722f888fb4062faa48537309667d2a001bb5bb0a3436b9d936",
+      "failure": "unsupported operations_intent"
+    },
+    {
+      "log": "escrow-red.log",
+      "exit": 1,
+      "sha256": "6fd70003bf23872488b73394f644245992ad205254b4374b03918568d35d3511",
+      "failure": "accepted prohibited escrow wallet controller observation"
+    },
+    {
+      "log": "native-key-red.log",
+      "exit": 1,
+      "sha256": "30316b1ae6ecbee22afbfd3e2c7685162886dfa77a9fa4c4f53b63283a4223d7",
+      "failure": "accepted native Solana payee key observation without wallet link"
+    }
+  ],
+  "maximum_controller_fixture": {
+    "controller_history_entries_per_address": 20,
+    "payee_bytes": 500,
+    "operations_intent_gas": 376720,
+    "first_observation_gas": 254374,
+    "second_observation_gas": 439548,
+    "transaction_gas_limit": 3000000
+  },
+  "source_sha256": {
+    "federation/keeper.go": "82bc396453fb1d40641495da3686ad4df310fa482d2f729f4502381ffbc3cf2a",
+    "federation/operations.go": "fca37c776e473158c58b06e9aa062fd51865f2ac91063c4ea500e3c2f063e9a7",
+    "federation/operations_test.go": "9a630be6c0bfa6d29e4c08eca2fbd5ddb720f32d502ba1169c591e7c62b1385a",
+    "app/operations_test.go": "c0f4099cadf4c050f2d0884fb74481c674049fca26c1bf676f2c12957c520068"
+  },
+  "dependencies": [
+    "funding_identity_control.go plus centralized bank/funding hooks in preceding commit",
+    "existing economy.Pool and treasury liability accounting"
+  ],
+  "limitations": [
+    "No cancellation/release route; uncertain signed/broadcast payment retains its reserve",
+    "No production cost filed or paid",
+    "Crypto treasury custody wrapper integration is separate from consensus qualification",
+    "USD/EUR external execution remains bank custody; no bank details stored in consensus"
+  ]
+}

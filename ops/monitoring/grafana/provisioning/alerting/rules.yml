@@ -1,0 +1,566 @@
+# The alert rules. Each is a Prometheus query (A) and a threshold (B); every
+# one goes to Slack (slack.yml). An alert is worth a message only when someone
+# should act on it, so each says what to look at first.
+apiVersion: 1
+
+groups:
+  - orgId: 1
+    name: uain
+    folder: UAIN
+    interval: 1m
+    rules:
+      - uid: uain-site-down
+        title: UainSiteDown
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'probe_success{job="site"}'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: lt, params: [1] } }]
+              refId: B
+        for: 2m
+        noDataState: Alerting
+        execErrState: Error
+        annotations:
+          summary: '{{ $labels.instance }} is not answering'
+          description: 'Two minutes of failed fetches through the front door. On uain-app-1: `k3s kubectl -n uain get pods`, then `systemctl status nginx`.'
+      - uid: uain-pilot-copy-down
+        title: UainPilotCopyDown
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'up{job="pilot"}'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: lt, params: [1] } }]
+              refId: B
+        for: 2m
+        noDataState: OK
+        execErrState: Error
+        annotations:
+          summary: 'A pilot copy ({{ $labels.instance }}) stopped reporting'
+          description: 'The other copies still answer, but with less room. On uain-app-1: `k3s kubectl -n uain get pods -l app=pilot` and `logs`.'
+      - uid: uain-no-pilot-copies
+        title: UainNoPilotCopies
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'count(up{job="pilot"} == 1)'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: lt, params: [1] } }]
+              refId: B
+        for: 1m
+        noDataState: Alerting
+        execErrState: Error
+        annotations:
+          summary: 'No pilot copy is reporting'
+          description: 'The API and MCP are down for everyone.'
+      - uid: uain-error-rate
+        title: UainErrorRate
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'sum(rate(uain_http_request_duration_seconds_count{job="pilot",status="5xx"}[5m])) / sum(rate(uain_http_request_duration_seconds_count{job="pilot"}[5m]))'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: gt, params: [0.05] } }]
+              refId: B
+        for: 5m
+        noDataState: OK
+        execErrState: Error
+        annotations:
+          summary: 'Over 5% of requests are failing ({{ humanizePercentage $values.A.Value }})'
+          description: 'Grafana, "UAIN": which route. Then on uain-app-1: `k3s kubectl -n uain logs deploy/pilot --since=10m`.'
+      - uid: uain-edge-errors
+        title: UainEdgeErrors
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'sum by (site) (rate(uain_edge_responses_total{site=~"uain.global|waitlist.uain.global",class="5xx"}[5m])) / sum by (site) (rate(uain_edge_responses_total{site=~"uain.global|waitlist.uain.global"}[5m])) and sum by (site) (increase(uain_edge_responses_total{site=~"uain.global|waitlist.uain.global",class="5xx"}[5m])) >= 10'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: gt, params: [0.05] } }]
+              refId: B
+        for: 5m
+        noDataState: OK
+        execErrState: Error
+        annotations:
+          summary: 'The front door answered {{ humanizePercentage $values.A.Value }} of {{ $labels.site }} requests with 5xx'
+          description: 'Counted at host nginx (ops/monitoring/host-probe), so it includes the 502s and 504s nginx makes itself when no web copy answers, which UainErrorRate cannot see. Which status: Grafana, `uain_edge_gateway_errors_total`. On uain-app-1: `tail -50 /var/log/nginx/error.log`, then `k3s kubectl -n uain get pods,endpoints`.'
+      - uid: uain-slow
+        title: UainSlow
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'histogram_quantile(0.95, sum by (le) (rate(uain_http_request_duration_seconds_bucket{job="pilot"}[5m])))'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: gt, params: [1] } }]
+              refId: B
+        for: 10m
+        noDataState: OK
+        execErrState: Error
+        annotations:
+          summary: 'p95 response time is {{ humanizeDuration $values.A.Value }}'
+          description: 'The load test put the limit at database CPU; check the Postgres panels first.'
+      - uid: uain-event-loop
+        title: UainEventLoopStalled
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'uain_nodejs_eventloop_lag_p99_seconds{job="pilot"}'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: gt, params: [0.5] } }]
+              refId: B
+        for: 5m
+        noDataState: OK
+        execErrState: Error
+        annotations:
+          summary: 'A pilot copy ({{ $labels.instance }}) is blocking for {{ humanizeDuration $values.A.Value }}'
+          description: 'One process is doing too much work at once; every request on that copy waits.'
+      - uid: uain-db-waiting
+        title: UainWaitingForDatabase
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'sum(uain_pg_pool_connections{job="pilot",state="waiting"})'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: gt, params: [10] } }]
+              refId: B
+        for: 5m
+        noDataState: OK
+        execErrState: Error
+        annotations:
+          summary: '{{ $values.A.Value }} requests are queued for a database connection'
+          description: 'The pools are full. Either the store is slow or there is more traffic than connections.'
+      - uid: uain-waitlist-slack
+        title: UainWaitlistSlackFailing
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'sum(increase(uain_slack_notifications_total{job="pilot",outcome="failed"}[1h]))'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: gt, params: [0] } }]
+              refId: B
+        for: 0s
+        noDataState: OK
+        execErrState: Error
+        annotations:
+          summary: 'Waitlist messages to Slack are failing'
+          description: 'Registrations are still stored; the waitlist export has them. Check UAIN_SLACK_WAITLIST_WEBHOOK.'
+      - uid: uain-postgres-down
+        title: UainPostgresDown
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'pg_up'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: lt, params: [1] } }]
+              refId: B
+        for: 1m
+        noDataState: Alerting
+        execErrState: Error
+        annotations:
+          summary: 'The store is not answering'
+          description: 'On uain-db-1: `systemctl status postgresql` and `journalctl -u postgresql@17-main`. Then the tunnel: `wg show` on both servers.'
+      - uid: uain-postgres-connections
+        title: UainPostgresConnections
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'sum(pg_stat_activity_count) / max(pg_settings_max_connections)'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: gt, params: [0.8] } }]
+              refId: B
+        for: 5m
+        noDataState: OK
+        execErrState: Error
+        annotations:
+          summary: 'The store is at {{ humanizePercentage $values.A.Value }} of its connections'
+          description: 'Each pilot copy takes up to 39 (30 + 8 + LISTEN) of the 600 on uain-db-1; the HPA stops at 14 copies for that reason.'
+      - uid: uain-disk
+        title: UainDiskFilling
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"}'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: lt, params: [0.15] } }]
+              refId: B
+        for: 10m
+        noDataState: OK
+        execErrState: Error
+        annotations:
+          summary: '{{ $labels.host }} disk has {{ humanizePercentage $values.A.Value }} free'
+          description: 'Kubernetes evicts production pods at about 5% free (9 Nov 2026 outage). On uain-app-1: `systemctl start uain-disk-hygiene.service` (old build cache, dangling images, stale /opt/uain-test checkouts), then old images (`docker image prune`, `k3s crictl rmi --prune`) and /var/lib/uain-backups; on uain-db-1, the database and its WAL.'
+      - uid: uain-disk-low
+        title: UainDiskLow
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"}'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: lt, params: [0.2] } }]
+              refId: B
+        for: 15m
+        noDataState: OK
+        execErrState: Error
+        annotations:
+          summary: '{{ $labels.host }} disk has {{ humanizePercentage $values.A.Value }} free (below 20%)'
+          description: 'An early warning before UainDiskFilling (15%) and the kubelet eviction line (about 5% free, 9 Nov 2026 outage). On uain-app-1: `du -xh --max-depth=1 /opt /var/lib | sort -rh | head`, `docker system df`, then `systemctl start uain-disk-hygiene.service` (its retention rule is in ops/host/uain-disk-hygiene.sh). Other tenants hold most of the disk; see docs/production-host.md.'
+      - uid: uain-node-disk-pressure
+        title: UainNodeDiskPressure
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'max by (node) (uain_k8s_node_condition{condition="DiskPressure"})'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: gt, params: [0] } }]
+              refId: B
+        for: 1m
+        noDataState: OK
+        execErrState: Error
+        annotations:
+          summary: 'Kubernetes reports DiskPressure on {{ $labels.node }}: it is evicting pods'
+          description: 'The kubelet evicts production pods and stops scheduling new ones while DiskPressure is True (9 Nov 2026 outage). Free space now: `systemctl start uain-disk-hygiene.service` on uain-app-1, remove finished /opt/uain-test roots, then `k3s kubectl get pods -A | grep -v Running`. The condition clears about five minutes after free space recovers.'
+      - uid: uain-memory
+        title: UainMemoryLow
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: lt, params: [0.1] } }]
+              refId: B
+        for: 10m
+        noDataState: OK
+        execErrState: Error
+        annotations:
+          summary: '{{ $labels.host }} has {{ humanizePercentage $values.A.Value }} memory available'
+          description: 'On uain-app-1: `k3s kubectl top pods -n uain` and `docker stats --no-stream`.'
+      - uid: uain-cpu
+        title: UainCpuSaturated
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: '1 - avg by (host, instance) (rate(node_cpu_seconds_total{mode="idle"}[5m]))'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: gt, params: [0.9] } }]
+              refId: B
+        for: 15m
+        noDataState: OK
+        execErrState: Error
+        annotations:
+          summary: '{{ $labels.host }} CPU is {{ humanizePercentage $values.A.Value }} busy'
+          description: 'Sustained for 15 minutes. On uain-app-1 the HPA adds copies up to 14; on uain-db-1 see pg_stat_statements.'
+      # The native chain's newest block (ops/chain/proof-age.py, every 15 s,
+      # through node-exporter's textfile collector). Custody, BAINK and the
+      # client refuse proofs older than 120 s, so past that payments stall.
+      - uid: uain-native-proof-stale
+        title: UainNativeProofStale
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'max(uain_native_latest_block_age_seconds{host="uain-app-1"})'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: gt, params: [120] } }]
+              refId: B
+        for: 0s
+        noDataState: Alerting
+        execErrState: Error
+        annotations:
+          summary: 'The newest native block is {{ humanizeDuration $values.A.Value }} old; proofs over 120 s are refused'
+          description: 'Payments and reviews stall. On uain-app-1: `systemctl status uain-chain-shadow.service`, `journalctl -u uain-node-backup-capture -n 50` (a backup pause is bounded to 60 s), `cat /var/lib/node_exporter/textfile/uain_native.prom`.'
+      - uid: uain-native-proof-publisher-stale
+        title: UainNativeProofPublisherStale
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'time() - max(node_textfile_mtime_seconds{host="uain-app-1",file=~".*uain_native\\.prom"})'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: gt, params: [120] } }]
+              refId: B
+        for: 0s
+        noDataState: Alerting
+        execErrState: Error
+        annotations:
+          summary: 'The native proof-age publisher has not written for over 120 s'
+          description: 'The proof-age alert is blind. On uain-app-1: `systemctl status uain-native-proof-age.timer uain-native-proof-age.service`.'
+      - uid: uain-chain-tip-stale
+        title: UainChainNodeBehind
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'uain_chain_block_age_seconds'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: gt, params: [180] } }]
+              refId: B
+        for: 5m
+        noDataState: OK
+        execErrState: Error
+        annotations:
+          summary: '{{ $labels.node }} is {{ humanizeDuration $values.A.Value }} behind the chain tip'
+          description: 'Its newest block is over three minutes old; payments built from it would be refused as stale. CometBFT may still report catching_up=false. Fix: `ssh uain-app-1`, then `docker exec <container> node -e "fetch(`http://127.0.0.1:27657/status`).then(r=>r.text()).then(console.log)"` for a holder or relay, or `curl -s 127.0.0.1:26667/status` for the validator. A holder stuck behind with one Tor peer recovers with `systemctl restart baink-server-holder-<role>` (back into block sync) or `node cli.mjs resync`. Runbook: apps/baink/docs/wallet-recovery.md.'
+      - uid: uain-chain-node-down
+        title: UainChainNodeDown
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'uain_chain_up'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: lt, params: [1] } }]
+              refId: B
+        for: 5m
+        noDataState: OK
+        execErrState: Error
+        annotations:
+          summary: '{{ $labels.node }} chain RPC is not answering'
+          description: 'The chain sync probe could not read /status for five minutes. Fix: `ssh uain-app-1`, then `docker exec <container> node -e "fetch(`http://127.0.0.1:27657/status`).then(r=>r.text()).then(console.log)"` for a holder or relay, or `curl -s 127.0.0.1:26667/status` for the validator. A holder stuck behind with one Tor peer recovers with `systemctl restart baink-server-holder-<role>` (back into block sync) or `node cli.mjs resync`. Runbook: apps/baink/docs/wallet-recovery.md.'
+      - uid: uain-chain-height-lag
+        title: UainChainNodeLagging
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'max(uain_chain_latest_height) - on() group_right() uain_chain_latest_height'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: gt, params: [100] } }]
+              refId: B
+        for: 10m
+        noDataState: OK
+        execErrState: Error
+        annotations:
+          summary: '{{ $labels.node }} is {{ $values.A.Value }} blocks behind the highest UAIN node'
+          description: 'Compared with the highest height any UAIN node reports. Fix: `ssh uain-app-1`, then `docker exec <container> node -e "fetch(`http://127.0.0.1:27657/status`).then(r=>r.text()).then(console.log)"` for a holder or relay, or `curl -s 127.0.0.1:26667/status` for the validator. A holder stuck behind with one Tor peer recovers with `systemctl restart baink-server-holder-<role>` (back into block sync) or `node cli.mjs resync`. Runbook: apps/baink/docs/wallet-recovery.md.'
+      - uid: uain-chain-probe-stale
+        title: UainChainProbeNotRunning
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'time() - max(uain_chain_probe_timestamp_seconds)'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: gt, params: [300] } }]
+              refId: B
+        for: 5m
+        noDataState: Alerting
+        execErrState: Error
+        annotations:
+          summary: 'The chain sync probe has not run for over five minutes'
+          description: 'Check `systemctl status uain-chain-sync.timer` on uain-app-1 and uain-db-1 (installed by ops/monitoring/chain-sync/install.sh), and that node-exporter has --collector.textfile.directory.'
+      - uid: uain-host-probe-stale
+        title: UainHostProbeNotRunning
+        condition: B
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              expr: 'time() - max(uain_host_probe_timestamp_seconds)'
+              instant: true
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              expression: A
+              conditions: [{ evaluator: { type: gt, params: [180] } }]
+              refId: B
+        for: 5m
+        noDataState: Alerting
+        execErrState: Error
+        annotations:
+          summary: 'The host probe has not run for over three minutes'
+          description: 'UainNodeDiskPressure and UainEdgeErrors are blind. On uain-app-1: `systemctl status uain-host-probe.timer uain-host-probe.service` (installed by ops/monitoring/host-probe/install.sh).'

@@ -1,0 +1,318 @@
+{
+  "date": "2026-10-08",
+  "server": "uain-app-1",
+  "candidate": "0.3.2",
+  "production_policies_activated": false,
+  "full_suite": {
+    "directory": "/opt/uain-test/native-chain-KOVSpW4L",
+    "terminal_exit": 0,
+    "source_manifest": [
+      {
+        "path": "app/app.go",
+        "sha256": "85163f38ac83d47e79a9c42e383bb6876cef3c2e294d88a92d56604ad040922e"
+      },
+      {
+        "path": "app/app_test.go",
+        "sha256": "508869d4b642a38e4b526300d4972795d67324c2cb095835140f70625c964be5"
+      },
+      {
+        "path": "app/compact_test.go",
+        "sha256": "ff149a6155a92ee2828deebfccfcb7883d42781445647de89ca654447b2d461c"
+      },
+      {
+        "path": "app/instances_test.go",
+        "sha256": "95a10672218b3cfa3f4bb87a4f467a0ffdc7685687ff0bb9127d7403c0a55403"
+      },
+      {
+        "path": "app/operator_census_test.go",
+        "sha256": "b702a3c8a31cf2c5b4c54c391cfdc3ac7424a322c4cfe00aa04b31ebbd32dff1"
+      },
+      {
+        "path": "app/operators_test.go",
+        "sha256": "3a6ef209299585f2e3f6b1c202904fcf7d1d40f8170b5008a23781fb7d889a72"
+      },
+      {
+        "path": "app/participation_test.go",
+        "sha256": "1571a54a3a15508cdbe968eb848a608102962aaa8af7272284a0727b0d238236"
+      },
+      {
+        "path": "app/proposals.go",
+        "sha256": "6712e75de5b08314742358432788efc350e3384bbadf23fe9d9717a1a5d7fd1d"
+      },
+      {
+        "path": "app/proposals_test.go",
+        "sha256": "81ef5386500a36e53ce6f20894d4e5d6051983ee4a76f34ddb8b1649fe48a887"
+      },
+      {
+        "path": "app/research_standing_test.go",
+        "sha256": "f4c56c8165417c3b08cebb759968bd1f808e63dc7500ad71ce16b1c3edf0b1d2"
+      },
+      {
+        "path": "client/operator-observation.mjs",
+        "sha256": "ef09da8e2d5cdb911a28197f74b413cd1ff869d9f9f1105696a4a421bfaf805c"
+      },
+      {
+        "path": "client/operator-observation.test.mjs",
+        "sha256": "accdbeef025f1b26d7e46944caa5a391e4301e94c6c1b3050d77b10d9d2ae7f9"
+      },
+      {
+        "path": "client/signing.mjs",
+        "sha256": "16a79b453e42e18cdc4afddd19d9dc8ed1295e482cb742bee0b9a881c8df78dc"
+      },
+      {
+        "path": "client/signing.test.mjs",
+        "sha256": "fa11aadfd01f57698f0c0e69a3b7adeb43098c3f87fac00ad3d129378ff9e0ab"
+      },
+      {
+        "path": "cmd/uain-proof/main.go",
+        "sha256": "fd3cf2483b4e43092a2e4dd7121d981db2fcfaf819d8aef859d11587e2cfdbbc"
+      },
+      {
+        "path": "cmd/uaind/main.go",
+        "sha256": "e8632923d43227d5bab5c7ab7ff88dfbf81bbe313a23f98942f943b5a120e099"
+      },
+      {
+        "path": "cmd/uaind/main_test.go",
+        "sha256": "fdc9c03d1abbb4d90f8534389ec6fa8a40a56fea90511b75b1aa48646b912e66"
+      },
+      {
+        "path": "federation/account_metadata.go",
+        "sha256": "85545e206fa122022ccf406d8e8e5cfccc6ea5eb260633c4e673692acb9cb841"
+      },
+      {
+        "path": "federation/account_metadata_test.go",
+        "sha256": "33f49b4854dd1010b30fe2c1206e50c92187c2124cdc64e81323a4c7f124de85"
+      },
+      {
+        "path": "federation/accounting_test.go",
+        "sha256": "03a462a199432b2cb4d6d838c8a7be850d0bc6ce95aab43bc8aaedb5e1d1744b"
+      },
+      {
+        "path": "federation/authorization.go",
+        "sha256": "f1d71636d85f863c808c13708aea8e912e2431e687825b3a2637dba40033bbe9"
+      },
+      {
+        "path": "federation/budgets.go",
+        "sha256": "22a925dc67a229b9be7d850013c0a3da51e5471332e8b91bd5590b4e95d70173"
+      },
+      {
+        "path": "federation/compact.go",
+        "sha256": "0a1ea9b18db800e25796066238cbe6f74ff115240162acf8c0013077f927c453"
+      },
+      {
+        "path": "federation/compact_test.go",
+        "sha256": "3b70fc66e1f1f47139ff7b326060f9e0c97944b714eca40d82cb46b7bed988d9"
+      },
+      {
+        "path": "federation/credits.go",
+        "sha256": "85192fc300dbeeb07fdd83dc8c203b53d82a09a17467848a8a5813e432afc205"
+      },
+      {
+        "path": "federation/instances.go",
+        "sha256": "7617f7fa21d6a743b514a5d892639ea27651a6145ee5ea9836f907816c2bc026"
+      },
+      {
+        "path": "federation/instances_test.go",
+        "sha256": "0705b9c895b067807bed7be68734109497e0be29260ddbaf2bf2e6ccd6ec68e4"
+      },
+      {
+        "path": "federation/keeper.go",
+        "sha256": "e2a18b2ddfdf94c523bdce0adcc8e70396c2d9d6a31726b84bb368c5e2864095"
+      },
+      {
+        "path": "federation/keeper_test.go",
+        "sha256": "8b6a398f612a4247ae03255732176460a761f362dd0f5cc692ddcd721c4bcc8c"
+      },
+      {
+        "path": "federation/kpi.go",
+        "sha256": "9b3503db15881fac967d386c44242af08f6e5487fd53480d09fcc4114ab87cf0"
+      },
+      {
+        "path": "federation/kpi_test.go",
+        "sha256": "3277cbc1c93a55c21cf801755cffc1a192fa2f5ab64b7eec5bfad2a8115a3abe"
+      },
+      {
+        "path": "federation/operator_census.go",
+        "sha256": "810d8ff7bdbd68bb8ba9f16f4fad0e70fe3dadfeeb8a1f987e7e86741c75466d"
+      },
+      {
+        "path": "federation/operator_census_test.go",
+        "sha256": "c7ef6ecf09469f3d5bce53a2c1c0c8194b9302148b525ef14601f1867fef9bca"
+      },
+      {
+        "path": "federation/operator_rewards.go",
+        "sha256": "d8ea9a135af23bbae240ebe891141eca443b2bada93ecf099863399b5ebfa8bb"
+      },
+      {
+        "path": "federation/operator_rewards_test.go",
+        "sha256": "e9e3f5569a51ed2bf4eb176a3e88e727db69b01d8674840455afc8abb282159a"
+      },
+      {
+        "path": "federation/operators.go",
+        "sha256": "d9a357502ce64df3e3c498f1c483ae65f94b93e5381a805e47146f303d38c99f"
+      },
+      {
+        "path": "federation/operators_test.go",
+        "sha256": "be053bddb6cd54836e2012531104c2bf8faf3fd9245a90cfbdcb7f34f8054b81"
+      },
+      {
+        "path": "federation/participation.go",
+        "sha256": "c3677cd5ab97ab06a8735e034326daedd6c323e79ac89b344e99157d8334c6e1"
+      },
+      {
+        "path": "federation/participation_test.go",
+        "sha256": "c2f73e8315f44b5b2f021820d4e8d2c13f19f3f7c2abaaec7e6c197902500de0"
+      },
+      {
+        "path": "federation/prior_art.go",
+        "sha256": "508978b168b4689e71919792d595754a04add369377459b034e8da391cd9025a"
+      },
+      {
+        "path": "federation/read_cache.go",
+        "sha256": "8f490031ad8bcd163db6eda58f400fd5c41ccf49230d97feaa752dcfc322c142"
+      },
+      {
+        "path": "federation/settlement.go",
+        "sha256": "a61a1eef34e39dbcd16be70d00d6ffbb5b3d5690b0baa33bcd65117b63d9a195"
+      },
+      {
+        "path": "federation/store.go",
+        "sha256": "020b0c80019d964d6a8fbb1d4fc1e4eb6efbe10e586ae0964975a838f6632d4b"
+      },
+      {
+        "path": "federation/types.go",
+        "sha256": "b4a826cc41f4b2e8ab21b1f11ad9a0ddedd60bbae5ec0b2465df47e74e813127"
+      },
+      {
+        "path": "go.mod",
+        "sha256": "4c711e65b2176e848b50bb2a8db896e948cb8044cae5a001e8059594b32ddd44"
+      },
+      {
+        "path": "go.sum",
+        "sha256": "f7086c989ec3605cdf2c37b4193756a64f2abf093265b5fa1bc599f9a3f83ff6"
+      },
+      {
+        "path": "proof/compose.go",
+        "sha256": "6a559ea792279c4549ff6e7d98bdc9964d71a7e9cf5f0dfab2983284eb8f3ebf"
+      },
+      {
+        "path": "proof/verify.go",
+        "sha256": "1f078d20dc5b6c3cc8c1baac93d7753af3c08e09b6d2e72c37b52433a12d8b21"
+      },
+      {
+        "path": "proto/uain/federation/v1/tx.proto",
+        "sha256": "a422b24138135c1c3cc2456760f66078b5b65f24eab5c8679bfbc33588044d7f"
+      },
+      {
+        "path": "scripts/export-public-snapshot.mjs",
+        "sha256": "2aa2f96b2bec42f58170b97eb9943a1b3f16ef02657081ca8a7ed8743fef88e4"
+      },
+      {
+        "path": "scripts/smoke.mjs",
+        "sha256": "965e9288807c4348c714103d96e39c8d9853a3043ab03b4e7fc15beff34aeb02"
+      },
+      {
+        "path": "types/tx.pb.go",
+        "sha256": "6e321afab769b4244b208df71781bc19420a0102c2ccb7a7083f99d7372fa54a"
+      },
+      {
+        "path": "types/tx_grpc.pb.go",
+        "sha256": "718a893b1130c4d5b7a9a177fbc6819f38562b7a735979a4f062b1aef3700801"
+      }
+    ],
+    "final_source_differences": [
+      "federation/operator_census_test.go",
+      "scripts/smoke.mjs"
+    ],
+    "qualification_note": "Full suite preceded additional census edge tests and network smoke extension; the final edge tests and extended two-node fresh/upgrade smoke passed separately."
+  },
+  "network_census_fixtures": [
+    {
+      "pass": true,
+      "chain": "uain-smoke-1",
+      "height": 4,
+      "app_hash": "4F2C081D07C0B31FD98008A6EDF76A73A2F869B238EC7324718530902523A4EB",
+      "replay_rejected": true,
+      "fullnode_state_matches": true,
+      "state_proof_present": true,
+      "restart_preserved_state": true,
+      "upgrade_from": null,
+      "resumed_nodes_agree": true,
+      "instance_height": 9,
+      "instance_app_hash": "1777E3D295D19644AC955A1C6845880E0D56AC3C6B55483DC5A089D340E3D3C4",
+      "instance_state_matches": true,
+      "instance_restart_preserved": true,
+      "credit_height": 17,
+      "credit_app_hash": "14BDB895690B347EC565F53B8BB4D3C8B0C3E6CD9FEF3148A209B8EBE3920DFB",
+      "credit_state_matches": true,
+      "credit_restart_preserved": true,
+      "membership_height": 28,
+      "membership_app_hash": "36B9326AB5402AD1D554459DDA20318529930D721B74C35C2DCEEFFE3E91BE0C",
+      "membership_state_matches": true,
+      "membership_restart_preserved": true,
+      "outsider_challenge_rejected": true,
+      "compact_height": 52,
+      "compact_app_hash": "F6B6E19CDDF355FC894BBBB8C1EBECC8C81F15021F4A002BCF575F27E343FA94",
+      "compact_records_checked": 23,
+      "compact_restart_preserved": true,
+      "census_state_checked": true,
+      "census_invalidation_checked": true,
+      "fixture_directory": "/opt/uain-test/census-network-20261008/fixtures/uain-chain-smoke-XFCMko"
+    },
+    {
+      "pass": true,
+      "chain": "uain-smoke-1",
+      "height": 4,
+      "app_hash": "DF31BBD2C506E2F8FF497C78AF8882FC99EF059850F2382BCFB8FAAE342475CA",
+      "replay_rejected": true,
+      "fullnode_state_matches": true,
+      "state_proof_present": true,
+      "restart_preserved_state": true,
+      "upgrade_from": "/opt/uain-chain/releases/8d37d5608076296a125fd0606b5863c3b71c72a57f966eaeeeb24647ce73bc5d/uaind",
+      "resumed_nodes_agree": true,
+      "instance_height": 9,
+      "instance_app_hash": "3F1A9BCD8130BAE0C2540E0AD95DD80EA158CC7F59DD8DF8082B6CB923AE22E9",
+      "instance_state_matches": true,
+      "instance_restart_preserved": true,
+      "credit_height": 17,
+      "credit_app_hash": "BEF4678940DC95F9D8F2506788FC421D05A1F8F71C9263CF2750AC01A6FABAA8",
+      "credit_state_matches": true,
+      "credit_restart_preserved": true,
+      "membership_height": 28,
+      "membership_app_hash": "BF1B1D1768ABE0ECD2A3BAB83EE0B8FE89C0F2368CD66678C4C01F682EE06ABF",
+      "membership_state_matches": true,
+      "membership_restart_preserved": true,
+      "outsider_challenge_rejected": true,
+      "compact_height": 52,
+      "compact_app_hash": "ACC22578DA20C993E632967754A0ACE18057751C11EC7C2CE3A49C3D121E308C",
+      "compact_records_checked": 23,
+      "compact_restart_preserved": true,
+      "census_state_checked": true,
+      "census_invalidation_checked": true,
+      "fixture_directory": "/opt/uain-test/census-network-20261008/fixtures/uain-chain-smoke-fWB4Jp"
+    }
+  ],
+  "focused_units": {
+    "native-chain-sJdywY4d": {
+      "Result": "success",
+      "ExecMainStatus": "0"
+    },
+    "uain-census-edges-20261008": {
+      "Result": "success",
+      "ExecMainStatus": "0"
+    },
+    "uain-census-network-20261008": {
+      "Result": "success",
+      "ExecMainStatus": "0"
+    }
+  },
+  "gas": {
+    "census_pages": [
+      240387,
+      243659,
+      98700
+    ],
+    "maximum_operator_payout": 2925541,
+    "transaction_limit": 3000000
+  }
+}

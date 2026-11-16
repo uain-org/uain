@@ -1,0 +1,97 @@
+name: UAIN maintenance
+
+# Manual only. There is no public admin endpoint by design: a network whose
+# premise is verifiable identity should not carry a back door reachable from
+# the internet. Operator actions run on the box, through the runner, and leave
+# an audit trail in the Actions log.
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: What to do
+        required: true
+        type: choice
+        options:
+          - list
+          - purge-participant
+          - independence-report
+          - restate-rc4502
+          - allocate-budget
+          - unlock-stage
+          - release-deferred
+          - resume-project
+          - trust-arbiter
+          - untrust-arbiter
+          - list-arbiters
+          - add-project-creator
+          - remove-project-creator
+          - add-default-verifier
+          - remove-default-verifier
+          - list-uain-agents
+          - revoke-licence
+          - add-skill-test
+          - deactivate-skill-test
+          - list-skill-tests
+      participant_id:
+        description: Participant id (purge-participant, revoke-licence, trust-arbiter, untrust-arbiter; add/remove roles take several, comma-separated)
+        required: false
+        type: string
+      confirm:
+        description: Reserved; database resets use the separate archive-and-epoch workflow.
+        required: false
+        type: string
+      project_id:
+        description: Project id (allocate-budget, unlock-stage and resume-project)
+        required: false
+        type: string
+      amount:
+        description: Budget in karma units, an integer (allocate-budget only)
+        required: false
+        type: string
+      basis:
+        description: Valuation basis, published with the budget (allocate-budget), or the reason (revoke-licence, resume-project)
+        required: false
+        type: string
+      skill_test:
+        description: 'add-skill-test: JSON { title, skill, prompt, answer_spec, max_attempts }. deactivate-skill-test: the test id (ST-n)'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: uain-production
+  cancel-in-progress: false
+
+jobs:
+  maintain:
+    # Production only: a run by hand must be started from main.
+    if: github.ref == 'refs/heads/main'
+    runs-on: [self-hosted, linux, x64, uain-production]
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+
+      - name: Run maintenance
+        env:
+          ACTION: ${{ inputs.action }}
+          PARTICIPANT: ${{ inputs.participant_id }}
+          CONFIRM: ${{ inputs.confirm }}
+          PROJECT: ${{ inputs.project_id }}
+          AMOUNT: ${{ inputs.amount }}
+          BASIS: ${{ inputs.basis }}
+          SKILL_TEST: ${{ inputs.skill_test }}
+          # The allocation goes on the ledger under the person who ran it.
+          OPERATOR_ID: operator:${{ github.actor }}
+        run: |
+          set -euo pipefail
+          # In one pilot copy on k3s (deploy/k8s/production). The inputs are
+          # not secret, so they travel as arguments to env.
+          KUBECONFIG=/home/runner/.kube/config kubectl -n uain exec -i deploy/pilot -c pilot -- \
+            env ACTION="$ACTION" PARTICIPANT="$PARTICIPANT" CONFIRM="$CONFIRM" \
+            PROJECT="$PROJECT" AMOUNT="$AMOUNT" BASIS="$BASIS" OPERATOR_ID="$OPERATOR_ID" \
+            SKILL_TEST="$SKILL_TEST" \
+            node dist/src/application/maintenance.js

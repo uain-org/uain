@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-12",
+  "kind": "uain-ci-sequence-cache-qualification-v1",
+  "production_source_revision": "dbd4295a679edab3850093dbe34348d718e89718",
+  "before": {
+    "run": 38195336180,
+    "suite": "others",
+    "result": "failure",
+    "reason": "Earlier Python tests generated pinned dependency caches; upgrade correctly refused before execution"
+  },
+  "after": {
+    "suite": "others",
+    "source_change": "Only container-suite.sh: prevent implicit bytecode, including explicit -B alongside isolated -I",
+    "container_suite_sha256": "62140ec7ee82a9953be3624a3a84e9ec581793bc09e76825822c468b2d624d9e",
+    "launcher_sha256": "17a966e6323bbabb428176e08e2ea05a5e4f0c9dd2ba4b81b92081ed4aee5f3c",
+    "server_unit": "uain-followup-final-others-20261012",
+    "exit": 0,
+    "log": "/opt/uain-test/followup-final-20261012/others.log",
+    "log_sha256": "d74a0e1b8bff97a97b6ef06ce2e615f6b4314082fdb905ae1708164e6a94be84",
+    "tap_pass_groups": [
+      47,
+      9,
+      57,
+      3
+    ],
+    "python_pass_groups": [
+      12,
+      9,
+      16,
+      14,
+      27,
+      12,
+      5,
+      10
+    ],
+    "cache_deletion_mid_suite": false,
+    "production_helper_checks_relaxed": false,
+    "independent_review": "No actionable issue",
+    "snapshot_sha256_prefix": "f7d15b70"
+  }
+}

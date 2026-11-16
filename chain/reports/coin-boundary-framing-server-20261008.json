@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-08",
+  "server": "uain-app-1",
+  "unit": "uain-coin-boundary-frame-20261008",
+  "result": "success",
+  "exit_code": 0,
+  "race_test": "TestCoinBoundaryApprovalCannotBecomeAnOTCOrAnotherAccountPayment",
+  "vet_passed": true,
+  "scope": "Signature framing only: new policy/epoch/account/amount/direction domain cannot authorize OTC or mutated boundary effects. Candidate adapter is unregistered; real-proof wallet/SDK/reader acceptance remains open.",
+  "log_sha256": "fb57ba88b1d63d3cf89abcdc130e8ee8ccfd2f3f1f74664aca8a6c2525add3db",
+  "native_command_registered": false,
+  "private_proof_execution_qualified": false,
+  "sdk_boundary_qualified": false,
+  "production_activated": false,
+  "source_manifest": [
+    {
+      "path": "chain/federation/coin_boundary.go",
+      "sha256": "d839ffa5dbeb9a2880a987852ffc85f5054a31f2a7da9a2d609b8d500ce3015d"
+    },
+    {
+      "path": "chain/federation/coin_boundary_test.go",
+      "sha256": "a7a22cb213d4cce8653c5b04b7b9f8485cb95de7000553c4e1054db6464d54a5"
+    }
+  ]
+}

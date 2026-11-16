@@ -1,0 +1,10 @@
+[Unit]
+Description=UAIN host probe: node conditions and front-door 5xx as node-exporter textfile metrics
+After=network-online.target k3s.service nginx.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 -I /opt/uain-host-probe/host_probe.py
+TimeoutStartSec=60
+Nice=10
+IOSchedulingClass=idle

@@ -1,0 +1,11 @@
+[Unit]
+Description=Attest prior-art survey submissions under review every thirty seconds
+
+[Timer]
+OnBootSec=3min
+# 120 s (9 November 2026): each run proves every survey and part state; 30 s starved public reads.
+OnUnitInactiveSec=120s
+RandomizedDelaySec=5s
+
+[Install]
+WantedBy=timers.target

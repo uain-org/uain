@@ -1,0 +1,91 @@
+name: uain-monitoring
+
+# Prometheus and Grafana on uain-app-1, as Docker Compose beside k3s (the
+# same images and Grafana files as compose.monitoring.yaml). Deployed by
+# .github/workflows/deploy.yml. How it works: ops/monitoring/README.md.
+#
+# Prometheus asks k3s's DNS (10.43.0.10) for the pilot copies, and reads
+# uain-db-1's numbers over the WireGuard tunnel. Only Grafana publishes a
+# port: 3300, open to all (Docker's published ports bypass ufw).
+
+services:
+  prometheus:
+    image: prom/prometheus:v3.15.0
+    restart: unless-stopped
+    command:
+      - --config.file=/etc/prometheus/k3s.yml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=30d
+      - --storage.tsdb.retention.size=8GB
+    dns: [10.43.0.10]
+    volumes:
+      - ../../../ops/monitoring/prometheus:/etc/prometheus:ro
+      - prometheus-data:/prometheus
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://127.0.0.1:9090/-/ready']
+      interval: 10s
+      timeout: 3s
+      retries: 12
+    logging: &logging
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+
+  grafana:
+    image: grafana/grafana:13.2.3
+    restart: unless-stopped
+    # Open to everyone at http://66.206.20.78:3300 (the owner's choice, 30
+    # September 2026). Plain HTTP: see "Limits" in ops/monitoring/README.md.
+    ports:
+      - '3300:3000'
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${UAIN_GRAFANA_ADMIN_PASSWORD:?set UAIN_GRAFANA_ADMIN_PASSWORD}
+      GF_USERS_ALLOW_SIGN_UP: 'false'
+      GF_AUTH_ANONYMOUS_ENABLED: 'false'
+      GF_ANALYTICS_REPORTING_ENABLED: 'false'
+      GF_ANALYTICS_CHECK_FOR_UPDATES: 'false'
+      GF_SERVER_ROOT_URL: 'http://66.206.20.78:3300/'
+      UAIN_SLACK_ALERTS_WEBHOOK: ${UAIN_SLACK_ALERTS_WEBHOOK:?set UAIN_SLACK_ALERTS_WEBHOOK}
+    volumes:
+      - ../../../ops/monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ../../../ops/monitoring/grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - grafana-data:/var/lib/grafana
+    logging: *logging
+
+  # The store on uain-db-1, over the tunnel (pg_hba allows 10.98.0.1, which
+  # Docker's outgoing traffic is rewritten to).
+  postgres-exporter:
+    image: prometheuscommunity/postgres-exporter:v0.20.1
+    restart: unless-stopped
+    environment:
+      DATA_SOURCE_URI: 10.98.0.2:5432/uain?sslmode=disable
+      DATA_SOURCE_USER: uain
+      DATA_SOURCE_PASS: ${UAIN_PG_PASSWORD:?set UAIN_PG_PASSWORD}
+    logging: *logging
+
+  # uain-app-1's CPU, memory and disk. uain-db-1 runs its own
+  # (prometheus-node-exporter, on 10.98.0.2:9100).
+  node-exporter:
+    image: prom/node-exporter:v1.12.1
+    restart: unless-stopped
+    pid: host
+    command:
+      - --path.rootfs=/host
+      - --collector.filesystem.mount-points-exclude=^/(dev|proc|sys|run|var/lib/docker/.+|var/lib/kubelet/.+|run/k3s/.+)($|/)
+      # Chain sync metrics from ops/monitoring/chain-sync (systemd timer) and
+      # the native proof age (ops/chain/proof-age.py, installed by
+      # ops/chain/install-proof-age.sh) for the UainNativeProofStale alert.
+      - --collector.textfile.directory=/host/var/lib/node_exporter/textfile
+    volumes:
+      - /:/host:ro,rslave
+    logging: *logging
+
+  blackbox:
+    image: prom/blackbox-exporter:v0.28.0
+    restart: unless-stopped
+    logging: *logging
+
+volumes:
+  prometheus-data:
+  grafana-data:

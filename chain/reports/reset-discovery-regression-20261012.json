@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-12",
+  "disposable_cleanup_confirmed": true,
+  "limits": {
+    "cap_drop": [
+      "ALL"
+    ],
+    "cpus": 2,
+    "memory_bytes": 3221225472,
+    "network": "none",
+    "pids": 256,
+    "readonly_root": true
+  },
+  "logs": [
+    {
+      "exit_code": 0,
+      "path": "/opt/uain-test/reset-discovery-regression-acfd39af-20261012/old-focused.log",
+      "sha256": "c9f7185adc9248e60490d630921b25d9408f5aad4b5e3640514fefbd8cea0d9d",
+      "suite": "old-focused",
+      "tests": 13
+    },
+    {
+      "exit_code": 1,
+      "path": "/opt/uain-test/reset-discovery-regression-acfd39af-20261012/old-discovery.log",
+      "sha256": "35df690e173881e947a5a671f0b8a550e0f4702405f7cb742e0db6f057be749a",
+      "suite": "old-discovery",
+      "tests": 36
+    },
+    {
+      "exit_code": 0,
+      "path": "/opt/uain-test/reset-discovery-regression-acfd39af-20261012/new-discovery.log",
+      "sha256": "ccfb16e92bd33a0458ea4001a3583bba973b0d14b0c5a7ede129894d7cf7851b",
+      "suite": "new-discovery",
+      "tests": 36
+    },
+    {
+      "exit_code": 0,
+      "path": "/opt/uain-test/reset-discovery-regression-acfd39af-20261012/new-focused.log",
+      "sha256": "96ea45d3aed6bccdf848229bc8fa851fa02d205db86c747d494cea1c4ea4c6b7",
+      "suite": "new-focused",
+      "tests": 13
+    }
+  ],
+  "new_focused_tests": 13,
+  "new_full_discovery_tests": 36,
+  "new_test_upgrade_sha256": "4928ef57123fd685d15f5c1532957db31e59a1f1eed2b881a396e0daea307c70",
+  "normalized_archive_sha256": "016454e02620e6c4d30d6c87e930144ae37abf442418e6e10b0fab2967fbf133",
+  "old_archive_sha256": "8e11dcab0276411b37e81bfe7a59883894f970df8b6fff981b1e8d9a6eab58a3",
+  "old_focused_passed": true,
+  "old_full_discovery_errors": 26,
+  "old_source_files": {
+    "ops/reset/README.md": "5bc8aa692be23869bc4f7589c0e93f4f2f44358ff9e4004f8a03465e2fb8eb47",
+    "ops/reset/archive.py": "e9feb4979478019ce3acbc754540ce0233f8af278eee1e9755a5fc71e762f972",
+    "ops/reset/backend-fixture.mjs": "2d669f776f8cbd3489086c5b43af7999e01e87dbe928668224551a851e0ad990",
+    "ops/reset/check-backend.mjs": "c028f62eac49675a73bea58ea64d2b9f339e1d47fd236649e745ccc4129fcc84",
+    "ops/reset/checkpoint.py": "301e2e0ccad442234bc8532764914f0d7aca56c885d705744ad75b094fcf603f",
+    "ops/reset/custody_entry.py": "9d83dbf2bc76a6d572ef53b94e079d60628f635eb149f5277da7e372845dc513",
+    "ops/reset/database.py": "249eea126443287cbfbc5d3d61419832fbebf151d963b3f2f336e7ab6452d9be",
+    "ops/reset/health.py": "052c86f1358e8a7ba38f66a140e17bdf29d0f75d8a02c60a28027da1122eae70",
+    "ops/reset/install.sh": "15149bf217f718287370f040f54fd7afdaba23a0238cc36f179b091909642941",
+    "ops/reset/installed.py": "7de9a53891b60de6a55cbaf2d0166eb9f252b665b096bb0e946a54fb32f89a33",
+    "ops/reset/native.py": "ae8c8c7ebe7d7e0ddc0f4ed89abb89cb6cf293f3936d0cdd987680e758b0e903",
+    "ops/reset/node.py": "ebe3be6af9306e243e03a82d502928d9ccead0c54ac3cc99179fe7952660be48",
+    "ops/reset/node_main.py": "a4cac1c4c9dd40baffa7d602d667caf580191561ea991089576040f7074ddc55",
+    "ops/reset/pins.py": "da57fd3e9d7dffa8f90f8b9bbe12f8d9a9e38ec9869f545cf1ae2b4e6232ea89",
+    "ops/reset/proofs/native-system-rehearsal-20261012.json": "afd2ea59c5815b818cc3385ae68d6bf65ac9c8c3a2445b5d76d8de08b4d8d4be",
+    "ops/reset/proofs/production-baseline-20261008.json": "3b6ecdbd391383985e2cb32adaa71bfca700694c0bc0e376b6f6e891f608566a",
+    "ops/reset/proofs/production-qualification-20261008.json": "0f35e01d4b88d1b092ff51859d2cc839572a77df8bfafbbd2c9c253e7e64c1e2",
+    "ops/reset/proofs/system-rehearsal-20261008.json": "18ea4bd3e61593d887d10bb5b112b15460e22d29de60dd2d61e6dca888b7ad97",
+    "ops/reset/proofs/versioned-upgrade-20261012.json": "3053daf6af1753b0a77786cde3bb335a688357515cddc6a4c2f58cbb1d859f78",
+    "ops/reset/qualify-native.sh": "98cda09b05024c1265c37628979694aa0e1c98e1ee9873095cff03bb54a8e36a",
+    "ops/reset/rehearse-backend.py": "b0ce6ce423db106ec99543bbcc88a4716c59d73c7e035af8df127f9650462705",
+    "ops/reset/rehearse-ci.sh": "434072d6480a06e2b1d1ccb33ae68f4ac59601dd17fad003be1a488d6d978b7f",
+    "ops/reset/rehearse-public-runtime.py": "0a8785fea3841abc9751bc139737d09b76d4abd864bbca9665211ad0f471454a",
+    "ops/reset/rehearse-system.py": "3ed61498c0b480a2a05a4058b5ec06da462f991dcb1f3d8f1b79823ca06cf68e",
+    "ops/reset/rehearse-upgrade.py": "403982aa52f3e20c76151b6a877c51c635e71e802f6e823eadc5755fd0ef2c87",
+    "ops/reset/rehearse.py": "27f64b3832855e1a2cd0bfafe340b66a08a6ca5a2e5d2fc13e0c1c701e92bbc6",
+    "ops/reset/runtime.py": "9547fa4b30002e994e89f12d3b7cc62150cf98d29bc631f686e9a7778a905425",
+    "ops/reset/stack.py": "033f3a906f02e3039cab0b7d7ffb5c3b9732539b9eb9c7248c42310a512827ef",
+    "ops/reset/system.py": "a6b3f030bfb10fa5d565bf321b4f06cc4596b4b18fa4df881b6f20e7cc9b23fe",
+    "ops/reset/test_archive.py": "f1629a670e32a580cfb6b46492202b73d03e205c1d2d0ff9f127bb6135d463ba",
+    "ops/reset/test_checkpoint.py": "2ee899346ab8b29be9b09a19bc0247600dbe48a681d1157093f9dd08a7773b42",
+    "ops/reset/test_database.py": "fc831b4f44e260640e64971460e10280746354182ab6d060df3a3412fcfc0d08",
+    "ops/reset/test_health.py": "57f081ec9a2b6b5b3680bec097cb716d9fd0fc822d5ade3ecb70aa9fc5b2cfef",
+    "ops/reset/test_native.py": "0c2819c8c4ca7e04f6550085513a661c5ff0784ca49a1c1add4c2c90396d93a9",
+    "ops/reset/test_node.py": "7581028d096b17e6f8df45dbda17eb60db885682ec39d6636198ed97fbc07e93",
+    "ops/reset/test_pins.py": "905876a81766fc36c7ffab4940accca1c9511845e093ae0bc4adc195d0b7fd2a",
+    "ops/reset/test_runtime.py": "9de78223210d365c17b095aac986c14cb0036b07014a3c148b03ebab4bbfb945",
+    "ops/reset/test_stack.py": "c04f75675abeb9cc25111d0190d2caead8a7046d813eb6a6594a3c49ba036257",
+    "ops/reset/test_system.py": "fe1a862bec2dd72b572dc65dd4f499e59c5783f0781a096db8488a6c686c1420",
+    "ops/reset/test_upgrade.py": "318092fb600321944a2234f457342484977fb1a7664fe0cc1a32f0245c4d7be0",
+    "ops/reset/uain-system-reset": "f52f04a0ce8801fab92229227a83082ab7856e94f230b6c27eba7a97ec3ed5a7",
+    "ops/reset/upgrade.py": "d4c312dac6a3aca88bf3116237cbcab393e0a16074994c6875607b9aad71ca32"
+  },
+  "owner_checks": "Real immutable fictional UID/GID65534 mode0600 32-byte inode preseeded before capdrop; no CHOWN capability or mocks",
+  "production_installation": false,
+  "production_reset": false,
+  "runtime_image": "sha256:e34b9972b50c3f9fee803334df875e8814aae3e381fc178b8c8de1a4608e8477",
+  "schema": "uain-reset-discovery-regression-v1",
+  "skips": 0,
+  "source_revision": "acfd39afbd59bbe021516c12f1cf845ad7b828ac",
+  "source_scope": "Complete tracked ops/reset subtree, git archive; sole new source is exact test_upgrade.py correction"
+}

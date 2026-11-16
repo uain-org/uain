@@ -1,0 +1,133 @@
+{
+  "schema": "uain-server-qualification-v1",
+  "date": "2026-10-12",
+  "scope": "Stopped original-node 0.3.7 to 0.3.8 unit/profile transition",
+  "host": "uain-app-1",
+  "stage": "/opt/uain-test/upgrade-profile-20261012",
+  "service": "uain-upgrade-profile-final5-20261012",
+  "limits": {
+    "cpu_quota": "200%",
+    "memory_max": "3G",
+    "tasks_max": 256,
+    "runtime_max_seconds": 600,
+    "kill_mode": "control-group"
+  },
+  "local_build_or_tests": false,
+  "exit": 0,
+  "service_after_completion": "inactive",
+  "log": "final5.log",
+  "log_sha256": "b9c78d8f1b048e327d4449cfb4501d83f1ce5c112db1fbe6f1f0db2ea6f5ef92",
+  "commands": [
+    "python3 -I ops/chain/upgrade-failover-profile-test.py -v",
+    "python3 -I ops/chain/failover-install-test.py -v",
+    "python3 -I ops/chain/failover-test.py -v",
+    "python3 -I ops/chain/failover-backup-test.py -v"
+  ],
+  "results": [
+    {
+      "suite": "upgrade",
+      "tests": 22,
+      "seconds": 0.753,
+      "status": "PASS"
+    },
+    {
+      "suite": "installer",
+      "tests": 14,
+      "seconds": 0.335,
+      "status": "PASS"
+    },
+    {
+      "suite": "failover",
+      "tests": 9,
+      "seconds": 0.067,
+      "status": "PASS"
+    },
+    {
+      "suite": "role_backup",
+      "tests": 16,
+      "seconds": 0.159,
+      "status": "PASS"
+    }
+  ],
+  "red": [
+    {
+      "log": "red.log",
+      "exit": 1,
+      "sha256": "76714dbfa96935e6db0c123f3b62b6e883369da3a8d11e612acad232a29f6bba",
+      "failure": "transition helper absent before implementation"
+    },
+    {
+      "log": "replay-red.log",
+      "exit": 1,
+      "sha256": "5f842158cc8903c7e25c1dada5a2e9ce2f35de8d60ff6b3e7ec33086dc5fe877",
+      "failure": "completed rollback accepted later mixed unit/profile pair; fixed with exact terminal-pair checks"
+    }
+  ],
+  "source_sha256": {
+    "ops/chain/upgrade-failover-profile.py": "cfe4b40170509464f71e218acf94813f1de9d8eaab6b1e478bc4d161d9621757",
+    "ops/chain/upgrade-failover-profile-test.py": "42039726eb7ec65c813f2343dada1d2d5cb24f78c36157d0efa2f016d6a178bc",
+    "ops/ci/container-suite.sh": "e1beba9305b089e67e3f5f5d5e541069a98c7527e013beebbc5c7e091ecb00c7"
+  },
+  "old_binary_sha256": "de321b8e229753aec0257415597789a6eb2254ba3e71e12e9e70f652374b3ea1",
+  "final_0_3_8_binary_sha256": null,
+  "production_actions": [],
+  "limitations": [
+    "Fixture filesystem and mocked systemd/node boundary tests; no canonical preflight/apply/rollback occurred",
+    "Final merged binary must be independently qualified and supplied through the fresh fixed root approval",
+    "Root coordinator must stop both hosts before either local transition and inspect both matched pairs before startup",
+    "Rollback and replay refuse changed stopped node tree; no signing state or node data restore",
+    "Canonical original-role failover install and first paired/offsite acceptance must precede the release transition",
+    "Live common history, post-upgrade source inventories and refreshed paired/offsite acceptance remain required"
+  ],
+  "ci_invocations": {
+    "service": "uain-upgrade-profile-ci-20261012",
+    "exit_file": "chain/ci.exit",
+    "exit": 0,
+    "log": "ci.log",
+    "log_sha256": "026ec797597acad8cb74a3ea5c1f45e9340241c23989eba288dc8af44e9f0b2e",
+    "results": [
+      "bash -n ops/ci/container-suite.sh PASS",
+      "others suite upgrade test path:22 PASS",
+      "native-chain suite relative upgrade test path:22 PASS"
+    ],
+    "full_suites_rerun": false
+  },
+  "source_binding_followup": {
+    "date": "2026-10-12",
+    "stage": "/opt/uain-test/upgrade-profile-20261012",
+    "red": {
+      "service": "uain-upgrade-profile-pyc-red-20261012",
+      "exit": 1,
+      "log": "pyc-red.log",
+      "sha256": "ab01884333ca5ee67fa97d1facdd8c7083e66deaf33fc23bc330fd1abb3a9994",
+      "failures": 3,
+      "finding": "Each timestamp/size-valid forged installer/node/archive pyc executed despite matching pinned source"
+    },
+    "green": {
+      "service": "uain-upgrade-profile-pyc-green-20261012",
+      "exit": 0,
+      "active_state": "inactive",
+      "log": "pyc-green.log",
+      "sha256": "b0a9435228cb5be062ed88422e8f6c0655dfb7c51d5f8fa78215df19521e0fc0",
+      "tests": 64,
+      "suites": {
+        "upgrade": 25,
+        "installer": 14,
+        "failover": 9,
+        "role_backup": 16
+      }
+    },
+    "limits": {
+      "CPUQuota": "200%",
+      "MemoryMax": "3G",
+      "TasksMax": 256,
+      "RuntimeMaxSec": 600,
+      "KillMode": "control-group"
+    },
+    "implementation": "Source-compile pinned top-level modules; reject relevant dependency bytecode caches before any dependency code; disable bytecode writes so unchanged nested archive loader reads source only",
+    "canonical_dependency_hashes_unchanged": true,
+    "canonical_install_manifest_and_ssh_authority_unchanged": true,
+    "staging_requirement": "Use a root-owned protected fresh source tree without dependency pyc caches; helper refuses rather than deletes caches",
+    "production_actions": []
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "coordinator_rehearsal": true,
+  "real_postgres": true,
+  "real_kubernetes": true,
+  "real_native_nodes": 2,
+  "interrupted_after_cutover_then_recovered": true,
+  "original_events_and_roots_unchanged": true,
+  "member_keys_and_budget_retained": true,
+  "sessions_cleared": true,
+  "historical_public_evidence_independently_audited_after_reset": true,
+  "failed_boundary_job_recovered": true,
+  "research_scheduler_resumed": true,
+  "health": {
+    "readiness": 200,
+    "chain_id": "uain-epoch-20261008_110005",
+    "height": 3,
+    "genesis_sha256": "777912844312ac36cef645632a3ad9853f38bb4a1cf96a66ea8eb805ef957957",
+    "independent_state_proofs": 4,
+    "validator_power": 10,
+    "fullnode_power": 0,
+    "two_node_commit_agrees": true
+  },
+  "production_reset": false,
+  "transport": "fixture app/db roles on one host; production SSH not exercised"
+}

@@ -1,0 +1,37 @@
+name: Nightly full check
+# The safety net behind the pre-push check (npm run check): it reruns the routine
+# suites (pilot, BAINK/reviewers/organizations/custody) on main every night,
+# off the merge path.
+# Nightly and on demand. Builds uaind and uain-state from this commit inside
+# the isolated CI sandbox, then runs the native-chain suite, which includes
+# the federation e2e and BAINK's project-pilot e2e on a throwaway consensus
+# node with UAIN_REQUIRE_E2E=1: a test that would skip there fails instead
+# (ops/ci/e2e-gate.mjs). The pre-push check lists these tests as
+# skipped warnings. It deploys nothing and touches no production state.
+# 05:20 UTC keeps clear of the 03:10 node backup.
+on:
+  schedule:
+    - cron: '20 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: uain-e2e
+  cancel-in-progress: false
+
+jobs:
+  native-chain:
+    name: native chain and BAINK real-chain e2e
+    runs-on: [self-hosted, linux, x64, uain-production]
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with: { persist-credentials: false }
+      - name: Native race, persistence, two-node smoke and required real-chain e2e in an isolated container
+        run: sudo /usr/local/sbin/uain-ci-run "$GITHUB_WORKSPACE" native-chain
+
+  routine:
+    name: routine suites on main
+    uses: ./.github/workflows/tests.yml

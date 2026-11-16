@@ -1,0 +1,98 @@
+name: uain-monitoring
+
+# Local Compose setup only (ops/monitoring/README.md). Production runs
+# deploy/k8s/production/monitoring.yaml; the address and "public front door"
+# below describe the retired Compose production.
+#
+# Prometheus and Grafana for uain.global, beside the
+# uain-universa project on the same host. How it works and how to open
+# Grafana: ops/monitoring/README.md.
+#
+# It joins the app's network to reach the pilot copies' metrics port and the
+# store; nothing here publishes a port except Grafana, on 3300, open to all.
+
+services:
+  prometheus:
+    image: prom/prometheus:v3.15.0
+    restart: unless-stopped
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=30d
+      - --storage.tsdb.retention.size=8GB
+    volumes:
+      - ./ops/monitoring/prometheus:/etc/prometheus:ro
+      - prometheus-data:/prometheus
+    networks: [default, app]
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://127.0.0.1:9090/-/ready']
+      interval: 10s
+      timeout: 3s
+      retries: 12
+    logging: &logging
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+
+  grafana:
+    image: grafana/grafana:13.2.3
+    restart: unless-stopped
+    # Open to everyone on port 3300 of the database server (the owner's choice, 30
+    # September 2026); its address is UAIN_GRAFANA_ROOT_URL in the private environment. Plain HTTP: see "Limits" in ops/monitoring/README.md.
+    ports:
+      - '3300:3000'
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${UAIN_GRAFANA_ADMIN_PASSWORD:?set UAIN_GRAFANA_ADMIN_PASSWORD}
+      GF_USERS_ALLOW_SIGN_UP: 'false'
+      GF_AUTH_ANONYMOUS_ENABLED: 'false'
+      GF_ANALYTICS_REPORTING_ENABLED: 'false'
+      GF_ANALYTICS_CHECK_FOR_UPDATES: 'false'
+      GF_SERVER_ROOT_URL: ${UAIN_GRAFANA_ROOT_URL:?set UAIN_GRAFANA_ROOT_URL}
+      # Read by provisioning/alerting/slack.yml. Grafana will not start
+      # with it empty.
+      UAIN_SLACK_ALERTS_WEBHOOK: ${UAIN_SLACK_ALERTS_WEBHOOK:?set UAIN_SLACK_ALERTS_WEBHOOK}
+    volumes:
+      - ./ops/monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./ops/monitoring/grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - grafana-data:/var/lib/grafana
+    logging: *logging
+
+  # The store's health: connections, size, locks, how busy it is.
+  postgres-exporter:
+    image: prometheuscommunity/postgres-exporter:v0.20.1
+    restart: unless-stopped
+    environment:
+      DATA_SOURCE_URI: db:5432/uain?sslmode=disable
+      DATA_SOURCE_USER: uain
+      DATA_SOURCE_PASS: ${UAIN_PG_PASSWORD:?set UAIN_PG_PASSWORD}
+    networks: [default, app]
+    logging: *logging
+
+  # The host's CPU, memory and disk, read from its /proc and /sys. Not on the
+  # host network, so port 9100 stays off the public interface.
+  node-exporter:
+    image: prom/node-exporter:v1.12.1
+    restart: unless-stopped
+    pid: host
+    command:
+      - --path.rootfs=/host
+      - --collector.filesystem.mount-points-exclude=^/(dev|proc|sys|run|var/lib/docker/.+|var/lib/kubelet/.+)($|/)
+    volumes:
+      - /:/host:ro,rslave
+    logging: *logging
+
+  # uain.global as a visitor sees it, through the public front door.
+  blackbox:
+    image: prom/blackbox-exporter:v0.28.0
+    restart: unless-stopped
+    logging: *logging
+
+networks:
+  app:
+    name: uain-universa_default
+    external: true
+
+volumes:
+  prometheus-data:
+  grafana-data:

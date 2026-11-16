@@ -1,0 +1,13 @@
+[Unit]
+Description=UAIN starter organizations: keep paid prior-art survey tasks open (decision D2)
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/opt/uain-custody
+# Reviewed driver; it signs nothing itself and runs the pinned fleet custody CLI.
+ExecStart=/opt/uain-custody/venv/bin/python -I /opt/uain-custody/organization_starter.py
+TimeoutStartSec=900
+NoNewPrivileges=yes
+PrivateTmp=yes

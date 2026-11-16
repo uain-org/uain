@@ -1,0 +1,69 @@
+{
+  "schema": "uain-ledger-historical-git-repair-v1",
+  "date": "2026-10-12",
+  "source_revision": "b3a5c03dd46d306faa084ed7856f393bfaeb7df2",
+  "stage": "/opt/uain-test/ledger-publication-20261012",
+  "service": "uain-ledger-history-qualify-20261012",
+  "result": "success",
+  "exec_main_status": 0,
+  "active_state": "inactive",
+  "verification": "Original typed publisher inside credential-free disposable container, then bounded canonical JSON export and independent fixed-key Ed25519 host verification",
+  "launcher_sha256": "8da49e760e545439212bd22075183c4e163046565e9376a7a37c270b32884cbb",
+  "publication_method": "GitHub contents create-only without prior file SHA, followed by independent exact byte readback",
+  "publications": [
+    {
+      "date": "2026-09-21",
+      "root": "e1abcbf97f41bf4a3e0be5cb05bda3f95b2b86a9ca3485b5758560273d934a88",
+      "count": 14,
+      "sha256": "04250b7c5e3293657b21fa377b7ff87b74dce77898fbbcf422ea51e5c276beb0",
+      "commit": "6996f67366b106850777d2426b536a52b1dfd560",
+      "url": "https://github.com/senti-org/uain-universa/blob/ledger-roots/roots/2026-09-21.json",
+      "readback_exact": true,
+      "create_only": true,
+      "export_exit": 0,
+      "export_log": "history-2026-09-21.log",
+      "export_log_sha256": "2e3bdeb1348287f56c1e88f62ad555c1e08892b0bf17c8b0f2e47e8ce62a2ed8"
+    },
+    {
+      "date": "2026-09-22",
+      "root": "6ae2fdaa8e08c0414d32fae8454d4a8454c101c5e4a0db84527d3d8512f99f2b",
+      "count": 7,
+      "sha256": "4880f7d414c052ffbc30b9ff86e24287b7545a3e988cb847e8168c62cf9a87c0",
+      "commit": "42b40f7f6396046e0660b4fcca5ce7f3cd47197a",
+      "url": "https://github.com/senti-org/uain-universa/blob/ledger-roots/roots/2026-09-22.json",
+      "readback_exact": true,
+      "create_only": true,
+      "export_exit": 0,
+      "export_log": "history-2026-09-22.log",
+      "export_log_sha256": "bdf97831d729dfe8739fbed97ee9c85d23e5f25b30be9da4751de4b919f1a02f"
+    },
+    {
+      "date": "2026-09-24",
+      "root": "5a33d1eda1fb7901fade9ad51cf6e86f65b0d8625d1522ef683e68beb71eb418",
+      "count": 366,
+      "sha256": "6f093ae0d893468beaa46abbcae86fdb7ed50c9df07fa5e852e203910cbe9a57",
+      "commit": "cc5b006fa431cfff5848731e8f7984d74a4d2d4a",
+      "url": "https://github.com/senti-org/uain-universa/blob/ledger-roots/roots/2026-09-24.json",
+      "readback_exact": true,
+      "create_only": true,
+      "export_exit": 0,
+      "export_log": "history-2026-09-24.log",
+      "export_log_sha256": "bf4b0c3b5c44af4dd993126583b3f728c9740c7e714c24a8b7135de139c118c9"
+    }
+  ],
+  "anchor_transactions_sent": false,
+  "runner_or_original_node_changed": false,
+  "coverage": {
+    "base_and_solana_journals": "Same16nonempty dates allconfirmed through2026-10-11",
+    "git_nonempty_gaps_after_repair": [],
+    "independent_finalized_rpc_readback": false
+  },
+  "timeout_launcher_qualification": {
+    "scope": "Root reset deadline1050\u21922100seconds only; publication behavior unchanged",
+    "sha256": "17a966e6323bbabb428176e08e2ea05a5e4f0c9dd2ba4b81b92081ed4aee5f3c",
+    "tests": 17,
+    "exit": 0,
+    "log": "timeout-check.log",
+    "log_sha256": "49a5c15132db1092b8a1d4b3fec81c8084426922871cc69fcfa9d37d474760b5"
+  }
+}

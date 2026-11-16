@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-08",
+  "server": "uain-app-1",
+  "unit": "uain-coin-accounting-20261008",
+  "result": "success",
+  "exit_code": 0,
+  "race_tests": 3,
+  "schedule_transitions": 2000,
+  "vet_passed": true,
+  "native_authorization_integrated": false,
+  "private_proof_bridge_integrated": false,
+  "production_asset_activated": false,
+  "production_coin_mint": false,
+  "candidate_precision": 6,
+  "units_per_coin": "1000000",
+  "supply_cap_units": "108000000000000000000",
+  "invariants": [
+    "transparent + shielded = minted",
+    "minted + reserved <= cap",
+    "reservations create no minted balance",
+    "shield and exit conserve minted supply",
+    "rejected transitions return unchanged state"
+  ],
+  "source_manifest": [
+    {
+      "path": "chain/coin/ledger.go",
+      "sha256": "89676d3ae7f46f7c15181e5bfe5574301cb0ab009a4498c44e6392221ec5f9cb"
+    },
+    {
+      "path": "chain/coin/ledger_test.go",
+      "sha256": "8ec4e37bcfb0322fa8c877bc3443b185a938a514722d6807cd14e90f3e967f69"
+    }
+  ],
+  "log_sha256": "c62b3086345ba693396ef79cbf0f2850770541aacfc86713f75e45f4fdd61644"
+}

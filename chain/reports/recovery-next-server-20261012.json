@@ -1,0 +1,56 @@
+{
+  "schema": "uain-recovery-next-server-qualification-v1",
+  "date": "2026-10-12",
+  "source_revision": "4f015a2d47834add307fa1ddab50234c65248d2a",
+  "source_archive_sha256": "2e898acd0e62d7ecc43cb15ff45249db14163edd91c0fe7eeaeb920bf6af1e93",
+  "host": "uain-app-1",
+  "heavy_work_local": false,
+  "backend": {
+    "passes": [
+      {
+        "write_thread": false,
+        "tests": 652,
+        "pass": 651,
+        "skip": 1,
+        "fail": 0,
+        "duration_ms": 397748.028355
+      },
+      {
+        "write_thread": true,
+        "tests": 652,
+        "pass": 651,
+        "skip": 1,
+        "fail": 0,
+        "duration_ms": 428494.392251
+      }
+    ],
+    "skip": "External snapshot supplied separately; not requested by this combined suite",
+    "log_sha256": "8600d1c75c3a8102aaa9a598d6183291757d69536ecb10153b46fed8d9153455"
+  },
+  "site": {
+    "typecheck": true,
+    "static_build": true,
+    "exit": 0,
+    "log_sha256": "a94f4a8ad0b6aaf4d1bbfddd44dd8007a565d773966496c55506b7f2ad8e944a"
+  },
+  "installer_ci_owner_cases": {
+    "source_sha256": "318092fb600321944a2234f457342484977fb1a7664fe0cc1a32f0245c4d7be0",
+    "driver_sha256": "0a6dffe56a2764a36a422d28248883b417bc2166f00b12b97d1f4fe097c35a0d",
+    "red": {
+      "exit": 1,
+      "errors": 2,
+      "cause": "CAP_CHOWN absent in actual all-capabilities-dropped read-only CI container",
+      "log_sha256": "39e724f66ae1052752e162d4cd5fc7561c186d772c5ce3d4a26f56ebbf9abe4b"
+    },
+    "green": {
+      "exit": 0,
+      "tests": 13,
+      "skips": 0,
+      "log_sha256": "e4d499bf9d31cb3edd9e3d8f590b3e191b351d38efc1c2406acf0eb18c44932c"
+    },
+    "fixture": "Existing launcher-provided fictional foreign inode, actual uid/gid65534; no CHOWN capability or mocked ownership"
+  },
+  "production_reset": false,
+  "installer_production_installed": false,
+  "authority_activated": false
+}

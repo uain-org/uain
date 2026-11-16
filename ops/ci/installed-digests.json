@@ -1,0 +1,47 @@
+{
+  "host": "uain-app-1",
+  "observed_at": "2026-11-15T01:45:00Z",
+  "method": "read-only ssh: sha256sum and stat; no file was changed",
+  "note": "Recorded state of the root-installed CI programs. verify-installed.sh compares the host with this record and with the tracked sources. Update this record only in the reviewed change that accompanies an installation.",
+  "files": [
+    {
+      "installed": "/usr/local/sbin/uain-ci-run",
+      "source": "ops/ci/launcher.py",
+      "sha256": "f779228d610afdd4222b6cb55111cc801a65d4dc52c7f816067bde318bcc229b",
+      "owner": "root:root",
+      "mode": "755",
+      "source_commit": "claude/note-tests-brokenpipe-20261110",
+      "history": "Installed 10 November 2026 17:23:22 UTC: private-exchange scratch budget 8 GiB (was 4). Rollback: /var/backups/uain-ci-install-20261110T172322Z. Earlier: Installed 9 November 2026 12:21:06 UTC: 16 GiB enforced scratch budget, dedicated CI subnets 10.213.0.0/16, create_network through docker(). Rollback: /var/backups/uain-ci-install-20261109T122106Z. Earlier the same day 12:02:38 (subnets), 09:50:40 (check slots, scratch admission) and 6 November 2026 10:36:09 UTC (500e6572)."
+    },
+    {
+      "installed": "/usr/local/sbin/uain-host-guard",
+      "source": "ops/ci/host-guard.py",
+      "sha256": "4b010a5a6ca2f6e2650a1c09ed06ae10f834ad16b3f51ad90fd2b674a072d701",
+      "owner": "root:root",
+      "mode": "755",
+      "source_commit": "467824be",
+      "history": "Installed 10 November 2026 00:40:03 UTC: health URLs /, /api/ready and /for-ai (was /waitlist), so the /waitlist route alias can be removed. Guard only; launcher byte-identical and untouched. Rollback: /var/backups/uain-ci-install-20261110T004003Z. Earlier: Installed 9 November 2026 12:21:06 UTC: admission floor 40 GiB and 10% free, above the kubelet 5% hard-eviction line plus the scratch budget, after the DiskPressure production outage. Rollback: /var/backups/uain-ci-install-20261109T122106Z. Earlier: 10 GiB floor installed 6 November 2026 10:36:09 UTC."
+    },
+    {
+      "installed": "/etc/sudoers.d/uain-ci-run",
+      "source": null,
+      "sha256": "1036b277cd8fefeae23988af1e935a88fbf86e8010be27976b8992eb1d085d32",
+      "owner": "root:root",
+      "mode": "440",
+      "history": "Written by install-runtime.sh: runner may run only /usr/local/sbin/uain-ci-run as root."
+    },
+    {
+      "installed": "/etc/uain-ci/runtime-image",
+      "source": null,
+      "sha256": "b7579dc01e5a7462c94b01c50bcae41ddbab6d2e5dfa5ddbef1b68dc2b62f814",
+      "owner": "root:root",
+      "mode": "644",
+      "history": "Installed 15 November 2026 01:33:43 UTC by install-runtime.sh from main 69bad689: runtime image sha256:9bc3193f8c7146f2613923476a4267a9e43c29686333509f0d23d9de9ebeb66a (PostgreSQL key fingerprint check, IN-12; PostgreSQL client 17.12 and the Debian updates since 11 October). Previous image sha256:e34b9972b50c3f9fee803334df875e8814aae3e381fc178b8c8de1a4608e8477 kept as uain-ci-runtime:before-20261115. Rollback: /var/backups/uain-ci-install-20261115T013213Z/runtime-image. Earlier: written 12 October 2026 for the 11 October image."
+    }
+  ],
+  "backups": [
+    "/var/backups/uain-ci-disk-floor-20261106T103609Z",
+    "/var/backups/uain-ci-install-20261110T004003Z",
+    "/var/backups/uain-ci-install-20261115T013213Z (flat layout: its uain-ci-run is the sudo rule, not the launcher)"
+  ]
+}

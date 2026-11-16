@@ -1,0 +1,81 @@
+{
+  "schema": "uain-legacy-budget-server-qualification-v1",
+  "date": "2026-10-12",
+  "host": "uain-app-1",
+  "stage": "/opt/uain-test/legacy-budget-20261012",
+  "service": "uain-legacy-budget-qualified-20261012.service",
+  "limits": {
+    "cpu_quota": "200%",
+    "memory_max": "3G",
+    "tasks_max": 256
+  },
+  "runtime": {
+    "go": "1.27.1",
+    "node": "22.22.0"
+  },
+  "dependency": "Integration bddaa3b original rolling-cap/policy helpers copied only into isolated test stage; parent combined branch already includes these.",
+  "red": [
+    {
+      "log": "routes-red2.log",
+      "result": "Unsupported allocation/unlock/criteria routes, exit1"
+    },
+    {
+      "log": "max-red.log",
+      "result": "Full max128 task body reads fail at3011468 gas"
+    },
+    {
+      "log": "composed-red.log",
+      "result": "Rewriting all128 task/work/claim/participant project indexes fails at3120574 gas"
+    }
+  ],
+  "green": {
+    "log": "qualified.log",
+    "log_sha256": "f724693b1e02ec9a22adbbdd40204c8da5c86e87e8ac89f197b74e61ba212842",
+    "exit": 0,
+    "commands": [
+      "go test -race -p 2 -count=1 ./federation -v",
+      "go test -race -p 2 -count=1 ./app -run TestSDKLegacy -v",
+      "go vet -p 2 ./..."
+    ],
+    "independent_node_budget_vectors": 44016,
+    "vectors_sha256": "6518020468eb4dda22c28ea11d883d3a74771c94287971b6e1bbc81a473c4b81",
+    "sdk_maximum_indexes": {
+      "tasks": 128,
+      "work": 128,
+      "claims": 128,
+      "participants": 128
+    },
+    "sdk_gas": {
+      "allocation": 2393099,
+      "lead_task_price": 1332293,
+      "lead_completion_criterion": 2227641,
+      "reallocation_after_restart": 1259596
+    },
+    "checks": [
+      "Exact original operator guardian scope without creator requirement",
+      "Lead/peer unauthorized allocation and unlock refused",
+      "Original stage3 end and safe-integer bounds",
+      "No issuance or paid prize repricing",
+      "Allocation total cannot fall below committed prizes",
+      "Allocation basis survives stage release",
+      "Typed task value/pointer compact index updates",
+      "Old mutable overlay takes precedence over immutable source compact budget",
+      "Independent JavaScript binary64 stage outputs",
+      "Authenticated IAVL criteria/task-index proofs and restart",
+      "All legacy SDK and federation regressions"
+    ]
+  },
+  "production_actions": [],
+  "scope": "Engineering qualification only; combined tests, merged release, custody and rollout remain separate.",
+  "source_sha256": {
+    "chain/federation/legacy_future_budget.go": "c0de4f06ddf0c93584f2496cd7e44eb257685ac044a87870694e8cbc8d74ea09",
+    "chain/federation/legacy_future_budget_test.go": "c0789d314a230dab2c09940bd5b51d75a1b7b9d2d9b943786feccfc39e818ad8",
+    "chain/federation/legacy_future_tasks.go": "b77000a645bfb468621ddd775f37742c685b083edea6f7c303cbe6f307389672",
+    "chain/federation/legacy_future_progress.go": "cf95c460f40b489dc2cebeb15765e97e152bce3900ce828bd3f016a7a276101e",
+    "chain/federation/legacy_research.go": "6ef0d85e6c2186405d1e8550645da55b4bc9bd411e3c8570379dc71fd90ae43a",
+    "chain/federation/store.go": "00ba5780856b84a94b6022e998ab272b47e580e33f864d0ce3bb12b8ab8c43fd",
+    "chain/federation/keeper.go": "dd3f34b29271300e684e96b54aa3a6b6f7785fc80c2f27c5288b58b08a57044f",
+    "chain/app/legacy_budget_test.go": "06e6b8ec89a39d7b5b8e228b7c87f1561bea0d3742a8cd1d662aa9fe34818cc5",
+    "chain/federation/testdata/legacy-budget-vectors.mjs": "6a1bb0af402dc0546efb97967535df247a10d7d325ab911a3c9ee77f12484786"
+  }
+}

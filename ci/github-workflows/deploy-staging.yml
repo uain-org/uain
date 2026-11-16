@@ -1,0 +1,84 @@
+name: Deploy UAIN staging
+on:
+  push:
+    branches: [staging]
+  workflow_dispatch:
+    inputs:
+      reset:
+        description: Empty staging's database and seed it again (deploy/k8s/staging/reset.sh)
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+# Its own group: a staging deploy never cancels or waits on production's
+# group. The single runner still runs one job at a time.
+concurrency:
+  group: uain-staging
+  cancel-in-progress: false
+
+jobs:
+  # Tests run before the push (npm run check, ops/check.sh), not here.
+  # Namespace uain-staging on uain-app-1, database uain_staging on uain-db-1
+  # (deploy/k8s/staging/README.md). Never touches namespace uain.
+  deploy:
+    if: github.ref == 'refs/heads/staging'
+    runs-on: [self-hosted, linux, x64, uain-staging]
+    timeout-minutes: 30
+    env:
+      KUBECONFIG: /home/runner/.kube/config
+      REGISTRY: 10.98.0.1:5000/uain
+      # Its own tags, so production's history never names staging's images.
+      TAG: staging-${{ github.sha }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+
+      - name: Build and push the images
+        run: |
+          set -euo pipefail
+          docker build --pull -t "$REGISTRY/web:$TAG" .
+          docker build --pull -t "$REGISTRY/pilot:$TAG" -f services/pilot/Dockerfile .
+          for image in web pilot; do docker push "$REGISTRY/$image:$TAG"; done
+
+      # Both are made once by hand; staging has no GitHub secrets at all.
+      - name: Check the secrets exist
+        run: |
+          set -euo pipefail
+          for s in uain-env uain-ledger; do
+            if ! kubectl -n uain-staging get secret "$s" >/dev/null 2>&1; then
+              echo "::error::Secret $s is missing in uain-staging; it must be created by hand (deploy/k8s/staging/README.md)"
+              exit 1
+            fi
+          done
+
+      - name: Apply the manifest
+        run: |
+          set -euo pipefail
+          sed "s/IMAGE_TAG/$TAG/g" deploy/k8s/staging/uain.yaml | kubectl apply -f -
+          for d in pilot web; do python3 ops/ci/rollout-wait.py uain-staging "$d" 300; done
+          kubectl -n uain-staging get pods -o wide
+
+      - name: Reset and seed
+        if: inputs.reset
+        run: bash deploy/k8s/staging/reset.sh
+
+      # Staging has one copy, so the first seconds after a rollout can miss:
+      # tried up to 6 times, a few seconds apart, before the run fails.
+      - name: Check the site
+        run: |
+          set -euo pipefail
+          for path in / /api/ready /network/live; do
+            curl --fail --silent --show-error --retry 5 --retry-delay 3 --retry-all-errors \
+              --connect-timeout 5 --max-time 20 --resolve staging.uain.global:443:127.0.0.1 \
+              "https://staging.uain.global$path" > /dev/null
+          done
+
+      - name: Remove images of older deploys
+        run: bash deploy/k8s/production/prune-images.sh
+
+      - name: Prune untagged images
+        if: always()
+        run: docker image prune -f --filter "until=168h" >/dev/null

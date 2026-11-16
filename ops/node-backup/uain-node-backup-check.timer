@@ -1,0 +1,10 @@
+[Unit]
+Description=Hourly UAIN node backup health check
+
+[Timer]
+OnBootSec=15min
+OnUnitActiveSec=1h
+Unit=uain-node-backup-check.service
+
+[Install]
+WantedBy=timers.target

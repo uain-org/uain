@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-12",
+  "fixture": "private mount/UTS namespaces on app host; fixed production paths mapped exclusively to disposable directories; real SSH source10.98.0.1; public binaries; fictional isolated SSH credentials; fictional aaaa source revision in fixture approvals",
+  "production_installation": false,
+  "production_reset": false,
+  "public_binary_sha256": {
+    "uain-proof": "c82f04deaadd22ce1f38b077a6f6409235ebd2389ab44e27ef8d7f4bcd3bdbeb",
+    "uain-reset-checkpoint": "cc6804b51b27e3dc41a8a65a5a592759efd4b06f5b398dc92de6eb0ba6336d5b",
+    "uain-state": "c804232f109f57549f95ddc7ef1917ba0e319b81aedfdbcf95e4d4892e267013"
+  },
+  "roles": [
+    {
+      "archive_sha256": "e9feb4979478019ce3acbc754540ce0233f8af278eee1e9755a5fc71e762f972",
+      "config_keys_authorized_epochs_preserved": true,
+      "first_release": "e1278aa80dc44a96c8be46e7915341e3b9a200818ce108bc27c520555d040763",
+      "fixed_runtime_dispatch": true,
+      "forced_from": null,
+      "forced_ssh": false,
+      "forged_verifier_bytecode_refused_before_execution": true,
+      "forward_recovery_and_repeat_identical": true,
+      "interrupted_after_legacy_retirement": true,
+      "manifest_tamper_refused": true,
+      "reset_performed": false,
+      "role": "app",
+      "second_release": "26b8e761d2332ad6516874f83af164d4bf85c63193b9b056c3d3a77a7499e601",
+      "shell_and_other_scope_refused": false
+    },
+    {
+      "archive_sha256": "e9feb4979478019ce3acbc754540ce0233f8af278eee1e9755a5fc71e762f972",
+      "config_keys_authorized_epochs_preserved": true,
+      "first_release": "c584b2c59326acae2086cd566ac12fa0a1df9a6cc2586d26bea46b623ccdadaf",
+      "fixed_runtime_dispatch": true,
+      "forced_from": "10.98.0.1",
+      "forced_ssh": true,
+      "forged_verifier_bytecode_refused_before_execution": true,
+      "forward_recovery_and_repeat_identical": true,
+      "interrupted_after_legacy_retirement": true,
+      "manifest_tamper_refused": true,
+      "reset_performed": false,
+      "role": "database",
+      "second_release": "306ff3c6c43a44d07e31a097cc283a45bbec1d6781acd7b5a71280449685705a",
+      "shell_and_other_scope_refused": true
+    }
+  ],
+  "schema": "uain-reset-versioned-upgrade-qualification-v1",
+  "source_sha256": {
+    "custody_entry.py": "9d83dbf2bc76a6d572ef53b94e079d60628f635eb149f5277da7e372845dc513",
+    "install.sh": "15149bf217f718287370f040f54fd7afdaba23a0238cc36f179b091909642941",
+    "installed.py": "7de9a53891b60de6a55cbaf2d0166eb9f252b665b096bb0e946a54fb32f89a33",
+    "node.py": "ebe3be6af9306e243e03a82d502928d9ccead0c54ac3cc99179fe7952660be48",
+    "node_main.py": "a4cac1c4c9dd40baffa7d602d667caf580191561ea991089576040f7074ddc55",
+    "rehearse-upgrade.py": "403982aa52f3e20c76151b6a877c51c635e71e802f6e823eadc5755fd0ef2c87",
+    "system.py": "a6b3f030bfb10fa5d565bf321b4f06cc4596b4b18fa4df881b6f20e7cc9b23fe",
+    "test_upgrade.py": "3f76c973395a66241a1283841238d5a6d38a4404bcaeb2604df0ce98d60b1b8a",
+    "uain-system-reset": "f52f04a0ce8801fab92229227a83082ab7856e94f230b6c27eba7a97ec3ed5a7",
+    "upgrade.py": "d4c312dac6a3aca88bf3116237cbcab393e0a16074994c6875607b9aad71ca32"
+  },
+  "verification": {
+    "failures": 0,
+    "red_failure": "Forged verifier pyc executed before source guard",
+    "red_log": "/opt/uain-test/reset-installer-qualification-20261012/cache-red.log",
+    "rehearsal_exit": 0,
+    "rehearsal_log": "/opt/uain-test/reset-installer-qualification-20261012/final36-rehearsal.log",
+    "rehearsal_log_sha256": "070cbe75c2c52c9ded4f5c582c2713d01e3c8d6663f473dbbe05f8d2df6a5777",
+    "tests": 36,
+    "unit_exit": 0,
+    "unit_log": "/opt/uain-test/reset-installer-qualification-20261012/final36-unit.log",
+    "unit_log_sha256": "c6851fe8d5f98dfcf4f455161b5b430ee8d2804da2fba8c868f5ae1f621dedd9"
+  }
+}

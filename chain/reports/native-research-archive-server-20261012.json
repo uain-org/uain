@@ -1,0 +1,44 @@
+{
+  "schema": "uain-native-research-archive-qualification-v1",
+  "date": "2026-10-12",
+  "server": "uain-app-1",
+  "base_revision": "29e26291dbf79d4686f82d9414532473933f2664",
+  "production_reset": false,
+  "production_authority_changed": false,
+  "fixture": "Disposable nonpublished PostgreSQL; real HTTP handlers; synthetic retained projection proofs and independently generated fixture Ed25519 signatures. No fresh SDK finality asserted.",
+  "source_sha256": {
+    "services/pilot/src/native/archive.ts": "dada8aee5a646cedd2b8237bf8b61ef680fe0b1874bfa9b672e6a36f01701ed8",
+    "services/pilot/src/api/native-publication-routes.ts": "2ac05dd943718a0fcab2610cc6336520e60338a172520f133be2b277375cfc6a",
+    "services/pilot/test/native-research-archive.test.mjs": "bd9cc52403a61db3322142916cf40bc6f67e1194863cdcaef3ff666bee3fd672"
+  },
+  "runner": {
+    "driver_sha256": "9959fde4a1ced6087b86c1ccca4e2edbabfe200adc7c07f46aef484c984433b6",
+    "image": "sha256:e34b9972b50c3f9fee803334df875e8814aae3e381fc178b8c8de1a4608e8477",
+    "postgres_image": "pgvector/pgvector:0.8.7-pg17@sha256:cd4ccfdaf62cbfeb5c6ee19ef0dd663406d4ed740c320b324d016a90e85385b3",
+    "test_cpus": 2,
+    "test_memory_bytes": 3221225472,
+    "pids_limit": 256,
+    "capabilities_dropped": "ALL",
+    "root_filesystem_read_only": true,
+    "owns_private_test_network_only": true,
+    "own_containers_and_network_cleaned": true
+  },
+  "red": {
+    "missing_archive_route": "409 instead of200 for retired original citation",
+    "log_sha256": "ec9ea672a97e233e2e68df3dbbf38e4ab5dc88f7e404f4f0b39ecc26d38be3d8",
+    "signed_wrong_task": "200 instead of503 with valid original signer and recomputed event/capsule digests",
+    "wrong_task_log_sha256": "1fa6d4d848bca7d2d9d0cd8f84078b52d801d8a736cee04e6c11547d7b24a113"
+  },
+  "green": {
+    "typecheck": "pass",
+    "build": "pass",
+    "normal_tests": 1,
+    "write_thread_tests": 1,
+    "failures": 0,
+    "skips": 0,
+    "exit_code": 0,
+    "log": "/opt/uain-test/archive-api-20261012/green.log",
+    "log_sha256": "5f7300c5f7fa05e9e267bd4a402d53e6e2ebc0fe213784d0632321671afa0d99",
+    "checks": ["same-ID epoch separation", "retired catalog only", "original genesis pin", "original body/proofs/publication receipt", "original chunk serialization hash", "Ed25519 signature and derived member", "signed task attribution", "native source hash", "capsule digest", "altered author/body/chunk/genesis refusal", "unchanged epoch rows"]
+  }
+}

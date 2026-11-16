@@ -1,0 +1,36 @@
+# Root typed signer, separate from existing payment-purpose review service.
+[Unit]
+Description=UAIN typed central research review custody
+After=network-online.target
+Wants=network-online.target
+ConditionPathExists=/etc/uain-custody/central-reviewer.json
+
+[Service]
+Type=simple
+User=root
+Group=root
+UMask=0077
+# Replace REVIEWED_RELEASE with the reviewed manifest digest before installation.
+WorkingDirectory=/opt/uain-central-reviewer/releases/REVIEWED_RELEASE/ops/custody
+ExecStart=/opt/uain-custody/venv/bin/python -I /opt/uain-central-reviewer/releases/REVIEWED_RELEASE/ops/custody/central_reviewer_server.py
+Environment=PYTHONDONTWRITEBYTECODE=1
+RuntimeDirectory=uain-central-reviewer
+RuntimeDirectoryMode=0750
+Restart=on-failure
+RestartSec=30
+TimeoutStopSec=180
+KillMode=control-group
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ReadWritePaths=/var/lib/uain-custody/central-reviewer /run/uain-central-reviewer /run/lock
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+MemoryMax=512M
+CPUQuota=50%
+TasksMax=32
+LimitNOFILE=128
+
+[Install]
+WantedBy=multi-user.target

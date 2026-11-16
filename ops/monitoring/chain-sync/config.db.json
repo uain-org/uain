@@ -1,0 +1,6 @@
+{
+  "output": "/var/lib/prometheus/node-exporter/uain_chain.prom",
+  "nodes": [
+    {"name": "fullnode-db", "rpc": "http://127.0.0.1:26667"}
+  ]
+}

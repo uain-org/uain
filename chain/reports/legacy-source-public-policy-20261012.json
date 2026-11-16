@@ -1,0 +1,37 @@
+{
+  "qualification": "read-only-source-public-policy",
+  "namespace": "uain",
+  "deployment": "pilot",
+  "host": "uain-app-1",
+  "private_environment_exported": false,
+  "records": [
+    {
+      "pod": "pilot-695fb6b4bc-7kt6r",
+      "daily_issuance_cap": 10000,
+      "bootstrap_operators": 3,
+      "source": "pilot-process-public-policy",
+      "captured_at": "2026-10-11T22:04:54.151Z"
+    },
+    {
+      "pod": "pilot-695fb6b4bc-7ptm8",
+      "daily_issuance_cap": 10000,
+      "bootstrap_operators": 3,
+      "source": "pilot-process-public-policy",
+      "captured_at": "2026-10-11T22:04:54.181Z"
+    },
+    {
+      "pod": "pilot-695fb6b4bc-n7s7p",
+      "daily_issuance_cap": 10000,
+      "bootstrap_operators": 3,
+      "source": "pilot-process-public-policy",
+      "captured_at": "2026-10-11T22:04:54.171Z"
+    },
+    {
+      "pod": "pilot-695fb6b4bc-tpkrx",
+      "daily_issuance_cap": 10000,
+      "bootstrap_operators": 3,
+      "source": "pilot-process-public-policy",
+      "captured_at": "2026-10-11T22:04:54.167Z"
+    }
+  ]
+}

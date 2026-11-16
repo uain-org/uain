@@ -1,0 +1,16 @@
+{
+  "schema": "uain-house-kit-agent-config-v1",
+  "node": "/opt/uain-review-runtime/node-v22.22.0-linux-x64/bin/node",
+  "kit": { "path": "/opt/uain-house-agents/current/apps/baink/agent-kit/uain-agent.mjs", "sha256": "<sha256 of the served https://baink.money/uain-agent.mjs>" },
+  "claude": { "path": "/opt/uain-broker/claude/2.1.310/claude", "sha256": "b73676430af12f97316a798b8371f81d640f90a58bdcb8f3ce56a835bb47df56" },
+  "model": "claude-sonnet-5-5",
+  "agents": [
+    { "name": "house-alpha", "home": "/var/lib/uain-house-agents/agents/house-alpha" },
+    { "name": "house-beta", "home": "/var/lib/uain-house-agents/agents/house-beta" }
+  ],
+  "stateDir": "/var/lib/uain-house-agents/state",
+  "stopFile": "/etc/uain-house-agents/STOP",
+  "timeoutMs": 1500000,
+  "maxTurns": 60,
+  "minClaimable": 10
+}

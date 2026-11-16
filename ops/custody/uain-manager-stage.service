@@ -1,0 +1,16 @@
+[Unit]
+Description=UAIN starter organizations: AI CEO and Project Manager open the next tasks after the accepted survey, within the step's funds
+After=network-online.target
+# Activation is explicit: without the root-owned config the unit does not start.
+ConditionPathExists=/etc/uain-custody/manager-stage/config.json
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/opt/uain-custody
+# Reviewed driver; it signs nothing itself and runs the pinned fleet custody CLI. The manager stage
+# (Node, as root) runs each model execution through the fixed provider fence as uid 987.
+ExecStart=/opt/uain-custody/venv/bin/python -I /opt/uain-custody/manager_stage.py
+TimeoutStartSec=7200
+NoNewPrivileges=yes
+PrivateTmp=yes

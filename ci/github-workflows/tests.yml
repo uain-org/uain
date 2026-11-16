@@ -1,0 +1,103 @@
+name: Tests
+# Routine PRs and production releases run the primary backend pass (3 shards,
+# the last also running the waitlist's test/legacy) and, since 9 November
+# 2026, the `others` suite: BAINK (every test file, checked by
+# ops/ci/test-globs-check.mjs), the central reviewer, project organizations,
+# fund manager, runner, custody and operations tests.
+# Dispatch with extended=true for both write modes and specialist qualification.
+# Real-chain tests skip here with a listed warning; e2e.yml runs them nightly
+# with UAIN_REQUIRE_E2E=1, where a skip is a failure.
+on:
+  workflow_call:
+    inputs:
+      extended:
+        description: Run both backend write modes and specialist suites
+        type: boolean
+        default: false
+  workflow_dispatch:
+    inputs:
+      extended:
+        description: Run both backend write modes and specialist suites
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  pilot:
+    name: pilot (${{ matrix.thread == '1' && 'write thread' || 'main thread' }}, part ${{ matrix.shard }}/3)
+    runs-on: [self-hosted, linux, x64, uain-production]
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        thread: ${{ fromJSON(inputs.extended && '["", "1"]' || '["1"]') }}
+        shard: [1, 2, 3]
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with: { persist-credentials: false }
+      - name: Test the connection server in an isolated container
+        env:
+          TEST_THREAD: ${{ matrix.thread == '1' && '1' || '0' }}
+          TEST_SHARD: ${{ matrix.shard }}
+        run: sudo /usr/local/sbin/uain-ci-run "$GITHUB_WORKSPACE" pilot "$TEST_THREAD" "$TEST_SHARD"
+  research:
+    if: inputs.extended == true
+    name: research vectors (${{ matrix.thread == '1' && 'write thread' || 'main thread' }})
+    runs-on: [self-hosted, linux, x64, uain-production]
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        thread: ['', '1']
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with: { persist-credentials: false }
+      - name: Research vectors and private embedding contract in an isolated container
+        env:
+          TEST_THREAD: ${{ matrix.thread == '1' && '1' || '0' }}
+        run: sudo /usr/local/sbin/uain-ci-run "$GITHUB_WORKSPACE" research "$TEST_THREAD"
+  reset:
+    if: inputs.extended == true
+    name: reset archive and complete schema (${{ matrix.thread == '1' && 'write thread' || 'main thread' }})
+    runs-on: [self-hosted, linux, x64, uain-production]
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        thread: ['', '1']
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with: { persist-credentials: false }
+      - name: Complete schema reset and archive restore in an isolated container
+        env:
+          TEST_THREAD: ${{ matrix.thread == '1' && '1' || '0' }}
+        run: sudo /usr/local/sbin/uain-ci-run "$GITHUB_WORKSPACE" reset "$TEST_THREAD"
+  # The deploy/PR change classifier and the signed-bundle verifier
+  # (ops/ci-scope). The checkout is mounted read-only, without network: the
+  # tests read the Dockerfiles, package.json and ops/docs beside them (with
+  # only ops/ci-scope mounted, checks.test.mjs could not import the renderer).
+  scope-tools:
+    if: inputs.extended == true
+    name: change-scope tools
+    runs-on: [self-hosted, linux, x64, uain-production]
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with: { persist-credentials: false }
+      - name: Classifier, docs check and worker-bundle verifier in an isolated container
+        run: |
+          docker run --rm --network none --read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges \
+            --user "$(id -u):$(id -g)" --cpus 1 --memory 512m --pids-limit 128 \
+            -v "$GITHUB_WORKSPACE:/repo:ro" -w /repo \
+            node:22-bookworm-slim@sha256:4b150b48b4116e2a22f2c39cc27025fbf4f153e2078fd3b14d159fdb5c7279da node --test ops/ci-scope/classify.test.mjs ops/ci-scope/checks.test.mjs
+  others:
+    name: BAINK, reviewers, organizations, contracts and operations
+    runs-on: [self-hosted, linux, x64, uain-production]
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with: { persist-credentials: false }
+      - name: BAINK, reviewers, organizations, runner, press, contracts and operations in an isolated container
+        run: sudo /usr/local/sbin/uain-ci-run "$GITHUB_WORKSPACE" others

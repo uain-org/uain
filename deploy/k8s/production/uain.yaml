@@ -1,0 +1,284 @@
+# UAIN production on k3s: the copies, the website and the waitlist dashboard,
+# on uain-app-1. PostgreSQL runs outside the cluster on uain-db-1, reached
+# over WireGuard (10.98.0.2). Secrets are created at deploy time, never kept
+# here: `uain-env` (GitHub secrets) and `uain-ledger` (the ledger's signing
+# key and log salt, which must stay the same across moves). See README.md.
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: uain
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pilot
+  namespace: uain
+spec:
+  replicas: 4
+  selector:
+    matchLabels: { app: pilot }
+  # Surge first, nothing unavailable (10 November 2026): two new copies start,
+  # and an old one stops only when a new one has been ready for 10 s, so the
+  # ready count never drops below `replicas` during a rollout. Before, one old
+  # copy was stopped at once (maxUnavailable 1). An absolute 2, not a share:
+  # at 14 copies a 25% surge was 4 more, past the database's connections
+  # (39 a copy).
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: { maxSurge: 2, maxUnavailable: 0 }
+  template:
+    metadata:
+      labels: { app: pilot }
+    spec:
+      # On SIGTERM the server fails /api/ready, waits 5 s for the endpoint
+      # removal, finishes requests in flight (20 s at most), flushes its
+      # batches and exits (services/pilot/src/operations/shutdown.ts). Before
+      # 10 November 2026 it ignored SIGTERM as PID 1, and every old copy sat
+      # Terminating for the whole 30 s.
+      terminationGracePeriodSeconds: 30
+      # No workload here calls the Kubernetes API, so no pod carries a token
+      # for it (security review IN-10, 13 November 2026).
+      automountServiceAccountToken: false
+      # The image runs as `node` (uid 1000); the ledger files are given to its
+      # group so it can read them, and no one else.
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, runAsGroup: 1000, fsGroup: 1000, seccompProfile: { type: RuntimeDefault } }
+      containers:
+        - name: pilot
+          image: 10.98.0.1:5000/uain/pilot:IMAGE_TAG
+          ports: [{ containerPort: 8787 }, { containerPort: 9464, name: metrics }]
+          envFrom:
+            - secretRef: { name: uain-env }
+            - secretRef: { name: uain-retrieval, optional: true }
+            - secretRef: { name: uain-kalki, optional: true }
+          env:
+            - { name: DATABASE_URL, value: 'postgres://uain:$(UAIN_PG_PASSWORD)@10.98.0.2:5432/uain' }
+            # Client -> front door (nginx on the host) -> web -> pilot.
+            - { name: UAIN_TRUSTED_PROXY_HOPS, value: '2' }
+            - { name: UAIN_PUBLIC_ORIGIN, value: 'https://uain.global' }
+            - { name: UAIN_METRICS_PORT, value: '9464' }
+            - { name: UAIN_STORAGE_ENDPOINT, value: 'https://nyc3.digitaloceanspaces.com' }
+            - { name: UAIN_STORAGE_BUCKET, value: 'uain' }
+            # 30 for reads and 8 for the writer: 10 left ~270 requests a copy
+            # queued under load (A/B test, 2026-10-01). Copies x 39 (with the
+            # LISTEN connection) must fit the database's 600: maxReplicas 14.
+            - { name: UAIN_PG_POOL, value: '30' }
+            - { name: UAIN_WRITER_POOL, value: '8' }
+          resources:
+            requests: { cpu: '1', memory: 512Mi }
+            limits: { memory: 2Gi }
+          # Liveness waits for the start: a copy proving its first catalogue
+          # reads, or waiting on a schema change, is slow, not dead. Up to
+          # 5 minutes; the liveness probe takes over once this passes.
+          startupProbe:
+            httpGet: { path: /api/health, port: 8787 }
+            periodSeconds: 5
+            timeoutSeconds: 5
+            failureThreshold: 60
+          # A busy copy can take over a second to answer; a 1 s timeout took
+          # busy copies for dead ones (2026-09-30). /api/ready is answered
+          # ahead of the rate limits and the routes.
+          readinessProbe:
+            httpGet: { path: /api/ready, port: 8787 }
+            periodSeconds: 5
+            timeoutSeconds: 5
+          livenessProbe:
+            httpGet: { path: /api/health, port: 8787 }
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 6
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: { drop: [ALL] }
+          volumeMounts:
+            - { name: ledger, mountPath: /var/lib/uain-pilot, readOnly: true }
+      volumes:
+        # Only ledger.key and log.salt: without pilot.sqlite the server never
+        # copies the pre-PostgreSQL store into the database.
+        - name: ledger
+          secret: { secretName: uain-ledger, defaultMode: 0440 }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pilot
+  namespace: uain
+spec:
+  selector: { app: pilot }
+  ports: [{ port: 8787, targetPort: 8787 }]
+---
+# One address per ready copy, for Prometheus (ops/monitoring/prometheus/k3s.yml).
+apiVersion: v1
+kind: Service
+metadata:
+  name: pilot-metrics
+  namespace: uain
+spec:
+  clusterIP: None
+  selector: { app: pilot }
+  ports: [{ name: metrics, port: 9464, targetPort: 9464 }]
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: pilot
+  namespace: uain
+spec:
+  scaleTargetRef: { apiVersion: apps/v1, kind: Deployment, name: pilot }
+  minReplicas: 4
+  maxReplicas: 14
+  metrics:
+    - type: Resource
+      resource: { name: cpu, target: { type: Utilization, averageUtilization: 60 } }
+  behavior:
+    # A new replica spends its first minute proving the catalogue; that start-up CPU is not
+    # load. Scale up only on CPU sustained for 3 minutes, 2 replicas a minute (10 Nov 2026).
+    scaleUp:
+      stabilizationWindowSeconds: 180
+      policies: [{ type: Pods, value: 2, periodSeconds: 60 }]
+    scaleDown:
+      stabilizationWindowSeconds: 120
+      policies: [{ type: Pods, value: 2, periodSeconds: 60 }]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  namespace: uain
+spec:
+  replicas: 2
+  selector:
+    matchLabels: { app: web }
+  # Written out, not left to the default share: one new copy first, and an old
+  # one stops only when it is ready.
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: { maxSurge: 1, maxUnavailable: 0 }
+  template:
+    metadata:
+      labels: { app: web }
+    spec:
+      automountServiceAccountToken: false
+      # The image's user is 101 (nginx-unprivileged), a number the kubelet can check.
+      securityContext: { runAsNonRoot: true, seccompProfile: { type: RuntimeDefault } }
+      containers:
+        - name: web
+          image: 10.98.0.1:5000/uain/web:IMAGE_TAG
+          ports: [{ containerPort: 8080 }]
+          # A copy that is told to stop keeps serving for 10 s, longer than the
+          # Service takes to stop sending to it; nginx then finishes its open
+          # requests (the image stops on SIGQUIT). Without this a stopping copy
+          # closed its socket first and the front door answered 502, or 504
+          # after 60 s (found 9 November 2026).
+          lifecycle:
+            preStop: { sleep: { seconds: 10 } }
+          # nginx resolves the copies through the cluster's DNS, which does
+          # not apply search domains, so the Service's full name.
+          env:
+            - { name: UAIN_PILOT_HOST, value: 'pilot.uain.svc.cluster.local' }
+          resources:
+            requests: { cpu: 50m, memory: 64Mi }
+          readinessProbe:
+            httpGet: { path: /, port: 8080 }
+            periodSeconds: 10
+            timeoutSeconds: 3
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: { drop: [ALL] }
+---
+# A fixed address: the front door on the host proxies to it (front-door.conf).
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+  namespace: uain
+spec:
+  selector: { app: web }
+  clusterIP: 10.43.100.80
+  ports: [{ port: 8080, targetPort: 8080 }]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: waitlist
+  namespace: uain
+spec:
+  replicas: 1
+  selector:
+    matchLabels: { app: waitlist }
+  template:
+    metadata:
+      labels: { app: waitlist }
+    spec:
+      automountServiceAccountToken: false
+      # 1000:1000 is the image's `node` user, the identity it already ran as (IN-10).
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, runAsGroup: 1000, seccompProfile: { type: RuntimeDefault } }
+      containers:
+        - name: waitlist
+          image: 10.98.0.1:5000/uain/waitlist:IMAGE_TAG
+          ports: [{ containerPort: 8080 }]
+          env:
+            - name: UAIN_WAITLIST_DB_PASSWORD
+              valueFrom: { secretKeyRef: { name: uain-env, key: UAIN_WAITLIST_DB_PASSWORD } }
+            - { name: DATABASE_URL, value: 'postgres://waitlist_reader:$(UAIN_WAITLIST_DB_PASSWORD)@10.98.0.2:5432/uain' }
+            - name: WAITLIST_ADMIN_PASSWORD_HASH
+              valueFrom: { secretKeyRef: { name: uain-env, key: UAIN_WAITLIST_ADMIN_PASSWORD_HASH } }
+            - name: WAITLIST_SESSION_SECRET
+              valueFrom: { secretKeyRef: { name: uain-env, key: UAIN_WAITLIST_SESSION_SECRET } }
+            - { name: WAITLIST_TRUSTED_PROXY_HOPS, value: '1' }
+          resources:
+            limits: { memory: 512Mi }
+          securityContext:
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            capabilities: { drop: [ALL] }
+          volumeMounts:
+            - { name: tmp, mountPath: /tmp }
+      volumes:
+        - name: tmp
+          emptyDir: { medium: Memory, sizeLimit: 16Mi }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: waitlist
+  namespace: uain
+spec:
+  selector: { app: waitlist }
+  clusterIP: 10.43.100.82
+  ports: [{ port: 8080, targetPort: 8080 }]
+
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata: { name: research-index, namespace: uain }
+spec:
+  schedule: '* * * * *'
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 2
+  jobTemplate:
+    spec:
+      activeDeadlineSeconds: 300
+      backoffLimit: 1
+      template:
+        spec:
+          restartPolicy: Never
+          automountServiceAccountToken: false
+          securityContext: { runAsNonRoot: true, runAsUser: 1000, runAsGroup: 1000, seccompProfile: { type: RuntimeDefault } }
+          containers:
+            - name: research-index
+              image: 10.98.0.1:5000/uain/pilot:IMAGE_TAG
+              command: [node, dist/src/research/worker.js]
+              envFrom:
+                - secretRef: { name: uain-env }
+                - secretRef: { name: uain-retrieval, optional: true }
+              env:
+                - { name: DATABASE_URL, value: 'postgres://uain:$(UAIN_PG_PASSWORD)@10.98.0.2:5432/uain' }
+                - { name: UAIN_PG_POOL, value: '3' }
+              resources:
+                requests: { cpu: '100m', memory: 128Mi }
+                limits: { cpu: '1', memory: 512Mi }
+              securityContext:
+                allowPrivilegeEscalation: false
+                capabilities: { drop: [ALL] }

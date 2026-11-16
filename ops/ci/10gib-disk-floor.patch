@@ -1,0 +1,12 @@
+--- a/usr/local/sbin/uain-host-guard
++++ b/usr/local/sbin/uain-host-guard
+@@ -16,2 +16,2 @@
+-MIN_FREE_GIB = 100
+-MIN_FREE_PERCENT = 20
++MIN_FREE_GIB = 10
++MIN_FREE_PERCENT = 0
+--- a/usr/local/sbin/uain-ci-run
++++ b/usr/local/sbin/uain-ci-run
+@@ -241 +241 @@
+-        if total <= 0 or available < 100*2**30 or available*100 < total*20:
++        if total <= 0 or available < 10*2**30:

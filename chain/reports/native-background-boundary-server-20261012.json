@@ -1,0 +1,107 @@
+{
+  "schema": "uain-server-qualification-v1",
+  "date": "2026-10-12",
+  "scope": "Native authority freezes pilot automatic and registered source writers",
+  "host": "uain-app-1",
+  "stage": "/opt/uain-test/native-background-combined-20261012",
+  "service": "uain-native-background-combined-full4-20261012",
+  "combined_base_revision": "e031f5c3f09a3a1d50af96e047415b83bb400864",
+  "candidate": "Combined base plus this scoped source/test patch; existing signed client retained",
+  "limits": {
+    "test_container_cpus": 2,
+    "test_container_memory": "3g",
+    "test_container_pids": 256,
+    "postgres_container_cpus": 1,
+    "postgres_container_memory": "1g",
+    "service_runtime_max_seconds": 3600
+  },
+  "container_image": "sha256:e34b9972b50c3f9fee803334df875e8814aae3e381fc178b8c8de1a4608e8477",
+  "isolation": {
+    "capabilities_dropped": "ALL",
+    "no_new_privileges": true,
+    "read_only_container_root": true,
+    "source": "public archive and scoped patch only",
+    "caches": "dedicated disposable stage",
+    "postgres": "throwaway fixture only",
+    "tmpdir": "/cache/tmp (same as trusted CI launcher)",
+    "production_secrets_or_sockets_mounted": false
+  },
+  "local_build_or_tests": false,
+  "exit": 0,
+  "service_after_completion": "inactive",
+  "log": "full4.log",
+  "log_sha256": "22002017c53d5c832350f5a8e5fdc7f1e05bcc304813f8b68cefc9df7b70cc09",
+  "harness_sha256": "599bca2450e8f55932f6684dfaf6a4d165959db8d26d66df2fec276eedfa39ee",
+  "commands": [
+    "npm ci",
+    "npm run typecheck",
+    "npm run build",
+    "node --test --test-concurrency=1 test/*.test.mjs",
+    "UAIN_WRITE_THREAD=1 node --test --test-concurrency=1 test/*.test.mjs"
+  ],
+  "results": [
+    {
+      "mode": "normal",
+      "tests": 643,
+      "passed": 640,
+      "skipped": 3,
+      "failed": 0,
+      "seconds": 246.05635641
+    },
+    {
+      "mode": "writer-thread",
+      "tests": 643,
+      "passed": 640,
+      "skipped": 3,
+      "failed": 0,
+      "seconds": 295.132300958
+    }
+  ],
+  "red": [
+    {
+      "stage": "/opt/uain-test/native-background-20261012",
+      "log": "red5.log",
+      "exit": 1,
+      "sha256": "a83fc4c264916c6b8cd7ae173d9e0a9ea8393664bdcdc4f48cab4c3f2ddd4882",
+      "failure": "Before source boundary, fresh native import/maintenance changed captured source rows with expired future, legacy adoption/Karma and resource-classification traps."
+    },
+    {
+      "stage": "/opt/uain-test/native-background-combined-20261012",
+      "log": "ledger-red.log",
+      "exit": 1,
+      "sha256": "c1e865ddec41562320cf8f617b8b297b43d34eb9bbc08c701e3f93d3e09fc842",
+      "failure": "Before ledger read guard, uncached old-date dayRoot inserted a captured ledger_roots row."
+    }
+  ],
+  "environment_diagnostic": {
+    "earlier_run": "full3.log",
+    "failure": "Existing native-gateway executable fixture could not execute on default noexec /tmp; no production source defect or repository change. Harness corrected to trusted launcher TMPDIR=/cache/tmp.",
+    "focused_log": "gateway-ci-environment.log",
+    "focused_sha256": "5be77bab76e77c500d3a822bb9190c7d84fd2fcfd3535fc4603e24c1dd50025b",
+    "focused_result": "3/3 PASS"
+  },
+  "regression_invariants": [
+    "Every captured source table and private session row remains byte-identical after native import, authentication, historical root read and forced maintenance callbacks.",
+    "Expired KPI, direct ledger append, legacy migration and registered role writes reject before execution.",
+    "No pilot writer thread or source-maintenance timer starts; queued pilot callbacks recheck authority.",
+    "Operational access-log pruning retains both scheduled callbacks.",
+    "Pilot behavior and existing ledger hashes/signature payloads are unchanged."
+  ],
+  "combined_source_sha256": {
+    "services/pilot/src/api/server.ts": "df9a3c975b35fa198a293ac30cd5d89553e45a7f9e9015dff9e37c76574164ed",
+    "services/pilot/src/application/db.ts": "3340e1732f3a2b2e705d60d97131c8c34ae4254c3690a6aa600da9a24000172c",
+    "services/pilot/src/application/kpi.ts": "50fe425a97f5ec85f361c335cf2f5dac5fce66992cb95cd04578772bbcdc751c",
+    "services/pilot/src/ledger/ledger.ts": "339a799c3919f2c8f9b7227cd8554d2c2988f5a3f75862367317130c1725e2f6",
+    "services/pilot/src/runtime/writer.ts": "fb0f490fd78e3da7c39ab1fbcb86d0804821732f71a2333a7eb8ecab29d28ebc",
+    "services/pilot/src/operations/background-policy.ts": "f58f9ffbe2b92510d934276787100e734167f45f740a68d61cdf522c9ddb6b32",
+    "services/pilot/test/native-background-boundary.test.mjs": "72d22d5aff9bd346ae488c24371bf575ae8c6e81ab081ca47c18bd75585a3104"
+  },
+  "production_actions": [],
+  "governing_texts_changed": false,
+  "historical_record_bytes_rewritten": false,
+  "limitations": [
+    "Set native authority before imports; this is an application boundary, not a PostgreSQL administrator restriction.",
+    "Cutover still requires draining original processes/operator maintenance, final source capture/import approval and post-activation readback.",
+    "Schema setup, access logs, rate limits, notification outboxes and separate native projection/publication writers retain their own boundaries."
+  ]
+}

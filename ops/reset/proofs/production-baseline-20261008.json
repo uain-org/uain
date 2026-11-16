@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-10-08T10:27:47Z",
+  "host": "uain-app-1",
+  "api": "https://uain.global",
+  "read_only": true,
+  "entries": 1628,
+  "records_recomputed": 77,
+  "completed_days": 12,
+  "signatures_checked": 13,
+  "head": "80e459203177ec5fef7a7b35bc38bd46271429ac485fbe658564610526697ea2",
+  "public_key": "pinned from /var/lib/uain-anchor/ledger-public.pem",
+  "independent_verifier": "services/pilot/scripts/verify-ledger.mjs",
+  "result": "pass",
+  "production_reset": false
+}

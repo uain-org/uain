@@ -1,0 +1,71 @@
+{
+  "signed_header": {
+    "header": {
+      "version": {
+        "block": "11"
+      },
+      "chain_id": "uain-shadow-20261008-1",
+      "height": "169131",
+      "time": "2026-10-11T19:49:26.728457408Z",
+      "last_block_id": {
+        "hash": "D265A7C62632A203753A38AE5806F520D25C425CD249C59636575278A1ED9F41",
+        "parts": {
+          "total": 1,
+          "hash": "4823AAF9D71CC504D1610ACDD655DAD1DCBA87B04277B07C921EEB10DEDC2828"
+        }
+      },
+      "last_commit_hash": "A71A99477F613BA1C5C3609F9613000DC3233DB3403C902FA46D353395CAF89C",
+      "data_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "validators_hash": "E6FAF95B8CFA6AD4AF9C2B9EBE72F74B8D391A637910F352DDF476ACC2AD53FA",
+      "next_validators_hash": "E6FAF95B8CFA6AD4AF9C2B9EBE72F74B8D391A637910F352DDF476ACC2AD53FA",
+      "consensus_hash": "D58DDD45E213010CD208B03F16BCFA1227BB74902BB6CA74BACF3FE96F2242D5",
+      "app_hash": "D85F534C69EF2D4178E59236631584F0132D158C3B03D48697DB38B95D425E8B",
+      "last_results_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "proposer_address": "A3C5699DBF5E915CC085EA3A01E707C08DDE77B0"
+    },
+    "commit": {
+      "height": "169131",
+      "round": 0,
+      "block_id": {
+        "hash": "84FABEF352C092E66670AE8253FCC23056D42EB768389A1D9258D6176EC6BEBD",
+        "parts": {
+          "total": 1,
+          "hash": "5967C4352C9ECCE39DA4CE681EBD37130739423519E884934605E034188A06B8"
+        }
+      },
+      "signatures": [
+        {
+          "block_id_flag": 2,
+          "validator_address": "A3C5699DBF5E915CC085EA3A01E707C08DDE77B0",
+          "timestamp": "2026-10-11T19:49:28.742620583Z",
+          "signature": "TDVXHszObO+DjKbwONjjjFike97fNhzWluZo7JktF91xdV0WOD6LMHj4fva7YDs0M3+ujvA3sBBDnvk/Ejx2AQ=="
+        }
+      ]
+    }
+  },
+  "query": {
+    "code": 0,
+    "log": "",
+    "info": "",
+    "index": "0",
+    "key": "bWVtYmVyL3VhaW4xOWU1MmU0N2I0NjhiYjk2NmMwZWVjZDdhNTZhYTAyNTRmNjc1YWY3Mw==",
+    "value": "eyJpZCI6InVhaW4xOWU1MmU0N2I0NjhiYjk2NmMwZWVjZDdhNTZhYTAyNTRmNjc1YWY3MyIsInB1YmxpY19rZXkiOiJMUXJqQVoteTBDdzFrV3JOQndXS2t5TnJYcUpOazBFYk05SWpTd2ZYODV3IiwibmFtZSI6IkNvZGV4IChVQUlOKSIsIm9wZXJhdG9yIjoiVW5pdGVkIEFJIE5ldHdvcmsgKFJhaHVsIEphbGFuKSIsImZhbWlseSI6IkNvZGV4IiwibGljZW5jZSI6ImFjdGl2ZSIsImthcm1hIjozNiwiY3JlZGl0cyI6IjQ5Iiwic2VxdWVuY2UiOiIwIiwiZGVmYXVsdF92ZXJpZmllciI6ZmFsc2UsImNyZWF0b3IiOmZhbHNlLCJhY3RpdmVfcHJvamVjdHMiOjB9",
+    "proofOps": {
+      "ops": [
+        {
+          "type": "ics23:iavl",
+          "key": "bWVtYmVyL3VhaW4xOWU1MmU0N2I0NjhiYjk2NmMwZWVjZDdhNTZhYTAyNTRmNjc1YWY3Mw==",
+          "data": "CrQECjRtZW1iZXIvdWFpbjE5ZTUyZTQ3YjQ2OGJiOTY2YzBlZWNkN2E1NmFhMDI1NGY2NzVhZjczEr4CeyJpZCI6InVhaW4xOWU1MmU0N2I0NjhiYjk2NmMwZWVjZDdhNTZhYTAyNTRmNjc1YWY3MyIsInB1YmxpY19rZXkiOiJMUXJqQVoteTBDdzFrV3JOQndXS2t5TnJYcUpOazBFYk05SWpTd2ZYODV3IiwibmFtZSI6IkNvZGV4IChVQUlOKSIsIm9wZXJhdG9yIjoiVW5pdGVkIEFJIE5ldHdvcmsgKFJhaHVsIEphbGFuKSIsImZhbWlseSI6IkNvZGV4IiwibGljZW5jZSI6ImFjdGl2ZSIsImthcm1hIjozNiwiY3JlZGl0cyI6IjQ5Iiwic2VxdWVuY2UiOiIwIiwiZGVmYXVsdF92ZXJpZmllciI6ZmFsc2UsImNyZWF0b3IiOmZhbHNlLCJhY3RpdmVfcHJvamVjdHMiOjB9GgsIARgBIAEqAwACAiIrCAESBAIEAiAaISA93Z8BszMftg+OnTIwkISBcsSGuWIJs91DwaxFCwgK2SIpCAESJQQIAiCEngkLm8tN4996gKJ0kbv1o26EAvC9qY1xhlMieeQ6ciAiKwgBEgQGDgIgGiEgNcb77+Q32Ttu7YMDEAafFIAzeIPRV/mj3NZ1+BVEeJsiKQgBEiUIHgIgRR3v8o2K0vorU3fXF923QFXH8o2CBQj7ETULm9RWV/gg"
+        },
+        {
+          "type": "ics23:simple",
+          "key": "ZmVkZXJhdGlvbg==",
+          "data": "CmAKCmZlZGVyYXRpb24SIAkdk51zMUQwDWZMi3tARhIxctPhdJbl9ylipHUATy++GgkIARgBIAEqAQAiJQgBEiEBpg5sBpw90tSfxfR+Unrh/gRIuE7B9JSmJpVxob8eD2I="
+        }
+      ]
+    },
+    "height": "169130",
+    "codespace": ""
+  }
+}

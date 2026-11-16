@@ -1,0 +1,12 @@
+[Unit]
+Description=UAIN custody attestation of prior-art survey verifications (decision D2)
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/opt/uain-custody
+ExecStart=/opt/uain-custody/venv/bin/python -I /opt/uain-custody/survey_attester.py
+TimeoutStartSec=1200
+NoNewPrivileges=yes
+PrivateTmp=yes

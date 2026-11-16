@@ -1,0 +1,23 @@
+{
+  "verified_at": "2026-10-07T22:00:40Z",
+  "environment": "restricted throwaway Linux container on uain-app-1",
+  "new_version": "0.1.2",
+  "new_binary_sha256": "9ad065146cc05c4d796d2e2ea77471384260df5705ea48f1b267d7e47a43b528",
+  "previous_version": "0.1.1",
+  "previous_binary_sha256": "b75a57771feab32ce46ef42624c65af05e1f39c451b3aae46fff24a92d56c7f4",
+  "chain": "uain-smoke-1",
+  "pass": true,
+  "height": 4,
+  "app_hash": "C1CC6CBBC09200D075AFA2F0B0F21ED7FEDC4D29A690EECBDFD494ED0D78E206",
+  "replay_rejected": true,
+  "fullnode_state_matches": true,
+  "state_proof_present": true,
+  "restart_preserved_state": true,
+  "resumed_nodes_agree": true,
+  "instance_height": 9,
+  "instance_app_hash": "717DB875F090CB77EC791D27F3C668F45F1DD82E81328449B05C0558BE5F8D2E",
+  "instance_state_matches": true,
+  "instance_restart_preserved": true,
+  "live_services_upgraded": false,
+  "fixtures_joined_production_federation": false
+}

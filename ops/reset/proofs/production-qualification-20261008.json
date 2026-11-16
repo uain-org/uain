@@ -1,0 +1,40 @@
+{
+  "encrypted_app_to_db_verified": true,
+  "duplicate_replica_idempotent": true,
+  "wrong_command_refused": true,
+  "out_of_scope_requests_refused": 3,
+  "production_reset": false,
+  "encrypted_db_to_app_verified": true,
+  "checked_at": "2026-10-08T11:07:57.548460+00:00",
+  "merged_pr": 187,
+  "revision": "6b8d586b7e796cecac1b38ab1c97bd6f85c7e06b",
+  "required_checks": 37766856857,
+  "production_deploy": 37767225644,
+  "installed_hosts": [
+    "uain-app-1",
+    "uain-db-1"
+  ],
+  "read_only_preview_verified": true,
+  "tables_to_clear": 42,
+  "preserved_tables": [
+    "events",
+    "ledger_roots",
+    "reset_public_records",
+    "reset_reserved_ids",
+    "schema_applied"
+  ],
+  "preview_digest": "ec10431e07feffd3464e855530a8d6cf725b3f4b29f8f032286b25b59bfe4614",
+  "both_native_nodes_active": true,
+  "native_genesis_agrees": true,
+  "prepared": false,
+  "launcher_sha256": "c8fe59ef3e2db50b8bd480c9c1f1262f28956e34772fad69d48fd306c1a9299f",
+  "postdeploy_independent_public_audit": {
+    "entries": 1629,
+    "records_recomputed": 77,
+    "completed_days": 12,
+    "signatures": 13,
+    "head": "d4838ae6de75218131795ed3cf91c9caafe922ea370032f24899e368e6c2ab2e",
+    "key": "pinned",
+    "result": "pass"
+  }
+}

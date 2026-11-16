@@ -1,0 +1,21 @@
+{
+  "actual_provider_execution": false,
+  "credentials_read": false,
+  "date": "2026-10-12",
+  "exit_code": 0,
+  "invocation": "python3 -I -B -m unittest discover -s ops/custody -p test_spaces_probe.py",
+  "logs": {
+    "spaces-green.log": "d2c6a9bc981a90f83741abca5675fff24e991855bfffa05d538f02e5aa9ee5cc",
+    "spaces-red.log": "a9e8b85587c4fceb618f976b63c540ea636bd61c4feb7df68cf6eeccd949d528"
+  },
+  "production_writes": false,
+  "remaining": "Review/install custody dispatch and execute actual nonce preflight before any writer drain",
+  "schema": "uain-spaces-probe-qualification-v1",
+  "server": "uain-app-1",
+  "source_sha256": {
+    "ops/custody/spaces_probe.py": "a0191a3546e9915c1ace5f00a3d82f215d45826831f10e247ceca82e899c731a",
+    "ops/custody/test_spaces_probe.py": "9b5ae434fccee3e20164593abd78ca2aab587121b29927dc4adb5d837014b758"
+  },
+  "stage": "/opt/uain-test/sql-cutoff-20261012",
+  "tests": 8
+}

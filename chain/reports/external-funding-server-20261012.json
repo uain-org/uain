@@ -1,0 +1,151 @@
+{
+  "pass": true,
+  "fixture_only": true,
+  "real_two_nodes": true,
+  "chain_id": "uain-funding-fixture-1",
+  "pinned_genesis_sha256": "65851fc146f9f782b11d2184ae94c0cf8d1b8272a24d0586b3f1c5f16fbe2f04",
+  "real_solana_ownership_signature": true,
+  "synthetic_external_transfers": true,
+  "external_transfers_sent": false,
+  "deposit_quorum_restart": true,
+  "exact_80_15_5_with_dust": true,
+  "original_source_refund": true,
+  "prospective_coin_karma_reward": true,
+  "unused_reservations_released": true,
+  "verified_research_payout": true,
+  "frozen_unbound_recipient": true,
+  "replay_refused": true,
+  "restart_preserved": true,
+  "independent_state_proofs": [
+    {
+      "port": 34657,
+      "key": "funding_activation",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "funding_campaign/FC-reward",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "funding_receipt/FR-reward",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "funding_pool/FR-reward",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "funding_pool/FR-refund",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "funding_reward/FR-reward",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "funding_reward_schedule/FC-reward",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "external_payout/EP-funding",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "coin_supply",
+      "verified": true
+    },
+    {
+      "port": 34657,
+      "key": "coin_balance/uain1dccca7e2d6fbf33bb39c5fd08f666444e031c5f4",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "funding_activation",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "funding_campaign/FC-reward",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "funding_receipt/FR-reward",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "funding_pool/FR-reward",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "funding_pool/FR-refund",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "funding_reward/FR-reward",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "funding_reward_schedule/FC-reward",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "external_payout/EP-funding",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "coin_supply",
+      "verified": true
+    },
+    {
+      "port": 34667,
+      "key": "coin_balance/uain1dccca7e2d6fbf33bb39c5fd08f666444e031c5f4",
+      "verified": true
+    }
+  ],
+  "maximum_transaction_gas": 343147,
+  "transaction_gas_limit": 3000000,
+  "production_activated": false,
+  "fixture_directory": "/tmp/uain-funding-network-fixture-BeoMOr",
+  "host": "uain-app-1",
+  "date": "2026-10-12",
+  "full_go_race_vet": {
+    "exit_code": 0,
+    "log_sha256": "a71883646df25e8516cb379c89a3e2920101ac99d346a035929ba0e4a0d294a7",
+    "scope": "Complete financial candidate before final exact-inclusion guard; full federation race/vet and signed SDK test rerun after guard, followed by linked two-node acceptance."
+  },
+  "source_sha256": {
+    "chain/app/external_funding_test.go": "43acdcf5db835bd016a673e46790fd6173154b7506cb9d43552833c898dca962",
+    "chain/economy/ledger.go": "bd9657c8ee9c963a47a01812e1c3784043e3dacf92b01472ea98df3fa6671ace",
+    "chain/economy/ledger_test.go": "1100c3cd0180245d5bfe80aa12372a9046dddac866cdda25dadb8b16b662696a",
+    "chain/federation/external_bounty.go": "21929eda11d010b4f21979920ef2aecf52b49d5daa4bf678e4575f5e947a4fa2",
+    "chain/federation/external_bounty_test.go": "2fcf36b5456abf8f43a5090deca12d159a28a067bc5a65773094ca81534c0b03",
+    "chain/federation/external_wallet.go": "53dac93c331cdb83fab6b9f4fcdd41ef9555416557bf3231f7f7eb08cb02a090",
+    "chain/federation/external_wallet_test.go": "3c048fd862176e10a95272c60f33e3d403477978713101052be15df838e7e9a6",
+    "chain/federation/fiat_beneficiary.go": "184a269052e313c94227d62658daa2adfe44242dc897949a032b0a41bca53398",
+    "chain/federation/fiat_beneficiary_test.go": "17debcd42352d2b49549c3e9511078e7d532b68a896294c6af078420cb65d4b4",
+    "chain/federation/funding.go": "d4c61ec69dc8ef89f769cb3c9704c1829338b28b7dcba995adf5c9e5afe30bb2",
+    "chain/federation/funding_recovery.go": "6da640772c46ee5b5d51a6d8878912a528c33eddba74176b51f6715bd1b6e62d",
+    "chain/federation/funding_recovery_test.go": "208f75d4c886cd2d018e0b0c3e441a077cada616ef0c533fdb239e9f248fef18",
+    "chain/federation/funding_reward.go": "9dc99d20a90992a9a28862896f81c12051c940e46b09d9202249309eade17544",
+    "chain/federation/funding_reward_test.go": "b9d4bfdadecad54e4e95f5ac0959c40b2d89e138f5e70ad7aa622b72632cd633",
+    "chain/federation/funding_test.go": "1733c0d57a12b2b0ae2bdb100eb44caedd7bbadc96225564f6b85f1be06499e9",
+    "chain/federation/keeper.go": "df4e83ab78ed890cfc8de87332284cff6973f03d57282bb101cc0afa2dfe8e0c",
+    "chain/scripts/external-funding-network-smoke.mjs": "7f76d99bb8af3161d0b7aaa36826c3ff8f746ab648cd6963005748769156c81e"
+  }
+}

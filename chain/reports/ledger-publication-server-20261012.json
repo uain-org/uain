@@ -1,0 +1,73 @@
+{
+  "schema": "uain-ledger-publication-qualification-v1",
+  "date": "2026-10-12",
+  "base_revision": "546aed3",
+  "stage": "/opt/uain-test/ledger-publication-20261012",
+  "failure": {
+    "run": "https://github.com/senti-org/uain-universa/actions/runs/38191371304",
+    "revision": "e19878cc277311fdbf978bd192f75259aeca706b",
+    "job_started": false,
+    "cause": "GitHub hosted runner denied account billing/spending limit; no steps or signature operation executed"
+  },
+  "anchor_catchup": {
+    "run": "https://github.com/senti-org/uain-universa/actions/runs/38192017300",
+    "result": "success",
+    "date": "2026-10-11",
+    "base_transaction": "0xba9138c1117eff4c07ee2cceeb943a30075e6ca0e9219c98a7324a18486ae14b",
+    "solana_signature": "3q2Pt2XSLhwgP3r9t3Bo6bFntW5wMzwWR2FURmTNC3xuL89RZCvCLYmF34KbrtsnX4J9ZrQz9vQvWXyNz1D6MN3k",
+    "workflow_readbacks": "Base confirmed transaction+anchor equality; Solana confirmed exact memo+signer equality",
+    "public_journals": "All16nonempty signed root days throughOct11confirmed in each public journal; no uncertain operations",
+    "independent_rpc_readback": "Additional direct public RPC request returnedHTTP403; no independent finalized RPC claim made"
+  },
+  "red": {
+    "exit": 1,
+    "log": "red.log",
+    "log_sha256": "069e9b8975edb1d2e876b9b4549a5bf4db93dc51b2cea4815e31bf0592090414",
+    "reason": "fixed suite and bounded authenticated export absent"
+  },
+  "green": {
+    "exit": 0,
+    "service": "uain-ledger-publication-final-20261012",
+    "tests": 17,
+    "log": "final.log",
+    "log_sha256": "e3e82e961a7bf9b1fc048cb0689640190cb08fc13de346cf5c5e283b95f8d58f"
+  },
+  "actual_sandbox": {
+    "exit": 0,
+    "service": "uain-ledger-publication-actual2-20261012",
+    "log": "actual2.log",
+    "log_sha256": "07281432d2977275a9d6e55a3900c4dd21096d15b51010218a0e5f21646f34eb",
+    "runtime": "sha256:e34b9972b50c3f9fee803334df875e8814aae3e381fc178b8c8de1a4608e8477",
+    "caps": "ALL dropped",
+    "root_filesystem": "read-only",
+    "limits": "2CPU/3GiB/256pids",
+    "credentials_or_host_socket": false,
+    "wrapper": "Same trusted launcher with only explicit isolated fixture checkout allowlist; no installed launcher replaced",
+    "root_json_bytes": 367,
+    "root_json_sha256": "21c43ca72fc92a62eed23627ecd330ce2d86e210aba7c0270419fb5b8347797b"
+  },
+  "publication_replay": {
+    "authorized": true,
+    "branch": "ledger-roots",
+    "commit": "e1d471095db25992f1baa83c91f5f682504e7a3f",
+    "file": "roots/2026-10-11.json",
+    "method": "create-only GitHub contents request without existing SHA; cannot replace raced existing file",
+    "independent_branch_byte_readback": true,
+    "anchor_transactions_sent": false
+  },
+  "source_sha256": {
+    ".github/workflows/ledger-root.yml": "408953b557e59ccaa8a3aa693d49488304cdc9e28cb9ed8eb2af69c33385e1e9",
+    "ops/ci/launcher.py": "8da49e760e545439212bd22075183c4e163046565e9376a7a37c270b32884cbb",
+    "ops/ci/container-suite.sh": "ccbadc841f1fa49f03dd47a4564d549f3b42149fb24f808727b6ea382ba2dbb8",
+    "ops/ci/test_launcher.py": "96aca11b6ce40eb0fc7b7c15263e318788c6fd61f5159b66ce9e81208cd82764"
+  },
+  "workflow_shell_blocks": "bothbash-nPASS",
+  "remaining": [
+    "Root review/install exact tested launcher before new workflow executes",
+    "Merge follow-up workflow and verify real scheduled/manual self-hosted publication acceptance; current Oct11 Git archival gap is repaired"
+  ],
+  "diagnostics": [
+    "First actual qualification wrapper retained old default checkout allowlist and correctly refused beforeDocker; explicit fixture allowlist corrected for actual2",
+    "No runner stopped, wallet opened, anchor resent or original node modified by this work"
+  ]
+}

@@ -1,0 +1,72 @@
+name: Back up UAIN
+
+# Once a day, an encrypted backup of the store and of the two files that make
+# the server itself (the ledger's signing key and the log salt), kept on the
+# production host and, when configured, copied to S3-compatible storage off
+# it. Off until the repository variable UAIN_BACKUPS is set to enabled; what
+# to set is in docs/store.md, "Backups", and how to restore in ops/DOCKER.md.
+#
+# A failed run is the alert. For scheduled runs GitHub notifies the person who
+# last changed the cron lines below, so that must be someone who acts on it.
+# Every run ends by checking that the newest backup is under 26 hours old and
+# matches its manifest, and the second daily run does only that, so a day
+# whose backup never ran still fails a run the same day.
+
+on:
+  schedule:
+    - cron: '17 2 * * *'
+    # Check only.
+    - cron: '17 14 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Its own group: sharing uain-production would let a queued backup and a
+# queued deploy cancel each other. On the one production runner the jobs
+# queue anyway.
+concurrency:
+  group: uain-backups
+  cancel-in-progress: false
+
+jobs:
+  backup:
+    # Production only from main (a scheduled run is on main).
+    if: vars.UAIN_BACKUPS == 'enabled' && github.ref == 'refs/heads/main'
+    runs-on: [self-hosted, linux, x64, uain-production]
+    timeout-minutes: 30
+    env:
+      # Empty when unset; the script then uses its defaults
+      # (/var/lib/uain-backups, 14 kept, 26 hours).
+      UAIN_BACKUP_DIR: ${{ vars.UAIN_BACKUP_DIR }}
+      UAIN_BACKUP_KEEP: ${{ vars.UAIN_BACKUP_KEEP }}
+      UAIN_BACKUP_MAX_AGE_HOURS: ${{ vars.UAIN_BACKUP_MAX_AGE_HOURS }}
+      # k3s on uain-app-1: the sealer runs in a pilot copy, pg_dump against
+      # uain-db-1 over the tunnel (deploy/k8s/production/README.md).
+      UAIN_BACKUP_K8S_NAMESPACE: uain
+      KUBECONFIG: /home/runner/.kube/config
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+
+      - name: Back up
+        if: github.event.schedule != '17 14 * * *'
+        env:
+          UAIN_BACKUP_KEY: ${{ secrets.UAIN_BACKUP_KEY }}
+          # pg_dump's password for uain-db-1.
+          UAIN_PG_PASSWORD: ${{ secrets.UAIN_PG_PASSWORD }}
+          # The copy off the host. Without dedicated settings it goes to the
+          # pilot's Spaces bucket (compose.yaml), under backups/, with the
+          # pilot's key: off this machine, but that key can also delete. A
+          # dedicated key that cannot delete replaces it (docs/store.md).
+          UAIN_BACKUP_S3_ENDPOINT: ${{ vars.UAIN_BACKUP_S3_ENDPOINT || 'https://nyc3.digitaloceanspaces.com' }}
+          UAIN_BACKUP_S3_BUCKET: ${{ vars.UAIN_BACKUP_S3_BUCKET || 'uain' }}
+          UAIN_BACKUP_S3_PREFIX: ${{ vars.UAIN_BACKUP_S3_PREFIX || 'backups' }}
+          UAIN_BACKUP_S3_REGION: ${{ vars.UAIN_BACKUP_S3_REGION }}
+          UAIN_BACKUP_S3_ACCESS_KEY_ID: ${{ secrets.UAIN_BACKUP_S3_ACCESS_KEY_ID || secrets.UAIN_STORAGE_ACCESS_KEY_ID }}
+          UAIN_BACKUP_S3_SECRET_ACCESS_KEY: ${{ secrets.UAIN_BACKUP_S3_SECRET_ACCESS_KEY || secrets.UAIN_STORAGE_SECRET_ACCESS_KEY }}
+        run: bash ops/backup/backup.sh run
+
+      - name: Check the newest backup
+        run: bash ops/backup/backup.sh check

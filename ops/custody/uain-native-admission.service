@@ -1,0 +1,33 @@
+[Unit]
+Description=UAIN objective automatic native member admission
+After=network-online.target uain-chain-shadow.service
+Wants=network-online.target
+ConditionPathExists=/etc/uain-custody/native-admission.json
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+UMask=0077
+WorkingDirectory=/opt/uain-custody
+ExecStart=/usr/local/sbin/uain-custody auto-native-admission
+Environment=PYTHONDONTWRITEBYTECODE=1
+RuntimeDirectory=uain-native-admission
+RuntimeDirectoryMode=0700
+TimeoutStartSec=250
+TimeoutStopSec=10
+KillMode=control-group
+MemoryMax=384M
+CPUQuota=100%
+TasksMax=128
+LimitCORE=0
+NoNewPrivileges=yes
+CapabilityBoundingSet=
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/lib/uain-custody/native-admission /run/uain-native-admission /run/lock
+RestrictAddressFamilies=AF_UNIX AF_INET
+IPAddressDeny=any
+IPAddressAllow=localhost
+RestrictNamespaces=yes

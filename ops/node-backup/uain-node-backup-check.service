@@ -1,0 +1,15 @@
+[Unit]
+Description=Check UAIN node backup freshness and local checksums
+
+[Service]
+Type=oneshot
+User=root
+UMask=0077
+ExecStart=/usr/bin/python3 /opt/uain-node-backup/coordinator.py check
+MemoryMax=128M
+CPUQuota=50%
+TasksMax=32
+NoNewPrivileges=true
+ProtectHome=true
+ProtectSystem=strict
+PrivateTmp=true

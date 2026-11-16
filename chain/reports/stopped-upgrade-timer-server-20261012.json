@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-12",
+  "kind": "uain-stopped-upgrade-timer-regression-v1",
+  "old_helper_sha256": "cfe4b40170509464f71e218acf94813f1de9d8eaab6b1e478bc4d161d9621757",
+  "helper_sha256": "916396b63b386c1129c20a0f04e5c85c543b7c0e545fdae50c26915e4e5247d9",
+  "server_stage": "/opt/uain-test/upgrade-live-timer-regression-20261012",
+  "red": {
+    "tests": 27,
+    "errors": 2,
+    "exit": 1,
+    "cause": "Real inactive systemd timers omit MainPID; services must retain an explicit zero PID."
+  },
+  "green": {
+    "tests": 27,
+    "errors": 0,
+    "exit": 0
+  },
+  "review": "Independent review accepted timer inactive checks and strict service MainPID zero; original locks and stopped-tree guards unchanged.",
+  "production_boundary": "The original app preview refused before mutation. Renewed approval pins the corrected helper before either applied transition."
+}

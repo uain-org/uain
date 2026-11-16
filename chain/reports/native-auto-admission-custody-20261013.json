@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-13",
+  "scope": "Automatic objective admission through the existing guardian-signed native licence command. No chain binary, governing whitepaper/FAQ, financial policy or member secret custody changes.",
+  "result": {
+    "focused_server_tests": 29,
+    "passed": 29,
+    "failed": 0,
+    "skipped": 0,
+    "unit_tests": 21,
+    "dispatch_tests": 8,
+    "server_log": "/opt/uain-test/native-admission-unit-20261013/focused.log",
+    "command": "UAIN_TEST_CUSTODY_FIXTURE_ROOT=/opt/uain-test/native-admission-unit-20261013/fixtures /usr/bin/python3 -m unittest -v test_native_admission test_dispatch"
+  },
+  "reviewed_policy": {
+    "schema": "uain-native-admission-policy-v1",
+    "policy": "objective-enrol-v1",
+    "approval_operation": "licence",
+    "approval_status": "active",
+    "screening": [
+      "Independently verified finalized native enrol event; consensus authenticated the original member signature",
+      "Proved pending member with matching canonical Ed25519 public key and derived native address",
+      "Declared name/operator minimum2 trimmed UTF-8 bytes and maxima120/200 bytes; optional family maximum100 bytes",
+      "Exact new enrol sequence1, zero Karma/credits/active projects, no creator/default-verifier role and no account overrides",
+      "Fresh active pinned guardian with matching public key, current guardian list and null guardian epoch pointer"
+    ],
+    "permanent_blocked_statuses": [
+      "revoked",
+      "withdrawn"
+    ],
+    "no_fabricated_attestations": "Signed terms consent, identity vetting and human review are not claimed; native enrol currently carries declared name/operator/family only.",
+    "evidence": "A digest commits the objective policy, exact enrol event and independently proved member record; public signed bytes and evidence are durable before any broadcast.",
+    "refusal": "Only typed member-policy eligibility failures can produce a durable refusal and advance the scan. Proof, guardian, pin, key binding and persistence failures remain fatal.",
+    "authority_limits": "Only licence(active) may be signed. No roles, rewards, funding, monetary activation or reinstatement operations are exposed."
+  },
+  "read_only_production_preflight": {
+    "reported_by": "Parent agent independently checked installed public verifier/genesis pins before preparing deployment",
+    "chain_id": "uain-shadow-20261008-1",
+    "genesis_sha256": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+    "state_sha256": "136698192e9e38323a552f1e2da2eea5b9b90e3d6e7de11116d72ee28c826860",
+    "height": "241059",
+    "event_count": "463",
+    "guardian": "uain158ac8d0debcf01d43164ef14736597da589d8b54",
+    "guardian_public_key": "mDuiMoDUKg66PitMD-j1pztm81wOKlYq7nFFCWLXoRI",
+    "guardian_sequence": "463",
+    "guardian_licence": "active",
+    "guardian_epoch": null,
+    "bootstrap": "Installer captures an independently proved current event cursor/digest after checking no earlier pending members; later racing enrolments are processed rather than skipped."
+  },
+  "bounds": {
+    "max_events_per_run": 16,
+    "max_candidates_per_run": 4,
+    "receipt_events_per_resume": 16,
+    "work_deadline_seconds": 120,
+    "proof_process_timeout_seconds": 20,
+    "broadcast_timeout_seconds": 10,
+    "custody_lock_wait_seconds": 120,
+    "service_timeout_seconds": 250,
+    "timer_after_previous_completion_seconds": 5,
+    "cpu_quota": "100%",
+    "memory_max": "384M",
+    "tasks_max": 128,
+    "network": "Loopback only; service denies external IP access",
+    "paths": "Fixed root-owned policy, private protected journals, source-loaded custody helper; no caller-controlled target or signing operation"
+  },
+  "recovery_checks": [
+    "Unknown sends are never rebroadcast or silently re-signed",
+    "Failed durable signed artifact/journal/marker persistence prevents network submission",
+    "Crash after signed artifact retains and adopts its exact bytes",
+    "Expired or superseded attempts require proved complete non-inclusion and proof they can no longer execute before a fresh attempt",
+    "Other guardian activation does not release an uncertain signer sequence early",
+    "Only the exact independently proved command receipt is recorded as finalized",
+    "A refused candidate cannot poison a later eligible enrolment",
+    "Proof corruption and refusal persistence failure leave the cursor unchanged",
+    "Captured checkpoint initialization handles an enrol arriving before the first worker run"
+  ],
+  "preflight_command": "uain-custody check-native-admission verifies current native guardian authority and internally checks vault public binding without signing or submitting a command. It returns public metadata only.",
+  "actual_installed_client_qualification": {
+    "reported_by": "Parallel integration agent, exact final module hash6d4c9efcb99e6139d83d8095afb8dbbfc883177c2fa7490d07ffa430a7d9a7da",
+    "tests": 1,
+    "passed": 1,
+    "failed": 0,
+    "duration_seconds": 67.1,
+    "genesis_sha256": "e52ad1b690b8ea9e8e3d6b9716dc7e21f985325e864c386a9df2a4ec5b65ca3a",
+    "manual_licence_commands": 0,
+    "journey": "New installed member enrols, real custody worker automatically activates, client independently proves activation, existing ETH/SOL keys bind, instance/project join/research submission finalizes as event10 and exact body is publicly retrieved.",
+    "private_keys_exported": false
+  },
+  "production_actions_by_implementer": "None. Root owns reviewed deployment, policy installation and timer activation.",
+  "source_sha256": {
+    "ops/custody/native_admission.py": "6d4c9efcb99e6139d83d8095afb8dbbfc883177c2fa7490d07ffa430a7d9a7da",
+    "ops/custody/test_native_admission.py": "f34a6533341c58bdb3fe4fad623dd8671a67fa594c919e90b9b6576cbc696afe",
+    "ops/custody/custody.py": "916bd6acc8093d2720782a94cc51946ce1bf6df571159c0137bae5edbe10dfdb",
+    "ops/custody/test_dispatch.py": "dadbb5d898b8f2508135368ac7578fb3cdf8c360a3657f0812d42d443252ec1e",
+    "ops/custody/uain-native-admission.service": "c8c2ae8b0b6588054532465f338ffdcd6ecfb9d4cd18010b54fdc90050e22e0c",
+    "ops/custody/uain-native-admission.timer": "991b4d2309eb2ad0ddcc7fc0d2e7d087de6649853108494b6d54f3bb5ade365a"
+  }
+}

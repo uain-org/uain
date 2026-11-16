@@ -1,0 +1,9 @@
+[Unit]
+Description=UAIN chain sync probe (writes node-exporter textfile metrics)
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/uain-chain-sync/chain_sync_probe.py /etc/uain-chain-sync/config.json
+TimeoutStartSec=60
+Nice=10

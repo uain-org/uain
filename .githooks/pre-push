@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Refuse to push a commit that has not passed `npm run check` (ops/check.sh).
+# Routine GitHub CI was removed on 9 November 2026; this is the gate now.
+# Emergency or documentation-only bypass: git push --no-verify (say why in the PR).
+set -euo pipefail
+dir="$(git rev-parse --git-common-dir)/uain-checks"
+zero=0000000000000000000000000000000000000000
+missing=
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [ "$local_sha" = "$zero" ] && continue          # branch deletion
+  [ -f "$dir/$local_sha.json" ] || missing="$missing ${local_sha:0:10}($local_ref)"
+done
+if [ -n "$missing" ]; then
+  echo "pre-push: no passing check for:$missing" >&2
+  echo "Run: npm run check   (tests the committed HEAD on uain-app-1, then push again)" >&2
+  exit 1
+fi

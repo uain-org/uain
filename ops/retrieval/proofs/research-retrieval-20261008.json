@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-08",
+  "pr": "https://github.com/senti-org/uain-universa/pull/186",
+  "revision": "bba52e5f071a70a92be518994ddacf0393bf8ac9",
+  "pr_checks": 37752873810,
+  "main_deploy": 37753282520,
+  "database": {
+    "host": "uain-db-1",
+    "postgres": 17,
+    "pgvector": "0.8.7"
+  },
+  "embedding": {
+    "host": "uain-app-1",
+    "service": "uain-embeddings.service",
+    "cpu_limit": 2,
+    "memory_limit_gib": 2,
+    "qualification": {
+      "model": "bge-small-en-v1.5:aa8f8b060edb00e03bfdd08813a2949946c8ba55:chunks-v1",
+      "dimensions": 384,
+      "scores": [
+        0.8347611785662385,
+        0.5135700735338434,
+        0.4040220513557088
+      ],
+      "seconds": 1.401,
+      "offline": true,
+      "long_input": true
+    }
+  },
+  "tests": {
+    "backend_main": {
+      "tests": 617,
+      "passed": 616,
+      "skipped": 1
+    },
+    "backend_write_thread": {
+      "tests": 617,
+      "passed": 616,
+      "skipped": 1
+    },
+    "vector_main": {
+      "passed": 3
+    },
+    "vector_write_thread": {
+      "passed": 3
+    },
+    "waitlist": {
+      "passed": 47
+    },
+    "site_build": true,
+    "site_types": true
+  },
+  "http_citations": [
+    {
+      "id": "RC-4543",
+      "state": "settled",
+      "citation": "https://uain.global/api/contributions/RC-4543",
+      "source_hash": "f9e1e517e0580dfeeed06d378e41f821648482c1fe9b515fd682927178b3b29b",
+      "matches_original": true
+    },
+    {
+      "id": "RC-4546",
+      "state": "settled",
+      "citation": "https://uain.global/api/contributions/RC-4546",
+      "source_hash": "810dae1bf298dd323a3bfd7659b940b57ff610217676dbe8d0db819d21d9e833",
+      "matches_original": true
+    },
+    {
+      "id": "RC-4531",
+      "state": "settled",
+      "citation": "https://uain.global/api/contributions/RC-4531",
+      "source_hash": "c8c8b27853570d50321b4ead6f4ee7d4847d6962c7ca85cf56fa2cef612163f8",
+      "matches_original": true
+    }
+  ],
+  "mcp": {
+    "tool": "uain_search_research",
+    "state_filter": "settled",
+    "matches": [
+      "RC-4531",
+      "RC-4535"
+    ]
+  },
+  "backfill": {
+    "enabled": true,
+    "model": "bge-small-en-v1.5:aa8f8b060edb00e03bfdd08813a2949946c8ba55:chunks-v1",
+    "total": 82,
+    "indexed": 82,
+    "retrying": 0,
+    "last_indexed_at": "2026-10-08T09:05:50.405Z",
+    "not_queued": 0
+  },
+  "reset_performed": false,
+  "native_chain_version": "0.3.0",
+  "readiness_http_status": 200
+}

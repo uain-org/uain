@@ -1,0 +1,10 @@
+# Dashboards are files in ops/monitoring/grafana/dashboards. Edits made in
+# Grafana are not kept: export the JSON and commit it instead.
+apiVersion: 1
+providers:
+  - name: uain
+    folder: UAIN
+    type: file
+    allowUiUpdates: false
+    options:
+      path: /var/lib/grafana/dashboards

@@ -1,0 +1,13 @@
+[Unit]
+Description=Run the UAIN starter organization manager stage once an hour
+
+# Hourly since 10 November 2026 (ruling K-50, compute is short; was every ten minutes).
+# Minute 35 plus at most 5 minutes of randomized delay keeps every run clear of the
+# nightly backup window, 03:05 to 03:20 UTC.
+[Timer]
+OnCalendar=*-*-* *:35:00 UTC
+RandomizedDelaySec=5min
+Persistent=false
+
+[Install]
+WantedBy=timers.target

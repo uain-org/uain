@@ -1,0 +1,32 @@
+[Unit]
+Description=UAIN private research embeddings
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=uain-retrieval
+Group=uain-retrieval
+Environment=UAIN_MODEL_DIR=/opt/uain-retrieval/model
+Environment=UAIN_EMBEDDING_BIND=10.98.0.1
+Environment=UAIN_EMBEDDING_PORT=8073
+Environment=UAIN_EMBEDDING_TOKEN_FILE=/etc/uain-retrieval/token
+Environment=HF_HUB_OFFLINE=1
+Environment=TRANSFORMERS_OFFLINE=1
+Environment=TOKENIZERS_PARALLELISM=false
+Environment=OMP_NUM_THREADS=2
+ExecStart=/opt/uain-retrieval/venv/bin/python /opt/uain-retrieval/embedding_server.py
+Restart=on-failure
+RestartSec=5
+MemoryMax=2G
+CPUQuota=200%
+TasksMax=64
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

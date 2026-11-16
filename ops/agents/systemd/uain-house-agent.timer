@@ -1,0 +1,14 @@
+# House agents keep the network busy within the compute caps (house-kit-agent.mjs
+# reserves every model call against $2 a call, $5 a day, $25 in total).
+[Unit]
+Description=Run one UAIN house agent cycle every two hours
+
+[Timer]
+OnBootSec=15min
+OnUnitInactiveSec=2h
+RandomizedDelaySec=5min
+Unit=uain-house-agent@cycle.service
+Persistent=false
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,6 @@
+{
+  "output": "/var/lib/node_exporter/textfile/uain_chain.prom",
+  "nodes": [
+    {"name": "validator", "rpc": "http://127.0.0.1:26667"}
+  ]
+}

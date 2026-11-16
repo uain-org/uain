@@ -1,0 +1,130 @@
+{
+  "source_manifest": "81911e155693a80350a65b58735a0405ccf074f4fed66d5b592ca72f9c0a8de6",
+  "source_head": "dd1835d7e1b5d76765b24bd0600076f115c8297393bb893698a2922f0bd7d27c",
+  "native_height": "170672",
+  "app_hash": "d85f534c69ef2d4178e59236631584f0132d158c3b03d48697db38b95d425e8b",
+  "header_time": "2026-10-11T20:41:47.249043692Z",
+  "native_checkpoint": {
+    "event_count": "0",
+    "last_command_digest": "",
+    "accounts_digest": "29a0a8ce093d456d7b34aba15321507fe9701b115be748cfe1b9da07552ffbf8"
+  },
+  "accounts": [
+    {
+      "id": "uain1215c651b70db82b70532a496c26fdf424f3bb369",
+      "credits": "0",
+      "karma": "0",
+      "sequence": "0"
+    },
+    {
+      "id": "uain132875d759cb1118929204c038bb04512a087f597",
+      "credits": "0",
+      "karma": "0",
+      "sequence": "0"
+    },
+    {
+      "id": "uain14ffd5d41f712197268b25bf7dc02831c3b25d8c5",
+      "credits": "0",
+      "karma": "0",
+      "sequence": "0"
+    },
+    {
+      "id": "uain158ac8d0debcf01d43164ef14736597da589d8b54",
+      "credits": "16",
+      "karma": "0",
+      "sequence": "0"
+    },
+    {
+      "id": "uain16d46623f5eec55267fe53a70447e0a92eadedd78",
+      "credits": "42",
+      "karma": "37",
+      "sequence": "0"
+    },
+    {
+      "id": "uain17fae025e2b7492156d438712aab8efcb4113b0fd",
+      "credits": "134",
+      "karma": "132",
+      "sequence": "0"
+    },
+    {
+      "id": "uain1895dcda4638e37293f47eb88e09f01d26ba133e2",
+      "credits": "0",
+      "karma": "0",
+      "sequence": "0"
+    },
+    {
+      "id": "uain18f5567e02488c0e1dbda141bf1191189b27b5994",
+      "credits": "0",
+      "karma": "0",
+      "sequence": "0"
+    },
+    {
+      "id": "uain19e52e47b468bb966c0eecd7a56aa0254f675af73",
+      "credits": "49",
+      "karma": "36",
+      "sequence": "0"
+    },
+    {
+      "id": "uain1a4d76477f94697e50d9ea33417e7db87ac80c113",
+      "credits": "0",
+      "karma": "0",
+      "sequence": "0"
+    },
+    {
+      "id": "uain1c1b49d1279670b081615fd854603763b27c9ab1f",
+      "credits": "0",
+      "karma": "0",
+      "sequence": "0"
+    },
+    {
+      "id": "uain1dc95c448148bbc0ef8483b2149d8db4b4458619e",
+      "credits": "3",
+      "karma": "0",
+      "sequence": "0"
+    },
+    {
+      "id": "uain1fe808464f8b71739890fefff2a69b37f0423452c",
+      "credits": "67",
+      "karma": "161",
+      "sequence": "0"
+    }
+  ],
+  "account_count": 13,
+  "credit_delta": "0",
+  "karma_delta": "0",
+  "coin_issued": "0",
+  "proof_file_sha256": "aaa6afa6bac0e4b09dcd0381df242712f7a684363e9a5431c3aa41905b7d1332",
+  "records_root": "a693086e8c4b800f2b119f5f9cd71da5746c23750ff259c3802821f97c70a160",
+  "record_count": 6210,
+  "source_counts": {
+    "events": 1642,
+    "last_event_id": 1647,
+    "signed_roots": 23,
+    "members": 14,
+    "keyed_members": 13,
+    "instances": 44,
+    "projects": 8,
+    "tasks": 48,
+    "contributions": 82,
+    "checks": 163,
+    "open_obligations": 49
+  },
+  "qualification": {
+    "server_stage": "/opt/uain-test/integration-compat-20261012",
+    "limits": {
+      "CPUQuota": "200%",
+      "MemoryMax": "3G",
+      "TasksMax": 256
+    },
+    "go_race": "go-final.log exit 0; full app 439.182 seconds; all packages pass",
+    "go_vet": "vet-final.log exit 0",
+    "integer_rounding": "integer-final.log exit 0; all 0..1,000,000 integer source inputs with four discount combinations match SQL Math.round",
+    "full_federation_after_final_review": "binding-green.log exit 0; binding-vet.log exit 0",
+    "source_sdk": "source-final-sdk.log exit 0; fresh/existing canonical-genesis; restart after first page; exact every row; max gas 2488936",
+    "javascript": "js-integer-final.log exit 0; 11 tests pass including full source plan and local signing context",
+    "pilot_both_passes": "/opt/uain-test/integration-20261012/pilot-all.log + pilot-thread.log; each 626 tests, 625 pass, one skip, no failure",
+    "review": "native_parity four confirmed issues fixed; final exact-envelope-instance guard added with red-green regression",
+    "production_mutations": false,
+    "cutover_authorized": false
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "baink-holder-addresses-tool-release-v1",
+  "tool": "uain-wallet-addresses",
+  "platform": "linux-amd64",
+  "rustToolchain": "1.89.0",
+  "sha256": "19f9c807902519e8eed0e22ed3d3bb2137c7d7819b1c7311ca9e23ec066bbc94",
+  "bytes": 897584,
+  "qualifiedDate": "2026-11-04",
+  "qualified": true,
+  "productionInstalled": false,
+  "replacesExistingWallet": false,
+  "existingCoinWalletSha256": "f3fd242f79c44b06b431a57ed94005e80a55f372d92c0c93d7a4bef9601db986",
+  "sourceSha256": {
+    "chain/private-exchange/src/bin/uain-wallet-addresses.rs": "7bfd1ce5fe638b82ed89593bb460e0628ef7a8fe13b3d71b5877bf9492b5de8b",
+    "chain/private-exchange/tests/wallet_addresses.rs": "0e0b6cfad0a660db71cd3196cceb90c5a31e64fe28537cd37ad4bea731b474b8",
+    "chain/private-exchange/src/wallet_files.rs": "6622f296e8d9cc79076005bc51f1ff2e6b140e63810b89a332d23a1008fee5fa",
+    "chain/private-exchange/Cargo.lock": "4194d7d7b23044e859cd5a2a3de0cab866f22f7d49a9a08f3c65b42b0ac845ca",
+    "chain/private-exchange/Cargo.toml": "f6bcf49fd726659adbce34dc92f0ff835edfed3e2209500f163f458da5050fdd",
+    "chain/private-exchange/src/lib.rs": "62e7849a9006da652fab6fc73735550bdfe6483fac30ea85e8a7b9ac345d68e5"
+  },
+  "checks": {
+    "rustReleaseTests": 7,
+    "actualForeignOwnedFictionalKeyRefused": true,
+    "qualifiedExistingKeygenExternalMatches": true,
+    "distinctInternalScope": true,
+    "fictionalKeyUnchanged": true,
+    "existingWalletBinaryUnchanged": true
+  },
+  "outputContract": {
+    "external": "Orchard scope External index0 raw address hex",
+    "internal": "Orchard scope Internal index0 raw address hex"
+  },
+  "artifact": "/opt/uain-test/holder-addresses-20261104/qualified/19f9c807902519e8eed0e22ed3d3bb2137c7d7819b1c7311ca9e23ec066bbc94/uain-wallet-addresses"
+}

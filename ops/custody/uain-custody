@@ -1,0 +1,4 @@
+#!/bin/sh
+# Root-only wrapper; serialize refreshes, snapshots and key consumers.
+exec flock --exclusive --wait 120 /run/lock/uain-custody.lock \
+  /opt/uain-custody/venv/bin/python /opt/uain-custody/custody.py "$@"

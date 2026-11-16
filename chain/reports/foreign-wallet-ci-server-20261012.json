@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-12",
+  "server": "uain-app-1",
+  "baseline_failure": "PR212 private-exchange job114616415668: root-only chown returned EPERM in the deliberately capability-free container",
+  "launcher_sha256": "763d6ad86ec0937c1a82fe822370b24484a38d6a1029bbfdc34183e3db0a2e3d",
+  "launcher_tests": 12,
+  "launcher_log": "/opt/uain-test/native-transport-20261012/launcher-final.log",
+  "launcher_log_sha256": "8f06c7a6eae0b5749d7cd5e1ab976a275df9cbf67a7611ba133edba317f5d1a0",
+  "actual_wallet_tests": 4,
+  "wallet_log": "/opt/uain-test/wallet-owner-ci-20261012/green.log",
+  "wallet_log_sha256": "b47ff4a240ac3b123a4323ec6bcc3e39ef0b35809882005122342e94c0caa665",
+  "wallet_exit": 0,
+  "fixture": {"uid": 65534, "gid": 65534, "mode": "0600", "bytes": 32, "contents": "public fictional repeated byte01"},
+  "container": {"cpu": 2, "memory_gib": 2, "network": "none", "capabilities": [], "root_read_only": true},
+  "production_wallet_logic_changed": false,
+  "client_signature_changed": false,
+  "required_combined_release_checks": "pending new exact head"
+}

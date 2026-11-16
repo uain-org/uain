@@ -1,0 +1,154 @@
+# UAIN staging on k3s: one copy and the website, on uain-app-1 beside
+# production, deployed from the `staging` branch (deploy-staging.yml). Its own
+# namespace with a cap, its own database (uain_staging on uain-db-1, at most 20
+# connections) and its own ledger key. No waitlist dashboard, no Slack, no
+# storage, Synapse or anchoring secrets: nothing it does reaches outside.
+# Secrets are made once by hand (README.md): `uain-env` (only
+# UAIN_PG_PASSWORD) and `uain-ledger` (staging's own key and salt).
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: uain-staging
+---
+# However staging behaves, it cannot take the CPU or memory production needs.
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: cap
+  namespace: uain-staging
+spec:
+  hard:
+    requests.cpu: '4'
+    requests.memory: 4Gi
+    limits.cpu: '8'
+    limits.memory: 8Gi
+    pods: '10'
+---
+# A quota needs every container to state its size; these are the defaults.
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: defaults
+  namespace: uain-staging
+spec:
+  limits:
+    - type: Container
+      default: { cpu: '1', memory: 512Mi }
+      defaultRequest: { cpu: 100m, memory: 128Mi }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pilot
+  namespace: uain-staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels: { app: pilot }
+  template:
+    metadata:
+      labels: { app: pilot }
+    spec:
+      terminationGracePeriodSeconds: 30
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, runAsGroup: 1000, fsGroup: 1000 }
+      containers:
+        - name: pilot
+          image: 10.98.0.1:5000/uain/pilot:IMAGE_TAG
+          ports: [{ containerPort: 8787 }, { containerPort: 9464, name: metrics }]
+          envFrom:
+            - secretRef: { name: uain-env }
+          env:
+            - { name: DATABASE_URL, value: 'postgres://uain_staging:$(UAIN_PG_PASSWORD)@10.98.0.2:5432/uain_staging' }
+            - { name: UAIN_TRUSTED_PROXY_HOPS, value: '2' }
+            - { name: UAIN_PUBLIC_ORIGIN, value: 'https://staging.uain.global' }
+            # Pilot mode, named: the image refuses to start without an authority
+            # (audit E-7, 15 November 2026). Staging keeps accepting unbound
+            # sign-in proofs, which its seed (seed-lead.mjs) signs (E-8).
+            - { name: UAIN_AUTHORITY, value: pilot }
+            - { name: UAIN_REQUIRE_BOUND_PROOFS, value: '0' }
+            - { name: UAIN_METRICS_PORT, value: '9464' }
+            # 6 + 2 + the LISTEN connection is 9 a copy: two during a rollout,
+            # or one and a seed, stay under the role's limit of 20.
+            - { name: UAIN_PG_POOL, value: '6' }
+            - { name: UAIN_WRITER_POOL, value: '2' }
+          resources:
+            requests: { cpu: 250m, memory: 256Mi }
+            limits: { cpu: '2', memory: 1Gi }
+          readinessProbe:
+            httpGet: { path: /api/ready, port: 8787 }
+            periodSeconds: 5
+            timeoutSeconds: 5
+          livenessProbe:
+            httpGet: { path: /api/health, port: 8787 }
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 6
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: { drop: [ALL] }
+          volumeMounts:
+            - { name: ledger, mountPath: /var/lib/uain-pilot, readOnly: true }
+      volumes:
+        - name: ledger
+          secret: { secretName: uain-ledger, defaultMode: 0440 }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pilot
+  namespace: uain-staging
+spec:
+  selector: { app: pilot }
+  ports: [{ port: 8787, targetPort: 8787 }]
+---
+# For Prometheus (job pilot-staging in ops/monitoring/prometheus/k3s.yml).
+apiVersion: v1
+kind: Service
+metadata:
+  name: pilot-metrics
+  namespace: uain-staging
+spec:
+  clusterIP: None
+  selector: { app: pilot }
+  ports: [{ name: metrics, port: 9464, targetPort: 9464 }]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  namespace: uain-staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels: { app: web }
+  template:
+    metadata:
+      labels: { app: web }
+    spec:
+      containers:
+        - name: web
+          image: 10.98.0.1:5000/uain/web:IMAGE_TAG
+          ports: [{ containerPort: 8080 }]
+          env:
+            - { name: UAIN_PILOT_HOST, value: 'pilot.uain-staging.svc.cluster.local' }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits: { cpu: '1', memory: 512Mi }
+          readinessProbe:
+            httpGet: { path: /, port: 8080 }
+            periodSeconds: 10
+            timeoutSeconds: 3
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: { drop: [ALL] }
+---
+# A fixed address for the front door (front-door.conf beside this file).
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+  namespace: uain-staging
+spec:
+  selector: { app: web }
+  clusterIP: 10.43.100.90
+  ports: [{ port: 8080, targetPort: 8080 }]

@@ -1,0 +1,41 @@
+{
+  "schema": "uain-production-release-acceptance-v1",
+  "date": "2026-10-12",
+  "pull_request": "https://github.com/senti-org/uain-universa/pull/213",
+  "revision": "c8e7646b6a7feb78aca8b4349450a1bb10ee67ec",
+  "merge": "All16PRchecksSUCCESS before guarded exact-head squash merge",
+  "deployment": {
+    "url": "https://github.com/senti-org/uain-universa/actions/runs/38199852886",
+    "conclusion": "success",
+    "updated_at": "2026-10-12T04:01:07Z"
+  },
+  "live": {
+    "pilot": {
+      "desired": 4,
+      "ready": 4,
+      "image": "10.98.0.1:5000/uain/pilot:c8e7646b6a7feb78aca8b4349450a1bb10ee67ec",
+      "all_running_pod_digest": "sha256:32af69988c6b38923bd5c2bb93dc9f659d2da5c86561887f9750ad81de06f5a3"
+    },
+    "web": {
+      "desired": 2,
+      "ready": 2
+    },
+    "waitlist": {
+      "desired": 1,
+      "ready": 1
+    },
+    "public_health": {
+      "ok": true,
+      "service": "uain-pilot",
+      "time": "2026-10-12T04:01:03.179Z"
+    },
+    "worker_version": "0.14.10",
+    "native_configmap_present": false,
+    "native_chain_service": "active",
+    "native_rpc_service": "active",
+    "node_backup_timer": "active",
+    "node_backup_check_timer": "active"
+  },
+  "native_authority_activated": false,
+  "production_reset": false
+}

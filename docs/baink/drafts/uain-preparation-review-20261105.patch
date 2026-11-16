@@ -1,0 +1,326 @@
+--- a/apps/baink/server/project-management.mjs
++++ b/apps/baink/server/project-management.mjs
+@@ -113,6 +113,7 @@
+       chat: () => {
+         throw new ManagementError(503, "management_disabled");
+       },
++      recordPreparationReview: () => { throw new ManagementError(503, "management_disabled"); },
+       submitEvidence: () => {
+         throw new ManagementError(503, "management_disabled");
+       },
+@@ -132,6 +133,7 @@
+   db.exec(
+     `CREATE TABLE IF NOT EXISTS projects(id TEXT PRIMARY KEY,source TEXT NOT NULL,source_digest TEXT NOT NULL,plan TEXT,plan_digest TEXT,planned_at INTEGER,cycle_at INTEGER,revision INTEGER NOT NULL DEFAULT 0); CREATE TABLE IF NOT EXISTS messages(owner TEXT NOT NULL,project_id TEXT NOT NULL,request_id TEXT NOT NULL,message TEXT NOT NULL,reply TEXT NOT NULL,created_at INTEGER NOT NULL,PRIMARY KEY(owner,request_id)); CREATE INDEX IF NOT EXISTS project_messages ON messages(owner,project_id,created_at); CREATE TABLE IF NOT EXISTS batches(sha256 TEXT PRIMARY KEY,receipt TEXT NOT NULL); CREATE TABLE IF NOT EXISTS holds(project_id TEXT PRIMARY KEY,reason TEXT NOT NULL); CREATE TABLE IF NOT EXISTS evidence(owner TEXT NOT NULL,project_id TEXT NOT NULL,request_id TEXT NOT NULL,payload TEXT NOT NULL,created_at INTEGER NOT NULL,PRIMARY KEY(owner,request_id)); CREATE INDEX IF NOT EXISTS evidence_project ON evidence(project_id,owner);`,
+   );
++  db.exec(`CREATE TABLE IF NOT EXISTS preparation_review_events(event_id TEXT PRIMARY KEY, owner TEXT NOT NULL, project_id TEXT NOT NULL, evidence_request_id TEXT NOT NULL, payload TEXT NOT NULL, created_at INTEGER NOT NULL); CREATE INDEX IF NOT EXISTS preparation_review_owner ON preparation_review_events(owner,project_id,evidence_request_id,created_at); CREATE TRIGGER IF NOT EXISTS preparation_review_no_update BEFORE UPDATE ON preparation_review_events BEGIN SELECT RAISE(ABORT,'immutable review event'); END; CREATE TRIGGER IF NOT EXISTS preparation_review_no_delete BEFORE DELETE ON preparation_review_events BEGIN SELECT RAISE(ABORT,'immutable review event'); END;`);
+   let closed = false;
+   const transaction = (fn) => {
+     db.exec("BEGIN IMMEDIATE");
+@@ -173,9 +175,42 @@
+     }
+   });
+   const find = db.prepare("SELECT * FROM projects WHERE id=?");
+-  function reviewWorkflow(id, requestId, createdAt) {
++  function reviewEvents(owner,id,requestId) {
++    return db.prepare("SELECT payload FROM preparation_review_events WHERE owner=? AND project_id=? AND evidence_request_id=? ORDER BY created_at,event_id").all(owner,id,requestId).map(row=>JSON.parse(row.payload));
++  }
++  function recordPreparationReview(input) {
++    exact(input,['owner','projectId','evidenceRequestId','eventId','beforeDigest','sourceDigest','reviewerName','reviewerOperator','reviewedAt','completeness','corrections','nextStep']);
++    need(ADDRESS.test(input.owner) && ID.test(input.projectId));
++    for(const field of ['evidenceRequestId','eventId']) need(typeof input[field]==='string' && /^[A-Za-z0-9._-]{8,96}$/.test(input[field]));
++    for(const field of ['beforeDigest','sourceDigest']) need(typeof input[field]==='string' && /^[a-f0-9]{64}$/.test(input[field]));
++    const reviewerName=text(input.reviewerName,2,160),reviewerOperator=text(input.reviewerOperator,2,200),nextStep=text(input.nextStep,10,2000);
++    need(['complete','needs-corrections'].includes(input.completeness));
++    need(Array.isArray(input.corrections) && input.corrections.length<=20);
++    const corrections=input.corrections.map(value=>text(value,2,1000));
++    need(input.completeness!=='needs-corrections'||corrections.length>0);
++    const reviewedAt=Date.parse(input.reviewedAt);
++    need(typeof input.reviewedAt==='string' && Number.isSafeInteger(reviewedAt) && new Date(reviewedAt).toISOString()===input.reviewedAt && reviewedAt<=now());
++    const normalized={...input,reviewerName,reviewerOperator,corrections,nextStep};
++    return transaction(()=>{
++      const previous=db.prepare('SELECT payload FROM preparation_review_events WHERE event_id=?').get(input.eventId);
++      if(previous){const event=JSON.parse(previous.payload);need(Object.keys(normalized).every(key=>JSON.stringify(event.input[key])===JSON.stringify(normalized[key])),409,'preparation_review_conflict');return {created:false,event};}
++      const evidence=db.prepare('SELECT payload,created_at FROM evidence WHERE owner=? AND project_id=? AND request_id=?').get(input.owner,input.projectId,input.evidenceRequestId);
++      need(evidence,404,'preparation_evidence_missing');
++      const row=find.get(input.projectId);need(row && digest(JSON.parse(evidence.payload))===input.beforeDigest && row.source_digest===input.sourceDigest,409,'preparation_review_binding_changed');
++      need(reviewedAt>=evidence.created_at);
++      const event={eventId:input.eventId,kind:'preparation-review',reviewerName,reviewerOperator,reviewerRole:'AI preparation coordinator',reviewedAt:input.reviewedAt,completeness:input.completeness,corrections,nextStep,independenceVerified:false,scientificAcceptance:false,rewardGranted:false,notifiedInApp:true,notificationStatus:'available-in-project-record',recordedAt:new Date(now()).toISOString(),input:normalized};
++      db.prepare('INSERT INTO preparation_review_events VALUES(?,?,?,?,?,?)').run(input.eventId,input.owner,input.projectId,input.evidenceRequestId,JSON.stringify(event),now());
++      return {created:true,event};
++    });
++  }
++  function reviewWorkflow(id, requestId, createdAt, preparationReview = null) {
+     const followUpAt = createdAt + DAY;
+     return {
++      preparationReviewStatus: preparationReview?.completeness ?? "not-reviewed",
++      preparationReviewedAt: preparationReview?.reviewedAt ?? null,
++      preparationReviewerName: preparationReview?.reviewerName ?? null,
++      preparationReviewerRole: preparationReview?.reviewerRole ?? null,
++      preparationNextStep: preparationReview?.nextStep ?? null,
+       intakeAccepted: true,
+       ownerId: `manager:${id}`,
+       ownerName: `${id} coordinator`,
+@@ -293,12 +328,10 @@
+                 "SELECT payload,created_at AS createdAt FROM evidence WHERE project_id=? AND owner=? ORDER BY created_at DESC LIMIT 20",
+               )
+               .all(id, user.address)
+-              .map((e) => ({
+-                ...JSON.parse(e.payload),
+-                createdAt: e.createdAt,
+-                status: "awaiting-independent-review",
+-                reviewWorkflow: reviewWorkflow(id, JSON.parse(e.payload).requestId, e.createdAt),
+-              }))
++              .map((e) => {
++                const payload=JSON.parse(e.payload),events=reviewEvents(user.address,id,payload.requestId),preparationReview=events.at(-1)??null;
++                return {...payload,createdAt:e.createdAt,status:"awaiting-independent-review",reviewBinding:{beforeDigest:digest(payload),sourceDigest:row.source_digest},preparationReview,reviewUpdates:events,reviewWorkflow:reviewWorkflow(id,payload.requestId,e.createdAt,preparationReview)};
++              })
+           : [],
+       messages:
+         user && ADDRESS.test(user.address)
+@@ -715,6 +748,7 @@
+     cycle,
+     chat,
+     submitEvidence,
++    recordPreparationReview,
+     decorate,
+     registerProject,
+     close() {
+--- a/apps/baink/test/project-management.test.mjs
++++ b/apps/baink/test/project-management.test.mjs
+@@ -237,3 +237,40 @@
+ test('pending evidence exposes a truthful owner, unassigned reviewer and follow-up without promising acceptance',async t=>{const f=await fixture(t),s=f.service;s.ingest([plan(s)]);const user={address:'uain1'+'5'.repeat(40)},p=s.project(rows[0].id),input={requestId:'review-workflow-retest-01',planDigest:p.modelPlanDigest,taskId:p.tasks[0].id,summary:'One primary source checked for a limited preparation note; not a complete task or novel result.',evidence:[{url:'https://example.org/primary-source',sha256:'a'.repeat(64)}]};const result=s.submitEvidence(user,p.id,input);assert.equal(result.reviewWorkflow.reviewerAssigned,false);const saved=s.project(p.id,user).evidence[0];assert.equal(saved.reviewWorkflow.completionDate,null);assert.equal(saved.reviewWorkflow.intakeAccepted,true);assert.equal(saved.reviewWorkflow.followUpAvailable,false);f.advance(25*60*60*1000);assert.equal(s.project(p.id,user).evidence[0].reviewWorkflow.followUpAvailable,true);assert.equal(s.project(p.id).review.status,'awaiting-independent-review');assert.equal(s.project(p.id).evidence.length,0);const r=s.chat(user,p.id,{requestId:'review-nextstep-retest-01',message:'When will my submitted evidence be reviewed and what happens next?'});assert.match(r.reply,/not assigned|unassigned/i);assert.match(r.reply,/no confirmed.*date/i);assert.match(r.reply,new RegExp(input.requestId));});
+ 
+ test('the review-update action draft routes to the actual pending submission',async t=>{const{service:s}=await fixture(t);s.ingest([plan(s)]);const user={address:'uain1'+'6'.repeat(40)},p=s.project(rows[0].id);s.submitEvidence(user,p.id,{requestId:'review-update-request-01',planDigest:p.modelPlanDigest,taskId:p.tasks[0].id,summary:'A limited one-source note asking for scope review only, with no claim of completion.',evidence:[{url:'https://example.org/source',sha256:'a'.repeat(64)}]});const r=s.chat(user,p.id,{requestId:'review-update-chat-01',message:'Review update request for evidence review-update-request-01: who owns the next step?'});assert.match(r.reply,/review-update-request-01/);assert.match(r.reply,/not assigned/);assert.match(r.reply,/no confirmed completion date/i);});
++
++test('operator preparation review is durable, private, bound and never independent acceptance',async t=>{
++ const f=await fixture(t),s=f.service;s.ingest([plan(s)]);const user={address:'uain1'+'7'.repeat(40)},p=s.project(rows[0].id);
++ const input={requestId:'preparation-evidence-01',planDigest:p.modelPlanDigest,taskId:p.tasks[0].id,summary:'Limited public-source preparation note, no scientific completion claimed.',evidence:[{url:'https://example.org/source',sha256:'a'.repeat(64)}]};s.submitEvidence(user,p.id,input);
++ assert.equal(typeof s.recordPreparationReview,'function');
++ const binding=s.project(p.id,user).evidence[0].reviewBinding;
++ const review={owner:user.address,projectId:p.id,evidenceRequestId:input.requestId,eventId:'preparation-review-event-01',...binding,reviewerName:'Fixture AI coordinator',reviewerOperator:'Fixture operator',reviewedAt:'2026-11-04T08:00:00.000Z',completeness:'needs-corrections',corrections:['Add the source version and scope limit.'],nextStep:'Submit a corrected limited note; scientific review is separate.'};
++ assert.equal(s.recordPreparationReview(review).created,true);assert.equal(s.recordPreparationReview(review).created,false);
++ assert.throws(()=>s.recordPreparationReview({...review,nextStep:'Changed payload'}),e=>e.code==='preparation_review_conflict');
++ const saved=s.project(p.id,user).evidence[0];assert.equal(saved.preparationReview.independenceVerified,false);assert.equal(saved.preparationReview.scientificAcceptance,false);assert.equal(saved.preparationReview.rewardGranted,false);assert.equal(saved.preparationReview.notifiedInApp,true);assert.equal(saved.reviewWorkflow.reviewerAssigned,false);assert.equal(saved.reviewWorkflow.preparationReviewStatus,'needs-corrections');assert.equal(saved.reviewUpdates.length,1);
++ assert.equal(s.project(p.id).evidence.length,0);assert.equal(s.project(p.id,{address:'uain1'+'8'.repeat(40)}).evidence.length,0);
++ for(const patch of [{evidenceRequestId:'unknown-request'},{owner:'uain1'+'8'.repeat(40)},{beforeDigest:'0'.repeat(64)},{sourceDigest:'0'.repeat(64)},{reviewedAt:'2027-01-01T00:00:00.000Z'}])assert.throws(()=>s.recordPreparationReview({...review,eventId:'another-review-event',...patch}));
++ assert.equal(s.project(p.id,user).evidence[0].reviewUpdates.length,1);
++ s.close();const reopened=createProjectManagement(f.options);t.after(()=>reopened.close());assert.equal(reopened.project(p.id,user).evidence[0].preparationReview.eventId,review.eventId);
++});
++
++import { DatabaseSync } from 'node:sqlite';
++import { spawnSync } from 'node:child_process';
++import { userInfo } from 'node:os';
++import {realpathSync} from 'node:fs';
++test('legacy evidence can receive operator CLI review; immutable events and failed writes preserve evidence',async t=>{
++ const f=await fixture(t),s=f.service;s.ingest([plan(s)]);const user={address:'uain1'+'9'.repeat(40)},p=s.project(rows[0].id),requestId='legacy-preparation-note';
++ s.submitEvidence(user,p.id,{requestId,planDigest:p.modelPlanDigest,taskId:p.tasks[0].id,summary:'An existing legacy note with bounded primary-source scope and no result claim.',evidence:[{url:'https://example.org/source',sha256:'b'.repeat(64)}]});
++ assert.equal(s.project(p.id,user).evidence[0].preparationReview,null);
++ const binding=s.project(p.id,user).evidence[0].reviewBinding,review={owner:user.address,projectId:p.id,evidenceRequestId:requestId,eventId:'operator-preparation-review',...binding,reviewerName:'Actual fictional test coordinator',reviewerOperator:userInfo().username,reviewedAt:'2026-11-04T08:00:00.000Z',completeness:'complete',corrections:[],nextStep:'Preparation note complete; await separately assigned scientific review.'};
++ // CLI uses real wall time; fixture date precedes it.
++ const cli=new URL('../../../ops/management/baink-preparation-review.mjs',import.meta.url).pathname;
++ const result=spawnSync(process.execPath,[cli,'--database',realpathSync(f.options.path)],{input:JSON.stringify(review),encoding:'utf8'});assert.equal(result.status,0,result.stderr);assert.equal(JSON.parse(result.stdout).scientificAcceptance,false);
++ const original=s.project(p.id,user).evidence[0];assert.equal(original.reviewUpdates.length,1);assert.equal(original.preparationReview.reviewerOperator,userInfo().username);
++ const db=new DatabaseSync(f.options.path);t.after(()=>db.close());
++ assert.throws(()=>db.prepare('UPDATE preparation_review_events SET payload=?').run('{}'),/immutable/);assert.throws(()=>db.exec('DELETE FROM preparation_review_events'),/immutable/);
++ db.exec("CREATE TRIGGER fixture_review_failure BEFORE INSERT ON preparation_review_events BEGIN SELECT RAISE(ABORT,'fixture atomic refusal'); END;");
++ assert.throws(()=>s.recordPreparationReview({...review,eventId:'second-preparation-event'}),/fixture atomic refusal/);
++ assert.deepEqual(s.project(p.id,user).evidence[0],original);
++ db.exec('DROP TRIGGER fixture_review_failure');
++ const wrongOperator=spawnSync(process.execPath,[cli,'--database',realpathSync(f.options.path)],{input:JSON.stringify({...review,eventId:'wrong-operator-event',reviewerOperator:'not-the-authenticated-os-user'}),encoding:'utf8'});assert.notEqual(wrongOperator.status,0);assert.equal(s.project(p.id,user).evidence[0].reviewUpdates.length,1);
++});
+--- /dev/null
++++ b/apps/baink/test/preparation-review-cli.test.mjs
+@@ -0,0 +1,5 @@
++import test from 'node:test';import assert from 'node:assert/strict';import {spawnSync} from 'node:child_process';import {mkdtemp,writeFile,symlink,rm} from 'node:fs/promises';import {tmpdir} from 'node:os';import {join} from 'node:path';
++const cli=new URL('../../../ops/management/baink-preparation-review.mjs',import.meta.url);
++test('operator CLI rejects nonSQLite and symlink database before parsing or recording a review',async t=>{const d=await mkdtemp(join(tmpdir(),'preparation-cli-'));t.after(()=>rm(d,{recursive:true,force:true}));const path=join(d,'data');await writeFile(path,'not sqlite',{mode:0o600});await symlink(path,join(d,'link'));for(const file of [path,join(d,'link')]){const r=spawnSync(process.execPath,[cli.pathname,'--database',file],{input:'{}',encoding:'utf8'});assert.notEqual(r.status,0);assert.match(r.stderr,/Preparation review refused/);}});
++import {DatabaseSync} from 'node:sqlite';import {userInfo} from 'node:os';import {realpath} from 'node:fs/promises';
++test('operator CLI refuses an unrelated valid SQLite without creating management tables',async t=>{const d=await mkdtemp(join(tmpdir(),'preparation-cli-sqlite-'));t.after(()=>rm(d,{recursive:true,force:true}));const path=join(d,'unrelated.sqlite'),db=new DatabaseSync(path);db.exec('CREATE TABLE unrelated(value TEXT)');db.close();const {chmod}=await import('node:fs/promises');await chmod(path,0o600);const r=spawnSync(process.execPath,[cli.pathname,'--database',await realpath(path)],{input:JSON.stringify({reviewerOperator:userInfo().username}),encoding:'utf8'});assert.notEqual(r.status,0);const check=new DatabaseSync(path);assert.deepEqual(check.prepare("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name").all().map(r=>r.name),['unrelated']);check.close();});
+--- /dev/null
++++ b/ops/management/baink-preparation-review.mjs
+@@ -0,0 +1,27 @@
++#!/usr/bin/env node
++/** Local OS-operator tool only. Reads one bounded review from stdin; no network,
++ * private source fetch, key handling, scientific acceptance or financial writes. */
++import {lstat,realpath,open} from 'node:fs/promises';
++import {constants} from 'node:fs';
++import {resolve,dirname} from 'node:path';
++import {userInfo} from 'node:os';
++import {DatabaseSync} from 'node:sqlite';
++import {createProjectManagement} from '../../apps/baink/server/project-management.mjs';
++const check=value=>{if(!value)throw Error('refused');};
++let service;
++try {
++ const args=process.argv.slice(2);check(args.length===2&&args[0]==='--database'&&resolve(args[1])===args[1]);
++ const path=args[1],uid=process.getuid();check(Number.isInteger(uid));
++ check(await realpath(path)===path);
++ for(let p=dirname(path);;p=dirname(p)){const s=await lstat(p);check(s.isDirectory()&&!s.isSymbolicLink()&&[0,uid].includes(s.uid)&&(!(s.mode&0o022)||(s.uid===0&&(s.mode&0o1000))));if(dirname(p)===p)break;}
++ const s=await lstat(path);check(s.isFile()&&!s.isSymbolicLink()&&s.uid===uid&&s.nlink===1&&!(s.mode&0o077));
++ for(const suffix of ['-wal','-shm'])try{const side=await lstat(path+suffix);check(side.isFile()&&!side.isSymbolicLink()&&side.uid===uid&&side.nlink===1&&!(side.mode&0o077));}catch(e){if(e.code!=='ENOENT')throw e;}
++ const f=await open(path,constants.O_RDONLY|constants.O_NOFOLLOW);try{const header=Buffer.alloc(16);check((await f.read(header,0,16,0)).bytesRead===16&&header.equals(Buffer.from('SQLite format 3\0')));}finally{await f.close();}
++ const existing=new DatabaseSync(path,{readOnly:true});try{for(const [table,required] of [['projects',['id','source','source_digest']],['evidence',['owner','project_id','request_id','payload','created_at']]]){const columns=existing.prepare('PRAGMA table_info('+table+')').all().map(row=>row.name);check(required.every(name=>columns.includes(name)));}}finally{existing.close();}
++ let size=0;const chunks=[];for await(const chunk of process.stdin){size+=chunk.length;check(size<=65536);chunks.push(chunk);}const input=JSON.parse(Buffer.concat(chunks).toString('utf8'));
++ // Named operator attribution is bound to the authenticated local OS identity.
++ check(input.reviewerOperator===userInfo().username);
++ service=createProjectManagement({path,enabled:true,catalogue:{available:true,list:()=>({total:0,projects:[]})}});
++ const result=service.recordPreparationReview(input);
++ console.log(JSON.stringify({created:result.created,eventId:result.event.eventId,kind:result.event.kind,scientificAcceptance:false,rewardGranted:false,notificationStatus:result.event.notificationStatus}));
++} catch {console.error('Preparation review refused; database, operator, existing evidence or review binding did not validate.');process.exitCode=1;} finally {service?.close();}
+--- /dev/null
++++ b/apps/baink/web/project-review-refresh.js
+@@ -0,0 +1,19 @@
++/** Foreground read-only refresh. Abort is advisory: keep ownership until an
++ * in-flight promise settles, even if its transport ignores cancellation. */
++export function startProjectReviewRefresh({read,onError=()=>{},visibility=globalThis.document,setTimer=globalThis.setTimeout,clearTimer=globalThis.clearTimeout,intervalMs=30000}) {
++ let stopped=false,active=null,timer=null,resume=false,hasValue=false;
++ const visible=()=>!visibility?.hidden;
++ const clear=()=>{if(timer!==null){clearTimer(timer);timer=null;}};
++ const run=async()=>{
++  if(stopped||!visible())return;
++  if(active){resume=true;return;}
++  clear();resume=false;const controller=new AbortController();active=controller;
++  try {await read(controller.signal);if(!stopped&&!controller.signal.aborted)hasValue=true;}
++  catch(error){if(!stopped&&!controller.signal.aborted)onError(error,!hasValue);}
++  finally {active=null;if(!stopped&&visible()){if(resume){resume=false;void run();}else timer=setTimer(()=>{timer=null;void run();},intervalMs);}}
++ };
++ const changed=()=>{clear();if(!visible()){active?.abort();return;}if(active){resume=true;return;}void run();};
++ visibility?.addEventListener?.('visibilitychange',changed);
++ void run();
++ return()=>{if(stopped)return;stopped=true;clear();active?.abort();visibility?.removeEventListener?.('visibilitychange',changed);};
++}
+--- /dev/null
++++ b/apps/baink/web/project-review-refresh.test.mjs
+@@ -0,0 +1,8 @@
++import test from 'node:test';import assert from 'node:assert/strict';
++import {startProjectReviewRefresh} from './project-review-refresh.js';
++function fixture(read){let hidden=false,listener,timers=[],errors=[];const visibility={get hidden(){return hidden;},addEventListener:(_,f)=>listener=f,removeEventListener:(_,f)=>{assert.equal(f,listener);listener=null;}};const stop=startProjectReviewRefresh({read,onError:(e,initial)=>errors.push({e,initial}),visibility,setTimer:f=>{timers.push(f);return f;},clearTimer:f=>{timers=timers.filter(t=>t!==f);}});return{stop,errors,hide(v){hidden=v;listener?.();},tick(){const f=timers.shift();f?.();},get timers(){return timers.length;}};}
++const settle=()=>new Promise(resolve=>setImmediate(resolve));
++test('review polling refreshes only foreground, never overlaps, and immediately resumes after visibility return',async()=>{const jobs=[];const f=fixture(signal=>new Promise(resolve=>jobs.push({signal,resolve})));assert.equal(jobs.length,1);f.hide(true);assert.equal(jobs[0].signal.aborted,true);f.hide(false);assert.equal(jobs.length,1);jobs[0].resolve();await settle();assert.equal(jobs.length,2);jobs[1].resolve();await settle();assert.equal(f.timers,1);f.hide(true);assert.equal(f.timers,0);f.tick();assert.equal(jobs.length,2);f.hide(false);assert.equal(jobs.length,3);f.stop();assert.equal(jobs[2].signal.aborted,true);jobs[2].resolve();await settle();assert.equal(f.timers,0);});
++test('stopped old owner never schedules or reports stale errors; replacement owner has an independent request',async()=>{let rejectOld;const old=fixture(()=>new Promise((_,reject)=>rejectOld=reject));old.stop();let reads=0;const fresh=fixture(async()=>{reads++;});rejectOld(Error('old owner'));await settle();assert.deepEqual(old.errors,[]);assert.equal(old.timers,0);assert.equal(reads,1);assert.equal(fresh.timers,1);fresh.stop();});
++test('initial error is distinguished from a later background refresh failure',async()=>{let count=0;const f=fixture(async()=>{count++;if(count!==2)throw Error('fixture');});await settle();assert.equal(f.errors[0].initial,true);f.tick();await settle();f.tick();await settle();assert.equal(f.errors[1].initial,false);f.stop();});
++test('initially hidden review waits for foreground and schedules the fixed thirty second delay',async()=>{let hidden=true,listener,reads=0,delay;const stop=startProjectReviewRefresh({visibility:{get hidden(){return hidden;},addEventListener:(_,f)=>listener=f,removeEventListener:()=>{}},read:async()=>{reads++;},setTimer:(_,ms)=>{delay=ms;return 1;},clearTimer:()=>{}});assert.equal(reads,0);hidden=false;listener();await settle();assert.equal(reads,1);assert.equal(delay,30000);stop();});
+--- a/apps/baink/web/main.jsx
++++ b/apps/baink/web/main.jsx
+@@ -87,6 +87,7 @@
+ } from "./identity.js";
+ import { createIdentitySessionGate } from "./identity-session.js";
+ import { createIdentitySession } from "./persistent-identity.js";
++import { startProjectReviewRefresh } from "./project-review-refresh.js";
+ import "./style.css";
+ import NativeMembership from "./NativeMembership.jsx";
+ import NativeInstance from "./NativeInstance.jsx";
+@@ -3920,6 +3921,7 @@
+   const pending = useRef(null),
+     pendingEvidence = useRef(null),
+     readSequence = useRef(0),
++    reviewOwner = useRef(null),
+     hashTokens = useRef({}),
+     mounted = useRef(true),
+     evidencePanel = useRef(null),
+@@ -3932,6 +3934,12 @@
+       hashTokens.current = {};
+     };
+   }, []);
++  reviewOwner.current = { identity, projectId: project.id, kind };
++  const currentReviewOwner = () => reviewOwner.current?.identity === identity && reviewOwner.current?.projectId === project.id && reviewOwner.current?.kind === kind;
++  useEffect(() => {
++    setRecord(undefined);setReceipt(null);setSent([]);setLoadError("");
++    pending.current=null;pendingEvidence.current=null;setBusy(false);setEvidenceBusy(false);setSendError("");setEvidenceError("");
++  }, [project.id, kind, identity?.address, identity]);
+   const editLink = (rowId, change) =>
+     setEvidenceLinks((rows) =>
+       rows.map((r) => (r.id === rowId ? { ...r, ...change } : r)),
+@@ -4008,31 +4016,20 @@
+   const path = `/api/management/projects/${encodeURIComponent(project.id)}`;
+   // The signed read returns this identity's own messages and evidence; the
+   // public record carries only an evidence count.
+-  const read = async () => {
++  const read = async (signal) => {
+     const sequence = ++readSequence.current;
+-    const value = await api(`${path}/chat`, { identity });
+-    if (sequence === readSequence.current) setRecord(value);
++    const value = await api(`${path}/chat`, { identity, signal, isCurrent:currentReviewOwner });
++    if (!signal?.aborted && currentReviewOwner() && sequence === readSequence.current) {setRecord(value);setLoadError("");}
+     return value;
+   };
+   useEffect(() => {
+-    let live = true;
+-    setRecord(undefined);
+-    setLoadError("");
+-    read().catch((e) => {
+-      if (!live) return;
+-      readSequence.current++;
++    const stop=startProjectReviewRefresh({read,onError:(e,initial)=>{
++      if(!currentReviewOwner() || !initial)return;
+       setRecord(null);
+-      setLoadError(
+-        e.code === "management_project_missing"
+-          ? ""
+-          : e.message || "Coordination details are unavailable.",
+-      );
+-    });
+-    return () => {
+-      live = false;
+-      readSequence.current++;
+-    };
+-  }, [project.id, kind, attempt]);
++      setLoadError(e.code === "management_project_missing" ? "" : e.message || "Coordination details are unavailable.");
++    }});
++    return () => {stop();readSequence.current++;};
++  }, [project.id, kind, attempt, identity?.address, identity]);
+   const submitEvidence = async (e) => {
+     e.preventDefault();
+     if (evidenceBusy || !record?.modelPlanDigest) return;
+@@ -4080,9 +4077,11 @@
+     try {
+       const result = await api(`${path}/evidence`, {
+         identity,
++        isCurrent: currentReviewOwner,
+         method: "POST",
+         body: { requestId: pendingEvidence.current.requestId, ...body },
+       });
++      if (!currentReviewOwner()) return;
+       setReceipt(result);
+       setEvidenceSummary("");
+       hashTokens.current = {};
+@@ -4090,6 +4089,7 @@
+       setEvidenceLinks([blankLink()]);
+       await read().catch(() => {});
+     } catch (failure) {
++      if (!currentReviewOwner()) return;
+       if (failure.code === "management_plan_changed") {
+         setEvidenceTask("");
+         await read().catch(() => {});
+@@ -4098,7 +4098,7 @@
+         );
+       } else setEvidenceError(failure.message);
+     } finally {
+-      setEvidenceBusy(false);
++      if(currentReviewOwner()) setEvidenceBusy(false);
+     }
+   };
+   const send = async (e) => {
+@@ -4113,9 +4113,11 @@
+     try {
+       const result = await api(`${path}/chat`, {
+         identity,
++        isCurrent: currentReviewOwner,
+         method: "POST",
+         body: pending.current,
+       });
++      if (!currentReviewOwner()) return;
+       setSent((rows) => [
+         ...rows.filter((row) => row.requestId !== result.requestId),
+         {
+@@ -4128,9 +4130,10 @@
+       pending.current = null;
+       setDraft("");
+     } catch (failure) {
++      if (!currentReviewOwner()) return;
+       setSendError(failure.message);
+     } finally {
+-      setBusy(false);
++      if(currentReviewOwner()) setBusy(false);
+     }
+   };
+   const history = [

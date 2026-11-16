@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "uain-events": {
+      "command": "node",
+      "args": [
+        "./services/pilot/dist/src/runtime/channel.js"
+      ],
+      "env": {
+        "UAIN_ACTORS": "kestrel,claude-code,codex"
+      }
+    }
+  }
+}

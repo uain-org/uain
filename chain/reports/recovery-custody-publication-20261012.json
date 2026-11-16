@@ -1,0 +1,40 @@
+{
+  "schema": "uain-recovery-custody-publication-contracts-v1",
+  "date": "2026-10-12",
+  "host": "uain-app-1",
+  "credential_free_container": true,
+  "publication": {
+    "failed_workflow": "https://github.com/senti-org/uain-universa/actions/runs/38200296531",
+    "failure": "npm Exit handler never called during dependency install; no Git publication step reached",
+    "replacement": "Bounded public HTTP read plus existing fixed-key Python export validator; no package/compiler/token/anchor dependency",
+    "tests": 3,
+    "pass": 3,
+    "live_completed_date": "2026-10-11",
+    "exact_prepared_root_sha256": "21c43ca72fc92a62eed23627ecd330ce2d86e210aba7c0270419fb5b8347797b",
+    "actual_http_metadata_regression": "Initial strict8-field parser refused real computed_at; allow only this bounded optional unsigned metadata and exclude it from existing signed/canonical root bytes",
+    "red_log_sha256": "32a38db3ebf0346b03d5fc97cf1e6ca4392c0c581e30ef1ae870514cd5435609",
+    "final_green_log_sha256": "c25fbe24c04976f9b1534f116f93908ba6ca8fa04f30289b41a92cf9ccdcad6d",
+    "actual_updated_workflow_pending": true
+  },
+  "custody_dispatch": {
+    "tests": 6,
+    "pass": 6,
+    "red_log_sha256": "900d66e11d32eab9fdcda43a1eafe4095a4a0f03a8955961bb3e8cefa9e53982",
+    "green_log_sha256": "e73c3805f810fdcf3d0167ced7085c48306c9482a952ffb710551d230cdb3e51",
+    "fixture": "Fake module imports/factory; no production credentials/vault",
+    "production_installed": false,
+    "source_only_cache_regression": {
+      "red_log_sha256": "7c6f7ff5573224a4010fc4fa21ba7e3a8ab767a8640181ec7b33a88eb0616ce6",
+      "final_green_log_sha256": "d1a3bdcaa925bbf92cc120237c5ab1078f911832e5f3bbdd16fd82aab85d59fa",
+      "actual_valid_forged_cache_executed_before_fix": true,
+      "after": "Protected bounded source-only compile for two new helpers; cache cannot execute. Unprotected/link/oversize sources refused."
+    }
+  },
+  "source_sha256": {
+    "ops/custody/custody.py": "f5b98a6fbc6594d200fd089a66b2badab4de43d97200b6e6bbf100414b8f88d4",
+    "ops/custody/test_dispatch.py": "6d260e6907bc271b5a7881f989cc5ae7eb4c67d61e60d9ef212293d5fbb30582",
+    "ops/ci/prepare-ledger-publication.py": "cb6cdf40ff39f0f6caf3c7e491a3b07b0002400b91be17663322326f349cefd9",
+    "ops/ci/test_prepare_publication.py": "e19dbb56c8bf4cfd8a2ab8d8a3c52d26ad6f1f9160b7ae5ef00636b4b325a062"
+  },
+  "production_reset": false
+}

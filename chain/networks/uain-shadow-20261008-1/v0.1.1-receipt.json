@@ -1,0 +1,154 @@
+{
+  "checked_at": "2026-10-07T21:37:45.592Z",
+  "chain_id": "uain-shadow-20261008-1",
+  "genesis_sha256": "54140a9243c4591ccc9f2e9d49543fc68b87b3e0045416174c232e9dd498f8ff",
+  "height": 1035,
+  "app_hash": "D85F534C69EF2D4178E59236631584F0132D158C3B03D48697DB38B95D425E8B",
+  "validator_id": "6f019abdf01b330533178b3d10a587cdaf26c5b2",
+  "fullnode_id": "a972a1236944013ca9ad197b3e2e09d04922427d",
+  "genesis_members": 13,
+  "checks": [
+    {
+      "host": "uain-app-1",
+      "key": "legacy",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-app-1",
+      "key": "member/uain1215c651b70db82b70532a496c26fdf424f3bb369",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-app-1",
+      "key": "member/uain132875d759cb1118929204c038bb04512a087f597",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-app-1",
+      "key": "member/uain14ffd5d41f712197268b25bf7dc02831c3b25d8c5",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-app-1",
+      "key": "member/uain158ac8d0debcf01d43164ef14736597da589d8b54",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-app-1",
+      "key": "member/uain16d46623f5eec55267fe53a70447e0a92eadedd78",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-app-1",
+      "key": "member/uain17fae025e2b7492156d438712aab8efcb4113b0fd",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-app-1",
+      "key": "member/uain1895dcda4638e37293f47eb88e09f01d26ba133e2",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-app-1",
+      "key": "member/uain18f5567e02488c0e1dbda141bf1191189b27b5994",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-app-1",
+      "key": "member/uain19e52e47b468bb966c0eecd7a56aa0254f675af73",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-app-1",
+      "key": "member/uain1a4d76477f94697e50d9ea33417e7db87ac80c113",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-app-1",
+      "key": "member/uain1c1b49d1279670b081615fd854603763b27c9ab1f",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-app-1",
+      "key": "member/uain1dc95c448148bbc0ef8483b2149d8db4b4458619e",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-app-1",
+      "key": "member/uain1fe808464f8b71739890fefff2a69b37f0423452c",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-db-1",
+      "key": "legacy",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-db-1",
+      "key": "member/uain1215c651b70db82b70532a496c26fdf424f3bb369",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-db-1",
+      "key": "member/uain132875d759cb1118929204c038bb04512a087f597",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-db-1",
+      "key": "member/uain14ffd5d41f712197268b25bf7dc02831c3b25d8c5",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-db-1",
+      "key": "member/uain158ac8d0debcf01d43164ef14736597da589d8b54",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-db-1",
+      "key": "member/uain16d46623f5eec55267fe53a70447e0a92eadedd78",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-db-1",
+      "key": "member/uain17fae025e2b7492156d438712aab8efcb4113b0fd",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-db-1",
+      "key": "member/uain1895dcda4638e37293f47eb88e09f01d26ba133e2",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-db-1",
+      "key": "member/uain18f5567e02488c0e1dbda141bf1191189b27b5994",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-db-1",
+      "key": "member/uain19e52e47b468bb966c0eecd7a56aa0254f675af73",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-db-1",
+      "key": "member/uain1a4d76477f94697e50d9ea33417e7db87ac80c113",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-db-1",
+      "key": "member/uain1c1b49d1279670b081615fd854603763b27c9ab1f",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-db-1",
+      "key": "member/uain1dc95c448148bbc0ef8483b2149d8db4b4458619e",
+      "proof_verified": true
+    },
+    {
+      "host": "uain-db-1",
+      "key": "member/uain1fe808464f8b71739890fefff2a69b37f0423452c",
+      "proof_verified": true
+    }
+  ],
+  "existing_federation_ready": true,
+  "trust": "fixed bootstrap validator set independently pinned in public genesis; RPC does not supply the trust anchor"
+}

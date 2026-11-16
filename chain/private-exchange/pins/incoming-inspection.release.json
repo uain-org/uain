@@ -1,0 +1,42 @@
+{
+  "schema": "baink-holder-note-inspect-tool-release-v1",
+  "tool": "uain-note-inspect",
+  "platform": "linux-amd64",
+  "rustToolchain": "1.89.0",
+  "sha256": "d252631b28e98b20937e9572481d7afc437e1f9bc8355a72ca0da8c6f8b64147",
+  "bytes": 963184,
+  "qualifiedDate": "2026-11-04",
+  "qualified": true,
+  "productionInstalled": false,
+  "replacesExistingWallet": false,
+  "sourceSha256": {
+    "chain/private-exchange/Cargo.toml": "f6bcf49fd726659adbce34dc92f0ff835edfed3e2209500f163f458da5050fdd",
+    "chain/private-exchange/Cargo.lock": "4194d7d7b23044e859cd5a2a3de0cab866f22f7d49a9a08f3c65b42b0ac845ca",
+    "chain/private-exchange/src/lib.rs": "62e7849a9006da652fab6fc73735550bdfe6483fac30ea85e8a7b9ac345d68e5",
+    "chain/private-exchange/src/wallet_files.rs": "6622f296e8d9cc79076005bc51f1ff2e6b140e63810b89a332d23a1008fee5fa",
+    "chain/private-exchange/src/bin/uain-note-inspect.rs": "a63cbd62d469bafca6ef77a0cb50054e917421f04ae4dc1cb419d97844681a5e",
+    "chain/private-exchange/tests/note_inspect.rs": "93ab864877ae4cbb6fbcdf2edbe62e93db823d5b2b1889dcc5338499b6d2258a"
+  },
+  "checks": {
+    "rustReleaseTests": 7,
+    "ownedRecipientOutputDecryption": true,
+    "differentWalletCannotClaimOutput": true,
+    "effectSubstitutionAndEncodingBounds": true,
+    "actualForeignOwnedFictionalKeyRefused": true,
+    "symlinkRefused": true,
+    "noKeyViewingKeyOrMemoInOutput": true
+  },
+  "qualificationScope": "Review-encoded fictional ciphertext tests ownership/decryption; caller must first authenticate a real finalized ciphertext record. This utility alone supplies no consensus proof.",
+  "positionScope": "bundle-action",
+  "transactionInclusionVerified": false,
+  "unspentVerified": false,
+  "artifact": "/opt/uain-test/holder-addresses-20261104/qualified/d252631b28e98b20937e9572481d7afc437e1f9bc8355a72ca0da8c6f8b64147/uain-note-inspect",
+  "requalified": {
+    "date": "2026-11-10",
+    "reason": "The test helper tolerates the tool closing its input early (BrokenPipe) when it refuses a key before reading it; only the test file changed, the tool source is unchanged.",
+    "testSourceBefore": "26ea3c932312a603af73f8c3391ce80bc3d513f7e1dba82b76388c472e295d63",
+    "testSourceAfter": "93ab864877ae4cbb6fbcdf2edbe62e93db823d5b2b1889dcc5338499b6d2258a",
+    "binarySha256Unchanged": "d252631b28e98b20937e9572481d7afc437e1f9bc8355a72ca0da8c6f8b64147",
+    "evidence": "Release builds of uain-note-inspect from clean exports of origin/main 31ca587f and of the fix commit 2d86bbc3, at the same path on uain-app-1 with Rust 1.89.0 and --locked, both reproduced the pinned sha256; tests/note_inspect.rs and tests/note_source.rs pass on both."
+  }
+}

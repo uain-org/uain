@@ -1,0 +1,123 @@
+{
+  "note": "FICTIONAL cross-language vector. Produced by services/project-organizations/src/{common,verification}.mjs; the envelope by ops/custody/fleet_attestation.py with a public test-only seed. Not a real key, policy or submission.",
+  "canonical": [
+    {
+      "value": {
+        "schema": "x",
+        "b": [
+          1,
+          "<&> é   \n\t\u0001 \"q\" \\",
+          true,
+          null
+        ],
+        "a": {
+          "z": 1,
+          "y": "ü"
+        }
+      },
+      "canonical": "{\"a\":{\"y\":\"ü\",\"z\":1},\"b\":[1,\"<&> é   \\n\\t\\u0001 \\\"q\\\" \\\\\",true,null],\"schema\":\"x\"}",
+      "sha256": "9a7c2b79c8c432812241dadf9d6f950dfae301a55115371bd54499264529ab57"
+    },
+    {
+      "value": {
+        "😀": 1,
+        "�": 2,
+        "a": [
+          0,
+          9007199254740991,
+          -9007199254740991,
+          ""
+        ],
+        "": " /",
+        "B": {}
+      },
+      "canonical": "{\"B\":{},\"a\":[0,9007199254740991,-9007199254740991,\"\"],\"\":\" /\",\"😀\":1,\"�\":2}",
+      "sha256": "d027edc7697757d1add3634fa3106e3c220ec082436e3b013b73fe82c02d71d8"
+    }
+  ],
+  "driverSource": "// FICTIONAL fixed driver bytes for the cross-language vector; never run.\nexport async function verify() { return { status: \"unverifiable\", findings: [\"fixture\"] }; }\n",
+  "policy": {
+    "schema": "uain-task-verification-policy-v1",
+    "class": "finite_math_witness",
+    "taskId": "T-fleet-vector-1",
+    "projectId": "P-OPP-00001",
+    "criteriaDigest": "5b499d3ec529cd822c9c23726a48b876650f59092dda173edab6364cca5d840f",
+    "inputs": [],
+    "primarySourceHosts": [],
+    "driver": {
+      "name": "finite-math-witness",
+      "sha256": "47fbe9bf969823e57aa919b633454aad9b1a19b1c0e8ba71d194d4abc8ebe37e"
+    },
+    "successTests": [
+      {
+        "id": "factor",
+        "witnessType": "integer_factorization",
+        "instance": {
+          "n": "2147483662032385529"
+        }
+      }
+    ]
+  },
+  "task": {
+    "id": "T-fleet-vector-1",
+    "project": "P-OPP-00001",
+    "criteria": "FICTIONAL: give two prime factors whose product is the pinned n.",
+    "acceptance_digest": "5b499d3ec529cd822c9c23726a48b876650f59092dda173edab6364cca5d840f",
+    "state": "under_review",
+    "pending": "sub-fleet-vector-1"
+  },
+  "answer": {
+    "id": "sub-fleet-vector-1",
+    "task": "T-fleet-vector-1",
+    "author": "uain1da082f51e119d96ff6c8574121645611b6a3d531",
+    "evidence": "{\"author\":\"uain1da082f51e119d96ff6c8574121645611b6a3d531\",\"schema\":\"uain-evidence-artifact-v1\",\"submissionId\":\"sub-fleet-vector-1\",\"taskId\":\"T-fleet-vector-1\",\"witnesses\":{\"factor\":{\"factors\":[\"2147483647\",\"1000000007\"]}}}",
+    "evidence_digest": "f22786deb3592cb1bb5f25511a64b5f5553b83f8c1b596045deaa2d4c9336fae",
+    "state": "under_review"
+  },
+  "payload": {
+    "schema": "uain-task-verification-attestation-v1",
+    "policyDigest": "96b77aa281bfeb0115ee6e35477088c572d16d7c7babab3f092a35f07b763ec6",
+    "submissionId": "sub-fleet-vector-1",
+    "author": "uain1da082f51e119d96ff6c8574121645611b6a3d531",
+    "criteriaDigest": "5b499d3ec529cd822c9c23726a48b876650f59092dda173edab6364cca5d840f",
+    "artifactDigest": "f22786deb3592cb1bb5f25511a64b5f5553b83f8c1b596045deaa2d4c9336fae",
+    "verdict": "pass",
+    "driver": {
+      "name": "finite-math-witness",
+      "sha256": "47fbe9bf969823e57aa919b633454aad9b1a19b1c0e8ba71d194d4abc8ebe37e"
+    },
+    "reproductionAttestationDigest": null,
+    "mainKpiSatisfied": false
+  },
+  "verificationDigest": "41b4de02e1e64ae1bb1bc0550c554d4651543f3c195e3e39a2ffa899b49a2d5b",
+  "policyDigest": "96b77aa281bfeb0115ee6e35477088c572d16d7c7babab3f092a35f07b763ec6",
+  "seedHex": "8e6528079165985a42ae83ea87372b586b0470392c8ca97bc965a2d94422b130",
+  "attestedAtEpoch": 1793966400,
+  "envelope": {
+    "statement": {
+      "schema": "uain-fleet-verification-attestation-v1",
+      "domain": "UAIN/fleet-verification-attestation/v1",
+      "environment": "fixture",
+      "submission": "sub-fleet-vector-1",
+      "author": "uain1da082f51e119d96ff6c8574121645611b6a3d531",
+      "task": "T-fleet-vector-1",
+      "project": "P-OPP-00001",
+      "evidenceClass": "finite_math_witness",
+      "criteriaDigest": "5b499d3ec529cd822c9c23726a48b876650f59092dda173edab6364cca5d840f",
+      "evidenceDigest": "f22786deb3592cb1bb5f25511a64b5f5553b83f8c1b596045deaa2d4c9336fae",
+      "policyDigest": "96b77aa281bfeb0115ee6e35477088c572d16d7c7babab3f092a35f07b763ec6",
+      "driver": {
+        "name": "finite-math-witness",
+        "sha256": "47fbe9bf969823e57aa919b633454aad9b1a19b1c0e8ba71d194d4abc8ebe37e"
+      },
+      "verdict": "pass",
+      "reproductionAttestationDigest": null,
+      "verificationDigest": "41b4de02e1e64ae1bb1bc0550c554d4651543f3c195e3e39a2ffa899b49a2d5b",
+      "mainKpiSatisfied": false,
+      "attestedAt": "2026-11-06T12:00:00Z"
+    },
+    "statementDigest": "98a10f198d50ba53ccb6e4e23a0156fcdc3b9e6e4fd6daaf49609ec82bfc75cc",
+    "publicKey": "1tSmYRC3N9YonBDhxe8NB0QMW74PJhAqciM6F0gHNB4=",
+    "signature": "6KoydVnub/6++9/ZV3jYMCB4EPdU2rsM5WcuxRf0MPZKByGt6u/0A9pC1at+kAoZFPuSD6dhe6XaMlAmR/TsDg=="
+  }
+}

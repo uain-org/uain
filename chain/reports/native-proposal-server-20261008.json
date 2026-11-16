@@ -1,0 +1,297 @@
+{
+  "status": "server-native-pipeline-passed-unpublished",
+  "recorded_at": "2026-10-08T07:07:23.085875+00:00",
+  "base_commit": "3bd85206a0ac8896d18955aa4f00d65fdbd9c85c",
+  "working_tree_changes": true,
+  "host": "uain-app-1",
+  "unit": "native-chain-Nm5uBhEy.service",
+  "logs": "/opt/uain-test/native-chain-Nm5uBhEy/checks.log",
+  "exit_code": 0,
+  "source_manifest_sha256": "52256b3b4a1b901a79b4082d6f1305074ffc73bb54ca8a29307ec256f550be05",
+  "source_manifest": [
+    {
+      "path": "app/app.go",
+      "sha256": "5e6383493efc1581266ffedaf844ed3b191bcf5add8f4b8f9d9eae7462ddb34c"
+    },
+    {
+      "path": "app/app_test.go",
+      "sha256": "508869d4b642a38e4b526300d4972795d67324c2cb095835140f70625c964be5"
+    },
+    {
+      "path": "app/compact_test.go",
+      "sha256": "7f5969d54b4db3d8252ae1f8050b2445b44efb85e2426e64c2870aead795fdf8"
+    },
+    {
+      "path": "app/instances_test.go",
+      "sha256": "95a10672218b3cfa3f4bb87a4f467a0ffdc7685687ff0bb9127d7403c0a55403"
+    },
+    {
+      "path": "app/operators_test.go",
+      "sha256": "3a6ef209299585f2e3f6b1c202904fcf7d1d40f8170b5008a23781fb7d889a72"
+    },
+    {
+      "path": "app/participation_test.go",
+      "sha256": "1571a54a3a15508cdbe968eb848a608102962aaa8af7272284a0727b0d238236"
+    },
+    {
+      "path": "app/proposals.go",
+      "sha256": "6712e75de5b08314742358432788efc350e3384bbadf23fe9d9717a1a5d7fd1d"
+    },
+    {
+      "path": "app/proposals_test.go",
+      "sha256": "81ef5386500a36e53ce6f20894d4e5d6051983ee4a76f34ddb8b1649fe48a887"
+    },
+    {
+      "path": "client/operator-observation.mjs",
+      "sha256": "ef09da8e2d5cdb911a28197f74b413cd1ff869d9f9f1105696a4a421bfaf805c"
+    },
+    {
+      "path": "client/operator-observation.test.mjs",
+      "sha256": "accdbeef025f1b26d7e46944caa5a391e4301e94c6c1b3050d77b10d9d2ae7f9"
+    },
+    {
+      "path": "client/signing.mjs",
+      "sha256": "16a79b453e42e18cdc4afddd19d9dc8ed1295e482cb742bee0b9a881c8df78dc"
+    },
+    {
+      "path": "client/signing.test.mjs",
+      "sha256": "fa11aadfd01f57698f0c0e69a3b7adeb43098c3f87fac00ad3d129378ff9e0ab"
+    },
+    {
+      "path": "cmd/uain-proof/main.go",
+      "sha256": "fd3cf2483b4e43092a2e4dd7121d981db2fcfaf819d8aef859d11587e2cfdbbc"
+    },
+    {
+      "path": "cmd/uaind/main.go",
+      "sha256": "e8632923d43227d5bab5c7ab7ff88dfbf81bbe313a23f98942f943b5a120e099"
+    },
+    {
+      "path": "cmd/uaind/main_test.go",
+      "sha256": "fdc9c03d1abbb4d90f8534389ec6fa8a40a56fea90511b75b1aa48646b912e66"
+    },
+    {
+      "path": "federation/account_metadata.go",
+      "sha256": "85545e206fa122022ccf406d8e8e5cfccc6ea5eb260633c4e673692acb9cb841"
+    },
+    {
+      "path": "federation/account_metadata_test.go",
+      "sha256": "33f49b4854dd1010b30fe2c1206e50c92187c2124cdc64e81323a4c7f124de85"
+    },
+    {
+      "path": "federation/accounting_test.go",
+      "sha256": "03a462a199432b2cb4d6d838c8a7be850d0bc6ce95aab43bc8aaedb5e1d1744b"
+    },
+    {
+      "path": "federation/authorization.go",
+      "sha256": "f1d71636d85f863c808c13708aea8e912e2431e687825b3a2637dba40033bbe9"
+    },
+    {
+      "path": "federation/budgets.go",
+      "sha256": "22a925dc67a229b9be7d850013c0a3da51e5471332e8b91bd5590b4e95d70173"
+    },
+    {
+      "path": "federation/compact.go",
+      "sha256": "0a1ea9b18db800e25796066238cbe6f74ff115240162acf8c0013077f927c453"
+    },
+    {
+      "path": "federation/compact_test.go",
+      "sha256": "3b70fc66e1f1f47139ff7b326060f9e0c97944b714eca40d82cb46b7bed988d9"
+    },
+    {
+      "path": "federation/credits.go",
+      "sha256": "85192fc300dbeeb07fdd83dc8c203b53d82a09a17467848a8a5813e432afc205"
+    },
+    {
+      "path": "federation/instances.go",
+      "sha256": "7617f7fa21d6a743b514a5d892639ea27651a6145ee5ea9836f907816c2bc026"
+    },
+    {
+      "path": "federation/instances_test.go",
+      "sha256": "0705b9c895b067807bed7be68734109497e0be29260ddbaf2bf2e6ccd6ec68e4"
+    },
+    {
+      "path": "federation/keeper.go",
+      "sha256": "e56c803406af36f64c2fd51b03be49ce99684ac18810daa1fa6ba6bef531f237"
+    },
+    {
+      "path": "federation/keeper_test.go",
+      "sha256": "8b6a398f612a4247ae03255732176460a761f362dd0f5cc692ddcd721c4bcc8c"
+    },
+    {
+      "path": "federation/kpi.go",
+      "sha256": "9b3503db15881fac967d386c44242af08f6e5487fd53480d09fcc4114ab87cf0"
+    },
+    {
+      "path": "federation/kpi_test.go",
+      "sha256": "3277cbc1c93a55c21cf801755cffc1a192fa2f5ab64b7eec5bfad2a8115a3abe"
+    },
+    {
+      "path": "federation/operators.go",
+      "sha256": "8f48f1ff61296ad2f6c1dbb95300b62de8f3c2b8f9d1938ae4b9b1ee53bcd906"
+    },
+    {
+      "path": "federation/operators_test.go",
+      "sha256": "be053bddb6cd54836e2012531104c2bf8faf3fd9245a90cfbdcb7f34f8054b81"
+    },
+    {
+      "path": "federation/participation.go",
+      "sha256": "c3677cd5ab97ab06a8735e034326daedd6c323e79ac89b344e99157d8334c6e1"
+    },
+    {
+      "path": "federation/participation_test.go",
+      "sha256": "c2f73e8315f44b5b2f021820d4e8d2c13f19f3f7c2abaaec7e6c197902500de0"
+    },
+    {
+      "path": "federation/prior_art.go",
+      "sha256": "508978b168b4689e71919792d595754a04add369377459b034e8da391cd9025a"
+    },
+    {
+      "path": "federation/read_cache.go",
+      "sha256": "4649badd08524c912a034921fafff14f46ad45a7ed1555b79f8f4db9db0332d7"
+    },
+    {
+      "path": "federation/settlement.go",
+      "sha256": "822f9f0f3c0d81859e31759e518b26bdd394e2d21e00a538760a2e0d572b23c0"
+    },
+    {
+      "path": "federation/store.go",
+      "sha256": "281a608e7b1098f1fe8c24e170f32afb5285b656fa87c31f853c7342618a2e85"
+    },
+    {
+      "path": "federation/types.go",
+      "sha256": "05f07a214167eb0a1740144e9ea4d08a33dcbb321ae41c96312da52179d555bb"
+    },
+    {
+      "path": "go.mod",
+      "sha256": "4c711e65b2176e848b50bb2a8db896e948cb8044cae5a001e8059594b32ddd44"
+    },
+    {
+      "path": "go.sum",
+      "sha256": "f7086c989ec3605cdf2c37b4193756a64f2abf093265b5fa1bc599f9a3f83ff6"
+    },
+    {
+      "path": "proof/compose.go",
+      "sha256": "defd77cefed5358bc5f6a7d3219f0cc26e9e5f27e9bb7681bcdc6b37afd2f959"
+    },
+    {
+      "path": "proof/verify.go",
+      "sha256": "1f078d20dc5b6c3cc8c1baac93d7753af3c08e09b6d2e72c37b52433a12d8b21"
+    },
+    {
+      "path": "proto/uain/federation/v1/tx.proto",
+      "sha256": "a422b24138135c1c3cc2456760f66078b5b65f24eab5c8679bfbc33588044d7f"
+    },
+    {
+      "path": "scripts/export-public-snapshot.mjs",
+      "sha256": "2aa2f96b2bec42f58170b97eb9943a1b3f16ef02657081ca8a7ed8743fef88e4"
+    },
+    {
+      "path": "scripts/smoke.mjs",
+      "sha256": "cacd580c439532b7f1bae01f8d097b49444812cd6611b4cffab534b542bdb653"
+    },
+    {
+      "path": "types/tx.pb.go",
+      "sha256": "6e321afab769b4244b208df71781bc19420a0102c2ccb7a7083f99d7372fa54a"
+    },
+    {
+      "path": "types/tx_grpc.pb.go",
+      "sha256": "718a893b1130c4d5b7a9a177fbc6819f38562b7a735979a4f062b1aef3700801"
+    }
+  ],
+  "limits": {
+    "memory_gib": 6,
+    "cpu_quota_percent": 400,
+    "tasks": 512,
+    "runtime_seconds": 3600
+  },
+  "checks": {
+    "go_race": "pass",
+    "go_vet": "pass",
+    "client_tests": "5/5",
+    "ops_python_tests": "3/3",
+    "daemon_and_proof_builds": "pass",
+    "two_node_rehearsals": [
+      {
+        "pass": true,
+        "chain": "uain-smoke-1",
+        "height": 4,
+        "app_hash": "DD3D9AD3254C133F8D9213FBDAFE61A6A177B4B931D0DFBD6A15E985151DB010",
+        "replay_rejected": true,
+        "fullnode_state_matches": true,
+        "state_proof_present": true,
+        "restart_preserved_state": true,
+        "upgrade_from": null,
+        "resumed_nodes_agree": true,
+        "instance_height": 9,
+        "instance_app_hash": "AB075B3E4F73AAEC238C8AB830E966F1464FE8AE2A69D1176D36656B7A510E6E",
+        "instance_state_matches": true,
+        "instance_restart_preserved": true,
+        "credit_height": 17,
+        "credit_app_hash": "7DE72051534FB6F2EA606602AF24037C2AB2CCD7A76D69DE4DE478B2ABC00A01",
+        "credit_state_matches": true,
+        "credit_restart_preserved": true,
+        "membership_height": 28,
+        "membership_app_hash": "CFF8190CB48B31F8A69C6C09E08AB56FEC3520FC4770106BC870E4F154A7BA33",
+        "membership_state_matches": true,
+        "membership_restart_preserved": true,
+        "outsider_challenge_rejected": true,
+        "compact_height": 44,
+        "compact_app_hash": "D85CEAEE65EEC5C7BB9005FA15E99C373AA7D9B9F9652F2DCA30FBD682E7EECE",
+        "compact_records_checked": 18,
+        "compact_restart_preserved": true,
+        "fixture_directory": "/opt/uain-test/native-chain-Nm5uBhEy/fixtures/uain-chain-smoke-T9DiMc"
+      },
+      {
+        "pass": true,
+        "chain": "uain-smoke-1",
+        "height": 4,
+        "app_hash": "4A529F264947A80FE44113DAC2134A716707FA2EC168F6BBC28F44A12E7385EA",
+        "replay_rejected": true,
+        "fullnode_state_matches": true,
+        "state_proof_present": true,
+        "restart_preserved_state": true,
+        "upgrade_from": "/opt/uain-chain/releases/8d37d5608076296a125fd0606b5863c3b71c72a57f966eaeeeb24647ce73bc5d/uaind",
+        "resumed_nodes_agree": true,
+        "instance_height": 9,
+        "instance_app_hash": "CBCF660254843869FC243B9A3F58BC85C78323E234A5B8B7BBC16C2B099B89D0",
+        "instance_state_matches": true,
+        "instance_restart_preserved": true,
+        "credit_height": 17,
+        "credit_app_hash": "6E6D18FC7248174E64B049E93437FFCCA814BFEF7E19E22EDEF033B80A9EE1F8",
+        "credit_state_matches": true,
+        "credit_restart_preserved": true,
+        "membership_height": 28,
+        "membership_app_hash": "9F5D98F33A08639F92FB648619D313E247F59A16B7237697D9590710457B838D",
+        "membership_state_matches": true,
+        "membership_restart_preserved": true,
+        "outsider_challenge_rejected": true,
+        "compact_height": 44,
+        "compact_app_hash": "201F37822A32CD03ABA63B401922E1817C6853BF98BCE1DA2DB772C921ABE392",
+        "compact_records_checked": 18,
+        "compact_restart_preserved": true,
+        "fixture_directory": "/opt/uain-test/native-chain-Nm5uBhEy/fixtures/uain-chain-smoke-NJUjQq"
+      }
+    ],
+    "maximum_actor_proposal_and_finalization": "pass",
+    "proposal_ordering_rollback_and_expiry": "pass"
+  },
+  "maximum_actor_fixture_gas": {
+    "resolve_kpi": 2922900,
+    "verify": 2348758,
+    "decide_prior_art": 2167993,
+    "limit": 3000000
+  },
+  "daemon_sha256": "c2752b17df20bb1bb726ab7478d20c88dc418023190414da72b1508f154a4d78",
+  "proof_binary_sha256": "e955e54d0cc68e97511aa4f6bb0f7c1a61908422ef567367b3b4eb051195c014",
+  "full_goal_complete": false,
+  "live_shadow_version": "0.2.1",
+  "live_policy_activation": false,
+  "release_checks": {
+    "backend_main_thread": "614/614",
+    "backend_write_thread": "614/614",
+    "waitlist": "47/47",
+    "site_build": "pass",
+    "site_types": "pass",
+    "logs": "/opt/uain-test/uain-chain-main-release-mlDg7w/logs"
+  }
+}

@@ -1,0 +1,49 @@
+# A throwaway copy of UAIN for load testing. Same images as production, its
+# own database and network, no published port. Removed after the test with
+# `docker compose -p uain-loadtest down -v`.
+name: uain-loadtest
+services:
+  web:
+    image: uain-universa:${TAG}
+    depends_on:
+      pilot:
+        condition: service_healthy
+  pilot:
+    image: uain-pilot:${PILOT_TAG}
+    deploy:
+      replicas: 4
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - pilot-data:/var/lib/uain-pilot
+    environment:
+      DATABASE_URL: postgres://uain:loadtest@db:5432/uain
+      UAIN_RATE_REQUESTS_PER_MIN: "1000000000"
+      UAIN_RATE_ENROLMENTS_PER_HOUR: "1000000000"
+      UAIN_RATE_REGISTRATIONS_PER_HOUR: "1000000000"
+      UAIN_TRUSTED_PROXY_HOPS: "1"
+      UAIN_LOCK_STATS: "1"
+      # The image refuses to start without an authority (audit E-7) or a pinned
+      # proof origin (P2-7); the load test reaches the copy at http://web:8080.
+      UAIN_AUTHORITY: pilot
+      UAIN_PUBLIC_ORIGIN: "http://web:8080"
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: uain
+      POSTGRES_DB: uain
+      POSTGRES_PASSWORD: loadtest
+      POSTGRES_INITDB_ARGS: --locale=C --encoding=UTF8
+    command: [postgres, -c, shared_buffers=2GB, -c, effective_cache_size=8GB, -c, work_mem=16MB, -c, maintenance_work_mem=256MB, -c, max_connections=300, -c, shared_preload_libraries=pg_stat_statements, -c, pg_stat_statements.track=all]
+    shm_size: 1g
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U uain -d uain"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+volumes:
+  pilot-data:
+  pg-data:

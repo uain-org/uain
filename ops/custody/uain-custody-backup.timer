@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily UAIN custody backup at 03:35 UTC
+
+[Timer]
+OnCalendar=*-*-* 03:35:00 UTC
+RandomizedDelaySec=300
+Persistent=true
+Unit=uain-custody-backup.service
+
+[Install]
+WantedBy=timers.target

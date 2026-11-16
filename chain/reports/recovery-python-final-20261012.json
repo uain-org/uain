@@ -1,0 +1,159 @@
+{
+  "backend_site_rerun": false,
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-I",
+        "-B",
+        "ops/reset/test_upgrade.py"
+      ],
+      "exit_code": 0,
+      "path": "/opt/uain-test/integration-recovery-python-5fe5a413-20261012/upgrade.log",
+      "sha256": "6377c50b8f544fe05fa695ebee7ec55501b7a0b372676717a5c5b7170a0f7988",
+      "suite": "upgrade",
+      "tests": 13
+    },
+    {
+      "command": [
+        "python3",
+        "-I",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "ops/custody",
+        "-p",
+        "test_sql_cutoff.py"
+      ],
+      "exit_code": 0,
+      "path": "/opt/uain-test/integration-recovery-python-5fe5a413-20261012/sql.log",
+      "sha256": "5f0635b83af38a6c5d516fcb60dc3fa63c9c6ca4854e51a6a29ca33c92ccef16",
+      "suite": "sql",
+      "tests": 9
+    },
+    {
+      "command": [
+        "python3",
+        "-I",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "ops/custody",
+        "-p",
+        "test_spaces_probe.py"
+      ],
+      "exit_code": 0,
+      "path": "/opt/uain-test/integration-recovery-python-5fe5a413-20261012/probe.log",
+      "sha256": "c57e833f026773c218c965cc8726b7bfb3b9b889adb427cb6bf285f303c799de",
+      "suite": "probe",
+      "tests": 8
+    },
+    {
+      "command": [
+        "python3",
+        "-I",
+        "-B",
+        "ops/custody/test_dispatch.py"
+      ],
+      "exit_code": 0,
+      "path": "/opt/uain-test/integration-recovery-python-5fe5a413-20261012/dispatch.log",
+      "sha256": "a25b5619af971eae96a8c9d37ebc69133b4c28e990455e210be0507206df182c",
+      "suite": "dispatch",
+      "tests": 6
+    },
+    {
+      "command": [
+        "python3",
+        "-I",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "ops/ci",
+        "-p",
+        "test_launcher.py"
+      ],
+      "exit_code": 0,
+      "path": "/opt/uain-test/integration-recovery-python-5fe5a413-20261012/launcher.log",
+      "sha256": "a0cedd9e664978024646021f3e2a87a13fe607b820d545dbae317dd4fa36b225",
+      "suite": "launcher",
+      "tests": 17
+    },
+    {
+      "command": [
+        "python3",
+        "-I",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "ops/ci",
+        "-p",
+        "test_prepare_publication.py"
+      ],
+      "exit_code": 0,
+      "path": "/opt/uain-test/integration-recovery-python-5fe5a413-20261012/publication.log",
+      "sha256": "41d12405e467720a6976611d921d88d5cba6d3b4623f7bdd8dd6afbd30bea611",
+      "suite": "publication",
+      "tests": 3
+    }
+  ],
+  "date": "2026-10-12",
+  "disposable_cleanup_confirmed": true,
+  "exit_code": 0,
+  "full_file_census_sha256": "8c19f20e6d27f632493bc2bbdc177761859cd6ec1bbc58a046395d6a29e0af98",
+  "git_archive_sha256": "150dbd6dd833376816228f79c60b1dafe2ab5e9a75a65aea941285cb1f952a25",
+  "limits": {
+    "cap_drop": [
+      "ALL"
+    ],
+    "cpus": 2,
+    "foreign_fixture_bytes": 32,
+    "foreign_fixture_mode": "0600",
+    "foreign_fixture_uid": 65534,
+    "memory_bytes": 3221225472,
+    "memory_swap_bytes": 3221225472,
+    "network": "none",
+    "pids": 256,
+    "readonly_root": true
+  },
+  "normalization": "regular files0644/0755 and directories0755 ownedroot, matching trusted CI census; all original file bytes unchanged",
+  "normalized_archive_sha256": "35c5ae181c3734c8d3e4a5d8d522f95121277e07651ad50ed79af6f592950ef7",
+  "prior_harness_diagnostic": {
+    "exit_code": 1,
+    "path": "/opt/uain-test/integration-recovery-python-5fe5a413-20261012/count-mismatch-qualification.log",
+    "reason": "All source tests passed; harness incorrectly expected38 launcher unittest methods rather than actual17. Corrected count yields56total.",
+    "sha256": "3fbecd9a4d9908af023db00c8a1f3248667c7751a2512636fb7231062f0326d9"
+  },
+  "production_access": false,
+  "production_writes": false,
+  "runtime_image": "sha256:e34b9972b50c3f9fee803334df875e8814aae3e381fc178b8c8de1a4608e8477",
+  "schema": "uain-recovery-python-qualification-v1",
+  "source_files": {
+    "ops/ci/container-suite.sh": "1b79b53409ce8e9c9ea0e74f89d604dbc4b88f2c2d203d148b49979ee6a62e55",
+    "ops/ci/launcher.py": "17a966e6323bbabb428176e08e2ea05a5e4f0c9dd2ba4b81b92081ed4aee5f3c",
+    "ops/ci/prepare-ledger-publication.py": "cb6cdf40ff39f0f6caf3c7e491a3b07b0002400b91be17663322326f349cefd9",
+    "ops/ci/test_launcher.py": "96aca11b6ce40eb0fc7b7c15263e318788c6fd61f5159b66ce9e81208cd82764",
+    "ops/ci/test_prepare_publication.py": "e19dbb56c8bf4cfd8a2ab8d8a3c52d26ad6f1f9160b7ae5ef00636b4b325a062",
+    "ops/custody/custody.py": "f5b98a6fbc6594d200fd089a66b2badab4de43d97200b6e6bbf100414b8f88d4",
+    "ops/custody/spaces_probe.py": "a0191a3546e9915c1ace5f00a3d82f215d45826831f10e247ceca82e899c731a",
+    "ops/custody/sql_cutoff.py": "537d4e3d64e785d444f63fb7fdbd8fff09e1baecdc5350437f6b63ce274dc1a0",
+    "ops/custody/test_dispatch.py": "6d260e6907bc271b5a7881f989cc5ae7eb4c67d61e60d9ef212293d5fbb30582",
+    "ops/custody/test_spaces_probe.py": "9b5ae434fccee3e20164593abd78ca2aab587121b29927dc4adb5d837014b758",
+    "ops/custody/test_sql_cutoff.py": "5983750310723650b1a901ecc98cdf94928b85402d890d5dea800182018c530a",
+    "ops/reset/archive.py": "e9feb4979478019ce3acbc754540ce0233f8af278eee1e9755a5fc71e762f972",
+    "ops/reset/installed.py": "7de9a53891b60de6a55cbaf2d0166eb9f252b665b096bb0e946a54fb32f89a33",
+    "ops/reset/test_upgrade.py": "318092fb600321944a2234f457342484977fb1a7664fe0cc1a32f0245c4d7be0",
+    "ops/reset/upgrade.py": "d4c312dac6a3aca88bf3116237cbcab393e0a16074994c6875607b9aad71ca32"
+  },
+  "source_revision": "5fe5a413b2f84e4dc2bc40bd0abadd34d52b2a31",
+  "source_snapshot": "full git archive, all tracked public source; no checkout code executed on host",
+  "tests": 56,
+  "tracked_regular_files": 1429
+}

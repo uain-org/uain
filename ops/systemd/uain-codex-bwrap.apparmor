@@ -1,0 +1,11 @@
+# Ubuntu 24.04's namespace restriction remains enabled globally. Only this
+# root-owned, version-pinned Codex helper may create its sandbox namespaces.
+# The helper must be root:uain 0750, under root-owned directories.
+# Install as /etc/apparmor.d/uain-codex-bwrap and load with apparmor_parser -r.
+# Re-run both startup canary checks after every Codex/runtime update.
+abi <abi/4.0>,
+include <tunables/global>
+
+profile uain-codex-bwrap /opt/uain-review-runtime/codex-0.159.3/codex-resources/bwrap flags=(unconfined) {
+  userns,
+}

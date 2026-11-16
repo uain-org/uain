@@ -1,0 +1,69 @@
+{
+  "schema": "uain-migration-submit-recovery-qualification-v1",
+  "date": "2026-10-12",
+  "base_revision": "29e26291dbf79d4686f82d9414532473933f2664",
+  "stage": "/opt/uain-test/migration-submit-recovery-20261012",
+  "source_files_sha256": {
+    "chain/migration/public-artifact.mjs": "859c3ee5097109ab02f5512fcd694fca368b2a4ee5fb93433648a250ac4d5450",
+    "chain/migration/public-artifact.test.mjs": "ab1c95460a565ea24f3f723e8ef01853d4887624d95d4fe58bc7f731d23eb0d3",
+    "chain/migration/submit.test.mjs": "46e957dcb16dd6b8f4cf7309c0c9af9f7734b659699d4ee5d545718d88089682",
+    "chain/migration/signing-plan.test.mjs": "8f7d5d9c018c0e4b0417b348d0f4dcdb4c389aa6d39c946fd60d76ee31432267",
+    "ops/chain/submit-native-migration.mjs": "a6785675e61ba46a5adc7ddaef61f933e3adb5fd59551f5d15cefabe688c08cc"
+  },
+  "source_archive_sha256": "4c1aa0aa10297989efc2f23824fddbeb2170b6654726b3453cbcacb3b82d2c0b",
+  "original_writer_red": {
+    "exit": 1,
+    "tests": 1,
+    "fail": 1,
+    "skip": 0,
+    "failure": "EEXIST after actual pending file write and fsync",
+    "log": "original-red.log",
+    "sha256": "7afd2c6feeed7f4808ba7d6064d2c2e3b29e4889a0d8bcf7aa6ba8bab13bc7dc"
+  },
+  "proof_retention_red": {
+    "exit": 1,
+    "log": "proof-red.log",
+    "sha256": "e37167f9a081ef0a4dba90f17372161378db646be56a859577e7c3cd475388f3"
+  },
+  "server_green": {
+    "exit": 0,
+    "tests": 39,
+    "pass": 39,
+    "fail": 0,
+    "skip": 0,
+    "log": "reviewed.log",
+    "sha256": "1163b73bb2e5e449778070c7a02dc8f143ab754cc3ecb384cf9be2c5557613db"
+  },
+  "container_green": {
+    "exit": 0,
+    "tests": 39,
+    "pass": 39,
+    "fail": 0,
+    "skip": 0,
+    "log": "capsdrop-final.log",
+    "sha256": "64bc0bfd1afc8a32bbb231667265b503b4e964ce934bd8decf1e75d73e3aa06c",
+    "image": "sha256:e34b9972b50c3f9fee803334df875e8814aae3e381fc178b8c8de1a4608e8477",
+    "cpus": 2,
+    "memory_bytes": 3221225472,
+    "pids_limit": 256,
+    "cap_drop": "ALL",
+    "read_only_root": true,
+    "host_credentials_or_socket_mounted": false,
+    "foreign_public_fixture_uid": 65534
+  },
+  "public_source_fixture": {
+    "records": 6336,
+    "bytes": 12071733,
+    "sha256": "f1ba807ce43ce216647ea07519c3686deb0ac032cd880ecf95c2d24563837cc8",
+    "manifest_digest": "b8e3964ab53c38aa4d6772d37a2c3d22a378a4166060688a7373a22a3cbe0864",
+    "is_final_frozen_source": false
+  },
+  "live_signing_submission_or_installation": false,
+  "state_authentication": "Every retry independently verifies native finalized headers/IAVL; stored proof capsules confer no authority. Exact envelope/event summary is deterministic; fresh full finalized proof capsules are fsynced first.",
+  "legacy_orphan_and_inode_pair_red": {
+    "exit": 1,
+    "log": "v1-red.log",
+    "sha256": "2211a83cea764d8004dd2d3b6b3cd0fa4a4231897c47dd112560aa5194ff926b"
+  },
+  "concurrency": "The documented external fixed flock serializes operator runs. Publication uses link/unlink, never overwrite rename; only an exact protected final/pending two-name inode pair can recover an interrupted link. Foreign conflicting final bytes cannot be replaced."
+}

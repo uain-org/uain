@@ -1,0 +1,6 @@
+#!/bin/sh
+# One evidence backup at a time. Unlike uain-custody, this does not hold the
+# custody lock for the run (up to 90 minutes): the entry takes that lock only
+# while it reads the vault and the storage secret.
+exec flock --exclusive --nonblock /run/lock/uain-evidence-backup.lock \
+  /opt/uain-custody/venv/bin/python -I /opt/uain-evidence-backup/entry.py "$@"

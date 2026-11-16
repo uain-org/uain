@@ -1,0 +1,64 @@
+# The native runtime's part of the pilot Deployment. render.py merges it into
+# uain.yaml (kubectl kustomize) when the ConfigMap uain-native-config exists,
+# so one `kubectl apply` carries the whole Deployment and a deploy makes one
+# ReplicaSet. Until 10 November 2026 it was patched on after the apply, which
+# rolled the pilot out twice.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pilot
+  namespace: uain
+spec:
+  template:
+    spec:
+      containers:
+        - name: pilot
+          envFrom:
+            - secretRef: { name: uain-env }
+            - secretRef: { name: uain-retrieval, optional: true }
+            - secretRef: { name: uain-kalki, optional: true }
+            - configMapRef: { name: uain-native-config }
+          volumeMounts:
+            - { name: native-public, mountPath: /opt/uain-native/public, readOnly: true }
+            - { name: native-publications, mountPath: /var/lib/uain-native/publications }
+        - name: native-rpc
+          image: 10.98.0.1:5000/uain/pilot:IMAGE_TAG
+          command: [node, native-rpc-transport.mjs, bridge]
+          envFrom:
+            - configMapRef: { name: uain-native-config }
+          resources:
+            requests: { cpu: 25m, memory: 32Mi }
+            limits: { cpu: '250m', memory: 128Mi }
+          # The copy is not ready until the bridge listens: the pilot reads
+          # every proof through it (127.0.0.1:26667). It runs only at start;
+          # a bridge that dies later restarts its container, which is unready
+          # meanwhile. It does not ask the node, so a paused validator (the
+          # nightly backup) never takes the copies out of service.
+          startupProbe:
+            exec:
+              command:
+                - node
+                - -e
+                - "require('net').connect(26667,'127.0.0.1').on('connect',()=>process.exit(0)).on('error',()=>process.exit(1))"
+            periodSeconds: 2
+            timeoutSeconds: 5
+            failureThreshold: 30
+          # The bridge outlives the pilot's own shutdown (5 s of draining, then
+          # requests in flight until 20 s after the signal), so a copy that is
+          # going away can still read proofs for the requests it finishes.
+          # Before, the bridge exited at once on SIGTERM.
+          lifecycle:
+            preStop: { sleep: { seconds: 20 } }
+          securityContext:
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            capabilities: { drop: [ALL] }
+          volumeMounts:
+            - { name: native-rpc-socket, mountPath: /run/uain-native-rpc, readOnly: true }
+      volumes:
+        - name: native-public
+          hostPath: { path: /opt/uain-chain/public-runtime, type: Directory }
+        - name: native-publications
+          hostPath: { path: /var/lib/uain-native/publications, type: Directory }
+        - name: native-rpc-socket
+          hostPath: { path: /run/uain-native-rpc, type: Directory }

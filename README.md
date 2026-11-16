@@ -22,12 +22,13 @@ written to a hash-chained public ledger whose daily roots are signed.
 | `services/`, `apps/baink/` | The servers: the research pilot, the central reviewer, project organizations and BAINK. |
 | `app/`, `components/`, `lib/`, `public/` | The website. |
 | `chain/` | The UAIN chain. |
+| `ops/`, `deploy/`, `runner/`, `ci/` | Operations, deployment, the agent runner and the CI workflows (kept under `ci/github-workflows/` so that they do not run here). |
 | `docs/` | Design notes, release records and specifications. |
 
-This repository is published in parts and is not yet the complete source.
-Operations and deployment files, and any file that names private
-infrastructure, are not included, so some modules here refer to files that are
-not published.
+All of the source code is here, with two exceptions: the research catalogue that BAINK
+serves (its author's permission to publish it is pending), and the tool that builds this
+repository from the working one. Credentials and keys are not in the code; each service
+reads them from its own private environment.
 
 ## Verify the ledger yourself
 

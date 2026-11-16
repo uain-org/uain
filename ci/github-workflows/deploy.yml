@@ -1,0 +1,393 @@
+name: Deploy UAIN
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One deploy at a time, in order. A run that arrives while another deploys
+# waits; GitHub keeps one waiting run per group, so a newer push replaces the
+# waiting one (it shows as cancelled) and deploys both changes, because the
+# change is measured from the release record. Runs never overlap, and each one
+# first waits for a rollout that is still going (see "Apply the manifest").
+concurrency:
+  group: uain-production
+  cancel-in-progress: false
+
+# Component-scoped (ops/ci-scope, plan P5). The change is measured from the
+# source production actually runs (the `uain-release` record), not from the
+# previous push: a queued run that GitHub superseded never deployed, so its
+# changes are still in the next run's range.
+#
+#   prose    only allowlisted documentation changed: the docs check runs; no
+#            images, secrets, rollout or monitoring.
+#   scoped   only changed components are built and rolled out (tests ran
+#            before the push: npm run check).
+#            Unchanged ones keep their image digest and are not restarted,
+#            unless a Secret or ConfigMap they read changed. A change to
+#            paths no image is built from (operator scripts, the pre-push
+#            check, staging, design files) builds and rolls out nothing.
+#   full     the workflow, the CI harness or the production manifests
+#            changed, or a path is unknown: the complete manifest is applied
+#            again. Images are built only for components whose own inputs
+#            changed (every one of them for an unknown path), and a
+#            component is rolled out only when its image or its part of the
+#            manifest changed. A missing or drifted release record, or a run
+#            by hand, builds, applies and restarts everything, as before.
+#
+# One deploy is one rollout (10 November 2026): the manifest is rendered whole
+# (deploy/k8s/production/render.py) and applied once, and a Deployment that
+# the apply already changed is not restarted as well. Before, each deploy made
+# two or three pilot ReplicaSets within three seconds.
+jobs:
+  scope:
+    name: Change scope
+    # It reads the production release record and cluster: from main only.
+    if: github.ref == 'refs/heads/main'
+    runs-on: [self-hosted, linux, x64, uain-production]
+    timeout-minutes: 10
+    env:
+      KUBECONFIG: /home/runner/.kube/config
+      REGISTRY: 10.98.0.1:5000/uain
+    outputs:
+      mode: ${{ steps.classify.outputs.mode }}
+      reason: ${{ steps.classify.outputs.reason }}
+      base: ${{ steps.base.outputs.base }}
+      web: ${{ steps.classify.outputs.web }}
+      pilot: ${{ steps.classify.outputs.pilot }}
+      waitlist: ${{ steps.classify.outputs.waitlist }}
+      monitoring: ${{ steps.classify.outputs.monitoring }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Find the deployed source
+        id: base
+        env:
+          EVENT: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          base=''
+          if [ "$EVENT" = push ]; then
+            base=$(python3 ops/ci-scope/release.py base "$REGISTRY") || base=''
+            if [ -n "$base" ] && ! git merge-base --is-ancestor "$base" "$GITHUB_SHA" 2>/dev/null; then
+              echo "::notice::Deployed source $base is not an ancestor of $GITHUB_SHA; deploying in full"
+              base=''
+            fi
+          fi
+          echo "base=$base" >> "$GITHUB_OUTPUT"
+
+      # Repository code runs in a short-lived container, as the test suites do
+      # (ops/ci/README.md): no network, read-only, only the classifier mounted.
+      - name: Classify the change
+        id: classify
+        env:
+          BASE: ${{ steps.base.outputs.base }}
+        run: |
+          set -euo pipefail
+          work="$RUNNER_TEMP/ci-scope"; rm -rf "$work"; mkdir -p "$work"
+          cp ops/ci-scope/classify.mjs "$work/"
+          if [ -z "$BASE" ]; then
+            {
+              echo mode=full
+              echo "reason=no verified release record to compare with (first scoped deploy, drift, or a run by hand)"
+              for c in web pilot waitlist monitoring; do echo "$c=true"; done
+            } >> "$GITHUB_OUTPUT"
+            echo "### Change scope: \`full\`" >> "$GITHUB_STEP_SUMMARY"
+            echo "No verified release record to compare with; everything is built and rolled out." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git diff --name-only --no-renames -z "$BASE" "$GITHUB_SHA" > "$work/changed"
+          classify() {
+            docker run --rm -i --network none --read-only --cap-drop ALL --security-opt no-new-privileges \
+              --user "$(id -u):$(id -g)" --cpus 1 --memory 256m --pids-limit 64 \
+              -v "$work:/ci-scope:ro" node:22-bookworm-slim@sha256:4b150b48b4116e2a22f2c39cc27025fbf4f153e2078fd3b14d159fdb5c7279da node /ci-scope/classify.mjs --null --format "$1" < "$work/changed"
+          }
+          if ! result=$(classify github); then
+            echo "::warning::The classifier failed; deploying in full"
+            result=$(echo mode=full; echo "reason=the classifier failed"; for c in web pilot waitlist monitoring; do echo "$c=true"; done)
+          fi
+          echo "$result" | tee -a "$GITHUB_OUTPUT"
+          { echo "Range: \`$BASE..$GITHUB_SHA\`"; echo; classify markdown || true; } >> "$GITHUB_STEP_SUMMARY"
+
+  docs:
+    name: Documentation check
+    needs: scope
+    if: github.ref == 'refs/heads/main' && needs.scope.outputs.mode == 'prose'
+    runs-on: [self-hosted, linux, x64, uain-production]
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Secrets, conflict markers and links in the added lines
+        env:
+          BASE: ${{ needs.scope.outputs.base }}
+        run: |
+          set -euo pipefail
+          work="$RUNNER_TEMP/docs-check"; rm -rf "$work"; mkdir -p "$work"
+          cp ops/ci-scope/docs-check.mjs "$work/"
+          git diff -U0 --no-color --no-renames "$BASE" "$GITHUB_SHA" > "$work/change.patch"
+          docker run --rm --network none --read-only --cap-drop ALL --security-opt no-new-privileges \
+            --user "$(id -u):$(id -g)" --cpus 1 --memory 256m --pids-limit 64 \
+            -v "$work:/ci-scope:ro" -v "$GITHUB_WORKSPACE:/repo:ro" \
+            node:22-bookworm-slim@sha256:4b150b48b4116e2a22f2c39cc27025fbf4f153e2078fd3b14d159fdb5c7279da node /ci-scope/docs-check.mjs --repo /repo --diff /ci-scope/change.patch
+
+  # No test job since 9 November 2026: every commit passes `npm run check`
+  # (ops/check.sh, the same sandboxed suites on uain-app-1) before it is pushed,
+  # and the nightly workflow (e2e.yml) reruns the routine suites on main.
+
+  # k3s on uain-app-1, PostgreSQL on uain-db-1 (deploy/k8s/production/README.md).
+  # The images are built in this job, not beside the tests: a staging deploy
+  # that ran between a separate build job and this one removed the new images
+  # as "not deployed" (prune-images.sh), and the rollout had nothing to pull.
+  deploy:
+    needs: [scope]
+    if: github.ref == 'refs/heads/main' && needs.scope.outputs.mode != 'prose'
+    runs-on: [self-hosted, linux, x64, uain-production]
+    timeout-minutes: 30
+    env:
+      # k3s's own kubectl reads the root-only /etc/rancher/k3s/k3s.yaml
+      # unless told otherwise; the runner has its own copy.
+      KUBECONFIG: /home/runner/.kube/config
+      REGISTRY: 10.98.0.1:5000/uain
+      TAG: ${{ github.sha }}
+      SCOPE_MODE: ${{ needs.scope.outputs.mode }}
+      SCOPE_WEB: ${{ needs.scope.outputs.web }}
+      SCOPE_PILOT: ${{ needs.scope.outputs.pilot }}
+      SCOPE_WAITLIST: ${{ needs.scope.outputs.waitlist }}
+      SCOPE_MONITORING: ${{ needs.scope.outputs.monitoring }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+
+      # Before anything is pushed, so a cleanup by another runner on this host
+      # (prune-images.sh) keeps the tag this run is about to deploy.
+      - name: Mark this release in flight
+        run: python3 ops/ci-scope/release.py begin "$TAG"
+
+      # A changed component is built under this commit's tag. An unchanged one
+      # gets the same tag in the registry for its recorded digest (re-tag, no
+      # rebuild), so every check below still covers all three images under one
+      # tag, while its Deployment keeps naming the tag it runs and is not
+      # replaced. A recorded image that is gone or changed is rebuilt instead.
+      #
+      # A component that was built, but to the image it already runs, keeps
+      # its recorded tag too and is not rolled out. The registry digest cannot
+      # tell: each build pushes an index with a new build attestation, so
+      # release.py compares the platform image inside it. On 10 November 2026
+      # three deploys in a row rebuilt the same pilot image (a228d5619ddf)
+      # and rolled out every copy each time.
+      - name: Build and push changed images
+        env:
+          BASE: ${{ needs.scope.outputs.base }}
+        run: |
+          set -euo pipefail
+          # The website and the connection server say which commit they were
+          # built from (/build.json, /api/build; ops/docs/build-id.mjs). A
+          # deploy builds only what changed, so each says the commit of its
+          # own last build, which is the tag its Deployment names.
+          build() {
+            case $1 in
+              web) docker build --pull --build-arg UAIN_SOURCE_COMMIT="$TAG" -t "$REGISTRY/web:$TAG" . ;;
+              pilot) docker build --pull --build-arg UAIN_SOURCE_COMMIT="$TAG" -t "$REGISTRY/pilot:$TAG" -f services/pilot/Dockerfile . ;;
+              waitlist) docker build --pull -t "$REGISTRY/waitlist:$TAG" apps/waitlist-dashboard ;;
+            esac
+            docker push "$REGISTRY/$1:$TAG"
+          }
+          # Web first: its pilot-build stage fills the cache the pilot image reuses.
+          for c in web pilot waitlist; do
+            upper=${c^^}
+            selected="SCOPE_$upper"
+            tag='' digest=''
+            # The scope job selects every component when there is no release
+            # record to compare with, when it is run by hand and for an
+            # unknown path; otherwise only the ones whose inputs changed.
+            if [ "${!selected}" != true ]; then
+              read -r tag digest < <(python3 ops/ci-scope/release.py component "$c") || true
+              if [ -n "$tag" ] && python3 ops/ci-scope/release.py retag "$REGISTRY" "$c" "$tag" "$TAG" "$digest"; then
+                echo "$c: unchanged; keeps $tag ($digest)"
+                { echo "TAG_$upper=$tag"; echo "CHANGED_$upper=false"; } >> "$GITHUB_ENV"
+                continue
+              fi
+              echo "::warning::$c: the recorded image could not be reused; building it"
+            fi
+            build "$c"
+            tag='' digest=''
+            if [ -n "$BASE" ]; then read -r tag digest < <(python3 ops/ci-scope/release.py same "$REGISTRY" "$c" "$TAG") || true; fi
+            if [ -n "$tag" ]; then
+              echo "$c: built again to the image that already runs; keeps $tag and is not rolled out"
+              { echo "TAG_$upper=$tag"; echo "CHANGED_$upper=false"; } >> "$GITHUB_ENV"
+              continue
+            fi
+            { echo "TAG_$upper=$TAG"; echo "CHANGED_$upper=true"; } >> "$GITHUB_ENV"
+          done
+
+      - name: Verify registry manifests and complete layer bytes
+        run: python3 ops/ci/verify-registry.py "$REGISTRY" "$TAG"
+
+      - name: Verify images as their unprivileged runtime users
+        run: bash ops/ci/verify-runtime-images.sh "$REGISTRY" "$TAG"
+
+      # Rebuilt from GitHub secrets on every deploy, so a changed secret
+      # reaches the copies on the next run.
+      - name: Write the uain-env secret
+        env:
+          UAIN_PG_PASSWORD: ${{ secrets.UAIN_PG_PASSWORD }}
+          UAIN_WAITLIST_DB_PASSWORD: ${{ secrets.UAIN_WAITLIST_DB_PASSWORD }}
+          UAIN_WAITLIST_ADMIN_PASSWORD_HASH: ${{ secrets.UAIN_WAITLIST_ADMIN_PASSWORD_HASH }}
+          UAIN_WAITLIST_SESSION_SECRET: ${{ secrets.UAIN_WAITLIST_SESSION_SECRET }}
+          UAIN_SLACK_WAITLIST_WEBHOOK: ${{ secrets.UAIN_SLACK_WAITLIST_WEBHOOK }}
+          UAIN_STORAGE_ACCESS_KEY_ID: ${{ secrets.UAIN_STORAGE_ACCESS_KEY_ID }}
+          UAIN_STORAGE_SECRET_ACCESS_KEY: ${{ secrets.UAIN_STORAGE_SECRET_ACCESS_KEY }}
+          UAIN_SYNAPSE_SHARED_SECRET: ${{ secrets.UAIN_SYNAPSE_SHARED_SECRET }}
+          UAIN_ETHEREUM_RPC_URL: ${{ secrets.UAIN_ETHEREUM_RPC_URL }}
+          UAIN_SOLANA_RPC_URL: ${{ secrets.UAIN_SOLANA_RPC_URL }}
+        run: |
+          set -euo pipefail
+          if [ -z "$UAIN_PG_PASSWORD" ]; then echo "::error::UAIN_PG_PASSWORD is not set"; exit 1; fi
+          kubectl get namespace uain >/dev/null 2>&1 || kubectl create namespace uain
+          # Values reach kubectl in owner-only files, never on its command line
+          # (any local process can read /proc/*/cmdline). printf '%s' writes
+          # the exact bytes; the directory is removed however the step ends.
+          umask 077
+          values=$(mktemp -d "$RUNNER_TEMP/uain-env.XXXXXX")
+          trap 'rm -rf "$values"' EXIT
+          args=()
+          for key in UAIN_PG_PASSWORD UAIN_WAITLIST_DB_PASSWORD UAIN_WAITLIST_ADMIN_PASSWORD_HASH \
+            UAIN_WAITLIST_SESSION_SECRET UAIN_SLACK_WAITLIST_WEBHOOK UAIN_STORAGE_ACCESS_KEY_ID \
+            UAIN_STORAGE_SECRET_ACCESS_KEY UAIN_SYNAPSE_SHARED_SECRET UAIN_ETHEREUM_RPC_URL \
+            UAIN_SOLANA_RPC_URL; do
+            printf '%s' "${!key}" > "$values/$key"
+            args+=("--from-file=$key=$values/$key")
+          done
+          kubectl -n uain create secret generic uain-env "${args[@]}" --dry-run=client -o yaml \
+            | kubectl apply -f - >/dev/null
+
+      # The ledger's signing key and log salt are made once, by hand, from the
+      # old server's files. A deploy that made new ones would fork the ledger.
+      - name: Check the ledger secret exists
+        run: |
+          set -euo pipefail
+          if ! kubectl -n uain get secret uain-ledger >/dev/null 2>&1; then
+            echo "::error::Secret uain-ledger is missing; it must be created by hand (deploy/k8s/production/README.md)"
+            exit 1
+          fi
+
+      # One deploy changes each Deployment at most once, so it makes at most one
+      # ReplicaSet for it: the manifest is rendered whole and applied once, and
+      # a Deployment the apply already changed is not restarted as well. The
+      # step first waits for a rollout that is still going. The script says
+      # how and why (deploy/k8s/production/apply.sh, tested by test_apply.py).
+      - name: Apply the manifest
+        env:
+          BASE: ${{ needs.scope.outputs.base }}
+        run: bash deploy/k8s/production/apply.sh
+
+      # Through the front door, as a visitor would reach it. Tried up to 6
+      # times: the first request after a rollout has hung for 60 s and ended
+      # 504 (twice on 2 October 2026), while the next ones answered.
+      - name: Check the site
+        run: |
+          set -euo pipefail
+          try() { curl --fail --silent --show-error --retry 5 --retry-delay 3 --retry-all-errors --connect-timeout 5 --max-time 20 "$@"; }
+          for path in / /api/ready /network/live; do
+            try --resolve uain.global:443:127.0.0.1 "https://uain.global$path" > /dev/null
+          done
+          try -o /dev/null -w '%{http_code}\n' \
+            --resolve waitlist.uain.global:443:127.0.0.1 https://waitlist.uain.global/
+
+      # Only after a good rollout and site check: the record is the base the
+      # next run measures its change from, and the rollback target after it.
+      - name: Record the release
+        run: |
+          set -euo pipefail
+          python3 ops/ci-scope/release.py record "$REGISTRY" "$GITHUB_SHA" "$TAG_WEB" "$TAG_PILOT" "$TAG_WAITLIST" > "$RUNNER_TEMP/release.json"
+          { echo '### Release record'; echo '```json'; cat "$RUNNER_TEMP/release.json"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      # After the app, so a monitoring problem never holds back a deploy.
+      # Recreated when its inputs changed: the config files are mounted from
+      # this checkout, and a container keeps reading the old ones until it
+      # restarts. Otherwise `up` changes nothing unless the compose file's
+      # resolved settings (its secrets) changed.
+      - name: Deploy monitoring
+        env:
+          UAIN_GRAFANA_ADMIN_PASSWORD: ${{ secrets.UAIN_GRAFANA_ADMIN_PASSWORD }}
+          UAIN_SLACK_ALERTS_WEBHOOK: ${{ secrets.UAIN_SLACK_ALERTS_WEBHOOK }}
+          UAIN_PG_PASSWORD: ${{ secrets.UAIN_PG_PASSWORD }}
+        run: |
+          set -euo pipefail
+          if [ -z "$UAIN_GRAFANA_ADMIN_PASSWORD" ] || [ -z "$UAIN_SLACK_ALERTS_WEBHOOK" ]; then
+            echo "::notice::Monitoring not deployed: set the UAIN_GRAFANA_ADMIN_PASSWORD and UAIN_SLACK_ALERTS_WEBHOOK secrets"
+            exit 0
+          fi
+          # Runner umasks can leave public bind mounts at 0750/0640. These
+          # tracked configs contain no secrets and must be readable by the
+          # unprivileged Prometheus and Grafana users. Keep secret env/volumes
+          # and the runner's general umask unchanged.
+          chmod 0755 ops/monitoring/prometheus ops/monitoring/grafana/provisioning \
+            ops/monitoring/grafana/provisioning/{alerting,dashboards,datasources} \
+            ops/monitoring/grafana/dashboards
+          chmod 0644 ops/monitoring/prometheus/{k3s,prometheus}.yml \
+            ops/monitoring/grafana/provisioning/alerting/{rules,slack}.yml \
+            ops/monitoring/grafana/provisioning/{dashboards/uain,datasources/prometheus}.yml \
+            ops/monitoring/grafana/dashboards/uain.json
+          # The scope job selects monitoring when its inputs changed, for an
+          # unknown path and when there is no record to compare with.
+          recreate=()
+          if [ "$SCOPE_MONITORING" = true ]; then recreate=(--force-recreate); fi
+          docker compose -f deploy/k8s/production/monitoring.yaml up -d "${recreate[@]}" --wait --wait-timeout 120
+          docker compose -f deploy/k8s/production/monitoring.yaml ps
+
+      # Only after a good rollout: the images of each component's newest 3
+      # deploys and every tag the release record names stay in Docker and the
+      # registry, so a rollback can pull them.
+      - name: Remove images of older deploys
+        run: bash deploy/k8s/production/prune-images.sh
+
+      - name: Prune untagged images
+        if: always()
+        run: docker image prune -f --filter "until=168h" >/dev/null
+
+  # Never skipped, so every push to main ends with one decision that says
+  # which path it took and why.
+  release:
+    name: Release decision
+    if: always()
+    needs: [scope, docs, deploy]
+    runs-on: [self-hosted, linux, x64, uain-production]
+    timeout-minutes: 5
+    steps:
+      - name: Require the path the change scope chose
+        env:
+          SCOPE: ${{ needs.scope.result }}
+          MODE: ${{ needs.scope.outputs.mode }}
+          REASON: ${{ needs.scope.outputs.reason }}
+          DOCS: ${{ needs.docs.result }}
+          DEPLOY: ${{ needs.deploy.result }}
+          REF: ${{ github.ref }}
+        run: |
+          set -euo pipefail
+          if [ "$REF" != refs/heads/main ]; then
+            echo "::error::Production deploys run only from main; this run from $REF did nothing."
+            exit 1
+          fi
+          {
+            echo "### Release decision: \`${MODE:-unknown}\`"
+            echo "$REASON"
+            echo
+            echo "scope=$SCOPE docs=$DOCS deploy=$DEPLOY (tests: pre-push npm run check)"
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+          test "$SCOPE" = success
+          if [ "$MODE" = prose ]; then
+            echo "Prose-only: tests, images, rollout and monitoring skipped by design." | tee -a "$GITHUB_STEP_SUMMARY"
+            test "$DOCS" = success
+          else
+            test "$DEPLOY" = success
+          fi

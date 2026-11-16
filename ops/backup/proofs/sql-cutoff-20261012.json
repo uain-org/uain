@@ -1,0 +1,89 @@
+{
+  "additional_checks": [
+    "nonpublic-sequence-refused",
+    "real-restored-sequence-mismatch-refused",
+    "physical-unused-sequence-mismatch-refused-with-catalog-null",
+    "offsite-ciphertext-replacement-refused",
+    "actual-private-table-drift-after-restore-refused"
+  ],
+  "date": "2026-10-12",
+  "fixture": "isolated Kubernetes namespace, pgvector17 memory source; standalone pinned pilot image; fictional member/ledger/backup keys; mocked in-memory offsite byte transport; real internal Docker tmpfs restore; namespace/DB transport adapters only",
+  "production_data_read": false,
+  "production_writes": false,
+  "qualification": {
+    "CPUQuota": "200%",
+    "MemoryMax": "3G",
+    "TasksMax": 256,
+    "capture_tests": 3,
+    "disposable_namespace_containers_networks_removed": true,
+    "exit_code": 0,
+    "logs": {
+      "inventory-capture.log": "0d3e9284e16e1783692037b1cb2e1f897a0128ba84a3327dff80ff257e14bb2f",
+      "inventory-python.log": "5f0635b83af38a6c5d516fcb60dc3fa63c9c6ca4854e51a6a29ca33c92ccef16",
+      "inventory-red.log": "1691ea4cd87111681fb7deec00250e98dbcc3143cddd728c0857e57a0d2fe235",
+      "inventory-rehearsal.log": "9e0d0c47e275fe7478db82ae4979f7c5ec74baea91f323a70f3fc4a6dd8e6691"
+    },
+    "prior_qualification": {
+      "CPUQuota": "200%",
+      "MemoryMax": "3G",
+      "TasksMax": 256,
+      "capture_tests": 3,
+      "disposable_namespace_containers_networks_removed": true,
+      "exit_code": 0,
+      "logs": {
+        "physical-rehearsal.log": "677ae3eb464ba9b1b49322a2fa66e902992b60c50dd23ba592c5b6b24ad96b4c",
+        "qualified-capture.log": "7e2dec2520fe63d8cf4bdadb15814b08e0258ee748657c96c797fa87c8c39b01",
+        "qualified-python.log": "60bb849356ffbc091f601e17fc6ae0b2eb5e26d734d433da020c6e775efbf97f",
+        "qualified-rehearsal.log": "0823f8c82557904188e75a676c6908195be1909dc3cb5b64214eb32805b17608",
+        "unused-red.log": "15bf1f2096fbb5fd49ba2eee11660cae42248e2a51c651f6890cfd74ed21a185"
+      },
+      "prior_failure": "physical-rehearsal.log rejects an earlier restore compare before the intended negative query; retained as failed qualification, diagnostic pass followed by exact normal-executor final pass",
+      "python_tests": 8,
+      "server": "uain-app-1",
+      "stage": "/opt/uain-test/sql-cutoff-20261012",
+      "unit": "uain-sql-cutoff-final-20261012"
+    },
+    "python_tests": 9,
+    "server": "uain-app-1",
+    "stage": "/opt/uain-test/sql-cutoff-20261012",
+    "unit": "uain-sql-cutoff-inventory-20261012",
+    "vault_inventory_verified_before_backup_attachment": true
+  },
+  "real_offsite_restore": false,
+  "result": {
+    "approval_sha256": "20357b5bf0a6c3a1ee22c5e337243b400f2b61b463744ac923e9e02907a838aa",
+    "backup_bytes": 167076,
+    "backup_cli_sha256": "b1a6d9f94e712fd708b0d2e0a85486e7bbbead68bd0fafe48b668d45f6f5ca58",
+    "backup_sha256": "b31401acb051bafc4ff67d0fc86b77be3f105159c9b1615d0d71824d9e9cf1b4",
+    "completed_at": 1791777152,
+    "epoch": "20261012_035146",
+    "exact_sequences": true,
+    "full_snapshot_sha256": "80529ad5b7ab826a1773868b0140e3d25a2ab9e1361c84370977122f2a9d7622",
+    "offsite_object": "backups/cutoff/20261012_035146/uain-cutoff-20261012_035146.uainbk",
+    "physical_sequence_state_sha256": "e84ba6f0ea2caf609770021baaf9160881bafa0b6f0ed655819f992493364931",
+    "pilot_image": "10.98.0.1:5000/uain/pilot@sha256:2143ea2ff22433218ed8bb8bf6e91232fdeabecbf417bd826fd3f6b7038d182d",
+    "postgres_image": "pgvector/pgvector:0.8.7-pg17@sha256:cd4ccfdaf62cbfeb5c6ee19ef0dd663406d4ed740c320b324d016a90e85385b3",
+    "production_reset": false,
+    "records_root": "f167dde2ba5a1686a1ea966401477c3ebabe97e513c86aab2790ce5d12f9016c",
+    "restored_server_started": false,
+    "restored_signer_files": false,
+    "rows": 11,
+    "same_exported_snapshot": "0000000A-00000002-1",
+    "schema": "uain-sql-cutoff-receipt-v1",
+    "sequences": 22,
+    "source_manifest_digest": "12ee2b4b839712134ebcf7836a868eb18d4142d159566a6311604921ae80934d",
+    "source_revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "source_snapshot_sha256": "a15ec4192a81ee1b09d9eb94cae0ba529a32c2386cb3dd2ed07a9d1ed8d02d0b",
+    "source_unchanged_through_restore": true,
+    "tables": 55
+  },
+  "schema": "uain-sql-cutoff-qualification-v1",
+  "source_sha256": {
+    "chain/migration/capture-snapshot.test.mjs": "167d670ee403753c53b137c9986ed8f0ef775b421f6bc90e827f62395ed0b980",
+    "chain/migration/capture.mjs": "ed41f2ac92d3e182851ae839403344407ef9af7a73ac9c088a08ca607d69e4d9",
+    "ops/backup/capture-cutoff.mjs": "1cfcc8677c913323b0fff551cfa1f8b379744cc06ca093538690285c77da37d9",
+    "ops/backup/rehearse-cutoff.py": "b8b9c00b3b4785462681a8af265ca3a64cf8eed24b477bc000b89c14ca008308",
+    "ops/custody/sql_cutoff.py": "537d4e3d64e785d444f63fb7fdbd8fff09e1baecdc5350437f6b63ce274dc1a0",
+    "ops/custody/test_sql_cutoff.py": "5983750310723650b1a901ecc98cdf94928b85402d890d5dea800182018c530a"
+  }
+}

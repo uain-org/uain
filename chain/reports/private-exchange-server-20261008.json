@@ -1,0 +1,214 @@
+{
+  "date": "2026-10-08",
+  "candidate": "0.3.3",
+  "server": "uain-app-1",
+  "production_activated": false,
+  "fixture_assets_only": true,
+  "units": {
+    "uain-private-rust-revision-20261008": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "MemoryPeak": "[not set]",
+      "CPUUsageNSec": "[not set]"
+    },
+    "uain-private-wallet-20261008": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "MemoryPeak": "[not set]",
+      "CPUUsageNSec": "[not set]"
+    },
+    "uain-private-go-revision-20261008": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "MemoryPeak": "[not set]",
+      "CPUUsageNSec": "[not set]"
+    }
+  },
+  "gas_used": 2305754,
+  "gas_limit": 3000000,
+  "cryptographic_protocol": "Orchard 0.16.0 / corrected post-NU6.2",
+  "source_manifest": [
+    {
+      "path": "private-exchange/Cargo.toml",
+      "sha256": "bb71b2fb01240d0177c79e9e8b81eb26f0bf35fed92637cb74daa853edb08dab"
+    },
+    {
+      "path": "private-exchange/Cargo.lock",
+      "sha256": "c7b81283bf373c82e3be91564c81a4b155ca85dd950596caf4f3684ebe83802b"
+    },
+    {
+      "path": "private-exchange/src/lib.rs",
+      "sha256": "62e7849a9006da652fab6fc73735550bdfe6483fac30ea85e8a7b9ac345d68e5"
+    },
+    {
+      "path": "private-exchange/src/bin/uain-private-wallet.rs",
+      "sha256": "ff26266cd061c04d8f39090507586aa694bef77807dddfa8ec9373419260d354"
+    },
+    {
+      "path": "private-exchange/tests/exchange.rs",
+      "sha256": "4e0080373f542f3ba798baabffc32da3bd2fc006e4e68edbab45d8fb28b42105"
+    },
+    {
+      "path": "app/app.go",
+      "sha256": "adbcdf290324fa674d647fed49c33d04ab1e9bb2191d282481a49246e4f2f1cc"
+    },
+    {
+      "path": "app/private_exchange_orchard_test.go",
+      "sha256": "33bbc20169b4eae62f6c35cfa139324748a8c303b7187954962904bcaf8e483f"
+    },
+    {
+      "path": "federation/private_exchange.go",
+      "sha256": "797a306a0e3dc01dc4ed3dfb7a30a6d43f801cd5d80caa4764c6dfed586996c0"
+    },
+    {
+      "path": "federation/private_exchange_test.go",
+      "sha256": "91721b5bd6bd0f868bc9bf61b1c4d4a94a15c6bef2fc5bd0c9b024429d31c66c"
+    },
+    {
+      "path": "federation/private_exchange_orchard_test.go",
+      "sha256": "30f5a7a4b356334dfb3eeeb83d9525ab90cb59c7c8576836a83923e9e1ce872d"
+    },
+    {
+      "path": "federation/store.go",
+      "sha256": "783da232f414b66ab8e767592742d46877a259a5805dc68220df141fedaa6e91"
+    },
+    {
+      "path": "federation/read_cache.go",
+      "sha256": "8aebe1ed19c8aca3cb35343868c09201852928087c647754008c34239372ee7f"
+    },
+    {
+      "path": "privateexchange/adapter.go",
+      "sha256": "dbbfa30f2248b0acf4d75cd781324f2575d69da4dc5eb5766fbb89be17f1a96d"
+    },
+    {
+      "path": "privateexchange/orchard.go",
+      "sha256": "35094ea491c4c422c207eb978e8ebd1f56aad4c5f46573a8648267dd00e5f124"
+    },
+    {
+      "path": "privateexchange/unavailable.go",
+      "sha256": "13ace78df7fdc919797b159dbce386a32290237ad3784a4359d54ed6aadd3dad"
+    },
+    {
+      "path": "client/private-review.mjs",
+      "sha256": "16795a00a2f86472bbd55b73106aadf9742793e82d5c653c9da91082741f75f6"
+    },
+    {
+      "path": "client/private-review.test.mjs",
+      "sha256": "804e61a56b7bbed64cb2eb1bcf6c93dce33434250ffc9a4b4d38a24a92feeb9f"
+    },
+    {
+      "path": "scripts/private-exchange-smoke.mjs",
+      "sha256": "efcc1103296d87ae5b839353a785020828d2ef515db495b1d563f19010341cea"
+    }
+  ],
+  "wallet_flow": {
+    "pass": true,
+    "fixture_directory": "/tmp/uain-private-wallet-smoke-N1Wqad",
+    "wallet_keys_created_privately": true,
+    "overwrite_refused": true,
+    "checker_transport_encrypted": true,
+    "one_time_viewing_key_used": true,
+    "both_party_consents_checked": true,
+    "checker_recovered_matching_outputs": true,
+    "wallet_generated_and_verified_proof": true,
+    "value_balance": "0",
+    "fixture_only": true
+  },
+  "checks": [
+    "real proof construction",
+    "recipient/change decryption; unrelated key refusal",
+    "amount/ciphertext/approval/chain/expiry/proof mutation refusal",
+    "fixed proof size and nonidentity key parsing",
+    "encrypted private review transport",
+    "both party identity consents",
+    "per-trade viewing-key review of actual encrypted outputs",
+    "member wallet proof and self-verification",
+    "different approved proof cannot double-spend the same input",
+    "SDK explicit gas and state inclusion proof",
+    "atomic replay refusal and persisted restart",
+    "global licence revision invalidates approvals without revealing participants",
+    "checker refuses a trading-party or missing relay key"
+  ],
+  "qualification_additions": {
+    "relay_guard_unit": "uain-private-wallet-relay2-20261008",
+    "terminal_result": "success",
+    "separate_relayer_checked": true,
+    "source_transfer_fix": "Anchor the generated /bin exclusion so Rust src/bin wallet source is transferred; explicitly declare the wallet target in Cargo.toml."
+  },
+  "full_server_qualification": {
+    "unit": "private-exchange-hmKTHukr-final",
+    "directory": "/opt/uain-test/private-exchange-hmKTHukr",
+    "Result": "success",
+    "ExecMainStatus": 0,
+    "checks_log_sha256": "53659969b355db2d7a273ddcbd95d0d8bec8308fa96ff428d8a079e728e10d88",
+    "go_pass_cases": 180,
+    "checks": [
+      "Rust format, release build and genuine corrected-circuit proofs",
+      "Node encrypted reviewer, consents and separate-relay guards",
+      "Full member wallet/checker proof flow",
+      "Full default Go race suite",
+      "Full Orchard-tagged Go race suite",
+      "Orchard-tagged Go vet",
+      "Orchard-tagged daemon build"
+    ],
+    "binary_sha256": {
+      "uaind": "46d51026c0d06b6e602114a124b718fecd220e8f10610735003a5d70ecdf2055",
+      "libuain_private_exchange.a": "c53def47fcb3546761730c8d5c369a2508e1c3b427ae257d7a50ea09b3e34c18",
+      "uain-private-wallet": "bbe98f4f39e026dd5349f4870c9dd07890c676c71d910b10beb012b3a6f274fc"
+    },
+    "source_note": "The final separate-relay helper was copied after the initial source manifest and before the Node checks. Its final SHA-256 is pinned in source_manifest above and all three guard tests and the genuine wallet flow passed. The smoke assertion diagnostics changed only after this full run and have a separate network qualification."
+  },
+  "fresh_two_node_qualification": {
+    "unit": "uain-private-network-20261008",
+    "Result": "success",
+    "ExecMainStatus": 0,
+    "fixture_directory": "/tmp/uain-chain-smoke-2ElCnO",
+    "compact_records_checked": 23,
+    "replica_app_hash_matches": true,
+    "restart_preserved": true,
+    "operator_census_and_invalidation": true,
+    "smoke_source_sha256": "a688441d14df3876b3c5fbbf6cbc150514df094003bb32ab9c3491eb808d8097"
+  },
+  "upgrade_two_node_qualification": {
+    "unit": "uain-private-upgrade-20261008",
+    "Result": "success",
+    "ExecMainStatus": 0,
+    "from_version": "0.3.0",
+    "from_sha256": "c2752b17df20bb1bb726ab7478d20c88dc418023190414da72b1508f154a4d78",
+    "to_version": "0.3.3",
+    "to_sha256": "46d51026c0d06b6e602114a124b718fecd220e8f10610735003a5d70ecdf2055",
+    "result": {
+      "pass": true,
+      "chain": "uain-smoke-1",
+      "height": 4,
+      "app_hash": "393416E50E35A67859B14A4574D4074DFA1F9B264AC394F9354AC63CCEB4D62D",
+      "replay_rejected": true,
+      "fullnode_state_matches": true,
+      "state_proof_present": true,
+      "restart_preserved_state": true,
+      "upgrade_from": "/opt/uain-chain/releases/c2752b17df20bb1bb726ab7478d20c88dc418023190414da72b1508f154a4d78/uaind",
+      "resumed_nodes_agree": true,
+      "instance_height": 9,
+      "instance_app_hash": "DD4143ECECCA5D4C925CE8D2AA338871F92B2EF9FCD5F07655A92C8E6137CC8A",
+      "instance_state_matches": true,
+      "instance_restart_preserved": true,
+      "credit_height": 17,
+      "credit_app_hash": "14E6B4A7E1C24AB8517954B53F0B16A8E154FD45298E83C4F9B2ABDBC403BA90",
+      "credit_state_matches": true,
+      "credit_restart_preserved": true,
+      "membership_height": 28,
+      "membership_app_hash": "599DF2D8AFBB8A638D919363C0105934A41587F316B1067E10D802A4F1928130",
+      "membership_state_matches": true,
+      "membership_restart_preserved": true,
+      "outsider_challenge_rejected": true,
+      "compact_height": 52,
+      "compact_app_hash": "8C100EF5FF82CF0D25C2ACB4CA65F9BAD4A7BD44BB26694A78969D24534EB022",
+      "compact_records_checked": 23,
+      "compact_restart_preserved": true,
+      "census_state_checked": true,
+      "census_invalidation_checked": true,
+      "fixture_directory": "/tmp/uain-chain-smoke-IlIfby"
+    },
+    "log_sha256": "fefdbdf6ece7e1c2c57ee185a8207f2e093990b4ab314a715a3fb7716f12dc00"
+  }
+}

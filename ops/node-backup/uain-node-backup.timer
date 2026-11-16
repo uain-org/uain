@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily encrypted backups of both UAIN native nodes
+
+[Timer]
+OnCalendar=*-*-* 03:10:00 UTC
+RandomizedDelaySec=5min
+Persistent=true
+Unit=uain-node-backup.service
+
+[Install]
+WantedBy=timers.target

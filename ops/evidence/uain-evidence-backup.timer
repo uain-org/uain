@@ -1,0 +1,9 @@
+[Unit]
+Description=Daily UAIN original research evidence backup
+[Timer]
+OnCalendar=*-*-* 04:10:00 UTC
+RandomizedDelaySec=10min
+Persistent=true
+Unit=uain-evidence-backup.service
+[Install]
+WantedBy=timers.target

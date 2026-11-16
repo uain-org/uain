@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-08",
+  "server": "uain-app-1",
+  "unit": "uain-coin-full-20261008",
+  "result": "success",
+  "exit_code": 0,
+  "log_sha256": "ab6d1c50198290f0a472166c0552a9cd0e793c605a4053cb3fe26293384fcb9b",
+  "default_go_race": true,
+  "orchard_go_race": true,
+  "orchard_vet": true,
+  "node_client_tests_passed": 11,
+  "default_sdk_suite_seconds": 318.015,
+  "orchard_sdk_suite_seconds": 339.471,
+  "native_build": true,
+  "upgrade_from_version": "0.3.3",
+  "upgrade_from_daemon_sha256": "46d51026c0d06b6e602114a124b718fecd220e8f10610735003a5d70ecdf2055",
+  "upgrade_two_node_compact_records_checked": 23,
+  "upgrade_two_node_restart_preserved": true,
+  "private_state_two_node_restart_and_reviewer_revocation": true,
+  "production_activated": false,
+  "source_relation": "Earlier issuer activation variant; final following-height empty-pool scheduling is qualified by coin-issuer-server-20261008.json and exact PR CI. This report is regression evidence, not proof-bridge qualification."
+}

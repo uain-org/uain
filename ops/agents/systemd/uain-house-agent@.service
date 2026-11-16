@@ -1,0 +1,41 @@
+# One bounded house agent cycle (ops/agents/house-kit-agent.mjs).
+# Instances: uain-house-agent@cycle.service (joins and submits) and
+# uain-house-agent@dry-run.service (reads and solves, never joins or submits).
+# The kit key of each house agent lives under /var/lib/uain-house-agents (0700,
+# user uain-house-agent) and is never printed. Stop everything:
+#   touch /etc/uain-house-agents/STOP
+[Unit]
+Description=UAIN house agent cycle (%i), same operator as the network, Sonnet on the subscription
+After=network-online.target
+Wants=network-online.target
+ConditionPathExists=/etc/uain-house-agents/config.json
+ConditionPathExists=!/etc/uain-house-agents/STOP
+
+[Service]
+Type=oneshot
+User=uain-house-agent
+Group=uain-house-agent
+UMask=0077
+WorkingDirectory=/var/lib/uain-house-agents
+EnvironmentFile=/etc/uain-broker/claude.env
+Environment=HOME=/var/lib/uain-house-agents
+ExecStart=/opt/uain-review-runtime/node-v22.22.0-linux-x64/bin/node /opt/uain-house-agents/current/ops/agents/house-kit-agent.mjs %i --config /etc/uain-house-agents/config.json
+TimeoutStartSec=1800
+KillMode=control-group
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=tmpfs
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+CapabilityBoundingSet=
+ReadWritePaths=/var/lib/uain-house-agents
+InaccessiblePaths=-/etc/uain-custody -/var/lib/uain-custody -/opt/uain-custody -/var/lib/uain-broker -/run/uain-broker -/run/uain-custody -/var/lib/uain-central-reviewer -/var/lib/uain-wallets -/var/lib/baink-holders -/root
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+MemoryMax=2G
+CPUQuota=100%
+TasksMax=256

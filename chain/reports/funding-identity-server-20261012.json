@@ -1,0 +1,53 @@
+{
+  "schema": "uain-server-qualification-v1",
+  "date": "2026-10-12",
+  "host": "uain-app-1",
+  "stage": "/opt/uain-test/operations-reserve-20261012",
+  "service": "uain-operations-qualified-20261012",
+  "limits": {
+    "cpu_quota": "200%",
+    "memory_max": "3G",
+    "tasks_max": 256,
+    "runtime_max_seconds": 3600
+  },
+  "local_build_or_tests": false,
+  "go": "1.27.1",
+  "qualified_exit": 0,
+  "service_after_completion": "inactive",
+  "qualified_log_sha256": "9e498237a91d6f5b3ec28df331d26700bbc1bd079c58c705afe3039207391328",
+  "commands": [
+    "go test -race -p 2 -count=1 ./federation",
+    "go test -race -p 2 -count=1 ./app -run \"TestSDKOperations|TestSDKExternalFunding|TestSDKFundingObserverRotation\" -v",
+    "go vet -p 2 ./..."
+  ],
+  "results": {
+    "federation_race_seconds": 38.347,
+    "sdk_race_seconds": 6.143,
+    "vet": "PASS"
+  },
+  "production_actions": [],
+  "governing_texts_changed": false,
+  "historical_record_bytes_rewritten": false,
+  "scope": "Permanent approved nonmember key control and centralized source identity exclusions",
+  "red": {
+    "log": "identity-red.log",
+    "exit": 1,
+    "sha256": "3645dd3ff0a7a21c40934e179d205424027b0f2e33c331e53fafa5057723d6bc",
+    "failures": [
+      "approved bank owner key lacks permanent native identity control",
+      "native source controller accepted without wallet binding: direct key and proved operator domain"
+    ]
+  },
+  "source_sha256": {
+    "federation/funding.go": "976b0d90b1e467e17449412c58cbc7fc2da9b7996eda0bad05a674d4dfd15c7d",
+    "federation/human_bank.go": "88438d9dc95b12868ae83b15ca68316d001ab0e57683fd51a4963bb14b30e1a2",
+    "federation/human_funding.go": "5256377c682c709daf961a96b25b559d77765af9ae2e9c7b99a507d39dd68c57",
+    "federation/human_funding_test.go": "2ce24ac320d80e2dcc9c8c91ada71becd41c3433cbf53d32ddb86328cc45dfd8",
+    "federation/funding_identity_control.go": "cd29a27ea236659bd0f382fe2b9390af5d8a33c73c8ecdecc1f99d6b8dbfd975"
+  },
+  "composition": "Qualified together with new operations-reserve files and keeper dispatch; source hashes for that slice are in operations-reserve-server-20261012.json",
+  "limitations": [
+    "No production funding or policy activation",
+    "Observer statements remain the explicit external finality/bank assurance model; no bank identity inferred from a consent key"
+  ]
+}

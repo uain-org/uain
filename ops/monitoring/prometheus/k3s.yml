@@ -1,0 +1,60 @@
+# Prometheus on uain-app-1 (deploy/k8s/production/monitoring.yaml). The
+# Compose setup's is prometheus.yml.
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+# Alerts are Grafana's (ops/monitoring/grafana/provisioning/alerting).
+
+scrape_configs:
+  # Every pilot copy: the headless Service pilot-metrics has one address per
+  # ready copy, so scaling needs no change here.
+  - job_name: pilot
+    dns_sd_configs:
+      - names: [pilot-metrics.uain.svc.cluster.local]
+        type: A
+        port: 9464
+        refresh_interval: 15s
+
+  # Staging's copy (deploy/k8s/staging). Its own job name, so the alert
+  # rules, which all read job="pilot", never see it.
+  - job_name: pilot-staging
+    dns_sd_configs:
+      - names: [pilot-metrics.uain-staging.svc.cluster.local]
+        type: A
+        port: 9464
+        refresh_interval: 15s
+
+  - job_name: postgres
+    static_configs:
+      - targets: ['postgres-exporter:9187']
+
+  - job_name: node
+    static_configs:
+      - targets: ['node-exporter:9100']
+        labels: { host: uain-app-1 }
+      - targets: ['10.98.0.2:9100']
+        labels: { host: uain-db-1 }
+
+  - job_name: prometheus
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Public pages and the API through DNS, TLS and the front door. From the
+  # same server, so a whole-server outage is not caught.
+  - job_name: site
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+      - targets:
+          - https://uain.global/
+          - https://uain.global/api/ready
+          - https://uain.global/waitlist
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox:9115

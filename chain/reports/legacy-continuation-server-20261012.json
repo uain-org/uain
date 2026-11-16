@@ -1,0 +1,81 @@
+{
+  "schema": "uain-native-legacy-continuation-verification-v1",
+  "date": "2026-10-12",
+  "host": "uain-app-1",
+  "limits": {
+    "CPUQuota": "200%",
+    "MemoryMax": "3G",
+    "TasksMax": 256
+  },
+  "dependencies": [
+    "bddaa3b8a85988a5187b4f9d08a0addf8a7d7b3e original rolling credit cap; committed credits.go/legacy_policy.go imported only into isolated server stage"
+  ],
+  "source_files_sha256": {
+    "chain/app/legacy_claim_edit_test.go": "b2273b393f11154a888d1ef93083efe3f1188c63d01f694f73a57e4c1a667d0d",
+    "chain/app/legacy_future_test.go": "eda2dac723cae066b7b891b9f41273f911a62b5dc57c44b57a4a208bd9b66f6b",
+    "chain/federation/keeper.go": "3fd203440bef4c480ec73ad2b2f4568e2e1873675a9d69e4522ab083a704f7bc",
+    "chain/federation/legacy_beliefs.go": "e2c8b77140a0f5b194d34ca878238ae8ba0c3524278eba63ee557a9be03750f0",
+    "chain/federation/legacy_claim_edit.go": "b3421e7512903554c77985abb14917bb740138bd245fe6c2fa033b5e101ab0ea",
+    "chain/federation/legacy_claim_edit_test.go": "0dc5f7ac18e84c313d732b311a7a1c5043921a3f0362441a1f8be519fa421a50",
+    "chain/federation/legacy_claims.go": "57576e8c398708a82b5ddcf1f218502a83392246293c1f50213e0f84b901fefd",
+    "chain/federation/legacy_future.go": "51d3956e2c51e8903f7bd46eef67ed9171f3c39dabe753bafc509532f1b9c3e0",
+    "chain/federation/legacy_future_apply.go": "275fa180a8babc429aa87a03a8a9342109cce9ac3213f4abd2225cbac9fedd2c",
+    "chain/federation/legacy_future_awards.go": "79be5d300afcc976b5e8d977b4b937c083837a763db23f08b6ea721ba4152bb5",
+    "chain/federation/legacy_future_progress.go": "4d9e765aefabd552991e5a939f6490746749a09f6f84b5a551866c79c105f56e",
+    "chain/federation/legacy_future_tasks.go": "6cdb7b771371ce784dca87e82b8826519e3d3e30798b3e5dfd29fbcccfae652e",
+    "chain/federation/legacy_future_test.go": "31f7d02242b88861e914ed29fcc0c0958ef8e9a0e6a74efbec1fc8f5ace4d232",
+    "chain/federation/legacy_kpi.go": "8f0f825ee6652f18a39965975f1423bfcf77b2568e6f5a134042eead4f76f73b",
+    "chain/federation/legacy_membership.go": "ee338da751126431362f422ad515c02b6e01b1f1757aaf369d8df6973f56a45d",
+    "chain/federation/legacy_research.go": "87d6188793bce929b2fed427fdbb8ac8613f5e90bc92a45de475f0093aad13de",
+    "chain/federation/legacy_tasks.go": "383499a68f7b80aa9a8ae34ee63cd63dfb2df2cd36a795d2b58f8e3d6b48da35",
+    "chain/federation/store.go": "9f277708550ec59d75a3131e1c593157208b7f237652c0f52a2d3ee0149021cf"
+  },
+  "checks": {
+    "full_frozen_base_race_and_vet": {
+      "directory": "/opt/uain-test/legacy-continuation-final-20261012",
+      "log": "full.log",
+      "exit": 0,
+      "scope": "all Go packages; before final compact challenge/claim read optimizations",
+      "app_seconds": 581.226
+    },
+    "final_all_federation_race_and_all_package_vet": {
+      "directory": "/opt/uain-test/legacy-claim-max-20261012",
+      "log": "federation-final.log",
+      "exit": 0,
+      "federation_seconds": 22.223
+    },
+    "final_all_legacy_sdk_and_federation_race_and_vet": {
+      "directory": "/opt/uain-test/legacy-claim-max-20261012",
+      "log": "green.log",
+      "exit": 0
+    },
+    "final_formatted_federation_race_legacy_sdk_and_all_package_vet": {
+      "directory": "/opt/uain-test/legacy-claim-max-20261012",
+      "log": "formatted-final.log",
+      "exit": 0,
+      "federation_seconds": 21.624
+    }
+  },
+  "red_evidence": {
+    "unsupported_claim_routes": "/opt/uain-test/legacy-continuation-20261012/red.log",
+    "unsupported_future_routes": "/opt/uain-test/legacy-future-20261012/red.log",
+    "atomic128_holds": "/opt/uain-test/legacy-future-20261012/paged-red.log",
+    "atomic32_recipients": "/opt/uain-test/legacy-future-20261012/paged-green.log",
+    "completed_receipt_replay": "/opt/uain-test/legacy-future-20261012/slots-green.log",
+    "large32_challenge_closure": "/opt/uain-test/legacy-future-20261012/challenge-max-red.log",
+    "large32_claim_sources": "/opt/uain-test/legacy-claim-max-20261012/red.log"
+  },
+  "qualified_gas": {
+    "claim32_large_sources_full128_index": 2135889,
+    "decision128_holds_approx": 474000,
+    "large_plan_initial_author_slot_approx": 865000,
+    "remaining_slots_max_bound": 700000,
+    "transaction_limit": 3000000,
+    "close32_maximum_challenges": 679037
+  },
+  "production_actions": [],
+  "remaining": [
+    "original operator-approved budget allocation/stage continuation is next separate scope",
+    "combined exact-source rollout/capture/custody/client signing and authority cutover remain parent-owned acceptance steps"
+  ]
+}

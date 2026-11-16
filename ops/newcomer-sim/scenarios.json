@@ -1,0 +1,169 @@
+{
+  "_note": "Each scenario is a newcomer who knows nothing about UAIN except the MCP servers they connected. Turns are what the person types, in plain words. The final 'debrief' turn is added by run.mjs and is not part of the journey.",
+  "scenarios": [
+    {
+      "id": "earn-both",
+      "title": "Both MCPs connected, asks to earn",
+      "mcp": [
+        "uain",
+        "baink"
+      ],
+      "turns": [
+        "I just connected these two MCP servers. What are they, and can you help me earn some AI$? You have my yes for every step (creating a key, joining, signing, submitting). Just tell me in plain words what you did.",
+        "Keep going until you have earned something or are truly stuck. Don't ask me for permission again."
+      ]
+    },
+    {
+      "id": "earn-uain-only",
+      "title": "Only the UAIN MCP connected: does it find BAINK?",
+      "mcp": [
+        "uain"
+      ],
+      "turns": [
+        "I added the UAIN MCP. I want to earn AI$ by doing useful work. You have my yes for every step. Go ahead and do it, then tell me what happened.",
+        "Keep going until you have earned something or are truly stuck."
+      ]
+    },
+    {
+      "id": "earn-baink-only",
+      "title": "Only the BAINK MCP connected: does it find UAIN?",
+      "mcp": [
+        "baink"
+      ],
+      "turns": [
+        "I connected BAINK. How do I get AI$ into my account? You have my yes for every step; please do it for me.",
+        "Keep going until you have earned something or are truly stuck."
+      ]
+    },
+    {
+      "id": "keep-working",
+      "title": "Does the agent keep taking tasks after the first?",
+      "mcp": [
+        "uain",
+        "baink"
+      ],
+      "turns": [
+        "Help me contribute to UAIN. You have my yes for everything, including signing and submitting. I'm stepping away; use the time well."
+      ]
+    },
+    {
+      "id": "check-work",
+      "title": "Earning by reviewing or checking others' work",
+      "mcp": [
+        "uain",
+        "baink"
+      ],
+      "turns": [
+        "Can I earn by checking other members' work instead of doing tasks? If so, set me up and do one. You have my yes for every step."
+      ]
+    },
+    {
+      "id": "trade-sell",
+      "title": "Offer a service for AI$ (trading)",
+      "mcp": [
+        "uain",
+        "baink"
+      ],
+      "turns": [
+        "I'd like to offer a small service to other members for AI$ on BAINK, something you can actually deliver. Set it up. You have my yes for every step. Tell me the offer ID when it's live."
+      ]
+    },
+    {
+      "id": "trade-buy",
+      "title": "Buy a service with earned AI$ (trading)",
+      "mcp": [
+        "uain",
+        "baink"
+      ],
+      "turns": [
+        "Use some of my AI$ to buy a small service from another member on BAINK, and pay for it. {{hint}} You have my yes for every step, including paying. Tell me what you bought, what you paid and whether it was confirmed."
+      ]
+    },
+    {
+      "id": "status",
+      "title": "Returning member asks how they're doing",
+      "mcp": [
+        "uain",
+        "baink"
+      ],
+      "turns": [
+        "How am I doing? What have I earned so far, and what should I do next?"
+      ]
+    },
+    {
+      "id": "mx-start",
+      "title": "MCP experience: what is this and how do I start",
+      "mcp": [
+        "uain",
+        "baink"
+      ],
+      "goal": "explain UAIN in plain words and get the person joined (membership sent or active)",
+      "turns": [
+        "I just connected UAIN and BAINK. What is this, in plain words, and how do I start?",
+        "OK, please start for me. You have my yes for every step."
+      ]
+    },
+    {
+      "id": "mx-find",
+      "title": "MCP experience: find me something I can do right now",
+      "mcp": [
+        "uain",
+        "baink"
+      ],
+      "goal": "name one specific open paid task the person can take now, with its AI$ reward and what it asks, and the exact next step",
+      "turns": [
+        "Find me something I can do right now on UAIN to earn AI$. Just tell me what it is, what it pays and what I would have to do."
+      ]
+    },
+    {
+      "id": "mx-research",
+      "title": "MCP experience: help me research a task and submit it",
+      "mcp": [
+        "uain",
+        "baink"
+      ],
+      "goal": "research one open task and submit it (a recorded submission), then say how the review is going",
+      "turns": [
+        "Help me research one of the open UAIN tasks and submit it. You have my yes for every step, including creating a key, joining and submitting. Tell me what you submitted and how the review is going."
+      ]
+    },
+    {
+      "id": "mx-idea",
+      "title": "MCP experience: I have an idea for a new project or discovery",
+      "mcp": [
+        "uain",
+        "baink"
+      ],
+      "goal": "answer truthfully whether and how the idea can go onto UAIN (what is possible today, what is not) and give the person one concrete next step",
+      "turns": [
+        "I have an idea for a new research project: a cheap paper strip test that detects lead in tap water at home. Can I put this on UAIN, get people working on it, or earn from it? What should I do?"
+      ]
+    },
+    {
+      "id": "mx-earned-pay",
+      "title": "MCP experience: how much have I earned and how do I pay someone",
+      "mcp": [
+        "uain",
+        "baink"
+      ],
+      "goal": "state the AI$ earned and current balance from proven records, and give the exact call to pay another member (and what the recipient must have set up)",
+      "turns": [
+        "How much AI$ have I earned so far, and how would I pay someone else in AI$? Don't pay anyone yet, just show me exactly how."
+      ]
+    },
+    {
+      "id": "mx-rejected",
+      "title": "MCP experience: something was rejected, what now",
+      "mcp": [
+        "uain",
+        "baink"
+      ],
+      "goal": "find the actual review outcome of the member's submissions and give the right next step (revise or reassess before the deadline if more evidence was asked for, otherwise take another task)",
+      "turns": [
+        "I think something I submitted got rejected or sent back. What happened, and what should I do now? You have my yes to fix it if you can."
+      ]
+    }
+  ],
+  "debrief": "Out of character for a moment: this was a usability test. Reply with ONE line that starts with NEWCOMER_RESULT followed by a JSON object with these keys: joined (bool), member_id (string or null), tasks_submitted (number), ai_dollars_earned (number, proven only), trades (number), used_mcps (array of server names you called), found_other_mcp_by_itself (bool), stuck_at (string or null), steps_that_were_confusing (array of short strings), what_would_have_made_it_easy (array of short strings).",
+  "goalDebrief": " Also include goal_reached (bool): did you fully do what the person asked, namely: {{goal}}; and calls_to_goal (number): how many tool calls it took to get there (or null)."
+}

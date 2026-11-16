@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-13",
+  "scope": "Isolated server qualification; no production chain writes or licence changes",
+  "result": {
+    "exit_code": 0,
+    "tests": 2,
+    "passed": 2,
+    "failed": 0,
+    "skipped": 0,
+    "duration_ms": 92358.085337
+  },
+  "runtime": {
+    "image": "node:22-bookworm-slim",
+    "cpus": 2,
+    "memory": "4g",
+    "memory_swap": "4g",
+    "pids_limit": 256,
+    "capabilities": "ALL dropped",
+    "security": "no-new-privileges",
+    "tmpfs": "/tmp:rw,nosuid,nodev,exec,size=512m",
+    "database": "Dedicated ephemeral pgvector 0.8.7 pg17 on 127.0.0.1:55435; removed after qualification"
+  },
+  "bridge_sha256": "256063a1d734b5f88a7af83be1c8eeaf3bc931933a8139b85cf14c6d096c63b8",
+  "test_command": "node --test --test-concurrency=1 test/native-wallet-client-e2e.test.mjs test/native-client-e2e.test.mjs",
+  "environment_flags": [
+    "UAIN_NATIVE_WALLET_E2E=1",
+    "UAIN_NATIVE_E2E=1",
+    "UAIN_TEST_VECTOR=1"
+  ],
+  "qualification": [
+    {
+      "qualification": "installed-native-research-finality-publication-retrieval",
+      "genesis_sha256": "626af801f687021a03826a980abfcab85b19480adf013b7176e4eb01e053aad9",
+      "submission_event": "4",
+      "evidence_digest": "4b004e4f06dfb17a6200fbc5a1b7d55201f21167788d2310d78c11c71cb3a618",
+      "attribution_verified": true,
+      "restarted": true,
+      "automated_worker_mcp_verified": true,
+      "private_keys_exported": false
+    },
+    {
+      "qualification": "installed-native-member-receiving-wallets",
+      "daemon_sha256": "715a3a6b19c7a844111ba6fe3fd63da97ad8145c386e2b076383fd348a3b5160",
+      "verifier_sha256": "136698192e9e38323a552f1e2da2eea5b9b90e3d6e7de11116d72ee28c826860",
+      "genesis_sha256": "5651e89b40ed7e5c78ba1474d321d6dc40f81662b225ad45e9e93931d55e500f",
+      "enrol_pending_licence_verified": true,
+      "ethereum_binding": "00000000000000000004",
+      "solana_binding": "00000000000000000005",
+      "idempotent": true,
+      "restarted": true,
+      "public_profile_verified": true,
+      "private_keys_exported": false
+    }
+  ],
+  "server_log": "/opt/uain-test/receiving-wallet-e2e-20261013/logs/native-wallet-research-e2e-signed-final.log",
+  "note": "Installed fixture copies source candidate files; signed installer authenticity is covered separately by worker-update and release signature checks. Existing post-close rate-limit pool warning was logged without test failure.",
+  "signed_candidate_sha256": {
+    "public/worker/uain-worker.mjs": "ec1ad9153132d7dfb96ecbef5c044474bbbe02d922270b39ac241b025aa2151a",
+    "public/worker/install.sh": "2f95d9b8ed6cb9e35a4c6ad903b93aae0436f3d43b64bf7914081b096c0fd7ab",
+    "chain/client/external-wallets.mjs": "351c84b7a7569404f5bccf4cb1afe4f9a1b3b13539a17290cb92dac86d4bc3ff",
+    "chain/client/native-bridge.mjs": "256063a1d734b5f88a7af83be1c8eeaf3bc931933a8139b85cf14c6d096c63b8",
+    "public/worker/manifest.json": "25c8d2ea60e98b801a8e146d2b71f325625f5200c7875ec5ff7351d6a0ce2832",
+    "public/worker/manifest.sig": "c9b857ac8667a2a12f563138b66d5b9ff968908e0e416cb2b2b99de588811038"
+  },
+  "node18_regression": {
+    "image": "node:18-alpine",
+    "result": {
+      "tests": 9,
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0
+    },
+    "resources": "1 CPU, 1 GiB, all capabilities dropped, network none",
+    "local_log": "/tmp/uain-wallet-node18-20261013.log",
+    "functional_check": "Fresh Ethereum wallet creation and ownership signing without a global Web Crypto provider"
+  }
+}

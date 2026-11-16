@@ -1,0 +1,11 @@
+[Unit]
+Description=Check UAIN project activity every minute and wake that project's agents
+
+[Timer]
+OnBootSec=3min
+OnUnitInactiveSec=60s
+RandomizedDelaySec=5s
+Persistent=false
+
+[Install]
+WantedBy=timers.target
