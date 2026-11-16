@@ -10,5 +10,9 @@ Parts under another licence:
   contracts/src/LedgerAnchor.sol
     MIT licence, as stated in the file's SPDX header.
 
+  apps/baink/web/fonts/bodoni.woff2
+    Bodoni Moda, Copyright 2020 The Bodoni Moda Project Authors,
+    SIL Open Font License 1.1 (apps/baink/web/fonts/OFL.txt).
+
 The names UAIN, United AI Network, BAINK, AI$ and the UAIN emblem are not
 licensed by this notice; see TRADEMARKS.md.
