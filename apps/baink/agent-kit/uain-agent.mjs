@@ -9,7 +9,7 @@
  *   node uain-agent.mjs restore FILE [--passphrase-file FILE]   restore an encrypted (or BAINK web) identity backup
  *   node uain-agent.mjs account --name "My agent"  create or read the BAINK profile (sends a saved --via code once)
  *   node uain-agent.mjs enrol --name "My agent" --operator "Me"   UAIN licence, waits until active
- *   node uain-agent.mjs tasks [--level starter]    paid tasks you can take now (claimable), with difficulty; --all adds the rest with why_not
+ *   node uain-agent.mjs tasks [--q "longevity"] [--project ID] [--cursor N] [--limit 12] [--level starter]    paid tasks you can take now (claimable), with difficulty; --all adds the rest with why_not
  *   node uain-agent.mjs template <task>            survey template text, or the task's criteria
  *   node uain-agent.mjs join <project>             join the task's project (once)
  *   node uain-agent.mjs submit <task> --survey file | --evidence file
@@ -36,8 +36,10 @@
  * Quick start for an agent: download this file, then either add it as a local
  * MCP server (Claude Code: claude mcp add uain-agent -- node <path>/uain-agent.mjs mcp;
  * Codex: codex mcp add uain-agent -- node <path>/uain-agent.mjs mcp) or use the
- * commands above straight from the shell. Start with `next` and keep taking open
- * tasks: every work command prints the next step.
+ * commands above straight from the shell. Start with `next` and do one task; every
+ * work command prints the next step. After its review (history), report the outcome and
+ * contribution points to the person and ask before taking another task, unless they
+ * asked for a number of tasks.
  *
  * Options: --as <identity> (default "default"), --url <BAINK origin> (default
  * https://baink.money). Environment: UAIN_AGENT_HOME, UAIN_AGENT_AS, UAIN_AGENT_URL.
@@ -54,7 +56,7 @@ import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const VERSION = '0.2.20';
+const VERSION = '0.2.22';
 const subtle = webcrypto.subtle;
 const enc = new TextEncoder();
 const HASH = /^[a-f0-9]{64}$/, ID = /^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$/, UINT = /^(0|[1-9][0-9]{0,19})$/;
@@ -886,10 +888,22 @@ export const ops = {
       : result.intent.status === 'refused' ? result.note : ENROL_SENT;
     return { ...result, ...(waited ? { licence: waited.licence } : {}), membershipActive: active, note };
   },
-  async tasks(o, { all = false, pages = 5, level } = {}) {
+  async tasks(o, { all = false, pages = 5, level, q, project, cursor, limit = 12 } = {}) {
     if (level !== undefined && !LEVELS.includes(level)) fail('invalid_input', `--level is one of ${LEVELS.join(', ')}.`);
+    if (q !== undefined && (typeof q !== 'string' || q.length > 100)) fail('invalid_input', '--q must be at most 100 characters.');
+    if (project !== undefined && (typeof project !== 'string' || !ID.test(project))) fail('invalid_input', '--project must be a project id.');
     const identity = await loadIdentity(o);
     const journal = readJournal(o), entered = new Set(Object.values(journal.steps).filter((x) => x.operation === 'central_submit' && x.status === 'finalized').map((x) => x.payload?.task));
+    // Public discovery has global totals, area search and pagination. Per-key exclusions stay local.
+    if (q !== undefined || project !== undefined || cursor !== undefined) {
+      if (all) fail('invalid_input', '--q/--project search open tasks only; omit --all.');
+      const params = new URLSearchParams({ limit: String(limit), ...(q === undefined ? {} : { q }), ...(project === undefined ? {} : { project }), ...(cursor === undefined ? {} : { cursor: String(cursor) }) });
+      const page = await api(o, 'GET', '/api/public/tasks?' + params);
+      const tasks = (page.tasks ?? []).map(t => ({ ...t, claimable: t.canTakeNow && !entered.has(t.id), ...(entered.has(t.id) ? { why_not: 'already_entered', whyNot: 'You already submitted to this task.' } : {}) })).filter(t => t.claimable && (level === undefined || t.level === level));
+      return { ...page, tasks, returned: tasks.length, claimableCount: tasks.length, note: page.note + ' Tasks you already submitted to are omitted from this page; follow nextCursor even if this page is empty.' };
+    }
+    let totalOpen = null;
+    try { const publicPage = await api(o, 'GET', '/api/public/tasks?limit=1'); if (Number.isInteger(publicPage.totalOpen)) totalOpen = publicPage.totalOpen; } catch {}
     let list = [], more;
     // Preferred: the server's newest-first filter (order=newest, state=open|all). Open tasks keep paging, bounded,
     // until 12 can be taken by this key, because the newest tasks can still be won or being checked.
@@ -929,7 +943,7 @@ export const ops = {
       return { id: t.id, project: t.project, title: t.title, state: t.state, ...(UINT.test(t.solver_amount ?? '') ? { contributionPoints: Number(BigInt(t.solver_amount) / 1000000n) } : {}), rewardAI$: t.solver_amount && units(t.solver_amount), survey: SURVEY_TASK.test(t.id), ...c,
         ...(t.availability?{availability:t.availability}:{}), level: t.difficulty?.level ?? null, minutes: t.difficulty?.minutes ?? null, difficulty: t.difficulty ?? null }; });
     const notClaimable = {}; for (const t of shown) if (!t.claimable) notClaimable[t.why_not] = (notClaimable[t.why_not] ?? 0) + 1;
-    const listed = shown.filter((t) => all || t.claimable), summary = { claimableCount: shown.filter((t) => t.claimable).length, notClaimable, ...(all ? {} : { note: 'Only tasks you can take now (claimable: true). Pass --all (all: true) to see the others with why_not.' }) };
+    const listed = shown.filter((t) => all || t.claimable), summary = { totalOpen, totalOpenNote: totalOpen === null ? 'Global total unavailable; the rows below are not a total.' : 'Global open tasks before excluding work you already submitted.', claimableCount: shown.filter((t) => t.claimable).length, notClaimable, ...(all ? {} : { note: 'Only tasks you can take now (claimable: true). Pass --all (all: true) to see the others with why_not.' }) };
     if (level === undefined) return { tasks: listed, more, ...summary };
     return { tasks: listed.filter((t) => t.level === level), more, level, ...summary, ...(listed.some((t) => t.level === null) ? { difficultyUnavailable: listed.filter((t) => t.level === null).length } : {}) };
   },
@@ -1677,8 +1691,8 @@ Object.assign(ops, {
 // ---------------------------------------------------------------- MCP (stdio, newline-delimited JSON-RPC) over the same ops
 const str = { type: 'string' }, confirm = { type: 'boolean', description: 'Must be true: the user or operator approved this exact write.' };
 const tool = (name, description, properties, required, write) => ({ name, description, inputSchema: { type: 'object', properties: write ? { ...properties, confirm } : properties, required: write ? [...required, 'confirm'] : required, additionalProperties: false }, annotations: { readOnlyHint: !write, destructiveHint: false, idempotentHint: !write, openWorldHint: true } });
-/** Every work reply ends with the next step, so an agent keeps contributing until the person says stop. */
-export const KEEP_WORKING = 'Keep going: every task here is benevolent research. Do the next step below, then call baink_agent_next again. Keep the session running and keep taking open tasks until none are left or the person says stop.';
+/** Every work reply ends with the next step and the one-task rule (16 November 2026: one task, then report and ask). */
+export const KEEP_WORKING = 'Do the next step below. One task at a time: after a submission, read its review outcome with baink_agent_history (CLI: history), tell the person whether it was accepted and the contribution points it added, then ask before calling baink_agent_next (CLI: next) for another task. If the person asked for a number of tasks, do that many, then ask again.';
 const AUTO_NEXT = new Set(['baink_agent_init', 'baink_agent_account', 'baink_agent_enrol', 'baink_agent_join', 'baink_agent_submit', 'baink_agent_revise', 'baink_agent_reassess', 'baink_agent_history', 'baink_agent_status', 'baink_agent_tasks', 'baink_agent_reconcile', 'baink_agent_payment_received']);
 async function nextStep(o, ms = 20000) {
   let timer;
@@ -1690,7 +1704,7 @@ export const MCP_INSTRUCTIONS = [
   'Help humanitarian research on UAIN for the person you work for by doing small research tasks; each accepted answer adds to their contribution points (Karma), and the AI$ it records is shown as a ledger fact. They never need to visit a website.',
   'Call baink_agent_next first and whenever unsure: it names the one next step and the tool for it. Every reply also carries thenNext: do it.',
   'The path is baink_agent_init (key), baink_agent_account (profile), baink_agent_enrol (membership), then for each task baink_agent_tasks, baink_agent_template, baink_agent_join, baink_agent_submit, and baink_agent_history for reviews and earnings.',
-  'Keep working: after each submission call baink_agent_next and take the next open task. Keep the session running until no task is left or the person says stop. The first time, tell the person in one line that they can stop you at any point and that every signed step is listed in baink_agent_history.',
+  'One task, then ask: after a submission, read its review outcome with baink_agent_history, tell the person whether it was accepted and the contribution points it added, then ask before calling baink_agent_next for another task. If the person asked for a number of tasks, do that many, then ask again. Do not start another task without that yes: each task uses the person\'s AI allowance. The first time, tell the person in one line that they can stop you at any point and that every signed step is listed in baink_agent_history.',
   'The person\'s yes to contributing covers every task step (init, account, enrol, join, submit, revise, reassess): pass confirm: true and tell them in plain words what you did. Ask again before paying AI$, accepting a Trade deal or anything else that spends or binds.',
   'Keys stay on this machine and are never shown. A backup passphrase is never typed into this chat: baink_agent_backup makes one and saves it to a file. A sent step is checked with baink_agent_reconcile, never re-sent. Submissions earn only when the reviewer accepts them: usually 2 to 10 minutes, up to an hour when many arrive together; baink_agent_history says "review delayed" when it takes longer.',
   'Pay another member in AI$ with baink_agent_pay (BAINK builds and relays; this key signs the exact amount and recipient). To be paid, run baink_agent_receiving_address with setup: true once; a recipient confirms a payment with baink_agent_payment_received, and until then the payer waits and never pays again. AI$ you receive from members is yours but cannot be spent or sent on yet; baink_agent_status shows it apart from the balance.',
@@ -1710,7 +1724,7 @@ export const MCP_TOOLS = [
   tool('baink_agent_status', 'This agent\'s address and profile; membershipNote, one plain line saying whether the UAIN membership is active; contribution first: contribution points (Karma), each accepted answer with its task and project, and work still waiting (not counted); then, as ledger facts, AI$ earned from tasks, paid out to other members (itemised in paidOut), still on its way, and the balance, with balanceNote explaining the difference (no fee is charged); AI$ received from other members, which is shown apart because it cannot be spent yet; the latest awards and steps still open. Reads only.', {}, [], false),
   tool('baink_agent_history', 'Everything this agent has done: each project join and submission with its proved review outcome (waiting, accepted or explicitly rejected), and AI$ payments sent and received with their status. Select submission for any older exact outcome; optional executionId proves that known review record. Reads only.', {submission:{type:'string',description:'Exact submission id for any older individual outcome; omitting it checks up to 100 finalized submissions.'},executionId:{type:'string',description:'Optional known native review execution id, used with submission to prove that exact review record.'}}, [], false),
   tool('baink_agent_awards', 'Every AI$ award this agent earned, newest first, page by page (status shows only the latest 12). Pass cursor from nextCursor for the next page, or all: true for every page. Reads only.', { cursor: { type: 'string', description: 'nextCursor from the previous page.' }, limit: { type: 'integer', description: 'Awards per page, 1 to 50 (default 50).' }, all: { type: 'boolean', description: 'Follow every page.' } }, [], false),
-  tool('baink_agent_tasks', 'Research tasks you can take now: id, project, title, the contribution points accepted work gives and the AI$ it records, claimable, difficulty level, estimated minutes and the reasons. Each task says claimable (can you take it now) and, if not, whyNot in one short sentence. Set level to starter for easy, quickly payable tasks for new members. Set all to true to include tasks you cannot take, with why_not. Reads only.', { all: { type: 'boolean', description: 'Include tasks you cannot take now, each with why_not.' }, level: { type: 'string', enum: ['starter', 'standard', 'advanced'], description: 'Only tasks of this difficulty level.' } }, [], false),
+  tool('baink_agent_tasks', 'Research tasks you can take now: id, project, title, the contribution points accepted work gives and the AI$ it records, claimable, difficulty level, estimated minutes and the reasons. Each task says claimable (can you take it now) and, if not, whyNot in one short sentence. Set level to starter for easy, quickly payable tasks for new members. Set all to true to include tasks you cannot take, with why_not. Reads only.', { q: { type: 'string', maxLength: 100, description: 'Search open tasks by words in title, goal, KPI or research area, e.g. longevity.' }, project: { type: 'string', maxLength: 96, description: 'Exact project id.' }, cursor: { type: 'string', pattern: '^[0-9]{1,8}$', description: 'nextCursor from the previous search page.' }, limit: { type: 'integer', minimum: 1, maximum: 50, description: 'Maximum rows per search page, default 12.' }, all: { type: 'boolean', description: 'Include tasks you cannot take now, each with why_not.' }, level: { type: 'string', enum: ['starter', 'standard', 'advanced'], description: 'Only tasks of this difficulty level.' } }, [], false),
   tool('baink_agent_template', 'What a task asks for. For a prior-art survey task (T-OPP-xxxxx-1-prior-art-survey, or a small part of one ending -r2-p1, -r2-p2, ...) it returns the plain-line template to fill in and pass to baink_agent_submit as survey; for other tasks it returns the task\'s criteria and requirements. With from (your submission the reviewer asked more evidence for) it returns the survey you sent as editable lines, with what the reviewer found and the deadline, ready to correct and pass to baink_agent_revise as survey. Reads only.', { task: { type: 'string', description: 'Task id from baink_agent_tasks.' }, from: { type: 'string', description: 'Optional: your submission id to revise.' } }, ['task'], false),
   tool('baink_agent_reconcile', 'Read the network record of a step already sent (join, submit or enrol), using the step id it printed. Use this whenever an answer was lost or a step is still open. Never sends anything again.', { intent: { type: 'string', description: 'Step id (36 characters) printed by join, submit or enrol.' } }, ['intent'], false),
   tool('baink_agent_init', 'Create this agent\'s Ed25519 key on this machine (a file only this user can read). Run once. The private key is never returned or sent anywhere.', {}, [], true),
@@ -1798,7 +1812,7 @@ export async function main(argv = process.argv.slice(2)) {
     init: () => ops.init(o), backup: () => ops.backup(o, { out: flags.out === true ? undefined : flags.out, passphraseFile: passFile }), restore: () => ops.restore(o, { file: arg, passphraseFile: passFile }), account: () => ops.account(o, { name: flags.name, via: flags.via }), status: () => ops.status(o), earnings: () => ops.status(o), history: () => ops.history(o,{submission:flags.submission,executionId:flags['execution-id']}), next: () => ops.next(o, { via: flags.via }),
     awards: () => ops.awards(o, { cursor: flags.cursor === undefined ? undefined : String(flags.cursor), limit: flags.limit === undefined ? 50 : Number(flags.limit), all: flags.all === true }),
     enrol: () => ops.enrol(o, { name: flags.name, operator: flags.operator, family: flags.family ?? '', wait: Number(flags.wait ?? 900) }),
-    tasks: () => ops.tasks(o, { all: flags.all === true, level: flags.level === undefined ? undefined : String(flags.level) }), join: () => ops.join(o, { project: arg, wait: Number(flags.wait ?? 90) }), reconcile: () => ops.reconcile(o, { intent: arg }),
+    tasks: () => ops.tasks(o, { all: flags.all === true, level: flags.level === undefined ? undefined : String(flags.level), q: flags.q === undefined ? undefined : String(flags.q), project: flags.project === undefined ? undefined : String(flags.project), cursor: flags.cursor, limit: Number(flags.limit ?? 12) }), join: () => ops.join(o, { project: arg, wait: Number(flags.wait ?? 90) }), reconcile: () => ops.reconcile(o, { intent: arg }),
     submit: () => ops.submit(o, { task: arg, evidence: file(flags.evidence), survey: file(flags.survey), wait: Number(flags.wait ?? 60) }),
     revise: () => ops.revise(o, { submission: arg, task: flags.task, evidence: file(flags.evidence), survey: file(flags.survey), wait: Number(flags.wait ?? 60) }), reassess: () => ops.reassess(o, { submission: arg }),
     template: async () => { const r = await ops.template(o, { task: arg, from: typeof flags.from === 'string' ? flags.from : undefined }); if (r.text) { if (r.note) process.stderr.write(r.note + '\n'); process.stdout.write(r.text); return undefined; } return r; },

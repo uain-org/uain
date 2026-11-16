@@ -100,12 +100,12 @@ test('discovery merges central rows into open/all pages with exact counts and fi
  assert.equal(legacyOnly.count,1,'the legacy row is discoverable in this fixture');
  assert.equal(base.count,3);assert.deepEqual(base.tasks.map(t=>t.id),['T-36','T-OPP-00006-1-prior-art-survey-r2-p1','T-OPP-00005-1-prior-art-survey-r2-p1']);
  assert.deepEqual(base.tasks[0],legacyOnly.tasks[0],'legacy row shape is unchanged');
- assert.deepEqual(base.central,{status:'available',listed:2,read:2,total:'2',truncated:false,via:'BAINK'});
+ assert.deepEqual(base.central,{status:'available',listed:2,history:0,read:2,total:'2',truncated:false,via:'BAINK'});
  const page=run('&status=open&page_size=2&page=2');assert.deepEqual([page.count,page.pages,page.tasks.length,page.tasks[0].id],[3,2,1,'T-OPP-00005-1-prior-art-survey-r2-p1']);
  assert.deepEqual(run('&q=00006').tasks.map(t=>t.id),['T-OPP-00006-1-prior-art-survey-r2-p1'],'q matches central ids and titles');
  assert.equal(run('&q=survey for t-opp-00005').count,1);
  assert.equal(run('&status=all').count,3);
- const answered=run('&status=answered');assert.equal(answered.tasks.some(t=>t.kind==='central'),false);assert.equal(answered.central,undefined);
+ const answered=run('&status=answered');assert.equal(answered.tasks.some(t=>t.kind==='central'),false,'no central task here has an answer');assert.equal(answered.central.history,0);
  assert.equal(run('&status=open&project=P-3').count,1);
  const down=run('&status=open',{status:'unavailable',rows:[]});assert.equal(down.count,1);assert.deepEqual(down.central,{status:'unavailable'});
  const catalogue=query.queryNativePublicRows(new URL('https://uain.invalid/api/tasks'),[legacy],projects,'2026-11-09T00:00:00Z',found);

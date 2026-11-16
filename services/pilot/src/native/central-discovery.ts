@@ -25,6 +25,11 @@ export function chunkedCentralRead(read:CentralRead):CentralRead{
  return async keys=>{const out:Record<string,any>={},groups:string[][]=[];for(let at=0;at<keys.length;at+=CENTRAL_READ_KEYS)groups.push(keys.slice(at,at+CENTRAL_READ_KEYS));if(!groups.length)groups.push([]);
   for(let at=0;at<groups.length;at+=2)for(const part of await Promise.all(groups.slice(at,at+2).map(g=>read(g))))Object.assign(out,part);return out};
 }
+/** True when `t` has the exact shape of a chain central_task record with this id (and project, when given):
+ * the same check discovery applies to every listed row. */
+export function centralTaskShape(t:any,id:string,project?:string):boolean{
+ return !(!obj(t)||t.id!==id||(project!==undefined&&t.project!==project)||typeof t.title!=='string'||typeof t.criteria!=='string'||!HASH.test(t.acceptance_digest??'')||sha(t.criteria)!==t.acceptance_digest||!HASH.test(t.evidence_digest??'')||!['solver_amount','reviewer_amount','reserved','paid'].every(k=>typeof t[k]==='string'&&UNITS.test(t[k]))||typeof t.state!=='string'||typeof t.pending!=='string'||typeof t.winner!=='string');
+}
 export async function readCentralTasks(rawRead:CentralRead,limit=CENTRAL_DISCOVERY_LIMIT){
  if(!Number.isInteger(limit)||limit<1||limit>CENTRAL_DISCOVERY_LIMIT)throw Error('bounded central task read required');
  const read=chunkedCentralRead(rawRead);
@@ -37,7 +42,7 @@ export async function readCentralTasks(rawRead:CentralRead,limit=CENTRAL_DISCOVE
  if(new Set(refs.map(r=>r.id)).size!==refs.length)fail('duplicate index');
  const records=await read(refs.map(r=>'central_task/'+r.id));
  const tasks=refs.map(ref=>{const t=records['central_task/'+ref.id];
-  if(!obj(t)||t.id!==ref.id||t.project!==ref.project||typeof t.title!=='string'||typeof t.criteria!=='string'||!HASH.test(t.acceptance_digest??'')||sha(t.criteria)!==t.acceptance_digest||!HASH.test(t.evidence_digest??'')||!['solver_amount','reviewer_amount','reserved','paid'].every(k=>typeof t[k]==='string'&&UNITS.test(t[k]))||typeof t.state!=='string'||typeof t.pending!=='string'||typeof t.winner!=='string')fail('task '+ref.id);
+  if(!centralTaskShape(t,ref.id,ref.project))fail('task '+ref.id);
   return t;});
  return{tasks,total:count,truncated:floor>0n};
 }
@@ -122,22 +127,38 @@ export function centralDiscoveryRow(t:any,projectTitle?:string|null){
   criteria:t.criteria,acceptance_digest:t.acceptance_digest,eligibility:t.eligibility??null,
   how_to_contribute:{via:'BAINK',mcp:'https://baink.money/mcp',...(template?{template}:{}),steps:'claimable: true means you can take it now. Enrol at baink.money with your own key, join the project, draft from the template, submit; central UAIN review pays AI$.'}};
 }
-/** Proved central rows for discovery, or an explicit unavailable marker. */
+/** The /tasks tab a central task that is not open belongs to (16 November 2026): answered (it has an
+ * accepted or approved answer), under_review (an answer or contest entries are being checked), or
+ * closed (closed, paused, unfunded or a contest without a winner). From the same claim rule and
+ * state words as above, so the tabs agree with what uain_find_tasks and BAINK say. */
+export function centralTab(t:any,claim:{why_not:string|null}):'answered'|'under_review'|'closed'{
+ if(t?.winner||t?.state==='accepted'||claim.why_not==='won'||claim.why_not==='won_conditionally')return'answered';
+ if(claim.why_not==='under_review'||t?.state==='under_review'||claim.why_not==='contest_closed'&&t?.state==='contest_open')return'under_review';
+ return'closed';
+}
+/** A central task that is not open, as a read-only discovery row in its tab. */
+export function centralHistoryRow(t:any,projectTitle:string|null|undefined,claim:{claimable:boolean;why_not:string|null;why_not_text:string|null}){
+ const state=centralTaskStatus(t),tab=centralTab(t,claim);
+ return{...centralDiscoveryRow(t,projectTitle),status:tab,status_label:tab==='answered'&&t.state!=='conditional_approved'?'Answered':state.status_label,...claim,read_only:true,...(typeof t.winner==='string'&&t.winner?{winner:t.winner}:{})};
+}
+/** Proved central rows for discovery, or an explicit unavailable marker. `rows` are the tasks open
+ * now; `history` holds every other visible task with its tab (centralTab), for the /tasks tabs. */
 /** `heightOf`, when given, is the proved height of each record key: rows read in separate proofs
  * then carry `proved_height`, and the result says the page is not one atomic snapshot. */
 export async function centralDiscovery(read:CentralRead,{pins,isProjectVisible,projectTitle,heightOf}:{pins:{chainId:string;epoch:string};isProjectVisible?:(id:string)=>boolean;projectTitle?:(id:string)=>Promise<string|null>;heightOf?:(key:string)=>string|undefined}){
  try{
-  const {tasks,total,truncated}=await readCentralTasks(read),titles=new Map<string,string|null>(),rows=[],not_claimable:Record<string,number>={};
+  const {tasks,total,truncated}=await readCentralTasks(read),titles=new Map<string,string|null>(),rows=[],history:any[]=[],not_claimable:Record<string,number>={};
   for(const t of tasks){
    if(isProjectVisible&&!isProjectVisible(t.project))continue;
    const claim=centralTaskClaim(t,centralTaskHeld(t,pins));
-   if(!claim.claimable||!centralTaskOpen(t)){const why=claim.why_not??'closed';not_claimable[why]=(not_claimable[why]??0)+1;continue}
-   if(!titles.has(t.project)){let title:string|null=null;try{title=projectTitle?await projectTitle(t.project):null}catch{title=null}titles.set(t.project,title)}
+   const title=async()=>{if(!titles.has(t.project)){let title:string|null=null;try{title=projectTitle?await projectTitle(t.project):null}catch{title=null}titles.set(t.project,title)}return titles.get(t.project)};
+   if(!claim.claimable||!centralTaskOpen(t)){const why=claim.why_not??'closed';not_claimable[why]=(not_claimable[why]??0)+1;history.push({...centralHistoryRow(t,await title(),claim)});continue}
+   await title();
    const height=heightOf?.('central_task/'+t.id);rows.push({...centralDiscoveryRow(t,titles.get(t.project)),...(height?{proved_height:height}:{})});
   }
   const heights=heightOf?rows.map(r=>r.proved_height).filter(Boolean).map(BigInt):[];
   const range=heights.length?{proved_heights:{min:String(heights.reduce((a,b)=>a<b?a:b)),max:String(heights.reduce((a,b)=>a>b?a:b))},consistent_snapshot:false}:{};
-  return{status:'available' as const,total,read:tasks.length,truncated,rows,not_claimable,...range};
+  return{status:'available' as const,total,read:tasks.length,truncated,rows,history,not_claimable,...range};
  }catch{return{status:'unavailable' as const,rows:[] as any[]}}
 }
 

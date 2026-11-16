@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261116T060044Z-3a35878ba3",
+  "version": "0.3.102",
+  "source_commit": "23545ab94d99e6a461934f3cc26d23ca9b895d2a",
+  "deployed_at": "2026-11-16T06:30:44Z",
+  "prior": "20261115T011142Z-5e6de023fd",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-03102-release-20261116",
+    "CHANGELOG.md#one-task-then-ask-20261116"
+  ],
+  "note": "One task then ask: kit 0.2.21, MCP 0.6.13, guide 2026-11-16.1. First release reading the SSH target from config; BAINK_REVIEW_SSH_TARGET set in /etc/baink.env first. 180 runtime/32 preview files, archive 2427a19d. Live: release header, review health ready, native read, kit digest, llms.txt, guide answer."
+}

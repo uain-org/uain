@@ -282,7 +282,7 @@ function AcceptedWork({ view }: { view: ContributionView }) {
                     {SURVEY_TASK.test(a.task) ? (
                       <a
                         className="np-link"
-                        href={`https://baink.money/api/native/central/survey-template/${encodeURIComponent(a.task)}`}
+                        href={`/tasks/${encodeURIComponent(a.task)}`}
                       >
                         {a.task}
                       </a>

@@ -171,6 +171,30 @@ test('a new post gets a code and a live /go/ link; editing never changes the cod
   assert.match(await (await go('/admin', { headers: { Cookie: cookie } })).text(), /LocalLLaMA design question<\/a> <a href="https:\/\/reddit.com\/r\/LocalLLaMA\/1"[^]*?rd-r-localllama · Reddit · Posted<\/div><\/td><td>1<\/td><td>1 /);
 });
 
+test('posts page: one tab per status with counts, ?status picks it, platform filter keeps the tab', async (t) => {
+  const { go, login } = await setup(t);
+  const cookie = cookieOf(await login('aldi@example.com', PASSWORD));
+  await formPost(go, '/admin/posts', cookie, { platform: 'reddit', where: 'r/AI_Agents', label: 'Draft one', title: 'A reddit title', status: 'draft' });
+  await formPost(go, '/admin/posts', cookie, { platform: 'x', where: '@aldi', label: 'Draft two', status: 'draft' });
+  await formPost(go, '/admin/posts', cookie, { platform: 'reddit', where: 'r/Folding', label: 'Live one', status: 'posted', url: 'https://reddit.com/r/Folding/1' });
+  const page = async (q) => (await go('/admin/posts' + q, { headers: { Cookie: cookie } })).text();
+  const drafts = await page('');
+  assert.match(drafts, /<a href="\/admin\/posts\?status=draft" class="on" aria-current="page">Draft <span class="count">2<\/span><\/a>/, 'drafts first by default');
+  assert.match(drafts, /Posted <span class="count">\d+<\/span>/);
+  assert.doesNotMatch(drafts, />Ready </, 'Ready is hidden while empty');
+  assert.match(drafts, /Draft one[^]*A reddit title[^]*r\/AI_Agents[^]*rd-r-ai-agents/, 'row shows label, title, where and code');
+  assert.doesNotMatch(drafts, /Live one/);
+  const posted = await page('?status=posted');
+  assert.match(posted, /Live one/); assert.doesNotMatch(posted, /Draft one/);
+  assert.match(posted, /href="\/admin\/posts\?status=posted&amp;platform=reddit"|href="\/admin\/posts\?status=posted&platform=reddit"/, 'platform filter keeps the tab');
+  const xDrafts = await page('?status=draft&platform=x');
+  assert.match(xDrafts, /Draft two/); assert.doesNotMatch(xDrafts, /Draft one/);
+  assert.match(xDrafts, /Draft <span class="count">1<\/span>/, 'counts follow the platform filter');
+  assert.match(await page('?status=nonsense'), /status=draft" class="on"/, 'an unknown status falls back');
+  const edit = await (await go('/admin/posts/rd-r-folding', { headers: { Cookie: cookie } })).text();
+  assert.match(edit, /<a href="\/admin\/posts\?status=posted">← Posted<\/a>/, 'edit page links back to its tab');
+});
+
 test('post pages need a session and same-origin posts', async (t) => {
   const { f, go } = await setup(t);
   assert.doesNotMatch(await (await go('/admin/posts')).text(), /New post/);
@@ -239,7 +263,7 @@ test('delete: tombstone, gone from Posts and Numbers, plain /go/, code never reu
   // A real delete.
   const del = await go('/admin/posts/x-aldi/delete', { method: 'POST', headers: { Cookie: cookie } });
   assert.equal(del.status, 303);
-  assert.equal(del.headers.get('location'), '/admin/posts?deleted=1');
+  assert.equal(del.headers.get('location'), '/admin/posts?status=ready&deleted=1', 'back to the tab the post was on');
   assert.doesNotMatch(await (await go('/admin/posts', { headers: { Cookie: cookie } })).text(), /Doomed post/);
   assert.doesNotMatch(await (await go('/admin', { headers: { Cookie: cookie } })).text(), /Doomed post/);
   const plain = await (await go('/go/x-aldi')).text();

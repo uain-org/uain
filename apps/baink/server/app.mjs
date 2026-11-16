@@ -1281,7 +1281,7 @@ export async function createBainkServer(options = {}) {
         : undefined,
     });
   }
-  const publicTasks = createPublicTasks({ centralEarning });
+  const publicTasks = createPublicTasks({ centralEarning, catalogue: proposals });
   const reviewLimit = (value, fallback) => (Number.isInteger(value) && value >= 1 && value <= 100000 ? value : fallback);
   // options.reviewQueue: tests hand in a queue with a fixed answer; the server builds its own otherwise.
   const reviewQueue = options.reviewQueue ?? createReviewQueue({ centralEarning, hourlyLimit: reviewLimit(options.reviewHourlyLimit, 16), dailyLimit: reviewLimit(options.reviewDailyLimit, 128) });
@@ -1337,8 +1337,8 @@ export async function createBainkServer(options = {}) {
       if (name === "baink_status") return publicConfig(requestAudience);
       if (name === "baink_tasks") {
         // An unreadable list is refused as "could not be read", never shown as an empty list.
-        const list = await publicTasks.list();
-        return list.status === "available" ? list : { source: { status: "unavailable" } };
+        const list = await publicTasks.list(args);
+        return list.status === "available" ? list : { ...list, source: { status: "unavailable" } };
       }
       if (name === "baink_contribution") {
         // The same view as GET /api/public/contribution/<address>, with its plain lines.

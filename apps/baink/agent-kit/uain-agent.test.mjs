@@ -300,11 +300,11 @@ test('MCP lists the tools and every write tool refuses without confirm: true, se
   assert.equal(calls, 1, 'first setup asks BAINK once whether this kit is still accepted; with no answer it goes on');
   const made = (await kit.handleMcp(o, { jsonrpc: '2.0', id: 4, method: 'tools/call', params: { name: 'baink_agent_init', arguments: { confirm: true } } })).result;
   assert.ok(!made.isError && JSON.parse(made.content[0].text).address.startsWith('uain1'));
-  // Every work reply carries the next step and the keep-working line, even when the next read fails.
+  // Every work reply carries the next step and the one-task line, even when the next read fails.
   const madeBody = JSON.parse(made.content[0].text);
   assert.equal(madeBody.keepWorking, kit.KEEP_WORKING);
   assert.equal(madeBody.thenNext.next.tool, 'baink_agent_next');
-  assert.match(init.result.instructions, /Keep working/);
+  assert.match(init.result.instructions, /One task, then ask/);
   assert.match(init.result.instructions, /uain\.global\/mcp/);
   assert.match(init.result.instructions, /baink\.money\/mcp/);
   assert.ok(!made.content[0].text.includes(JSON.parse(await readFile(join(o.home, 'default', 'identity.json'), 'utf8')).private_key));
@@ -541,7 +541,7 @@ test('tasks read the newest tasks first, so open work is found when old tasks ar
   if(q.has('order')&&!filters)return Response.json({error:{code:'invalid_query',message:'Use only cursor and limit.'}},{status:400});
   if(q.get('order')==='newest'){const rows=[...all].reverse().filter(x=>q.get('state')!=='open'||open(x));const page=rows.slice(c,c+l);return Response.json({tasks:page,total:'134',more:c+l<rows.length,nextCursor:String(c+l)});}
   return Response.json({tasks:all.slice(c,c+l),total:'134',more:c+l<134,nextCursor:String(c+l)});};
- let r=await kit.ops.tasks(o);assert.equal(r.tasks.length,9);assert.equal(r.tasks[0].id,'T-134');assert.ok(r.tasks.every(x=>x.claimable));assert.ok(asked.every(a=>a.includes('state=open')),'one filtered listing, no scan of old tasks');
+ let r=await kit.ops.tasks(o);assert.equal(r.tasks.length,9);assert.equal(r.tasks[0].id,'T-134');assert.ok(r.tasks.every(x=>x.claimable));assert.ok(asked.filter(a=>!a.includes('limit=1')).every(a=>a.includes('state=open')),'one filtered listing plus a public total, no scan of old tasks');
  r=await kit.ops.tasks(o,{all:true});assert.ok(asked.at(-1).includes('state=all'));assert.equal(r.tasks[0].id,'T-134');
  // An older server without the filter: newest-first scan from the end.
  filters=false;asked=[];r=await kit.ops.tasks(o);assert.equal(r.tasks.length,9);assert.equal(r.tasks[0].id,'T-134');assert.ok(!asked.some(a=>a==='?cursor=12&limit=12'),'old pages are not read');});
@@ -639,8 +639,9 @@ test('the open paid tasks are readable with no key: GET /api/public/tasks and th
   assert.deepEqual(list.tasks.map((x) => [x.id, x.project, x.pays, x.canTakeNow, x.kind, x.take]), [[TASK, PROJECT, '200 AI$', true, 'prior-art survey', 'node uain-agent.mjs template ' + TASK]]);
   assert.match(list.howToTake, /curl -fsSLO https:\/\/baink\.money\/uain-agent\.mjs/);
   assert.doesNotMatch(JSON.stringify(list), /Docker|install a client/i);
-  // One fixed page: a caller cannot choose a cursor, so it cannot make the server read other pages.
-  assert.equal((await fetch(fx.url + '/api/public/tasks?cursor=12')).status, 400);
+  // Cursor pages the cached full index, never causes a separate chain scan.
+  const beyond = await (await fetch(fx.url + '/api/public/tasks?cursor=12')).json(); assert.equal(beyond.totalOpen, 1); assert.equal(beyond.tasks.length, 0);
+  assert.equal((await fetch(fx.url + '/api/public/tasks?limit=51')).status, 400);
   assert.notEqual((await fetch(fx.url + '/api/public/tasks', { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: fx.url }, body: '{}' })).status, 200);
   // The same list through the read-only MCP server, as a listed tool.
   const rpc = async (method, params = {}) => (await fetch(fx.url + '/mcp', { method: 'POST', headers: { Accept: 'application/json, text/event-stream', 'Content-Type': 'application/json', Origin: fx.url, 'MCP-Protocol-Version': '2025-11-25' }, body: JSON.stringify({ jsonrpc: '2.0', id: 1, method, params }) })).json();

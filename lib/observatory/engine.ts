@@ -9,6 +9,7 @@ import {
   SITE_SNAPSHOT_MS,
 } from '@/lib/network/feed';
 import { type BriefFinding, subsolar } from '@/lib/network/globe-layers';
+import { acceptedAsFindings } from '@/lib/network/leaderboard';
 import type { LiveEvent, LivePlace } from '@/lib/network/live';
 import { DOMAINS, type Reading, readWorld } from './humanity';
 import { NetworkView } from './network-view';
@@ -2227,7 +2228,18 @@ export async function startObservatory(root: HTMLElement): Promise<() => void> {
         site_snapshot?: unknown;
       };
       if (!Array.isArray(body.contributions)) return null;
-      await world.setFindings(body.contributions);
+      // Every accepted task since 5 November is a central award, not an entry of the original
+      // ledger above: add it (16 November 2026). A failed read leaves the original findings shown.
+      let acceptedFindings: BriefFinding[] = [];
+      try {
+        const res3 = await fetch(`${apiBase()}/api/accepted?limit=100`, { signal: AbortSignal.timeout(45_000) });
+        const accepted = res3.ok ? ((await res3.json()) as { accepted?: unknown }).accepted : null;
+        if (Array.isArray(accepted)) acceptedFindings = acceptedAsFindings(accepted as Parameters<typeof acceptedAsFindings>[0]);
+      } catch {
+        /* the original findings still show */
+      }
+      const allFindings = [...acceptedFindings, ...body.contributions];
+      await world.setFindings(allFindings);
       const res2 = await fetch(
         `${apiBase()}${siteSnapshotPath('/api/projects')}`,
         {
@@ -2246,7 +2258,7 @@ export async function startObservatory(root: HTMLElement): Promise<() => void> {
       researchSnapshot =
         'site_snapshot' in body ||
         Boolean(projectBody && 'site_snapshot' in projectBody);
-      findingsList = body.contributions;
+      findingsList = allFindings;
       projects = listed;
       paintTime();
       refreshProblems();

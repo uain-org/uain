@@ -6,7 +6,7 @@ import{createNativePublicProofCache}from'../native/public-proof-cache.ts';
 import{readNativePublicVisibility,type NativePublicVisibility}from'../native/public-visibility.ts';
 import{memberRow,queryNativePublicRows}from'../native/public-query.ts';
 import{createNativePublicSiteSnapshots}from'../native/public-site-snapshot.ts';
-import{centralDiscovery,cachedCentralDiscovery,CENTRAL_RETRY_MS,withCentralOpenCounts}from'../native/central-discovery.ts';
+import{centralDiscovery,cachedCentralDiscovery,CENTRAL_RETRY_MS,withCentralOpenCounts,centralTaskShape,centralTaskHeld}from'../native/central-discovery.ts';
 import{readWithRetry}from'../native/read-retry.ts';
 import{createNativePublicCatchUp,createNativePublicCatchUpPool,createNativePublicHeadReader,nativeProjectionBehind,NativePublicProjectionPending}from'../native/public-catch-up.ts';
 import{createOwnHeightProver,createBrowsePageCache,browseProvedBlock,browseChainTime,NativePublicReadWarming,BROWSE_VIEW_MS,BROWSE_COLD_WAIT_MS,type BrowsePage,type BrowseStamp}from'../native/public-browse.ts';
@@ -75,7 +75,11 @@ async function buildNativePublicData(url:URL,visibility:NativePublicVisibility,b
   }else{
   const needed=kind==='project'?['project','task','contribution','claim','participant','member','amendments','claim_reviews','claim_revisions','verifications','prior_art_challenges','benevolence_flags','kpi_resolutions']:kind==='task'||kind==='contribution'?['project','task','contribution','verifications','prior_art_challenges','benevolence_flags','kpi_resolutions']:['participant','member'];if(!detail||!['task','contribution'].includes(kind))await reader.warm(needed);
   const get=async(id:string)=>kind==='project'?reader.project(id,!list):kind==='task'?reader.task(id):kind==='contribution'?reader.contribution(id):kind==='member'?reader.member(id):reader.participant(id,!!detail);
-  if(detail){body=await get(detail[2]);if(body&&kind==='task'&&url.searchParams.get('discover')==='1'){const discovery=nativeTaskDiscovery(body,await reader.discoveryProject(body.project_id),body.status==='open'?'open':'all',initial.header_time);if(discovery&&body.kind==='future'&&body.status==='open')nextDiscoveryChange=Date.parse(body.resolves_by);body=discovery?{...body,policy:discovery.policy,discovery}:null;}if(!body){status=404;body={error:'not_found',id:detail[2]}}else if(detail[3]){if(kind!=='project')throw Error('project subresource required');const sub=detail[3],rows=[];if(sub==='members'){for(const m of body.members.recent)rows.push(m)}else for(const id of await reader.ids(sub==='claims'?'claim':'task')){const row=sub==='claims'?await reader.claim(id):await reader.task(id);if(row?.project_id===detail[2])rows.push(row)}body={project_id:detail[2],count:rows.length,[sub]:rows}}}
+  if(detail){body=await get(detail[2]);if(body&&kind==='task'&&url.searchParams.get('discover')==='1'){const discoveryProject=await reader.discoveryProject(body.project_id);let discovery=nativeTaskDiscovery(body,discoveryProject,body.status==='open'?'open':'all',initial.header_time);
+  // A detail page of an original-policy task that is no longer open (answered, closed, waiting for
+  // checks) reads as history (16 November 2026): its lifecycle status is the filter that admits it
+  // (taskDiscovery HISTORY_STATUSES), so /tasks/T-43 answers instead of 404.
+  if(!discovery&&body.status!=='open')discovery=nativeTaskDiscovery(body,discoveryProject,String(body.status??''),initial.header_time);if(discovery&&body.kind==='future'&&body.status==='open')nextDiscoveryChange=Date.parse(body.resolves_by);body=discovery?{...body,policy:discovery.policy,discovery}:null;}if(!body){status=404;body={error:'not_found',id:detail[2]}}else if(detail[3]){if(kind!=='project')throw Error('project subresource required');const sub=detail[3],rows=[];if(sub==='members'){for(const m of body.members.recent)rows.push(m)}else for(const id of await reader.ids(sub==='claims'?'claim':'task')){const row=sub==='claims'?await reader.claim(id):await reader.task(id);if(row?.project_id===detail[2])rows.push(row)}body={project_id:detail[2],count:rows.length,[sub]:rows}}}
   else{const rows=[];for(const id of await reader.ids(kind)){const row=await get(id);if(row&&(category!=='tasks'||visibility.isProjectVisible(row.project_id)))rows.push(row)}
    if(category==='tasks')for(const id of new Set(rows.map(r=>r.project_id))){const project=await reader.discoveryProject(id);if(project)discoveryProjects[id]=project}
    // Central project tasks are held beside, never inside, the catalogue body:
@@ -126,6 +130,41 @@ function warmLog(message:string){const now=Date.now();if(now-lastWarmLogAt<60000
  * (9 November 2026). The rows are a discovery list (submission re-checks the task on chain). */
 const CENTRAL_PROOF_KEYS=16;
 const centralRead=(config:any,chainId:string,heights:Map<string,string>)=>async(keys:string[])=>{const records:Record<string,any>={};for(let i=0;i<keys.length;i+=CENTRAL_PROOF_KEYS){const batch=keys.slice(i,i+CENTRAL_PROOF_KEYS),state=await nativeState({keys:batch},config);if(state?.chain_id!==chainId||!state.records||typeof state.height!=='string')throw Error('native public central proof differs');for(const k of batch){heights.set(k,state.height);records[k]=state.records[k]}}return records};
+/** Inputs of GET /api/accepted (accepted-work.ts): the newest projected central_review events,
+ * proved central records in batches of CENTRAL_PROOF_KEYS, and the block time at a height from
+ * the pinned node's signed commit header. Null when native authority is not configured. */
+export function acceptedWorkDeps(){
+ const config=nativeConfig();if(!config||process.env.UAIN_AUTHORITY!=='native')return null;
+ return{
+  reviews:async(limit:number)=>(await pool.query("SELECT record FROM native_events WHERE epoch=$1 AND record->>'operation'='central_review' ORDER BY length(event_id) DESC,event_id DESC LIMIT $2",[config.genesisHash,limit])).rows.map((r:any)=>({subject:String(r.record.subject??''),height:String(r.record.height??'')})),
+  read:async(keys:string[])=>{const out:Record<string,any>={};for(let i=0;i<keys.length;i+=CENTRAL_PROOF_KEYS){const batch=keys.slice(i,i+CENTRAL_PROOF_KEYS),state=await nativeState({keys:batch},config);if(!state?.records||typeof state.height!=='string')throw Error('native public central proof differs');for(const k of batch)out[k]=state.records[k]??null}return out},
+  names:async(kind:'member'|'project',id:string)=>{const r=await nativePublicData(new URL('/api/'+(kind==='member'?'members':'projects')+'/'+encodeURIComponent(id),'https://uain.invalid'));return r.status===200?r.body:null},
+  timeAt:async(height:string)=>{const r=await fetch(config.rpc,{method:'POST',headers:{'content-type':'application/json'},redirect:'error',body:JSON.stringify({jsonrpc:'2.0',id:'accepted-time',method:'commit',params:{height}}),signal:AbortSignal.timeout(5000)});if(!r.ok)return null;const b:any=await r.json();const h=b?.result?.signed_header?.header;return h?.height===height&&typeof h.time==='string'&&Number.isFinite(Date.parse(h.time))?new Date(Date.parse(h.time)).toISOString():null},
+ };
+}
+/** One central (BAINK) task for its page on uain.global (/tasks/<id>, 16 November 2026). Before,
+ * every link to a central task went to BAINK's raw survey-template JSON, which BAINK refuses to a
+ * click from another site (origin_forbidden). One proved read: the task, and when it has a winner,
+ * that submission and its solver award. The evidence of an accepted submission is a public chain
+ * record (K-38), shown so a visitor sees what was produced. Null when the task does not exist or
+ * its project is archived. */
+export async function centralTaskForPage(id:string){
+ const config=nativeConfig();if(!config||process.env.UAIN_AUTHORITY!=='native'||!/^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$/.test(id))return null;
+ const first=await nativeState({keys:['central_task/'+id]},config),t=first?.records?.['central_task/'+id];
+ if(!t)return null;if(!centralTaskShape(t,id))throw Error('native central task proof differs');
+ const visibility=await readNativePublicVisibility((q,a)=>pool.query(q,a));if(!visibility.isProjectVisible(t.project))return null;
+ const pins={chainId:String(first.chain_id??''),epoch:config.genesisHash};
+ let winner:any=null;
+ if(typeof t.winner==='string'&&/^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$/.test(t.winner)){
+  const r=(await nativeState({keys:['central_submission/'+t.winner,'central_award/solver/'+t.winner]},config)).records??{};
+  const sub=r['central_submission/'+t.winner],award=r['central_award/solver/'+t.winner];
+  if(sub&&sub.id===t.winner&&sub.task===id&&award&&award.submission===t.winner&&award.role==='solver'){
+   let time:string|null=null;try{time=(await acceptedWorkDeps()?.timeAt(String(award.height)))??null}catch{time=null}
+   winner={submission:t.winner,author:String(sub.author??''),state:String(sub.state??''),evidence:typeof sub.evidence==='string'?sub.evidence:'',amount:String(award.amount??''),height:String(award.height??''),time};
+  }
+ }
+ return{task:t,held:centralTaskHeld(t,pins),height:String(first.height??''),winner};
+}
 const centralSource=(config:any,chainId:string)=>{const heights=new Map<string,string>();return{read:centralRead(config,chainId,heights),heightOf:(k:string)=>heights.get(k)}};
 /** Browse views (public-browse.ts; design in docs/testing/public-read-speed-2026-11-10.md). One
  * proved view per pin set, chain id, genesis epoch and archive-visibility version: its own strict

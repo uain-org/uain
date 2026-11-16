@@ -37,8 +37,16 @@ LEDGER_PUBLIC_KEY_FILE=ledger-public.pem UAIN_API=https://uain.global \
   node services/pilot/scripts/verify-ledger.mjs
 ```
 
-It trusts nothing but the maths: it recomputes every hash and checks every
-signature against the pinned key.
+It recomputes the hash chain, the research commitments and each day's signature
+against the pinned key. A successful run exits with code 0.
+
+**Known verification limit, checked 16 November 2026:** the public claim-record
+routes still return HTTP 409. Six latest claim commitments cannot yet be
+recomputed from the public API: ledger entries **1527** (CL-72), **1530** and
+**1536** (CL-73 revision and review), **1561** (CL-74), **1573** (CL-75), and
+**1595** (CL-76). The verifier currently exits nonzero at an unavailable claim;
+that is an incomplete verification, not a passing result. These records must be
+served in their committed form before full verification can pass.
 
 ## How this repository is made
 

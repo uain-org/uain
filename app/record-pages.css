@@ -21,7 +21,7 @@
   overflow-wrap: anywhere;
 }
 
-.record-page a:not(.np-chip):not(.net-page-button):not(.button) {
+.record-page a:not(.np-chip):not(.net-page-button):not(.button):not(.record-tab) {
   color: var(--blue);
   font-weight: 600;
   text-decoration: underline;
@@ -30,7 +30,7 @@
   text-underline-offset: 3px;
 }
 
-.record-page a:not(.np-chip):not(.net-page-button):not(.button):hover {
+.record-page a:not(.np-chip):not(.net-page-button):not(.button):not(.record-tab):hover {
   text-decoration-color: var(--blue);
 }
 
@@ -249,4 +249,47 @@
   .record-facts {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+/* The /tasks state tabs (16 November 2026): plain links with a count, the
+ * selected one underlined in the network blue. */
+.record-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.4rem;
+  margin: 0 0 1.1rem;
+  border-bottom: 1px solid var(--np-line-soft);
+}
+
+.record-page .record-tabs a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-bottom: -1px;
+  border-bottom: 3px solid transparent;
+  padding: 0.55rem 0 0.6rem;
+  color: var(--np-muted);
+  font-size: 0.92rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.record-page .record-tabs a:hover {
+  color: var(--navy);
+}
+
+.record-page .record-tabs a.on {
+  border-bottom-color: var(--blue);
+  color: var(--navy);
+}
+
+.record-tabs a:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.record-tab-count {
+  color: var(--np-faint);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
 }

@@ -26,3 +26,15 @@
 .leaderboard-page p {
   max-width: 70ch;
 }
+.leaderboard-page h2 {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+.leaderboard-page .record-meta {
+  color: #536975;
+  font-size: 0.9rem;
+}
+.leaderboard-page td:first-child {
+  white-space: nowrap;
+}

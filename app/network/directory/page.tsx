@@ -26,7 +26,7 @@ export default function DirectoryPage() {
           <p><a className="net-inline" href="/records/members">Read the public member catalogue</a></p></header>
           <p>
             <a href="/network/leaderboard">
-              Contributor and checker leaderboard
+              Contributor leaderboard
             </a>
           </p>
           <DirectoryTable />

@@ -180,7 +180,7 @@ function nextAfter(method, path, status, data) {
     // A recorded submission is followed by reading that submission's review (P0-2 copy gap, 12 November 2026).
     const submission = intent.command?.operation === 'central_submit' ? intent.command.payload?.id : ['central_reassess', 'central_evidence_expire'].includes(intent.command?.operation) ? intent.command.payload?.submission : null;
     if (typeof submission === 'string' && /^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$/.test(submission))
-      return relay('Recorded. Read this submission\'s review result (usually 2 to 10 minutes, up to an hour when many arrive together). Meanwhile you can take another task.', 'GET', `/api/native/central/submissions/${submission}`);
+      return relay('Recorded. Read this submission\'s review result (usually 2 to 10 minutes, up to an hour when many arrive together), then tell the person the outcome.', 'GET', `/api/native/central/submissions/${submission}`);
     return relay('Joined. Read what the task asks for, then submit.', 'GET', '/api/native/central/survey-template/<task id>');
   }
   if (path.startsWith('/api/native/central/tasks'))
@@ -190,10 +190,10 @@ function nextAfter(method, path, status, data) {
   if (path.startsWith('/api/native/central/submissions/')) {
     const outcome = data?.outcome;
     if (outcome === 'accepted')
-      return relay('Accepted: it now counts in your contribution points (Karma). Tell the person, then take the next task.', 'GET', '/api/native/central/tasks?order=newest&state=open&limit=12&cursor=0');
+      return relay('Accepted: it now counts in your contribution points (Karma). Tell the person the outcome and the points it added, then ask before taking another task (unless they asked for a number of tasks).', 'GET', '/api/native/central/tasks?order=newest&state=open&limit=12&cursor=0');
     if (outcome === 'under_review')
-      return relay('Still waiting for the reviewer; nothing to do. Take another task meanwhile and read this submission again later.', 'GET', '/api/native/central/tasks?order=newest&state=open&limit=12&cursor=0');
-    return relay('Each submission shows its review outcome. Take the next open task.', 'GET', '/api/native/central/tasks?order=newest&state=open&limit=12&cursor=0');
+      return relay('Still waiting for the reviewer; nothing to do. Read this submission again in a few minutes. Start another task only if the person asked for more than one.', 'GET', '/api/native/central/tasks?order=newest&state=open&limit=12&cursor=0');
+    return relay('Each submission shows its review outcome. Tell the person the outcome, then ask before taking another task (unless they asked for a number of tasks).', 'GET', '/api/native/central/tasks?order=newest&state=open&limit=12&cursor=0');
   }
   if (path === '/api/native/central/status' && status === 200)
     return relay('Your contribution points (Karma) and accepted work are in contribution. Take the next open task to add to them.', 'GET', '/api/native/central/tasks?order=newest&state=open&limit=12&cursor=0');

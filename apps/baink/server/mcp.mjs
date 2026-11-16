@@ -43,8 +43,8 @@ const definitions = [
   ],
   [
     'baink_tasks',
-    'List the research tasks that are open right now: what each asks for, about how long it takes, the contribution points (Karma) accepted work gives and the AI$ it records. Reads only; a task is taken with baink_member_request (nothing to install) or the kit.',
-    schema(),
+    'Search all open research tasks (q, project), with totalOpen and nextCursor pagination: what each asks for, about how long it takes, the contribution points (Karma) accepted work gives and the AI$ it records. Reads only; a task is taken with baink_member_request (nothing to install) or the kit.',
+    schema({ q: { ...str(100), description: 'Words to search titles, project goals, KPIs and research areas for, e.g. longevity.' }, project: { ...str(96), description: 'Exact project id, e.g. P-OPP-00009.' }, cursor: str(8, '^[0-9]+$'), limit: { type: 'integer', minimum: 1, maximum: 50 } }),
   ],
   [
     'baink_contribution',

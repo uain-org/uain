@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "component": "central-reviewer",
+  "release_id": "696748acc5121b7478b6fef184186f754ee22040ee02414f8b58ff2890f5a546",
+  "version": null,
+  "source_commit": "3b80f6f6a0",
+  "deployed_at": null,
+  "prior": "0c269869891edc4b906130e647cbcdd91561a587dc6fc19c72b6bfa166bdf48a",
+  "status": "staged",
+  "evidence": [
+    "CHANGELOG.md#reviewer-provider-diagnostics-20261116"
+  ],
+  "note": "Worker-only diagnostics overlay; custody and provider fence unchanged. Includes current matching tests and their dependencies. Exact package tests and committed-HEAD gate pending. Auth renewed and nine stuck jobs finalized before activation."
+}

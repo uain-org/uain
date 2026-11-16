@@ -53,3 +53,39 @@ test('a lifecycle status filter lists original-policy tasks in that status as re
  }
  assert.equal(query(task,'open').count,1,'open discovery is unchanged');assert.equal(query(task,'open').tasks[0].discovery.read_only,undefined);
 });
+test('a task detail page reads an original-policy task that is no longer open as history',async()=>{
+ // /tasks/T-43 answered 404 (16 November 2026): the detail route asked discovery for 'all', which admits
+ // original-policy tasks only while open. It now asks again with the task's own lifecycle status.
+ const read=await import('../dist/src/native/public-read.js');
+ const task={id:'T-old',project_id:'P',title:'Original question',question:'Q?',done_when:'Done',how_to_check:'Check',status:'answered',kind:'instant',research_policy:'legacy',results:[{id:'C-won',state:'settled'}],prior_art:{statement:'basis',searched:['a','b']},benevolence:{class:'unreviewed'},submission:{state:'open',count:1,limit:128,malevolent:false}};
+ const project={id:'P',title:'Original project',state:'active',research_policy:'legacy',prior_art:{statement:'basis',searched:['a','b']},benevolence:{class:'unreviewed'},benevolence_flags:[]};
+ assert.equal(read.nativeTaskDiscovery(task,project,'all','2026-11-16T00:00:00Z'),null,'all stays open-only');
+ const history=read.nativeTaskDiscovery(task,project,task.status,'2026-11-16T00:00:00Z');
+ assert.equal(history.read_only,true);assert.deepEqual(history.existing_results,[{id:'C-won',state:'settled'}]);
+ assert.equal(read.nativeTaskDiscovery({...task,benevolence:{class:'malevolent'}},project,task.status,'2026-11-16T00:00:00Z'),null,'history still refuses malevolent work');
+});
+
+test('task search covers criteria/KPI and proposal area; totals never mean the current page',()=>{
+ const central={status:'available',rows:[
+  {id:'one',kind:'central',project_id:'P-OPP-00009',title:'Telomere work',status:'open',claimable:true,criteria:'Main KPI: 300 years'},
+  {id:'two',kind:'central',project_id:'P-OPP-00005',title:'Stem cells',status:'open',claimable:true},
+  {id:'three',kind:'central',project_id:'P-OPP-03361',title:'Robotaxi work',status:'open',claimable:true},
+ ],history:[],total:'3'};
+ const run=q=>mod.queryNativePublicRows(new URL('https://uain.invalid/api/tasks?discover=1&'+q),[],{},undefined,central);
+ const first=run('q=LONGEVITY&limit=1');assert.equal(first.totalOpen,3);assert.equal(first.matched,2);assert.equal(first.canTakeOnThisPage,1);assert.equal(first.nextCursor,'1');assert.equal(first.more,true);assert.equal(first.tasks[0].id,'one');
+ const next=run('q=longevity&limit=1&cursor='+first.nextCursor);assert.equal(next.totalOpen,3);assert.equal(next.count,2);assert.equal(next.tasks[0].id,'two');assert.equal(next.nextCursor,null);assert.equal(next.more,false);
+ assert.equal(run('q=300%20years').count,1,'search criteria, not just titles');
+ assert.equal(run('q=longevity%20telomere').count,1,'each word can match a different search field');
+ assert.equal(run('q=longevity&project=P-OPP-00005').count,1);
+ assert.equal(run('q=longevity&project=P-OPP-00005').totalOpen,3,'project never narrows network total');
+ assert.equal(run('page=2&page_size=1').tasks[0].id,'two','old page parameters still work');
+ assert.equal(run('cursor=1&limit=2').tasks[0].id,'two','cursor is exact offset even off the page boundary');
+ for(const q of ['cursor=-1','cursor=1.5','cursor=abc','limit=51'])assert.throws(()=>run(q),/bounded|limit/);
+});
+
+test('a partial central catalogue never claims a complete open total',()=>{
+ const u=new URL('https://uain.invalid/api/tasks?discover=1');
+ assert.equal(mod.queryNativePublicRows(u,[],{},undefined,{status:'unavailable',rows:[]}).totalOpen,null);
+ assert.equal(mod.queryNativePublicRows(u,[],{},undefined,{status:'available',rows:[],truncated:true}).totalOpen,null);
+ assert.throws(()=>mod.queryNativePublicRows(new URL(u+'&q='+('a'.repeat(201))),[]),/bounded search/);
+});

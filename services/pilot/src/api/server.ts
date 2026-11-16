@@ -5,11 +5,13 @@ import { publicRecordResponse } from './public-record-pages.ts';
 import { framedDocument, longDay, noticeDocument, pageHead, RECORD_PAGE_CSP, wantsPage } from './record-frame.ts';
 import { publicStatus } from './public-status.ts';
 import { memberContribution } from './contribution-proxy.ts';
+import { acceptedWork } from './accepted-work.ts';
 import {handleContributionBadge} from './contribution-badge.ts';
 import {handleNativeRpcPublicRoutes} from './native-rpc-public-routes.ts';
 import {handleNativeBootstrapPublicRoutes} from './native-bootstrap-public-routes.ts';
 import {handleNativeWalletPublicRoutes} from './native-wallet-public-routes.ts';
-import {handleNativePublicReads,nativePublicData,nativePublicReady,warmNativePublicReads} from './native-public-read-routes.ts';
+import {handleNativePublicReads,nativePublicData,nativePublicReady,warmNativePublicReads,acceptedWorkDeps,centralTaskForPage} from './native-public-read-routes.ts';
+import { renderCentralTaskMain, CENTRAL_TASK_ID } from './central-task-page.ts';
 import { handleNative } from './native-routes.ts';
 import { publishableCommand } from '../native/command-signature.ts';
 import { buildId } from './build-id.ts';
@@ -306,6 +308,64 @@ const missingTask = (res) => sendDiscovery(res, 404, noticeDocument({
   links: [['/tasks', 'See the open tasks'], ['/status', 'See what is working']],
 }), 'text/html');
 
+/** One plain word per task state, so a page never shows two states that disagree (T-37, 16 November 2026). */
+const TASK_STATE: Record<string, string> = {
+  open: 'Open',
+  answered: 'Answered',
+  closed: 'Closed',
+  needs_comparison: 'Answered, results being compared',
+  awaiting_verification: 'Answered, waiting for checks',
+};
+const RESULT_STATE: Record<string, string> = {
+  settled: 'Accepted: checked and settled',
+  contested: 'Contested: a check disagreed',
+  held: 'Waiting for checks',
+  submitted: 'Submitted, not yet checked',
+  withheld: 'Not accepted',
+};
+const bytesText = (n: unknown) => {
+  const b = Number(n);
+  if (!Number.isFinite(b) || b < 0) return '';
+  return b >= 1048576 ? `${(b / 1048576).toFixed(1)} MB` : b >= 1024 ? `${Math.round(b / 1024)} KB` : `${b} bytes`;
+};
+const sourceLink = (s: string) => {
+  const pmid = /^PMID:(\d{1,10})$/i.exec(s), doi = /^(?:doi:)?(10\.\d{4,9}\/\S+)$/i.exec(s);
+  const href = pmid ? `https://pubmed.ncbi.nlm.nih.gov/${pmid[1]}/` : doi ? `https://doi.org/${doi[1]}` : /^https:\/\/[^\s<>"]+$/.test(s) ? s : '';
+  return href ? `<a href="${esc(href)}" rel="noopener noreferrer">${esc(s)}</a>` : esc(s);
+};
+/** The first sentences of a result's own description, cut at a sentence end. */
+function summaryOf(detail: unknown, max = 700) {
+  const text = String(detail ?? '').replace(/\s+/g, ' ').trim();
+  if (text.length <= max) return { text, cut: false };
+  const head = text.slice(0, max), end = Math.max(head.lastIndexOf('. '), head.lastIndexOf('; '));
+  return { text: (end > 200 ? head.slice(0, end + 1) : head) + ' …', cut: true };
+}
+function actionableResultsLead(task: any) {
+  return task.status === 'open'
+    ? '<p>Read these results and any disputed evidence first. New work has to add something they do not already show.</p>'
+    : '<p>This task is not taking new work. Its results stay readable here.</p>';
+}
+/** One result as a card a non-technical visitor can read (16 November 2026). */
+function resultCard(r: any, who?: { name: string; operator: string }) {
+  const state = String(r.state ?? '');
+  const tone = state === 'settled' ? 'ok' : 'muted';
+  const summary = summaryOf(r.detail);
+  const by = who
+    ? `${esc(who.name)}${who.operator ? `, an AI agent run by ${esc(who.operator)}` : ', an AI agent'}`
+    : r.contributor ? `${esc(r.contributor)} (an AI agent)` : 'an AI agent';
+  const when = longDay(r.settled_at ?? r.submitted_at);
+  const sources: string[] = Array.isArray(r.sources) ? r.sources.filter((x: unknown) => typeof x === 'string') : [];
+  const files: any[] = Array.isArray(r.artifacts) ? r.artifacts.filter((a: any) => a && typeof a.label === 'string') : [];
+  const checks: any[] = Array.isArray(r.verifications) ? r.verifications : [];
+  return `<section class="record-card"><p class="record-chips"><span class="np-chip np-chip--${tone}">${esc(RESULT_STATE[state] ?? state.replace(/_/g, ' '))}</span>${checks.length ? `<span class="np-chip">${checks.length} independent check${checks.length === 1 ? '' : 's'}</span>` : ''}</p>
+<h3>${esc(r.title ?? r.id)}</h3>
+${r.claim_statement ? `<p><strong>Finding:</strong> ${esc(r.claim_statement)}</p>` : ''}
+${summary.text ? `<h4>What was done</h4><p>${esc(summary.text)}</p>` : ''}
+<p class="record-meta">By ${by}${when ? ` · ${state === 'settled' ? 'accepted' : 'submitted'} ${esc(when)}` : ''} · ${esc(r.id)}</p>
+${sources.length ? `<h4>Sources</h4><ul>${sources.map((x) => `<li>${sourceLink(x)}</li>`).join('')}</ul>` : ''}
+${files.length ? `<h4>Files produced</h4><ul>${files.map((a) => `<li>${esc(a.label)}${bytesText(a.bytes) ? ` <span class="record-meta">(${bytesText(a.bytes)})</span>` : ''}</li>`).join('')}</ul><p class="record-meta">The files are recorded with the result; they are not offered for download here.</p>` : ''}
+<p class="record-meta"><a href="/api/contributions/${esc(encodeURIComponent(r.id))}">Full record, method and checks (JSON)</a></p></section>`;
+}
 function discoveryPage(title, description, path, body, data = null, noindex = false) {
   const canonical = `${DISCOVERY_ORIGIN}${path}`;
   const structured = data
@@ -315,25 +375,79 @@ function discoveryPage(title, description, path, body, data = null, noindex = fa
   return framedDocument({
     section: 'tasks',
     head: `<title>${esc(title)} | UAIN</title><meta name="description" content="${esc(description.slice(0, 160))}">
-<link rel="canonical" href="${esc(canonical)}"><link rel="alternate" type="application/json" href="${esc(`${DISCOVERY_ORIGIN}${path.startsWith('/tasks/T-') ? `/api${path}` : '/tasks/feed.json'}`)}">
+<link rel="canonical" href="${esc(canonical)}"><link rel="alternate" type="application/json" href="${esc(/^\/tasks\/T-[0-9]+$/.test(path) ? `${DISCOVERY_ORIGIN}/api${path}` : /^\/tasks\/T-.+-prior-art-survey/.test(path) ? `https://baink.money/api/native/central/survey-template/${path.slice(7)}` : `${DISCOVERY_ORIGIN}/tasks/feed.json`)}">
 ${noindex ? '<meta name="robots" content="noindex,follow">' : ''}
 ${structured}`,
     main: `${body}<p class="record-meta">Task declarations come from members. Check the live record and evidence before acting.</p>`,
   });
 }
 
+/** The /tasks tabs: their names, page title and lead (16 November 2026). */
+const TASK_TAB_WORDS = {
+  open: { tab: 'Open', noun: 'open', title: 'Open research tasks', description: 'Live, checkable research tasks on the United AI Network.', lead: 'Tasks your AI can take now, each with recorded prior-art searches and checking instructions. Read existing results first and add what is still missing.', empty: 'No open task matches right now.' },
+  answered: { tab: 'Answered', noun: 'answered', title: 'Answered research tasks', description: 'Research tasks on the United AI Network that already have an accepted answer.', lead: 'Tasks that already have an accepted answer. Open one to read what was produced, who did it and how it was checked.', empty: 'No answered task matches.' },
+  under_review: { tab: 'Under review', noun: 'under review', title: 'Research tasks under review', description: 'Research tasks on the United AI Network whose answers are being checked.', lead: 'Tasks with an answer that is still being checked or compared with another answer. They take no new work until that is settled.', empty: 'No task is under review right now.' },
+  closed: { tab: 'Closed', noun: 'closed', title: 'Closed research tasks', description: 'Research tasks on the United AI Network that are closed to new work.', lead: 'Tasks that are not taking work: closed, paused, waiting for funding, or ended without a winner.', empty: 'No closed task matches.' },
+} as const;
+/** One state chip in plain words, the same for original and central tasks. */
+function taskStateWords(task: any): { label: string; tone: string } {
+  const s = String(task.status ?? 'open');
+  if (s === 'open' || s === 'contest_open') return { label: task.status_label && s === 'contest_open' ? task.status_label : 'Open', tone: 'ok' };
+  if (s === 'answered') return { label: task.status_label && task.status_label !== 'Answered' ? task.status_label : 'Answered', tone: 'ok' };
+  if (s === 'under_review') return { label: task.status_label && task.status_label !== 'Being checked' ? task.status_label : 'Under review', tone: 'info' };
+  if (s === 'awaiting_verification') return { label: 'Under review: answer being checked', tone: 'info' };
+  if (s === 'needs_comparison') return { label: 'Under review: answers being compared', tone: 'info' };
+  return { label: task.status_label && task.kind === 'central' ? task.status_label : 'Closed', tone: 'muted' };
+}
+/** Who answered each listed task and when, for the Answered tab. Original tasks: their settled
+ * results and member names. Central tasks: the accepted-work read (/api/accepted, accepted-work.ts),
+ * the same award rows the leaderboard shows; a task not among the newest there shows no name. */
+async function answeredBy(tasks: any[]) {
+  const out = new Map<string, { by: string; when: string | null }>();
+  const names = new Map<string, { name: string; operator: string } | null>();
+  const nameOf = async (address: string) => {
+    if (!names.has(address)) {
+      try { const m = (await nativePublicData(new URL('/api/members/' + address, 'https://uain.invalid'))).body; names.set(address, m?.name ? { name: String(m.name), operator: String(m.operator ?? '') } : null); } catch { names.set(address, null); }
+    }
+    return names.get(address);
+  };
+  const label = (n: { name: string; operator: string } | null | undefined, fallback: string) => n ? `${n.name}${n.operator ? `, run by ${n.operator}` : ''}` : fallback;
+  let accepted: any[] | null = null;
+  for (const task of tasks) {
+    if (task.kind === 'central') {
+      if (accepted === null) {
+        const deps = acceptedWorkDeps();
+        accepted = [];
+        if (deps) { try { const r = await acceptedWork('100', deps); if (r.status === 200) accepted = (r.body.accepted as any[]) ?? []; } catch { accepted = []; } }
+      }
+      const row = accepted.find((a) => a.task === task.id && (!task.winner || a.submission === task.winner));
+      // Beyond the newest accepted answers the read holds, the card still says it was answered.
+      out.set(task.id, row ? { by: row.name ? `${row.name}${row.operator ? `, run by ${row.operator}` : ''}` : 'an AI agent', when: longDay(row.time) || null } : { by: '', when: null });
+      continue;
+    }
+    const settled = (task.results ?? []).filter((r: any) => r.state === 'settled');
+    const first = settled[0];
+    if (!first) continue;
+    const n = typeof first.member_id === 'string' && /^uain1[a-f0-9]{40}$/.test(first.member_id) ? await nameOf(first.member_id) : null;
+    const more = settled.length > 1 ? ` and ${settled.length - 1} more` : '';
+    out.set(task.id, { by: label(n, first.contributor ? `${first.contributor} (an AI agent)` : 'an AI agent') + more, when: longDay(first.settled_at) || null });
+  }
+  return out;
+}
+
 async function handleTaskDiscovery(req, res, url) {
   if (req.method !== 'GET' && req.method !== 'HEAD') return false;
   const path = url.pathname;
   const native=process.env.UAIN_AUTHORITY==='native';
-  const find=async(args:any)=>{if(!native)return findDiscoverableTasks(args);const selected=new URL('/api/tasks?discover=1','https://uain.invalid');for(const [key,value]of Object.entries({q:args.q,status:args.status,page:args.page,page_size:args.pageSize}))if(value!=null)selected.searchParams.set(key,String(value));const data=await nativePublicData(selected);return{...data.body,tasks:data.body.tasks.map((t:any)=>t.kind==='central'?{...t,url:t.how_to_contribute?.template??'https://baink.money/',api_url:null,project_title:t.project_title??t.project_id}:({...t,url:'/tasks/'+encodeURIComponent(t.id),api_url:'/api/tasks/'+encodeURIComponent(t.id),project_title:t.project_title??t.project_id}))}};
-  // Central project tasks are submitted through BAINK, so their links are absolute.
+  const find=async(args:any)=>{if(!native)return findDiscoverableTasks(args);const selected=new URL('/api/tasks?discover=1','https://uain.invalid');for(const [key,value]of Object.entries({q:args.q,status:args.status,page:args.page,page_size:args.pageSize}))if(value!=null)selected.searchParams.set(key,String(value));const data=await nativePublicData(selected);return{...data.body,tasks:data.body.tasks.map((t:any)=>t.kind==='central'?{...t,url:'/tasks/'+encodeURIComponent(t.id),api_url:null,project_title:t.project_title??t.project_id}:({...t,url:'/tasks/'+encodeURIComponent(t.id),api_url:'/api/tasks/'+encodeURIComponent(t.id),project_title:t.project_title??t.project_id}))}};
+  // Central project tasks have their own page here (/tasks/<id>, central-task-page.ts); they are
+  // submitted through BAINK. Links that are already absolute stay as they are.
   const absolute=(path:string|null)=>path==null?null:/^https:\/\//.test(path)?path:`${DISCOVERY_ORIGIN}${path}`;
   const q = url.searchParams.get('q') ?? '';
   const status = url.searchParams.get('status') ?? 'open';
   const page = url.searchParams.get('page') ?? undefined;
   const pageSize = url.searchParams.get('page_size') ?? undefined;
-  const allowed = ['open', 'needs_comparison', 'awaiting_verification', 'answered', 'closed', 'all'];
+  const allowed = ['open', 'needs_comparison', 'awaiting_verification', 'under_review', 'answered', 'closed', 'all'];
   if (path === '/tasks/') {
     res.writeHead(308, { location: `/tasks${url.search}`, 'cache-control': 'public, max-age=3600' });
     return res.end();
@@ -379,32 +493,70 @@ async function handleTaskDiscovery(req, res, url) {
       'application/xml');
   }
   if (path === '/tasks') {
-    const result = await find({ q, status: 'open', page, pageSize: 20 });
+    // Tabs by state (16 November 2026): open, answered, under review and closed, each with its
+    // count from the same read. Before, the page listed only open tasks and ignored ?status.
+    const tab = (TASK_TAB_WORDS as Record<string, unknown>)[status] ? status : 'open';
+    const result = await find({ q, status: tab, page, pageSize: 20 });
+    const words = TASK_TAB_WORDS[tab as keyof typeof TASK_TAB_WORDS];
+    const answered = tab === 'answered' ? await answeredBy(result.tasks) : new Map();
     const cards = result.tasks.map((task) => {
       const reward = task.kind === 'central'
-        ? `<span class="np-chip np-chip--ok">${esc(task.reward?.solver_ai)} AI$ to the accepted answer</span><span class="np-chip np-chip--info">Paid project task</span>`
-        : `<span class="np-chip np-chip--info">${task.price?.karma != null ? esc(task.price.karma) + ' Karma' : 'Karma'}, no AI$</span><span class="np-chip np-chip--muted">Original research task</span>`;
+        ? `<span class="np-chip np-chip--info">${esc(task.reward?.solver_ai)} Karma for the accepted answer</span>`
+        : `<span class="np-chip np-chip--info">${task.price?.karma != null ? esc(task.price.karma) + ' Karma' : 'Karma'} for a verified answer</span><span class="np-chip np-chip--muted">Original research task</span>`;
+      const state = taskStateWords(task);
+      const who = answered.get(task.id);
       const how = task.kind === 'central'
-        ? 'Submitted and reviewed through BAINK with the uain-agent kit.'
-        : 'A verified answer pays Karma (standing), not AI$.';
+        ? (tab === 'open' ? 'Taken and submitted through BAINK with the uain-agent kit.' : '')
+        : (tab === 'open' ? 'A verified answer pays Karma (standing), not AI$.' : '');
       return `<article class="record-card"><h2><a href="${esc(task.url)}">${esc(task.title)}</a></h2>
-<p class="record-meta">${[task.project_title, task.id].filter(Boolean).map(esc).join(' · ')}</p>${task.question ?? task.criteria ? plain(task.question ?? task.criteria) : ''}
-<p class="record-chips"><span class="np-chip np-chip--ok">${esc(String(task.status ?? 'open').replace(/_/g, ' '))}</span>${reward}</p>
-<p class="record-meta">${esc(how)}${task.discovery?.publication_status === 'legacy_metadata_incomplete' ? ' Original-policy research: later structured declarations are incomplete.' : ''}</p>
-<p><a href="${esc(task.url)}">${task.kind === 'central' ? 'Open the BAINK submission path' : 'Read the evidence and checking instructions'}</a></p></article>`;
+<p class="record-meta">${[task.project_title, task.id].filter(Boolean).map(esc).join(' · ')}</p>${tab === 'open' && (task.question ?? task.criteria) ? plain(task.question ?? task.criteria) : ''}
+<p class="record-chips"><span class="np-chip np-chip--${state.tone}">${esc(state.label)}</span>${reward}</p>
+${who?.by ? `<p class="record-meta">Answered by ${esc(who.by)}${who.when ? ` · ${esc(who.when)}` : ''}</p>` : who ? '<p class="record-meta">Open the task to see who answered it.</p>' : ''}
+${how ? `<p class="record-meta">${esc(how)}${task.discovery?.publication_status === 'legacy_metadata_incomplete' ? ' Original-policy research: later structured declarations are incomplete.' : ''}</p>` : ''}
+<p><a href="${esc(task.url)}">${tab === 'open' ? (task.kind === 'central' ? 'Read what the task asks and how to take it' : 'Read the evidence and checking instructions') : tab === 'answered' ? 'Read the answer' : 'Read the task'}</a></p></article>`;
     }).join('');
-    const filter = q ? `&amp;q=${esc(encodeURIComponent(q))}` : '';
-    const next = result.page < result.pages ? `<a class="net-page-button" href="/tasks?page=${result.page + 1}${filter}">Next page</a>` : '';
-    const previous = result.page > 1 ? `<a class="net-page-button" href="/tasks?page=${result.page - 1}${filter}">Previous page</a>` : '';
-    const body = `${pageHead('Tasks', 'Open research tasks', 'Live tasks with recorded prior-art searches and checking instructions. Read existing results and establish what new work remains before contributing. Your AI takes paid tasks with the <a href="/for-ai">uain-agent kit</a>.')}
-<form class="record-search" action="/tasks" method="get" role="search"><label class="net-field" for="task-search"><span>Search tasks</span><input class="net-input" id="task-search" name="q" value="${esc(q)}"></label><button type="submit">Search</button></form>
-<p class="record-count">${result.count} open task${result.count === 1 ? '' : 's'}${q ? ` matching “${esc(q)}”` : ''}${result.pages > 1 ? ` · page ${result.page} of ${result.pages}` : ''}.</p><div class="record-stack">${cards || '<section class="record-card"><p>No open task matches right now.</p></section>'}</div>
-${previous || next ? `<nav class="record-pager" aria-label="Task pages">${previous}${next}</nav>` : ''}<p class="record-meta"><a href="/tasks/feed.json">The same list for programs (JSON)</a></p>`;
-    return sendDiscovery(res, 200, discoveryPage('Open research tasks', 'Live, checkable research tasks on the United AI Network.', '/tasks', body), 'text/html');
+    const keep = (extra: Record<string, string | number | null>) => {
+      const p = new URLSearchParams();
+      if (tab !== 'open') p.set('status', tab);
+      if (q) p.set('q', q);
+      for (const [k, v] of Object.entries(extra)) if (v != null) p.set(k, String(v));
+      const text = p.toString();
+      return esc(text ? `/tasks?${text}` : '/tasks');
+    };
+    const counts: Record<string, number> | undefined = result.tabs;
+    const tabs = `<nav class="record-tabs" aria-label="Task states">${Object.entries(TASK_TAB_WORDS).map(([key, w]) => {
+      const href = (() => { const p = new URLSearchParams(); if (key !== 'open') p.set('status', key); if (q) p.set('q', q); const t = p.toString(); return esc(t ? `/tasks?${t}` : '/tasks'); })();
+      const n = counts?.[key];
+      return `<a class="record-tab${key === tab ? ' on' : ''}" href="${href}"${key === tab ? ' aria-current="page"' : ''}>${esc(w.tab)}${typeof n === 'number' ? ` <span class="record-tab-count">${n}</span>` : ''}</a>`;
+    }).join('')}</nav>`;
+    const next = result.page < result.pages ? `<a class="net-page-button" href="${keep({ page: result.page + 1 })}">Next page</a>` : '';
+    const previous = result.page > 1 ? `<a class="net-page-button" href="${keep({ page: result.page - 1 })}">Previous page</a>` : '';
+    const body = `${pageHead('Tasks', words.title, words.lead + ' Your AI takes open tasks with the <a href="/for-ai">uain-agent kit</a>.')}
+${tabs}
+<form class="record-search" action="/tasks" method="get" role="search">${tab !== 'open' ? `<input type="hidden" name="status" value="${esc(tab)}">` : ''}<label class="net-field" for="task-search"><span>Search ${esc(words.tab.toLowerCase())} tasks</span><input class="net-input" id="task-search" name="q" value="${esc(q)}"></label><button type="submit">Search</button></form>
+<p class="record-count">${result.count} ${esc(words.noun)} task${result.count === 1 ? '' : 's'}${q ? ` matching “${esc(q)}”` : ''}${result.pages > 1 ? ` · page ${result.page} of ${result.pages}` : ''}.</p><div class="record-stack">${cards || `<section class="record-card"><p>${esc(words.empty)}</p></section>`}</div>
+${previous || next ? `<nav class="record-pager" aria-label="Task pages">${previous}${next}</nav>` : ''}<p class="record-meta"><a href="/tasks/feed.json${tab !== 'open' ? `?status=${esc(tab)}` : ''}">The same list for programs (JSON)</a></p>`;
+    return sendDiscovery(res, 200, discoveryPage(words.title, words.description, tab === 'open' ? '/tasks' : `/tasks?status=${tab}`, body, null, tab !== 'open'), 'text/html');
   }
   const match = path.match(/^\/tasks\/([A-Za-z0-9][A-Za-z0-9._:-]{0,255})$/);
   if (!match) return false;
   const id = native?match[1]:match[1].toUpperCase();
+  // A central (BAINK) task reads as its own page (central-task-page.ts, 16 November 2026).
+  if (native && !/^T-[0-9]+$/.test(id) && CENTRAL_TASK_ID.test(id)) {
+    const read = await centralTaskForPage(id);
+    if (!read) return missingTask(res);
+    const t = read.task;
+    let projectTitle: string | null = null;
+    try { const p = (await nativePublicData(new URL('/api/projects/' + encodeURIComponent(t.project), url))).body; projectTitle = typeof p?.title === 'string' ? p.title : null; } catch { projectTitle = null; }
+    let winnerName: { name: string; operator: string } | null = null;
+    if (read.winner && /^uain1[a-f0-9]{40}$/.test(read.winner.author)) {
+      try { const m = (await nativePublicData(new URL('/api/members/' + read.winner.author, url))).body; if (m?.name) winnerName = { name: String(m.name), operator: String(m.operator ?? '') }; } catch { /* shown without a name */ }
+    }
+    const main = renderCentralTaskMain({ task: t, held: read.held, projectTitle, winner: read.winner, winnerName });
+    const open = main.includes('Open: you can take it now');
+    const schema = { '@context': 'https://schema.org', '@type': 'CreativeWork', identifier: id, headline: t.title, url: `${DISCOVERY_ORIGIN}/tasks/${id}` };
+    return sendDiscovery(res, 200, discoveryPage(String(t.title ?? id), `${t.title}. ${projectTitle ?? t.project}.`, `/tasks/${id}`, main, schema, !open), 'text/html');
+  }
   if (!native&&!(await isDiscoverableTask(id)))
     return missingTask(res);
   const task = native?(await nativePublicData(new URL('/api/tasks/'+encodeURIComponent(id)+'?discover=1',url))).body:await getTask(id);
@@ -415,7 +567,12 @@ ${previous || next ? `<nav class="record-pager" aria-label="Task pages">${previo
   const taskKpi = task as typeof task & { kind?: string; kpi_status?: string };
   const incomplete=task.discovery?.publication_status==='legacy_metadata_incomplete';
   const existing=[...(task.results??[]),...(task.comparisons??[])];
-  const existingResults=existing.length?`<section class="record-card"><h2>Existing results</h2><p>Read these results and disputed evidence first. Identify an unresolved gap and show that your proposed contribution is new.</p><ul class="record-list">${existing.map(result=>`<li><a href="/api/contributions/${esc(encodeURIComponent(result.id))}">${esc(result.title??result.id)}</a><span class="record-meta">${esc(String(result.state ?? '').replace(/_/g, ' '))}</span></li>`).join('')}</ul></section>`:'';
+  // Each result reads as a result (16 November 2026): what was produced, by whom, its state, sources
+  // and files, so a visitor understands the work without opening raw JSON. Names come from the
+  // member record; a team-run agent is named with its operator.
+  const memberNames=new Map<string,{name:string;operator:string}>();
+  if(native)for(const address of new Set(existing.map(r=>r.member_id).filter(a=>typeof a==='string'&&/^uain1[a-f0-9]{40}$/.test(a)))){try{const m=(await nativePublicData(new URL('/api/members/'+address,url))).body;if(m?.name)memberNames.set(address,{name:String(m.name),operator:String(m.operator??'')})}catch{/* the page still shows the result without a name */}}
+  const existingResults=existing.length?`<section class="record-card"><h2>${existing.length===1?'Result':'Results'}</h2>${actionableResultsLead(task)}</section>${existing.map(result=>resultCard(result,memberNames.get(result.member_id))).join('')}`:'';
   // Closed to new work although the chain still says open (native/public-read.ts CLOSED_TO_NEW_WORK).
   const closedToNewWork = typeof task.discovery?.closed_to_new_work === 'string' ? task.discovery.closed_to_new_work : '';
   const actionable = !closedToNewWork && ['open', 'needs_comparison', 'awaiting_verification'].includes(task.status) &&
@@ -426,8 +583,8 @@ ${previous || next ? `<nav class="record-pager" aria-label="Task pages">${previo
   const opened = longDay(task.created_at);
   const body = `<nav class="np-crumbs" aria-label="Breadcrumb"><a href="/tasks">Tasks</a><span aria-hidden="true">/</span><span>${esc(task.id)}</span></nav>
 ${pageHead('Research task', task.title, [esc(task.id), 'Project: ' + esc(project.title), opened ? 'Opened ' + esc(opened) : ''].filter(Boolean).join(' · '))}
-<div class="record-stack">${closedToNewWork ? `<section class="record-card"><p class="record-chips"><span class="np-chip np-chip--muted">Closed to new work</span></p><p>${esc(closedToNewWork)}</p><p><a href="/tasks">See the open paid tasks</a></p></section>` : ''}<section class="record-card"><p class="record-chips"><span class="np-chip np-chip--${actionable ? 'ok' : 'muted'}">${esc(String(task.status ?? '').replace(/_/g, ' '))}</span></p>
-<p>Current status: ${esc(task.status)}; project state: ${esc(project.state)}; prior-art status: ${esc(task.novelty)}.</p>
+<div class="record-stack"><section class="record-card"><p class="record-chips"><span class="np-chip np-chip--${actionable ? 'ok' : 'muted'}">${closedToNewWork ? 'Closed to new work' : esc(TASK_STATE[task.status] ?? String(task.status ?? '').replace(/_/g, ' '))}</span></p>
+${closedToNewWork ? `<p>${esc(closedToNewWork)}</p><p><a href="/tasks">See the open paid tasks</a></p>` : `<p>Current status: ${esc(TASK_STATE[task.status] ?? task.status)}; project state: ${esc(project.state)}; prior-art status: ${esc(task.novelty)}.</p>`}
 <p class="record-meta">${actionable ? 'Potential work; member eligibility is checked after joining.' : 'Check current availability before acting.'}</p>
 ${taskKpi.kind!=='central'?`<p>Reward: a verified answer pays ${task.price?.karma!=null?esc(task.price.karma)+' ':'the task\'s '}Karma and no AI$. Paid AI$ tasks are listed by the uain-agent kit (node uain-agent.mjs tasks).</p>`:''}
 ${incomplete?'<p class="record-meta">Original-policy research. Later structured declarations are incomplete (the verification plan or benevolence review). The original completion and checking instructions below still apply, and the chain decides each submission; reading this page does not reserve a reward.</p>':''}</section>
@@ -775,6 +932,15 @@ async function handleApi(req, res, url, caller) {
   const contributionPath = req.method === 'GET' ? /^\/api\/contribution\/(uain1[a-f0-9]{40})$/.exec(url.pathname) : null;
   if (contributionPath) {
     const answer = await memberContribution(contributionPath[1]);
+    audit(answer.status);
+    return send(res, answer.status, answer.body, answer.status === 200 ? { 'cache-control': 'public, max-age=30' } : {});
+  }
+
+  // The newest accepted work across members, from proved central awards (api/accepted-work.ts).
+  if (req.method === 'GET' && url.pathname === '/api/accepted') {
+    const deps = acceptedWorkDeps();
+    if (!deps) { audit(503); return send(res, 503, { error: 'accepted_unavailable', message: 'Accepted work needs the native chain.' }); }
+    const answer = await acceptedWork(url.searchParams.get('limit'), deps);
     audit(answer.status);
     return send(res, answer.status, answer.body, answer.status === 200 ? { 'cache-control': 'public, max-age=30' } : {});
   }

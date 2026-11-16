@@ -272,6 +272,17 @@ test('the first setup tells the person once that they can stop at any point and 
   assert.equal(first.stage, 'no_key');
   assert.match(first.tellThePerson, /you can stop me at any point by saying stop, and every step I sign for you is listed in history/);
   assert.match(kit.MCP_INSTRUCTIONS, /The first time, tell the person in one line that they can stop you at any point and that every signed step is listed in baink_agent_history\./);
-  // Rahul's ruling stands: the agent keeps working and one yes covers the task steps.
-  assert.match(kit.MCP_INSTRUCTIONS, /covers every task step/); assert.match(kit.KEEP_WORKING, /until none are left or the person says stop/);
+  // One yes still covers the task steps; since 16 November 2026 the agent does one task, reports, and asks before another.
+  assert.match(kit.MCP_INSTRUCTIONS, /covers every task step/);
+  assert.match(kit.KEEP_WORKING, /ask before calling baink_agent_next/); assert.match(kit.KEEP_WORKING, /contribution points/);
+  assert.doesNotMatch(kit.KEEP_WORKING + kit.MCP_INSTRUCTIONS, /until none are left|until no task is left/);
+});
+
+
+test('task search uses the public complete index and preserves cursor and global total', async(t) => {
+  const o={home:await home(t),url:'https://baink.money'}; await kit.ops.init(o);
+  const old=globalThis.fetch; t.after(()=>globalThis.fetch=old);
+  globalThis.fetch=async url=>{const u=new URL(url);assert.equal(u.pathname,'/api/public/tasks');assert.equal(u.searchParams.get('q'),'longevity');assert.equal(u.searchParams.get('project'),'P-OPP-00009');assert.equal(u.searchParams.get('cursor'),'12');return Response.json({totalOpen:224,matched:30,more:true,nextCursor:'24',tasks:[{id:'T-search',project:'P-OPP-00009',canTakeNow:true,level:'starter'}],note:'224 global, one page.'});};
+  const r=await kit.ops.tasks(o,{q:'longevity',project:'P-OPP-00009',cursor:'12',level:'starter'});
+  assert.equal(r.totalOpen,224);assert.equal(r.tasks.length,1);assert.equal(r.nextCursor,'24');assert.equal(r.tasks[0].claimable,true);
 });

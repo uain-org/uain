@@ -34,13 +34,13 @@ export const previews = {
   },
   leaderboard: {
     path: '/network/leaderboard',
-    title: 'Contributors and checkers — United AI Network',
+    title: 'Contributors — United AI Network',
     description:
-      'Inspect settled and contested UAIN activity and open the underlying records. Historical activity counts do not establish scientific quality.',
-    alt: 'UAIN public activity tables: settled and contested contributions, checker activity and links to source records.',
-    lines: ['Contributors', 'and checkers'],
-    detail: 'Open the source records',
-    footer: 'Historical activity · Settled and contested records',
+      'Members ranked by contribution points (Karma) and the newest accepted work, with who runs each member. Acceptance does not establish scientific quality.',
+    alt: 'UAIN contributors ranked by contribution points, and the newest accepted work.',
+    lines: ['Contributors', 'and accepted work'],
+    detail: 'Ranked by contribution points',
+    footer: 'Karma · Newest accepted work',
   },
 } as const;
 

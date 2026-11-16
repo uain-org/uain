@@ -31,6 +31,8 @@ export async function handleNativeAuthorityRoutes(req:any,res:any,url:URL,send:a
  res.setHeader('x-uain-authority','native');
  if(req.method==='GET'&&(/^\/api\/(ledger|events)(\/|$)/.test(url.pathname))){res.setHeader('x-uain-authority','legacy-archive');return false}
  if(req.method==='GET'&&/^\/api\/contribution\/uain1[a-f0-9]{40}$/.test(url.pathname))return false;
+ // Accepted work across members (accepted-work.ts) is itself a native read: proved central awards.
+ if(req.method==='GET'&&url.pathname==='/api/accepted')return false;
  if(req.method==='GET'&&['/api/health','/api/ready','/api/build','/api/status','/api/research/search','/api/research/status'].includes(url.pathname))return false;
  if(req.method==='GET'&&url.pathname==='/api/descriptor'){
   send(res,200,{

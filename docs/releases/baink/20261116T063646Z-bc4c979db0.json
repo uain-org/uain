@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "component": "baink",
+  "release_id": "20261116T063646Z-bc4c979db0",
+  "version": "0.3.103",
+  "source_commit": "168932f45b2d1ad5f6b03d18d6b29f04c0739920",
+  "deployed_at": "2026-11-16T06:37:14Z",
+  "prior": "20261116T060044Z-3a35878ba3",
+  "status": "publicly-verified",
+  "evidence": [
+    "CHANGELOG.md#baink-03103-release-20261116",
+    "CHANGELOG.md#admin-posts-tabs-20261116"
+  ],
+  "note": "Admin posts page tabs (Draft/Posted with counts). Admin page only. 180 runtime/32 preview files, archive 67be34b0. Live: release header, review health ready, both tabs, platform filter and back link in a real browser."
+}

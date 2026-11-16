@@ -244,18 +244,26 @@ ${r.draft ? `<div class="draft"><div class="dhead"><span>Draft reply</span>${cop
 <script>${COPY_JS}</script></main>`;
   }
 
+  // Posts are split into tabs by status (Draft, Ready only when it has posts, Posted). Tabs and
+  // platform filters are plain links that keep each other's value, so no script is needed.
   function postsPage(session, query) {
     const platform = PLATFORM_NAMES[query.get("platform")] ? query.get("platform") : "";
     const all = campaigns.posts().filter((p) => !platform || p.platform === platform);
-    const filters = [["", "All"], ...Object.entries(PLATFORM_NAMES)].map(([k, v]) => `<a href="/admin/posts${k ? `?platform=${k}` : ""}"${k === platform ? ' class="on"' : ""}>${v}</a>`).join("");
-    const section = (status) => {
-      const list = all.filter((p) => p.status === status);
-      if (!list.length) return "";
-      return `<h2>${STATUS_NAMES[status]} <span class="pct">${list.length}</span></h2><table class="posts"><thead><tr><th>Post</th><th>Platform</th><th>Where</th><th>Updated</th><th></th></tr></thead><tbody>${list.map((p) => `<tr><td><a href="/admin/posts/${esc(p.code)}">${esc(p.label)}</a><div class="code">${esc(p.code)}</div></td><td>${esc(PLATFORM_NAMES[p.platform] ?? p.platform)}</td><td>${esc(p.where)}</td><td>${esc((p.updatedAt ?? "").slice(0, 10))}</td><td>${p.url ? `<a href="${esc(p.url)}" rel="noopener noreferrer" target="_blank">open ↗</a>` : ""}</td></tr>`).join("")}</tbody></table>`;
-    };
-    const body = ["draft", "ready", "posted"].map(section).join("") || `<p class="note">No posts yet. <a href="/admin/posts/new">Write the first one</a>.</p>`;
+    const counts = Object.fromEntries(Object.keys(STATUS_NAMES).map((k) => [k, all.filter((p) => p.status === k).length]));
+    const shown = Object.keys(STATUS_NAMES).filter((k) => k !== "ready" || counts.ready);
+    const asked = query.get("status");
+    const status = shown.includes(asked) ? asked : shown.find((k) => counts[k]) ?? "draft";
+    const href = (s, pf) => `/admin/posts?${new URLSearchParams({ status: s, ...(pf ? { platform: pf } : {}) })}`;
+    const tabs = `<nav class="tabs" aria-label="Post status">${shown.map((k) => `<a href="${href(k, platform)}"${k === status ? ' class="on" aria-current="page"' : ""}>${STATUS_NAMES[k]} <span class="count">${counts[k]}</span></a>`).join("")}</nav>`;
+    const filters = [["", "All platforms"], ...Object.entries(PLATFORM_NAMES)].map(([k, v]) => `<a href="${href(status, k)}"${k === platform ? ' class="on"' : ""}>${v}</a>`).join("");
+    const list = all.filter((p) => p.status === status).sort((a, b) => String(b.updatedAt ?? "").localeCompare(String(a.updatedAt ?? "")));
+    const row = (p) => `<tr><td class="ptitle"><a href="/admin/posts/${esc(p.code)}">${esc(p.label || p.code)}</a>${p.title ? `<div class="sub">${esc(p.title)}</div>` : ""}</td><td>${esc(PLATFORM_NAMES[p.platform] ?? p.platform)}</td><td>${esc(p.where)}</td><td class="code">${esc(p.code)}</td><td class="date">${esc((p.updatedAt ?? "").slice(0, 10))}</td><td>${p.url ? `<a href="${esc(p.url)}" rel="noopener noreferrer" target="_blank">open ↗</a>` : ""}</td></tr>`;
+    const empty = all.length
+      ? `<p class="note">No ${STATUS_NAMES[status].toLowerCase()} posts${platform ? ` on ${esc(PLATFORM_NAMES[platform])}` : ""}.</p>`
+      : `<p class="note">No posts yet. <a href="/admin/posts/new">Write the first one</a>.</p>`;
+    const table = list.length ? `<table class="posts"><thead><tr><th>Post</th><th>Platform</th><th>Where</th><th>Code</th><th>Updated</th><th></th></tr></thead><tbody>${list.map(row).join("")}</tbody></table>` : empty;
     const notice = query.get("deleted") === "1" ? `<p class="ok">Post deleted.</p>` : "";
-    return `${nav(session, "posts")}<main>${notice}<div class="filters">${filters}</div>${body}</main>`;
+    return `${nav(session, "posts")}<main>${notice}${tabs}<div class="filters">${filters}</div>${table}</main>`;
   }
 
   const options = (map, selected) => Object.entries(map).map(([k, v]) => `<option value="${k}"${k === selected ? " selected" : ""}>${v}</option>`).join("");
@@ -266,6 +274,7 @@ ${r.draft ? `<div class="draft"><div class="dhead"><span>Draft reply</span>${cop
     const copy = (id, text) => `<button type="button" class="copy" data-copy="${id}">Copy</button><textarea id="${id}" hidden readonly>${esc(text)}</textarea>`;
     return `${nav(session, "posts")}<main class="edit">
 ${message ? `<p class="msg">${esc(message)}</p>` : ""}
+${isNew ? "" : `<p class="back"><a href="/admin/posts?status=${esc(p.status)}">← ${esc(STATUS_NAMES[p.status] ?? "Posts")}</a></p>`}
 <h2>${isNew ? "New post" : esc(p.label)}</h2>
 ${isNew ? "" : `<div class="link"><span>Link for this post</span><code>${esc(link)}</code>${copy("c-link", link)}<a href="${esc(link)}/llms.txt" target="_blank">what agents see ↗</a> <a href="${esc(link)}" target="_blank">what people see ↗</a></div><p class="note">Older link, same code and count: <code>${esc(bainkGoLink(origin, p.code))}</code></p>`}
 <form method="post" action="${isNew ? "/admin/posts" : `/admin/posts/${esc(p.code)}`}">
@@ -418,13 +427,14 @@ ${isNew ? "" : `<p class="note">Code <code>${esc(p.code)}</code> never changes. 
       const session = await current(req);
       if (!session) return page(res, 303, "Log in", "", { Location: "/admin" }), true;
       await form(req);
+      const was = campaigns.post(deletePath[1])?.status;
       try {
         await campaigns.deletePost(deletePath[1], { by: session.email });
       } catch (error) {
         if (error.code !== "post_missing") throw error;
         return page(res, 404, "Not found", `${nav(session, "posts")}<main><p class="msg">No such post.</p></main>`), true;
       }
-      return page(res, 303, "Deleted", "", { Location: "/admin/posts?deleted=1" }), true;
+      return page(res, 303, "Deleted", "", { Location: `/admin/posts?${STATUS_NAMES[was] ? `status=${was}&` : ""}deleted=1` }), true;
     }
     if (req.method === "GET" && (path === "/admin" || path === "/admin/posts" || path === "/admin/posts/new" || postPath)) {
       const session = await current(req);
@@ -511,4 +521,7 @@ select:disabled{background:#eef2f7}form.delete{margin-top:28px;padding-top:16px;
 .reply{background:#fff;border:1px solid #e3e8ef;border-radius:8px;padding:12px 14px;margin:10px 0}.rhead a{font-weight:600}.why{color:#4a5a70;margin:6px 0}
 .draft{margin-top:10px}.dhead{display:flex;gap:10px;align-items:center;color:#6b7a90;font-size:13px}.draft pre{white-space:pre-wrap;font:inherit;background:#f6f8fb;border:1px solid #e3e8ef;border-radius:6px;padding:10px;margin:6px 0 0}
 .ractions{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}.ractions form{display:flex;gap:8px;align-items:center}.ractions input{margin:0;min-width:320px}button.ghost{background:#e6ecf3;color:#14213d}
-details{margin:18px 0}details summary{cursor:pointer;font-weight:600}.guide{background:#fff;border:1px solid #e3e8ef;border-radius:8px;padding:12px 16px}.guide ul{margin:6px 0 10px;padding-left:20px}.guide li{margin:3px 0}`;
+details{margin:18px 0}details summary{cursor:pointer;font-weight:600}.guide{background:#fff;border:1px solid #e3e8ef;border-radius:8px;padding:12px 16px}.guide ul{margin:6px 0 10px;padding-left:20px}.guide li{margin:3px 0}
+.tabs{display:flex;gap:4px;border-bottom:2px solid #d5dde8;margin:4px 0 14px}.tabs a{padding:10px 18px;margin-bottom:-2px;border-bottom:2px solid transparent;color:#4a5a70;text-decoration:none;font-weight:600}.tabs a.on{color:#0b2a4a;border-bottom-color:#0a9be0}.tabs a:hover{color:#0b2a4a}.tabs .count{display:inline-block;min-width:20px;padding:0 6px;margin-left:4px;border-radius:10px;background:#e6ecf3;color:#4a5a70;font-size:12px;text-align:center}.tabs a.on .count{background:#0a9be0;color:#fff}
+table.posts{margin-top:14px}table.posts td{vertical-align:top}td.ptitle a{font-weight:600;color:#0b4f86;text-decoration:none}td.ptitle a:hover{text-decoration:underline}td.ptitle .sub{color:#4a5a70;font-size:13px;margin-top:2px;max-width:46ch}td.code{font:12px monospace;color:#4a5a70;white-space:nowrap}td.date{white-space:nowrap;color:#6b7a90;font-size:13px}
+a:focus-visible{outline:2px solid #0a9be0;outline-offset:2px}.back{margin:0 0 4px}.back a{color:#4a5a70;text-decoration:none;font-size:14px}`;

@@ -254,8 +254,17 @@ export function realProblems(
   const who = new Map(places.map((p) => [p.id, p]));
   const then = asOf ?? Number.POSITIVE_INFINITY;
   const before = (iso: string) => Date.parse(iso) <= then;
+  // A central project has no opening date in the public record; it shows from its first
+  // accepted work, dated by that work's block time (16 November 2026). Without either it stays
+  // off the map rather than being dated "now".
+  const firstWork = new Map<string, string>();
+  for (const f of findings) {
+    const known = firstWork.get(f.project_id);
+    if (f.submitted_at && (!known || f.submitted_at < known)) firstWork.set(f.project_id, f.submitted_at);
+  }
   return projects
-    .filter((project) => before(project.opened_at))
+    .map((project) => (project.opened_at ? project : { ...project, opened_at: firstWork.get(project.id) ?? '' }))
+    .filter((project) => !!project.opened_at && before(project.opened_at))
     .map((project) => {
       const mine = findings
         .filter((f) => f.project_id === project.id && before(f.submitted_at))

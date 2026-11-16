@@ -139,6 +139,8 @@ case "$suite" in
   npm_ci_rebuild
   npm_ci_rebuild --prefix services/pilot
   timed build npx tsc --noEmit -p tsconfig.json
+  # The site's own data readers (leaderboard: Karma from the member list, accepted work).
+  node --test scripts/leaderboard.test.mjs scripts/earth-accepted.test.mjs
   timed build npm run build
   ;;
  native-chain)

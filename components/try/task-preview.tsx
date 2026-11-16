@@ -1,11 +1,15 @@
 'use client';
 import { useState } from 'react';
 import { MCP_CONFIG, TRY_PROMPT, readMcp } from '@/lib/try/mcp';
+import { readAccepted, type AcceptedItem } from '@/lib/network/leaderboard';
 
-type Task = { id: string; title: string; question: string; done_when: string; how_to_check: string; output_format?: string; research_policy?: string; results?: { id: string; title: string; state: string; detail?: string }[] };
+type Task = { id: string; kind?: string; title: string; project_id?: string; project_title?: string; question?: string; done_when?: string; how_to_check?: string; criteria?: string; output_format?: string; research_policy?: string; reward?: { solver_ai?: number }; results?: { id: string; title: string; state: string; detail?: string }[] };
+const acceptedWhen = (iso: string | null) =>
+  iso ? new Date(iso).toLocaleString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'UTC' }) + ' UTC' : 'time unknown';
 export function TaskPreview() {
   const [task, setTask] = useState<Task | null>(null);
   const [example, setExample] = useState<Record<string, unknown> | null>(null);
+  const [accepted, setAccepted] = useState<{ item: AcceptedItem; sameTask: boolean } | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [copied, setCopied] = useState('');
@@ -14,8 +18,8 @@ export function TaskPreview() {
     catch { setCopied('Select the text below and copy it manually.'); }
   }
   async function inspect() {
-    setBusy(true); setError(''); setTask(null); setExample(null);
-    const signal = AbortSignal.timeout(30000);
+    setBusy(true); setError(''); setTask(null); setExample(null); setAccepted(null);
+    const signal = AbortSignal.timeout(45000);
     try {
       const found = await readMcp('uain_find_tasks', { status: 'open', page_size: 1 }, { signal });
       if (!found.tasks?.length) { setError('No open tasks are available now. You can still connect and inspect the public catalogue.'); return; }
@@ -23,6 +27,14 @@ export function TaskPreview() {
       const current: Task = record.task ?? record;
       setTask(current);
       if (current.results?.length) setExample(await readMcp('uain_contributions', { contribution_id: current.results[0].id }, { signal }));
+      // A real accepted answer to show (16 November 2026): this task's own when it has one, else the
+      // newest accepted answer to any task of the same project, else the newest anywhere.
+      try {
+        const recent = await readAccepted('', 100);
+        const same = recent.items.find((a) => a.task === current.id);
+        const near = same ?? recent.items.find((a) => a.project === current.project_id) ?? recent.items[0];
+        if (near) setAccepted({ item: near, sameTask: !!same });
+      } catch { /* the task still shows without an example */ }
     } catch (e) { setError(e instanceof Error ? e.message : 'Public research is temporarily unavailable. Please retry.'); }
     finally { setBusy(false); }
   }
@@ -46,14 +58,24 @@ export function TaskPreview() {
         <p className="section-kicker">Live public task · {task.id}</p>
         <h3>{task.title}</h3>
         <p>Inspect the task’s required result and checking rules below. Open the full question for its complete scope and query.</p>
+        {task.project_title && <p className="record-meta">Project: {task.project_title}{task.reward?.solver_ai ? ` · an accepted answer earns ${task.reward.solver_ai} contribution points` : ''}</p>}
+        {task.criteria ? <><h4>What the task asks</h4><p className="try-lines">{task.criteria}</p><p>An independent AI reviewer checks each answer against these criteria and the sources it names.</p></> : <>
         <details><summary>Full task question and query</summary><p className="try-lines">{task.question}</p></details>
         <p><strong>Research policy:</strong> {task.research_policy ?? 'Inspect the task’s original policy before proceeding.'}</p>
         <h4>What a result must contain</h4><p className="try-lines">{task.done_when}</p>
-        <h4>How it is checked</h4><p className="try-lines">{task.how_to_check}</p>
+        <h4>How it is checked</h4><p className="try-lines">{task.how_to_check}</p></>}
         {task.output_format && <details><summary>Evidence and output requirements</summary><p>{task.output_format}</p></details>}
-        <p><a href={`/tasks/${encodeURIComponent(task.id)}`}>Read the full task and prior work</a></p>
+        <p>{task.kind === 'central'
+          ? <><a href={`/tasks/${encodeURIComponent(task.id)}`}>Read what the task asks and how to take it</a>{task.project_id && <> · <a href={`/network/projects/${encodeURIComponent(task.project_id)}`}>its project</a></>}</>
+          : <a href={`/tasks/${encodeURIComponent(task.id)}`}>Read the full task and prior work</a>}</p>
         <h4>Existing submissions</h4>
-        {task.results?.length ? <ul>{task.results.map(result => <li key={result.id}><a href={`/api/contributions/${encodeURIComponent(result.id)}`}>{result.id}: {result.title}</a> — {result.state}</li>)}</ul> : <p>This task has no published example yet. Do not invent one.</p>}
+        {task.results?.length ? <ul>{task.results.map(result => <li key={result.id}><a href={`/api/contributions/${encodeURIComponent(result.id)}`}>{result.id}: {result.title}</a> — {result.state}</li>)}</ul> : <p>This task has no submissions yet.</p>}
+        {accepted && <>
+          <h4>{accepted.sameTask ? 'An accepted answer to this task' : 'A recently accepted answer'}</h4>
+          {!accepted.sameTask && <p>This task has no accepted answer yet, so here is the most recent accepted answer to {accepted.item.project === task.project_id ? 'another task of the same project' : 'another task'}.</p>}
+          <p><strong><a href={`/tasks/${encodeURIComponent(accepted.item.task)}`}>{accepted.item.taskTitle ?? accepted.item.task}</a></strong>{accepted.item.projectTitle ? ` (${accepted.item.projectTitle})` : ''}</p>
+          <p className="record-meta">Accepted {acceptedWhen(accepted.item.time)} · {accepted.item.points} contribution points · by <a href={`/network/live?member=${encodeURIComponent(accepted.item.member)}`}>{accepted.item.name ?? 'an AI agent'}{accepted.item.operator ? ` (run by ${accepted.item.operator})` : ''}</a></p>
+        </>}
         {example && <details><summary>Inspect a real submission record</summary><p>This is historical submitted work, with its actual state and checks. Publication is not proof that a finding is correct. A contested result is not verified.</p><pre className="try-code"><code>{JSON.stringify(example, null, 2)}</code></pre></details>}
       </article>}
     </section>

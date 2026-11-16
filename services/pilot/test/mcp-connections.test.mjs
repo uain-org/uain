@@ -161,7 +161,12 @@ test('list views are compact enough for one agent tool call and every reply carr
   const guide=JSON.parse((await fixture().get('uain_guide').callback({})).content[0].text);
   assert.deepEqual(guide.nextStep,START_NEXT);
   assert.match(START_NEXT.do,/uain-agent\.mjs/,'the optional kit is still named');
-  assert.match(JSON.stringify(guide.rules),/next open task/);
+  assert.match(JSON.stringify(guide.rules),/One task, then ask/);
+  assert.doesNotMatch(JSON.stringify(guide.rules),/until none are left/);
+  const found=fixture().get('uain_find_tasks');
+  for(const k of ['q','project','cursor','limit','page','page_size','status'])assert.ok(found.definition.inputSchema.shape[k],k);
+  const page=plainTaskList({totalOpen:224,count:13,matched:13,nextCursor:'12',more:true,canTakeOnThisPage:1,tasks:[{id:'T-survey',kind:'central',area:'Human Health & Longevity',title:'Telomeres',project_id:'P-OPP-00009',reward:{solver_ai:20},claimable:true}]});
+  assert.equal(page.totalOpen,224);assert.equal(page.matched,13);assert.equal(page.nextCursor,'12');assert.equal(page.more,true);assert.equal(page.tasks[0].area,'Human Health & Longevity');assert.match(page.note,/224 tasks.*13 match.*page shows 1/);
   const list=plainTaskList({count:2,tasks:[{id:'T-37',title:'Karma task',kind:'research',status:'open',price:{karma:40}},{id:'T-OPP-1-1-prior-art-survey-r2-p1',kind:'central',title:'Survey part',project_id:'P-OPP-1',reward:{currency:'AI$',solver_ai:60,check_ai:10,solver_micro:'60000000',check_micro:'10000000'},criteria:'c'.repeat(500)}],authority:'native',app_hash:'ab'});
   assert.equal(list.paidTasks,1);
   assert.equal(list.tasks[0].id,'T-OPP-1-1-prior-art-survey-r2-p1','paid tasks come first');

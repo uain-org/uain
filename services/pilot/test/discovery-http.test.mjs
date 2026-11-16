@@ -150,7 +150,7 @@ test('a closed task leaves open discovery and remains a current historical page'
   assert.equal(closed.count, 1);
   assert.equal(closed.tasks[0].status, 'closed');
   assert.equal((await (await t.http(`/api/tasks/${task.id}`)).json()).status, closed.tasks[0].status);
-  assert.match(await (await t.http(`/tasks/${task.id}`)).text(), /Current status: closed/);
+  assert.match(await (await t.http(`/tasks/${task.id}`)).text(), /Current status: Closed;/);
   assert.doesNotMatch(await (await t.http('/tasks/sitemap-1.xml')).text(), new RegExp(task.id));
 });
 

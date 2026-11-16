@@ -81,10 +81,13 @@ export function createPublicRoutes({ publicConfig, centralEarning = null, public
         return ctx.send(200, { taskId: surveyTemplatePath[1], ...template });
       }
       if (method === "GET" && path === "/api/public/tasks" && publicTasks) {
-        // Public and unsigned: the newest open paid tasks (public-tasks.mjs). One fixed page, no cursor.
-        only(ctx.query(), []);
-        const list = await publicTasks.list();
-        if (list.status !== "available") fail(503, "tasks_unavailable", list.note);
+        // Public and unsigned: search and page the shared proved open-task snapshot.
+        const query = ctx.query();
+        only(query, ['q', 'project', 'cursor', 'limit']);
+        let list;
+        try { list = await publicTasks.list({ ...query, ...(query.limit === undefined ? {} : { limit: Number(query.limit) }) }); }
+        catch (error) { if (error?.code === 'invalid_query') fail(400, 'invalid_query', error.message); throw error; }
+        if (list.status !== "available") { if (list.warming) return ctx.send(503, { ...list, error: { code: "tasks_warming", message: list.note } }); fail(503, "tasks_unavailable", list.note); }
         return ctx.send(200, list);
       }
       const contributionPath = path.match(/^\/api\/public\/contribution\/(uain1[a-f0-9]{40})$/);

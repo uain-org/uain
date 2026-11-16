@@ -63,6 +63,7 @@ test('native authority lets the build id through like health and readiness', asy
     assert.equal(await handleNativeAuthorityRoutes({ method: 'GET' }, res, at('/api/health'), send), false);
     // The member profile's contribution view (P0-3, 12 November 2026) passes too; a malformed address does not.
     assert.equal(await handleNativeAuthorityRoutes({ method: 'GET' }, res, at('/api/contribution/uain1' + 'a'.repeat(40)), send), false);
+    assert.equal(await handleNativeAuthorityRoutes({ method: 'GET' }, res, at('/api/accepted'), send), false, 'accepted work is a native read (16 November 2026)');
     assert.deepEqual(sent, []);
     assert.equal(await handleNativeAuthorityRoutes({ method: 'GET' }, res, at('/api/contribution/uain1xyz'), send), true);
     sent.length = 0;
