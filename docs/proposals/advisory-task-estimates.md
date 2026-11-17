@@ -1,5 +1,7 @@
 # Advisory estimates in project task briefs
 
+**Status: held proposal; documentation only. Do not merge or activate until the open wording and acceptance requirements are resolved.**
+
 Status: recovered draft; not active runtime behavior.
 
 This preserves unfinished guidance for the project CEO and manager prompts. The
