@@ -34,3 +34,9 @@ The CI skips comprise six valuation comparisons whose documents are absent from 
 - [ ] Check post-rollout map acceptance, exclusions, impressions and citations at 7/14/28 days; no automations scheduled.
 
 Owner-approved legal/contact pages and additional research case studies remain optional future content, not invented placeholders in this release.
+
+## Recovered proposal — 17 November 2026
+
+- [ ] [Advisory task estimates](docs/proposals/advisory-task-estimates.md): held draft;
+  reconcile with the current task-brief contract and qualify controlled model
+  acceptance before any prompt activation. No runtime implementation is added.

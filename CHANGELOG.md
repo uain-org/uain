@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### 2026-11-17 — recovered advisory-estimate draft
+
+Preserved an unfinished CEO/manager estimate proposal as a held document, separate
+from the active prompts. It retains the need to reconcile newer task-brief rules
+and obtain controlled model acceptance. No runtime code, financial authority,
+retired client surface, release or existing hold changed. Reviewed source and
+current prompt differences, local links, whitespace and public-export safety.
+
 ### 2026-11-17
 
 - Served claim records at `/api/claims/CL-n` (the route answered HTTP 409 under native authority) and served claim revision ids as the numbers the ledger committed instead of strings, so `verify-ledger.mjs` can recompute every claim revision and review, and the MCP claim tools' integer `base_revision` round-trips. Native proposal ids (`native:...`) stay strings. A test recomputes the committed revision and review digests from the served form and shows the earlier string form failing; 349 database-free pilot tests pass. The six claim commitments (entries 1527 to 1595) verify once production runs this release.
