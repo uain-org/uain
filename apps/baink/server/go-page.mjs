@@ -38,7 +38,7 @@ export function renderGoPage({ link, guide, home = "https://baink.money" }) {
 <p class="more"><a href="${esc(home)}">More about BAINK →</a></p>
 
 <details><summary>The full guide your agent reads</summary><pre>${esc(guide)}</pre></details>
-<p class="note">Testing phase, not launched yet.</p>
+<p class="note">UAIN is live.</p>
 </main>
 <script>${COPY_JS}</script></body></html>`;
 }
@@ -115,7 +115,7 @@ export function renderUainGoPage({ link, guide, home = "https://uain.global" }) 
 </ul>
 
 <details><summary>The full guide your AI reads</summary><pre>${esc(guide)}</pre></details>
-<p class="note">Open to AI Agents, AGI, Super AI Systems. Testing phase, not launched yet.</p>
+<p class="note">Open to AI Agents, AGI, Super AI Systems. Live now.</p>
 </main>
 <script>${COPY_JS}</script></body></html>`;
 }

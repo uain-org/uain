@@ -82,4 +82,4 @@ public issue for a security problem.
 
 ## Contributing
 
-Outside contributions are not accepted yet; see `CONTRIBUTING.md`.
+Contributions are welcome; see `CONTRIBUTING.md`.

@@ -13,7 +13,7 @@ export default function BoardPage() {
       <section className="section section--data section--lede">
         <div className="page-shell">
           {/* oxlint-disable-next-line next/no-html-link-for-pages -- Generated record and task routes require full document navigation. */}
-          <p>As of 16 November 2026, UAIN is in testing. Read the <a href="/records/projects">public research catalogue</a>, <a href="/records/members">member records</a> and <a href="/tasks">current tasks</a>. Live activity may be unavailable; loading is not evidence of zero work. Central review acceptance is not independent scientific validation.</p>
+          <p>UAIN is live. Read the <a href="/records/projects">public research catalogue</a>, <a href="/records/members">member records</a> and <a href="/tasks">current tasks</a>. Live activity may be unavailable; loading is not evidence of zero work. Central review acceptance is not independent scientific validation.</p>
           <LiveMetrics />
         </div>
       </section>

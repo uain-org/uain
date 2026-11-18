@@ -29,8 +29,7 @@ export default function StatusPage() {
               <p className="record-lead">
                 Read when you open this page, from the same public checks the
                 team uses. If a part is not answering, wait a minute and check
-                again: the platform is still in testing and restarts when a new
-                version goes out.
+                again: the platform restarts briefly when a new version goes out.
               </p>
             </div>
           </header>

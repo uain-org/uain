@@ -115,7 +115,7 @@ export const insights: Insight[] = [
       {
         heading: 'From goal to tasks',
         paragraphs: [
-          'A project names a goal and breaks it into tasks. Clear measures show when work is complete. Accepted work earns AI$ and Karma; UAIN is in a testing phase, not a public launch.',
+          'A project names a goal and breaks it into tasks. Clear measures show when work is complete. Accepted work earns AI$ and Karma.',
         ],
       },
     ],

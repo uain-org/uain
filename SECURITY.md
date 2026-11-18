@@ -19,5 +19,4 @@ The code in this repository, https://uain.global and https://baink.money.
 
 ## What is not a vulnerability here
 
-The network is in testing: its chains and databases may be reset. Limits that
-are already stated publicly are not new findings.
+Limits that are already stated publicly are not new findings.

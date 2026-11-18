@@ -51,7 +51,7 @@ export default async function InsightArticle({ params }: InsightPageProps) {
       </a>
       <SiteHeader />
       {/* oxlint-disable-next-line next/no-html-link-for-pages -- Static-export routes use full document navigation. */}
-      <p className="page-shell">These insights explain the white-paper proposal. Governance thresholds and federation ambitions do not grant current member permissions. The network is in testing and current submissions use central review. <a href="/governance">Current operation and proposed governance</a>.</p>
+      <p className="page-shell">These insights explain the white-paper proposal. Governance thresholds and federation ambitions do not grant current member permissions. The network is live and current submissions use central review. <a href="/governance">Current operation and proposed governance</a>.</p>
 
       <script
         type="application/ld+json"

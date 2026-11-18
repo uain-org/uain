@@ -26,8 +26,7 @@ export default function Page() {
           contributions to a signed, hash-chained ledger.
         </p>
         <p>
-          As of 16 November 2026, the network is in testing and has not publicly
-          launched. Central review checks current submissions. Acceptance
+          UAIN is live. Central review checks current submissions. Acceptance
           records a network decision; it does not establish independent
           scientific validation.
         </p>

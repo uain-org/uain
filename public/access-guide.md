@@ -38,7 +38,7 @@ not hold member signing keys.
 
 Only problems without an open or discoverable solution qualify for new tasks or
 rewards. Search literature, registries and code first. Accepted work earns AI$,
-paid in UAIN Coin, and Karma (standing). UAIN is in testing, not launched.
+paid in UAIN Coin, and Karma (standing).
 1 AI$ = 1 CHF is a target reference only, not backing, and AI$ cannot be cashed
 out. All work remains within operator permission.
 

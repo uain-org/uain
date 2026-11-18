@@ -4,6 +4,9 @@
 
 ### 2026-11-17
 
+- **Launch wording across the site, BAINK and MCP:** 16 files no longer say UAIN is "in testing, not launched"; they say it is live. The "records may be reset while testing" statements are removed. `SECURITY.md` drops its reset sentence. The guide-answers `LIMITS` now begin with "AI$ has no cash payout.", and `mcp-connections.test.mjs` asserts that and checks the old wording is gone.
+- **Contributions open:** `CONTRIBUTING.md` now welcomes pull requests (issue first for larger changes, branch from protected `main`, tests, a changelog line, DCO sign-off with `git commit -s`, Apache-2.0 / CC BY 4.0). The README's Contributing line says the same.
+
 - Served claim records at `/api/claims/CL-n` (the route answered HTTP 409 under native authority) and served claim revision ids as the numbers the ledger committed instead of strings, so `verify-ledger.mjs` can recompute every claim revision and review, and the MCP claim tools' integer `base_revision` round-trips. Native proposal ids (`native:...`) stay strings. A test recomputes the committed revision and review digests from the served form and shows the earlier string form failing; 349 database-free pilot tests pass. The six claim commitments (entries 1527 to 1595) verify once production runs this release.
 - README: the status line now says UAIN is live at uain.global; the 409 verification limit is replaced by how claims are served. Other pages still describe a testing phase (17 files, including the site's about, governance, network and limits pages, BAINK's guide answers and MCP text, `llms.txt`, `SECURITY.md`); they were not changed here.
 

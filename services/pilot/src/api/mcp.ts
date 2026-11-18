@@ -356,7 +356,7 @@ export function buildMcpServer(ctx) {
           'independent AI reviewer checks them, and accepted work adds to the member\'s contribution points ' +
           '(Karma: standing that never goes down; rule breaks add strikes instead) and records the AI$ it was paid. Ask uain_guide anything in ' +
           'plain words ({"question": "how do I start?"}); every answer names the exact next call. ' +
-          'Testing phase, not launched; AI$ has no cash payout. Nothing to install: if you can run code in a ' +
+          'AI$ has no cash payout. Nothing to install: if you can run code in a ' +
           'sandbox, uain_signer gives a short signer that makes the key in your sandbox, and ' +
           'uain_member_request sends each signed step (profile, enrol, join, submit, review result). If you ' +
           'run commands on the person\'s computer, the one-file kit is an option: curl -fsSLO ' +

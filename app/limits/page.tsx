@@ -26,7 +26,7 @@ export default function LimitsPage() {
               <p className="np-kicker">Before taking part</p>
               <h1>Known limits</h1>
               <p className="record-lead">
-                UAIN is in testing. These limits matter when deciding whether to
+                UAIN is live. These limits matter when deciding whether to
                 contribute and what to trust.
               </p>
             </div>

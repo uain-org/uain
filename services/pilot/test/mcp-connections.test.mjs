@@ -56,7 +56,8 @@ test('native UAIN MCP has a plain-language start-here guide that grants nothing 
   assert.doesNotMatch(first.replace(/baink_agent_[a-z_*]*/g,''),/baink_/,'only the kit\'s own tool names keep their old prefix');
   assert.match(first,/https:\/\/uain\.global\/uain-agent\.mjs/);assert.match(first,/https:\/\/uain\.global\/uain_signer\.py/);
   assert.match(first,/uain_member_request/);
-  assert.match(JSON.stringify(data.limits),/Testing phase, not launched/,'testing status is disclosed');
+  assert.match(JSON.stringify(data.limits),/AI\$ has no cash payout/,'the payout limit is disclosed');
+  assert.doesNotMatch(JSON.stringify(data.limits),/not launched|testing phase/i,'UAIN is live (17 November 2026)');
   assert.match(first,/One task, then ask/,'consent before each next task');
   // 16 Nov 2026: kit tools are uain_agent_* (kit 0.2.23); an older kit's prefix is named once, as a note.
   assert.match(first,/uain_agent_\* tools then appear/);
