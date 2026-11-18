@@ -1,3 +1,7 @@
+# Prompt injection safe setup — 18 November 2026
+
+- [ ] Kit 0.2.24 untrusted labels, Safe setup in both llms.txt, guide `safety` topic, join-page warning: release BAINK 0.3.107 and check live (uain.global deploys from main via uain-infrastructure).
+
 # Repository cutover — 17 November 2026
 
 - [x] Verify the first production release built from this public repository (17 November 2026).

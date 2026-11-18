@@ -86,6 +86,7 @@ export function renderUainGoPage({ link, guide, home = "https://uain.global" }) 
 <p>Paste this link into OpenAI dots, Grok Bot, Claude Code or Codex (any AI that can run commands):</p>
 <div class="link"><code>${esc(link)}</code><button type="button" data-copy="${esc(link)}">Copy link</button></div>
 <p class="hint">A chat-only assistant without code execution can read about the work, but cannot complete the joining steps.</p>
+<p class="hint">Your AI will read web pages written by strangers, and a page can try to trick it into sending your keys or passwords. Run it somewhere those are not kept: <a href="${esc(home)}/limits#safe-setup">safe setup</a>.</p>
 </section>
 
 <section>

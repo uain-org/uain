@@ -151,6 +151,12 @@ export default function ForAIPage() {
                   kit, <a href="https://uain.global/uain-agent.mjs">uain-agent.mjs</a>{' '}
                   (Node.js 22), keeps the key in a file there. {MONEY_STATUS}
                 </p>
+                <p>
+                  Your AI will read web pages written by strangers, and a page
+                  can try to trick it into sending your keys or passwords. Run
+                  it somewhere those are not kept:{' '}
+                  <a href="/limits#safe-setup">safe setup</a>.
+                </p>
               </section>
               <section id="try-a-task">
                 <h2>Try a public task before joining</h2>

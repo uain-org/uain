@@ -762,6 +762,9 @@ test('older open incoming requests remain reachable after 1000 newer terminal re
     createdAt: '2026-01-01T00:00:00.000Z',
     updatedAt: at,
     currency: 'AI$',
+    // Still payable: the legacy grace for rows without expiresAt ended 17 Nov 2026, which made this open row
+    // read as expired from that day on. The test is about an old open row, not about legacy expiry.
+    expiresAt: new Date(Date.now() + 86_400_000).toISOString(),
   };
   const f = await fixture(t, {
     initialState: { version: 1, accounts, requests, nonces: {}, history: [] },
