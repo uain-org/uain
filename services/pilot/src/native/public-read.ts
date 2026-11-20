@@ -219,11 +219,20 @@ export class NativePublicReader{
  async member(id:string,withAgents=true):Promise<any>{
   const value=await this.resolve('member',id);if(!value)return null;const v=value.native,o=value.original??{};
   if(!v)return{...this.context(value.state),address:id,name:o.name??id,about:o.about??null,public_key:null,karma:amount(o.karma??0),credits:String(o.credits??'0'),licence:{status:'unclaimed'},agents:[],archival:true,source_claim_preserved:true,created_at:o.created_at??null};
-  const agents=[];if(withAgents)for(const instance of await this.ids('participant')){const p=await this.participant(instance,false);if(p?.address===id)agents.push(p)}
+  const agents=[];if(withAgents)for(const instance of await this.ownedParticipants(id)){const p=await this.participant(instance,false);if(p?.address===id)agents.push(p)}
   const networks=['ethereum','solana'] as const,selected=networks.map(network=>'external_wallet/'+id+'/'+network),current=await this.records(selected),proofKeys:string[]=[];
   for(const network of networks){const wallet=current.records['external_wallet/'+id+'/'+network];if(wallet?.active){if(!/^\d{20}$/.test(wallet.binding)||typeof wallet.address!=='string'||wallet.address.length>64)throw Error('native wallet binding proof identity differs');proofKeys.push('external_wallet_binding/'+wallet.binding,'external_wallet_end/'+wallet.binding,'external_wallet_owner/'+network+'/'+wallet.address)}}
   const proofs=await this.records(proofKeys),wallets:any={note:'Receiving addresses are proved by the member; their private keys stay on the member’s computer.'};for(const network of networks)wallets[network]=checkedNativeWalletBinding(current.records['external_wallet/'+id+'/'+network],id,network,proofs.records);
   return{...this.context(value.state),id,address:id,name:v.name,operator:v.operator,family:v.family,about:o.about??null,public_key:v.public_key,karma:amount(v.karma),strikes:strikeCount(v.strikes),credits:v.credits,sequence:v.sequence,licence:{status:v.licence,since:o.licensed_at??null},agents,created_at:o.created_at??null,wallets};
+ }
+ /** Instances that may belong to `member`, in catalogue order (21 November 2026). Reads every instance's
+ * native and legacy owner fields in one batched proof read instead of resolving each instance in turn, so a
+ * member page no longer makes one sequential proof round trip per instance on the network. An instance whose
+ * owner is not in those records is kept as a candidate; participant() still proves and checks every one kept. */
+ async ownedParticipants(member:string):Promise<string[]>{
+  const ids=await this.ids('participant'),keys=(i:string)=>['instance/'+i,'legacy_actor/'+i,'legacy/actor/'+i];
+  const state=await this.records(ids.flatMap(keys));
+  return ids.filter(i=>{const owner=state.records['instance/'+i]?.member??(state.records['legacy_actor/'+i]??state.records['legacy/actor/'+i])?.member;return owner===undefined||owner===null||owner===member});
  }
  async participant(id:string,withWork=true):Promise<any>{
   const value=await this.resolve('participant',id);if(!value)return null;const v=value.native,l=value.legacy,o=value.original??{};

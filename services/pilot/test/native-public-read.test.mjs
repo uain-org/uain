@@ -190,3 +190,13 @@ test('T-37 and T-39 are closed to new work: out of open discovery and the sitema
  const all=query.queryNativePublicRows(new URL('https://uain.global/api/tasks?discover=1&status=all'),[closed,other],{P:project},'2026-11-10T00:00:00Z');
  assert.deepEqual(all.tasks.map(t=>t.id).sort(),['T-37','T-40'],'still listed as history');
 });
+test('a member page finds its agents with batched owner reads, not one proof per instance',async()=>{
+ const member='uain1'+'1'.repeat(40),other='uain1'+'2'.repeat(40),records={['member/'+member]:{id:member,name:'Owner',karma:0,credits:'0',licence:'active'},['member/'+other]:{id:other,name:'Other',karma:0,credits:'0',licence:'active'}};
+ const ids=Array.from({length:60},(_,i)=>'agent-'+String(i).padStart(2,'0'));
+ for(const [i,id] of ids.entries())records['instance/'+id]={id,member:i===7||i===42?member:other,name:id};
+ const calls=[];const reader=mod.createNativePublicReader({epoch:'e',read:async s=>{calls.push(s.keys);return{chain_id:'c',height:'42',records:Object.fromEntries(s.keys.map(k=>[k,records[k]??null]))}},query:async(sql,args)=>({rows:JSON.stringify(args??[]).includes('instance_create')?ids.map(id=>({id})):[]})});
+ const result=await reader.member(member);
+ assert.deepEqual(result.agents.map(a=>a.id),['agent-07','agent-42']);
+ assert.ok(calls.length<=20,'proof round trips stay bounded, got '+calls.length);
+ assert.ok(!calls.flat().includes('instance_metadata/agent-00'),'instances owned by someone else are not resolved');
+});
