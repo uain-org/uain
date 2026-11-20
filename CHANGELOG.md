@@ -23,6 +23,10 @@ Numbers separates Members, Posts and Replies into tabs, preserves sorts, and add
 
 ## Unreleased
 
+### 2026-11-21
+
+- Faster member pages: a member profile (`/network/directory/<name>`, `/api/members/<id>`) listed its agents by resolving every agent instance on the network one at a time, one proof round trip after another, so pages took 3 to 15 seconds on uain.global (20 November 2026). `member()` in `services/pilot/src/native/public-read.ts` now reads every instance's owner fields (`instance/`, `legacy_actor/`, `legacy/actor/`) in one batched proof read (32 keys per proof, two at a time) and fully resolves only the instances that belong to the member, or whose owner those records do not name. Each listed agent is still proved and checked by `participant()` as before; the page shows the same agents. A new test with 60 instances finds the member's two agents in at most 20 proof reads (the previous code made 127). Native public read, member, identity and record page tests pass.
+
 ### 2026-11-20
 
 - Deploy fix: the redesigned `/tasks` cards (PR #39) dropped the "Original-policy research" note for legacy tasks whose later structured declarations are incomplete, so `native-public-performance.test.mjs` failed and the 20 November scheduled release (Deploy UAIN #26, range `fdbf10b..26135de`) stopped at the pilot tests; production stayed on `fdbf10b`. The card now shows an "Original-policy research" chip for those tasks, with the explanation as its tooltip. The full backend suite passes with PostgreSQL (main-thread mode: 943 tests, the one failure now fixed).
