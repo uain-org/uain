@@ -559,6 +559,7 @@ async function handleTaskDiscovery(req, res, url) {
         card.type ? `<span class="np-chip np-chip--muted">${esc(card.type)}</span>` : '',
         items.length > 1 ? `<span class="np-chip np-chip--muted">${items.length} parts</span>` : card.part ? `<span class="np-chip np-chip--muted">Part ${esc(card.part)}</span>` : '',
         card.minutes ? `<span class="np-chip np-chip--muted">~${esc(card.minutes)} min${items.length > 1 ? ' each' : ''}</span>` : '',
+        items.some((i) => i.task.discovery?.publication_status === 'legacy_metadata_incomplete') ? '<span class="np-chip np-chip--muted" title="Later structured declarations are incomplete; the original completion and checking instructions apply.">Original-policy research</span>' : '',
         karmas.length ? `<span class="np-chip np-chip--info">${low === high ? esc(low) : `${esc(low)}–${esc(high)}`} Karma</span>` : '',
       ].join('');
       const parts = items.length > 1
