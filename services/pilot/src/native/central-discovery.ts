@@ -118,7 +118,15 @@ export const CENTRAL_WHY_NOT:Record<string,string>={
  won_conditionally:'Someone else\'s answer was approved; it is paid when its condition happens.',
  contest_closed:'This contest has closed; the best entry is being chosen.',
  contest_full:'This contest already has all the entries it can take.',
+ awaiting_evidence:'Someone else\'s answer is waiting for its author to add the evidence the reviewer asked for.',
 };
+/** An answer the reviewer sent back for more evidence (central_evidence.go) stays under_review on the
+ * ledger but waits for its author, not the reviewer, until evidence_deadline or a reassessment request
+ * (20 November 2026; the same rule as BAINK's review queue). Advisory wording only. */
+export function centralAwaitingEvidence(t:any,submission:any):boolean{
+ return obj(t)&&t.state==='under_review'&&typeof t.pending==='string'&&t.pending!==''&&obj(submission)&&submission.id===t.pending&&submission.state==='under_review'&&/^[1-9][0-9]{0,18}$/.test(submission.evidence_deadline??'')&&submission.reassess!==true;
+}
+export const CENTRAL_AWAITING_EVIDENCE_LABEL='Waiting for the author\'s evidence';
 export function centralTaskClaim(t:any,held=false,nowMs=Date.now()):{claimable:boolean;why_not:string|null;why_not_text:string|null}{
  const no=(why:string)=>({claimable:false,why_not:why,why_not_text:CENTRAL_WHY_NOT[why]});
  if(!obj(t))return no('closed');
@@ -173,11 +181,17 @@ export function centralHistoryRow(t:any,projectTitle:string|null|undefined,claim
 export async function centralDiscovery(read:CentralRead,{pins,isProjectVisible,projectTitle,heightOf,memo}:{pins:{chainId:string;epoch:string};isProjectVisible?:(id:string)=>boolean;projectTitle?:(id:string)=>Promise<string|null>;heightOf?:(key:string)=>string|undefined;memo?:CentralMemo}){
  try{
   const {tasks,total,truncated}=await readCentralTasks(read,CENTRAL_DISCOVERY_LIMIT,memo),titles=new Map<string,string|null>(),rows=[],history:any[]=[],not_claimable:Record<string,number>={};
+  // The pending answer of each task under review, to tell an evidence request from a review. Fails soft:
+  // without it the task keeps the plain under_review wording.
+  const pendingKeys=[...new Set(tasks.filter(t=>t.state==='under_review'&&ID.test(t.pending)).map(t=>'central_submission/'+t.pending))];
+  let submissions:Record<string,any>={};if(pendingKeys.length)try{submissions=await chunkedCentralRead(read)(pendingKeys)}catch{submissions={}}
   for(const t of tasks){
    if(isProjectVisible&&!isProjectVisible(t.project))continue;
-   const claim=centralTaskClaim(t,centralTaskHeld(t,pins));
+   let claim=centralTaskClaim(t,centralTaskHeld(t,pins));
+   const evidenceWait=claim.why_not==='under_review'&&centralAwaitingEvidence(t,submissions['central_submission/'+t.pending]);
+   if(evidenceWait)claim={claimable:false,why_not:'awaiting_evidence',why_not_text:CENTRAL_WHY_NOT.awaiting_evidence};
    const title=async()=>{if(!titles.has(t.project)){let title:string|null=null;try{title=projectTitle?await projectTitle(t.project):null}catch{title=null}titles.set(t.project,title)}return titles.get(t.project)};
-   if(!claim.claimable||!centralTaskOpen(t)){const why=claim.why_not??'closed';not_claimable[why]=(not_claimable[why]??0)+1;history.push({...centralHistoryRow(t,await title(),claim)});continue}
+   if(!claim.claimable||!centralTaskOpen(t)){const why=claim.why_not??'closed';not_claimable[why]=(not_claimable[why]??0)+1;history.push({...centralHistoryRow(t,await title(),claim),...(evidenceWait?{status:'under_review',status_label:CENTRAL_AWAITING_EVIDENCE_LABEL}:{})});continue}
    await title();
    const height=heightOf?.('central_task/'+t.id);rows.push({...centralDiscoveryRow(t,titles.get(t.project)),...(height?{proved_height:height}:{})});
   }
