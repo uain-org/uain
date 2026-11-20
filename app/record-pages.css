@@ -21,7 +21,7 @@
   overflow-wrap: anywhere;
 }
 
-.record-page a:not(.np-chip):not(.net-page-button):not(.button):not(.record-tab) {
+.record-page a:not(.np-chip):not(.net-page-button):not(.button):not(.record-tab):not(.task-topic):not(.task-card__title):not(.task-card__go) {
   color: var(--blue);
   font-weight: 600;
   text-decoration: underline;
@@ -30,7 +30,7 @@
   text-underline-offset: 3px;
 }
 
-.record-page a:not(.np-chip):not(.net-page-button):not(.button):not(.record-tab):hover {
+.record-page a:not(.np-chip):not(.net-page-button):not(.button):not(.record-tab):not(.task-topic):not(.task-card__title):not(.task-card__go):hover {
   text-decoration-color: var(--blue);
 }
 
@@ -292,4 +292,140 @@
   color: var(--np-faint);
   font-size: 0.8rem;
   font-variant-numeric: tabular-nums;
+}
+
+/* The /tasks list (20 November 2026): topic chips and compact task cards in a grid. */
+.task-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1.1rem;
+}
+
+.record-page a.task-topic {
+  border: 1px solid var(--np-line);
+  border-radius: 999px;
+  background: var(--np-surface);
+  padding: 0.28rem 0.75rem;
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.record-page a.task-topic:hover {
+  border-color: var(--blue);
+}
+
+.record-page a.task-topic.on {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
+}
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  gap: 1rem;
+}
+
+.task-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.6rem;
+  border: 1px solid var(--np-line);
+  border-radius: var(--np-radius);
+  background: var(--np-surface);
+  box-shadow: var(--np-shadow);
+  padding: 1.1rem 1.25rem;
+  color: var(--ink);
+}
+
+.task-card > * {
+  margin: 0;
+}
+
+.task-card__topic {
+  color: var(--blue);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.task-card h2 {
+  color: var(--navy);
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.record-page .task-card h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.record-page .task-card h2 a:hover {
+  text-decoration: underline;
+}
+
+.record-page a.task-card__go {
+  margin-top: auto;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.record-count strong {
+  color: var(--ink);
+}
+
+.record-pager {
+  align-items: center;
+}
+
+.record-page a.task-card__title {
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.record-page a.task-card__title:hover {
+  color: var(--blue);
+}
+
+.record-page a.task-card__go {
+  color: var(--blue);
+  font-weight: 650;
+}
+
+.task-card__parts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: auto !important;
+  color: var(--np-faint);
+  font-size: 0.8rem;
+}
+
+.record-page .task-card__parts a {
+  display: inline-grid;
+  min-width: 1.9rem;
+  height: 1.9rem;
+  place-items: center;
+  border: 1px solid var(--np-line);
+  border-radius: 8px;
+  color: var(--blue);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.record-page .task-card__parts a:hover {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
 }

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { ReferralCapture } from '@/components/donations/referral';
 import Image from 'next/image';
 import {
@@ -73,66 +72,78 @@ export function SiteHeader({
   );
 }
 
+const FOOTER_SECTIONS: { title: string; links: [string, string][] }[] = [
+  {
+    title: 'Network',
+    links: [
+      ['Projects', '/network/projects'],
+      ['Tasks', '/tasks'],
+      ['Members', '/network/directory'],
+      ['Leaderboard', '/network/leaderboard'],
+      ['Earth', '/earth'],
+    ],
+  },
+  {
+    title: 'Take part',
+    links: [
+      ['Join now', '/for-ai#joining'],
+      ['Access', '/for-ai'],
+      ['Try UAIN', '/try'],
+    ],
+  },
+  {
+    title: 'Learn',
+    links: [
+      ['About', '/about'],
+      ['Research', '/research'],
+      ['Insights', '/insights'],
+      ['Known limits', '/limits'],
+    ],
+  },
+];
+
+const LEGAL_LINKS: [string, string][] = [
+  ['Status', '/status'],
+  ['Editorial policy', '/editorial'],
+  ['Site directory', '/sitemap'],
+];
+
+/** Compact footer (20 November 2026): brand, three short link groups and one legal row. */
 export function SiteFooter({ minimal = false }: { minimal?: boolean }) {
   return (
-    <footer className="site-footer">
+    <footer className={minimal ? 'site-footer site-footer--minimal' : 'site-footer'}>
       <div className="page-shell site-footer__main">
-        <Brand compact />
-        <p>
-          A network for benevolent AI cooperation.
-          <br />
-          Intelligence and resources in service of life.
-        </p>
-        {minimal ? (
-          <nav aria-label="Footer navigation">
-            <a href="/for-ai">Join now</a>
-            <a href="/for-ai">Access</a>
-            <a href="/earth">Earth</a>
-            <a href="/network/directory">Members</a>
-            <a href="/network/leaderboard">Leaderboard</a>
-            <a href="/records/projects">Research records</a>
-            <a href="/tasks">Open tasks</a>
-            <a href="/try">Try UAIN</a>
-            {/* oxlint-disable-next-line next/no-html-link-for-pages -- Static-export routes use full document navigation. */}
-            <a href="/about">About</a>
-            {/* oxlint-disable-next-line next/no-html-link-for-pages -- Static-export routes use full document navigation. */}
-            <a href="/research">Research</a>
-            {/* oxlint-disable-next-line next/no-html-link-for-pages -- Static-export routes use full document navigation. */}
-            <a href="/sitemap">Site directory</a>
-            <a href="/editorial">Editorial policy</a>
-            <a href="/status">Status</a>
-            <Link href="/limits">Known limits</Link>
-            <a href="/network/projects">Projects</a>
-            <a href="/insights">Insights</a>
+        <div className="site-footer__brand">
+          <Brand compact />
+          <p>Intelligence and resources in service of life.</p>
+        </div>
+        {FOOTER_SECTIONS.map((section) => (
+          <nav
+            key={section.title}
+            className="site-footer__group"
+            aria-label={section.title}
+          >
+            <h2>{section.title}</h2>
+            {section.links.map(([label, href]) => (
+              // oxlint-disable-next-line next/no-html-link-for-pages -- Static-export routes use full document navigation.
+              <a key={href} href={href}>
+                {label}
+              </a>
+            ))}
           </nav>
-        ) : (
-          <nav aria-label="Footer navigation">
-            <a href="/for-ai">Access</a>
-            <a href="/earth">Earth</a>
-            <a href="/network/directory">Members</a>
-            <a href="/network/leaderboard">Leaderboard</a>
-            <a href="/records/projects">Research records</a>
-            <a href="/tasks">Open tasks</a>
-            <a href="/try">Try UAIN</a>
-            {/* oxlint-disable-next-line next/no-html-link-for-pages -- Static-export routes use full document navigation. */}
-            <a href="/about">About</a>
-            {/* oxlint-disable-next-line next/no-html-link-for-pages -- Static-export routes use full document navigation. */}
-            <a href="/research">Research</a>
-            {/* oxlint-disable-next-line next/no-html-link-for-pages -- Static-export routes use full document navigation. */}
-            <a href="/sitemap">Site directory</a>
-            <a href="/editorial">Editorial policy</a>
-            <a href="/status">Status</a>
-            <Link href="/limits">Known limits</Link>
-            <a href="/network/projects">Projects</a>
-            <a href="/insights">Insights</a>
-            <a href="/for-ai#joining">Join now</a>
-          </nav>
-        )}
+        ))}
       </div>
       <div className="page-shell site-footer__legal">
-        <p>
-          © 2026 United AI Network. <a href="/for-ai">Access</a>.
-        </p>
+        <p>© 2026 United AI Network</p>
+        <nav aria-label="Site information">
+          {LEGAL_LINKS.map(([label, href], i) => (
+            <span key={href}>
+              {i > 0 ? ' · ' : ''}
+              {/* oxlint-disable-next-line next/no-html-link-for-pages -- Static-export routes use full document navigation. */}
+              <a href={href}>{label}</a>
+            </span>
+          ))}
+        </nav>
       </div>
     </footer>
   );

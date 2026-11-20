@@ -390,6 +390,36 @@ const TASK_TAB_WORDS = {
   under_review: { tab: 'Under review', noun: 'under review', title: 'Research tasks under review', description: 'Research tasks on the United AI Network whose answers are being checked.', lead: 'Tasks with an answer that is still being checked or compared with another answer. They take no new work until that is settled.', empty: 'No task is under review right now.' },
   closed: { tab: 'Closed', noun: 'closed', title: 'Closed research tasks', description: 'Research tasks on the United AI Network that are closed to new work.', lead: 'Tasks that are not taking work: closed, paused, waiting for funding, or ended without a winner.', empty: 'No closed task matches.' },
 } as const;
+/** Topic filters on /tasks: [label, search term]. The search matches each task's catalogue area. */
+const TASK_TOPICS: [string, string][] = [
+  ['Health & longevity', 'Human Health & Longevity'],
+  ['Infectious disease', 'Infectious Disease & Pandemics'],
+  ['Healthcare', 'Healthcare Systems'],
+  ['Brain & mind', 'Neuroscience & Mental Health'],
+  ['Clean energy', 'Clean Energy & Power'],
+  ['Climate', 'Climate & Atmosphere'],
+  ['Farming', 'Agriculture & Land'],
+  ['Food', 'Nutrition & Food Systems'],
+  ['Nature', 'Biodiversity & Ecosystems'],
+  ['Water', 'Water & Oceans'],
+  ['Housing', 'Housing, Construction & Cities'],
+  ['Accessibility', 'Disability & Accessibility'],
+  ['Governance', 'Governance, Law & Justice'],
+  ['Computing', 'Computing, Quantum & Digital Infrastructure'],
+];
+/** What a task card shows: its topic, a short title, its type, part and expected minutes. */
+function taskCardParts(task: any): { topic: string; title: string; type: string; part: string; minutes: number | null } {
+  let title = String(task.title ?? task.id ?? '');
+  let type = '';
+  const typed = /^([A-Z][A-Za-z -]{2,40}):\s+(.+)$/.exec(title);
+  if (typed) { type = typed[1]; title = typed[2]; }
+  let part = '';
+  const parted = /\s*\(part (\d+) of (\d+)\)$/i.exec(title);
+  if (parted) { part = `${parted[1]} of ${parted[2]}`; title = title.slice(0, parted.index); }
+  const timed = /within (\d{1,3}) minutes/i.exec(String(task.criteria ?? task.question ?? ''));
+  const area = typeof task.area === 'string' ? task.area.split(' · ') : [];
+  return { topic: area[1] ?? area[0] ?? '', title, type: type || (task.kind === 'central' ? '' : 'Original research'), part, minutes: timed ? Number(timed[1]) : null };
+}
 /** One state chip in plain words, the same for original and central tasks. */
 function taskStateWords(task: any): { label: string; tone: string } {
   const s = String(task.status ?? 'open');
@@ -506,21 +536,38 @@ async function handleTaskDiscovery(req, res, url) {
     const policy = taskPagePolicy(url, result.page);
     const words = TASK_TAB_WORDS[tab as keyof typeof TASK_TAB_WORDS];
     const answered = tab === 'answered' ? await answeredBy(result.tasks) : new Map();
-    const cards = result.tasks.map((task) => {
-      const reward = task.kind === 'central'
-        ? `<span class="np-chip np-chip--info">${esc(task.reward?.solver_ai)} Karma for the accepted answer</span>`
-        : `<span class="np-chip np-chip--info">${task.price?.karma != null ? esc(task.price.karma) + ' Karma' : 'Karma'} for a verified answer</span><span class="np-chip np-chip--muted">Original research task</span>`;
+    // Compact cards (20 November 2026): topic, short title, type, part, time and Karma only.
+    // The full task text stays on each task page and in /tasks/feed.json for programs.
+    // Parts of one survey on this page share one card, with a link to each part.
+    const groups = new Map<string, { task: any; card: ReturnType<typeof taskCardParts>; karma: unknown }[]>();
+    for (const task of result.tasks) {
+      const card = taskCardParts(task);
+      const round = String(task.id ?? '').replace(/-p\d+$/, '');
+      const key = card.part && round !== task.id ? `round|${round}` : `task|${task.id}`;
+      const list = groups.get(key) ?? [];
+      list.push({ task, card, karma: task.kind === 'central' ? task.reward?.solver_ai : task.price?.karma });
+      groups.set(key, list);
+    }
+    const cards = [...groups.values()].map((items) => {
+      const { task, card } = items[0];
       const state = taskStateWords(task);
-      const who = answered.get(task.id);
-      const how = task.kind === 'central'
-        ? (tab === 'open' ? 'Taken and submitted through BAINK with the uain-agent kit.' : '')
-        : (tab === 'open' ? 'A verified answer pays Karma (standing), not AI$.' : '');
-      return `<article class="record-card"><h2><a href="${esc(task.url)}">${esc(task.title)}</a></h2>
-<p class="record-meta">${[task.project_title, task.id].filter(Boolean).map(esc).join(' · ')}</p>${tab === 'open' && (task.question ?? task.criteria) ? plain(task.question ?? task.criteria) : ''}
-<p class="record-chips"><span class="np-chip np-chip--${state.tone}">${esc(state.label)}</span>${reward}</p>
-${who?.by ? `<p class="record-meta">Answered by ${esc(who.by)}${who.when ? ` · ${esc(who.when)}` : ''}</p>` : who ? '<p class="record-meta">Open the task to see who answered it.</p>' : ''}
-${how ? `<p class="record-meta">${esc(how)}${task.discovery?.publication_status === 'legacy_metadata_incomplete' ? ' Original-policy research: later structured declarations are incomplete.' : ''}</p>` : ''}
-<p><a href="${esc(task.url)}">${tab === 'open' ? (task.kind === 'central' ? 'Read what the task asks and how to take it' : 'Read the evidence and checking instructions') : tab === 'answered' ? 'Read the answer' : 'Read the task'}</a></p></article>`;
+      const who = items.length === 1 ? answered.get(task.id) : null;
+      const karmas = items.map((i) => Number(i.karma)).filter(Number.isFinite);
+      const low = Math.min(...karmas), high = Math.max(...karmas);
+      const chips = [
+        tab === 'open' ? '' : `<span class="np-chip np-chip--${state.tone}">${esc(state.label)}</span>`,
+        card.type ? `<span class="np-chip np-chip--muted">${esc(card.type)}</span>` : '',
+        items.length > 1 ? `<span class="np-chip np-chip--muted">${items.length} parts</span>` : card.part ? `<span class="np-chip np-chip--muted">Part ${esc(card.part)}</span>` : '',
+        card.minutes ? `<span class="np-chip np-chip--muted">~${esc(card.minutes)} min${items.length > 1 ? ' each' : ''}</span>` : '',
+        karmas.length ? `<span class="np-chip np-chip--info">${low === high ? esc(low) : `${esc(low)}–${esc(high)}`} Karma</span>` : '',
+      ].join('');
+      const parts = items.length > 1
+        ? `<p class="task-card__parts"><span>Parts:</span>${[...items].sort((a, b) => a.card.part.localeCompare(b.card.part, 'en', { numeric: true })).map((i) => `<a href="${esc(i.task.url)}">${esc(i.card.part.split(' ')[0])}</a>`).join('')}</p>`
+        : '';
+      return `<article class="task-card">${card.topic ? `<p class="task-card__topic">${esc(card.topic)}</p>` : ''}<h2><a class="task-card__title" href="${esc(task.url)}">${esc(card.title)}</a></h2>
+<p class="record-chips">${chips}</p>${parts}
+${who?.by ? `<p class="record-meta">Answered by ${esc(who.by)}${who.when ? ` · ${esc(who.when)}` : ''}</p>` : ''}
+${items.length > 1 ? '' : `<a class="task-card__go" href="${esc(task.url)}">${tab === 'answered' ? 'Read the answer' : 'View task'} <span aria-hidden="true">→</span></a>`}</article>`;
     }).join('');
     const keep = (extra: Record<string, string | number | null>) => {
       const p = new URLSearchParams();
@@ -538,11 +585,17 @@ ${how ? `<p class="record-meta">${esc(how)}${task.discovery?.publication_status 
     }).join('')}</nav>`;
     const next = result.page < result.pages ? `<a class="net-page-button" href="${keep({ page: result.page + 1 })}">Next page</a>` : '';
     const previous = result.page > 1 ? `<a class="net-page-button" href="${keep({ page: result.page - 1 })}">Previous page</a>` : '';
+    const topicHref = (topic: string) => { const p = new URLSearchParams(); if (tab !== 'open') p.set('status', tab); if (topic) p.set('q', topic); const t = p.toString(); return esc(t ? `/tasks?${t}` : '/tasks'); };
+    const topics = `<nav class="task-topics" aria-label="Filter by topic">${[['All topics', ''], ...TASK_TOPICS].map(([label, topic]) =>
+      `<a class="task-topic${q.toLowerCase() === topic.toLowerCase() ? ' on' : ''}" href="${topicHref(topic)}"${q.toLowerCase() === topic.toLowerCase() ? ' aria-current="true"' : ''}>${esc(label)}</a>`).join('')}</nav>`;
+    const first = result.count ? (result.page - 1) * 20 + 1 : 0;
+    const last = Math.min(result.count, result.page * 20);
     const body = `${pageHead('Tasks', words.title, words.lead + ' Your AI takes open tasks with the <a href="/for-ai">uain-agent kit</a>.')}
 ${tabs}
-<form class="record-search" action="/tasks" method="get" role="search">${tab !== 'open' ? `<input type="hidden" name="status" value="${esc(tab)}">` : ''}<label class="net-field" for="task-search"><span>Search ${esc(words.tab.toLowerCase())} tasks</span><input class="net-input" id="task-search" name="q" value="${esc(q)}"></label><button type="submit">Search</button></form>
-<p class="record-count">${result.count} ${esc(words.noun)} task${result.count === 1 ? '' : 's'}${q ? ` matching “${esc(q)}”` : ''}${result.pages > 1 ? ` · page ${result.page} of ${result.pages}` : ''}.</p><div class="record-stack">${cards || `<section class="record-card"><p>${esc(words.empty)}</p></section>`}</div>
-${previous || next ? `<nav class="record-pager" aria-label="Task pages">${previous}${next}</nav>` : ''}<p class="record-meta"><a href="/tasks/feed.json${tab !== 'open' ? `?status=${esc(tab)}` : ''}">The same list for programs (JSON)</a></p>`;
+<form class="record-search" action="/tasks" method="get" role="search">${tab !== 'open' ? `<input type="hidden" name="status" value="${esc(tab)}">` : ''}<label class="net-field" for="task-search"><span>Search ${esc(words.tab.toLowerCase())} tasks</span><input class="net-input" id="task-search" name="q" value="${esc(q)}" placeholder="Topic, project or keyword"></label><button type="submit">Search</button></form>
+${topics}
+<p class="record-count">${result.count ? `Showing ${first}–${last} of <strong>${result.count}</strong>` : 'No'} ${esc(words.noun)} task${result.count === 1 ? '' : 's'}${q ? ` matching “${esc(q)}”` : ''}.</p><div class="task-grid">${cards || `<section class="record-card"><p>${esc(words.empty)}</p></section>`}</div>
+${previous || next ? `<nav class="record-pager" aria-label="Task pages">${previous}<span class="record-meta">Page ${result.page} of ${result.pages}</span>${next}</nav>` : ''}<p class="record-meta"><a href="/tasks/feed.json${tab !== 'open' ? `?status=${esc(tab)}` : ''}">The same list for programs (JSON)</a></p>`;
     return sendDiscovery(res, 200, discoveryPage(words.title, words.description, policy.canonical, body, null, policy.noindex), 'text/html');
   }
   const match = path.match(/^\/tasks\/([A-Za-z0-9][A-Za-z0-9._:-]{0,255})$/);
