@@ -99,19 +99,19 @@ test('a central memo re-proves only tasks that can still change',async()=>{
  assert.equal(central.centralMemo('memo-test'),memo,'one memo per key');
  assert.deepEqual(central.CENTRAL_FINAL_STATES,['accepted','conditional_expired','no_winner']);
  const first=await central.centralDiscovery(reader(records,calls),{pins,memo});
- assert.equal(first.status,'available');assert.equal(calls.flat().length,1+5+5);
+ assert.equal(first.status,'available');assert.equal(calls.flat().length,1+5+5+1,'plus the pending answer of the task under review');
  calls.length=0;const second=await central.centralDiscovery(reader(records,calls),{pins,memo});
  assert.deepEqual(second,first,'the same result');
- assert.deepEqual(calls.flat(),['central_task_count','central_task/T-d','central_task/T-a'],'the count and the records that can change, no index keys');
+ assert.deepEqual(calls.flat(),['central_task_count','central_task/T-d','central_task/T-a','central_submission/S-1'],'the count and the records that can change, no index keys');
  const added=task('T-f','P-1');const more=store([...tasks,added]);
  calls.length=0;const third=await central.centralDiscovery(reader(more,calls),{pins,memo});
- assert.deepEqual(calls.flat(),['central_task_count','central_task_index/'+'6'.padStart(20,'0'),'central_task/T-f','central_task/T-d','central_task/T-a']);
+ assert.deepEqual(calls.flat(),['central_task_count','central_task_index/'+'6'.padStart(20,'0'),'central_task/T-f','central_task/T-d','central_task/T-a','central_submission/S-1']);
  assert.deepEqual(third.rows.map(r=>r.id),['T-f','T-a']);
  calls.length=0;const now=Date.now(),later=await central.readCentralTasks(reader(more,calls),central.CENTRAL_DISCOVERY_LIMIT,memo,now+central.CENTRAL_FINAL_MS+1000);
  assert.deepEqual(calls.flat().sort(),['central_task_count',...['a','b','c','d','e','f'].map(x=>'central_task/T-'+x)].sort(),'final records are proved again after CENTRAL_FINAL_MS');
  assert.equal(later.proved,7);assert.deepEqual(later.tasks.map(t=>t.id),['T-f','T-e','T-d','T-c','T-b','T-a']);
  calls.length=0;const plain=await central.centralDiscovery(reader(more,calls),{pins});
- assert.equal(calls.flat().length,1+6+6,'without a memo everything is read');assert.deepEqual(plain.rows,third.rows);
+ assert.equal(calls.flat().length,1+6+6+1,'without a memo everything is read, plus the pending answer');assert.deepEqual(plain.rows,third.rows);
  calls.length=0;const shrunk=await central.readCentralTasks(reader(store(tasks.slice(0,2)),calls),central.CENTRAL_DISCOVERY_LIMIT,memo);
  assert.deepEqual(shrunk.tasks.map(t=>t.id),['T-b','T-a']);assert.equal(calls.flat().length,1+2+2,'a lower count drops the memo instead of trusting it');
  const bad=store(tasks);bad['central_task/T-a']={...bad['central_task/T-a'],criteria:'changed'};
@@ -203,4 +203,21 @@ test('central reads never ask the native bridge for more than 32 keys at once',a
  const many=Array.from({length:134},(_,i)=>task('T-'+i,'P-1')),calls=[];
  const result=await central.centralDiscovery(async keys=>{calls.push(keys.length);if(keys.length>32)throw Error('bounded public keys required');return Object.fromEntries(keys.map(k=>[k,store(many)[k]??null]))},{pins});
  assert.equal(result.status,'available');assert.equal(result.rows.length,134);assert.ok(calls.every(n=>n<=32),String(calls));
+});
+test('an answer sent back for evidence reads as waiting for its author, not being checked',{skip:!central.centralDiscovery},async()=>{
+ const tasks=[task('T-review','P-1',{state:'under_review',pending:'S-1'}),task('T-evidence','P-1',{state:'under_review',pending:'S-2'}),task('T-reassess','P-1',{state:'under_review',pending:'S-3'})];
+ const records=store(tasks);
+ records['central_submission/S-1']={id:'S-1',task:'T-review',state:'under_review'};
+ records['central_submission/S-2']={id:'S-2',task:'T-evidence',state:'under_review',evidence_deadline:'1900000'};
+ records['central_submission/S-3']={id:'S-3',task:'T-reassess',state:'under_review',evidence_deadline:'1900000',reassess:true};
+ const result=await central.centralDiscovery(reader(records),{pins});
+ const by=Object.fromEntries(result.history.map(r=>[r.id,r]));
+ assert.deepEqual([by['T-review'].status,by['T-review'].status_label,by['T-review'].why_not],['under_review','Being checked','under_review']);
+ assert.deepEqual([by['T-evidence'].status,by['T-evidence'].status_label,by['T-evidence'].why_not],['under_review',"Waiting for the author's evidence",'awaiting_evidence']);
+ assert.match(by['T-evidence'].why_not_text,/waiting for its author/);
+ assert.equal(by['T-reassess'].status_label,'Being checked','a reassessment request is back with the reviewer');
+ assert.deepEqual(result.not_claimable,{under_review:2,awaiting_evidence:1});
+ // Without the submission record the task keeps the plain wording.
+ const bare=store(tasks);const plain=await central.centralDiscovery(reader(bare),{pins});
+ assert.ok(plain.history.every(r=>r.status_label==='Being checked'));
 });
