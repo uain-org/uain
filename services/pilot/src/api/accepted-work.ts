@@ -1,3 +1,4 @@
+import { mapLimit } from '../native/map-limit.ts';
 /**
  * The newest accepted work across all members (GET /api/accepted, 16 November 2026).
  *
@@ -92,7 +93,8 @@ async function build(deps: AcceptedDeps): Promise<AcceptedRow[]> {
     if (!looked.has(key)) looked.set(key, deps.names ? deps.names(kind, id).catch(() => null) : Promise.resolve(null));
     return looked.get(key)!;
   };
-  for (const r of rows) {
+  // Names and block times are asked a few at a time (21 November 2026), not one row after another.
+  await mapLimit(rows, async (r) => {
     const t = named['central_task/' + r.task], p = named['project/' + r.project], m = named['member/' + r.member];
     r.taskTitle = obj(t) && t.id === r.task ? text(t.title) : null;
     r.projectTitle = (obj(p) && p.id === r.project ? text(p.title) : null) ?? text((await look('project', r.project))?.title);
@@ -100,13 +102,12 @@ async function build(deps: AcceptedDeps): Promise<AcceptedRow[]> {
     const shown = text(fromChain?.name) ? fromChain : await look('member', r.member);
     r.name = text(shown?.name);
     r.operator = text(shown?.operator);
-  }
-  for (const r of rows) {
-    if (!times.has(r.height)) {
-      try { times.set(r.height, await deps.timeAt(r.height)); } catch { /* left unknown; asked again next build */ }
-    }
-    r.time = times.get(r.height) ?? null;
-  }
+  });
+  const heights = [...new Set(rows.map((r) => r.height))].filter((h) => !times.has(h));
+  await mapLimit(heights, async (h) => {
+    try { times.set(h, await deps.timeAt(h)); } catch { /* left unknown; asked again next build */ }
+  });
+  for (const r of rows) r.time = times.get(r.height) ?? null;
   return rows;
 }
 

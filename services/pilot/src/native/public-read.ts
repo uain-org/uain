@@ -2,6 +2,7 @@
  * source rows; current states and ownership always come from the pinned chain.
  * This module performs no pilot writes and accepts no unverified caller state. */
 import {createHash} from 'node:crypto';
+import {mapLimit} from './map-limit.ts';
 import {evidenceDocument} from './evidence.ts';
 import {normalizeAddress} from '../identity/wallet-proof.ts';
 // Karma v2 (DEC-TASK-057): violations add strikes and never lower Karma; 10 revoke the licence. The chain omits zero.
@@ -219,7 +220,7 @@ export class NativePublicReader{
  async member(id:string,withAgents=true):Promise<any>{
   const value=await this.resolve('member',id);if(!value)return null;const v=value.native,o=value.original??{};
   if(!v)return{...this.context(value.state),address:id,name:o.name??id,about:o.about??null,public_key:null,karma:amount(o.karma??0),credits:String(o.credits??'0'),licence:{status:'unclaimed'},agents:[],archival:true,source_claim_preserved:true,created_at:o.created_at??null};
-  const agents=[];if(withAgents)for(const instance of await this.ownedParticipants(id)){const p=await this.participant(instance,false);if(p?.address===id)agents.push(p)}
+  const agents=withAgents?(await mapLimit(await this.ownedParticipants(id),instance=>this.participant(instance,false))).filter(p=>p?.address===id):[];
   const networks=['ethereum','solana'] as const,selected=networks.map(network=>'external_wallet/'+id+'/'+network),current=await this.records(selected),proofKeys:string[]=[];
   for(const network of networks){const wallet=current.records['external_wallet/'+id+'/'+network];if(wallet?.active){if(!/^\d{20}$/.test(wallet.binding)||typeof wallet.address!=='string'||wallet.address.length>64)throw Error('native wallet binding proof identity differs');proofKeys.push('external_wallet_binding/'+wallet.binding,'external_wallet_end/'+wallet.binding,'external_wallet_owner/'+network+'/'+wallet.address)}}
   const proofs=await this.records(proofKeys),wallets:any={note:'Receiving addresses are proved by the member; their private keys stay on the member’s computer.'};for(const network of networks)wallets[network]=checkedNativeWalletBinding(current.records['external_wallet/'+id+'/'+network],id,network,proofs.records);
@@ -238,7 +239,7 @@ export class NativePublicReader{
   const value=await this.resolve('participant',id);if(!value)return null;const v=value.native,l=value.legacy,o=value.original??{};
   if(v&&o.member_id&&v.member!==o.member_id||v&&l?.member&&v.member!==l.member)throw Error('native instance/source ownership differs');
   const address=v?.member??l?.member??o.member_id??null,owner=address?await this.member(address,false):null,work={contributed:[] as any[],verified:[] as any[]};
-  if(withWork)for(const key of await this.ids('contribution')){const c=await this.contribution(key);if(!c)continue;if(c.contributor===id)work.contributed.push(c);if(c.verifications.some((r:any)=>r.verifier===id))work.verified.push(c)}
+  if(withWork)for(const c of await mapLimit(await this.ids('contribution'),key=>this.contribution(key))){if(!c)continue;if(c.contributor===id)work.contributed.push(c);if(c.verifications.some((r:any)=>r.verifier===id))work.verified.push(c)}
   return{...o,...this.context(value.state),id,did:o.did??id,name:v?.name??o.name??id,operator:owner?.operator??o.operator??'',model:v?.family??o.model??null,address,member:owner?{address,name:owner.name,about:owner.about,karma:owner.karma,...(owner.strikes===undefined?{}:{strikes:owner.strikes}),licence:owner.licence}:null,
    state:v?.state??o.state??'unclaimed',tier:'T'+String(l?.tier??String(o.tier??'0').replace(/^T/,'')),karma:amount(v?.karma??o.karma),credits:String(v?.credits??o.credits??'0'),archival:!v,source_claim_preserved:!v,
    reachability:o.reachability??'unreachable',region:o.region??'',region_label:o.region??'',placed:o.lon!=null&&o.lat!=null,lon:o.lon??null,lat:o.lat??null,enrolled_at:o.enrolled_at??null,
