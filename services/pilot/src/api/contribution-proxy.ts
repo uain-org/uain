@@ -16,6 +16,10 @@
  * read answers "unavailable", never an empty record.
  */
 export const CONTRIBUTION_TTL_MS = 30_000;
+/** An answer older than CONTRIBUTION_TTL_MS but younger than this is shown at once while a fresh one
+ * is asked for (21 November 2026): a profile no longer waits seconds on BAINK every 30 seconds.
+ * The view carries its own as-of time, so a page never presents it as newer than it is. */
+export const CONTRIBUTION_STALE_MS = 10 * 60_000;
 const BAINK_ORIGIN = 'https://baink.money';
 const MAX_BYTES = 256 * 1024;
 const MAX_HELD = 512;
@@ -73,9 +77,10 @@ export async function memberContribution(
   const origin = /^https:\/\/[a-z0-9.-]+$/.test(env.UAIN_STATUS_BAINK_ORIGIN ?? '') ? env.UAIN_STATUS_BAINK_ORIGIN! : BAINK_ORIGIN;
   const kept = held.get(address);
   if (kept && now() - kept.at < CONTRIBUTION_TTL_MS) return kept.answer;
+  const stale = kept && now() - kept.at < CONTRIBUTION_STALE_MS ? kept.answer : null;
   let flight = flights.get(address);
   if (!flight) {
-    if (flights.size >= MAX_FLIGHTS) return unavailable('busy');
+    if (flights.size >= MAX_FLIGHTS) return stale ?? unavailable('busy');
     flight = ask(address, fetcher, origin)
       .then((answer) => {
         if (answer.status === 200) {
@@ -88,7 +93,7 @@ export async function memberContribution(
       .finally(() => flights.delete(address));
     flights.set(address, flight);
   }
-  return flight;
+  return stale ?? flight;
 }
 
 /** Forget held answers (tests). */

@@ -2,7 +2,7 @@
 // derivation on unchanged (GET /api/contribution/:address), held 30 seconds, never recomputed.
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { memberContribution, resetMemberContribution, CONTRIBUTION_TTL_MS } from '../dist/src/api/contribution-proxy.js';
+import { memberContribution, resetMemberContribution, CONTRIBUTION_TTL_MS, CONTRIBUTION_STALE_MS } from '../dist/src/api/contribution-proxy.js';
 
 const M = 'uain1' + 'a'.repeat(40);
 const VIEW = { schema: 'uain-contribution-v1', member: M, points: { total: 20 }, accepted: { count: 1 } };
@@ -43,4 +43,26 @@ test('the BAINK read never follows a redirect (P2-6, 13 November 2026)', async (
   await memberContribution(M, { fetcher: async (_url, i) => { init = i; return { status: 200, text: async () => JSON.stringify(VIEW) }; }, env: {} });
   assert.equal(init.redirect, 'error');
   resetMemberContribution();
+});
+
+test('a stale view is shown at once while a fresh one is asked for; past the stale window the profile waits', async () => {
+  resetMemberContribution();
+  let at = 2_000_000, release, version = 1;
+  const view = () => ({ ...VIEW, points: { total: version } });
+  let slow = false;
+  const fetcher = async () => {
+    if (slow) await new Promise((r) => { release = r; });
+    return { status: 200, text: async () => JSON.stringify(view()) };
+  };
+  const now = () => at;
+  assert.equal((await memberContribution(M, { fetcher, now, env: {} })).body.points.total, 1);
+  at += CONTRIBUTION_TTL_MS + 1; slow = true; version = 2;
+  const stale = await memberContribution(M, { fetcher, now, env: {} });
+  assert.equal(stale.body.points.total, 1, 'the held view answers without waiting for BAINK');
+  release();
+  await new Promise((r) => setImmediate(r));
+  await new Promise((r) => setImmediate(r));
+  assert.equal((await memberContribution(M, { fetcher, now, env: {} })).body.points.total, 2, 'the refresh replaced it');
+  at += CONTRIBUTION_STALE_MS + 1; slow = false; version = 3;
+  assert.equal((await memberContribution(M, { fetcher, now, env: {} })).body.points.total, 3, 'too old to show: waits for a fresh view');
 });
