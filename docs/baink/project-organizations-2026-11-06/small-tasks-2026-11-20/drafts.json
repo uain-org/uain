@@ -1,0 +1,485 @@
+{
+  "schema": "uain-small-task-drafts-v1",
+  "status": "draft_for_review",
+  "drafted": {
+    "by": "Claude Code, drafting agent",
+    "at": "2026-11-20",
+    "request": "Operator, 20 November 2026: 10 brand-new tasks on projects that have none beyond their surveys"
+  },
+  "notice": "Drafts only. Nothing here was opened, signed or funded. The searches below were run by the drafting agent and are NOT the trusted prior-art record: before any task opens, the trusted search (createPriorArtSearch, pinned retriever) and an independent assessment must run for it, as the manager stage does.",
+  "projects": [
+    "OPP-00246",
+    "OPP-00243",
+    "OPP-00248",
+    "OPP-00722",
+    "OPP-00966",
+    "OPP-00965",
+    "OPP-00245",
+    "OPP-00969",
+    "OPP-00963",
+    "OPP-00485"
+  ],
+  "drafts": [
+    {
+      "key": "opp-00246-microneedle-vaccine-outcome-audit",
+      "projectId": "OPP-00246",
+      "estimatedMinutes": 40,
+      "task": {
+        "title": "Microneedle and microarray-patch vaccine trials: registered versus published primary outcomes",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.intr=microneedle+OR+microarray+patch&query.term=vaccine&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies registeredPrimaryOutcomes verbatim from protocolSection.outcomesModule.primaryOutcomes[].measure and timeFrame, and overallStatus and hasResults exactly as the record reports them. (4) each row lists publications: every PubMed ID in the record referencesModule with type RESULT, plus every PubMed ID that an esearch of PubMed for the NCT ID returns; each listed PubMed record must contain the NCT ID. (5) a row with at least one publication gives publishedPrimaryOutcome, a verbatim quote of at most 300 characters from that PubMed abstract, and verdict match, changed, added, omitted or unclear; match requires the same measure and the same time frame as one registered primary outcome. A row without a publication has verdict no_publication. (6) summary counts each verdict and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Reviews describe microneedle vaccine immunogenicity and manufacturing, but none compares what these trials registered as primary outcomes with what they published.",
+        "proposed_price": {
+          "solver_amount": "200000000",
+          "reviewer_amount": "50000000",
+          "rationale": {
+            "effort": "About 40 minutes for an AI system: one registry query, reading each returned record and linking each trial to its PubMed publications.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, registeredPrimaryOutcomes:[{measure,timeFrame}], overallStatus, hasResults, publications:[pmid], publishedPrimaryOutcome, verdict}], summary:{match,changed,added,omitted,unclear,no_publication}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=microneedle+OR+microarray+patch&query.term=vaccine&pageSize=100",
+        "observedTotal": 21,
+        "observedWithResults": 4,
+        "observedAt": "2026-11-20T14:21:58Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "(microneedle OR \"microarray patch\") AND vaccin* AND (outcome reporting OR selective reporting OR registered outcome* OR trial registr*)",
+            "source": "PubMed E-utilities esearch (public API), run by the drafting agent on 2026-11-20",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "42 PubMed records match; the top results checked are unrelated or general reviews, none an audit of this registry question."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=microneedle+OR+microarray+patch&query.term=vaccine&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "21 registered studies, 4 with posted results."
+          }
+        ],
+        "nearestPriorArt": "General reviews of the intervention; none compares the registry with publications for this exact trial set.",
+        "conclusion": "No open solution found for this exact question. The trusted prior-art search and independent assessment must still run before the task opens."
+      }
+    },
+    {
+      "key": "opp-00243-hexavalent-reporting-audit",
+      "projectId": "OPP-00243",
+      "estimatedMinutes": 40,
+      "task": {
+        "title": "Completed hexavalent infant vaccine trials: results-reporting audit",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.intr=hexavalent+OR+DTaP-IPV-Hib-HepB&query.cond=Diphtheria+OR+Pertussis&filter.overallStatus=COMPLETED&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies primaryCompletionDate, completionDate, overallStatus and hasResults exactly as the record reports them. (4) each row lists publications: every PubMed ID in the record referencesModule with type RESULT, plus every PubMed ID that an esearch of PubMed for the NCT ID returns; each listed PubMed record must contain the NCT ID. (5) each row gives firstPublicationDate (the earliest PubMed publication date among the listed IDs, or null) and verdict: published_within_24_months (first publication within 24 months of primaryCompletionDate), published_later, results_posted_only (hasResults true and no publication) or unreported (neither). (6) summary counts each verdict and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Hexavalent vaccines are widely reviewed for immunogenicity, but no audit records how many completed registered trials published, and how fast.",
+        "proposed_price": {
+          "solver_amount": "200000000",
+          "reviewer_amount": "50000000",
+          "rationale": {
+            "effort": "About 40 minutes for an AI system: one registry query, reading each returned record and linking each trial to its PubMed publications.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, primaryCompletionDate, completionDate, overallStatus, hasResults, publications:[pmid], firstPublicationDate, verdict}], summary:{published_within_24_months,published_later,results_posted_only,unreported}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=hexavalent+OR+DTaP-IPV-Hib-HepB&query.cond=Diphtheria+OR+Pertussis&filter.overallStatus=COMPLETED&pageSize=100",
+        "observedTotal": 13,
+        "observedWithResults": 5,
+        "observedAt": "2026-11-20T14:21:58Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "hexavalent vaccine AND (selective outcome reporting OR registered outcome* OR publication bias OR non-publication)",
+            "source": "PubMed E-utilities esearch (public API), run by the drafting agent on 2026-11-20",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "337 PubMed records match; the top results checked are unrelated or general reviews, none an audit of this registry question."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=hexavalent+OR+DTaP-IPV-Hib-HepB&query.cond=Diphtheria+OR+Pertussis&filter.overallStatus=COMPLETED&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "13 registered studies, 5 with posted results."
+          }
+        ],
+        "nearestPriorArt": "General reviews of the intervention; none compares the registry with publications for this exact trial set.",
+        "conclusion": "No open solution found for this exact question. The trusted prior-art search and independent assessment must still run before the task opens."
+      }
+    },
+    {
+      "key": "opp-00248-neoantigen-vaccine-endpoint-census",
+      "projectId": "OPP-00248",
+      "estimatedMinutes": 45,
+      "task": {
+        "title": "Personalised neoantigen cancer vaccine trials: census of registered primary endpoint types",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.intr=%22personalized+cancer+vaccine%22+OR+%22individualized+neoantigen%22&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies protocolSection.outcomesModule.primaryOutcomes[].measure verbatim, and overallStatus and phases exactly as the record reports them. (4) each row gives category, exactly one of safety_tolerability, immunogenicity, feasibility_manufacturing, clinical_efficacy, mixed, not_stated, with evidence: a verbatim quote of at most 300 characters from the record that supports the category (not_stated needs no quote). (5) summary counts each category and the counts equal the rows. A verifier reruns the query, reads every listed registry record and checks each quote appears verbatim in that record; one missing or extra NCT ID, one quote not in its record, one field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Reviews summarise neoantigen vaccine results, but none counts which registered trials test clinical efficacy versus safety, immunogenicity or manufacturing feasibility.",
+        "proposed_price": {
+          "solver_amount": "150000000",
+          "reviewer_amount": "40000000",
+          "rationale": {
+            "effort": "About 45 minutes for an AI system: one registry query, reading each returned record and classifying one registry field per trial.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published review answers this exact registry question; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and checks each quote against its registry record."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, registered, overallStatus, phases, category, evidence}], summary:{safety_tolerability,immunogenicity,feasibility_manufacturing,clinical_efficacy,mixed,not_stated}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=%22personalized+cancer+vaccine%22+OR+%22individualized+neoantigen%22&pageSize=100",
+        "observedTotal": 28,
+        "observedWithResults": 2,
+        "observedAt": "2026-11-20T14:21:58Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "(neoantigen OR personalized cancer vaccine) AND (trial registry OR ClinicalTrials.gov) AND (endpoint* OR landscape)",
+            "source": "PubMed E-utilities esearch (public API), run by the drafting agent on 2026-11-20",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "611 PubMed records match; the top results checked are unrelated or general reviews, none an audit of this registry question."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=%22personalized+cancer+vaccine%22+OR+%22individualized+neoantigen%22&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "28 registered studies, 2 with posted results."
+          }
+        ],
+        "nearestPriorArt": "General reviews of the intervention; none compares the registry with publications for this exact trial set.",
+        "conclusion": "No open solution found for this exact question. The trusted prior-art search and independent assessment must still run before the task opens."
+      }
+    },
+    {
+      "key": "opp-00722-retinal-prosthesis-outcome-audit",
+      "projectId": "OPP-00722",
+      "estimatedMinutes": 45,
+      "task": {
+        "title": "Completed retinal prosthesis trials (Argus II, PRIMA and others): registered versus published primary outcomes",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.intr=%22retinal+prosthesis%22+OR+%22Argus+II%22+OR+%22PRIMA+system%22&filter.overallStatus=COMPLETED&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies registeredPrimaryOutcomes verbatim from protocolSection.outcomesModule.primaryOutcomes[].measure and timeFrame, and overallStatus and hasResults exactly as the record reports them. (4) each row lists publications: every PubMed ID in the record referencesModule with type RESULT, plus every PubMed ID that an esearch of PubMed for the NCT ID returns; each listed PubMed record must contain the NCT ID. (5) a row with at least one publication gives publishedPrimaryOutcome, a verbatim quote of at most 300 characters from that PubMed abstract, and verdict match, changed, added, omitted or unclear; match requires the same measure and the same time frame as one registered primary outcome. A row without a publication has verdict no_publication. (6) summary counts each verdict and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Retinal prosthesis studies report visual-function results, but no audit compares their registered primary outcomes with the published ones.",
+        "proposed_price": {
+          "solver_amount": "200000000",
+          "reviewer_amount": "50000000",
+          "rationale": {
+            "effort": "About 45 minutes for an AI system: one registry query, reading each returned record and linking each trial to its PubMed publications.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, registeredPrimaryOutcomes:[{measure,timeFrame}], overallStatus, hasResults, publications:[pmid], publishedPrimaryOutcome, verdict}], summary:{match,changed,added,omitted,unclear,no_publication}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=%22retinal+prosthesis%22+OR+%22Argus+II%22+OR+%22PRIMA+system%22&filter.overallStatus=COMPLETED&pageSize=100",
+        "observedTotal": 16,
+        "observedWithResults": 6,
+        "observedAt": "2026-11-20T14:21:58Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "(retinal prosthesis OR retinal implant) AND (outcome reporting OR registered outcome* OR systematic review of outcomes)",
+            "source": "PubMed E-utilities esearch (public API), run by the drafting agent on 2026-11-20",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "2759 PubMed records match; the top results checked are unrelated or general reviews, none an audit of this registry question."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=%22retinal+prosthesis%22+OR+%22Argus+II%22+OR+%22PRIMA+system%22&filter.overallStatus=COMPLETED&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "16 registered studies, 6 with posted results."
+          }
+        ],
+        "nearestPriorArt": "General reviews of the intervention; none compares the registry with publications for this exact trial set.",
+        "conclusion": "No open solution found for this exact question. The trusted prior-art search and independent assessment must still run before the task opens."
+      }
+    },
+    {
+      "key": "opp-00966-ivr-maternal-language-census",
+      "projectId": "OPP-00966",
+      "estimatedMinutes": 30,
+      "task": {
+        "title": "Interactive voice response maternal health trials: census of delivery languages",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.intr=%22interactive+voice+response%22&query.cond=pregnancy+OR+maternal&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies the language or languages the intervention is delivered in, as named anywhere in the record (descriptionModule or armsInterventionsModule) verbatim, and overallStatus and phases exactly as the record reports them. (4) each row gives category, exactly one of single_named_language, multiple_named_languages, local_languages_unnamed, not_stated, with evidence: a verbatim quote of at most 300 characters from the record that supports the category (not_stated needs no quote). (5) summary counts each category and the counts equal the rows. A verifier reruns the query, reads every listed registry record and checks each quote appears verbatim in that record; one missing or extra NCT ID, one quote not in its record, one field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Phone-based maternal health programmes stress local-language delivery, but no census records which registered trials name the languages they deliver in.",
+        "proposed_price": {
+          "solver_amount": "150000000",
+          "reviewer_amount": "40000000",
+          "rationale": {
+            "effort": "About 30 minutes for an AI system: one registry query, reading each returned record and classifying one registry field per trial.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published review answers this exact registry question; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and checks each quote against its registry record."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, registered, overallStatus, phases, category, evidence}], summary:{single_named_language,multiple_named_languages,local_languages_unnamed,not_stated}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=%22interactive+voice+response%22&query.cond=pregnancy+OR+maternal&pageSize=100",
+        "observedTotal": 9,
+        "observedWithResults": 2,
+        "observedAt": "2026-11-20T14:21:58Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "interactive voice response AND (maternal OR pregnancy) AND language AND (review OR registry)",
+            "source": "PubMed E-utilities esearch (public API), run by the drafting agent on 2026-11-20",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "4 PubMed records match; the top results checked are unrelated or general reviews, none an audit of this registry question."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=%22interactive+voice+response%22&query.cond=pregnancy+OR+maternal&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "9 registered studies, 2 with posted results."
+          }
+        ],
+        "nearestPriorArt": "General reviews of the intervention; none compares the registry with publications for this exact trial set.",
+        "conclusion": "No open solution found for this exact question. The trusted prior-art search and independent assessment must still run before the task opens."
+      }
+    },
+    {
+      "key": "opp-00965-hpv-self-sampling-reporting-audit",
+      "projectId": "OPP-00965",
+      "estimatedMinutes": 45,
+      "task": {
+        "title": "Completed HPV self-sampling trials: results-reporting audit",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.intr=%22HPV+self-sampling%22+OR+%22self-collected+HPV%22&filter.overallStatus=COMPLETED&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies primaryCompletionDate, completionDate, overallStatus and hasResults exactly as the record reports them. (4) each row lists publications: every PubMed ID in the record referencesModule with type RESULT, plus every PubMed ID that an esearch of PubMed for the NCT ID returns; each listed PubMed record must contain the NCT ID. (5) each row gives firstPublicationDate (the earliest PubMed publication date among the listed IDs, or null) and verdict: published_within_24_months (first publication within 24 months of primaryCompletionDate), published_later, results_posted_only (hasResults true and no publication) or unreported (neither). (6) summary counts each verdict and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Self-sampling accuracy and uptake are well reviewed, but no audit checks whether the completed registered trials published, and how long it took.",
+        "proposed_price": {
+          "solver_amount": "200000000",
+          "reviewer_amount": "50000000",
+          "rationale": {
+            "effort": "About 45 minutes for an AI system: one registry query, reading each returned record and linking each trial to its PubMed publications.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, primaryCompletionDate, completionDate, overallStatus, hasResults, publications:[pmid], firstPublicationDate, verdict}], summary:{published_within_24_months,published_later,results_posted_only,unreported}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=%22HPV+self-sampling%22+OR+%22self-collected+HPV%22&filter.overallStatus=COMPLETED&pageSize=100",
+        "observedTotal": 28,
+        "observedWithResults": 5,
+        "observedAt": "2026-11-20T14:21:58Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "HPV self-sampling AND (trial registr* OR non-publication OR results reporting)",
+            "source": "PubMed E-utilities esearch (public API), run by the drafting agent on 2026-11-20",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "368 PubMed records match; the top results checked are unrelated or general reviews, none an audit of this registry question."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=%22HPV+self-sampling%22+OR+%22self-collected+HPV%22&filter.overallStatus=COMPLETED&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "28 registered studies, 5 with posted results."
+          }
+        ],
+        "nearestPriorArt": "General reviews of the intervention; none compares the registry with publications for this exact trial set.",
+        "conclusion": "No open solution found for this exact question. The trusted prior-art search and independent assessment must still run before the task opens."
+      }
+    },
+    {
+      "key": "opp-00245-pharmacy-vaccination-outcome-audit",
+      "projectId": "OPP-00245",
+      "estimatedMinutes": 30,
+      "task": {
+        "title": "Completed pharmacy-based vaccination trials: registered versus published primary outcomes",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.term=%22pharmacist-administered%22+OR+%22pharmacy-based+vaccination%22+OR+%22community+pharmacy%22&query.intr=vaccine&filter.overallStatus=COMPLETED&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies registeredPrimaryOutcomes verbatim from protocolSection.outcomesModule.primaryOutcomes[].measure and timeFrame, and overallStatus and hasResults exactly as the record reports them. (4) each row lists publications: every PubMed ID in the record referencesModule with type RESULT, plus every PubMed ID that an esearch of PubMed for the NCT ID returns; each listed PubMed record must contain the NCT ID. (5) a row with at least one publication gives publishedPrimaryOutcome, a verbatim quote of at most 300 characters from that PubMed abstract, and verdict match, changed, added, omitted or unclear; match requires the same measure and the same time frame as one registered primary outcome. A row without a publication has verdict no_publication. (6) summary counts each verdict and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Pharmacy vaccination is reviewed for uptake, but nobody has compared these trials' registered primary outcomes with the published ones.",
+        "proposed_price": {
+          "solver_amount": "200000000",
+          "reviewer_amount": "50000000",
+          "rationale": {
+            "effort": "About 30 minutes for an AI system: one registry query, reading each returned record and linking each trial to its PubMed publications.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, registeredPrimaryOutcomes:[{measure,timeFrame}], overallStatus, hasResults, publications:[pmid], publishedPrimaryOutcome, verdict}], summary:{match,changed,added,omitted,unclear,no_publication}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.term=%22pharmacist-administered%22+OR+%22pharmacy-based+vaccination%22+OR+%22community+pharmacy%22&query.intr=vaccine&filter.overallStatus=COMPLETED&pageSize=100",
+        "observedTotal": 9,
+        "observedWithResults": 5,
+        "observedAt": "2026-11-20T14:21:58Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "pharmacist AND vaccination AND (outcome reporting OR trial registr* OR selective reporting)",
+            "source": "PubMed E-utilities esearch (public API), run by the drafting agent on 2026-11-20",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "263 PubMed records match; the top results checked are unrelated or general reviews, none an audit of this registry question."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.term=%22pharmacist-administered%22+OR+%22pharmacy-based+vaccination%22+OR+%22community+pharmacy%22&query.intr=vaccine&filter.overallStatus=COMPLETED&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "9 registered studies, 5 with posted results."
+          }
+        ],
+        "nearestPriorArt": "General reviews of the intervention; none compares the registry with publications for this exact trial set.",
+        "conclusion": "No open solution found for this exact question. The trusted prior-art search and independent assessment must still run before the task opens."
+      }
+    },
+    {
+      "key": "opp-00969-midwife-led-reporting-audit",
+      "projectId": "OPP-00969",
+      "estimatedMinutes": 50,
+      "task": {
+        "title": "Completed midwife-led care trials: results-reporting audit",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.intr=midwife-led+OR+midwifery-led+OR+midwife+continuity&filter.overallStatus=COMPLETED&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies primaryCompletionDate, completionDate, overallStatus and hasResults exactly as the record reports them. (4) each row lists publications: every PubMed ID in the record referencesModule with type RESULT, plus every PubMed ID that an esearch of PubMed for the NCT ID returns; each listed PubMed record must contain the NCT ID. (5) each row gives firstPublicationDate (the earliest PubMed publication date among the listed IDs, or null) and verdict: published_within_24_months (first publication within 24 months of primaryCompletionDate), published_later, results_posted_only (hasResults true and no publication) or unreported (neither). (6) summary counts each verdict and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Midwife-led care has Cochrane reviews of outcomes, but none of the 30 completed registered trials posted results, and no audit records which of them ever published.",
+        "proposed_price": {
+          "solver_amount": "200000000",
+          "reviewer_amount": "50000000",
+          "rationale": {
+            "effort": "About 50 minutes for an AI system: one registry query, reading each returned record and linking each trial to its PubMed publications.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, primaryCompletionDate, completionDate, overallStatus, hasResults, publications:[pmid], firstPublicationDate, verdict}], summary:{published_within_24_months,published_later,results_posted_only,unreported}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=midwife-led+OR+midwifery-led+OR+midwife+continuity&filter.overallStatus=COMPLETED&pageSize=100",
+        "observedTotal": 30,
+        "observedWithResults": 0,
+        "observedAt": "2026-11-20T14:21:58Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "midwife-led AND (non-publication OR results reporting OR trial registr*)",
+            "source": "PubMed E-utilities esearch (public API), run by the drafting agent on 2026-11-20",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "177 PubMed records match; the top results checked are unrelated or general reviews, none an audit of this registry question."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=midwife-led+OR+midwifery-led+OR+midwife+continuity&filter.overallStatus=COMPLETED&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "30 registered studies, 0 with posted results."
+          }
+        ],
+        "nearestPriorArt": "General reviews of the intervention; none compares the registry with publications for this exact trial set.",
+        "conclusion": "No open solution found for this exact question. The trusted prior-art search and independent assessment must still run before the task opens."
+      }
+    },
+    {
+      "key": "opp-00963-rural-telehealth-hypertension-outcome-audit",
+      "projectId": "OPP-00963",
+      "estimatedMinutes": 30,
+      "task": {
+        "title": "Completed rural telehealth hypertension trials: registered versus published primary outcomes",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.intr=telemedicine+OR+telehealth&query.term=rural&query.cond=hypertension&filter.overallStatus=COMPLETED&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies registeredPrimaryOutcomes verbatim from protocolSection.outcomesModule.primaryOutcomes[].measure and timeFrame, and overallStatus and hasResults exactly as the record reports them. (4) each row lists publications: every PubMed ID in the record referencesModule with type RESULT, plus every PubMed ID that an esearch of PubMed for the NCT ID returns; each listed PubMed record must contain the NCT ID. (5) a row with at least one publication gives publishedPrimaryOutcome, a verbatim quote of at most 300 characters from that PubMed abstract, and verdict match, changed, added, omitted or unclear; match requires the same measure and the same time frame as one registered primary outcome. A row without a publication has verdict no_publication. (6) summary counts each verdict and the counts equal the rows. A verifier reruns the query, reads every listed registry record and resolves every listed PubMed ID; one missing or extra NCT ID, one unresolvable ID, one registry field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Rural telehealth for hypertension is reviewed for blood-pressure effects, but no audit compares these trials' registered and published primary outcomes.",
+        "proposed_price": {
+          "solver_amount": "200000000",
+          "reviewer_amount": "50000000",
+          "rationale": {
+            "effort": "About 30 minutes for an AI system: one registry query, reading each returned record and linking each trial to its PubMed publications.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published audit answers this exact question for this intervention class; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and resolves each NCT and PubMed ID; every classification carries a verbatim quote."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, registeredPrimaryOutcomes:[{measure,timeFrame}], overallStatus, hasResults, publications:[pmid], publishedPrimaryOutcome, verdict}], summary:{match,changed,added,omitted,unclear,no_publication}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=telemedicine+OR+telehealth&query.term=rural&query.cond=hypertension&filter.overallStatus=COMPLETED&pageSize=100",
+        "observedTotal": 7,
+        "observedWithResults": 2,
+        "observedAt": "2026-11-20T14:21:58Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "telehealth AND rural AND hypertension AND (outcome reporting OR trial registr*)",
+            "source": "PubMed E-utilities esearch (public API), run by the drafting agent on 2026-11-20",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "50 PubMed records match; the top results checked are unrelated or general reviews, none an audit of this registry question."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=telemedicine+OR+telehealth&query.term=rural&query.cond=hypertension&filter.overallStatus=COMPLETED&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "7 registered studies, 2 with posted results."
+          }
+        ],
+        "nearestPriorArt": "General reviews of the intervention; none compares the registry with publications for this exact trial set.",
+        "conclusion": "No open solution found for this exact question. The trusted prior-art search and independent assessment must still run before the task opens."
+      }
+    },
+    {
+      "key": "opp-00485-communication-bci-endpoint-census",
+      "projectId": "OPP-00485",
+      "estimatedMinutes": 40,
+      "task": {
+        "title": "Completed communication brain-computer interface trials: census of registered primary endpoints",
+        "criteria": "Submit one JSON artifact of at most 16 KiB with fields observedAt (ISO 8601 UTC), query, rows and summary. The submission passes only if every check holds. (1) query is exactly this ClinicalTrials.gov API v2 URL: https://clinicaltrials.gov/api/v2/studies?query.intr=brain-computer+interface+OR+intracortical&query.term=speech+OR+communication&filter.overallStatus=COMPLETED&pageSize=100 (2) rows hold one row per NCT ID that the query returns for a study whose studyFirstPostDate is on or before observedAt, and no other IDs. (3) each row copies protocolSection.outcomesModule.primaryOutcomes[].measure verbatim, and overallStatus and phases exactly as the record reports them. (4) each row gives category, exactly one of communication_rate, decoding_accuracy, safety_device, usability_satisfaction, mixed, not_stated, with evidence: a verbatim quote of at most 300 characters from the record that supports the category (not_stated needs no quote). (5) summary counts each category and the counts equal the rows. A verifier reruns the query, reads every listed registry record and checks each quote appears verbatim in that record; one missing or extra NCT ID, one quote not in its record, one field that is not copied verbatim, or one count mismatch fails the whole submission (0/1).",
+        "eligibility": "new",
+        "eligibility_basis": "Reviews of communication BCIs summarise published systems, but no census records what completed registered trials chose as their primary endpoint.",
+        "proposed_price": {
+          "solver_amount": "150000000",
+          "reviewer_amount": "40000000",
+          "rationale": {
+            "effort": "About 40 minutes for an AI system: one registry query, reading each returned record and classifying one registry field per trial.",
+            "difficulty": "Low to moderate: careful verbatim extraction and one rule-bound classification per row; no lab work, no new model training.",
+            "novelty": "No open dataset or published review answers this exact registry question; the drafting searches are recorded with the task.",
+            "verificationCost": "Low: a verifier reruns one fixed API query and checks each quote against its registry record."
+          }
+        }
+      },
+      "evidenceFormat": "JSON {observedAt, query, rows:[{nct, registered, overallStatus, phases, category, evidence}], summary:{communication_rate,decoding_accuracy,safety_device,usability_satisfaction,mixed,not_stated}} at most 16 KiB",
+      "registryQuery": {
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=brain-computer+interface+OR+intracortical&query.term=speech+OR+communication&filter.overallStatus=COMPLETED&pageSize=100",
+        "observedTotal": 20,
+        "observedWithResults": 5,
+        "observedAt": "2026-11-20T14:21:58Z"
+      },
+      "priorArt": {
+        "searches": [
+          {
+            "query": "brain-computer interface AND speech AND (outcome measure* OR endpoint*) AND (registry OR ClinicalTrials.gov OR review)",
+            "source": "PubMed E-utilities esearch (public API), run by the drafting agent on 2026-11-20",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "8 PubMed records match; the top results checked are unrelated or general reviews, none an audit of this registry question."
+          },
+          {
+            "query": "https://clinicaltrials.gov/api/v2/studies?query.intr=brain-computer+interface+OR+intracortical&query.term=speech+OR+communication&filter.overallStatus=COMPLETED&pageSize=100",
+            "source": "clinicaltrials.gov/api/v2/studies (public registry API), read-only count by the drafting agent",
+            "observedAt": "2026-11-20T14:21:58Z",
+            "finding": "20 registered studies, 5 with posted results."
+          }
+        ],
+        "nearestPriorArt": "General reviews of the intervention; none compares the registry with publications for this exact trial set.",
+        "conclusion": "No open solution found for this exact question. The trusted prior-art search and independent assessment must still run before the task opens."
+      }
+    }
+  ],
+  "dropped": []
+}
