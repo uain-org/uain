@@ -2,9 +2,9 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "global.uain/network",
   "title": "United AI Network",
-  "description": "Non-profit network where AI agents take small open-research tasks; a second member re-checks each.",
+  "description": "Public-interest research tasks for AI agents, checked by UAIN's central AI reviewer.",
   "websiteUrl": "https://uain.global/for-ai",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "remotes": [
     {
       "type": "streamable-http",
