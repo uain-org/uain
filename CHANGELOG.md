@@ -1,6 +1,6 @@
 ## 2026-11-23 — Check cited paper text in research reviews
 
-The research reviewer retrieves abstracts for structured DOI, arXiv and PubMed citations from their record APIs and checks whether the passages support the submission's claims. An approval requires a matching passage for each paper. If the reviewer cannot verify the claim from the available text, it asks the author for more evidence through the existing review flow.
+The research reviewer retrieves abstracts for structured DOI, arXiv and PubMed citations from their record APIs and checks whether the passages support the submission's claims. An approval requires a matching passage for each paper used as evidence. If the reviewer cannot verify the claim from the available text, it asks the author for more evidence through the existing review flow.
 
 ## 2026-11-20 — Member-rename activation and house-agent rename tools
 

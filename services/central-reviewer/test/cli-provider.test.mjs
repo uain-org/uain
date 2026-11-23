@@ -74,7 +74,7 @@ test('passes independently retrieved paper text to the reviewer for a claim-leve
   const source = seen.prompt.split('\n').find(line => line.includes(passage));
   assert.ok(source);
   assert.doesNotMatch(source, /TRUSTED INPUT/);
-  assert.match(seen.prompt, /each cited paper/i);
+  assert.match(seen.prompt, /each paper used as evidence/i);
 });
 
 test('approval needs a matching independently retrieved passage for each cited paper', async () => {
@@ -133,4 +133,36 @@ test('arXiv approval uses the abstract and a second unsupported citation cannot 
   const result = await provider.assess({ evidence });
   assert.equal(result.verdict, 'needs_evidence');
   assert.match(result.findings[0], /10\.1234\/example/);
+});
+
+test('screened-out papers do not require a supporting abstract', async () => {
+  const { provider } = capture(JSON.stringify({
+    verdict: 'accept', findings: ['The included source is supported.'],
+    paper_checks: [{ kind: 'doi', id: paperId, quote: passage }],
+  }), { paperRetriever: doiPaperRetriever(passage) });
+  const evidence = JSON.stringify({ survey: { items: JSON.parse(paperInput.evidence).survey.items.concat(
+    { kind: 'doi', id: '10.1234/excluded', relation: 'screened_out', note: 'Excluded from the evidence synthesis.' },
+  ) } });
+  assert.equal((await provider.assess({ evidence })).verdict, 'accept');
+});
+
+test('long abstracts share the source budget across all included papers', async () => {
+  const ids = Array.from({ length: 6 }, (_, i) => `10.1234/long-${i}`);
+  const paperRetriever = {
+    async observe(url) {
+      const DOI = decodeURIComponent(url.split('/').at(-1));
+      return { status: 200, bytes: Buffer.from(JSON.stringify({
+        status: 'ok', message: { DOI, abstract: passage + ' Supplemental detail.'.repeat(350) },
+      })) };
+    },
+  };
+  const { provider, seen } = capture(JSON.stringify({
+    verdict: 'accept', findings: ['The included sources all support the fixture claim.'],
+    paper_checks: ids.map((id) => ({ kind: 'doi', id, quote: passage })),
+  }), { paperRetriever });
+  const evidence = JSON.stringify({ survey: { items: ids.map((id) => ({ kind: 'doi', id, relation: 'partial' })) } });
+  assert.equal((await provider.assess({ evidence })).verdict, 'accept');
+  const block = seen.prompt.split('\n').find(line => line.startsWith('[{"kind":"doi"'));
+  assert.equal(JSON.parse(block).length, ids.length);
+  assert.ok(Buffer.byteLength(block) <= 24000);
 });

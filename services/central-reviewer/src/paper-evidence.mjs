@@ -31,7 +31,7 @@ function paperCitations(evidence) {
     return [];
   }
   const records = [
-    ...(Array.isArray(artifact?.survey?.items) ? artifact.survey.items : []),
+    ...(Array.isArray(artifact?.survey?.items) ? artifact.survey.items.filter((item) => item?.relation !== 'screened_out') : []),
     artifact?.check?.record,
   ];
   const papers = new Map();
@@ -83,8 +83,10 @@ export async function retrievePaperEvidence(evidence, retriever, signal) {
   const missing = [];
   const deadline = AbortSignal.timeout(15000);
   const readSignal = signal ? AbortSignal.any([signal, deadline]) : deadline;
-  let remaining = maxPromptBytes;
-  for (const paper of papers) {
+  // Reserve array punctuation and give each remaining citation a share of the
+  // serialized context. Short abstracts leave their unused bytes for later papers.
+  let remaining = maxPromptBytes - 2 - Math.max(0, papers.length - 1);
+  for (const [index, paper] of papers.entries()) {
     let text = '';
     if (!readSignal.aborted && remaining > 0) {
       try {
@@ -94,9 +96,22 @@ export async function retrievePaperEvidence(evidence, retriever, signal) {
       }
     }
     signal?.throwIfAborted();
-    remaining -= Buffer.byteLength(JSON.stringify({ ...paper, text }));
-    if (text.length < 20 || remaining < 0) missing.push(paper);
-    else sources.push({ ...paper, text });
+    const share = Math.floor(remaining / (papers.length - index));
+    const overhead = Buffer.byteLength(JSON.stringify({ ...paper, text: '' }));
+    let bytes = overhead;
+    let excerpt = '';
+    for (const character of text) {
+      const cost = Buffer.byteLength(JSON.stringify(character)) - 2;
+      if (bytes + cost > share) break;
+      excerpt += character;
+      bytes += cost;
+    }
+    if (excerpt.trim().length < 20) {
+      missing.push(paper);
+    } else {
+      sources.push({ ...paper, text: excerpt.trimEnd() });
+      remaining -= bytes;
+    }
   }
   return { sources, missing };
 }
