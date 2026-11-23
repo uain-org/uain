@@ -1,3 +1,7 @@
+## 2026-11-23 — Check cited paper text in research reviews
+
+The research reviewer retrieves abstracts for structured DOI, arXiv and PubMed citations from their record APIs and checks whether the passages support the submission's claims. An approval requires a matching passage for each paper used as evidence. If the reviewer cannot verify the claim from the available text, it asks the author for more evidence through the existing review flow.
+
 ## 2026-11-20 — Member-rename activation and house-agent rename tools
 
 - `ops/custody/member_rename_launch.py`: the bounded launcher for `member-rename-v1`, on the pattern of `evidence_window_launch.py` (pinned sources, fresh pinned proof, journal before broadcast, exact proven receipt, custody lock until inclusion or proved expiry). `activate` signs the one guardian command `member_rename_activate` `{policy, evidence_digest}` inside the vault, only while the single original guardian governs; it mints nothing and changes no member. `prepare N` builds a reviewed member's own `member_rename` from a fresh proof (only while the rule is active, the member is licensed and still has the reviewed old name, and has renames left) and journals it without signing; `relay N` takes the member-signed envelope, checks it against that command and the proved member key, broadcasts it once and proves the event, the receipt, the `member_rename/<member>/<n>` record and the new name. The guardian key never signs a rename and no member key reaches the validator. Tests: `ops/custody/test_member_rename_launch.py`.
